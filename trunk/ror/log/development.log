@@ -8293,3 +8293,2279 @@ Rendering  within layouts/application
 Rendering irosprints/index
 Rendered irosprints/_iface (0.18957)
 Completed in 0.19204 (5 reqs/sec) | Rendering: 0.19107 (99%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:14:41) [GET]
+  Session ID: 31b03ea0b791b2d66be98b5723384846
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00454)
+Completed in 0.07146 (13 reqs/sec) | Rendering: 0.07062 (98%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:18:38) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00434)
+Completed in 0.07174 (13 reqs/sec) | Rendering: 0.07092 (98%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:18:54) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00496)
+Completed in 0.00714 (140 reqs/sec) | Rendering: 0.00625 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:19:26) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00351)
+Completed in 0.00549 (182 reqs/sec) | Rendering: 0.00472 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:19:26) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00341)
+Completed in 0.00532 (187 reqs/sec) | Rendering: 0.00460 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:19:56) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.06253)
+Completed in 0.06749 (14 reqs/sec) | Rendering: 0.06656 (98%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:20:36) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00395)
+Completed in 0.00610 (163 reqs/sec) | Rendering: 0.00521 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:20:58) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00375)
+Completed in 0.00572 (174 reqs/sec) | Rendering: 0.00494 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:23:58) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00345)
+Completed in 0.00544 (183 reqs/sec) | Rendering: 0.00462 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:24:07) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00358)
+Completed in 0.00546 (183 reqs/sec) | Rendering: 0.00475 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:24:33) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00388)
+Completed in 0.00616 (162 reqs/sec) | Rendering: 0.00527 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:45:20) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00447)
+Completed in 0.00762 (131 reqs/sec) | Rendering: 0.00684 (89%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:45:24) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00296)
+Completed in 0.00528 (189 reqs/sec) | Rendering: 0.00437 (82%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:46:57) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00349)
+Completed in 0.00554 (180 reqs/sec) | Rendering: 0.00470 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:47:57) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00349)
+Completed in 0.00541 (184 reqs/sec) | Rendering: 0.00467 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:48:14) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00319)
+Completed in 0.00508 (196 reqs/sec) | Rendering: 0.00436 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:49:31) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00262)
+Completed in 0.00472 (211 reqs/sec) | Rendering: 0.00386 (81%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:49:46) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00343)
+Completed in 0.00540 (185 reqs/sec) | Rendering: 0.00463 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:50:08) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00305)
+Completed in 0.00495 (201 reqs/sec) | Rendering: 0.00421 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:50:35) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00312)
+Completed in 0.00498 (200 reqs/sec) | Rendering: 0.00427 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:50:51) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00354)
+Completed in 0.00582 (171 reqs/sec) | Rendering: 0.00492 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:51:15) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00371)
+Completed in 0.00568 (175 reqs/sec) | Rendering: 0.00491 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:52:13) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00364)
+Completed in 0.00577 (173 reqs/sec) | Rendering: 0.00483 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:52:30) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00363)
+Completed in 0.00550 (181 reqs/sec) | Rendering: 0.00479 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:57:27) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.01526)
+Completed in 0.01765 (56 reqs/sec) | Rendering: 0.01674 (94%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:57:56) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00377)
+Completed in 0.00595 (168 reqs/sec) | Rendering: 0.00517 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-27 23:59:19) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00361)
+Completed in 0.00551 (181 reqs/sec) | Rendering: 0.00478 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:00:03) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00264)
+Completed in 0.00449 (222 reqs/sec) | Rendering: 0.00378 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:00:03) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00299)
+Completed in 0.00513 (194 reqs/sec) | Rendering: 0.00426 (82%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:00:04) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00290)
+Completed in 0.00487 (205 reqs/sec) | Rendering: 0.00410 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:00:04) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00272)
+Completed in 0.00462 (216 reqs/sec) | Rendering: 0.00390 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:00:26) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00359)
+Completed in 0.00546 (183 reqs/sec) | Rendering: 0.00475 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:00:38) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00389)
+Completed in 0.00696 (143 reqs/sec) | Rendering: 0.00522 (74%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:01:06) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00399)
+Completed in 0.00611 (163 reqs/sec) | Rendering: 0.00524 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:05:34) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00367)
+Completed in 0.00561 (178 reqs/sec) | Rendering: 0.00484 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:05:44) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00354)
+Completed in 0.00541 (184 reqs/sec) | Rendering: 0.00469 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:06:25) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00392)
+Completed in 0.00610 (164 reqs/sec) | Rendering: 0.00518 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:07:37) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00114)
+Completed in 0.00318 (314 reqs/sec) | Rendering: 0.00231 (72%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:08:11) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00366)
+Completed in 0.00578 (172 reqs/sec) | Rendering: 0.00501 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:08:29) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00355)
+Completed in 0.00541 (185 reqs/sec) | Rendering: 0.00469 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:08:40) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00404)
+Completed in 0.00687 (145 reqs/sec) | Rendering: 0.00537 (78%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:09:17) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00385)
+Completed in 0.00594 (168 reqs/sec) | Rendering: 0.00507 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:09:33) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00366)
+Completed in 0.00580 (172 reqs/sec) | Rendering: 0.00486 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:09:57) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00353)
+Completed in 0.00539 (185 reqs/sec) | Rendering: 0.00468 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:10:03) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00660)
+Completed in 0.00898 (111 reqs/sec) | Rendering: 0.00794 (88%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:10:13) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00380)
+Completed in 0.00589 (169 reqs/sec) | Rendering: 0.00501 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:10:21) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.01132)
+Completed in 0.01343 (74 reqs/sec) | Rendering: 0.01262 (93%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:10:27) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00363)
+Completed in 0.00572 (174 reqs/sec) | Rendering: 0.00500 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:10:30) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00290)
+Completed in 0.06676 (14 reqs/sec) | Rendering: 0.06602 (98%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:11:00) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00382)
+Completed in 0.00593 (168 reqs/sec) | Rendering: 0.00504 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:11:19) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00379)
+Completed in 0.01762 (56 reqs/sec) | Rendering: 0.00522 (29%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:11:27) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00363)
+Completed in 0.00552 (181 reqs/sec) | Rendering: 0.00479 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:11:48) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.08935)
+Completed in 0.09143 (10 reqs/sec) | Rendering: 0.09069 (99%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:13:40) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00404)
+Completed in 0.00619 (161 reqs/sec) | Rendering: 0.00530 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:13:55) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.01430)
+Completed in 0.01643 (60 reqs/sec) | Rendering: 0.01564 (95%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:25:23) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00357)
+Completed in 0.00546 (183 reqs/sec) | Rendering: 0.00473 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:25:36) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00351)
+Completed in 0.06316 (15 reqs/sec) | Rendering: 0.06237 (98%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:29:11) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00413)
+Completed in 0.00629 (158 reqs/sec) | Rendering: 0.00540 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:29:53) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00377)
+Completed in 0.00571 (175 reqs/sec) | Rendering: 0.00495 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:33:17) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00367)
+Completed in 0.00554 (180 reqs/sec) | Rendering: 0.00482 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:39:47) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+ERROR: compiling _run_rxml_irosprints__iface RAISED compile error
+script/../config/../app/views/irosprints/_iface.rxml:181: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+       :class='number_shadow')
+               ^
+script/../config/../app/views/irosprints/_iface.rxml:181: syntax error, unexpected ')', expecting '}'
+script/../config/../app/views/irosprints/_iface.rxml:191: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+       :class='number_shadow')
+               ^
+script/../config/../app/views/irosprints/_iface.rxml:191: syntax error, unexpected ')', expecting '}'
+script/../config/../app/views/irosprints/_iface.rxml:201: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+       :class='number_shadow')
+               ^
+script/../config/../app/views/irosprints/_iface.rxml:201: syntax error, unexpected ')', expecting '}'
+Function body: def _run_rxml_irosprints__iface(local_assigns)
+iface = local_assigns[:iface] if local_assigns.has_key?(:iface)
+iface_counter = local_assigns[:iface_counter] if local_assigns.has_key?(:iface_counter)
+xml = Builder::XmlMarkup.new(:indent => 2)
+@controller.headers['Content-Type'] ||= 'application/xml'
+@stylishness = <<-END
+#radials {
+  fill: none;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  stroke-opacity: 1
+}
+
+#numbers {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-stretch: condensed;
+  text-align: start;
+  line-height: 100%;
+  writing-mode: lr-tb;
+  text-anchor: start;
+  font-family: Nimbus Sans L;
+}
+
+.number_shadow {
+  font-size: 20.40035629px;
+  fill: black;
+}
+number {
+  font-size: 20.30507278px;
+  fill: white;
+}
+END
+xml.svg(:height => "373", :width => "500",
+        :xmlns => "http://www.w3.org/2000/svg",
+        :version => "1.0",
+        :baseProfile=>"full") {
+  xml.defs{
+    xml.style(:type=>'text/css'){ xml.cdata!(@stylishness) }
+  }
+  xml.rect(
+     :style=>"fill:black;fill-opacity:1;stroke:none;stroke-width:0.95099998;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1",
+     :id=>"background",
+     :width=>"501.12021",
+     :height=>"374.30038",
+     :x=>"0.081355505",
+     :y=>"0.077205971")
+  xml.rect(:style=>"fill:#73d83e;fill-opacity:1;stroke:none;stroke-width:0.95099998;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1",
+     :id=>"field",
+     :width=>"488.198",
+     :height=>"364.28113",
+     :x=>"6.2120686",
+     :y=>"5.4431815",
+     :rx=>"12",
+     :ry=>"12")
+  xml.text('IRO sprint',
+     :style=>"font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:#241c1c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ubuntu-Title",
+     :x=>"150.99417",
+     :y=>"108.27198",
+     :id=>"display_title")
+  xml.rect(
+     :rx=>"110.20203",
+     :style=>"fill:none;fill-opacity:1;stroke:white;stroke-width:36.48699951;stroke-miterlimit:4;stroke-dasharray:none",
+     :ry=>"118.27761",
+     :y=>"34.320671",
+     :x=>"38.267757",
+     :height=>"305.34534",
+     :width=>"422.7713",
+     :id=>"track_surface" )
+  xml.rect(
+     :rx=>"114.26359",
+     :style=>"opacity:1;fill:none;fill-opacity:1;stroke:#d3040a;stroke-width:19.05940628;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1",
+     :ry=>"124.54852",
+     :y=>"25.751932",
+     :x=>"30.173487",
+     :height=>"321.5343",
+     :width=>"438.35278",
+     :id=>"red_track" )
+  xml.rect(
+     :rx=>"105.68902",
+     :style=>"opacity:1;fill:none;fill-opacity:1;stroke:#abbcf4;stroke-width:17.33102798;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1",
+     :ry=>"111.33588",
+     :y=>"43.110508",
+     :x=>"47.228378",
+     :height=>"287.42456",
+     :width=>"405.45792",
+     :id=>"blue_track" )
+   xml.g(:id=>"lap_indicator"){
+     xml.rect(
+       :ry=>"5.0016103",
+       :rx=>"6.1670976",
+       :y=>"242.37056",
+       :x=>"265.99411",
+       :height=>"48.059868",
+       :width=>"47.898144",
+       :style=>"opacity:1;fill:black;fill-opacity:1;stroke:#e3dbdb;stroke-width:1.06551003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+     xml.path(
+       :d=>"M 266.07978,261.13601 L 313.26521,261.13601",
+       :style=>"fill:none;fill-rule:evenodd;stroke:#e3dbdb;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;opacity:1")
+     xml.text("lap",
+       :y=>"256.30237",
+       :x=>"280.81082",
+       :style=>"font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#e3dbdb;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ubuntu-Title;opacity:1")
+     xml.text("2",
+       :y=>"284.38345",
+       :x=>"281.9617",
+       :style=>"font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Ubuntu-Title;fill:#f2f2f2")
+    }
+    xml.g(:id=>"dial"){
+      xml.rect(
+         :width=>"113.65182",
+         :height=>"114.51677",
+         :x=>"110.02682",
+         :y=>"117.6256",
+         :ry=>"11.218",
+         :style=>"fill:#abbcf4;fill-opacity:1;stroke:black;stroke-width:2.58699989;stroke-miterlimit:4;stroke-dasharray:none",
+         :rx=>"10.5")
+      xml.path(
+         :style=>"fill:#fffffd;fill-opacity:1;stroke:black;stroke-width:2.58699989;stroke-miterlimit:4;stroke-dasharray:none",
+         :transform=>"matrix(1.019665,0,0,0.993415,-1.842941,-0.910207)",
+         :d=>"M 214.67617 176.95947 A 49.233921 50.698734 0 1 1  116.20832,176.95947 A 49.233921 50.698734 0 1 1  214.67617 176.95947 z")
+      xml.path(
+         :d=>"M 186.51925 176.22708 A 18.879784 18.879784 0 1 1  148.75968,176.22708 A 18.879784 18.879784 0 1 1  186.51925 176.22708 z",
+         :transform=>"matrix(2.355143,0,0,2.35024,-227.9622,-239.2919)",
+         :style=>"fill:#acbbf4;fill-opacity:1;stroke:black;stroke-width:0.53463411;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+      xml.path(
+         :d=>"M 186.51925 176.22708 A 18.879784 18.879784 0 1 1  148.75968,176.22708 A 18.879784 18.879784 0 1 1  186.51925 176.22708 z",
+         :transform=>"matrix(2.097602,0,0,2.116474,-184.7882,-198.096)",
+         :style=>"fill:#d3040a;fill-opacity:1;stroke:#282c37;stroke-width:0.62400103;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+      xml.path(
+         :d=>"M 186.51925 176.22708 A 18.879784 18.879784 0 1 1  148.75968,176.22708 A 18.879784 18.879784 0 1 1  186.51925 176.22708 z",
+         :transform=>"matrix(1.932294,0,0,1.949679,-157.076,-168.7023)",
+         :style=>"fill:white;fill-opacity:1;stroke:#282c37;stroke-width:0.62400103;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+      xml.rect(
+         :width=>"107.44713",
+         :height=>"108.31205",
+         :x=>"112.85638",
+         :y=>"120.48109",
+         :ry=>"10.610191",
+         :style=>"fill:none;fill-opacity:1;stroke:white;stroke-width:1.03499997;stroke-miterlimit:4;stroke-dasharray:none",
+         :rx=>"9.9267626")
+    }
+    @radial_style = "fill:none;fill-rule:evenodd;stroke:black;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" 
+    xml.g(:transform=>"translate(22.47638,310.9973)",
+       :id=>"radials"){
+      xml.path(
+         :d=>"M 195.36089,-134.71649 L 94.710095,-134.71649")
+      xml.path(
+         :d=>"M 145.03549,-185.0419 L 145.03549,-84.391086")
+      xml.path(
+         :d=>"M 180.62093,-170.30192 L 109.45006,-99.131061")
+      xml.path(
+         :d=>"M 109.45007,-170.30193 L 180.62092,-99.131051")
+      xml.path(
+         :d=>"M 125.77681,-181.21111 L 164.29418,-88.22187")
+      xml.path(
+         :d=>"M 191.5301,-115.45778 L 98.54089,-153.97521")
+      xml.path(
+         :d=>"M 125.77678,-88.22189 L 164.29421,-181.21109")
+      xml.path(
+         :d=>"M 98.54088,-115.45781 L 191.53011,-153.97517")
+    }
+    xml.path(
+       :d=>"M 186.51925 176.22708 A 18.879784 18.879784 0 1 1  148.75968,176.22708 A 18.879784 18.879784 0 1 1  186.51925 176.22708 z",
+       :transform=>"matrix(1.682843,0,0,1.697984,-115.2582,-124.3468)",
+       :style=>"fill:white;fill-opacity:1;stroke:black;stroke-width:0.35376316;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+    xml.path(
+       :d=>"M 186.51925 176.22708 A 18.879784 18.879784 0 1 1  148.75968,176.22708 A 18.879784 18.879784 0 1 1  186.51925 176.22708 z",
+       :transform=>"matrix(0.958188,0,0,0.966809,6.222602,4.506059)",
+       :style=>"fill:none;fill-opacity:1;stroke:black;stroke-width:0.9880634;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+
+  xml.g(
+     :id=>"numbers",
+     :transform=>"translate(-1.522918,0.218864)"){
+    xml.text("25",
+       :transform=>"scale(0.910987,1.09771)",
+       :x=>"214.22849",
+       :y=>"166.71974",
+       :class='number_shadow')
+    xml.text("25",
+       :x=>"212.95886",
+       :y=>"166.53778",
+       :transform=>"scale(0.915261,1.092584)",
+       :class=>'number')
+    xml.text("10",
+       :x=>"135.345",
+       :y=>"168.04782",
+       :transform=>"scale(0.910987,1.09771)",
+       :class='number_shadow')
+    xml.text("10",
+       :x=>"134.44376",
+       :y=>"167.87209",
+       :transform=>"scale(0.915261,1.092584)",
+       :class=>'number')
+    xml.text("20",
+       :x=>"176.88861",
+       :y=>"135.13841",
+       :transform=>"scale(0.910987,1.09771)",
+       :class='number_shadow')
+    xml.text("20",
+       :x=>"175.79337",
+       :y=>"134.80827",
+       :transform=>"scale(0.915261,1.092584)",
+       :class=>'number')
+  }
+  xml.g(
+     :transform=>"translate(-148.4454,-642.1311)"){
+    xml.path(
+       :transform=>"matrix(0.837034,0,0,0.865235,65.70331,104.607)",
+       :d=>"M 306.61181 843.9483 A 8.7870464 5.4217944 0 1 1  289.03772,843.9483 A 8.7870464 5.4217944 0 1 1  306.61181 843.9483 z",
+       :style=>"fill:black;fill-opacity:1;stroke:black;stroke-width:0.95099998;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+    xml.path(
+       :transform=>"translate(17.35495,-9.32792)",
+       :d=>"M 302.87265 827.68286 A 5.2348361 5.2348361 0 1 1  292.40298,827.68286 A 5.2348361 5.2348361 0 1 1  302.87265 827.68286 z",
+       :style=>"fill:black;fill-opacity:1;stroke:black;stroke-width:0.95099998;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+    xml.path(
+       :d=>"M 319.56798,781.46851 C 315.03348,780.1759 314.94799,780.21542 310.41756,781.46851 L 315.03018,771.83034 L 319.56798,781.46851 z ",
+       :style=>"fill:black;fill-opacity:1;stroke:black;stroke-width:1.03707194;stroke-miterlimit:4;stroke-opacity:1")
+    xml.path(
+       :d=>"M 314.22479,780.45265 L 315.76074,780.45265 L 317.29669,831.5488 L 312.68884,831.5488 L 314.22479,780.45265 z ",
+       :style=>"fill:black;fill-opacity:1;stroke:none;stroke-width:0.95099998;stroke-miterlimit:4;stroke-opacity:1")
+  }
+  xml.g(
+     :id=>"track_markings"){
+    xml.path(
+       :d=>"M 104.99121,24.271886 L 118.96209,57.680521",
+       :style=>"fill:none;fill-rule:evenodd;stroke:yellow;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1")
+    xml.rect(
+       :width=>"422.7713",
+       :height=>"305.34534",
+       :x=>"38.320702",
+       :y=>"34.814106",
+       :ry=>"118.27761",
+       :style=>"fill:none;fill-opacity:1;stroke:black;stroke-width:2.58699989;stroke-miterlimit:4;stroke-dasharray:none",
+       :rx=>"110.20203")
+    xml.rect(
+       :width=>"457.75491",
+       :height=>"338.50665",
+       :x=>"20.776157",
+       :y=>"18.176891",
+       :ry=>"131.12288",
+       :style=>"fill:none;fill-opacity:1;stroke:black;stroke-width:2.83431506;stroke-miterlimit:4;stroke-dasharray:none",
+       :rx=>"119.32105")
+    xml.rect(
+
+       :width=>"388.39374",
+       :height=>"272.18262",
+       :x=>"55.15303",
+       :y=>"51.946342",
+       :ry=>"105.43181",
+       :style=>"fill:none;fill-opacity:1;stroke:black;stroke-width:2.3410697;stroke-miterlimit:4;stroke-dasharray:none",
+       :rx=>"101.24097")
+    xml.path(
+       :d=>"M 105.08534,24.335342 L 119.05622,57.743977",
+       :style=>"fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1")
+@track_lines_style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+    xml.path(
+       :d=>"M 249.04618,17.046185 L 249.04618,51.06225",
+       :style=>@track_lines_style)
+    xml.path(
+       :d=>"M 247.2239,323.19076 L 247.2239,355.99197",
+       :style=>@track_lines_style)
+    xml.path(
+       :d=>"M 252.08333,356.5994 L 252.08333,323.19076",
+       :style=>"fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1")
+    xml.path(
+       :d=>"M 257.64405,355.61805 L 257.73716,316.13512",
+       :style=>@track_lines_style)
+    xml.text(
+       :y=>"313.17331",
+       :x=>"256.13306",
+       :style=>"font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:white;fill-opacity:1;stroke:black;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;font-family:Ubuntu-Title"){
+      xml.tspan("1000m",
+         :y=>"313.17331",
+         :x=>"256.13306")}
+  }
+  xml.g(:id=>"border_decorations"){
+    xml.rect(
+       :style=>"fill:none;fill-opacity:1;stroke:#d3040a;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1",
+       :width=>"488.198",
+       :height=>"364.28113",
+       :x=>"9.0689096",
+       :y=>"1.690138",
+       :rx=>"12",
+       :ry=>"12")
+    xml.rect(
+       :style=>"fill:none;fill-opacity:1;stroke:#abbcf4;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1",
+       :width=>"488.198",
+       :height=>"364.28113",
+       :x=>"3.2823744",
+       :y=>"7.5650878",
+       :rx=>"12",
+       :ry=>"12")
+  }
+}
+
+end
+Backtrace: script/../config/../app/views/irosprints/_iface.rxml:299:in `compile_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:307:in `compile_and_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:292:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:251:in `render_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:266:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/partials.rb:59:in `render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:29:in `benchmark'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:29:in `benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/partials.rb:58:in `render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:278:in `render'
+script/../config/../app/views/irosprints/index.rhtml:3:in `_run_rhtml_irosprints_index'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `compile_and_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:292:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:251:in `render_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:726:in `render_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:648:in `render_with_no_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/layout.rb:245:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:53:in `render'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:53:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:944:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/filters.rb:368:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:69:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:69:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/rescue.rb:82:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:408:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:408:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/filters.rb:377:in `process_without_session_management_support'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/session_management.rb:117:in `process'
+/usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/dispatcher.rb:38:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:115:in `handle_dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:81:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:67:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/commands/servers/webrick.rb:59
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:147:in `require'
+/usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/commands/server.rb:30
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:147:in `require'
+./script/server:3
+
+
+ActionView::TemplateError (compile error
+script/../config/../app/views/irosprints/_iface.rxml:181: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+       :class='number_shadow')
+               ^
+script/../config/../app/views/irosprints/_iface.rxml:181: syntax error, unexpected ')', expecting '}'
+script/../config/../app/views/irosprints/_iface.rxml:191: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+       :class='number_shadow')
+               ^
+script/../config/../app/views/irosprints/_iface.rxml:191: syntax error, unexpected ')', expecting '}'
+script/../config/../app/views/irosprints/_iface.rxml:201: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+       :class='number_shadow')
+               ^
+script/../config/../app/views/irosprints/_iface.rxml:201: syntax error, unexpected ')', expecting '}') on line #181 of app/views/irosprints/_iface.rxml:
+178:        :transform=>"scale(0.910987,1.09771)",
+179:        :x=>"214.22849",
+180:        :y=>"166.71974",
+181:        :class='number_shadow')
+182:     xml.text("25",
+183:        :x=>"212.95886",
+184:        :y=>"166.53778",
+
+    #{RAILS_ROOT}/app/views/irosprints/_iface.rxml:299:in `compile_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:307:in `compile_and_render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:292:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:251:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:266:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/partials.rb:59:in `render_partial'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:29:in `benchmark'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:29:in `benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/partials.rb:58:in `render_partial'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:278:in `render'
+    #{RAILS_ROOT}/app/views/irosprints/index.rhtml:3:in `_run_rhtml_irosprints_index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `compile_and_render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:292:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:251:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:726:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:648:in `render_with_no_layout'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/layout.rb:245:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:53:in `render'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:53:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:944:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/filters.rb:368:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:69:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:69:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/rescue.rb:82:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:408:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:408:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/filters.rb:377:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/session_management.rb:117:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/dispatcher.rb:38:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:115:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:81:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:67:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/commands/servers/webrick.rb:59
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:147:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/commands/server.rb:30
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:147:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:40:33) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00359)
+Completed in 0.00547 (182 reqs/sec) | Rendering: 0.00475 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:40:54) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00353)
+Completed in 0.00537 (186 reqs/sec) | Rendering: 0.00467 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:41:25) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.01381)
+Completed in 0.01622 (61 reqs/sec) | Rendering: 0.01524 (93%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:47:10) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00386)
+Completed in 0.00597 (167 reqs/sec) | Rendering: 0.00514 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:47:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00372)
+Completed in 0.00569 (175 reqs/sec) | Rendering: 0.00491 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:47:29) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00357)
+Completed in 0.00543 (184 reqs/sec) | Rendering: 0.00472 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:50:03) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00508)
+Completed in 0.00737 (135 reqs/sec) | Rendering: 0.00643 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:54:43) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00385)
+Completed in 0.00599 (167 reqs/sec) | Rendering: 0.00513 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:55:40) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00379)
+Completed in 0.00575 (174 reqs/sec) | Rendering: 0.00497 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:56:19) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00364)
+Completed in 0.00561 (178 reqs/sec) | Rendering: 0.00481 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:56:22) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00308)
+Completed in 0.02724 (36 reqs/sec) | Rendering: 0.01790 (65%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:56:22) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00300)
+Completed in 0.00522 (191 reqs/sec) | Rendering: 0.00430 (82%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 00:56:54) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00379)
+Completed in 0.00579 (172 reqs/sec) | Rendering: 0.00500 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:16:43) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00364)
+Completed in 0.00551 (181 reqs/sec) | Rendering: 0.00479 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:17:05) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00287)
+Completed in 0.08964 (11 reqs/sec) | Rendering: 0.08887 (99%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:17:15) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00396)
+Completed in 0.00617 (162 reqs/sec) | Rendering: 0.00527 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:17:42) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00398)
+Completed in 0.00594 (168 reqs/sec) | Rendering: 0.00517 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:18:14) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00367)
+Completed in 0.00558 (179 reqs/sec) | Rendering: 0.00484 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:18:20) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00357)
+Completed in 0.00543 (184 reqs/sec) | Rendering: 0.00472 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:19:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00397)
+Completed in 0.00630 (158 reqs/sec) | Rendering: 0.00529 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:19:34) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00378)
+Completed in 0.00582 (171 reqs/sec) | Rendering: 0.00504 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:20:19) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00373)
+Completed in 0.00564 (177 reqs/sec) | Rendering: 0.00490 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:20:36) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00358)
+Completed in 0.00544 (183 reqs/sec) | Rendering: 0.00473 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:20:52) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00306)
+Completed in 0.00538 (185 reqs/sec) | Rendering: 0.00442 (82%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:26:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00383)
+Completed in 0.00582 (171 reqs/sec) | Rendering: 0.00503 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:27:47) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00366)
+Completed in 0.00555 (180 reqs/sec) | Rendering: 0.00482 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:32:27) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00350)
+Completed in 0.00543 (184 reqs/sec) | Rendering: 0.00471 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:40:59) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00390)
+Completed in 0.00613 (163 reqs/sec) | Rendering: 0.00522 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:41:10) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00366)
+Completed in 0.00570 (175 reqs/sec) | Rendering: 0.00492 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:41:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00361)
+Completed in 0.00549 (182 reqs/sec) | Rendering: 0.00477 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:41:41) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00370)
+Completed in 0.00556 (179 reqs/sec) | Rendering: 0.00485 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:41:52) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00393)
+Completed in 0.00628 (159 reqs/sec) | Rendering: 0.00537 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:42:02) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00368)
+Completed in 0.00571 (175 reqs/sec) | Rendering: 0.00493 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:43:03) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00359)
+Completed in 0.00549 (182 reqs/sec) | Rendering: 0.00476 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:44:21) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00364)
+Completed in 0.00551 (181 reqs/sec) | Rendering: 0.00479 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:44:48) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00392)
+Completed in 0.00614 (162 reqs/sec) | Rendering: 0.00524 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:44:57) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00369)
+Completed in 0.00593 (168 reqs/sec) | Rendering: 0.00515 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:45:17) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00361)
+Completed in 0.00567 (176 reqs/sec) | Rendering: 0.00494 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:45:22) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00350)
+Completed in 0.00538 (185 reqs/sec) | Rendering: 0.00466 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:45:27) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00388)
+Completed in 0.00610 (164 reqs/sec) | Rendering: 0.00520 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:45:34) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00377)
+Completed in 0.00602 (165 reqs/sec) | Rendering: 0.00514 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:45:40) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00359)
+Completed in 0.00560 (178 reqs/sec) | Rendering: 0.00487 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:45:51) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00364)
+Completed in 0.00551 (181 reqs/sec) | Rendering: 0.00480 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:46:00) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00399)
+Completed in 0.00627 (159 reqs/sec) | Rendering: 0.00538 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:46:06) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00370)
+Completed in 0.00578 (172 reqs/sec) | Rendering: 0.00498 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:46:14) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00369)
+Completed in 0.00560 (178 reqs/sec) | Rendering: 0.00487 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:46:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00362)
+Completed in 0.00549 (182 reqs/sec) | Rendering: 0.00478 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:46:37) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00400)
+Completed in 0.00641 (156 reqs/sec) | Rendering: 0.00536 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:46:46) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.01483)
+Completed in 0.01710 (58 reqs/sec) | Rendering: 0.01627 (95%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:47:13) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00363)
+Completed in 0.00559 (178 reqs/sec) | Rendering: 0.00481 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:47:28) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00366)
+Completed in 0.00554 (180 reqs/sec) | Rendering: 0.00482 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:47:35) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00405)
+Completed in 0.00633 (157 reqs/sec) | Rendering: 0.00538 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:47:43) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00389)
+Completed in 0.00604 (165 reqs/sec) | Rendering: 0.00517 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:47:53) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00377)
+Completed in 0.00573 (174 reqs/sec) | Rendering: 0.00495 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:47:58) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00272)
+Completed in 0.00473 (211 reqs/sec) | Rendering: 0.00395 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:48:16) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00499)
+Completed in 0.00727 (137 reqs/sec) | Rendering: 0.00635 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:48:24) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00383)
+Completed in 0.00599 (166 reqs/sec) | Rendering: 0.00512 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:48:31) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00388)
+Completed in 0.00584 (171 reqs/sec) | Rendering: 0.00506 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:48:37) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00353)
+Completed in 0.00541 (184 reqs/sec) | Rendering: 0.00469 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:48:42) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00391)
+Completed in 0.00636 (157 reqs/sec) | Rendering: 0.00542 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:49:00) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00374)
+Completed in 0.00587 (170 reqs/sec) | Rendering: 0.00500 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:49:06) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00364)
+Completed in 0.00559 (178 reqs/sec) | Rendering: 0.00481 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:49:13) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00354)
+Completed in 0.00554 (180 reqs/sec) | Rendering: 0.00482 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:49:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.01607)
+Completed in 0.01847 (54 reqs/sec) | Rendering: 0.01754 (94%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:49:27) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00385)
+Completed in 0.00599 (166 reqs/sec) | Rendering: 0.00512 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:49:35) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00379)
+Completed in 0.01744 (57 reqs/sec) | Rendering: 0.00520 (29%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:49:46) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00369)
+Completed in 0.00557 (179 reqs/sec) | Rendering: 0.00485 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:52:56) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+
+
+ActionView::TemplateError (undefined local variable or method `angle' for #<#<Class:0xb692d0cc>:0xb692d0a4>) on line #233 of app/views/irosprints/_iface.rxml:
+230:   xml.g(
+231:      :id => "pointer",
+232:      #:transform=>"translate(-148.4454,-642.1311)"){
+233:      :transform=>"translate(-148.4454,-642.1311) rotate(#{@pointer-angle},315.4454,817.1311)"){
+234:     xml.path(
+235:        :transform=>"matrix(0.837034,0,0,0.865235,65.70331,104.607)",
+236:        :d=>"M 306.61181 843.9483 A 8.7870464 5.4217944 0 1 1  289.03772,843.9483 A 8.7870464 5.4217944 0 1 1  306.61181 843.9483 z",
+
+    #{RAILS_ROOT}/app/views/irosprints/_iface.rxml:233:in `_run_rxml_irosprints__iface'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/vendor/builder/xmlbase.rb:138:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/vendor/builder/xmlbase.rb:138:in `_nested_structures'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/vendor/builder/xmlbase.rb:60:in `method_missing'
+    #{RAILS_ROOT}/app/views/irosprints/_iface.rxml:67:in `_run_rxml_irosprints__iface'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `compile_and_render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:292:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:251:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:266:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/partials.rb:59:in `render_partial'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:29:in `benchmark'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:29:in `benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/partials.rb:58:in `render_partial'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:278:in `render'
+    #{RAILS_ROOT}/app/views/irosprints/index.rhtml:3:in `_run_rhtml_irosprints_index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:316:in `compile_and_render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:292:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_view/base.rb:251:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:726:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:648:in `render_with_no_layout'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/layout.rb:245:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:53:in `render'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:53:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:942:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/filters.rb:368:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:69:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/benchmarking.rb:69:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/rescue.rb:82:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:408:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/base.rb:408:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/filters.rb:377:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/session_management.rb:117:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/dispatcher.rb:38:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:115:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:81:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/webrick_server.rb:67:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/commands/servers/webrick.rb:59
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:147:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.1.6/lib/commands/server.rb:30
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.3.1/lib/active_support/dependencies.rb:147:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.12.5/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:53:07) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00376)
+Completed in 0.00561 (178 reqs/sec) | Rendering: 0.00496 (88%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:53:36) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00353)
+Completed in 0.00539 (185 reqs/sec) | Rendering: 0.00473 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:06) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00309)
+Completed in 0.00534 (187 reqs/sec) | Rendering: 0.00444 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:07) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00296)
+Completed in 0.00513 (195 reqs/sec) | Rendering: 0.00427 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:08) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00282)
+Completed in 0.00473 (211 reqs/sec) | Rendering: 0.00402 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:09) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00277)
+Completed in 0.00461 (217 reqs/sec) | Rendering: 0.00396 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:09) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00266)
+Completed in 0.00452 (220 reqs/sec) | Rendering: 0.00384 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:10) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00301)
+Completed in 0.00515 (194 reqs/sec) | Rendering: 0.00434 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:11) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00296)
+Completed in 0.00498 (200 reqs/sec) | Rendering: 0.00426 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:11) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00283)
+Completed in 0.00469 (213 reqs/sec) | Rendering: 0.00403 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:12) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00266)
+Completed in 0.00470 (212 reqs/sec) | Rendering: 0.00406 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:13) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00306)
+Completed in 0.00540 (185 reqs/sec) | Rendering: 0.00450 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:13) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00281)
+Completed in 0.00480 (208 reqs/sec) | Rendering: 0.00408 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:14) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00275)
+Completed in 0.00460 (217 reqs/sec) | Rendering: 0.00394 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:14) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00268)
+Completed in 0.00452 (221 reqs/sec) | Rendering: 0.00387 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:15) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00302)
+Completed in 0.00524 (190 reqs/sec) | Rendering: 0.00439 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:15) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00283)
+Completed in 0.00491 (203 reqs/sec) | Rendering: 0.00411 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:16) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00281)
+Completed in 0.00470 (212 reqs/sec) | Rendering: 0.00400 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:17) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00271)
+Completed in 0.00456 (219 reqs/sec) | Rendering: 0.00390 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:17) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00309)
+Completed in 0.10373 (9 reqs/sec) | Rendering: 0.00475 (4%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00288)
+Completed in 0.00499 (200 reqs/sec) | Rendering: 0.00418 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00280)
+Completed in 0.00472 (211 reqs/sec) | Rendering: 0.00401 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:18) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00273)
+Completed in 0.00458 (218 reqs/sec) | Rendering: 0.00393 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:20) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00277)
+Completed in 0.00461 (217 reqs/sec) | Rendering: 0.00395 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:22) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00300)
+Completed in 0.00520 (192 reqs/sec) | Rendering: 0.00438 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:23) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00282)
+Completed in 0.00481 (207 reqs/sec) | Rendering: 0.00409 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:24) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00276)
+Completed in 0.00478 (209 reqs/sec) | Rendering: 0.00397 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:25) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00280)
+Completed in 0.00464 (215 reqs/sec) | Rendering: 0.00399 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:26) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00370)
+Completed in 0.00596 (167 reqs/sec) | Rendering: 0.00509 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:27) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00285)
+Completed in 0.00489 (204 reqs/sec) | Rendering: 0.00416 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:28) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00279)
+Completed in 0.00471 (212 reqs/sec) | Rendering: 0.00399 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:29) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00269)
+Completed in 0.00452 (221 reqs/sec) | Rendering: 0.00387 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:30) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00416)
+Completed in 0.00642 (155 reqs/sec) | Rendering: 0.00557 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:31) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00287)
+Completed in 0.00496 (201 reqs/sec) | Rendering: 0.00416 (83%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:32) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00281)
+Completed in 0.00490 (204 reqs/sec) | Rendering: 0.00419 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:32) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00271)
+Completed in 0.00455 (219 reqs/sec) | Rendering: 0.00390 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:33) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.08595)
+Completed in 0.09965 (10 reqs/sec) | Rendering: 0.08750 (87%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:34) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00299)
+Completed in 0.00511 (195 reqs/sec) | Rendering: 0.00430 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:35) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00282)
+Completed in 0.00496 (201 reqs/sec) | Rendering: 0.00425 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:36) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00274)
+Completed in 0.00475 (210 reqs/sec) | Rendering: 0.00394 (82%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:37) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00273)
+Completed in 0.00456 (219 reqs/sec) | Rendering: 0.00392 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:37) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00300)
+Completed in 0.00517 (193 reqs/sec) | Rendering: 0.00436 (84%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:38) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00290)
+Completed in 0.00491 (203 reqs/sec) | Rendering: 0.00418 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:39) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00278)
+Completed in 0.00463 (215 reqs/sec) | Rendering: 0.00398 (85%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 01:56:40) [GET]
+  Session ID: a50afce82da442c1009d581f859d2558
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00291)
+Completed in 0.00476 (210 reqs/sec) | Rendering: 0.00410 (86%) | 200 OK [http://localhost/irosprints]
+IrosprintsController: missing default helper path irosprints_helper
+
+
+Processing IrosprintsController#index (for 127.0.0.1 at 2007-01-28 02:06:06) [GET]
+  Session ID: fd9143716bce466efc4ec862f1acb7bd
+  Parameters: {"action"=>"index", "controller"=>"irosprints"}
+Rendering  within layouts/application
+Rendering irosprints/index
+Rendered irosprints/_iface (0.00300)
+Completed in 0.00535 (186 reqs/sec) | Rendering: 0.00445 (83%) | 200 OK [http://localhost/irosprints]
