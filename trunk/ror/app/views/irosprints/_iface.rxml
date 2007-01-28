@@ -6,7 +6,9 @@
   stroke-dasharray: none;
   stroke-miterlimit: 4;
 }
+
 text{ font-family:Ubuntu-Title; }
+
 #radials {
   fill: none;
   fill-rule: evenodd;
@@ -54,6 +56,7 @@ text{ font-family:Ubuntu-Title; }
   stroke-dasharray: none;
   stroke-opacity: 1;
 }
+
 #border_decorations {
   fill: none;
   fill-opacity: 1;
@@ -102,7 +105,7 @@ xml.svg(:height => "373", :width => "500",
      :id=>"track_surface")
   xml.rect(
      :rx=>"114.26359",
-     :style=>"fill:none;stroke:#d3040a;stroke-width:19.05940628;",
+     :style=>"fill:none;stroke:#d3040a;stroke-width:19.05940628;stroke-dasharray:#{@red_dasharray}",
      :ry=>"124.54852",
      :y=>"25.751932",
      :x=>"30.173487",
@@ -111,7 +114,7 @@ xml.svg(:height => "373", :width => "500",
      :id=>"red_track")
   xml.rect(
      :rx=>"105.68902",
-     :style=>"fill:none;stroke:#abbcf4;stroke-width:17.33102798;",
+     :style=>"fill:none;stroke:#abbcf4;stroke-width:17.33102798;stroke-dasharray:#{@lue_dasharray};",
      :ry=>"111.33588",
      :y=>"43.110508",
      :x=>"47.228378",
@@ -134,7 +137,7 @@ xml.svg(:height => "373", :width => "500",
        :y=>"256.30237",
        :x=>"280.81082",
        :style=>"font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#e3dbdb;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;")
-     xml.text("2",
+     xml.text(@laps,
        :y=>"284.38345",
        :x=>"281.9617",
        :style=>"font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#f2f2f2")
