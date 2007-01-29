@@ -6,7 +6,8 @@ class IrosprintsController < ApplicationController
     @dial_90_degrees = 8
     @dial_180_degrees = 24
     @dial_270_degrees = 40
-    @pointer_angle = speed_to_angle(rand(48))
+    @blue_pointer_angle = speed_to_angle(rand(48))
+    @red_pointer_angle = speed_to_angle(rand(48))
     @laps = 3
     @red_dasharray = quadrantificate(765,1315,rand(1315))
     @blue_dasharray = quadrantificate(700,1200,rand(1200))
