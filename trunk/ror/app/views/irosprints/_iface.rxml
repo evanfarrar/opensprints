@@ -114,7 +114,7 @@ xml.svg(:height => "373", :width => "500",
      :id=>"red_track")
   xml.rect(
      :rx=>"105.68902",
-     :style=>"fill:none;stroke:#abbcf4;stroke-width:17.33102798;stroke-dasharray:#{@lue_dasharray};",
+     :style=>"fill:none;stroke:#abbcf4;stroke-width:17.33102798;stroke-dasharray:#{@blue_dasharray};",
      :ry=>"111.33588",
      :y=>"43.110508",
      :x=>"47.228378",
@@ -142,6 +142,7 @@ xml.svg(:height => "373", :width => "500",
        :x=>"281.9617",
        :style=>"font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#f2f2f2")
     }
+
     xml.g(:id=>"dial"){
       xml.rect(
          :width=>"113.65182",
@@ -199,32 +200,32 @@ xml.svg(:height => "373", :width => "500",
   xml.g(
      :id=>"numbers",
      :transform=>"translate(-1.522918,0.218864)"){
-    xml.text("25",
+    xml.text(@dial_270_degrees,
        :transform=>"scale(0.910987,1.09771)",
        :x=>"214.22849",
        :y=>"166.71974",
        :class=>'number_shadow')
-    xml.text("25",
+    xml.text(@dial_270_degrees,
        :x=>"212.95886",
        :y=>"166.53778",
        :transform=>"scale(0.915261,1.092584)",
        :class=>'number')
-    xml.text("10",
+    xml.text(@dial_90_degrees,
        :x=>"135.345",
        :y=>"168.04782",
        :transform=>"scale(0.910987,1.09771)",
        :class=>'number_shadow')
-    xml.text("10",
+    xml.text(@dial_90_degrees,
        :x=>"134.44376",
        :y=>"167.87209",
        :transform=>"scale(0.915261,1.092584)",
        :class=>'number')
-    xml.text("20",
+    xml.text(@dial_180_degrees,
        :x=>"176.88861",
        :y=>"135.13841",
        :transform=>"scale(0.910987,1.09771)",
        :class=>'number_shadow')
-    xml.text("20",
+    xml.text(@dial_180_degrees,
        :x=>"175.79337",
        :y=>"134.80827",
        :transform=>"scale(0.915261,1.092584)",
