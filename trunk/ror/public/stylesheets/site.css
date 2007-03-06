@@ -2,16 +2,10 @@ body {
   background-color: #FFF;
   margin: 0 auto;
   text-align: center;
-  min-height: 100%;
 }
 #wrap {
-  padding-top: 4em;
-  background-image: url(/images/stripes.gif);
-  min-height: 100%;
 }
 #content {
-  padding-bottom: 15em;
   background-color: #FFF;
-  width: 800px;
   margin: 0 auto;
 }
