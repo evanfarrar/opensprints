@@ -31,7 +31,7 @@ private
   end
 
   def read_log
-    @log = File.read('sample.dat'){|f| f.readlines}
+    @log = File.read('log/sensor.log'){|f| f.readlines}
   end
 
   def read_red
