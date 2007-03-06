@@ -1,3 +1,4 @@
+require 'units/standard'
 class IrosprintsController < ApplicationController
   RED_TRACK_LENGTH = 1315
   BLUE_TRACK_LENGTH = 1200
@@ -8,16 +9,13 @@ class IrosprintsController < ApplicationController
     @dial_270_degrees = 40
     read_log
     read_red
-    @blue_pointer_angle = speed_to_angle(rand(48))
+    read_blue
     @laps = 3
-    @blue_dasharray = quadrantificate(700,1200,rand(1200))
-    @blue_dasharray = @blue_dasharray.join(',')
-    @red_dasharray = @red_dasharray.join(',')
   end
 
 private
+# this method is specific to the track interface...extract?
   def quadrantificate(offset=700, total=1200, distance=0)
-# over 700 
     if distance > offset
       [0,0,offset,((total-offset)-(distance-offset))]
     else
@@ -34,16 +32,29 @@ private
     @log = File.read('log/sensor.log'){|f| f.readlines}
   end
 
+  def read_blue
+    a = @log.select{|l|l=~/two-tick/}
+    distance = BLUE_TRACK_LENGTH*((a.length)*(700.cm.to_km))
+    @blue_dasharray = quadrantificate(765, BLUE_TRACK_LENGTH, distance)
+    @blue_dasharray = @blue_dasharray.join(',')
+    last = YAML::load(a[-2])['rider-two-tick']
+    this = YAML::load(a[-1])['rider-two-tick']
+    spd = rotation_elapsed_to_kmh(this-last)
+    @blue_pointer_angle = speed_to_angle(spd)
+  end
+
   def read_red
     a = @log.select{|l|l=~/one-tick/}
-    distance = (a.length*0.7)
-    @red_dasharray =quadrantificate(765, RED_TRACK_LENGTH, distance)
+    distance = RED_TRACK_LENGTH*((a.length)*(700.cm.to_km))
+    @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, distance)
+    @red_dasharray = @red_dasharray.join(',')
     last = YAML::load(a[-2])['rider-one-tick']
     this = YAML::load(a[-1])['rider-one-tick']
-    @red_pointer_angle = speed_to_angle(rotation_elapsed_to_kmh(this-last))
+    spd = rotation_elapsed_to_kmh(this-last)
+    @red_pointer_angle = speed_to_angle(spd)
   end
 
   def rotation_elapsed_to_kmh(elapsed)
-    ((700.0/(elapsed))/(1000.0*100.0))*3600.0
+    ((700.cm.to_km/(elapsed))/(1.km))*1.hour.to_seconds
   end
 end
