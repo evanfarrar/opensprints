@@ -1,9 +1,12 @@
 require 'units/standard'
+# Generally: red == one
+#            blue == two
 class IrosprintsController < ApplicationController
   RED_TRACK_LENGTH = 1315
   BLUE_TRACK_LENGTH = 1200
-# 1km = 100,000 centimeters
   def index
+    script
+    style
     @dial_90_degrees = 8
     @dial_180_degrees = 24
     @dial_270_degrees = 40
@@ -11,6 +14,29 @@ class IrosprintsController < ApplicationController
     read_red
     read_blue
     @laps = 3
+  end
+
+  def update
+    read_log
+    read_red
+    read_blue
+    if (@red_distance>1.0||@blue_distance>1.0)
+      winner = if (@red_distance>@blue_distance)
+        "Red Wins!"
+      else
+        "Blue Wins!"
+      end
+      render :update do |page|
+        page.replace_html('winner',"<h1>#{winner}</h1>")
+      end
+    else
+      render :update do |page|
+        page << "$('blue_pointer').setAttribute('transform','translate(-148.4454,-642.1311) rotate(#{@blue_pointer_angle},315.4454,817.1311)');"
+        page << "$('red_pointer').setAttribute('transform','translate(-148.4454,-642.1311) rotate(#{@red_pointer_angle},475.4454,817.1311)');"
+        page << "$('blue_track').setAttribute('style','fill:none;stroke:#abbcf4;stroke-width:17.33102798;stroke-dasharray:#{@blue_dasharray};');"
+        page << "$('red_track').setAttribute('style','fill:none;stroke:#d3040a;stroke-width:19.05940628;stroke-dasharray:#{@red_dasharray};');"
+      end
+    end
   end
 
 private
@@ -34,8 +60,9 @@ private
 
   def read_blue
     a = @log.select{|l|l=~/two-tick/}
-    distance = BLUE_TRACK_LENGTH*((a.length)*(700.cm.to_km))
-    @blue_dasharray = quadrantificate(765, BLUE_TRACK_LENGTH, distance)
+    @blue_distance = (a.length)*(2097.mm.to_km)
+    track = BLUE_TRACK_LENGTH*@blue_distance
+    @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track)
     @blue_dasharray = @blue_dasharray.join(',')
     last = YAML::load(a[-2])['rider-two-tick']
     this = YAML::load(a[-1])['rider-two-tick']
@@ -45,8 +72,9 @@ private
 
   def read_red
     a = @log.select{|l|l=~/one-tick/}
-    distance = RED_TRACK_LENGTH*((a.length)*(700.cm.to_km))
-    @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, distance)
+    @red_distance = (a.length)*(2097.mm.to_km)
+    track = RED_TRACK_LENGTH*@red_distance
+    @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track)
     @red_dasharray = @red_dasharray.join(',')
     last = YAML::load(a[-2])['rider-one-tick']
     this = YAML::load(a[-1])['rider-one-tick']
@@ -55,6 +83,20 @@ private
   end
 
   def rotation_elapsed_to_kmh(elapsed)
-    ((700.cm.to_km/(elapsed))/(1.km))*1.hour.to_seconds
+    ((2097.mm.to_km/(elapsed))/(1.km))*1.hour.to_seconds
+  end
+
+#Mozilla/SVG does not handle multi-dom css and javascript gracefully
+#So they must be inlined. I still load them here to fake seperation.
+  def script
+    File.open('public/javascripts/svg.js') do |f|
+      @scripty = f.readlines.join
+    end
+  end
+
+  def style
+    File.open('public/stylesheets/svg.css') do |f|
+      @stylishness = f.readlines.join
+    end
   end
 end
