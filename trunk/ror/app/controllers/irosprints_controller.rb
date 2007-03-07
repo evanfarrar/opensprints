@@ -64,9 +64,12 @@ private
     track = BLUE_TRACK_LENGTH*@blue_distance
     @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track)
     @blue_dasharray = @blue_dasharray.join(',')
-    last = YAML::load(a[-2])['rider-two-tick']
-    this = YAML::load(a[-1])['rider-two-tick']
-    spd = rotation_elapsed_to_kmh(this-last)
+    spd = 0
+    if a.length>1
+      last = YAML::load(a[-2]||'')['rider-two-tick']
+      this = YAML::load(a[-1]||'')['rider-two-tick']
+      spd = rotation_elapsed_to_kmh(this-last)
+    end
     @blue_pointer_angle = speed_to_angle(spd)
   end
 
@@ -76,9 +79,12 @@ private
     track = RED_TRACK_LENGTH*@red_distance
     @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track)
     @red_dasharray = @red_dasharray.join(',')
-    last = YAML::load(a[-2])['rider-one-tick']
-    this = YAML::load(a[-1])['rider-one-tick']
-    spd = rotation_elapsed_to_kmh(this-last)
+    spd = 0
+    if a.length>1
+      last = YAML::load(a[-2]||'')['rider-one-tick']
+      this = YAML::load(a[-1]||'')['rider-one-tick']
+      spd = rotation_elapsed_to_kmh(this-last)
+    end
     @red_pointer_angle = speed_to_angle(spd)
   end
 
