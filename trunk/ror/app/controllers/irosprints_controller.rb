@@ -4,6 +4,8 @@ require 'units/standard'
 class IrosprintsController < ApplicationController
   RED_TRACK_LENGTH = 1315
   BLUE_TRACK_LENGTH = 1200
+  RED_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
+  BLUE_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
   def index
     cleanup
     style
@@ -74,7 +76,7 @@ private
 
   def read_blue
     a = @log.select{|l|l=~/two-tick/}
-    @blue_distance = (a.length)*(2097.mm.to_km)
+    @blue_distance = (a.length)*(BLUE_WHEEL_CIRCUMFERENCE)
     track = BLUE_TRACK_LENGTH*@blue_distance
     @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track)
     @blue_dasharray = @blue_dasharray.join(',')
@@ -89,7 +91,7 @@ private
 
   def read_red
     a = @log.select{|l|l=~/one-tick/}
-    @red_distance = (a.length)*(2097.mm.to_km)
+    @red_distance = (a.length)*(RED_WHEEL_CIRCUMFERENCE)
     track = RED_TRACK_LENGTH*@red_distance
     @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track)
     @red_dasharray = @red_dasharray.join(',')
