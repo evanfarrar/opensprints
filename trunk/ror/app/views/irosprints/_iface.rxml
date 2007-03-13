@@ -259,6 +259,5 @@ xml.svg(:height => "550", :width => "737", :viewBox => "0 0 499 378",
        :rx=>"12",
        :ry=>"12")
   }
-  xml.script(:type => 'text/javascript'){ xml.cdata!(@scripty) }
 }
 

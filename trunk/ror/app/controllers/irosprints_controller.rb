@@ -5,7 +5,7 @@ class IrosprintsController < ApplicationController
   RED_TRACK_LENGTH = 1315
   BLUE_TRACK_LENGTH = 1200
   def index
-    script
+    cleanup
     style
     @dial_90_degrees = 8
     @dial_180_degrees = 24
@@ -14,6 +14,16 @@ class IrosprintsController < ApplicationController
     read_red
     read_blue
     @laps = 3
+  end
+  
+  def go
+    system('ruby lib/sensor.rb &')
+    render :text => ''
+  end
+
+  def stop
+    cleanup
+    render :text => ''
   end
 
   def update
@@ -37,6 +47,10 @@ class IrosprintsController < ApplicationController
         page << "$('red_track').setAttribute('style','fill:none;stroke:#d3040a;stroke-width:19.05940628;stroke-dasharray:#{@red_dasharray};');"
       end
     end
+  end
+
+  def reset
+    redirect_to :index
   end
 
 private
@@ -92,17 +106,14 @@ private
     ((2097.mm.to_km/(elapsed))/(1.km))*1.hour.to_seconds
   end
 
-#Mozilla/SVG does not handle multi-dom css and javascript gracefully
-#So they must be inlined. I still load them here to fake seperation.
-  def script
-    File.open('public/javascripts/svg.js') do |f|
-      @scripty = f.readlines.join
-    end
-  end
-
   def style
     File.open('public/stylesheets/svg.css') do |f|
       @stylishness = f.readlines.join
     end
+  end
+
+  def cleanup
+    system("ls tmp/pids/|grep sensor|cut -d. -f2 | xargs kill -9")
+    system("echo ''>log/sensor.log")
   end
 end
