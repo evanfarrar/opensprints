@@ -1,6 +1,4 @@
 require 'units/standard'
-# Generally: red == one
-#            blue == two
 class IrosprintsController < ApplicationController
   RED_TRACK_LENGTH = 1315
   BLUE_TRACK_LENGTH = 1200
@@ -12,10 +10,16 @@ class IrosprintsController < ApplicationController
     @dial_90_degrees = 8
     @dial_180_degrees = 24
     @dial_270_degrees = 40
+    @red = Racer.new(:wheel_circumference => 2097.mm.to_km,
+                     :track_length => 1315, :yaml_name => 'rider-one-tick')
+    @blue = Racer.new(:wheel_circumference => 2097.mm.to_km,
+                      :track_length => 1315, :yaml_name => 'rider-two-tick')
     read_log
     read_red
     read_blue
-    @laps = 3
+    session[:red] = @red
+    session[:blue] = @blue
+    @laps = 1
   end
   
   def go
@@ -29,11 +33,13 @@ class IrosprintsController < ApplicationController
   end
 
   def update
+    @red = session[:red]
+    @blue = session[:blue]
     read_log
     read_red
     read_blue
-    if (@red_distance>1.0||@blue_distance>1.0)
-      winner = if (@red_distance>@blue_distance)
+    if (@blue.distance>1.0||@red.distance>1.0)
+      winner = if (@blue.distance>@red.distance)
         "Red Wins!"
       else
         "Blue Wins!"
@@ -75,37 +81,17 @@ private
   end
 
   def read_blue
-    a = @log.select{|l|l=~/two-tick/}
-    @blue_distance = (a.length)*(BLUE_WHEEL_CIRCUMFERENCE)
-    track = BLUE_TRACK_LENGTH*@blue_distance
-    @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track)
-    @blue_dasharray = @blue_dasharray.join(',')
-    spd = 0
-    if a.length>1
-      last = YAML::load(a[-2]||'')['rider-two-tick']
-      this = YAML::load(a[-1]||'')['rider-two-tick']
-      spd = rotation_elapsed_to_kmh(this-last)
-    end
-    @blue_pointer_angle = speed_to_angle(spd)
+    @blue.set(@log)
+    track = BLUE_TRACK_LENGTH*@blue.distance
+    @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track).join(',')
+    @blue_pointer_angle = speed_to_angle(@blue.speed)
   end
 
   def read_red
-    a = @log.select{|l|l=~/one-tick/}
-    @red_distance = (a.length)*(RED_WHEEL_CIRCUMFERENCE)
-    track = RED_TRACK_LENGTH*@red_distance
-    @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track)
-    @red_dasharray = @red_dasharray.join(',')
-    spd = 0
-    if a.length>1
-      last = YAML::load(a[-2]||'')['rider-one-tick']
-      this = YAML::load(a[-1]||'')['rider-one-tick']
-      spd = rotation_elapsed_to_kmh(this-last)
-    end
-    @red_pointer_angle = speed_to_angle(spd)
-  end
-
-  def rotation_elapsed_to_kmh(elapsed)
-    ((2097.mm.to_km/(elapsed))/(1.km))*1.hour.to_seconds
+    @red.set(@log)
+    track = RED_TRACK_LENGTH*@red.distance
+    @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
+    @red_pointer_angle = speed_to_angle(@red.speed)
   end
 
   def style
