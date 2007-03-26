@@ -1,4 +1,5 @@
 require 'units/standard'
+
 class IrosprintsController < ApplicationController
   RED_TRACK_LENGTH = 1315
   BLUE_TRACK_LENGTH = 1200
