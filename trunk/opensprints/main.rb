@@ -20,8 +20,6 @@ def index
                    :track_length => 1315, :yaml_name => 'rider-one-tick')
   @blue = Racer.new(:wheel_circumference => 2097.mm.to_km,
                     :track_length => 1315, :yaml_name => 'rider-two-tick')
-  read_red
-  read_blue
   @laps = 1
 end
 
@@ -58,7 +56,6 @@ def style
   end
 end
 
-@sensor = SprintSensor.new
 index
 xml = Builder::XmlMarkup.new(:target => xml_data)
 svg = ''
@@ -78,13 +75,31 @@ doc = doc % xml_data
 box = Gtk::VBox.new(false, 0)
 moz = Gtk::MozEmbed.new
 moz.chrome_mask = Gtk::MozEmbed::ALLCHROME
+countdown = 5
 Gtk.timeout_add(1000) do
-  read_red
-  read_blue
-  moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle],"http://foo","application/xml")
+  case countdown
+  when (1..5)
+    moz.render_data("<h1>#{countdown}....</h1>","http://foo","text/html")
+    countdown-=1
+    true
+  when 0
+    @sensor = SprintSensor.new
+    Gtk.timeout_add(500) do
+      read_red
+      read_blue
+      if @blue.distance>1.0 or @red.distance>1.0
+        winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
+        moz.render_data("<h1>#{winner} WINS!</h1>","http://foo","text/html")
+        false
+      else
+        moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle],"http://foo","application/xml")
+        true
+      end
+    end
+    false    
+  end
 end
 @w.signal_connect("destroy") do
-#  cleanup
   Gtk.main_quit
 end
 doc.gsub!(/%([^s])/,'%%\1')
@@ -98,5 +113,5 @@ box.pack_start(moz)
 box.pack_start(button1,false,false)
 @w << box
 @w.show_all
-moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle],"http://foo","application/xml")
+#moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle],"http://foo","application/xml")
 Gtk.main

@@ -17,7 +17,8 @@ class Racer
     @ticks += new_ticks
     ticks_length = @ticks.length
     if ticks_length>1
-      @distance = (@ticks.length)*(@wheel_circumference)
+                                  #this are just some magic values...
+      @distance = ((@ticks.length)*(@wheel_circumference)*5)*2.5
       last = @ticks[-2]
       this = @ticks[-1]
       @speed = rotation_elapsed_to_kmh(this-last)
@@ -25,17 +26,6 @@ class Racer
 puts @ticks[-2..-1]
   end
 
-  def set(yaml)
-    re = Regexp.new(@yaml_name)
-    @ticks = yaml.select{|l|l =~ re}
-    ticks_length = @ticks.length
-    if ticks_length>1
-      @distance = (ticks_length)*(@wheel_circumference)
-      last = YAML::load(@ticks[-2]||'')[@yaml_name]
-      this = YAML::load(@ticks[-1]||'')[@yaml_name]
-      @speed = rotation_elapsed_to_kmh(this-last)
-    end
-  end
 private
   def rotation_elapsed_to_kmh(elapsed)
     ((@wheel_circumference/(elapsed))/(1.km))*1.hour.to_seconds
