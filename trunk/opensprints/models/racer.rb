@@ -13,14 +13,13 @@ class Racer
     @ticks = []
   end
 
-  def update(yaml)
-    re = Regexp.new(@yaml_name)
-    @ticks += yaml.select{|l|l =~ re}
+  def update(new_ticks)
+    @ticks += new_ticks
     ticks_length = @ticks.length
     if ticks_length>1
       @distance = (@ticks.length)*(@wheel_circumference)
-      last = YAML::load(@ticks[-2]||'')[@yaml_name]
-      this = YAML::load(@ticks[-1]||'')[@yaml_name]
+      last = @ticks[-2]
+      this = @ticks[-1]
       @speed = rotation_elapsed_to_kmh(this-last)
     end
 puts @ticks[-2..-1]
