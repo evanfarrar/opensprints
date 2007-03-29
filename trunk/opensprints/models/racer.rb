@@ -15,7 +15,7 @@ class Racer
 
   def update(yaml)
     re = Regexp.new(@yaml_name)
-    @ticks += yaml.select{|l|l =~ re} unless (yaml.length == 0)
+    @ticks += yaml.select{|l|l =~ re}
     ticks_length = @ticks.length
     if ticks_length>1
       @distance = (@ticks.length)*(@wheel_circumference)

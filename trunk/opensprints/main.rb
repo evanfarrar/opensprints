@@ -16,6 +16,7 @@ def cleanup
 end
 
 def index
+  #cleanup
   style
   @dial_90_degrees = 8
   @dial_180_degrees = 24
@@ -30,7 +31,7 @@ def index
   @laps = 1
 end
 
-def quadrantificate(offset=700, total=1200, distance=0)
+def quadrantificate(offset, total, distance=0)
   if distance > offset
     [0,0,offset,((total-offset)-(distance-offset))]
   else
@@ -57,7 +58,7 @@ def read_blue
 end
 
 def read_red
-  @red.update(@log)
+  @red.update(@log_tmp)
   track = RED_TRACK_LENGTH*@red.distance
   @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
   @red_pointer_angle = speed_to_angle(@red.speed)
@@ -76,24 +77,11 @@ File.open('views/svg.rb') do |f|
   svg = f.readlines.join
 end
 eval svg
-doc=<<END
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-</head>
-<body>
-  <div id='wrap'>
-    <div id='content'>
-      #{xml_data}
-    </div>
-  </div>
-  <script type='text/javascript'>
-    %s
-  </script>
-</body>
-</html>
-END
+doc = ''
+File.open('views/wrap.html') do |f|
+  doc = f.readlines.join
+end 
+doc = doc % xml_data
 
 @w = Gtk::Window.new
 @w.title = ""
@@ -101,8 +89,14 @@ END
 box = Gtk::VBox.new(false, 0)
 moz = Gtk::MozEmbed.new
 moz.chrome_mask = Gtk::MozEmbed::ALLCHROME
-
+#Gdk::Input.add(File.open('log/sensor.log'),Gdk::Input::WRITE) do
+#  read_log
+#  read_red
+#  read_blue
+#  moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle],"http://foo","application/xml")
+#end
 @w.signal_connect("destroy") do
+#  cleanup
   Gtk.main_quit
 end
 doc.gsub!(/%([^s])/,'%%\1')
@@ -111,13 +105,12 @@ button1.signal_connect("clicked") do
   read_log
   read_red
   read_blue
-  moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle, ''],"http://foo","application/xml")
+  moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle],"http://foo","application/xml")
 end
 box.pack_start(moz)
 box.pack_start(button1,false,false)
 @w << box
 @w.show_all
-moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle, ''],"http://foo","application/xml")
-cleanup
-system('ruby sensor.rb &')
+moz.render_data(doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle, @red_pointer_angle],"http://foo","application/xml")
+system('ruby sensor.rb > log/sensor.log &')
 Gtk.main
