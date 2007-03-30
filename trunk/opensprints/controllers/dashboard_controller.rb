@@ -1,6 +1,4 @@
 class DashboardController
-  RED_TRACK_LENGTH = 1315
-  BLUE_TRACK_LENGTH = 1200
   def initialize
     style
     @dial_90_degrees = 8
