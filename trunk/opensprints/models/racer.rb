@@ -23,7 +23,6 @@ class Racer
       this = @ticks[-1]
       @speed = rotation_elapsed_to_kmh(this-last)
     end
-puts @ticks[-2..-1]
   end
 
 private
