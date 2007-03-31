@@ -1,4 +1,4 @@
-require 'socket'6
+require 'socket'
 require 'serialport.so'
 s = TCPSocket.new( "localhost", 5000 )
 sp = SerialPort.new('/dev/ttyUSB0', 115200, 8, 1, SerialPort::NONE)

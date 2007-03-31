@@ -25,6 +25,7 @@ class DashboardController
     @blue = Racer.new(:wheel_circumference => 2097.mm.to_km,
                     :track_length => 1315, :yaml_name => 'rider-two-tick')
     @laps = 1
+    @continue = true
     @doc = build_template
     @svg = RSVG::Handle.new
   end
@@ -40,18 +41,20 @@ class DashboardController
     unadjusted-180
   end
   def read_blue
-    blue_log = @log.grep('rider-two-tick:')
+    blue_log = @partial_log.grep(/rider-two-tick:/)
     if blue_log
-      @blue.update(blue_log.gsub(/rider-two-tick: /,''))
+      blue_log.map!{ |a| a.gsub(/rider-two-tick: /,'').to_f }
+      @blue.update(blue_log)
       track = BLUE_TRACK_LENGTH*@blue.distance
-      @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, rand(1315)).join(',')
-      @blue_pointer_angle = speed_to_angle(rand(54))
+      @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track).join(',')
+      @blue_pointer_angle = speed_to_angle(@blue.speed)
     end
   end
   def read_red
-    red_log = @log.grep('rider-one-tick:')
+    red_log = @partial_log.grep(/rider-one-tick:/)
     if red_log
-      @red.update(red_log.gsub(/rider-one-tick: /,''))
+      red_log.map!{ |a| a.gsub(/rider-one-tick: /,'').to_f }
+      @red.update(red_log)
       track = RED_TRACK_LENGTH*@red.distance
       @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
       @red_pointer_angle = speed_to_angle(@red.speed)
@@ -84,13 +87,11 @@ puts @queue.inspect
   end
 
   def refresh
-puts "bar"
-return nil
-    @log = nil
+    @partial_log = []
     @queue.length.times do
-      @log << @queue.pop
+      @partial_log << @queue.pop
     end
-    if !@log==nil
+    if @partial_log.any?
       read_red
       read_blue
       if @blue.distance>1.0 or @red.distance>1.0
