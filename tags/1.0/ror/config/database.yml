@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  database: iro_development
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: iro_test
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: iro_production
+  host: localhost
