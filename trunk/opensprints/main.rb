@@ -20,10 +20,10 @@ box = Gtk::VBox.new(false, 0)
 rpb = RSVG::Handle.new_from_data('<svg></svg>')
 gi = Gtk::Image.new(rpb.pixbuf)
 dashboard_controller = DashboardController.new
-countdown = 2
+countdown = 10
 Gtk.timeout_add(1000) do
   case countdown
-  when (1..6)
+  when (1..10)
     gi.pixbuf=dashboard_controller.count(countdown)
     countdown-=1
     true

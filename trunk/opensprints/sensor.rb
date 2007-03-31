@@ -12,11 +12,11 @@ while true do
   t_now = Time.now.to_f
 #  cts is rider one aka red
 #  dsr is rider two aka blue
-  if (cts==1) && (old_cts == 0) && ((t_now - old_cts_time) > 0.1)
+  if (cts==1) && (old_cts == 0) && ((t_now - old_cts_time) > 0.05)
     old_cts_time = t_now
     s.puts "rider-one-tick: #{t_now-t_start}"
   end
-  if (dsr==1) && (old_dsr == 0) && ((t_now - old_dsr_time) > 0.1)
+  if (dsr==1) && (old_dsr == 0) && ((t_now - old_dsr_time) > 0.05)
     old_dsr_time = t_now
     s.puts "rider-two-tick: #{t_now-t_start}"
   end
