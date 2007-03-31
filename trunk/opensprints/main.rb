@@ -29,7 +29,7 @@ Gtk.timeout_add(1000) do
     true
   when 0
     dashboard_controller.begin_logging
-    Gtk.timeout_add(500) do
+    Gtk.timeout_add(100) do
       gi.pixbuf=dashboard_controller.refresh
       dashboard_controller.continue?
     end

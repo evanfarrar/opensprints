@@ -26,7 +26,7 @@ class Racer
   end
 
   def tix
-    @ticks
+    @ticks.length
   end
 
 private
