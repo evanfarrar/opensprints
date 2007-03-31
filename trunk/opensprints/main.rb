@@ -8,6 +8,7 @@ require 'controllers/dashboard_controller'
 require 'rsvg2'
 require 'gtk2'
 
+RACE_DISTANCE = 0.4.km
 RED_TRACK_LENGTH = 1315
 BLUE_TRACK_LENGTH = 1200
 RED_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
@@ -20,7 +21,7 @@ box = Gtk::VBox.new(false, 0)
 rpb = RSVG::Handle.new_from_data('<svg></svg>')
 gi = Gtk::Image.new(rpb.pixbuf)
 dashboard_controller = DashboardController.new
-countdown = 10
+countdown = 5
 Gtk.timeout_add(1000) do
   case countdown
   when (1..10)

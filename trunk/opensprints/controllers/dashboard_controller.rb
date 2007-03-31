@@ -20,9 +20,9 @@ class DashboardController
     @dial_90_degrees = 8
     @dial_180_degrees = 24
     @dial_270_degrees = 40
-    @red = Racer.new(:wheel_circumference => 2097.mm.to_km,
+    @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
                      :track_length => 1315, :yaml_name => 'rider-one-tick')
-    @blue = Racer.new(:wheel_circumference => 2097.mm.to_km,
+    @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
                     :track_length => 1315, :yaml_name => 'rider-two-tick')
     @laps = 1
     @continue = true
@@ -30,6 +30,7 @@ class DashboardController
     @svg = RSVG::Handle.new
   end
   def quadrantificate(offset, total, distance=0)
+    distance*=1/RACE_DISTANCE
     if distance > offset
       [0,0,offset,((total-offset)-(distance-offset))]
     else
@@ -83,7 +84,7 @@ class DashboardController
     @t = Thread.new do
         s = Server.new(@queue)
     end
-puts @queue.inspect
+    system('ruby sensor.rb &') 
   end
 
   def refresh
@@ -94,7 +95,8 @@ puts @queue.inspect
     if @partial_log.any?
       read_red
       read_blue
-      if @blue.distance>1.0 or @red.distance>1.0
+      puts "#{@blue.distance} #{RACE_DISTANCE}"
+      if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
         winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
         svg = RSVG::Handle.new_from_data(@doc % ["#{winner.split('')[0]} R:#{@red.tix},B:#{@blue.tix}",@red_dasharray,
                 @blue_dasharray, @blue_pointer_angle, @red_pointer_angle])
@@ -106,7 +108,7 @@ puts @queue.inspect
       end
       @pix = svg ? svg.pixbuf : nil
     end
-    @pix#||RSVG::Handle.new_from_data(@doc % ["...",0,0,4,5,6])
+    @pix||RSVG::Handle.new_from_data(@doc % ["0...",0,0,4,5,6]).pixbuf
   end
   def continue?
     @continue

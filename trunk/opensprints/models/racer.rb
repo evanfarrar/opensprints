@@ -16,9 +16,9 @@ class Racer
   def update(new_ticks)
     @ticks += new_ticks
     ticks_length = @ticks.length
+    @distance = ((ticks_length)*(@wheel_circumference))#*5)*2.5
     if ticks_length>1
                                   #this are just some magic values...
-      @distance = ((@ticks.length)*(@wheel_circumference)*5)*2.5
       last = @ticks[-2]
       this = @ticks[-1]
       @speed = rotation_elapsed_to_kmh(this-last)
