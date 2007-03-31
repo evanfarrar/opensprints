@@ -68,30 +68,30 @@ text{ font-family:Ubuntu-Title; }
 .red #back {
   fill: #d3040a;
   stroke: black;
-  stroke-width: 2.58699989;
+/*  stroke-width: 2.58699989; */
 }
 .red #outer {
   fill: #d3040a;
   stroke: black;
-  stroke-width: 0.53463411;
+/*  stroke-width: 0.53463411; */
 }
 .red #inner {
   fill: #abbcf4;
   stroke: #282c37;
-  stroke-width: 0.62400103;
+/*  stroke-width: 0.62400103; */
 }
 .blue #back {
   fill: #abbcf4;
   stroke: black;
-  stroke-width: 2.58699989;
+/*  stroke-width: 2.58699989; */
 }
 .blue #outer {
   fill: #acbbf4;
   stroke: black;
-  stroke-width: 0.53463411;
+ /* stroke-width: 0.53463411; */
 }
 .blue #inner {
   fill: #d3040a;
   stroke: #282c37;
-  stroke-width: 0.62400103;
+/*  stroke-width: 0.62400103; */
 }

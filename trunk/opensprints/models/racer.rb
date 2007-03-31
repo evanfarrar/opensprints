@@ -16,6 +16,7 @@ class Racer
   def update(new_ticks)
     @ticks += new_ticks
     ticks_length = @ticks.length
+puts ticks_length
     if ticks_length>1
                                   #this are just some magic values...
       @distance = ((@ticks.length)*(@wheel_circumference)*5)*2.5

@@ -1,3 +1,19 @@
+require 'gserver'
+class Server < GServer
+  def initialize(queue)
+    super(5000)
+    @queue = queue
+    self.start
+  end
+  def serve( io )
+    loop do
+      puts line = io.readline 
+      @queue << line
+      @queue.inspect
+    end
+  end
+end
+
 class DashboardController
   def initialize
     style
@@ -10,6 +26,7 @@ class DashboardController
                     :track_length => 1315, :yaml_name => 'rider-two-tick')
     @laps = 1
     @doc = build_template
+    @svg = RSVG::Handle.new
   end
   def quadrantificate(offset, total, distance=0)
     if distance > offset
@@ -23,16 +40,22 @@ class DashboardController
     unadjusted-180
   end
   def read_blue
-    @blue.update(@sensor.read_blue)
-    track = BLUE_TRACK_LENGTH*@blue.distance
-    @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track).join(',')
-    @blue_pointer_angle = speed_to_angle(@blue.speed)
+    blue_log = @log.grep('rider-two-tick:')
+    if blue_log
+      @blue.update(blue_log.gsub(/rider-two-tick: /,''))
+      track = BLUE_TRACK_LENGTH*@blue.distance
+      @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, rand(1315)).join(',')
+      @blue_pointer_angle = speed_to_angle(rand(54))
+    end
   end
   def read_red
-    @red.update(@sensor.read_red)
-    track = RED_TRACK_LENGTH*@red.distance
-    @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
-    @red_pointer_angle = speed_to_angle(@red.speed)
+    red_log = @log.grep('rider-one-tick:')
+    if red_log
+      @red.update(red_log.gsub(/rider-one-tick: /,''))
+      track = RED_TRACK_LENGTH*@red.distance
+      @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
+      @red_pointer_angle = speed_to_angle(@red.speed)
+    end
   end
   def style
     File.open('views/style.css') do |f|
@@ -47,36 +70,48 @@ class DashboardController
       svg = f.readlines.join
     end
     eval svg
-    doc = ''
-    File.open('views/wrap.html') do |f|
-      doc = f.readlines.join
-    end 
-    @wrap = doc
-    doc = doc % xml_data
-    doc.gsub!(/%([^s])/,'%%\1')
+    xml_data.gsub!(/%([^s])/,'%%\1')
+  end
+  def t
+    @t
   end
   def begin_logging
-    @sensor = SprintSensor.new
-  end
-  def refresh
-    ret = ''
-    read_red
-    read_blue
-    if @blue.distance>1.0 or @red.distance>1.0
-      winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
-      ret = [@wrap % "<h1>#{winner} WINS!</h1>","http://foo","text/html"]
-      @continue = false
-    else
-      ret = [@doc % [@red_dasharray, @blue_dasharray, @blue_pointer_angle,
-              @red_pointer_angle],"http://foo","application/xml"]
-      @continue = true
+    @queue = Queue.new
+    @t = Thread.new do
+        s = Server.new(@queue)
     end
-    ret
+puts @queue.inspect
+  end
+
+  def refresh
+puts "bar"
+return nil
+    @log = nil
+    @queue.length.times do
+      @log << @queue.pop
+    end
+    if !@log==nil
+      read_red
+      read_blue
+      if @blue.distance>1.0 or @red.distance>1.0
+        winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
+        svg = RSVG::Handle.new_from_data(@doc % ["#{winner} WINS!",@red_dasharray,
+                @blue_dasharray, @blue_pointer_angle, @red_pointer_angle])
+        @continue = false
+      else
+        svg = RSVG::Handle.new_from_data(@doc % ["IRO Sprint",@red_dasharray,
+                        @blue_dasharray, @blue_pointer_angle, @red_pointer_angle])
+        @continue = true
+      end
+      @pix = svg ? svg.pixbuf : nil
+    end
+    @pix#||RSVG::Handle.new_from_data(@doc % ["...",0,0,4,5,6])
   end
   def continue?
     @continue
   end
   def count(n)
-    @wrap % "<h1>#{n}....</h1>"
+    svg = RSVG::Handle.new_from_data(@doc % ["#{n}...",0,0,4,5,6])
+    svg.pixbuf
   end
 end

@@ -131,7 +131,7 @@ xml.svg(:height => "550", :width => "737", :viewBox => "0 0 499 378",
      :y=>"5.4431815",
      :rx=>"12",
      :ry=>"12")
-  xml.text('IRO sprint',
+  xml.text("%s",
      :style=>"font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:black;stroke:#241c1c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;font-family:Ubuntu-Title",
      :x=>"150.99417",
      :y=>"108.27198",
