@@ -8,6 +8,7 @@ xml.svg(:height => "550", :width => "737", :viewBox => "0 0 499 378",
       xml.g(:id=>"dial"){
         xml.rect(
            :id => "back",
+           :style => "fill: #abbcf4; stroke: black; stroke-width: 2.58699989;",
            :width=>"113.65182",
            :height=>"114.51677",
            :x=>"110.02682",
@@ -20,10 +21,13 @@ xml.svg(:height => "550", :width => "737", :viewBox => "0 0 499 378",
            :d=>"M 214.67617 176.95947 A 49.233921 50.698734 0 1 1  116.20832,176.95947 A 49.233921 50.698734 0 1 1  214.67617 176.95947 z")
         xml.path(
            :id => "outer",
+           :style => "fill: #acbbf4; stroke: black; stroke-width: 0.53463411;",
            :d=>"M 186.51925 176.22708 A 18.879784 18.879784 0 1 1  148.75968,176.22708 A 18.879784 18.879784 0 1 1  186.51925 176.22708 z",
            :transform=>"matrix(2.355143,0,0,2.35024,-227.9622,-239.2919)")
         xml.path(
            :id => "inner",
+           :style => "fill: #d3040a; stroke: #282c37; stroke-width: 0.62400103;",
+
            :d=>"M 186.51925 176.22708 A 18.879784 18.879784 0 1 1  148.75968,176.22708 A 18.879784 18.879784 0 1 1  186.51925 176.22708 z",
            :transform=>"matrix(2.097602,0,0,2.116474,-184.7882,-198.096)")
         xml.path(
@@ -236,7 +240,7 @@ xml.svg(:height => "550", :width => "737", :viewBox => "0 0 499 378",
     xml.path(
        :d=>"M 252.08333,356.5994 L 252.08333,323.19076",
        :style=>"fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;")
-    xml.text("1000m",
+    xml.text("250m",
        :y=>"313.17331",
        :x=>"256.13306",
        :style=>"font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:white;stroke:black;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;")

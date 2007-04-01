@@ -98,11 +98,11 @@ class DashboardController
       puts "#{@blue.distance} #{RACE_DISTANCE}"
       if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
         winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
-        svg = RSVG::Handle.new_from_data(@doc % ["#{winner.split('')[0]} R:#{@red.tix},B:#{@blue.tix}",@red_dasharray,
+        svg = RSVG::Handle.new_from_data(@doc % ["#{winner} WINS!!!",@red_dasharray,
                 @blue_dasharray, @blue_pointer_angle, @red_pointer_angle])
         @continue = false
       else
-        svg = RSVG::Handle.new_from_data(@doc % ["R:#{@red.tix},B:#{@blue.tix}",@red_dasharray,
+        svg = RSVG::Handle.new_from_data(@doc % ["IRO Sprint",@red_dasharray,
                         @blue_dasharray, @blue_pointer_angle, @red_pointer_angle])
         @continue = true
       end
