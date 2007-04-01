@@ -1,4 +1,4 @@
-require 'controllers/sprint_sensor'
+#require 'controllers/sprint_sensor'
 require 'rubygems'
 require 'models/racer'
 require 'builder'
