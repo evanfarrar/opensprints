@@ -82,7 +82,7 @@ class DashboardController
   def begin_logging
     @queue = Queue.new
     @t = Thread.new do
-        s = Server.new(@queue)
+      s = Server.new(@queue)
     end
     system('ruby sensor.rb &') 
   end
