@@ -2,7 +2,6 @@
 require 'rubygems'
 require 'models/racer'
 require 'builder'
-require 'gtkmozembed'
 require 'units/standard'
 require 'controllers/dashboard_controller'
 require 'rsvg2'
