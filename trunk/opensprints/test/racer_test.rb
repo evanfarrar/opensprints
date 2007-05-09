@@ -18,25 +18,28 @@ class RacerTest < Test::Unit::TestCase
     r = Racer.new(:wheel_circumference => 1.km,
                    :yaml_name => 'rider-one-tick')
     
-    yaml = ["rider-one-tick: 15.1234"]*50
+    yaml = [15.1234]*50
     r.update(yaml)
     assert_equal 50.km, r.distance
 
-    r.update("rider-one-tick: 16.1234")
+    r.update([16.1234])
     assert_equal 51.km, r.distance
-    assert_equal 3600, r.speed # 60km/m
   end
-  
-  def test_set
+
+  def test_speed_is_moving_average
     r = Racer.new(:wheel_circumference => 1.km,
                    :yaml_name => 'rider-one-tick')
     
-    yaml = ["rider-one-tick: 15.1234"]*50
-    r.set(yaml)
-    assert_equal 50.km, r.distance
-
-    r.set(yaml << "rider-one-tick: 16.1234")
-    assert_equal 51.km, r.distance
+    c = 0
+    ticks = ([15.1234]*50).map{|d| d+(c+=1)}
+    r.update(ticks[0...40])
+    assert_equal 40.km, r.distance
     assert_equal 3600, r.speed # 60km/m
+    
+    c = 0
+    ticks = ticks.map{|d| d+1}
+    r.update([ticks[40]])
+    assert_equal 41.km, r.distance
+    assert_equal 3000, r.speed # 60km/m
   end
 end

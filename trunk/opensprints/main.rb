@@ -28,7 +28,7 @@ Gtk.timeout_add(1000) do
     countdown-=1
     true
   when 0
-    dashboard_controller.begin_logging
+    dashboard_controller.begin_logging('test/mock_sensor.rb')
     Gtk.timeout_add(100) do
       gi.pixbuf=dashboard_controller.refresh
       dashboard_controller.continue?

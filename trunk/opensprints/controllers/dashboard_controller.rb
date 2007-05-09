@@ -7,7 +7,7 @@ class Server < GServer
   end
   def serve( io )
     loop do
-      puts line = io.readline 
+      line = io.readline 
       @queue << line
       @queue.inspect
     end
@@ -79,12 +79,12 @@ class DashboardController
   def t
     @t
   end
-  def begin_logging
+  def begin_logging(sensor_command)
     @queue = Queue.new
     @t = Thread.new do
-      s = Server.new(@queue)
+      @s = Server.new(@queue)
     end
-    system('ruby sensor.rb &') 
+    system("ruby #{sensor_command} &") 
   end
 
   def refresh
@@ -95,7 +95,6 @@ class DashboardController
     if @partial_log.any?
       read_red
       read_blue
-      puts "#{@blue.distance} #{RACE_DISTANCE}"
       if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
         winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
         svg = RSVG::Handle.new_from_data(@doc % ["#{winner} WINS!!!",@red_dasharray,
