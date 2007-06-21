@@ -1,7 +1,7 @@
 require 'socket'
-Kernel::require 'serialport.so' #windows is silly
+require 'serialport.so'
 s = TCPSocket.new( "localhost", 5000 )
-sp = SerialPort.new(0, 115200)
+sp = SerialPort.new('/dev/ttyUSB0', 115200)
 t_start = Time.now.to_f
 old_cts_time = t_start
 old_dsr_time = t_start

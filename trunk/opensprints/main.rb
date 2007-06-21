@@ -15,7 +15,7 @@ BLUE_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
 
 @w = Gtk::Window.new
 @w.title = "IRO Sprints"
-@w.resize(760, 570)
+@w.resize(1024, 768)
 box = Gtk::VBox.new(false, 0)
 rpb = RSVG::Handle.new_from_data('<svg></svg>')
 gi = Gtk::Image.new(rpb.pixbuf)
@@ -28,7 +28,7 @@ Gtk.timeout_add(1000) do
     countdown-=1
     true
   when 0
-    dashboard_controller.begin_logging('test/mock_sensor.rb')
+    dashboard_controller.begin_logging('./sensor.rb')
     Gtk.timeout_add(100) do
       gi.pixbuf=dashboard_controller.refresh
       dashboard_controller.continue?
