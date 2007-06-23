@@ -6,7 +6,7 @@ require 'controllers/dashboard_controller'
 require 'rsvg2'
 require 'gtk2'
 
-RACE_DISTANCE = 0.05.km
+RACE_DISTANCE = 0.200.km
 RED_TRACK_LENGTH = 1315
 BLUE_TRACK_LENGTH = 1200
 RED_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
