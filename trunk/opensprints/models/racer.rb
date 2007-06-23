@@ -2,7 +2,6 @@ require 'units/standard'
 #require 'yaml'
 class Racer
   attr_accessor :distance
-  attr_accessor :speed
   attr :wheel_circumference
   attr :yaml_name
   def initialize(attributes = {})
@@ -17,21 +16,6 @@ class Racer
     @ticks += new_ticks
     ticks_length = @ticks.length
     @distance = ((ticks_length)*(@wheel_circumference))
-    if ticks_length>5
-      diffs = []
-      last = @ticks[-6..-1]
-      last.each_with_index{|e,i| 
-        (diffs<<(last[i+1]-e)) if last[i+1]
-      }
-      ave_elapsed = (diffs.inject(0){|acc,n| acc=acc+n})/5.0
-      @speed = rotation_elapsed_to_kmh(ave_elapsed)
-    elsif ticks_length>1
-      this = @ticks[-1]
-      last = @ticks[-2]
-      @speed = rotation_elapsed_to_kmh(this-last)
-    else
-      @speed = 0
-    end
   end
 
   def tix

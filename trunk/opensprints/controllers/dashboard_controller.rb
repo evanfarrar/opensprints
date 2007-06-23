@@ -37,10 +37,6 @@ class DashboardController
       [0,(offset-distance),distance,(total-offset)]
     end
   end
-  def speed_to_angle(speed)
-    unadjusted = ((speed/48.0)*270.0+45.0)
-    unadjusted-180
-  end
   def read_blue
     blue_log = @partial_log.grep(/rider-two-tick:/)
     if blue_log
@@ -48,7 +44,6 @@ class DashboardController
       @blue.update(blue_log)
       track = BLUE_TRACK_LENGTH*@blue.distance
       @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track).join(',')
-      @blue_pointer_angle = speed_to_angle(@blue.speed)
     end
   end
   def read_red
@@ -58,7 +53,6 @@ class DashboardController
       @red.update(red_log)
       track = RED_TRACK_LENGTH*@red.distance
       @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
-      @red_pointer_angle = speed_to_angle(@red.speed)
     end
   end
   def style
@@ -66,11 +60,12 @@ class DashboardController
       @stylishness = f.readlines.join
     end
   end
+
   def build_template
     xml_data = ''
     xml = Builder::XmlMarkup.new(:target => xml_data)
     svg = ''
-    File.open('views/svg.rb') do |f|
+    File.open('views/simpleton.rb') do |f|
       svg = f.readlines.join
     end
     eval svg
@@ -97,12 +92,11 @@ class DashboardController
       read_blue
       if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
         winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
-        svg = RSVG::Handle.new_from_data(@doc % ["#{winner} WINS!!!",@red_dasharray,
-                @blue_dasharray, @blue_pointer_angle, @red_pointer_angle])
+        svg = RSVG::Handle.new_from_data(@doc % ["#{winner} WINS!!!",0,0,4,5,6])
         @continue = false
       else
         svg = RSVG::Handle.new_from_data(@doc % ["IRO Sprint",@red_dasharray,
-                        @blue_dasharray, @blue_pointer_angle, @red_pointer_angle])
+                        @blue_dasharray])
         @continue = true
       end
       @pix = svg ? svg.pixbuf : nil
@@ -115,5 +109,16 @@ class DashboardController
   def count(n)
     svg = RSVG::Handle.new_from_data(@doc % ["#{n}...",0,0,4,5,6])
     svg.pixbuf
+  end
+
+  def background
+    xml_data = ''
+    xml = Builder::XmlMarkup.new(:target => xml_data)
+    svg = ''
+    File.open('views/background.rb') do |f|
+      svg = f.readlines.join
+    end
+    eval svg
+    xml_data
   end
 end
