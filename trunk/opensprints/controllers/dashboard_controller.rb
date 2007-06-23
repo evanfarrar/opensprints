@@ -65,7 +65,7 @@ class DashboardController
     xml_data = ''
     xml = Builder::XmlMarkup.new(:target => xml_data)
     svg = ''
-    File.open('views/simpleton.rb') do |f|
+    File.open('views/svg.rb') do |f|
       svg = f.readlines.join
     end
     eval svg

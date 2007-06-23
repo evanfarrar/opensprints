@@ -1,4 +1,3 @@
-#require 'controllers/sprint_sensor'
 require 'rubygems'
 require 'models/racer'
 require 'builder'
@@ -15,13 +14,11 @@ BLUE_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
 
 @w = Gtk::Window.new
 @w.title = "IRO Sprints"
-@w.resize(1024, 768)
+@w.resize(993, 741)
 box = Gtk::VBox.new(false, 0)
 dashboard_controller = DashboardController.new
 rpb = RSVG::Handle.new_from_data('<svg></svg>')
 gi = Gtk::Image.new(rpb.pixbuf)
-#rpb2 = RSVG::Handle.new_from_data(dashboard_controller.background)
-#gi2 = Gtk::Image.new(rpb2.pixbuf.save('bg.png','png'))
 countdown = 5
 Gtk.timeout_add(1000) do
   case countdown
