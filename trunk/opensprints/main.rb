@@ -9,8 +9,8 @@ require 'gtk2'
 RACE_DISTANCE = 0.200.km
 RED_TRACK_LENGTH = 1315
 BLUE_TRACK_LENGTH = 1200
-RED_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
-BLUE_WHEEL_CIRCUMFERENCE = 2097.mm.to_km
+RED_WHEEL_CIRCUMFERENCE = 85.mm.to_km
+BLUE_WHEEL_CIRCUMFERENCE = 85.mm.to_km
 
 @w = Gtk::Window.new
 @w.title = "IRO Sprints"
@@ -27,7 +27,7 @@ Gtk.timeout_add(1000) do
     countdown-=1
     true
   when 0
-    dashboard_controller.begin_logging('./sensor.rb')
+    dashboard_controller.begin_logging('./termsensor.rb')
     Gtk.timeout_add(100) do
       gi.pixbuf=dashboard_controller.refresh
       dashboard_controller.continue?

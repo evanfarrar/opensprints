@@ -21,9 +21,9 @@ class DashboardController
     @dial_180_degrees = 24
     @dial_270_degrees = 40
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
-                     :track_length => 1315, :yaml_name => 'rider-one-tick')
+                     :track_length => 1315, :yaml_name => '1')
     @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
-                    :track_length => 1315, :yaml_name => 'rider-two-tick')
+                    :track_length => 1315, :yaml_name => '2')
     @laps = 1
     @continue = true
     @doc = build_template
@@ -38,18 +38,18 @@ class DashboardController
     end
   end
   def read_blue
-    blue_log = @partial_log.grep(/rider-two-tick:/)
+    blue_log = @partial_log.grep(/2/)
     if blue_log
-      blue_log.map!{ |a| a.gsub(/rider-two-tick: /,'').to_f }
+#      blue_log.map!{ |a| a.gsub(/rider-two-tick: /,'').to_f }
       @blue.update(blue_log)
       track = BLUE_TRACK_LENGTH*@blue.distance
       @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track).join(',')
     end
   end
   def read_red
-    red_log = @partial_log.grep(/rider-one-tick:/)
+    red_log = @partial_log.grep(/1/)
     if red_log
-      red_log.map!{ |a| a.gsub(/rider-one-tick: /,'').to_f }
+#      red_log.map!{ |a| a.gsub(/rider-one-tick: /,'').to_f }
       @red.update(red_log)
       track = RED_TRACK_LENGTH*@red.distance
       @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
