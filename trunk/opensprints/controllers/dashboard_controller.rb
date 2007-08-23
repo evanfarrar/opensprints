@@ -71,15 +71,27 @@ class DashboardController
     eval svg
     xml_data.gsub!(/%([^s])/,'%%\1')
   end
-  def t
-    @t
+  def t2
+    @t2
   end
-  def begin_logging(sensor_command)
+  def begin_logging
     @queue = Queue.new
+    @t.kill if @t
+    @t2.kill if @t2
     @t = Thread.new do
       @s = Server.new(@queue)
     end
-    system("ruby #{sensor_command} &") 
+    @t2 = Thread.new do
+      require 'socket'
+      s = TCPSocket.new( "localhost", 5000 )
+      f = File.open('/dev/ttyACM0')
+  
+      while true do
+        l = f.readline
+        s.puts l
+        puts l
+      end
+    end
   end
 
   def refresh
