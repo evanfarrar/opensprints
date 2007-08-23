@@ -1,19 +1,4 @@
-require 'gserver'
-class Server < GServer
-  def initialize(queue)
-    super(5000)
-    @queue = queue
-    self.start
-  end
-  def serve( io )
-    loop do
-      line = io.readline 
-      @queue << line
-      @queue.inspect
-    end
-  end
-end
-
+require 'thread'
 class DashboardController
   def initialize
     style
@@ -71,24 +56,18 @@ class DashboardController
     eval svg
     xml_data.gsub!(/%([^s])/,'%%\1')
   end
-  def t2
-    @t2
+  def t
+    @t
   end
   def begin_logging
     @queue = Queue.new
     @t.kill if @t
-    @t2.kill if @t2
     @t = Thread.new do
-      @s = Server.new(@queue)
-    end
-    @t2 = Thread.new do
-      require 'socket'
-      s = TCPSocket.new( "localhost", 5000 )
       f = File.open('/dev/ttyACM0')
   
       while true do
         l = f.readline
-        s.puts l
+        @queue << l
         puts l
       end
     end
