@@ -2512,7 +2512,7 @@ BOOL SwitchIsPressed(void)
 
 
 /** Start Luke Orland code **************************************************/
-unsigned int justBegun=1;
+BOOL justBegun = TRUE;
 unsigned int prevValueSensor0;
 unsigned int prevValueSensor1;
 unsigned int currentValueSensor0;
@@ -2521,6 +2521,7 @@ unsigned int Sensor0PortApin=0;
 unsigned int Sensor1PortApin=1;
 unsigned int riderOneTicks;
 unsigned int riderTwoTicks;
+unsigned int gameTime;
 
 void HallEffSensors(void)
 {
@@ -2540,6 +2541,13 @@ void HallEffSensors(void)
 
 		else
 		{
+			// keeping time
+			if (PIR1bits.TMR2IF)
+			{
+				++gameTime; 				// increment by 1ms
+				PIR1bits.TMR2IF = 0;		// Clear the interrupt
+			}
+
 			// remember previous state of pins
 			prevValueSensor0=currentValueSensor0;
 			prevValueSensor1=currentValueSensor1;
