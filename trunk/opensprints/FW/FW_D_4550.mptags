@@ -1,0 +1,1308 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+AA	C:\Projects\UBW\FW\D\user\user.c	1237;"	l	line:1237
+ABDEN	C:\MCC18\h\p18f4550.h	769;"	m	line:769
+ABDOVF	C:\MCC18\h\p18f4550.h	776;"	m	line:776
+ABSTRACT_CONTROL_MODEL::0x02	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	71;"	d	line:71
+ABSTRACT_STATE::0x01	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	85;"	d	line:85
+ACCESS::0	C:\MCC18\h\p18f4550.h	1221;"	d	line:1221
+ACKDT	C:\MCC18\h\p18f4550.h	873;"	m	line:873
+ACKEN	C:\MCC18\h\p18f4550.h	872;"	m	line:872
+ACKSTAT	C:\MCC18\h\p18f4550.h	874;"	m	line:874
+ACQT0	C:\MCC18\h\p18f4550.h	825;"	m	line:825
+ACQT1	C:\MCC18\h\p18f4550.h	826;"	m	line:826
+ACQT2	C:\MCC18\h\p18f4550.h	827;"	m	line:827
+ACTVIE	C:\MCC18\h\p18f4550.h	71;"	m	line:71
+ACTVIF	C:\MCC18\h\p18f4550.h	61;"	m	line:61
+ADCS0	C:\MCC18\h\p18f4550.h	822;"	m	line:822
+ADCS1	C:\MCC18\h\p18f4550.h	823;"	m	line:823
+ADCS2	C:\MCC18\h\p18f4550.h	824;"	m	line:824
+ADDEN	C:\MCC18\h\p18f4550.h	645;"	m	line:645
+ADDR0	C:\MCC18\h\p18f4550.h	119;"	m	line:119
+ADDR0	C:\MCC18\h\p18f4550.h	25;"	m	line:25
+ADDR1	C:\MCC18\h\p18f4550.h	120;"	m	line:120
+ADDR1	C:\MCC18\h\p18f4550.h	26;"	m	line:26
+ADDR2	C:\MCC18\h\p18f4550.h	121;"	m	line:121
+ADDR2	C:\MCC18\h\p18f4550.h	27;"	m	line:27
+ADDR3	C:\MCC18\h\p18f4550.h	122;"	m	line:122
+ADDR3	C:\MCC18\h\p18f4550.h	28;"	m	line:28
+ADDR4	C:\MCC18\h\p18f4550.h	123;"	m	line:123
+ADDR5	C:\MCC18\h\p18f4550.h	124;"	m	line:124
+ADDR6	C:\MCC18\h\p18f4550.h	125;"	m	line:125
+ADDRESS_STATE::5	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	62;"	d	line:62
+ADEN	C:\MCC18\h\p18f4550.h	653;"	m	line:653
+ADFM	C:\MCC18\h\p18f4550.h	829;"	m	line:829
+ADIE	C:\MCC18\h\p18f4550.h	549;"	m	line:549
+ADIF	C:\MCC18\h\p18f4550.h	560;"	m	line:560
+ADIP	C:\MCC18\h\p18f4550.h	571;"	m	line:571
+ADON	C:\MCC18\h\p18f4550.h	843;"	m	line:843
+ADR	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	123;"	m	line:123	struct:_BDT::<anonymous>
+ADRH	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	117;"	m	line:117	struct:_BDT::<anonymous>
+ADRL	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	116;"	m	line:116	struct:_BDT::<anonymous>
+ADR_PENDING_STATE::4	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	61;"	d	line:61
+AN0	C:\MCC18\h\p18f4550.h	278;"	m	line:278
+AN1	C:\MCC18\h\p18f4550.h	279;"	m	line:279
+AN2	C:\MCC18\h\p18f4550.h	280;"	m	line:280
+AN3	C:\MCC18\h\p18f4550.h	281;"	m	line:281
+AN4	C:\MCC18\h\p18f4550.h	283;"	m	line:283
+ATTACHED_STATE::1	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	58;"	d	line:58
+A_cur_channel	C:\Projects\UBW\FW\D\user\user.c	157;"	v	line:157
+A_tick_counter	C:\Projects\UBW\FW\D\user\user.c	156;"	v	line:156
+AnalogEnable	C:\Projects\UBW\FW\D\user\user.c	143;"	v	line:143
+BANKED::1	C:\MCC18\h\p18f4550.h	1222;"	d	line:1222
+BC8	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	84;"	m	line:84	struct:_BD_STAT::<anonymous>
+BC8	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	94;"	m	line:94	struct:_BD_STAT::<anonymous>
+BC9	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	85;"	m	line:85	struct:_BD_STAT::<anonymous>
+BC9	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	95;"	m	line:95	struct:_BD_STAT::<anonymous>
+BCLIE	C:\MCC18\h\p18f4550.h	580;"	m	line:580
+BCLIF	C:\MCC18\h\p18f4550.h	597;"	m	line:597
+BCLIP	C:\MCC18\h\p18f4550.h	614;"	m	line:614
+BDT	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	125;"	t	line:125
+BD_STAT	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	108;"	t	line:108
+BF	C:\MCC18\h\p18f4550.h	891;"	m	line:891
+BGST	C:\MCC18\h\p18f4550.h	1012;"	m	line:1012
+BGST	C:\MCC18\h\p18f4550.h	1044;"	m	line:1044
+BOOL	C:\Projects\UBW\FW\D\system\typedefs.h	150;"	t	line:150
+BOR	C:\MCC18\h\p18f4550.h	978;"	m	line:978
+BO_data_byte	C:\Projects\UBW\FW\D\user\user.c	1922;"	l	line:1922
+BO_data_byte	C:\Projects\UBW\FW\D\user\user.c	2062;"	l	line:2062
+BO_init	C:\Projects\UBW\FW\D\user\user.c	1878;"	l	line:1878
+BO_strobe_delay	C:\Projects\UBW\FW\D\user\user.c	1882;"	l	line:1882
+BO_strobe_mask	C:\Projects\UBW\FW\D\user\user.c	1879;"	l	line:1879
+BO_wait_delay	C:\Projects\UBW\FW\D\user\user.c	1881;"	l	line:1881
+BO_wait_mask	C:\Projects\UBW\FW\D\user\user.c	1880;"	l	line:1880
+BRG16	C:\MCC18\h\p18f4550.h	772;"	m	line:772
+BRGH	C:\MCC18\h\p18f4550.h	660;"	m	line:660
+BSTALL	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	86;"	m	line:86	struct:_BD_STAT::<anonymous>
+BTOEE	C:\MCC18\h\p18f4550.h	93;"	m	line:93
+BTOEF	C:\MCC18\h\p18f4550.h	83;"	m	line:83
+BTSEE	C:\MCC18\h\p18f4550.h	95;"	m	line:95
+BTSEF	C:\MCC18\h\p18f4550.h	85;"	m	line:85
+BYTE	C:\Projects\UBW\FW\D\system\typedefs.h	58;"	t	line:58
+BlinkUSBStatus	C:\Projects\UBW\FW\D\user\user.c	213;"	p	line:213	file:	signature:(void)
+BlinkUSBStatus	C:\Projects\UBW\FW\D\user\user.c	2398;"	f	line:2398	signature:(void)
+Byte0	C:\Projects\UBW\FW\D\system\typedefs.h	103;"	m	line:103	struct:_DWORD::<anonymous>
+Byte0	C:\Projects\UBW\FW\D\system\typedefs.h	70;"	m	line:70	struct:_WORD::<anonymous>
+Byte1	C:\Projects\UBW\FW\D\system\typedefs.h	104;"	m	line:104	struct:_DWORD::<anonymous>
+Byte1	C:\Projects\UBW\FW\D\system\typedefs.h	71;"	m	line:71	struct:_WORD::<anonymous>
+Byte2	C:\Projects\UBW\FW\D\system\typedefs.h	105;"	m	line:105	struct:_DWORD::<anonymous>
+Byte3	C:\Projects\UBW\FW\D\system\typedefs.h	106;"	m	line:106	struct:_DWORD::<anonymous>
+C	C:\MCC18\h\p18f4550.h	1092;"	m	line:1092
+C1INV	C:\MCC18\h\p18f4550.h	700;"	m	line:700
+C1OUT	C:\MCC18\h\p18f4550.h	702;"	m	line:702
+C2INV	C:\MCC18\h\p18f4550.h	701;"	m	line:701
+C2OUT	C:\MCC18\h\p18f4550.h	703;"	m	line:703
+CARRIER_CONTROL	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	300;"	m	line:300	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
+CCP1	C:\MCC18\h\p18f4550.h	337;"	m	line:337
+CCP1IE	C:\MCC18\h\p18f4550.h	545;"	m	line:545
+CCP1IF	C:\MCC18\h\p18f4550.h	556;"	m	line:556
+CCP1IP	C:\MCC18\h\p18f4550.h	567;"	m	line:567
+CCP1M0	C:\MCC18\h\p18f4550.h	797;"	m	line:797
+CCP1M0	C:\MCC18\h\p18f4550.h	808;"	m	line:808
+CCP1M1	C:\MCC18\h\p18f4550.h	798;"	m	line:798
+CCP1M1	C:\MCC18\h\p18f4550.h	809;"	m	line:809
+CCP1M2	C:\MCC18\h\p18f4550.h	799;"	m	line:799
+CCP1M2	C:\MCC18\h\p18f4550.h	810;"	m	line:810
+CCP1M3	C:\MCC18\h\p18f4550.h	800;"	m	line:800
+CCP1M3	C:\MCC18\h\p18f4550.h	811;"	m	line:811
+CCP2IE	C:\MCC18\h\p18f4550.h	577;"	m	line:577
+CCP2IF	C:\MCC18\h\p18f4550.h	594;"	m	line:594
+CCP2IP	C:\MCC18\h\p18f4550.h	611;"	m	line:611
+CCP2M0	C:\MCC18\h\p18f4550.h	785;"	m	line:785
+CCP2M1	C:\MCC18\h\p18f4550.h	786;"	m	line:786
+CCP2M2	C:\MCC18\h\p18f4550.h	787;"	m	line:787
+CCP2M3	C:\MCC18\h\p18f4550.h	788;"	m	line:788
+CDCInitEP	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	169;"	f	line:169	signature:(void)
+CDCInitEP	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	360;"	p	line:360	signature:(void)
+CDCTxService	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	456;"	f	line:456	signature:(void)
+CDCTxService	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	364;"	p	line:364	signature:(void)
+CDC_BULK_BD_IN::ep3Bi	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	77;"	d	line:77
+CDC_BULK_BD_OUT::ep3Bo	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	75;"	d	line:75
+CDC_BULK_IN_EP_SIZE::64	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	78;"	d	line:78
+CDC_BULK_OUT_EP_SIZE::64	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	76;"	d	line:76
+CDC_COMM_INTF_ID::0x00	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	68;"	d	line:68
+CDC_COMM_UEP::UEP2	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	69;"	d	line:69
+CDC_DATA_INTF_ID::0x01	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	73;"	d	line:73
+CDC_DATA_UEP::UEP3	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	74;"	d	line:74
+CDC_DEVICE::0x02	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	65;"	d	line:65
+CDC_H	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	37;"	d	line:37
+CDC_INT_BD_IN::ep2Bi	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	70;"	d	line:70
+CDC_INT_EP_SIZE::8	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	71;"	d	line:71
+CDC_TX_BUSY::1	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	108;"	d	line:108
+CDC_TX_BUSY_ZLP::2	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	109;"	d	line:109
+CDC_TX_COMPLETING::3	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	110;"	d	line:110
+CDC_TX_READY::0	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	107;"	d	line:107
+CFG01::romstruct\	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	54;"	d	line:54
+CFGS	C:\MCC18\h\p18f4550.h	633;"	m	line:633
+CHS0	C:\MCC18\h\p18f4550.h	845;"	m	line:845
+CHS1	C:\MCC18\h\p18f4550.h	846;"	m	line:846
+CHS2	C:\MCC18\h\p18f4550.h	847;"	m	line:847
+CHS3	C:\MCC18\h\p18f4550.h	848;"	m	line:848
+CIS	C:\MCC18\h\p18f4550.h	699;"	m	line:699
+CK	C:\MCC18\h\p18f4550.h	347;"	m	line:347
+CK1SPP	C:\MCC18\h\p18f4550.h	385;"	m	line:385
+CK2SPP	C:\MCC18\h\p18f4550.h	386;"	m	line:386
+CKE	C:\MCC18\h\p18f4550.h	897;"	m	line:897
+CKP	C:\MCC18\h\p18f4550.h	883;"	m	line:883
+CLEAR_COMM_FEATURE::0x04	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	49;"	d	line:49
+CLK1EN	C:\MCC18\h\p18f4550.h	18;"	m	line:18
+CLKCFG0	C:\MCC18\h\p18f4550.h	20;"	m	line:20
+CLKCFG1	C:\MCC18\h\p18f4550.h	21;"	m	line:21
+CM0	C:\MCC18\h\p18f4550.h	696;"	m	line:696
+CM1	C:\MCC18\h\p18f4550.h	697;"	m	line:697
+CM2	C:\MCC18\h\p18f4550.h	698;"	m	line:698
+CMIE	C:\MCC18\h\p18f4550.h	583;"	m	line:583
+CMIF	C:\MCC18\h\p18f4550.h	600;"	m	line:600
+CMIP	C:\MCC18\h\p18f4550.h	617;"	m	line:617
+COMM_INTF::0x02	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	68;"	d	line:68
+CONFIGURED_STATE::6	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	63;"	d	line:63
+CONTROL_SIGNAL_BITMAP	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	302;"	t	line:302
+COUNTRY_SETTING::0x02	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	86;"	d	line:86
+CRC16EE	C:\MCC18\h\p18f4550.h	91;"	m	line:91
+CRC16EF	C:\MCC18\h\p18f4550.h	81;"	m	line:81
+CRC5EE	C:\MCC18\h\p18f4550.h	90;"	m	line:90
+CRC5EF	C:\MCC18\h\p18f4550.h	80;"	m	line:80
+CREN	C:\MCC18\h\p18f4550.h	646;"	m	line:646
+CSEN	C:\MCC18\h\p18f4550.h	19;"	m	line:19
+CSRC	C:\MCC18\h\p18f4550.h	665;"	m	line:665
+CS_ENDPOINT::0x25	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	91;"	d	line:91
+CS_INTERFACE::0x24	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	90;"	d	line:90
+CVR0	C:\MCC18\h\p18f4550.h	708;"	m	line:708
+CVR1	C:\MCC18\h\p18f4550.h	709;"	m	line:709
+CVR2	C:\MCC18\h\p18f4550.h	710;"	m	line:710
+CVR3	C:\MCC18\h\p18f4550.h	711;"	m	line:711
+CVREF	C:\MCC18\h\p18f4550.h	712;"	m	line:712
+CVREN	C:\MCC18\h\p18f4550.h	715;"	m	line:715
+CVROE	C:\MCC18\h\p18f4550.h	714;"	m	line:714
+CVRR	C:\MCC18\h\p18f4550.h	713;"	m	line:713
+CVRSS	C:\MCC18\h\p18f4550.h	719;"	m	line:719
+ClassReqHandler	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	263;"	v	line:263
+ClearArray	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	575;"	f	line:575	signature:(byte* startAdr,byte count)
+ClrWdt::{_asmclrwdt_endasm}	C:\MCC18\h\p18f4550.h	1228;"	d	line:1228
+Cnt	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	115;"	m	line:115	struct:_BDT::<anonymous>
+CtrlTrfData	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	269;"	v	line:269
+D	C:\MCC18\h\p18f4550.h	929;"	m	line:929
+DATA_ADDRESS	C:\MCC18\h\p18f4550.h	923;"	m	line:923
+DATA_INTF::0x0A	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	78;"	d	line:78
+DC	C:\MCC18\h\p18f4550.h	1093;"	m	line:1093
+DC1B0	C:\MCC18\h\p18f4550.h	801;"	m	line:801
+DC1B0	C:\MCC18\h\p18f4550.h	812;"	m	line:812
+DC1B1	C:\MCC18\h\p18f4550.h	802;"	m	line:802
+DC1B1	C:\MCC18\h\p18f4550.h	813;"	m	line:813
+DC2B0	C:\MCC18\h\p18f4550.h	789;"	m	line:789
+DC2B1	C:\MCC18\h\p18f4550.h	790;"	m	line:790
+DEFAULT_STATE::3	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	60;"	d	line:60
+DETACHED_STATE::0	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	57;"	d	line:57
+DFN8EE	C:\MCC18\h\p18f4550.h	92;"	m	line:92
+DFN8EF	C:\MCC18\h\p18f4550.h	82;"	m	line:82
+DIR	C:\MCC18\h\p18f4550.h	101;"	m	line:101
+DONE	C:\MCC18\h\p18f4550.h	852;"	m	line:852
+DSC_FN_ACM::0x02	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	96;"	d	line:96
+DSC_FN_CALL_MGT::0x01	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	95;"	d	line:95
+DSC_FN_COUNTRY_SELECTION::0x07	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	101;"	d	line:101
+DSC_FN_DLM::0x03	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	97;"	d	line:97
+DSC_FN_HEADER::0x00	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	94;"	d	line:94
+DSC_FN_RPT_CAPABILITIES::0x05	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	99;"	d	line:99
+DSC_FN_TELEPHONE_RINGER::0x04	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	98;"	d	line:98
+DSC_FN_TEL_OP_MODES::0x08	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	102;"	d	line:102
+DSC_FN_UNION::0x06	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	100;"	d	line:100
+DSC_FN_USB_TERMINAL::0x09	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	103;"	d	line:103
+DT	C:\MCC18\h\p18f4550.h	348;"	m	line:348
+DTE_PRESENT	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	299;"	m	line:299	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
+DTS	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	90;"	m	line:90	struct:_BD_STAT::<anonymous>
+DTSEN	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	87;"	m	line:87	struct:_BD_STAT::<anonymous>
+DWORD	C:\Projects\UBW\FW\D\system\typedefs.h	117;"	t	line:117
+D_A	C:\MCC18\h\p18f4550.h	896;"	m	line:896
+D_tick_counter	C:\Projects\UBW\FW\D\user\user.c	155;"	v	line:155
+ECCPAS0	C:\MCC18\h\p18f4550.h	728;"	m	line:728
+ECCPAS0	C:\MCC18\h\p18f4550.h	739;"	m	line:739
+ECCPAS1	C:\MCC18\h\p18f4550.h	729;"	m	line:729
+ECCPAS1	C:\MCC18\h\p18f4550.h	740;"	m	line:740
+ECCPAS2	C:\MCC18\h\p18f4550.h	730;"	m	line:730
+ECCPAS2	C:\MCC18\h\p18f4550.h	741;"	m	line:741
+ECCPASE	C:\MCC18\h\p18f4550.h	731;"	m	line:731
+ECCPASE	C:\MCC18\h\p18f4550.h	742;"	m	line:742
+EEIE	C:\MCC18\h\p18f4550.h	581;"	m	line:581
+EEIF	C:\MCC18\h\p18f4550.h	598;"	m	line:598
+EEIP	C:\MCC18\h\p18f4550.h	615;"	m	line:615
+EEPGD	C:\MCC18\h\p18f4550.h	634;"	m	line:634
+ENDP0	C:\MCC18\h\p18f4550.h	102;"	m	line:102
+ENDP1	C:\MCC18\h\p18f4550.h	103;"	m	line:103
+ENDP2	C:\MCC18\h\p18f4550.h	104;"	m	line:104
+ENDP3	C:\MCC18\h\p18f4550.h	105;"	m	line:105
+EP0_BUFF_SIZE::8	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	38;"	d	line:38
+EPCONDIS	C:\MCC18\h\p18f4550.h	143;"	m	line:143
+EPCONDIS	C:\MCC18\h\p18f4550.h	151;"	m	line:151
+EPCONDIS	C:\MCC18\h\p18f4550.h	159;"	m	line:159
+EPCONDIS	C:\MCC18\h\p18f4550.h	167;"	m	line:167
+EPCONDIS	C:\MCC18\h\p18f4550.h	175;"	m	line:175
+EPCONDIS	C:\MCC18\h\p18f4550.h	183;"	m	line:183
+EPCONDIS	C:\MCC18\h\p18f4550.h	191;"	m	line:191
+EPCONDIS	C:\MCC18\h\p18f4550.h	199;"	m	line:199
+EPCONDIS	C:\MCC18\h\p18f4550.h	207;"	m	line:207
+EPCONDIS	C:\MCC18\h\p18f4550.h	215;"	m	line:215
+EPCONDIS	C:\MCC18\h\p18f4550.h	223;"	m	line:223
+EPCONDIS	C:\MCC18\h\p18f4550.h	231;"	m	line:231
+EPCONDIS	C:\MCC18\h\p18f4550.h	239;"	m	line:239
+EPCONDIS	C:\MCC18\h\p18f4550.h	247;"	m	line:247
+EPCONDIS	C:\MCC18\h\p18f4550.h	255;"	m	line:255
+EPCONDIS	C:\MCC18\h\p18f4550.h	263;"	m	line:263
+EPHSHK	C:\MCC18\h\p18f4550.h	144;"	m	line:144
+EPHSHK	C:\MCC18\h\p18f4550.h	152;"	m	line:152
+EPHSHK	C:\MCC18\h\p18f4550.h	160;"	m	line:160
+EPHSHK	C:\MCC18\h\p18f4550.h	168;"	m	line:168
+EPHSHK	C:\MCC18\h\p18f4550.h	176;"	m	line:176
+EPHSHK	C:\MCC18\h\p18f4550.h	184;"	m	line:184
+EPHSHK	C:\MCC18\h\p18f4550.h	192;"	m	line:192
+EPHSHK	C:\MCC18\h\p18f4550.h	200;"	m	line:200
+EPHSHK	C:\MCC18\h\p18f4550.h	208;"	m	line:208
+EPHSHK	C:\MCC18\h\p18f4550.h	216;"	m	line:216
+EPHSHK	C:\MCC18\h\p18f4550.h	224;"	m	line:224
+EPHSHK	C:\MCC18\h\p18f4550.h	232;"	m	line:232
+EPHSHK	C:\MCC18\h\p18f4550.h	240;"	m	line:240
+EPHSHK	C:\MCC18\h\p18f4550.h	248;"	m	line:248
+EPHSHK	C:\MCC18\h\p18f4550.h	256;"	m	line:256
+EPHSHK	C:\MCC18\h\p18f4550.h	264;"	m	line:264
+EPINEN	C:\MCC18\h\p18f4550.h	141;"	m	line:141
+EPINEN	C:\MCC18\h\p18f4550.h	149;"	m	line:149
+EPINEN	C:\MCC18\h\p18f4550.h	157;"	m	line:157
+EPINEN	C:\MCC18\h\p18f4550.h	165;"	m	line:165
+EPINEN	C:\MCC18\h\p18f4550.h	173;"	m	line:173
+EPINEN	C:\MCC18\h\p18f4550.h	181;"	m	line:181
+EPINEN	C:\MCC18\h\p18f4550.h	189;"	m	line:189
+EPINEN	C:\MCC18\h\p18f4550.h	197;"	m	line:197
+EPINEN	C:\MCC18\h\p18f4550.h	205;"	m	line:205
+EPINEN	C:\MCC18\h\p18f4550.h	213;"	m	line:213
+EPINEN	C:\MCC18\h\p18f4550.h	221;"	m	line:221
+EPINEN	C:\MCC18\h\p18f4550.h	229;"	m	line:229
+EPINEN	C:\MCC18\h\p18f4550.h	237;"	m	line:237
+EPINEN	C:\MCC18\h\p18f4550.h	245;"	m	line:245
+EPINEN	C:\MCC18\h\p18f4550.h	253;"	m	line:253
+EPINEN	C:\MCC18\h\p18f4550.h	261;"	m	line:261
+EPOUTEN	C:\MCC18\h\p18f4550.h	142;"	m	line:142
+EPOUTEN	C:\MCC18\h\p18f4550.h	150;"	m	line:150
+EPOUTEN	C:\MCC18\h\p18f4550.h	158;"	m	line:158
+EPOUTEN	C:\MCC18\h\p18f4550.h	166;"	m	line:166
+EPOUTEN	C:\MCC18\h\p18f4550.h	174;"	m	line:174
+EPOUTEN	C:\MCC18\h\p18f4550.h	182;"	m	line:182
+EPOUTEN	C:\MCC18\h\p18f4550.h	190;"	m	line:190
+EPOUTEN	C:\MCC18\h\p18f4550.h	198;"	m	line:198
+EPOUTEN	C:\MCC18\h\p18f4550.h	206;"	m	line:206
+EPOUTEN	C:\MCC18\h\p18f4550.h	214;"	m	line:214
+EPOUTEN	C:\MCC18\h\p18f4550.h	222;"	m	line:222
+EPOUTEN	C:\MCC18\h\p18f4550.h	230;"	m	line:230
+EPOUTEN	C:\MCC18\h\p18f4550.h	238;"	m	line:238
+EPOUTEN	C:\MCC18\h\p18f4550.h	246;"	m	line:246
+EPOUTEN	C:\MCC18\h\p18f4550.h	254;"	m	line:254
+EPOUTEN	C:\MCC18\h\p18f4550.h	262;"	m	line:262
+EPSTALL	C:\MCC18\h\p18f4550.h	140;"	m	line:140
+EPSTALL	C:\MCC18\h\p18f4550.h	148;"	m	line:148
+EPSTALL	C:\MCC18\h\p18f4550.h	156;"	m	line:156
+EPSTALL	C:\MCC18\h\p18f4550.h	164;"	m	line:164
+EPSTALL	C:\MCC18\h\p18f4550.h	172;"	m	line:172
+EPSTALL	C:\MCC18\h\p18f4550.h	180;"	m	line:180
+EPSTALL	C:\MCC18\h\p18f4550.h	188;"	m	line:188
+EPSTALL	C:\MCC18\h\p18f4550.h	196;"	m	line:196
+EPSTALL	C:\MCC18\h\p18f4550.h	204;"	m	line:204
+EPSTALL	C:\MCC18\h\p18f4550.h	212;"	m	line:212
+EPSTALL	C:\MCC18\h\p18f4550.h	220;"	m	line:220
+EPSTALL	C:\MCC18\h\p18f4550.h	228;"	m	line:228
+EPSTALL	C:\MCC18\h\p18f4550.h	236;"	m	line:236
+EPSTALL	C:\MCC18\h\p18f4550.h	244;"	m	line:244
+EPSTALL	C:\MCC18\h\p18f4550.h	252;"	m	line:252
+EPSTALL	C:\MCC18\h\p18f4550.h	260;"	m	line:260
+FAIL::FALSE	C:\Projects\UBW\FW\D\system\typedefs.h	153;"	d	line:153
+FALSE	C:\Projects\UBW\FW\D\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+FERR	C:\MCC18\h\p18f4550.h	644;"	m	line:644
+FLTS	C:\MCC18\h\p18f4550.h	1074;"	m	line:1074
+FREE	C:\MCC18\h\p18f4550.h	631;"	m	line:631
+FRM0	C:\MCC18\h\p18f4550.h	42;"	m	line:42
+FRM1	C:\MCC18\h\p18f4550.h	43;"	m	line:43
+FRM10	C:\MCC18\h\p18f4550.h	55;"	m	line:55
+FRM2	C:\MCC18\h\p18f4550.h	44;"	m	line:44
+FRM3	C:\MCC18\h\p18f4550.h	45;"	m	line:45
+FRM4	C:\MCC18\h\p18f4550.h	46;"	m	line:46
+FRM5	C:\MCC18\h\p18f4550.h	47;"	m	line:47
+FRM6	C:\MCC18\h\p18f4550.h	48;"	m	line:48
+FRM7	C:\MCC18\h\p18f4550.h	49;"	m	line:49
+FRM8	C:\MCC18\h\p18f4550.h	53;"	m	line:53
+FRM9	C:\MCC18\h\p18f4550.h	54;"	m	line:54
+FSEN	C:\MCC18\h\p18f4550.h	131;"	m	line:131
+GCEN	C:\MCC18\h\p18f4550.h	875;"	m	line:875
+GET_COMM_FEATURE::0x03	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	48;"	d	line:48
+GET_ENCAPSULATED_RESPONSE::0x01	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	46;"	d	line:46
+GET_LINE_CODING::0x21	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	51;"	d	line:51
+GIE	C:\MCC18\h\p18f4550.h	1176;"	m	line:1176
+GIEH	C:\MCC18\h\p18f4550.h	1186;"	m	line:1186
+GIEL	C:\MCC18\h\p18f4550.h	1185;"	m	line:1185
+GO	C:\MCC18\h\p18f4550.h	856;"	m	line:856
+GO_DONE	C:\MCC18\h\p18f4550.h	844;"	m	line:844
+HLVDEN	C:\MCC18\h\p18f4550.h	1019;"	m	line:1019
+HLVDEN	C:\MCC18\h\p18f4550.h	1051;"	m	line:1051
+HLVDIE	C:\MCC18\h\p18f4550.h	588;"	m	line:588
+HLVDIF	C:\MCC18\h\p18f4550.h	605;"	m	line:605
+HLVDIN	C:\MCC18\h\p18f4550.h	295;"	m	line:295
+HLVDIP	C:\MCC18\h\p18f4550.h	622;"	m	line:622
+HLVDL0	C:\MCC18\h\p18f4550.h	1015;"	m	line:1015
+HLVDL0	C:\MCC18\h\p18f4550.h	1047;"	m	line:1047
+HLVDL1	C:\MCC18\h\p18f4550.h	1016;"	m	line:1016
+HLVDL1	C:\MCC18\h\p18f4550.h	1048;"	m	line:1048
+HLVDL2	C:\MCC18\h\p18f4550.h	1017;"	m	line:1017
+HLVDL2	C:\MCC18\h\p18f4550.h	1049;"	m	line:1049
+HLVDL3	C:\MCC18\h\p18f4550.h	1018;"	m	line:1018
+HLVDL3	C:\MCC18\h\p18f4550.h	1050;"	m	line:1050
+HighB	C:\Projects\UBW\FW\D\system\typedefs.h	76;"	m	line:76	struct:_WORD::<anonymous>
+I2C_DAT	C:\MCC18\h\p18f4550.h	905;"	m	line:905
+I2C_READ	C:\MCC18\h\p18f4550.h	902;"	m	line:902
+I2C_START	C:\MCC18\h\p18f4550.h	903;"	m	line:903
+I2C_STOP	C:\MCC18\h\p18f4550.h	904;"	m	line:904
+IDLEIE	C:\MCC18\h\p18f4550.h	73;"	m	line:73
+IDLEIF	C:\MCC18\h\p18f4550.h	63;"	m	line:63
+IDLEN	C:\MCC18\h\p18f4550.h	1070;"	m	line:1070
+INCDIS	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	88;"	m	line:88	struct:_BD_STAT::<anonymous>
+INPUT_PIN::1	C:\Projects\UBW\FW\D\io_cfg.h	55;"	d	line:55
+INT0	C:\MCC18\h\p18f4550.h	311;"	m	line:311
+INT0E	C:\MCC18\h\p18f4550.h	1183;"	m	line:1183
+INT0F	C:\MCC18\h\p18f4550.h	1180;"	m	line:1180
+INT0IE	C:\MCC18\h\p18f4550.h	1173;"	m	line:1173
+INT0IF	C:\MCC18\h\p18f4550.h	1170;"	m	line:1170
+INT1	C:\MCC18\h\p18f4550.h	312;"	m	line:312
+INT1E	C:\MCC18\h\p18f4550.h	1140;"	m	line:1140
+INT1F	C:\MCC18\h\p18f4550.h	1137;"	m	line:1137
+INT1IE	C:\MCC18\h\p18f4550.h	1130;"	m	line:1130
+INT1IF	C:\MCC18\h\p18f4550.h	1127;"	m	line:1127
+INT1IP	C:\MCC18\h\p18f4550.h	1133;"	m	line:1133
+INT1P	C:\MCC18\h\p18f4550.h	1143;"	m	line:1143
+INT2	C:\MCC18\h\p18f4550.h	313;"	m	line:313
+INT2E	C:\MCC18\h\p18f4550.h	1141;"	m	line:1141
+INT2F	C:\MCC18\h\p18f4550.h	1138;"	m	line:1138
+INT2IE	C:\MCC18\h\p18f4550.h	1131;"	m	line:1131
+INT2IF	C:\MCC18\h\p18f4550.h	1128;"	m	line:1128
+INT2IP	C:\MCC18\h\p18f4550.h	1134;"	m	line:1134
+INT2P	C:\MCC18\h\p18f4550.h	1144;"	m	line:1144
+INTEDG0	C:\MCC18\h\p18f4550.h	1156;"	m	line:1156
+INTEDG1	C:\MCC18\h\p18f4550.h	1155;"	m	line:1155
+INTEDG2	C:\MCC18\h\p18f4550.h	1154;"	m	line:1154
+INTSAVELOCS::TBLPTR,TABLAT,PROD	C:\MCC18\h\p18f4550.h	1242;"	d	line:1242
+INTSRC	C:\MCC18\h\p18f4550.h	539;"	m	line:539
+IOFS	C:\MCC18\h\p18f4550.h	1065;"	m	line:1065
+IO_CFG_H	C:\Projects\UBW\FW\D\io_cfg.h	49;"	d	line:49
+IPEN	C:\MCC18\h\p18f4550.h	984;"	m	line:984
+IRCF0	C:\MCC18\h\p18f4550.h	1067;"	m	line:1067
+IRCF1	C:\MCC18\h\p18f4550.h	1068;"	m	line:1068
+IRCF2	C:\MCC18\h\p18f4550.h	1069;"	m	line:1069
+IRVST	C:\MCC18\h\p18f4550.h	1004;"	m	line:1004
+IRVST	C:\MCC18\h\p18f4550.h	1036;"	m	line:1036
+ISR_A_FIFO	C:\Projects\UBW\FW\D\user\user.c	165;"	v	line:165
+ISR_A_FIFO_in	C:\Projects\UBW\FW\D\user\user.c	140;"	v	line:140
+ISR_A_FIFO_length	C:\Projects\UBW\FW\D\user\user.c	142;"	v	line:142
+ISR_A_FIFO_out	C:\Projects\UBW\FW\D\user\user.c	141;"	v	line:141
+ISR_A_RepeatRate	C:\Projects\UBW\FW\D\user\user.c	139;"	v	line:139
+ISR_D_FIFO	C:\Projects\UBW\FW\D\user\user.c	166;"	v	line:166
+ISR_D_FIFO_in	C:\Projects\UBW\FW\D\user\user.c	135;"	v	line:135
+ISR_D_FIFO_length	C:\Projects\UBW\FW\D\user\user.c	137;"	v	line:137
+ISR_D_FIFO_out	C:\Projects\UBW\FW\D\user\user.c	136;"	v	line:136
+ISR_D_RepeatRate	C:\Projects\UBW\FW\D\user\user.c	134;"	v	line:134
+IVRST	C:\MCC18\h\p18f4550.h	1025;"	m	line:1025
+IVRST	C:\MCC18\h\p18f4550.h	1057;"	m	line:1057
+InitializeSystem	C:\Projects\UBW\FW\D\main.c	50;"	p	line:50	file:	signature:(void)
+KEN	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	89;"	m	line:89	struct:_BD_STAT::<anonymous>
+LATA0	C:\MCC18\h\p18f4550.h	392;"	m	line:392
+LATA1	C:\MCC18\h\p18f4550.h	393;"	m	line:393
+LATA2	C:\MCC18\h\p18f4550.h	394;"	m	line:394
+LATA3	C:\MCC18\h\p18f4550.h	395;"	m	line:395
+LATA4	C:\MCC18\h\p18f4550.h	396;"	m	line:396
+LATA5	C:\MCC18\h\p18f4550.h	397;"	m	line:397
+LATA6	C:\MCC18\h\p18f4550.h	398;"	m	line:398
+LATB0	C:\MCC18\h\p18f4550.h	402;"	m	line:402
+LATB1	C:\MCC18\h\p18f4550.h	403;"	m	line:403
+LATB2	C:\MCC18\h\p18f4550.h	404;"	m	line:404
+LATB3	C:\MCC18\h\p18f4550.h	405;"	m	line:405
+LATB4	C:\MCC18\h\p18f4550.h	406;"	m	line:406
+LATB5	C:\MCC18\h\p18f4550.h	407;"	m	line:407
+LATB6	C:\MCC18\h\p18f4550.h	408;"	m	line:408
+LATB7	C:\MCC18\h\p18f4550.h	409;"	m	line:409
+LATC0	C:\MCC18\h\p18f4550.h	413;"	m	line:413
+LATC1	C:\MCC18\h\p18f4550.h	414;"	m	line:414
+LATC2	C:\MCC18\h\p18f4550.h	415;"	m	line:415
+LATC6	C:\MCC18\h\p18f4550.h	417;"	m	line:417
+LATC7	C:\MCC18\h\p18f4550.h	418;"	m	line:418
+LATD0	C:\MCC18\h\p18f4550.h	422;"	m	line:422
+LATD1	C:\MCC18\h\p18f4550.h	423;"	m	line:423
+LATD2	C:\MCC18\h\p18f4550.h	424;"	m	line:424
+LATD3	C:\MCC18\h\p18f4550.h	425;"	m	line:425
+LATD4	C:\MCC18\h\p18f4550.h	426;"	m	line:426
+LATD5	C:\MCC18\h\p18f4550.h	427;"	m	line:427
+LATD6	C:\MCC18\h\p18f4550.h	428;"	m	line:428
+LATD7	C:\MCC18\h\p18f4550.h	429;"	m	line:429
+LATE0	C:\MCC18\h\p18f4550.h	433;"	m	line:433
+LATE1	C:\MCC18\h\p18f4550.h	434;"	m	line:434
+LATE2	C:\MCC18\h\p18f4550.h	435;"	m	line:435
+LEDCount	C:\Projects\UBW\FW\D\user\user.c	2400;"	l	line:2400	file:
+LEDState	C:\Projects\UBW\FW\D\user\user.c	2401;"	l	line:2401	file:
+LINE_CODING	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	282;"	t	line:282
+LINE_CODING_LENGTH::0x07	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	267;"	d	line:267
+LOWER_LSB::(a)((a).v[0])	C:\Projects\UBW\FW\D\system\typedefs.h	118;"	d	line:118
+LOWER_MSB::(a)((a).v[1])	C:\Projects\UBW\FW\D\system\typedefs.h	119;"	d	line:119
+LSB::(a)((a).v[0])	C:\Projects\UBW\FW\D\system\typedefs.h	83;"	d	line:83
+LVDEN	C:\MCC18\h\p18f4550.h	1003;"	m	line:1003
+LVDEN	C:\MCC18\h\p18f4550.h	1035;"	m	line:1035
+LVDIE	C:\MCC18\h\p18f4550.h	579;"	m	line:579
+LVDIF	C:\MCC18\h\p18f4550.h	596;"	m	line:596
+LVDIN	C:\MCC18\h\p18f4550.h	291;"	m	line:291
+LVDIP	C:\MCC18\h\p18f4550.h	613;"	m	line:613
+LVDL0	C:\MCC18\h\p18f4550.h	1031;"	m	line:1031
+LVDL0	C:\MCC18\h\p18f4550.h	999;"	m	line:999
+LVDL1	C:\MCC18\h\p18f4550.h	1000;"	m	line:1000
+LVDL1	C:\MCC18\h\p18f4550.h	1032;"	m	line:1032
+LVDL2	C:\MCC18\h\p18f4550.h	1001;"	m	line:1001
+LVDL2	C:\MCC18\h\p18f4550.h	1033;"	m	line:1033
+LVDL3	C:\MCC18\h\p18f4550.h	1002;"	m	line:1002
+LVDL3	C:\MCC18\h\p18f4550.h	1034;"	m	line:1034
+LVV0	C:\MCC18\h\p18f4550.h	1007;"	m	line:1007
+LVV0	C:\MCC18\h\p18f4550.h	1039;"	m	line:1039
+LVV1	C:\MCC18\h\p18f4550.h	1008;"	m	line:1008
+LVV1	C:\MCC18\h\p18f4550.h	1040;"	m	line:1040
+LVV2	C:\MCC18\h\p18f4550.h	1009;"	m	line:1009
+LVV2	C:\MCC18\h\p18f4550.h	1041;"	m	line:1041
+LVV3	C:\MCC18\h\p18f4550.h	1010;"	m	line:1010
+LVV3	C:\MCC18\h\p18f4550.h	1042;"	m	line:1042
+LowB	C:\Projects\UBW\FW\D\system\typedefs.h	75;"	m	line:75	struct:_WORD::<anonymous>
+MAX_EP_NUMBER::3	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	80;"	d	line:80
+MAX_NUM_INT::1	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	39;"	d	line:39
+MODE_PP::_PPBM0	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	42;"	d	line:42
+MSB::(a)((a).v[1])	C:\Projects\UBW\FW\D\system\typedefs.h	84;"	d	line:84
+MUID_CDC::3	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	59;"	d	line:59
+MUID_HID::2	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	58;"	d	line:58
+MUID_MSD::4	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	60;"	d	line:60
+MUID_NULL::0	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	56;"	d	line:56
+MUID_USB9::1	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	57;"	d	line:57
+N	C:\MCC18\h\p18f4550.h	1096;"	m	line:1096
+NETWORK_CONNECTION::0x00	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	59;"	d	line:59
+NOT_A	C:\MCC18\h\p18f4550.h	911;"	m	line:911
+NOT_ADDRESS	C:\MCC18\h\p18f4550.h	917;"	m	line:917
+NOT_BOR	C:\MCC18\h\p18f4550.h	968;"	m	line:968
+NOT_DONE	C:\MCC18\h\p18f4550.h	860;"	m	line:860
+NOT_IPEN	C:\MCC18\h\p18f4550.h	975;"	m	line:975
+NOT_PD	C:\MCC18\h\p18f4550.h	970;"	m	line:970
+NOT_POR	C:\MCC18\h\p18f4550.h	969;"	m	line:969
+NOT_RBPU	C:\MCC18\h\p18f4550.h	1157;"	m	line:1157
+NOT_RI	C:\MCC18\h\p18f4550.h	972;"	m	line:972
+NOT_T1SYNC	C:\MCC18\h\p18f4550.h	960;"	m	line:960
+NOT_T3SYNC	C:\MCC18\h\p18f4550.h	689;"	m	line:689
+NOT_TO	C:\MCC18\h\p18f4550.h	971;"	m	line:971
+NOT_W	C:\MCC18\h\p18f4550.h	909;"	m	line:909
+NOT_WRITE	C:\MCC18\h\p18f4550.h	915;"	m	line:915
+NO_PROTOCOL::0x00	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	81;"	d	line:81
+Nop::{_asmnop_endasm}	C:\MCC18\h\p18f4550.h	1227;"	d	line:1227
+OERR	C:\MCC18\h\p18f4550.h	643;"	m	line:643
+OESPP	C:\MCC18\h\p18f4550.h	387;"	m	line:387
+OK::TRUE	C:\Projects\UBW\FW\D\system\typedefs.h	152;"	d	line:152
+OSC2	C:\MCC18\h\p18f4550.h	284;"	m	line:284
+OSCFIE	C:\MCC18\h\p18f4550.h	584;"	m	line:584
+OSCFIF	C:\MCC18\h\p18f4550.h	601;"	m	line:601
+OSCFIP	C:\MCC18\h\p18f4550.h	618;"	m	line:618
+OSTS	C:\MCC18\h\p18f4550.h	1066;"	m	line:1066
+OUTPUT_PIN::0	C:\Projects\UBW\FW\D\io_cfg.h	56;"	d	line:56
+OV	C:\MCC18\h\p18f4550.h	1095;"	m	line:1095
+P	C:\MCC18\h\p18f4550.h	895;"	m	line:895
+P1A	C:\MCC18\h\p18f4550.h	345;"	m	line:345
+P1M0	C:\MCC18\h\p18f4550.h	803;"	m	line:803
+P1M0	C:\MCC18\h\p18f4550.h	814;"	m	line:814
+P1M1	C:\MCC18\h\p18f4550.h	804;"	m	line:804
+P1M1	C:\MCC18\h\p18f4550.h	815;"	m	line:815
+PA	C:\Projects\UBW\FW\D\user\user.c	1237;"	l	line:1237
+PA	C:\Projects\UBW\FW\D\user\user.c	1318;"	l	line:1318
+PB	C:\Projects\UBW\FW\D\user\user.c	1237;"	l	line:1237
+PB	C:\Projects\UBW\FW\D\user\user.c	1318;"	l	line:1318
+PC	C:\Projects\UBW\FW\D\user\user.c	1237;"	l	line:1237
+PC	C:\Projects\UBW\FW\D\user\user.c	1318;"	l	line:1318
+PCFG0	C:\MCC18\h\p18f4550.h	833;"	m	line:833
+PCFG1	C:\MCC18\h\p18f4550.h	834;"	m	line:834
+PCFG2	C:\MCC18\h\p18f4550.h	835;"	m	line:835
+PCFG3	C:\MCC18\h\p18f4550.h	836;"	m	line:836
+PD	C:\MCC18\h\p18f4550.h	980;"	m	line:980
+PD	C:\Projects\UBW\FW\D\user\user.c	1239;"	l	line:1239
+PD	C:\Projects\UBW\FW\D\user\user.c	1320;"	l	line:1320
+PDC0	C:\MCC18\h\p18f4550.h	746;"	m	line:746
+PDC0	C:\MCC18\h\p18f4550.h	757;"	m	line:757
+PDC1	C:\MCC18\h\p18f4550.h	747;"	m	line:747
+PDC1	C:\MCC18\h\p18f4550.h	758;"	m	line:758
+PDC2	C:\MCC18\h\p18f4550.h	748;"	m	line:748
+PDC2	C:\MCC18\h\p18f4550.h	759;"	m	line:759
+PDC3	C:\MCC18\h\p18f4550.h	749;"	m	line:749
+PDC3	C:\MCC18\h\p18f4550.h	760;"	m	line:760
+PDC4	C:\MCC18\h\p18f4550.h	750;"	m	line:750
+PDC4	C:\MCC18\h\p18f4550.h	761;"	m	line:761
+PDC5	C:\MCC18\h\p18f4550.h	751;"	m	line:751
+PDC5	C:\MCC18\h\p18f4550.h	762;"	m	line:762
+PDC6	C:\MCC18\h\p18f4550.h	752;"	m	line:752
+PDC6	C:\MCC18\h\p18f4550.h	763;"	m	line:763
+PE	C:\Projects\UBW\FW\D\user\user.c	1239;"	l	line:1239
+PE	C:\Projects\UBW\FW\D\user\user.c	1320;"	l	line:1320
+PEIE	C:\MCC18\h\p18f4550.h	1175;"	m	line:1175
+PEN	C:\MCC18\h\p18f4550.h	870;"	m	line:870
+PGC	C:\MCC18\h\p18f4550.h	318;"	m	line:318
+PGD	C:\MCC18\h\p18f4550.h	319;"	m	line:319
+PGM	C:\MCC18\h\p18f4550.h	317;"	m	line:317
+PID	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	105;"	m	line:105	struct:_BD_STAT::<anonymous>
+PID0	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	96;"	m	line:96	struct:_BD_STAT::<anonymous>
+PID1	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	97;"	m	line:97	struct:_BD_STAT::<anonymous>
+PID2	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	98;"	m	line:98	struct:_BD_STAT::<anonymous>
+PID3	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	99;"	m	line:99	struct:_BD_STAT::<anonymous>
+PIDEE	C:\MCC18\h\p18f4550.h	89;"	m	line:89
+PIDEF	C:\MCC18\h\p18f4550.h	79;"	m	line:79
+PKTDIS	C:\MCC18\h\p18f4550.h	113;"	m	line:113
+POINTER	C:\Projects\UBW\FW\D\system\typedefs.h	148;"	t	line:148
+POR	C:\MCC18\h\p18f4550.h	979;"	m	line:979
+POWERED_STATE::2	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	59;"	d	line:59
+PPB0	C:\MCC18\h\p18f4550.h	129;"	m	line:129
+PPB1	C:\MCC18\h\p18f4550.h	130;"	m	line:130
+PPBI	C:\MCC18\h\p18f4550.h	100;"	m	line:100
+PPBRST	C:\MCC18\h\p18f4550.h	115;"	m	line:115
+PRSEN	C:\MCC18\h\p18f4550.h	753;"	m	line:753
+PRSEN	C:\MCC18\h\p18f4550.h	764;"	m	line:764
+PSA	C:\MCC18\h\p18f4550.h	1082;"	m	line:1082
+PSSAC0	C:\MCC18\h\p18f4550.h	726;"	m	line:726
+PSSAC0	C:\MCC18\h\p18f4550.h	737;"	m	line:737
+PSSAC1	C:\MCC18\h\p18f4550.h	727;"	m	line:727
+PSSAC1	C:\MCC18\h\p18f4550.h	738;"	m	line:738
+PSSBD0	C:\MCC18\h\p18f4550.h	724;"	m	line:724
+PSSBD0	C:\MCC18\h\p18f4550.h	735;"	m	line:735
+PSSBD1	C:\MCC18\h\p18f4550.h	725;"	m	line:725
+PSSBD1	C:\MCC18\h\p18f4550.h	736;"	m	line:736
+ProcessIO	C:\Projects\UBW\FW\D\user\user.c	633;"	f	line:633	signature:(void)
+ProcessIO	C:\Projects\UBW\FW\D\user\user.h	42;"	p	line:42	signature:(void)
+R	C:\MCC18\h\p18f4550.h	927;"	m	line:927
+RA0	C:\MCC18\h\p18f4550.h	269;"	m	line:269
+RA0	C:\MCC18\h\p18f4550.h	439;"	m	line:439
+RA1	C:\MCC18\h\p18f4550.h	270;"	m	line:270
+RA1	C:\MCC18\h\p18f4550.h	440;"	m	line:440
+RA2	C:\MCC18\h\p18f4550.h	271;"	m	line:271
+RA2	C:\MCC18\h\p18f4550.h	441;"	m	line:441
+RA3	C:\MCC18\h\p18f4550.h	272;"	m	line:272
+RA3	C:\MCC18\h\p18f4550.h	442;"	m	line:442
+RA4	C:\MCC18\h\p18f4550.h	273;"	m	line:273
+RA4	C:\MCC18\h\p18f4550.h	443;"	m	line:443
+RA5	C:\MCC18\h\p18f4550.h	274;"	m	line:274
+RA5	C:\MCC18\h\p18f4550.h	444;"	m	line:444
+RA6	C:\MCC18\h\p18f4550.h	275;"	m	line:275
+RA6	C:\MCC18\h\p18f4550.h	445;"	m	line:445
+RB0	C:\MCC18\h\p18f4550.h	301;"	m	line:301
+RB0	C:\MCC18\h\p18f4550.h	459;"	m	line:459
+RB1	C:\MCC18\h\p18f4550.h	302;"	m	line:302
+RB1	C:\MCC18\h\p18f4550.h	460;"	m	line:460
+RB2	C:\MCC18\h\p18f4550.h	303;"	m	line:303
+RB2	C:\MCC18\h\p18f4550.h	461;"	m	line:461
+RB3	C:\MCC18\h\p18f4550.h	304;"	m	line:304
+RB3	C:\MCC18\h\p18f4550.h	462;"	m	line:462
+RB4	C:\MCC18\h\p18f4550.h	305;"	m	line:305
+RB4	C:\MCC18\h\p18f4550.h	463;"	m	line:463
+RB5	C:\MCC18\h\p18f4550.h	306;"	m	line:306
+RB5	C:\MCC18\h\p18f4550.h	464;"	m	line:464
+RB6	C:\MCC18\h\p18f4550.h	307;"	m	line:307
+RB6	C:\MCC18\h\p18f4550.h	465;"	m	line:465
+RB7	C:\MCC18\h\p18f4550.h	308;"	m	line:308
+RB7	C:\MCC18\h\p18f4550.h	466;"	m	line:466
+RBIE	C:\MCC18\h\p18f4550.h	1172;"	m	line:1172
+RBIF	C:\MCC18\h\p18f4550.h	1169;"	m	line:1169
+RBIP	C:\MCC18\h\p18f4550.h	1150;"	m	line:1150
+RBPU	C:\MCC18\h\p18f4550.h	1163;"	m	line:1163
+RC0	C:\MCC18\h\p18f4550.h	325;"	m	line:325
+RC0	C:\MCC18\h\p18f4550.h	481;"	m	line:481
+RC1	C:\MCC18\h\p18f4550.h	326;"	m	line:326
+RC1	C:\MCC18\h\p18f4550.h	482;"	m	line:482
+RC2	C:\MCC18\h\p18f4550.h	327;"	m	line:327
+RC2	C:\MCC18\h\p18f4550.h	483;"	m	line:483
+RC4	C:\MCC18\h\p18f4550.h	329;"	m	line:329
+RC5	C:\MCC18\h\p18f4550.h	330;"	m	line:330
+RC6	C:\MCC18\h\p18f4550.h	331;"	m	line:331
+RC6	C:\MCC18\h\p18f4550.h	485;"	m	line:485
+RC7	C:\MCC18\h\p18f4550.h	332;"	m	line:332
+RC7	C:\MCC18\h\p18f4550.h	486;"	m	line:486
+RCEN	C:\MCC18\h\p18f4550.h	871;"	m	line:871
+RCIDL	C:\MCC18\h\p18f4550.h	775;"	m	line:775
+RCIE	C:\MCC18\h\p18f4550.h	548;"	m	line:548
+RCIF	C:\MCC18\h\p18f4550.h	559;"	m	line:559
+RCIP	C:\MCC18\h\p18f4550.h	570;"	m	line:570
+RCMT	C:\MCC18\h\p18f4550.h	780;"	m	line:780
+RD	C:\MCC18\h\p18f4550.h	627;"	m	line:627
+RD0	C:\MCC18\h\p18f4550.h	354;"	m	line:354
+RD0	C:\MCC18\h\p18f4550.h	499;"	m	line:499
+RD1	C:\MCC18\h\p18f4550.h	355;"	m	line:355
+RD1	C:\MCC18\h\p18f4550.h	500;"	m	line:500
+RD16	C:\MCC18\h\p18f4550.h	681;"	m	line:681
+RD16	C:\MCC18\h\p18f4550.h	956;"	m	line:956
+RD2	C:\MCC18\h\p18f4550.h	356;"	m	line:356
+RD2	C:\MCC18\h\p18f4550.h	501;"	m	line:501
+RD3	C:\MCC18\h\p18f4550.h	357;"	m	line:357
+RD3	C:\MCC18\h\p18f4550.h	502;"	m	line:502
+RD4	C:\MCC18\h\p18f4550.h	358;"	m	line:358
+RD4	C:\MCC18\h\p18f4550.h	503;"	m	line:503
+RD5	C:\MCC18\h\p18f4550.h	359;"	m	line:359
+RD5	C:\MCC18\h\p18f4550.h	504;"	m	line:504
+RD6	C:\MCC18\h\p18f4550.h	360;"	m	line:360
+RD6	C:\MCC18\h\p18f4550.h	505;"	m	line:505
+RD7	C:\MCC18\h\p18f4550.h	361;"	m	line:361
+RD7	C:\MCC18\h\p18f4550.h	506;"	m	line:506
+RDPU	C:\MCC18\h\p18f4550.h	382;"	m	line:382
+RDSPP	C:\MCC18\h\p18f4550.h	32;"	m	line:32
+RE0	C:\MCC18\h\p18f4550.h	377;"	m	line:377
+RE0	C:\MCC18\h\p18f4550.h	521;"	m	line:521
+RE1	C:\MCC18\h\p18f4550.h	378;"	m	line:378
+RE1	C:\MCC18\h\p18f4550.h	522;"	m	line:522
+RE2	C:\MCC18\h\p18f4550.h	379;"	m	line:379
+RE2	C:\MCC18\h\p18f4550.h	523;"	m	line:523
+RE3	C:\MCC18\h\p18f4550.h	380;"	m	line:380
+READ_WRITE	C:\MCC18\h\p18f4550.h	921;"	m	line:921
+RESPONSE_AVAILABLE::0x01	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	60;"	d	line:60
+RESUME	C:\MCC18\h\p18f4550.h	111;"	m	line:111
+RI	C:\MCC18\h\p18f4550.h	982;"	m	line:982
+RSEN	C:\MCC18\h\p18f4550.h	869;"	m	line:869
+RX	C:\MCC18\h\p18f4550.h	340;"	m	line:340
+RX9	C:\MCC18\h\p18f4550.h	648;"	m	line:648
+RX9D	C:\MCC18\h\p18f4550.h	642;"	m	line:642
+R_W	C:\MCC18\h\p18f4550.h	893;"	m	line:893
+RemoteWakeup	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	75;"	m	line:75	struct:_USB_DEVICE_STATUS::<anonymous>
+Reset::{_asmreset_endasm}	C:\MCC18\h\p18f4550.h	1230;"	d	line:1230
+Rlcf::(f,dest,access){_asmmovlbfrlcf	C:\MCC18\h\p18f4550.h	1232;"	d	line:1232
+Rlncf::(f,dest,access){_asmmovlbfrlnc	C:\MCC18\h\p18f4550.h	1233;"	d	line:1233
+Rrcf::(f,dest,access){_asmmovlbfrrcf	C:\MCC18\h\p18f4550.h	1234;"	d	line:1234
+Rrncf::(f,dest,access){_asmmovlbfrrnc	C:\MCC18\h\p18f4550.h	1235;"	d	line:1235
+S	C:\MCC18\h\p18f4550.h	894;"	m	line:894
+SBOREN	C:\MCC18\h\p18f4550.h	974;"	m	line:974
+SCKP	C:\MCC18\h\p18f4550.h	773;"	m	line:773
+SCS0	C:\MCC18\h\p18f4550.h	1063;"	m	line:1063
+SCS1	C:\MCC18\h\p18f4550.h	1064;"	m	line:1064
+SE0	C:\MCC18\h\p18f4550.h	114;"	m	line:114
+SEN	C:\MCC18\h\p18f4550.h	868;"	m	line:868
+SENDB	C:\MCC18\h\p18f4550.h	661;"	m	line:661
+SEND_BREAK::0x23	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	53;"	d	line:53
+SEND_ENCAPSULATED_COMMAND::0x00	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	45;"	d	line:45
+SERIAL_STATE::0x20	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	61;"	d	line:61
+SET_COMM_FEATURE::0x02	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	47;"	d	line:47
+SET_CONTROL_LINE_STATE::0x22	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	52;"	d	line:52
+SET_LINE_CODING::0x20	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	50;"	d	line:50
+SMP	C:\MCC18\h\p18f4550.h	898;"	m	line:898
+SOFIE	C:\MCC18\h\p18f4550.h	75;"	m	line:75
+SOFIF	C:\MCC18\h\p18f4550.h	65;"	m	line:65
+SPEN	C:\MCC18\h\p18f4550.h	649;"	m	line:649
+SPP0	C:\MCC18\h\p18f4550.h	364;"	m	line:364
+SPP1	C:\MCC18\h\p18f4550.h	365;"	m	line:365
+SPP2	C:\MCC18\h\p18f4550.h	366;"	m	line:366
+SPP3	C:\MCC18\h\p18f4550.h	367;"	m	line:367
+SPP4	C:\MCC18\h\p18f4550.h	368;"	m	line:368
+SPP5	C:\MCC18\h\p18f4550.h	369;"	m	line:369
+SPP6	C:\MCC18\h\p18f4550.h	370;"	m	line:370
+SPP7	C:\MCC18\h\p18f4550.h	371;"	m	line:371
+SPPBUSY	C:\MCC18\h\p18f4550.h	29;"	m	line:29
+SPPEN	C:\MCC18\h\p18f4550.h	36;"	m	line:36
+SPPIE	C:\MCC18\h\p18f4550.h	550;"	m	line:550
+SPPIF	C:\MCC18\h\p18f4550.h	561;"	m	line:561
+SPPIP	C:\MCC18\h\p18f4550.h	572;"	m	line:572
+SPPOWN	C:\MCC18\h\p18f4550.h	37;"	m	line:37
+SREN	C:\MCC18\h\p18f4550.h	647;"	m	line:647
+SSPEN	C:\MCC18\h\p18f4550.h	884;"	m	line:884
+SSPIE	C:\MCC18\h\p18f4550.h	546;"	m	line:546
+SSPIF	C:\MCC18\h\p18f4550.h	557;"	m	line:557
+SSPIP	C:\MCC18\h\p18f4550.h	568;"	m	line:568
+SSPM0	C:\MCC18\h\p18f4550.h	879;"	m	line:879
+SSPM1	C:\MCC18\h\p18f4550.h	880;"	m	line:880
+SSPM2	C:\MCC18\h\p18f4550.h	881;"	m	line:881
+SSPM3	C:\MCC18\h\p18f4550.h	882;"	m	line:882
+SSPOV	C:\MCC18\h\p18f4550.h	885;"	m	line:885
+STALLIE	C:\MCC18\h\p18f4550.h	74;"	m	line:74
+STALLIF	C:\MCC18\h\p18f4550.h	64;"	m	line:64
+STKFUL	C:\MCC18\h\p18f4550.h	1210;"	m	line:1210
+STKPTR0	C:\MCC18\h\p18f4550.h	1203;"	m	line:1203
+STKPTR1	C:\MCC18\h\p18f4550.h	1204;"	m	line:1204
+STKPTR2	C:\MCC18\h\p18f4550.h	1205;"	m	line:1205
+STKPTR3	C:\MCC18\h\p18f4550.h	1206;"	m	line:1206
+STKPTR4	C:\MCC18\h\p18f4550.h	1207;"	m	line:1207
+STKUNF	C:\MCC18\h\p18f4550.h	1209;"	m	line:1209
+SUSPND	C:\MCC18\h\p18f4550.h	110;"	m	line:110
+SWDTE	C:\MCC18\h\p18f4550.h	993;"	m	line:993
+SWDTEN	C:\MCC18\h\p18f4550.h	990;"	m	line:990
+SYNC	C:\MCC18\h\p18f4550.h	662;"	m	line:662
+SetupPkt	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	268;"	v	line:268
+Sleep::{_asmsleep_endasm}	C:\MCC18\h\p18f4550.h	1229;"	d	line:1229
+Stat	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	114;"	m	line:114	struct:_BDT::<anonymous>
+Swapf::(f,dest,access){_asmmovlbfswap	C:\MCC18\h\p18f4550.h	1236;"	d	line:1236
+SwitchIsPressed	C:\Projects\UBW\FW\D\user\user.c	214;"	p	line:214	file:	signature:(void)
+SwitchIsPressed	C:\Projects\UBW\FW\D\user\user.c	2465;"	f	line:2465	signature:(void)
+T08BIT	C:\MCC18\h\p18f4550.h	1085;"	m	line:1085
+T0CKI	C:\MCC18\h\p18f4550.h	282;"	m	line:282
+T0CS	C:\MCC18\h\p18f4550.h	1084;"	m	line:1084
+T0IE	C:\MCC18\h\p18f4550.h	1184;"	m	line:1184
+T0IF	C:\MCC18\h\p18f4550.h	1181;"	m	line:1181
+T0IP	C:\MCC18\h\p18f4550.h	1161;"	m	line:1161
+T0PS0	C:\MCC18\h\p18f4550.h	1079;"	m	line:1079
+T0PS1	C:\MCC18\h\p18f4550.h	1080;"	m	line:1080
+T0PS2	C:\MCC18\h\p18f4550.h	1081;"	m	line:1081
+T0SE	C:\MCC18\h\p18f4550.h	1083;"	m	line:1083
+T13CKI	C:\MCC18\h\p18f4550.h	343;"	m	line:343
+T1CKPS0	C:\MCC18\h\p18f4550.h	953;"	m	line:953
+T1CKPS1	C:\MCC18\h\p18f4550.h	954;"	m	line:954
+T1OSCEN	C:\MCC18\h\p18f4550.h	952;"	m	line:952
+T1OSI	C:\MCC18\h\p18f4550.h	336;"	m	line:336
+T1OSO	C:\MCC18\h\p18f4550.h	335;"	m	line:335
+T1RUN	C:\MCC18\h\p18f4550.h	955;"	m	line:955
+T1SYNC	C:\MCC18\h\p18f4550.h	951;"	m	line:951
+T2CKPS0	C:\MCC18\h\p18f4550.h	936;"	m	line:936
+T2CKPS1	C:\MCC18\h\p18f4550.h	937;"	m	line:937
+T2OUTPS0	C:\MCC18\h\p18f4550.h	939;"	m	line:939
+T2OUTPS1	C:\MCC18\h\p18f4550.h	940;"	m	line:940
+T2OUTPS2	C:\MCC18\h\p18f4550.h	941;"	m	line:941
+T2OUTPS3	C:\MCC18\h\p18f4550.h	942;"	m	line:942
+T3CCP1	C:\MCC18\h\p18f4550.h	677;"	m	line:677
+T3CCP2	C:\MCC18\h\p18f4550.h	680;"	m	line:680
+T3CKPS0	C:\MCC18\h\p18f4550.h	678;"	m	line:678
+T3CKPS1	C:\MCC18\h\p18f4550.h	679;"	m	line:679
+T3NSYNC	C:\MCC18\h\p18f4550.h	685;"	m	line:685
+T3SYNC	C:\MCC18\h\p18f4550.h	676;"	m	line:676
+TMR0IE	C:\MCC18\h\p18f4550.h	1174;"	m	line:1174
+TMR0IF	C:\MCC18\h\p18f4550.h	1171;"	m	line:1171
+TMR0IP	C:\MCC18\h\p18f4550.h	1152;"	m	line:1152
+TMR0ON	C:\MCC18\h\p18f4550.h	1086;"	m	line:1086
+TMR1CS	C:\MCC18\h\p18f4550.h	950;"	m	line:950
+TMR1IE	C:\MCC18\h\p18f4550.h	543;"	m	line:543
+TMR1IF	C:\MCC18\h\p18f4550.h	554;"	m	line:554
+TMR1IP	C:\MCC18\h\p18f4550.h	565;"	m	line:565
+TMR1ON	C:\MCC18\h\p18f4550.h	949;"	m	line:949
+TMR2IE	C:\MCC18\h\p18f4550.h	544;"	m	line:544
+TMR2IF	C:\MCC18\h\p18f4550.h	555;"	m	line:555
+TMR2IP	C:\MCC18\h\p18f4550.h	566;"	m	line:566
+TMR2ON	C:\MCC18\h\p18f4550.h	938;"	m	line:938
+TMR3CS	C:\MCC18\h\p18f4550.h	675;"	m	line:675
+TMR3IE	C:\MCC18\h\p18f4550.h	578;"	m	line:578
+TMR3IF	C:\MCC18\h\p18f4550.h	595;"	m	line:595
+TMR3IP	C:\MCC18\h\p18f4550.h	612;"	m	line:612
+TMR3ON	C:\MCC18\h\p18f4550.h	674;"	m	line:674
+TO	C:\MCC18\h\p18f4550.h	981;"	m	line:981
+TRISA0	C:\MCC18\h\p18f4550.h	449;"	m	line:449
+TRISA1	C:\MCC18\h\p18f4550.h	450;"	m	line:450
+TRISA2	C:\MCC18\h\p18f4550.h	451;"	m	line:451
+TRISA3	C:\MCC18\h\p18f4550.h	452;"	m	line:452
+TRISA4	C:\MCC18\h\p18f4550.h	453;"	m	line:453
+TRISA5	C:\MCC18\h\p18f4550.h	454;"	m	line:454
+TRISA6	C:\MCC18\h\p18f4550.h	455;"	m	line:455
+TRISB0	C:\MCC18\h\p18f4550.h	470;"	m	line:470
+TRISB1	C:\MCC18\h\p18f4550.h	471;"	m	line:471
+TRISB2	C:\MCC18\h\p18f4550.h	472;"	m	line:472
+TRISB3	C:\MCC18\h\p18f4550.h	473;"	m	line:473
+TRISB4	C:\MCC18\h\p18f4550.h	474;"	m	line:474
+TRISB5	C:\MCC18\h\p18f4550.h	475;"	m	line:475
+TRISB6	C:\MCC18\h\p18f4550.h	476;"	m	line:476
+TRISB7	C:\MCC18\h\p18f4550.h	477;"	m	line:477
+TRISC0	C:\MCC18\h\p18f4550.h	490;"	m	line:490
+TRISC1	C:\MCC18\h\p18f4550.h	491;"	m	line:491
+TRISC2	C:\MCC18\h\p18f4550.h	492;"	m	line:492
+TRISC6	C:\MCC18\h\p18f4550.h	494;"	m	line:494
+TRISC7	C:\MCC18\h\p18f4550.h	495;"	m	line:495
+TRISD0	C:\MCC18\h\p18f4550.h	510;"	m	line:510
+TRISD1	C:\MCC18\h\p18f4550.h	511;"	m	line:511
+TRISD2	C:\MCC18\h\p18f4550.h	512;"	m	line:512
+TRISD3	C:\MCC18\h\p18f4550.h	513;"	m	line:513
+TRISD4	C:\MCC18\h\p18f4550.h	514;"	m	line:514
+TRISD5	C:\MCC18\h\p18f4550.h	515;"	m	line:515
+TRISD6	C:\MCC18\h\p18f4550.h	516;"	m	line:516
+TRISD7	C:\MCC18\h\p18f4550.h	517;"	m	line:517
+TRISE0	C:\MCC18\h\p18f4550.h	527;"	m	line:527
+TRISE1	C:\MCC18\h\p18f4550.h	528;"	m	line:528
+TRISE2	C:\MCC18\h\p18f4550.h	529;"	m	line:529
+TRMT	C:\MCC18\h\p18f4550.h	659;"	m	line:659
+TRNIE	C:\MCC18\h\p18f4550.h	72;"	m	line:72
+TRNIF	C:\MCC18\h\p18f4550.h	62;"	m	line:62
+TRUE	C:\Projects\UBW\FW\D\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+TUN0	C:\MCC18\h\p18f4550.h	533;"	m	line:533
+TUN1	C:\MCC18\h\p18f4550.h	534;"	m	line:534
+TUN2	C:\MCC18\h\p18f4550.h	535;"	m	line:535
+TUN3	C:\MCC18\h\p18f4550.h	536;"	m	line:536
+TUN4	C:\MCC18\h\p18f4550.h	537;"	m	line:537
+TX	C:\MCC18\h\p18f4550.h	339;"	m	line:339
+TX9	C:\MCC18\h\p18f4550.h	664;"	m	line:664
+TX9D	C:\MCC18\h\p18f4550.h	658;"	m	line:658
+TXEN	C:\MCC18\h\p18f4550.h	663;"	m	line:663
+TXIE	C:\MCC18\h\p18f4550.h	547;"	m	line:547
+TXIF	C:\MCC18\h\p18f4550.h	558;"	m	line:558
+TXIP	C:\MCC18\h\p18f4550.h	569;"	m	line:569
+TYPEDEFS_H	C:\Projects\UBW\FW\D\system\typedefs.h	38;"	d	line:38
+UA	C:\MCC18\h\p18f4550.h	892;"	m	line:892
+UCFG_VAL::_PUEN|_TRINT|_FS|MODE_PP	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	43;"	d	line:43
+UERRIE	C:\MCC18\h\p18f4550.h	70;"	m	line:70
+UERRIF	C:\MCC18\h\p18f4550.h	60;"	m	line:60
+UOEMON	C:\MCC18\h\p18f4550.h	135;"	m	line:135
+UOWN	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	101;"	m	line:101	struct:_BD_STAT::<anonymous>
+UOWN	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	91;"	m	line:91	struct:_BD_STAT::<anonymous>
+UPPER_LSB::(a)((a).v[2])	C:\Projects\UBW\FW\D\system\typedefs.h	120;"	d	line:120
+UPPER_MSB::(a)((a).v[3])	C:\Projects\UBW\FW\D\system\typedefs.h	121;"	d	line:121
+UPUEN	C:\MCC18\h\p18f4550.h	133;"	m	line:133
+URSTIE	C:\MCC18\h\p18f4550.h	69;"	m	line:69
+URSTIF	C:\MCC18\h\p18f4550.h	59;"	m	line:59
+USBCFG_H	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	35;"	d	line:35
+USBCheckBusStatus	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	76;"	f	line:76	signature:(void)
+USBCheckCDCRequest	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	88;"	f	line:88	signature:(void)
+USBCheckCDCRequest	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	359;"	p	line:359	signature:(void)
+USBCheckStdRequest	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	70;"	f	line:70	signature:(void)
+USBCtrlEPService	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	78;"	f	line:78	signature:(void)
+USBCtrlEPServiceComplete	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	382;"	f	line:382	signature:(void)
+USBCtrlTrfInHandler	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	221;"	f	line:221	signature:(void)
+USBCtrlTrfInHandler	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	54;"	p	line:54	file:	signature:(void)
+USBCtrlTrfOutHandler	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	176;"	f	line:176	signature:(void)
+USBCtrlTrfOutHandler	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	53;"	p	line:53	file:	signature:(void)
+USBCtrlTrfRxService	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	330;"	f	line:330	signature:(void)
+USBCtrlTrfSetupHandler	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	133;"	f	line:133	signature:(void)
+USBCtrlTrfSetupHandler	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	52;"	p	line:52	file:	signature:(void)
+USBCtrlTrfTxService	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	260;"	f	line:260	signature:(void)
+USBDSC_H	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	40;"	d	line:40
+USBDriverService	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	215;"	f	line:215	signature:(void)
+USBEN	C:\MCC18\h\p18f4550.h	112;"	m	line:112
+USBErrorHandler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	524;"	f	line:524	signature:(void)
+USBErrorHandler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	56;"	p	line:56	file:	signature:(void)
+USBIE	C:\MCC18\h\p18f4550.h	582;"	m	line:582
+USBIF	C:\MCC18\h\p18f4550.h	599;"	m	line:599
+USBIP	C:\MCC18\h\p18f4550.h	616;"	m	line:616
+USBMMAP_H	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	38;"	d	line:38
+USBModuleDisable	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	161;"	f	line:161	signature:(void)
+USBModuleDisable	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	48;"	p	line:48	file:	signature:(void)
+USBModuleEnable	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	135;"	f	line:135	signature:(void)
+USBModuleEnable	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	47;"	p	line:47	file:	signature:(void)
+USBPrepareForNextSetupTrf	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	489;"	f	line:489	signature:(void)
+USBProtocolResetHandler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	53;"	p	line:53	file:	signature:(void)
+USBProtocolResetHandler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	551;"	f	line:551	signature:(void)
+USBRemoteWakeup	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	404;"	f	line:404	signature:(void)
+USBSoftDetach	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	192;"	f	line:192	signature:(void)
+USBStallHandler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	488;"	f	line:488	signature:(void)
+USBStallHandler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	55;"	p	line:55	file:	signature:(void)
+USBStdFeatureReqHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	275;"	f	line:275	signature:(void)
+USBStdFeatureReqHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	50;"	p	line:50	file:	signature:(void)
+USBStdGetDscHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	136;"	f	line:136	signature:(void)
+USBStdGetDscHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	47;"	p	line:47	file:	signature:(void)
+USBStdGetStatusHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	218;"	f	line:218	signature:(void)
+USBStdGetStatusHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	49;"	p	line:49	file:	signature:(void)
+USBStdSetCfgHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	180;"	f	line:180	signature:(void)
+USBStdSetCfgHandler	C:\Projects\UBW\FW\D\system\usb\usb9\usb9.c	48;"	p	line:48	file:	signature:(void)
+USBSuspend	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	297;"	f	line:297	signature:(void)
+USBSuspend	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	50;"	p	line:50	file:	signature:(void)
+USBTasks	C:\Projects\UBW\FW\D\main.c	51;"	p	line:51	file:	signature:(void)
+USBWakeFromSuspend	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	355;"	f	line:355	signature:(void)
+USBWakeFromSuspend	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	51;"	p	line:51	file:	signature:(void)
+USB_BUS_ATTACHED::1	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	82;"	d	line:82	file:
+USB_BUS_DETACHED::0	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	83;"	d	line:83	file:
+USB_CDC_ACM_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	323;"	t	line:323
+USB_CDC_CALL_MGT_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	343;"	t	line:343
+USB_CDC_HEADER_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	314;"	t	line:314
+USB_CDC_UNION_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	333;"	t	line:333
+USB_CD_Ptr	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	260;"	v	line:260
+USB_DEVICE_STATUS	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	78;"	t	line:78
+USB_H	C:\Projects\UBW\FW\D\system\usb\usb.h	37;"	d	line:37
+USB_SD_Ptr	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	261;"	v	line:261
+USB_SOF_Handler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	445;"	f	line:445	signature:(void)
+USB_SOF_Handler	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	54;"	p	line:54	file:	signature:(void)
+USB_USE_CDC	C:\Projects\UBW\FW\D\autofiles\usbcfg.h	49;"	d	line:49
+USER_H	C:\Projects\UBW\FW\D\user\user.h	38;"	d	line:38
+UTEYE	C:\MCC18\h\p18f4550.h	136;"	m	line:136
+UTRDIS	C:\MCC18\h\p18f4550.h	132;"	m	line:132
+UserInit	C:\Projects\UBW\FW\D\user\user.c	485;"	f	line:485	signature:(void)
+UserInit	C:\Projects\UBW\FW\D\user\user.h	41;"	p	line:41	signature:(void)
+UserSW::PORTCbits.RC2	C:\Projects\UBW\FW\D\io_cfg.h	81;"	d	line:81
+V25TER::0x01	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	74;"	d	line:74
+VCFG0	C:\MCC18\h\p18f4550.h	837;"	m	line:837
+VCFG1	C:\MCC18\h\p18f4550.h	838;"	m	line:838
+VDIRMAG	C:\MCC18\h\p18f4550.h	1021;"	m	line:1021
+VDIRMAG	C:\MCC18\h\p18f4550.h	1053;"	m	line:1053
+VREFM	C:\MCC18\h\p18f4550.h	288;"	m	line:288
+VREFP	C:\MCC18\h\p18f4550.h	289;"	m	line:289
+WCOL	C:\MCC18\h\p18f4550.h	886;"	m	line:886
+WORD	C:\Projects\UBW\FW\D\system\typedefs.h	82;"	t	line:82
+WR	C:\MCC18\h\p18f4550.h	628;"	m	line:628
+WREN	C:\MCC18\h\p18f4550.h	629;"	m	line:629
+WRERR	C:\MCC18\h\p18f4550.h	630;"	m	line:630
+WRSPP	C:\MCC18\h\p18f4550.h	31;"	m	line:31
+WS0	C:\MCC18\h\p18f4550.h	14;"	m	line:14
+WS1	C:\MCC18\h\p18f4550.h	15;"	m	line:15
+WS2	C:\MCC18\h\p18f4550.h	16;"	m	line:16
+WS3	C:\MCC18\h\p18f4550.h	17;"	m	line:17
+WUE	C:\MCC18\h\p18f4550.h	770;"	m	line:770
+Word0	C:\Projects\UBW\FW\D\system\typedefs.h	110;"	m	line:110	struct:_DWORD::<anonymous>
+Word1	C:\Projects\UBW\FW\D\system\typedefs.h	111;"	m	line:111	struct:_DWORD::<anonymous>
+Z	C:\MCC18\h\p18f4550.h	1094;"	m	line:1094
+_BDT	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	110;"	u	line:110
+_BD_STAT	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	80;"	u	line:80
+_BOOL	C:\Projects\UBW\FW\D\system\typedefs.h	150;"	g	line:150
+_BSTALL::0x04	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	46;"	d	line:46
+_BYTE	C:\Projects\UBW\FW\D\system\typedefs.h	44;"	u	line:44
+_CONTROL_SIGNAL_BITMAP	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	284;"	u	line:284
+_DAT0::0x00	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	50;"	d	line:50
+_DAT1::0x40	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	51;"	d	line:51
+_DTSEN::0x08	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	47;"	d	line:47
+_DTSMASK::0x40	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	52;"	d	line:52
+_DWORD	C:\Projects\UBW\FW\D\system\typedefs.h	86;"	u	line:86
+_INCDIS::0x10	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	48;"	d	line:48
+_KEN::0x20	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	49;"	d	line:49
+_LINE_CODING	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	269;"	u	line:269
+_POINTER	C:\Projects\UBW\FW\D\system\typedefs.h	125;"	u	line:125
+_RAM::0	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	66;"	d	line:66
+_ROM::1	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	67;"	d	line:67
+_UCPU::0x00	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	54;"	d	line:54
+_USB_CDC_ACM_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	317;"	s	line:317
+_USB_CDC_CALL_MGT_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	336;"	s	line:336
+_USB_CDC_HEADER_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	308;"	s	line:308
+_USB_CDC_UNION_FN_DSC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	326;"	s	line:326
+_USB_DEVICE_STATUS	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	70;"	u	line:70
+_USIE::0x80	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	53;"	d	line:53
+_WORD	C:\Projects\UBW\FW\D\system\typedefs.h	60;"	u	line:60
+__18F4550_H	C:\MCC18\h\p18f4550.h	9;"	d	line:9
+_byte	C:\Projects\UBW\FW\D\system\typedefs.h	46;"	m	line:46	union:_BYTE
+_byte	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	273;"	m	line:273	struct:_LINE_CODING::<anonymous>
+_byte	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	286;"	m	line:286	union:_CONTROL_SIGNAL_BITMAP
+_byte	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	72;"	m	line:72	union:_USB_DEVICE_STATUS
+_byte	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	82;"	m	line:82	union:_BD_STAT
+_dword	C:\Projects\UBW\FW\D\system\typedefs.h	88;"	m	line:88	union:_DWORD
+_user_putc	C:\Projects\UBW\FW\D\user\user.c	246;"	p	line:246	file:	signature:(char c)
+_user_putc	C:\Projects\UBW\FW\D\user\user.c	794;"	f	line:794	signature:(char c)
+_word	C:\Projects\UBW\FW\D\system\typedefs.h	133;"	m	line:133	union:_POINTER
+_word	C:\Projects\UBW\FW\D\system\typedefs.h	62;"	m	line:62	union:_WORD
+acc	C:\Projects\UBW\FW\D\user\user.c	2211;"	l	line:2211
+advance_RX_buf_out::\	C:\Projects\UBW\FW\D\user\user.c	104;"	d	line:104	file:
+b0	C:\Projects\UBW\FW\D\system\typedefs.h	49;"	m	line:49	struct:_BYTE::<anonymous>
+b1	C:\Projects\UBW\FW\D\system\typedefs.h	50;"	m	line:50	struct:_BYTE::<anonymous>
+b2	C:\Projects\UBW\FW\D\system\typedefs.h	51;"	m	line:51	struct:_BYTE::<anonymous>
+b3	C:\Projects\UBW\FW\D\system\typedefs.h	52;"	m	line:52	struct:_BYTE::<anonymous>
+b4	C:\Projects\UBW\FW\D\system\typedefs.h	53;"	m	line:53	struct:_BYTE::<anonymous>
+b5	C:\Projects\UBW\FW\D\system\typedefs.h	54;"	m	line:54	struct:_BYTE::<anonymous>
+b6	C:\Projects\UBW\FW\D\system\typedefs.h	55;"	m	line:55	struct:_BYTE::<anonymous>
+b7	C:\Projects\UBW\FW\D\system\typedefs.h	56;"	m	line:56	struct:_BYTE::<anonymous>
+bCharFormat	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	278;"	m	line:278	struct:_LINE_CODING::<anonymous>
+bDataBits	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	280;"	m	line:280	struct:_LINE_CODING::<anonymous>
+bDataInterface	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	342;"	m	line:342	struct:_USB_CDC_CALL_MGT_FN_DSC
+bDscSubType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	312;"	m	line:312	struct:_USB_CDC_HEADER_FN_DSC
+bDscSubType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	321;"	m	line:321	struct:_USB_CDC_ACM_FN_DSC
+bDscSubType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	330;"	m	line:330	struct:_USB_CDC_UNION_FN_DSC
+bDscSubType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	340;"	m	line:340	struct:_USB_CDC_CALL_MGT_FN_DSC
+bDscType	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	247;"	m	line:247	file:
+bDscType	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	250;"	m	line:250	file:
+bDscType	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	255;"	m	line:255	file:
+bDscType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	311;"	m	line:311	struct:_USB_CDC_HEADER_FN_DSC
+bDscType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	320;"	m	line:320	struct:_USB_CDC_ACM_FN_DSC
+bDscType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	329;"	m	line:329	struct:_USB_CDC_UNION_FN_DSC
+bDscType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	339;"	m	line:339	struct:_USB_CDC_CALL_MGT_FN_DSC
+bFNLength	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	310;"	m	line:310	struct:_USB_CDC_HEADER_FN_DSC
+bFNLength	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	319;"	m	line:319	struct:_USB_CDC_ACM_FN_DSC
+bFNLength	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	328;"	m	line:328	struct:_USB_CDC_UNION_FN_DSC
+bFNLength	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	338;"	m	line:338	struct:_USB_CDC_CALL_MGT_FN_DSC
+bHigh	C:\Projects\UBW\FW\D\system\typedefs.h	130;"	m	line:130	struct:_POINTER::<anonymous>
+bLength	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	247;"	m	line:247	file:
+bLength	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	250;"	m	line:250	file:
+bLength	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	255;"	m	line:255	file:
+bLow	C:\Projects\UBW\FW\D\system\typedefs.h	129;"	m	line:129	struct:_POINTER::<anonymous>
+bMasterIntf	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	331;"	m	line:331	struct:_USB_CDC_UNION_FN_DSC
+bParityType	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	279;"	m	line:279	struct:_LINE_CODING::<anonymous>
+bRam	C:\Projects\UBW\FW\D\system\typedefs.h	137;"	m	line:137	union:_POINTER
+bRom	C:\Projects\UBW\FW\D\system\typedefs.h	142;"	m	line:142	union:_POINTER
+bSaveIntf0	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	332;"	m	line:332	struct:_USB_CDC_UNION_FN_DSC
+bcdCDC	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	313;"	m	line:313	struct:_USB_CDC_HEADER_FN_DSC
+bitclr::(var,bitno)((var)&=~(1<<(bitno	C:\Projects\UBW\FW\D\user\user.c	71;"	d	line:71	file:
+bitset::(var,bitno)((var)|=(1<<(bitno)	C:\Projects\UBW\FW\D\user\user.c	70;"	d	line:70	file:
+bittst::(var,bitno)(var&(1<<(bitno)))	C:\Projects\UBW\FW\D\user\user.c	72;"	d	line:72	file:
+bmCapabilities	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	322;"	m	line:322	struct:_USB_CDC_ACM_FN_DSC
+bmCapabilities	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	341;"	m	line:341	struct:_USB_CDC_CALL_MGT_FN_DSC
+byte	C:\Projects\UBW\FW\D\system\typedefs.h	40;"	t	line:40
+byte0	C:\Projects\UBW\FW\D\system\typedefs.h	65;"	m	line:65	struct:_WORD::<anonymous>
+byte0	C:\Projects\UBW\FW\D\system\typedefs.h	91;"	m	line:91	struct:_DWORD::<anonymous>
+byte1	C:\Projects\UBW\FW\D\system\typedefs.h	66;"	m	line:66	struct:_WORD::<anonymous>
+byte1	C:\Projects\UBW\FW\D\system\typedefs.h	92;"	m	line:92	struct:_DWORD::<anonymous>
+byte2	C:\Projects\UBW\FW\D\system\typedefs.h	93;"	m	line:93	struct:_DWORD::<anonymous>
+byte3	C:\Projects\UBW\FW\D\system\typedefs.h	94;"	m	line:94	struct:_DWORD::<anonymous>
+byte_count	C:\Projects\UBW\FW\D\user\user.c	2066;"	l	line:2066
+byte_to_read	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	332;"	l	line:332
+byte_to_send	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	458;"	l	line:458
+byte_to_send	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	262;"	l	line:262
+cd01	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	55;"	v	line:55
+cdc_acm_fn_i01a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	58;"	v	line:58
+cdc_call_mgt_fn_i01a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	60;"	v	line:60
+cdc_data_rx	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	279;"	v	line:279
+cdc_data_tx	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	280;"	v	line:280
+cdc_header_fn_i01a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	57;"	v	line:57
+cdc_mem_type	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	52;"	v	line:52
+cdc_notice	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	278;"	v	line:278
+cdc_rx_len	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	46;"	v	line:46
+cdc_trf_state	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	48;"	v	line:48
+cdc_tx_len	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	51;"	v	line:51
+cdc_union_fn_i01a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	59;"	v	line:59
+channel	C:\Projects\UBW\FW\D\user\user.c	1400;"	l	line:1400
+check_and_send_TX_data	C:\Projects\UBW\FW\D\user\user.c	244;"	p	line:244	file:	signature:(void)
+check_and_send_TX_data	C:\Projects\UBW\FW\D\user\user.c	817;"	f	line:817	signature:(void)
+cmd1	C:\Projects\UBW\FW\D\user\user.c	862;"	l	line:862
+cmd2	C:\Projects\UBW\FW\D\user\user.c	863;"	l	line:863
+command	C:\Projects\UBW\FW\D\user\user.c	861;"	l	line:861
+control_signal_bitmap	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	55;"	v	line:55
+ctrl_trf_mem	C:\Projects\UBW\FW\D\system\usb\usbmmap.h	76;"	m	line:76	struct:_USB_DEVICE_STATUS::<anonymous>
+ctrl_trf_session_owner	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	45;"	v	line:45
+ctrl_trf_state	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	44;"	v	line:44
+delay_count	C:\Projects\UBW\FW\D\system\usb\usbdrv\usbdrv.c	406;"	l	line:406	file:
+device_dsc	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	180;"	v	line:180
+digit_cnt	C:\Projects\UBW\FW\D\user\user.c	2350;"	l	line:2350
+direction	C:\Projects\UBW\FW\D\user\user.c	1485;"	l	line:1485
+dummy_encapsulated_cmd_response	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	64;"	v	line:64
+dummy_length::0x08	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	63;"	d	line:63	file:
+dwDTERate	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	277;"	m	line:277	struct:_LINE_CODING::<anonymous>
+dword	C:\Projects\UBW\FW\D\system\typedefs.h	42;"	t	line:42
+ep02i_i01a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	61;"	v	line:61
+ep03i_i02a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	64;"	v	line:64
+ep03o_i02a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	63;"	v	line:63
+ep0Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	175;"	v	line:175
+ep0Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	174;"	v	line:174
+ep10Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	225;"	v	line:225
+ep10Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	224;"	v	line:224
+ep11Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	230;"	v	line:230
+ep11Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	229;"	v	line:229
+ep12Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	235;"	v	line:235
+ep12Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	234;"	v	line:234
+ep13Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	240;"	v	line:240
+ep13Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	239;"	v	line:239
+ep14Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	245;"	v	line:245
+ep14Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	244;"	v	line:244
+ep15Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	250;"	v	line:250
+ep15Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	249;"	v	line:249
+ep1Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	180;"	v	line:180
+ep1Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	179;"	v	line:179
+ep2Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	185;"	v	line:185
+ep2Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	184;"	v	line:184
+ep3Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	190;"	v	line:190
+ep3Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	189;"	v	line:189
+ep4Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	195;"	v	line:195
+ep4Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	194;"	v	line:194
+ep5Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	200;"	v	line:200
+ep5Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	199;"	v	line:199
+ep6Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	205;"	v	line:205
+ep6Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	204;"	v	line:204
+ep7Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	210;"	v	line:210
+ep7Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	209;"	v	line:209
+ep8Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	215;"	v	line:215
+ep8Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	214;"	v	line:214
+ep9Bi	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	220;"	v	line:220
+ep9Bo	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	219;"	v	line:219
+error_byte	C:\Projects\UBW\FW\D\user\user.c	146;"	v	line:146
+extract_digit	C:\Projects\UBW\FW\D\user\user.c	217;"	p	line:217	file:	signature:(signed short long * acc, unsigned char digits)
+extract_digit	C:\Projects\UBW\FW\D\user\user.c	2347;"	f	line:2347	signature:(signed short long * acc, unsigned char digits)
+extract_number	C:\Projects\UBW\FW\D\user\user.c	216;"	p	line:216	file:	signature:(tExtractType type)
+extract_number	C:\Projects\UBW\FW\D\user\user.c	2209;"	f	line:2209	signature:(tExtractType type)
+g_BO_init	C:\Projects\UBW\FW\D\user\user.c	186;"	v	line:186
+g_BO_strobe_delay	C:\Projects\UBW\FW\D\user\user.c	190;"	v	line:190
+g_BO_strobe_mask	C:\Projects\UBW\FW\D\user\user.c	187;"	v	line:187
+g_BO_wait_delay	C:\Projects\UBW\FW\D\user\user.c	189;"	v	line:189
+g_BO_wait_mask	C:\Projects\UBW\FW\D\user\user.c	188;"	v	line:188
+g_RC_next_ptr	C:\Projects\UBW\FW\D\user\user.c	151;"	v	line:151
+g_RC_primed_ptr	C:\Projects\UBW\FW\D\user\user.c	150;"	v	line:150
+g_RC_state	C:\Projects\UBW\FW\D\user\user.c	167;"	v	line:167
+g_RC_timing_ptr	C:\Projects\UBW\FW\D\user\user.c	152;"	v	line:152
+g_RC_value	C:\Projects\UBW\FW\D\user\user.c	168;"	v	line:168
+g_RX_buf	C:\Projects\UBW\FW\D\user\user.c	174;"	v	line:174
+g_RX_buf_in	C:\Projects\UBW\FW\D\user\user.c	197;"	v	line:197
+g_RX_buf_out	C:\Projects\UBW\FW\D\user\user.c	198;"	v	line:198
+g_TX_buf	C:\Projects\UBW\FW\D\user\user.c	172;"	v	line:172
+g_TX_buf_in	C:\Projects\UBW\FW\D\user\user.c	193;"	v	line:193
+g_TX_buf_out	C:\Projects\UBW\FW\D\user\user.c	194;"	v	line:194
+g_USART_RX_buf	C:\Projects\UBW\FW\D\user\user.c	177;"	v	line:177
+g_USART_RX_buf_in	C:\Projects\UBW\FW\D\user\user.c	201;"	v	line:201
+g_USART_RX_buf_out	C:\Projects\UBW\FW\D\user\user.c	202;"	v	line:202
+g_USART_TX_buf	C:\Projects\UBW\FW\D\user\user.c	180;"	v	line:180
+g_USART_TX_buf_in	C:\Projects\UBW\FW\D\user\user.c	205;"	v	line:205
+g_USART_TX_buf_out	C:\Projects\UBW\FW\D\user\user.c	206;"	v	line:206
+g_ack_enable	C:\Projects\UBW\FW\D\user\user.c	209;"	v	line:209
+getsUSBUSART	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	239;"	f	line:239	signature:(unsigned char *buffer, byte len)
+getsUSBUSART	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	361;"	p	line:361	signature:(unsigned char *buffer, byte len)
+got_full_packet	C:\Projects\UBW\FW\D\user\user.c	638;"	l	line:638
+high_ISR	C:\Projects\UBW\FW\D\user\user.c	481;"	f	line:481	signature:(void)
+high_ISR	C:\Projects\UBW\FW\D\user\user.h	44;"	p	line:44	signature:(void)
+high_vector	C:\Projects\UBW\FW\D\main.c	54;"	f	line:54	signature:(void)
+i	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	135;"	l	line:135
+i	C:\Projects\UBW\FW\D\user\user.c	487;"	l	line:487
+i01a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	56;"	v	line:56
+i02a00	C:\Projects\UBW\FW\D\autofiles\usbdsc.h	62;"	v	line:62
+in_cr	C:\Projects\UBW\FW\D\user\user.c	635;"	l	line:635	file:
+j	C:\Projects\UBW\FW\D\user\user.c	487;"	l	line:487
+kASCII_CHAR	C:\Projects\UBW\FW\D\user\user.c	100;"	e	line:100	file:
+kCHAR	C:\Projects\UBW\FW\D\user\user.c	96;"	e	line:96	file:
+kCR::0x0D	C:\Projects\UBW\FW\D\user\user.c	116;"	d	line:116	file:
+kERROR_BYTE_EXTRA_CHARACTERS::7	C:\Projects\UBW\FW\D\user\user.c	125;"	d	line:125	file:
+kERROR_BYTE_MISSING_PARAMETER::4	C:\Projects\UBW\FW\D\user\user.c	122;"	d	line:122	file:
+kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT::6	C:\Projects\UBW\FW\D\user\user.c	124;"	d	line:124	file:
+kERROR_BYTE_PRINTED_ERROR::5	C:\Projects\UBW\FW\D\user\user.c	123;"	d	line:123	file:
+kERROR_BYTE_RX_BUFFER_OVERRUN::3	C:\Projects\UBW\FW\D\user\user.c	121;"	d	line:121	file:
+kERROR_BYTE_TX_BUF_OVERRUN::2	C:\Projects\UBW\FW\D\user\user.c	120;"	d	line:120	file:
+kERROR_BYTE_UNKNOWN_COMMAND::8	C:\Projects\UBW\FW\D\user\user.c	126;"	d	line:126	file:
+kINT	C:\Projects\UBW\FW\D\user\user.c	98;"	e	line:98	file:
+kISR_FIFO_A_DEPTH::3	C:\Projects\UBW\FW\D\user\user.c	113;"	d	line:113	file:
+kISR_FIFO_D_DEPTH::3	C:\Projects\UBW\FW\D\user\user.c	114;"	d	line:114	file:
+kLF::0x0A	C:\Projects\UBW\FW\D\user\user.c	117;"	d	line:117	file:
+kOFF	C:\Projects\UBW\FW\D\user\user.c	80;"	e	line:80	file:
+kPR2_RELOAD::250	C:\Projects\UBW\FW\D\user\user.c	115;"	d	line:115	file:
+kPRIMED	C:\Projects\UBW\FW\D\user\user.c	82;"	e	line:82	file:
+kRC_DATA_SIZE::24	C:\Projects\UBW\FW\D\user\user.c	86;"	d	line:86	file:
+kRX_BUF_SIZE::64	C:\Projects\UBW\FW\D\user\user.c	89;"	d	line:89	file:
+kTIMING	C:\Projects\UBW\FW\D\user\user.c	83;"	e	line:83	file:
+kTX_BUF_SIZE::64	C:\Projects\UBW\FW\D\user\user.c	88;"	d	line:88	file:
+kUCASE_ASCII_CHAR	C:\Projects\UBW\FW\D\user\user.c	101;"	e	line:101	file:
+kUCHAR	C:\Projects\UBW\FW\D\user\user.c	97;"	e	line:97	file:
+kUINT	C:\Projects\UBW\FW\D\user\user.c	99;"	e	line:99	file:
+kUSART_RX_BUF_SIZE::64	C:\Projects\UBW\FW\D\user\user.c	92;"	d	line:92	file:
+kUSART_TX_BUF_SIZE::64	C:\Projects\UBW\FW\D\user\user.c	91;"	d	line:91	file:
+kWAITING	C:\Projects\UBW\FW\D\user\user.c	81;"	e	line:81	file:
+last_fifo_size	C:\Projects\UBW\FW\D\user\user.c	636;"	l	line:636	file:
+len	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	298;"	l	line:298
+len	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	381;"	l	line:381
+line_coding	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	54;"	v	line:54
+location	C:\Projects\UBW\FW\D\user\user.c	1424;"	l	line:1424
+location	C:\Projects\UBW\FW\D\user\user.c	1452;"	l	line:1452
+low_ISR	C:\Projects\UBW\FW\D\user\user.c	252;"	f	line:252	signature:(void)
+low_ISR	C:\Projects\UBW\FW\D\user\user.h	43;"	p	line:43	signature:(void)
+mCDCGetRxLength::cdc_rx_len	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	192;"	d	line:192
+mCDCUsartRxIsBusy::CDC_BULK_BD_OUT.Stat.UOWN	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	154;"	d	line:154
+mCDCUsartTxIsBusy::CDC_BULK_BD_IN.Stat.UOWN	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	173;"	d	line:173
+mInitAllLEDs::LATC&=0xFC;TRISC&=0xFC;	C:\Projects\UBW\FW\D\io_cfg.h	65;"	d	line:65
+mInitSwitch::TRISCbits.TRISC2=1;	C:\Projects\UBW\FW\D\io_cfg.h	80;"	d	line:80
+mLED_1::LATCbits.LATC0	C:\Projects\UBW\FW\D\io_cfg.h	67;"	d	line:67
+mLED_1_Off::mLED_1=0;	C:\Projects\UBW\FW\D\io_cfg.h	73;"	d	line:73
+mLED_1_On::mLED_1=1;	C:\Projects\UBW\FW\D\io_cfg.h	70;"	d	line:70
+mLED_1_Toggle::mLED_1=!mLED_1;	C:\Projects\UBW\FW\D\io_cfg.h	76;"	d	line:76
+mLED_2::LATCbits.LATC1	C:\Projects\UBW\FW\D\io_cfg.h	68;"	d	line:68
+mLED_2_Off::mLED_2=0;	C:\Projects\UBW\FW\D\io_cfg.h	74;"	d	line:74
+mLED_2_On::mLED_2=1;	C:\Projects\UBW\FW\D\io_cfg.h	71;"	d	line:71
+mLED_2_Toggle::mLED_2=!mLED_2;	C:\Projects\UBW\FW\D\io_cfg.h	77;"	d	line:77
+mLED_Both_Off::{mLED_1_Off;mLED_2_Off;}	C:\Projects\UBW\FW\D\io_cfg.h	83;"	d	line:83
+mLED_Both_On::{mLED_1_On;mLED_2_On;}	C:\Projects\UBW\FW\D\io_cfg.h	84;"	d	line:84
+mLED_Only_1_On::{mLED_1_On;mLED_2_Off;}	C:\Projects\UBW\FW\D\io_cfg.h	85;"	d	line:85
+mLED_Only_2_On::{mLED_1_Off;mLED_2_On;}	C:\Projects\UBW\FW\D\io_cfg.h	86;"	d	line:86
+mUSBUSARTIsDTR::control_signal_bitmap.DTE_PRES	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	115;"	d	line:115
+mUSBUSARTIsRTS::control_signal_bitmap.CARRIER_	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	116;"	d	line:116
+mUSBUSARTIsTxTrfReady::(cdc_trf_state==CDC_TX_READY)	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	135;"	d	line:135
+mUSBUSARTTxRam::(pData,len)\	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	221;"	d	line:221
+mUSBUSARTTxRom::(pData,len)\	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	256;"	d	line:256
+mode	C:\Projects\UBW\FW\D\user\user.c	1143;"	l	line:1143
+neg	C:\Projects\UBW\FW\D\user\user.c	2212;"	l	line:2212
+new_port_A_value	C:\Projects\UBW\FW\D\user\user.c	1923;"	l	line:1923
+new_port_A_value	C:\Projects\UBW\FW\D\user\user.c	2063;"	l	line:2063
+orig_value	C:\Projects\UBW\FW\D\user\user.c	1812;"	l	line:1812
+pCDCDst	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	50;"	v	line:50
+pCDCSrc	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	49;"	v	line:49
+pDst	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	48;"	v	line:48
+pFunc	C:\Projects\UBW\FW\D\system\typedefs.h	123;"	t	line:123
+pSrc	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	47;"	v	line:47
+paramater_value	C:\Projects\UBW\FW\D\user\user.c	1107;"	l	line:1107
+parameter_number	C:\Projects\UBW\FW\D\user\user.c	1106;"	l	line:1106
+parse_A_packet	C:\Projects\UBW\FW\D\user\user.c	1398;"	f	line:1398	signature:(void)
+parse_A_packet	C:\Projects\UBW\FW\D\user\user.c	224;"	p	line:224	file:	signature:(void)
+parse_BC_packet	C:\Projects\UBW\FW\D\user\user.c	1876;"	f	line:1876	signature:(void)
+parse_BC_packet	C:\Projects\UBW\FW\D\user\user.c	235;"	p	line:235	file:	signature:(void)
+parse_BO_packet	C:\Projects\UBW\FW\D\user\user.c	1920;"	f	line:1920	signature:(void)
+parse_BO_packet	C:\Projects\UBW\FW\D\user\user.c	234;"	p	line:234	file:	signature:(void)
+parse_BS_packet	C:\Projects\UBW\FW\D\user\user.c	2060;"	f	line:2060	signature:(void)
+parse_BS_packet	C:\Projects\UBW\FW\D\user\user.c	236;"	p	line:236	file:	signature:(void)
+parse_CI_packet	C:\Projects\UBW\FW\D\user\user.c	2193;"	f	line:2193	signature:(void)
+parse_CI_packet	C:\Projects\UBW\FW\D\user\user.c	243;"	p	line:243	file:	signature:(void)
+parse_CS_packet	C:\Projects\UBW\FW\D\user\user.c	2172;"	f	line:2172	signature:(void)
+parse_CS_packet	C:\Projects\UBW\FW\D\user\user.c	240;"	p	line:240	file:	signature:(void)
+parse_CU_packet	C:\Projects\UBW\FW\D\user\user.c	1104;"	f	line:1104	signature:(void)
+parse_CU_packet	C:\Projects\UBW\FW\D\user\user.c	237;"	p	line:237	file:	signature:(void)
+parse_CX_packet	C:\Projects\UBW\FW\D\user\user.c	1788;"	f	line:1788	signature:(void)
+parse_CX_packet	C:\Projects\UBW\FW\D\user\user.c	220;"	p	line:220	file:	signature:(void)
+parse_C_packet	C:\Projects\UBW\FW\D\user\user.c	1235;"	f	line:1235	signature:(void)
+parse_C_packet	C:\Projects\UBW\FW\D\user\user.c	219;"	p	line:219	file:	signature:(void)
+parse_I_packet	C:\Projects\UBW\FW\D\user\user.c	1359;"	f	line:1359	signature:(void)
+parse_I_packet	C:\Projects\UBW\FW\D\user\user.c	222;"	p	line:222	file:	signature:(void)
+parse_MR_packet	C:\Projects\UBW\FW\D\user\user.c	1450;"	f	line:1450	signature:(void)
+parse_MR_packet	C:\Projects\UBW\FW\D\user\user.c	229;"	p	line:229	file:	signature:(void)
+parse_MW_packet	C:\Projects\UBW\FW\D\user\user.c	1422;"	f	line:1422	signature:(void)
+parse_MW_packet	C:\Projects\UBW\FW\D\user\user.c	230;"	p	line:230	file:	signature:(void)
+parse_O_packet	C:\Projects\UBW\FW\D\user\user.c	1316;"	f	line:1316	signature:(void)
+parse_O_packet	C:\Projects\UBW\FW\D\user\user.c	221;"	p	line:221	file:	signature:(void)
+parse_PD_packet	C:\Projects\UBW\FW\D\user\user.c	1481;"	f	line:1481	signature:(void)
+parse_PD_packet	C:\Projects\UBW\FW\D\user\user.c	228;"	p	line:228	file:	signature:(void)
+parse_PI_packet	C:\Projects\UBW\FW\D\user\user.c	1581;"	f	line:1581	signature:(void)
+parse_PI_packet	C:\Projects\UBW\FW\D\user\user.c	226;"	p	line:226	file:	signature:(void)
+parse_PO_packet	C:\Projects\UBW\FW\D\user\user.c	1644;"	f	line:1644	signature:(void)
+parse_PO_packet	C:\Projects\UBW\FW\D\user\user.c	227;"	p	line:227	file:	signature:(void)
+parse_RC_packet	C:\Projects\UBW\FW\D\user\user.c	1807;"	f	line:1807	signature:(void)
+parse_RC_packet	C:\Projects\UBW\FW\D\user\user.c	233;"	p	line:233	file:	signature:(void)
+parse_RI_packet	C:\Projects\UBW\FW\D\user\user.c	2186;"	f	line:2186	signature:(void)
+parse_RI_packet	C:\Projects\UBW\FW\D\user\user.c	242;"	p	line:242	file:	signature:(void)
+parse_RS_packet	C:\Projects\UBW\FW\D\user\user.c	2165;"	f	line:2165	signature:(void)
+parse_RS_packet	C:\Projects\UBW\FW\D\user\user.c	239;"	p	line:239	file:	signature:(void)
+parse_RX_packet	C:\Projects\UBW\FW\D\user\user.c	1781;"	f	line:1781	signature:(void)
+parse_RX_packet	C:\Projects\UBW\FW\D\user\user.c	232;"	p	line:232	file:	signature:(void)
+parse_R_packet	C:\Projects\UBW\FW\D\user\user.c	1094;"	f	line:1094	signature:(void)
+parse_R_packet	C:\Projects\UBW\FW\D\user\user.c	218;"	p	line:218	file:	signature:(void)
+parse_SI_packet	C:\Projects\UBW\FW\D\user\user.c	2179;"	f	line:2179	signature:(void)
+parse_SI_packet	C:\Projects\UBW\FW\D\user\user.c	241;"	p	line:241	file:	signature:(void)
+parse_SS_packet	C:\Projects\UBW\FW\D\user\user.c	2158;"	f	line:2158	signature:(void)
+parse_SS_packet	C:\Projects\UBW\FW\D\user\user.c	238;"	p	line:238	file:	signature:(void)
+parse_TX_packet	C:\Projects\UBW\FW\D\user\user.c	1748;"	f	line:1748	signature:(void)
+parse_TX_packet	C:\Projects\UBW\FW\D\user\user.c	231;"	p	line:231	file:	signature:(void)
+parse_T_packet	C:\Projects\UBW\FW\D\user\user.c	1140;"	f	line:1140	signature:(void)
+parse_T_packet	C:\Projects\UBW\FW\D\user\user.c	225;"	p	line:225	file:	signature:(void)
+parse_V_packet	C:\Projects\UBW\FW\D\user\user.c	1381;"	f	line:1381	signature:(void)
+parse_V_packet	C:\Projects\UBW\FW\D\user\user.c	223;"	p	line:223	file:	signature:(void)
+parse_packet	C:\Projects\UBW\FW\D\user\user.c	215;"	p	line:215	file:	signature:(void)
+parse_packet	C:\Projects\UBW\FW\D\user\user.c	859;"	f	line:859	signature:(void)
+pin	C:\Projects\UBW\FW\D\user\user.c	1484;"	l	line:1484
+pin	C:\Projects\UBW\FW\D\user\user.c	1584;"	l	line:1584
+pin	C:\Projects\UBW\FW\D\user\user.c	1647;"	l	line:1647
+pin	C:\Projects\UBW\FW\D\user\user.c	1810;"	l	line:1810
+port	C:\Projects\UBW\FW\D\user\user.c	1483;"	l	line:1483
+port	C:\Projects\UBW\FW\D\user\user.c	1583;"	l	line:1583
+port	C:\Projects\UBW\FW\D\user\user.c	1646;"	l	line:1646
+port	C:\Projects\UBW\FW\D\user\user.c	1809;"	l	line:1809
+print_ack	C:\Projects\UBW\FW\D\user\user.c	1085;"	f	line:1085	signature:(void)
+print_ack	C:\Projects\UBW\FW\D\user\user.c	245;"	p	line:245	file:	signature:(void)
+print_status	C:\Projects\UBW\FW\D\user\user.c	2372;"	f	line:2372	signature:(void)
+putrsUSBUSART	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	379;"	f	line:379	signature:(const rom unsigned char *data)
+putrsUSBUSART	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	362;"	p	line:362	signature:(unsigned const rom char *data)
+putsUSBUSART	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.c	296;"	f	line:296	signature:(unsigned char *data)
+putsUSBUSART	C:\Projects\UBW\FW\D\system\usb\class\cdc\cdc.h	363;"	p	line:363	signature:(unsigned char *data)
+sd000	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	247;"	v	line:247
+sd001	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	250;"	v	line:250
+sd002	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	255;"	v	line:255
+self_power::1	C:\Projects\UBW\FW\D\io_cfg.h	60;"	d	line:60
+st_LFCR	C:\Projects\UBW\FW\D\user\user.c	161;"	v	line:161
+st_OK	C:\Projects\UBW\FW\D\user\user.c	160;"	v	line:160
+st_version	C:\Projects\UBW\FW\D\user\user.c	162;"	v	line:162
+string	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	247;"	m	line:247	file:
+string	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	250;"	m	line:250	file:
+string	C:\Projects\UBW\FW\D\autofiles\usbdsc.c	255;"	m	line:255	file:
+tExtractType	C:\Projects\UBW\FW\D\user\user.c	102;"	t	line:102	file:
+tRC_state	C:\Projects\UBW\FW\D\user\user.c	84;"	t	line:84	file:
+temp	C:\Projects\UBW\FW\D\user\user.c	819;"	l	line:819
+time_between_updates	C:\Projects\UBW\FW\D\user\user.c	132;"	v	line:132
+tmp	C:\Projects\UBW\FW\D\user\user.c	1924;"	l	line:1924
+tmp	C:\Projects\UBW\FW\D\user\user.c	2064;"	l	line:2064
+tst_char	C:\Projects\UBW\FW\D\user\user.c	637;"	l	line:637
+usb_active_cfg	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	159;"	v	line:159
+usb_alt_intf	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	160;"	v	line:160
+usb_bus_sense::1	C:\Projects\UBW\FW\D\io_cfg.h	59;"	d	line:59
+usb_device_state	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	157;"	v	line:157
+usb_stat	C:\Projects\UBW\FW\D\system\usb\usbmmap.c	158;"	v	line:158
+v	C:\Projects\UBW\FW\D\system\typedefs.h	115;"	m	line:115	struct:_DWORD::<anonymous>
+v	C:\Projects\UBW\FW\D\system\typedefs.h	80;"	m	line:80	struct:_WORD::<anonymous>
+val	C:\Projects\UBW\FW\D\user\user.c	2349;"	l	line:2349
+value	C:\Projects\UBW\FW\D\user\user.c	1142;"	l	line:1142
+value	C:\Projects\UBW\FW\D\user\user.c	1425;"	l	line:1425
+value	C:\Projects\UBW\FW\D\user\user.c	1453;"	l	line:1453
+value	C:\Projects\UBW\FW\D\user\user.c	1585;"	l	line:1585
+value	C:\Projects\UBW\FW\D\user\user.c	1648;"	l	line:1648
+value	C:\Projects\UBW\FW\D\user\user.c	1811;"	l	line:1811
+wCount	C:\Projects\UBW\FW\D\system\usb\usbctrltrf\usbctrltrf.c	49;"	v	line:49
+wRam	C:\Projects\UBW\FW\D\system\typedefs.h	139;"	m	line:139	union:_POINTER
+wRom	C:\Projects\UBW\FW\D\system\typedefs.h	143;"	m	line:143	union:_POINTER
+wait_count	C:\Projects\UBW\FW\D\user\user.c	1925;"	l	line:1925
+wait_count	C:\Projects\UBW\FW\D\user\user.c	2065;"	l	line:2065
+word	C:\Projects\UBW\FW\D\system\typedefs.h	41;"	t	line:41
+word0	C:\Projects\UBW\FW\D\system\typedefs.h	98;"	m	line:98	struct:_DWORD::<anonymous>
+word1	C:\Projects\UBW\FW\D\system\typedefs.h	99;"	m	line:99	struct:_DWORD::<anonymous>
