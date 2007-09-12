@@ -63,8 +63,8 @@ class DashboardController
     @queue = Queue.new
     @t.kill if @t
     @t = Thread.new do
-      f = File.open('/dev/ttyACM0')
-  
+      f = File.open('/dev/ttyACM0', 'w+')
+      f.puts 'go'
       while true do
         l = f.readline
         @queue << l

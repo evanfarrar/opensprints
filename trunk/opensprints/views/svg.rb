@@ -6,6 +6,21 @@ xml.svg(:height => "741", :width => "993", :viewBox => "0 0 499 378",
   xml.defs{
     xml.style(:type=>'text/css'){ xml.cdata!(@stylishness) }
   }
+  xml.rect(
+     :style=>"fill:black;stroke:none;stroke-width:0.95099998;",
+     :id=>"background",
+     :width=>"501.12021",
+     :height=>"374.30038",
+     :x=>"0.081355505",
+     :y=>"0.077205971")
+  xml.rect(:style=>"fill:#73d83e;stroke:none;stroke-width:0.95099998;",
+     :id=>"field",
+     :width=>"488.198",
+     :height=>"364.28113",
+     :x=>"6.2120686",
+     :y=>"5.4431815",
+     :rx=>"12",
+     :ry=>"12")
   xml.text("%s",
      :style=>"font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:black;stroke:#241c1c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;font-family:Ubuntu-Title",
      :x=>"150.99417",
@@ -66,6 +81,11 @@ xml.svg(:height => "741", :width => "993", :viewBox => "0 0 499 378",
     xml.path(
        :d=>"M 105.08534,24.335342 L 119.05622,57.743977",
        :style=>"fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;")
+    xml.g(:class=>'distance_marking'){
+      xml.path(:d=>"M 249.04618,17.046185 L 249.04618,51.06225")
+      xml.path(:d=>"M 247.2239,323.19076 L 247.2239,355.99197")
+      xml.path(:d=>"M 257.64405,355.61805 L 257.73716,316.13512")
+    }
     xml.path(
        :d=>"M 252.08333,356.5994 L 252.08333,323.19076",
        :style=>"fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;")
