@@ -25,7 +25,6 @@ class DashboardController
   def read_blue
     blue_log = @partial_log.grep(/2/)
     if blue_log
-#      blue_log.map!{ |a| a.gsub(/rider-two-tick: /,'').to_f }
       @blue.update(blue_log)
       track = BLUE_TRACK_LENGTH*@blue.distance
       @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track).join(',')
@@ -34,7 +33,6 @@ class DashboardController
   def read_red
     red_log = @partial_log.grep(/1/)
     if red_log
-#      red_log.map!{ |a| a.gsub(/rider-one-tick: /,'').to_f }
       @red.update(red_log)
       track = RED_TRACK_LENGTH*@red.distance
       @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
@@ -73,6 +71,10 @@ class DashboardController
     end
   end
 
+  def stop
+
+  end
+
   def refresh
     @partial_log = []
     @queue.length.times do
@@ -82,23 +84,26 @@ class DashboardController
       read_red
       read_blue
       if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
+        puts @blue.tix
         winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
-        svg = RSVG::Handle.new_from_data(@doc % ["#{winner} WINS!!!",0,0,4,5,6])
+        svg = RSVG::Handle.new_from_data(@doc % [0,0,"#{winner} WINS!!!",4,5,6])
+        svg.base_uri = Dir.pwd
         @continue = false
       else
-        svg = RSVG::Handle.new_from_data(@doc % ["IRO Sprint",@red_dasharray,
-                        @blue_dasharray])
+        svg = RSVG::Handle.new_from_data(@doc % [@red_dasharray,
+                        @blue_dasharray, "IRO Sprint"])
+        svg.base_uri = Dir.pwd
         @continue = true
       end
       @pix = svg ? svg.pixbuf : nil
     end
-    @pix||RSVG::Handle.new_from_data(@doc % ["0...",0,0,4,5,6]).pixbuf
+    @pix||RSVG::Handle.new_from_data(@doc % [0,0,"0...",0,0,4,5,6]).pixbuf
   end
   def continue?
     @continue
   end
   def count(n)
-    svg = RSVG::Handle.new_from_data(@doc % ["#{n}...",0,0,4,5,6])
+    svg = RSVG::Handle.new_from_data(@doc % [0,0,"#{n}...",0,0,4,5,6])
     svg.pixbuf
   end
 
@@ -106,7 +111,7 @@ class DashboardController
     xml_data = ''
     xml = Builder::XmlMarkup.new(:target => xml_data)
     svg = ''
-    File.open('views/background.rb') do |f|
+    File.open('views/svg.rb') do |f|
       svg = f.readlines.join
     end
     eval svg

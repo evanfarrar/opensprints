@@ -7,26 +7,6 @@ xml.svg(:height => "741", :width => "993", :viewBox => "0 0 499 378",
     xml.style(:type=>'text/css'){ xml.cdata!(@stylishness) }
   }
   xml.rect(
-     :style=>"fill:black;stroke:none;stroke-width:0.95099998;",
-     :id=>"background",
-     :width=>"501.12021",
-     :height=>"374.30038",
-     :x=>"0.081355505",
-     :y=>"0.077205971")
-  xml.rect(:style=>"fill:#73d83e;stroke:none;stroke-width:0.95099998;",
-     :id=>"field",
-     :width=>"488.198",
-     :height=>"364.28113",
-     :x=>"6.2120686",
-     :y=>"5.4431815",
-     :rx=>"12",
-     :ry=>"12")
-  xml.text("%s",
-     :style=>"font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:black;stroke:#241c1c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;font-family:Ubuntu-Title",
-     :x=>"150.99417",
-     :y=>"108.27198",
-     :id=>"display_title")
-  xml.rect(
      :rx=>"110.20203",
      :style=>"fill:none;stroke:white;stroke-width:36.48699951;",
      :ry=>"118.27761",
@@ -53,45 +33,10 @@ xml.svg(:height => "741", :width => "993", :viewBox => "0 0 499 378",
      :height=>"287.42456",
      :width=>"405.45792",
      :id=>"blue_track")
-  xml.g(:id=>"track_markings"){
-    xml.rect(
-       :width=>"422.7713",
-       :height=>"305.34534",
-       :x=>"38.320702",
-       :y=>"34.814106",
-       :ry=>"118.27761",
-       :style=>"fill:none;stroke:black;stroke-width:2.58699989;",
-       :rx=>"110.20203")
-    xml.rect(
-       :width=>"457.75491",
-       :height=>"338.50665",
-       :x=>"20.776157",
-       :y=>"18.176891",
-       :ry=>"131.12288",
-       :style=>"fill:none;stroke:black;stroke-width:2.83431506;",
-       :rx=>"119.32105")
-    xml.rect(
-       :width=>"388.39374",
-       :height=>"272.18262",
-       :x=>"55.15303",
-       :y=>"51.946342",
-       :ry=>"105.43181",
-       :style=>"fill:none;stroke:black;stroke-width:2.3410697;",
-       :rx=>"101.24097")
-    xml.path(
-       :d=>"M 105.08534,24.335342 L 119.05622,57.743977",
-       :style=>"fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;")
-    xml.g(:class=>'distance_marking'){
-      xml.path(:d=>"M 249.04618,17.046185 L 249.04618,51.06225")
-      xml.path(:d=>"M 247.2239,323.19076 L 247.2239,355.99197")
-      xml.path(:d=>"M 257.64405,355.61805 L 257.73716,316.13512")
-    }
-    xml.path(
-       :d=>"M 252.08333,356.5994 L 252.08333,323.19076",
-       :style=>"fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;")
-    xml.text("#{RACE_DISTANCE}m",
-       :y=>"313.17331",
-       :x=>"256.13306",
-       :style=>"font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:white;stroke:black;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;")
-  }
+#  xml.image(:x => "-1", :y => "-1", :height => '378', :width => '502', :"xlink:href" => "views/background_alpha2.png")
+  xml.text("%s",
+     :style=>"font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:black;stroke:#241c1c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;font-family:Ubuntu-Title",
+     :x=>"150.99417",
+     :y=>"108.27198",
+     :id=>"display_title")
 }

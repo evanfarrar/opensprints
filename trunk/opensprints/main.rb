@@ -6,7 +6,7 @@ require 'controllers/dashboard_controller'
 require 'rsvg2'
 require 'gtk2'
 
-RACE_DISTANCE = 0.200.km
+RACE_DISTANCE = 0.110.km
 RED_TRACK_LENGTH = 1315
 BLUE_TRACK_LENGTH = 1200
 RED_WHEEL_CIRCUMFERENCE = 85.mm.to_km
@@ -32,7 +32,9 @@ def start_race
       @dashboard_controller.begin_logging
       @timeout = Gtk.timeout_add(100) do
         @gi.pixbuf=@dashboard_controller.refresh
-        @dashboard_controller.continue?
+        continue = @dashboard_controller.continue?
+        stop_race unless continue
+        continue
       end
       false    
     end
@@ -43,7 +45,7 @@ end
 end
 @w.signal_connect("key_press_event") do |window,event|
   if event.keyval == ?a
-    stop_race
+  #  stop_race
     start_race
   elsif event.keyval == ?z
     stop_race
@@ -52,6 +54,9 @@ end
 def stop_race
   Gtk.timeout_remove(@timeout) if @timeout
   @dashboard_controller.t.kill if @dashboard_controller.t
+  f = File.open('/dev/ttyACM0', 'w+')
+  f.puts 'st'
+  f.close
 end
 box.pack_start(@gi)
 @w << box
