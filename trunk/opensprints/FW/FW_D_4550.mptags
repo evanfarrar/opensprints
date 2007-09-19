@@ -357,7 +357,7 @@ HLVDL2	C:\MCC18\h\p18f4550.h	1018;"	m	line:1018
 HLVDL2	C:\MCC18\h\p18f4550.h	1050;"	m	line:1050
 HLVDL3	C:\MCC18\h\p18f4550.h	1019;"	m	line:1019
 HLVDL3	C:\MCC18\h\p18f4550.h	1051;"	m	line:1051
-HallEffSensors	E:\iro_svn\opensprints\FW\user\user.c	2525;"	f	line:2525	signature:(void)
+HallEffSensors	E:\iro_svn\opensprints\FW\user\user.c	2526;"	f	line:2526	signature:(void)
 HallEffSensors	E:\iro_svn\opensprints\FW\user\user.h	45;"	p	line:45	signature:(void)
 HighB	E:\iro_svn\opensprints\FW\system\typedefs.h	76;"	m	line:76	struct:_WORD::<anonymous>
 I2C_DAT	C:\MCC18\h\p18f4550.h	906;"	m	line:906
@@ -1125,6 +1125,7 @@ g_USART_TX_buf	E:\iro_svn\opensprints\FW\user\user.c	184;"	v	line:184
 g_USART_TX_buf_in	E:\iro_svn\opensprints\FW\user\user.c	209;"	v	line:209
 g_USART_TX_buf_out	E:\iro_svn\opensprints\FW\user\user.c	210;"	v	line:210
 g_ack_enable	E:\iro_svn\opensprints\FW\user\user.c	213;"	v	line:213
+gameTime	E:\iro_svn\opensprints\FW\user\user.c	2524;"	v	line:2524
 getsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	239;"	f	line:239	signature:(unsigned char *buffer, byte len)
 getsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	361;"	p	line:361	signature:(unsigned char *buffer, byte len)
 got_full_packet	E:\iro_svn\opensprints\FW\user\user.c	649;"	l	line:649

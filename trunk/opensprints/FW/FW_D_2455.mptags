@@ -6,7 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.5.4	//
 !_TAG_REVISION_NAME	MCHPTags	//
 !_TAG_REVISION_VERSION	6.0.1	//
-AA	E:\iro_svn\opensprints\FW\user\user.c	1264;"	l	line:1264
+AA	E:\iro_svn\opensprints\FW\user\user.c	1434;"	l	line:1434
 ABDEN	C:\MCC18\h\p18f2455.h	638;"	m	line:638
 ABDOVF	C:\MCC18\h\p18f2455.h	645;"	m	line:645
 ABSTRACT_CONTROL_MODEL::0x02	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	71;"	d	line:71
@@ -66,13 +66,13 @@ BGST	C:\MCC18\h\p18f2455.h	870;"	m	line:870
 BGST	C:\MCC18\h\p18f2455.h	902;"	m	line:902
 BOOL	E:\iro_svn\opensprints\FW\system\typedefs.h	150;"	t	line:150
 BOR	C:\MCC18\h\p18f2455.h	836;"	m	line:836
-BO_data_byte	E:\iro_svn\opensprints\FW\user\user.c	1949;"	l	line:1949
-BO_data_byte	E:\iro_svn\opensprints\FW\user\user.c	2089;"	l	line:2089
-BO_init	E:\iro_svn\opensprints\FW\user\user.c	1905;"	l	line:1905
-BO_strobe_delay	E:\iro_svn\opensprints\FW\user\user.c	1909;"	l	line:1909
-BO_strobe_mask	E:\iro_svn\opensprints\FW\user\user.c	1906;"	l	line:1906
-BO_wait_delay	E:\iro_svn\opensprints\FW\user\user.c	1908;"	l	line:1908
-BO_wait_mask	E:\iro_svn\opensprints\FW\user\user.c	1907;"	l	line:1907
+BO_data_byte	E:\iro_svn\opensprints\FW\user\user.c	2119;"	l	line:2119
+BO_data_byte	E:\iro_svn\opensprints\FW\user\user.c	2259;"	l	line:2259
+BO_init	E:\iro_svn\opensprints\FW\user\user.c	2075;"	l	line:2075
+BO_strobe_delay	E:\iro_svn\opensprints\FW\user\user.c	2079;"	l	line:2079
+BO_strobe_mask	E:\iro_svn\opensprints\FW\user\user.c	2076;"	l	line:2076
+BO_wait_delay	E:\iro_svn\opensprints\FW\user\user.c	2078;"	l	line:2078
+BO_wait_mask	E:\iro_svn\opensprints\FW\user\user.c	2077;"	l	line:2077
 BRG16	C:\MCC18\h\p18f2455.h	641;"	m	line:641
 BRGH	C:\MCC18\h\p18f2455.h	543;"	m	line:543
 BSTALL	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	86;"	m	line:86	struct:_BD_STAT::<anonymous>
@@ -81,8 +81,8 @@ BTOEF	C:\MCC18\h\p18f2455.h	54;"	m	line:54
 BTSEE	C:\MCC18\h\p18f2455.h	66;"	m	line:66
 BTSEF	C:\MCC18\h\p18f2455.h	56;"	m	line:56
 BYTE	E:\iro_svn\opensprints\FW\system\typedefs.h	58;"	t	line:58
-BlinkUSBStatus	E:\iro_svn\opensprints\FW\user\user.c	220;"	p	line:220	file:	signature:(void)
-BlinkUSBStatus	E:\iro_svn\opensprints\FW\user\user.c	2434;"	f	line:2434	signature:(void)
+BlinkUSBStatus	E:\iro_svn\opensprints\FW\user\user.c	221;"	p	line:221	file:	signature:(void)
+BlinkUSBStatus	E:\iro_svn\opensprints\FW\user\user.c	2611;"	f	line:2611	signature:(void)
 Byte0	E:\iro_svn\opensprints\FW\system\typedefs.h	103;"	m	line:103	struct:_DWORD::<anonymous>
 Byte0	E:\iro_svn\opensprints\FW\system\typedefs.h	70;"	m	line:70	struct:_WORD::<anonymous>
 Byte1	E:\iro_svn\opensprints\FW\system\typedefs.h	104;"	m	line:104	struct:_DWORD::<anonymous>
@@ -168,6 +168,7 @@ CVREN	C:\MCC18\h\p18f2455.h	598;"	m	line:598
 CVROE	C:\MCC18\h\p18f2455.h	597;"	m	line:597
 CVRR	C:\MCC18\h\p18f2455.h	596;"	m	line:596
 CVRSS	C:\MCC18\h\p18f2455.h	602;"	m	line:602
+CheckRaceTimer	E:\iro_svn\opensprints\FW\user\user.c	262;"	f	line:262	signature:(void)
 ClassReqHandler	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	263;"	v	line:263
 ClearArray	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	575;"	f	line:575	signature:(byte* startAdr,byte count)
 ClrWdt::{_asmclrwdt_endasm}	C:\MCC18\h\p18f2455.h	1086;"	d	line:1086
@@ -341,7 +342,7 @@ HLVDL2	C:\MCC18\h\p18f2455.h	875;"	m	line:875
 HLVDL2	C:\MCC18\h\p18f2455.h	907;"	m	line:907
 HLVDL3	C:\MCC18\h\p18f2455.h	876;"	m	line:876
 HLVDL3	C:\MCC18\h\p18f2455.h	908;"	m	line:908
-HallEffSensors	E:\iro_svn\opensprints\FW\user\user.c	2526;"	f	line:2526	signature:(void)
+HallEffSensors	E:\iro_svn\opensprints\FW\user\user.c	2700;"	f	line:2700	signature:(void)
 HallEffSensors	E:\iro_svn\opensprints\FW\user\user.h	45;"	p	line:45	signature:(void)
 HighB	E:\iro_svn\opensprints\FW\system\typedefs.h	76;"	m	line:76	struct:_WORD::<anonymous>
 I2C_DAT	C:\MCC18\h\p18f2455.h	763;"	m	line:763
@@ -419,8 +420,8 @@ LATC1	C:\MCC18\h\p18f2455.h	351;"	m	line:351
 LATC2	C:\MCC18\h\p18f2455.h	352;"	m	line:352
 LATC6	C:\MCC18\h\p18f2455.h	354;"	m	line:354
 LATC7	C:\MCC18\h\p18f2455.h	355;"	m	line:355
-LEDCount	E:\iro_svn\opensprints\FW\user\user.c	2436;"	l	line:2436	file:
-LEDState	E:\iro_svn\opensprints\FW\user\user.c	2437;"	l	line:2437	file:
+LEDCount	E:\iro_svn\opensprints\FW\user\user.c	2613;"	l	line:2613	file:
+LEDState	E:\iro_svn\opensprints\FW\user\user.c	2614;"	l	line:2614	file:
 LINE_CODING	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	282;"	t	line:282
 LINE_CODING_LENGTH::0x07	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	267;"	d	line:267
 LOWER_LSB::(a)((a).v[0])	E:\iro_svn\opensprints\FW\system\typedefs.h	118;"	d	line:118
@@ -487,21 +488,21 @@ OUTPUT_PIN::0	E:\iro_svn\opensprints\FW\io_cfg.h	56;"	d	line:56
 OV	C:\MCC18\h\p18f2455.h	953;"	m	line:953
 P	C:\MCC18\h\p18f2455.h	753;"	m	line:753
 P1A	C:\MCC18\h\p18f2455.h	316;"	m	line:316
-PA	E:\iro_svn\opensprints\FW\user\user.c	1264;"	l	line:1264
-PA	E:\iro_svn\opensprints\FW\user\user.c	1345;"	l	line:1345
-PB	E:\iro_svn\opensprints\FW\user\user.c	1264;"	l	line:1264
-PB	E:\iro_svn\opensprints\FW\user\user.c	1345;"	l	line:1345
-PC	E:\iro_svn\opensprints\FW\user\user.c	1264;"	l	line:1264
-PC	E:\iro_svn\opensprints\FW\user\user.c	1345;"	l	line:1345
+PA	E:\iro_svn\opensprints\FW\user\user.c	1434;"	l	line:1434
+PA	E:\iro_svn\opensprints\FW\user\user.c	1515;"	l	line:1515
+PB	E:\iro_svn\opensprints\FW\user\user.c	1434;"	l	line:1434
+PB	E:\iro_svn\opensprints\FW\user\user.c	1515;"	l	line:1515
+PC	E:\iro_svn\opensprints\FW\user\user.c	1434;"	l	line:1434
+PC	E:\iro_svn\opensprints\FW\user\user.c	1515;"	l	line:1515
 PCFG0	C:\MCC18\h\p18f2455.h	691;"	m	line:691
 PCFG1	C:\MCC18\h\p18f2455.h	692;"	m	line:692
 PCFG2	C:\MCC18\h\p18f2455.h	693;"	m	line:693
 PCFG3	C:\MCC18\h\p18f2455.h	694;"	m	line:694
 PD	C:\MCC18\h\p18f2455.h	838;"	m	line:838
-PD	E:\iro_svn\opensprints\FW\user\user.c	1266;"	l	line:1266
-PD	E:\iro_svn\opensprints\FW\user\user.c	1347;"	l	line:1347
-PE	E:\iro_svn\opensprints\FW\user\user.c	1266;"	l	line:1266
-PE	E:\iro_svn\opensprints\FW\user\user.c	1347;"	l	line:1347
+PD	E:\iro_svn\opensprints\FW\user\user.c	1436;"	l	line:1436
+PD	E:\iro_svn\opensprints\FW\user\user.c	1517;"	l	line:1517
+PE	E:\iro_svn\opensprints\FW\user\user.c	1436;"	l	line:1436
+PE	E:\iro_svn\opensprints\FW\user\user.c	1517;"	l	line:1517
 PEIE	C:\MCC18\h\p18f2455.h	1033;"	m	line:1033
 PEN	C:\MCC18\h\p18f2455.h	728;"	m	line:728
 PGC	C:\MCC18\h\p18f2455.h	289;"	m	line:289
@@ -529,7 +530,7 @@ PSSAC0	C:\MCC18\h\p18f2455.h	608;"	m	line:608
 PSSAC0	C:\MCC18\h\p18f2455.h	618;"	m	line:618
 PSSAC1	C:\MCC18\h\p18f2455.h	609;"	m	line:609
 PSSAC1	C:\MCC18\h\p18f2455.h	619;"	m	line:619
-ProcessIO	E:\iro_svn\opensprints\FW\user\user.c	644;"	f	line:644	signature:(void)
+ProcessIO	E:\iro_svn\opensprints\FW\user\user.c	814;"	f	line:814	signature:(void)
 ProcessIO	E:\iro_svn\opensprints\FW\user\user.h	42;"	p	line:42	signature:(void)
 R	C:\MCC18\h\p18f2455.h	785;"	m	line:785
 RA0	C:\MCC18\h\p18f2455.h	240;"	m	line:240
@@ -598,6 +599,7 @@ RX9	C:\MCC18\h\p18f2455.h	531;"	m	line:531
 RX9D	C:\MCC18\h\p18f2455.h	525;"	m	line:525
 RXDTP	C:\MCC18\h\p18f2455.h	650;"	m	line:650
 R_W	C:\MCC18\h\p18f2455.h	751;"	m	line:751
+RaceInit	E:\iro_svn\opensprints\FW\user\user.c	542;"	f	line:542	signature:(void)
 RemoteWakeup	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	75;"	m	line:75	struct:_USB_DEVICE_STATUS::<anonymous>
 Reset::{_asmreset_endasm}	C:\MCC18\h\p18f2455.h	1088;"	d	line:1088
 Rlcf::(f,dest,access){_asmmovlbfrlcf	C:\MCC18\h\p18f2455.h	1090;"	d	line:1090
@@ -645,14 +647,14 @@ SUSPND	C:\MCC18\h\p18f2455.h	81;"	m	line:81
 SWDTE	C:\MCC18\h\p18f2455.h	851;"	m	line:851
 SWDTEN	C:\MCC18\h\p18f2455.h	848;"	m	line:848
 SYNC	C:\MCC18\h\p18f2455.h	545;"	m	line:545
-Sensor0PortApin	E:\iro_svn\opensprints\FW\user\user.c	2520;"	v	line:2520
-Sensor1PortApin	E:\iro_svn\opensprints\FW\user\user.c	2521;"	v	line:2521
+Sensor0PortApin	E:\iro_svn\opensprints\FW\user\user.c	2697;"	v	line:2697
+Sensor1PortApin	E:\iro_svn\opensprints\FW\user\user.c	2698;"	v	line:2698
 SetupPkt	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	268;"	v	line:268
 Sleep::{_asmsleep_endasm}	C:\MCC18\h\p18f2455.h	1087;"	d	line:1087
 Stat	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	114;"	m	line:114	struct:_BDT::<anonymous>
 Swapf::(f,dest,access){_asmmovlbfswap	C:\MCC18\h\p18f2455.h	1094;"	d	line:1094
-SwitchIsPressed	E:\iro_svn\opensprints\FW\user\user.c	221;"	p	line:221	file:	signature:(void)
-SwitchIsPressed	E:\iro_svn\opensprints\FW\user\user.c	2501;"	f	line:2501	signature:(void)
+SwitchIsPressed	E:\iro_svn\opensprints\FW\user\user.c	222;"	p	line:222	file:	signature:(void)
+SwitchIsPressed	E:\iro_svn\opensprints\FW\user\user.c	2678;"	f	line:2678	signature:(void)
 T08BIT	C:\MCC18\h\p18f2455.h	943;"	m	line:943
 T0CKI	C:\MCC18\h\p18f2455.h	253;"	m	line:253
 T0CS	C:\MCC18\h\p18f2455.h	942;"	m	line:942
@@ -816,7 +818,7 @@ USB_USE_CDC	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	49;"	d	line:49
 USER_H	E:\iro_svn\opensprints\FW\user\user.h	38;"	d	line:38
 UTEYE	C:\MCC18\h\p18f2455.h	107;"	m	line:107
 UTRDIS	C:\MCC18\h\p18f2455.h	103;"	m	line:103
-UserInit	E:\iro_svn\opensprints\FW\user\user.c	496;"	f	line:496	signature:(void)
+UserInit	E:\iro_svn\opensprints\FW\user\user.c	666;"	f	line:666	signature:(void)
 UserInit	E:\iro_svn\opensprints\FW\user\user.h	41;"	p	line:41	signature:(void)
 UserSW::PORTCbits.RC2	E:\iro_svn\opensprints\FW\io_cfg.h	81;"	d	line:81
 V25TER::0x01	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	74;"	d	line:74
@@ -867,11 +869,11 @@ _byte	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	286;"	m	line:286	unio
 _byte	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	72;"	m	line:72	union:_USB_DEVICE_STATUS
 _byte	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	82;"	m	line:82	union:_BD_STAT
 _dword	E:\iro_svn\opensprints\FW\system\typedefs.h	88;"	m	line:88	union:_DWORD
-_user_putc	E:\iro_svn\opensprints\FW\user\user.c	257;"	p	line:257	file:	signature:(char c)
-_user_putc	E:\iro_svn\opensprints\FW\user\user.c	808;"	f	line:808	signature:(char c)
+_user_putc	E:\iro_svn\opensprints\FW\user\user.c	258;"	p	line:258	file:	signature:(char c)
+_user_putc	E:\iro_svn\opensprints\FW\user\user.c	978;"	f	line:978	signature:(char c)
 _word	E:\iro_svn\opensprints\FW\system\typedefs.h	133;"	m	line:133	union:_POINTER
 _word	E:\iro_svn\opensprints\FW\system\typedefs.h	62;"	m	line:62	union:_WORD
-acc	E:\iro_svn\opensprints\FW\user\user.c	2247;"	l	line:2247
+acc	E:\iro_svn\opensprints\FW\user\user.c	2424;"	l	line:2424
 advance_RX_buf_out::\	E:\iro_svn\opensprints\FW\user\user.c	108;"	d	line:108	file:
 b0	E:\iro_svn\opensprints\FW\system\typedefs.h	49;"	m	line:49	struct:_BYTE::<anonymous>
 b1	E:\iro_svn\opensprints\FW\system\typedefs.h	50;"	m	line:50	struct:_BYTE::<anonymous>
@@ -922,7 +924,7 @@ byte1	E:\iro_svn\opensprints\FW\system\typedefs.h	66;"	m	line:66	struct:_WORD::<
 byte1	E:\iro_svn\opensprints\FW\system\typedefs.h	92;"	m	line:92	struct:_DWORD::<anonymous>
 byte2	E:\iro_svn\opensprints\FW\system\typedefs.h	93;"	m	line:93	struct:_DWORD::<anonymous>
 byte3	E:\iro_svn\opensprints\FW\system\typedefs.h	94;"	m	line:94	struct:_DWORD::<anonymous>
-byte_count	E:\iro_svn\opensprints\FW\user\user.c	2093;"	l	line:2093
+byte_count	E:\iro_svn\opensprints\FW\user\user.c	2263;"	l	line:2263
 byte_to_read	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	332;"	l	line:332
 byte_to_send	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	458;"	l	line:458
 byte_to_send	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	262;"	l	line:262
@@ -938,22 +940,22 @@ cdc_rx_len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	46;"	v	line:46
 cdc_trf_state	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	48;"	v	line:48
 cdc_tx_len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	51;"	v	line:51
 cdc_union_fn_i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	59;"	v	line:59
-channel	E:\iro_svn\opensprints\FW\user\user.c	1427;"	l	line:1427
-check_and_send_TX_data	E:\iro_svn\opensprints\FW\user\user.c	255;"	p	line:255	file:	signature:(void)
-check_and_send_TX_data	E:\iro_svn\opensprints\FW\user\user.c	831;"	f	line:831	signature:(void)
-cmd1	E:\iro_svn\opensprints\FW\user\user.c	876;"	l	line:876
-cmd2	E:\iro_svn\opensprints\FW\user\user.c	877;"	l	line:877
-command	E:\iro_svn\opensprints\FW\user\user.c	875;"	l	line:875
+channel	E:\iro_svn\opensprints\FW\user\user.c	1597;"	l	line:1597
+check_and_send_TX_data	E:\iro_svn\opensprints\FW\user\user.c	1001;"	f	line:1001	signature:(void)
+check_and_send_TX_data	E:\iro_svn\opensprints\FW\user\user.c	256;"	p	line:256	file:	signature:(void)
+cmd1	E:\iro_svn\opensprints\FW\user\user.c	1046;"	l	line:1046
+cmd2	E:\iro_svn\opensprints\FW\user\user.c	1047;"	l	line:1047
+command	E:\iro_svn\opensprints\FW\user\user.c	1045;"	l	line:1045
 control_signal_bitmap	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	55;"	v	line:55
 ctrl_trf_mem	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	76;"	m	line:76	struct:_USB_DEVICE_STATUS::<anonymous>
 ctrl_trf_session_owner	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	45;"	v	line:45
 ctrl_trf_state	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	44;"	v	line:44
-currentValueSensor0	E:\iro_svn\opensprints\FW\user\user.c	2518;"	v	line:2518
-currentValueSensor1	E:\iro_svn\opensprints\FW\user\user.c	2519;"	v	line:2519
+currentValueSensor0	E:\iro_svn\opensprints\FW\user\user.c	2695;"	v	line:2695
+currentValueSensor1	E:\iro_svn\opensprints\FW\user\user.c	2696;"	v	line:2696
 delay_count	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	406;"	l	line:406	file:
 device_dsc	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	180;"	v	line:180
-digit_cnt	E:\iro_svn\opensprints\FW\user\user.c	2386;"	l	line:2386
-direction	E:\iro_svn\opensprints\FW\user\user.c	1512;"	l	line:1512
+digit_cnt	E:\iro_svn\opensprints\FW\user\user.c	2563;"	l	line:2563
+direction	E:\iro_svn\opensprints\FW\user\user.c	1682;"	l	line:1682
 dummy_encapsulated_cmd_response	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	64;"	v	line:64
 dummy_length::0x08	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	63;"	d	line:63	file:
 dwDTERate	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	277;"	m	line:277	struct:_LINE_CODING::<anonymous>
@@ -994,10 +996,10 @@ ep8Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	214;"	v	line:214
 ep9Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	220;"	v	line:220
 ep9Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	219;"	v	line:219
 error_byte	E:\iro_svn\opensprints\FW\user\user.c	150;"	v	line:150
-extract_digit	E:\iro_svn\opensprints\FW\user\user.c	224;"	p	line:224	file:	signature:(signed short long * acc, unsigned char digits)
-extract_digit	E:\iro_svn\opensprints\FW\user\user.c	2383;"	f	line:2383	signature:(signed short long * acc, unsigned char digits)
-extract_number	E:\iro_svn\opensprints\FW\user\user.c	223;"	p	line:223	file:	signature:(tExtractType type)
-extract_number	E:\iro_svn\opensprints\FW\user\user.c	2245;"	f	line:2245	signature:(tExtractType type)
+extract_digit	E:\iro_svn\opensprints\FW\user\user.c	225;"	p	line:225	file:	signature:(signed short long * acc, unsigned char digits)
+extract_digit	E:\iro_svn\opensprints\FW\user\user.c	2560;"	f	line:2560	signature:(signed short long * acc, unsigned char digits)
+extract_number	E:\iro_svn\opensprints\FW\user\user.c	224;"	p	line:224	file:	signature:(tExtractType type)
+extract_number	E:\iro_svn\opensprints\FW\user\user.c	2422;"	f	line:2422	signature:(tExtractType type)
 g_BO_init	E:\iro_svn\opensprints\FW\user\user.c	190;"	v	line:190
 g_BO_strobe_delay	E:\iro_svn\opensprints\FW\user\user.c	194;"	v	line:194
 g_BO_strobe_mask	E:\iro_svn\opensprints\FW\user\user.c	191;"	v	line:191
@@ -1021,21 +1023,20 @@ g_USART_TX_buf	E:\iro_svn\opensprints\FW\user\user.c	184;"	v	line:184
 g_USART_TX_buf_in	E:\iro_svn\opensprints\FW\user\user.c	209;"	v	line:209
 g_USART_TX_buf_out	E:\iro_svn\opensprints\FW\user\user.c	210;"	v	line:210
 g_ack_enable	E:\iro_svn\opensprints\FW\user\user.c	213;"	v	line:213
-gameTime	E:\iro_svn\opensprints\FW\user\user.c	2524;"	v	line:2524
 getsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	239;"	f	line:239	signature:(unsigned char *buffer, byte len)
 getsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	361;"	p	line:361	signature:(unsigned char *buffer, byte len)
-got_full_packet	E:\iro_svn\opensprints\FW\user\user.c	649;"	l	line:649
-high_ISR	E:\iro_svn\opensprints\FW\user\user.c	492;"	f	line:492	signature:(void)
+got_full_packet	E:\iro_svn\opensprints\FW\user\user.c	819;"	l	line:819
+high_ISR	E:\iro_svn\opensprints\FW\user\user.c	538;"	f	line:538	signature:(void)
 high_ISR	E:\iro_svn\opensprints\FW\user\user.h	44;"	p	line:44	signature:(void)
 high_vector	E:\iro_svn\opensprints\FW\main.c	54;"	f	line:54	signature:(void)
 i	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	135;"	l	line:135
-i	E:\iro_svn\opensprints\FW\user\user.c	498;"	l	line:498
+i	E:\iro_svn\opensprints\FW\user\user.c	668;"	l	line:668
 i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	56;"	v	line:56
 i02a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	62;"	v	line:62
-in_cr	E:\iro_svn\opensprints\FW\user\user.c	646;"	l	line:646	file:
+in_cr	E:\iro_svn\opensprints\FW\user\user.c	816;"	l	line:816	file:
 is_racing	E:\iro_svn\opensprints\FW\user\user.c	216;"	v	line:216
-j	E:\iro_svn\opensprints\FW\user\user.c	498;"	l	line:498
-justBegun	E:\iro_svn\opensprints\FW\user\user.c	2515;"	v	line:2515
+j	E:\iro_svn\opensprints\FW\user\user.c	668;"	l	line:668
+justBegun	E:\iro_svn\opensprints\FW\user\user.c	2692;"	v	line:2692
 kASCII_CHAR	E:\iro_svn\opensprints\FW\user\user.c	104;"	e	line:104	file:
 kCHAR	E:\iro_svn\opensprints\FW\user\user.c	100;"	e	line:100	file:
 kCR::0x0D	E:\iro_svn\opensprints\FW\user\user.c	120;"	d	line:120	file:
@@ -1063,13 +1064,13 @@ kUINT	E:\iro_svn\opensprints\FW\user\user.c	103;"	e	line:103	file:
 kUSART_RX_BUF_SIZE::64	E:\iro_svn\opensprints\FW\user\user.c	96;"	d	line:96	file:
 kUSART_TX_BUF_SIZE::64	E:\iro_svn\opensprints\FW\user\user.c	95;"	d	line:95	file:
 kWAITING	E:\iro_svn\opensprints\FW\user\user.c	85;"	e	line:85	file:
-last_fifo_size	E:\iro_svn\opensprints\FW\user\user.c	647;"	l	line:647	file:
+last_fifo_size	E:\iro_svn\opensprints\FW\user\user.c	817;"	l	line:817	file:
 len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	298;"	l	line:298
 len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	381;"	l	line:381
 line_coding	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	54;"	v	line:54
-location	E:\iro_svn\opensprints\FW\user\user.c	1451;"	l	line:1451
-location	E:\iro_svn\opensprints\FW\user\user.c	1479;"	l	line:1479
-low_ISR	E:\iro_svn\opensprints\FW\user\user.c	263;"	f	line:263	signature:(void)
+location	E:\iro_svn\opensprints\FW\user\user.c	1621;"	l	line:1621
+location	E:\iro_svn\opensprints\FW\user\user.c	1649;"	l	line:1649
+low_ISR	E:\iro_svn\opensprints\FW\user\user.c	307;"	f	line:307	signature:(void)
 low_ISR	E:\iro_svn\opensprints\FW\user\user.h	43;"	p	line:43	signature:(void)
 mCDCGetRxLength::cdc_rx_len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	192;"	d	line:192
 mCDCUsartRxIsBusy::CDC_BULK_BD_OUT.Stat.UOWN	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	154;"	d	line:154
@@ -1093,94 +1094,93 @@ mUSBUSARTIsRTS::control_signal_bitmap.CARRIER_	E:\iro_svn\opensprints\FW\system\
 mUSBUSARTIsTxTrfReady::(cdc_trf_state==CDC_TX_READY)	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	135;"	d	line:135
 mUSBUSARTTxRam::(pData,len)\	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	221;"	d	line:221
 mUSBUSARTTxRom::(pData,len)\	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	256;"	d	line:256
-mode	E:\iro_svn\opensprints\FW\user\user.c	1170;"	l	line:1170
-neg	E:\iro_svn\opensprints\FW\user\user.c	2248;"	l	line:2248
-new_port_A_value	E:\iro_svn\opensprints\FW\user\user.c	1950;"	l	line:1950
-new_port_A_value	E:\iro_svn\opensprints\FW\user\user.c	2090;"	l	line:2090
+mode	E:\iro_svn\opensprints\FW\user\user.c	1340;"	l	line:1340
+neg	E:\iro_svn\opensprints\FW\user\user.c	2425;"	l	line:2425
+new_port_A_value	E:\iro_svn\opensprints\FW\user\user.c	2120;"	l	line:2120
+new_port_A_value	E:\iro_svn\opensprints\FW\user\user.c	2260;"	l	line:2260
 pCDCDst	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	50;"	v	line:50
 pCDCSrc	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	49;"	v	line:49
 pDst	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	48;"	v	line:48
 pFunc	E:\iro_svn\opensprints\FW\system\typedefs.h	123;"	t	line:123
 pSrc	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	47;"	v	line:47
-paramater_value	E:\iro_svn\opensprints\FW\user\user.c	1134;"	l	line:1134
-parameter_number	E:\iro_svn\opensprints\FW\user\user.c	1133;"	l	line:1133
-parse_A_packet	E:\iro_svn\opensprints\FW\user\user.c	1425;"	f	line:1425	signature:(void)
-parse_A_packet	E:\iro_svn\opensprints\FW\user\user.c	231;"	p	line:231	file:	signature:(void)
-parse_BC_packet	E:\iro_svn\opensprints\FW\user\user.c	1903;"	f	line:1903	signature:(void)
-parse_BC_packet	E:\iro_svn\opensprints\FW\user\user.c	242;"	p	line:242	file:	signature:(void)
-parse_BO_packet	E:\iro_svn\opensprints\FW\user\user.c	1947;"	f	line:1947	signature:(void)
-parse_BO_packet	E:\iro_svn\opensprints\FW\user\user.c	241;"	p	line:241	file:	signature:(void)
-parse_BS_packet	E:\iro_svn\opensprints\FW\user\user.c	2087;"	f	line:2087	signature:(void)
-parse_BS_packet	E:\iro_svn\opensprints\FW\user\user.c	243;"	p	line:243	file:	signature:(void)
-parse_CI_packet	E:\iro_svn\opensprints\FW\user\user.c	2220;"	f	line:2220	signature:(void)
-parse_CI_packet	E:\iro_svn\opensprints\FW\user\user.c	250;"	p	line:250	file:	signature:(void)
-parse_CS_packet	E:\iro_svn\opensprints\FW\user\user.c	2199;"	f	line:2199	signature:(void)
-parse_CS_packet	E:\iro_svn\opensprints\FW\user\user.c	247;"	p	line:247	file:	signature:(void)
-parse_CU_packet	E:\iro_svn\opensprints\FW\user\user.c	1131;"	f	line:1131	signature:(void)
-parse_CU_packet	E:\iro_svn\opensprints\FW\user\user.c	244;"	p	line:244	file:	signature:(void)
-parse_CX_packet	E:\iro_svn\opensprints\FW\user\user.c	1815;"	f	line:1815	signature:(void)
-parse_CX_packet	E:\iro_svn\opensprints\FW\user\user.c	227;"	p	line:227	file:	signature:(void)
-parse_C_packet	E:\iro_svn\opensprints\FW\user\user.c	1262;"	f	line:1262	signature:(void)
-parse_C_packet	E:\iro_svn\opensprints\FW\user\user.c	226;"	p	line:226	file:	signature:(void)
-parse_GO_packet	E:\iro_svn\opensprints\FW\user\user.c	2226;"	f	line:2226	signature:(void)
-parse_GO_packet	E:\iro_svn\opensprints\FW\user\user.c	252;"	p	line:252	file:	signature:(void)
-parse_I_packet	E:\iro_svn\opensprints\FW\user\user.c	1386;"	f	line:1386	signature:(void)
-parse_I_packet	E:\iro_svn\opensprints\FW\user\user.c	229;"	p	line:229	file:	signature:(void)
-parse_MR_packet	E:\iro_svn\opensprints\FW\user\user.c	1477;"	f	line:1477	signature:(void)
-parse_MR_packet	E:\iro_svn\opensprints\FW\user\user.c	236;"	p	line:236	file:	signature:(void)
-parse_MW_packet	E:\iro_svn\opensprints\FW\user\user.c	1449;"	f	line:1449	signature:(void)
-parse_MW_packet	E:\iro_svn\opensprints\FW\user\user.c	237;"	p	line:237	file:	signature:(void)
-parse_O_packet	E:\iro_svn\opensprints\FW\user\user.c	1343;"	f	line:1343	signature:(void)
-parse_O_packet	E:\iro_svn\opensprints\FW\user\user.c	228;"	p	line:228	file:	signature:(void)
-parse_PD_packet	E:\iro_svn\opensprints\FW\user\user.c	1508;"	f	line:1508	signature:(void)
-parse_PD_packet	E:\iro_svn\opensprints\FW\user\user.c	235;"	p	line:235	file:	signature:(void)
-parse_PI_packet	E:\iro_svn\opensprints\FW\user\user.c	1608;"	f	line:1608	signature:(void)
-parse_PI_packet	E:\iro_svn\opensprints\FW\user\user.c	233;"	p	line:233	file:	signature:(void)
-parse_PO_packet	E:\iro_svn\opensprints\FW\user\user.c	1671;"	f	line:1671	signature:(void)
-parse_PO_packet	E:\iro_svn\opensprints\FW\user\user.c	234;"	p	line:234	file:	signature:(void)
-parse_RC_packet	E:\iro_svn\opensprints\FW\user\user.c	1834;"	f	line:1834	signature:(void)
-parse_RC_packet	E:\iro_svn\opensprints\FW\user\user.c	240;"	p	line:240	file:	signature:(void)
-parse_RI_packet	E:\iro_svn\opensprints\FW\user\user.c	2213;"	f	line:2213	signature:(void)
-parse_RI_packet	E:\iro_svn\opensprints\FW\user\user.c	249;"	p	line:249	file:	signature:(void)
-parse_RS_packet	E:\iro_svn\opensprints\FW\user\user.c	2192;"	f	line:2192	signature:(void)
-parse_RS_packet	E:\iro_svn\opensprints\FW\user\user.c	246;"	p	line:246	file:	signature:(void)
-parse_RX_packet	E:\iro_svn\opensprints\FW\user\user.c	1808;"	f	line:1808	signature:(void)
-parse_RX_packet	E:\iro_svn\opensprints\FW\user\user.c	239;"	p	line:239	file:	signature:(void)
-parse_R_packet	E:\iro_svn\opensprints\FW\user\user.c	1121;"	f	line:1121	signature:(void)
-parse_R_packet	E:\iro_svn\opensprints\FW\user\user.c	225;"	p	line:225	file:	signature:(void)
-parse_SI_packet	E:\iro_svn\opensprints\FW\user\user.c	2206;"	f	line:2206	signature:(void)
-parse_SI_packet	E:\iro_svn\opensprints\FW\user\user.c	248;"	p	line:248	file:	signature:(void)
-parse_SS_packet	E:\iro_svn\opensprints\FW\user\user.c	2185;"	f	line:2185	signature:(void)
-parse_SS_packet	E:\iro_svn\opensprints\FW\user\user.c	245;"	p	line:245	file:	signature:(void)
-parse_ST_packet	E:\iro_svn\opensprints\FW\user\user.c	2231;"	f	line:2231	signature:(void)
-parse_ST_packet	E:\iro_svn\opensprints\FW\user\user.c	253;"	p	line:253	file:	signature:(void)
-parse_TX_packet	E:\iro_svn\opensprints\FW\user\user.c	1775;"	f	line:1775	signature:(void)
-parse_TX_packet	E:\iro_svn\opensprints\FW\user\user.c	238;"	p	line:238	file:	signature:(void)
-parse_T_packet	E:\iro_svn\opensprints\FW\user\user.c	1167;"	f	line:1167	signature:(void)
-parse_T_packet	E:\iro_svn\opensprints\FW\user\user.c	232;"	p	line:232	file:	signature:(void)
-parse_V_packet	E:\iro_svn\opensprints\FW\user\user.c	1408;"	f	line:1408	signature:(void)
-parse_V_packet	E:\iro_svn\opensprints\FW\user\user.c	230;"	p	line:230	file:	signature:(void)
-parse_packet	E:\iro_svn\opensprints\FW\user\user.c	222;"	p	line:222	file:	signature:(void)
-parse_packet	E:\iro_svn\opensprints\FW\user\user.c	873;"	f	line:873	signature:(void)
-pin	E:\iro_svn\opensprints\FW\user\user.c	1511;"	l	line:1511
-pin	E:\iro_svn\opensprints\FW\user\user.c	1611;"	l	line:1611
-pin	E:\iro_svn\opensprints\FW\user\user.c	1674;"	l	line:1674
-pin	E:\iro_svn\opensprints\FW\user\user.c	1837;"	l	line:1837
-port	E:\iro_svn\opensprints\FW\user\user.c	1510;"	l	line:1510
-port	E:\iro_svn\opensprints\FW\user\user.c	1610;"	l	line:1610
-port	E:\iro_svn\opensprints\FW\user\user.c	1673;"	l	line:1673
-port	E:\iro_svn\opensprints\FW\user\user.c	1836;"	l	line:1836
-prevValueSensor0	E:\iro_svn\opensprints\FW\user\user.c	2516;"	v	line:2516
-prevValueSensor1	E:\iro_svn\opensprints\FW\user\user.c	2517;"	v	line:2517
-print_ack	E:\iro_svn\opensprints\FW\user\user.c	1112;"	f	line:1112	signature:(void)
-print_ack	E:\iro_svn\opensprints\FW\user\user.c	256;"	p	line:256	file:	signature:(void)
-print_status	E:\iro_svn\opensprints\FW\user\user.c	2408;"	f	line:2408	signature:(void)
+paramater_value	E:\iro_svn\opensprints\FW\user\user.c	1304;"	l	line:1304
+parameter_number	E:\iro_svn\opensprints\FW\user\user.c	1303;"	l	line:1303
+parse_A_packet	E:\iro_svn\opensprints\FW\user\user.c	1595;"	f	line:1595	signature:(void)
+parse_A_packet	E:\iro_svn\opensprints\FW\user\user.c	232;"	p	line:232	file:	signature:(void)
+parse_BC_packet	E:\iro_svn\opensprints\FW\user\user.c	2073;"	f	line:2073	signature:(void)
+parse_BC_packet	E:\iro_svn\opensprints\FW\user\user.c	243;"	p	line:243	file:	signature:(void)
+parse_BO_packet	E:\iro_svn\opensprints\FW\user\user.c	2117;"	f	line:2117	signature:(void)
+parse_BO_packet	E:\iro_svn\opensprints\FW\user\user.c	242;"	p	line:242	file:	signature:(void)
+parse_BS_packet	E:\iro_svn\opensprints\FW\user\user.c	2257;"	f	line:2257	signature:(void)
+parse_BS_packet	E:\iro_svn\opensprints\FW\user\user.c	244;"	p	line:244	file:	signature:(void)
+parse_CI_packet	E:\iro_svn\opensprints\FW\user\user.c	2390;"	f	line:2390	signature:(void)
+parse_CI_packet	E:\iro_svn\opensprints\FW\user\user.c	251;"	p	line:251	file:	signature:(void)
+parse_CS_packet	E:\iro_svn\opensprints\FW\user\user.c	2369;"	f	line:2369	signature:(void)
+parse_CS_packet	E:\iro_svn\opensprints\FW\user\user.c	248;"	p	line:248	file:	signature:(void)
+parse_CU_packet	E:\iro_svn\opensprints\FW\user\user.c	1301;"	f	line:1301	signature:(void)
+parse_CU_packet	E:\iro_svn\opensprints\FW\user\user.c	245;"	p	line:245	file:	signature:(void)
+parse_CX_packet	E:\iro_svn\opensprints\FW\user\user.c	1985;"	f	line:1985	signature:(void)
+parse_CX_packet	E:\iro_svn\opensprints\FW\user\user.c	228;"	p	line:228	file:	signature:(void)
+parse_C_packet	E:\iro_svn\opensprints\FW\user\user.c	1432;"	f	line:1432	signature:(void)
+parse_C_packet	E:\iro_svn\opensprints\FW\user\user.c	227;"	p	line:227	file:	signature:(void)
+parse_GO_packet	E:\iro_svn\opensprints\FW\user\user.c	2396;"	f	line:2396	signature:(void)
+parse_GO_packet	E:\iro_svn\opensprints\FW\user\user.c	253;"	p	line:253	file:	signature:(void)
+parse_I_packet	E:\iro_svn\opensprints\FW\user\user.c	1556;"	f	line:1556	signature:(void)
+parse_I_packet	E:\iro_svn\opensprints\FW\user\user.c	230;"	p	line:230	file:	signature:(void)
+parse_MR_packet	E:\iro_svn\opensprints\FW\user\user.c	1647;"	f	line:1647	signature:(void)
+parse_MR_packet	E:\iro_svn\opensprints\FW\user\user.c	237;"	p	line:237	file:	signature:(void)
+parse_MW_packet	E:\iro_svn\opensprints\FW\user\user.c	1619;"	f	line:1619	signature:(void)
+parse_MW_packet	E:\iro_svn\opensprints\FW\user\user.c	238;"	p	line:238	file:	signature:(void)
+parse_O_packet	E:\iro_svn\opensprints\FW\user\user.c	1513;"	f	line:1513	signature:(void)
+parse_O_packet	E:\iro_svn\opensprints\FW\user\user.c	229;"	p	line:229	file:	signature:(void)
+parse_PD_packet	E:\iro_svn\opensprints\FW\user\user.c	1678;"	f	line:1678	signature:(void)
+parse_PD_packet	E:\iro_svn\opensprints\FW\user\user.c	236;"	p	line:236	file:	signature:(void)
+parse_PI_packet	E:\iro_svn\opensprints\FW\user\user.c	1778;"	f	line:1778	signature:(void)
+parse_PI_packet	E:\iro_svn\opensprints\FW\user\user.c	234;"	p	line:234	file:	signature:(void)
+parse_PO_packet	E:\iro_svn\opensprints\FW\user\user.c	1841;"	f	line:1841	signature:(void)
+parse_PO_packet	E:\iro_svn\opensprints\FW\user\user.c	235;"	p	line:235	file:	signature:(void)
+parse_RC_packet	E:\iro_svn\opensprints\FW\user\user.c	2004;"	f	line:2004	signature:(void)
+parse_RC_packet	E:\iro_svn\opensprints\FW\user\user.c	241;"	p	line:241	file:	signature:(void)
+parse_RI_packet	E:\iro_svn\opensprints\FW\user\user.c	2383;"	f	line:2383	signature:(void)
+parse_RI_packet	E:\iro_svn\opensprints\FW\user\user.c	250;"	p	line:250	file:	signature:(void)
+parse_RS_packet	E:\iro_svn\opensprints\FW\user\user.c	2362;"	f	line:2362	signature:(void)
+parse_RS_packet	E:\iro_svn\opensprints\FW\user\user.c	247;"	p	line:247	file:	signature:(void)
+parse_RX_packet	E:\iro_svn\opensprints\FW\user\user.c	1978;"	f	line:1978	signature:(void)
+parse_RX_packet	E:\iro_svn\opensprints\FW\user\user.c	240;"	p	line:240	file:	signature:(void)
+parse_R_packet	E:\iro_svn\opensprints\FW\user\user.c	1291;"	f	line:1291	signature:(void)
+parse_R_packet	E:\iro_svn\opensprints\FW\user\user.c	226;"	p	line:226	file:	signature:(void)
+parse_SI_packet	E:\iro_svn\opensprints\FW\user\user.c	2376;"	f	line:2376	signature:(void)
+parse_SI_packet	E:\iro_svn\opensprints\FW\user\user.c	249;"	p	line:249	file:	signature:(void)
+parse_SS_packet	E:\iro_svn\opensprints\FW\user\user.c	2355;"	f	line:2355	signature:(void)
+parse_SS_packet	E:\iro_svn\opensprints\FW\user\user.c	246;"	p	line:246	file:	signature:(void)
+parse_ST_packet	E:\iro_svn\opensprints\FW\user\user.c	2408;"	f	line:2408	signature:(void)
+parse_ST_packet	E:\iro_svn\opensprints\FW\user\user.c	254;"	p	line:254	file:	signature:(void)
+parse_TX_packet	E:\iro_svn\opensprints\FW\user\user.c	1945;"	f	line:1945	signature:(void)
+parse_TX_packet	E:\iro_svn\opensprints\FW\user\user.c	239;"	p	line:239	file:	signature:(void)
+parse_T_packet	E:\iro_svn\opensprints\FW\user\user.c	1337;"	f	line:1337	signature:(void)
+parse_T_packet	E:\iro_svn\opensprints\FW\user\user.c	233;"	p	line:233	file:	signature:(void)
+parse_V_packet	E:\iro_svn\opensprints\FW\user\user.c	1578;"	f	line:1578	signature:(void)
+parse_V_packet	E:\iro_svn\opensprints\FW\user\user.c	231;"	p	line:231	file:	signature:(void)
+parse_packet	E:\iro_svn\opensprints\FW\user\user.c	1043;"	f	line:1043	signature:(void)
+parse_packet	E:\iro_svn\opensprints\FW\user\user.c	223;"	p	line:223	file:	signature:(void)
+pin	E:\iro_svn\opensprints\FW\user\user.c	1681;"	l	line:1681
+pin	E:\iro_svn\opensprints\FW\user\user.c	1781;"	l	line:1781
+pin	E:\iro_svn\opensprints\FW\user\user.c	1844;"	l	line:1844
+pin	E:\iro_svn\opensprints\FW\user\user.c	2007;"	l	line:2007
+port	E:\iro_svn\opensprints\FW\user\user.c	1680;"	l	line:1680
+port	E:\iro_svn\opensprints\FW\user\user.c	1780;"	l	line:1780
+port	E:\iro_svn\opensprints\FW\user\user.c	1843;"	l	line:1843
+port	E:\iro_svn\opensprints\FW\user\user.c	2006;"	l	line:2006
+prevValueSensor0	E:\iro_svn\opensprints\FW\user\user.c	2693;"	v	line:2693
+prevValueSensor1	E:\iro_svn\opensprints\FW\user\user.c	2694;"	v	line:2694
+print_ack	E:\iro_svn\opensprints\FW\user\user.c	1282;"	f	line:1282	signature:(void)
+print_ack	E:\iro_svn\opensprints\FW\user\user.c	257;"	p	line:257	file:	signature:(void)
+print_status	E:\iro_svn\opensprints\FW\user\user.c	2585;"	f	line:2585	signature:(void)
 putrsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	379;"	f	line:379	signature:(const rom unsigned char *data)
 putrsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	362;"	p	line:362	signature:(unsigned const rom char *data)
 putsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	296;"	f	line:296	signature:(unsigned char *data)
 putsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	363;"	p	line:363	signature:(unsigned char *data)
-riderOneTicks	E:\iro_svn\opensprints\FW\user\user.c	2522;"	v	line:2522
-riderTwoTicks	E:\iro_svn\opensprints\FW\user\user.c	2523;"	v	line:2523
+raceTime	E:\iro_svn\opensprints\FW\user\user.c	217;"	v	line:217
 sd000	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	247;"	v	line:247
 sd001	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	250;"	v	line:250
 sd002	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	255;"	v	line:255
@@ -1193,11 +1193,11 @@ string	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	250;"	m	line:250	file:
 string	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	255;"	m	line:255	file:
 tExtractType	E:\iro_svn\opensprints\FW\user\user.c	106;"	t	line:106	file:
 tRC_state	E:\iro_svn\opensprints\FW\user\user.c	88;"	t	line:88	file:
-temp	E:\iro_svn\opensprints\FW\user\user.c	833;"	l	line:833
+temp	E:\iro_svn\opensprints\FW\user\user.c	1003;"	l	line:1003
 time_between_updates	E:\iro_svn\opensprints\FW\user\user.c	136;"	v	line:136
-tmp	E:\iro_svn\opensprints\FW\user\user.c	1951;"	l	line:1951
-tmp	E:\iro_svn\opensprints\FW\user\user.c	2091;"	l	line:2091
-tst_char	E:\iro_svn\opensprints\FW\user\user.c	648;"	l	line:648
+tmp	E:\iro_svn\opensprints\FW\user\user.c	2121;"	l	line:2121
+tmp	E:\iro_svn\opensprints\FW\user\user.c	2261;"	l	line:2261
+tst_char	E:\iro_svn\opensprints\FW\user\user.c	818;"	l	line:818
 usb_active_cfg	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	159;"	v	line:159
 usb_alt_intf	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	160;"	v	line:160
 usb_bus_sense::1	E:\iro_svn\opensprints\FW\io_cfg.h	59;"	d	line:59
@@ -1205,18 +1205,18 @@ usb_device_state	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	157;"	v	line:157
 usb_stat	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	158;"	v	line:158
 v	E:\iro_svn\opensprints\FW\system\typedefs.h	115;"	m	line:115	struct:_DWORD::<anonymous>
 v	E:\iro_svn\opensprints\FW\system\typedefs.h	80;"	m	line:80	struct:_WORD::<anonymous>
-val	E:\iro_svn\opensprints\FW\user\user.c	2385;"	l	line:2385
-value	E:\iro_svn\opensprints\FW\user\user.c	1169;"	l	line:1169
-value	E:\iro_svn\opensprints\FW\user\user.c	1452;"	l	line:1452
-value	E:\iro_svn\opensprints\FW\user\user.c	1480;"	l	line:1480
-value	E:\iro_svn\opensprints\FW\user\user.c	1612;"	l	line:1612
-value	E:\iro_svn\opensprints\FW\user\user.c	1675;"	l	line:1675
-value	E:\iro_svn\opensprints\FW\user\user.c	1838;"	l	line:1838
+val	E:\iro_svn\opensprints\FW\user\user.c	2562;"	l	line:2562
+value	E:\iro_svn\opensprints\FW\user\user.c	1339;"	l	line:1339
+value	E:\iro_svn\opensprints\FW\user\user.c	1622;"	l	line:1622
+value	E:\iro_svn\opensprints\FW\user\user.c	1650;"	l	line:1650
+value	E:\iro_svn\opensprints\FW\user\user.c	1782;"	l	line:1782
+value	E:\iro_svn\opensprints\FW\user\user.c	1845;"	l	line:1845
+value	E:\iro_svn\opensprints\FW\user\user.c	2008;"	l	line:2008
 wCount	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	49;"	v	line:49
 wRam	E:\iro_svn\opensprints\FW\system\typedefs.h	139;"	m	line:139	union:_POINTER
 wRom	E:\iro_svn\opensprints\FW\system\typedefs.h	143;"	m	line:143	union:_POINTER
-wait_count	E:\iro_svn\opensprints\FW\user\user.c	1952;"	l	line:1952
-wait_count	E:\iro_svn\opensprints\FW\user\user.c	2092;"	l	line:2092
+wait_count	E:\iro_svn\opensprints\FW\user\user.c	2122;"	l	line:2122
+wait_count	E:\iro_svn\opensprints\FW\user\user.c	2262;"	l	line:2262
 word	E:\iro_svn\opensprints\FW\system\typedefs.h	41;"	t	line:41
 word0	E:\iro_svn\opensprints\FW\system\typedefs.h	98;"	m	line:98	struct:_DWORD::<anonymous>
 word1	E:\iro_svn\opensprints\FW\system\typedefs.h	99;"	m	line:99	struct:_DWORD::<anonymous>
