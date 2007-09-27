@@ -163,7 +163,7 @@ near unsigned char A_cur_channel;
 // ROM strings
 const rom char st_OK[] = {"OK\r\n"};
 const rom char st_LFCR[] = {"\r\n"};
-const rom char st_version[] = {"opensprints FW 0.3 based on UBW FW D Version 1.4.2\r\n"};
+const rom char st_version[] = {"opensprints FW 0.31 based on UBW FW D Version 1.4.2\r\n"};
 
 #pragma udata ISR_buf=0x100
 volatile unsigned int ISR_A_FIFO[12][kISR_FIFO_A_DEPTH];	// Stores the most recent analog conversions
@@ -214,7 +214,8 @@ BOOL	g_ack_enable;
 
 // sensor stuff
 BOOL is_racing = FALSE;
-unsigned int raceTime;
+unsigned int raceTimeMins;
+unsigned int raceTimeCentisecs;
 
 
 /** P R I V A T E  P R O T O T Y P E S ***************************************/
@@ -258,48 +259,6 @@ void print_ack (void);			// Print "OK" after packet is parsed
 int _user_putc (char c);		// Our UBS based stream character printer
 
 /** D E C L A R A T I O N S **************************************************/
-
-void CheckRaceTimer(void)
-{
-	// Do we have a Timer2 interrupt? (1ms rate)
-	if (PIR1bits.TMR2IF)
-	{
-		// Clear the interrupt 
-		PIR1bits.TMR2IF = 0;
-
-		// See if it's time to fire off an I packet
-		if (ISR_D_RepeatRate > 0)
-		{
-			D_tick_counter++;
-			if (D_tick_counter >= ISR_D_RepeatRate)
-			{
-				D_tick_counter = 0;
-
-				// advance race timer
-				raceTime++;
-			}
-		}
-	}
-/*
-	// Do we have a TMR0 interrupt? (RC command)
-	// TMR0 is in 16 bit mode, and counts up to FFFF and overflows, generating
-	// this interrupt.
-	if (INTCONbits.TMR0IF)
-	{
-		// Turn off Timer0
-		T0CONbits.TMR0ON = 0;
-
-		// Clear the interrupt
-		INTCONbits.TMR0IF = 0;
-		
-		// And disable it
-		INTCONbits.TMR0IE = 0;
-
-
-	}
-*/
-
-} // end CheckRaceTimer(void)
 
 #pragma code
 
@@ -390,8 +349,12 @@ void low_ISR(void)
 			D_tick_counter++;
 			if (D_tick_counter >= ISR_D_RepeatRate)
 			{
-				raceTime++;
-				//printf("D_tick_counter is a dick. raceTime = %i\n\r", ++raceTime);
+				raceTimeCentisecs++;
+				if (raceTimeCentisecs >= 6000)
+				{
+					raceTimeCentisecs=0;
+					raceTimeMins++;
+				}
 				D_tick_counter = 0;
 				// Tell the main code to send an I packet
 				if (ISR_D_FIFO_length < kISR_FIFO_D_DEPTH)
@@ -2398,7 +2361,8 @@ void parse_GO_packet (void)
 	is_racing = TRUE;				// make it possible to start monitoring sensors
 	RaceInit();
 	ISR_D_RepeatRate = 10;
-	raceTime=0;
+	raceTimeCentisecs=0;
+	raceTimeMins=0;
 	T2CONbits.TMR2ON=1;
 
 	// clear the tx buffer just in case there is some old data remaining
@@ -2730,7 +2694,7 @@ void HallEffSensors(void)
 				// get the current time
 
 				// send a char string through USB packet stating that sensor x switched to high
-				printf("1:%i\r\n",raceTime);
+				printf("1;%i:%i\r\n",raceTimeMins,raceTimeCentisecs);
 			}
 		
 			if((currentValueSensor1^prevValueSensor1)&~currentValueSensor1)
@@ -2738,7 +2702,7 @@ void HallEffSensors(void)
 				// get the current time
 
 				// send a char string through USB packet stating that sensor x switched to high
-				printf("2:%i\r\n",raceTime);
+				printf("2;%i:%i\r\n",raceTimeMins,raceTimeCentisecs);
 			}
 		}
 	}

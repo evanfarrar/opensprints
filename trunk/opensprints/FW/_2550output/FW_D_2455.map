@@ -1,5 +1,5 @@
 MPLINK 4.12, Linker
-Linker Map File - Created Wed Sep 19 00:47:11 2007
+Linker Map File - Created Thu Sep 27 00:11:32 2007
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -14,89 +14,89 @@ Linker Map File - Created Wed Sep 19 00:47:11 2007
        .code_usbctrltrf.o       code   0x003946    program   0x00033a
              .code_usb9.o       code   0x003c80    program   0x00031e
            .code_usbdrv.o       code   0x003f9e    program   0x000182
-             .stringtable    romdata   0x004120    program   0x000157
-       .idata_c018iBL.o_i    romdata   0x004277    program   0x000000
-       .romdata_usbmmap.o    romdata   0x004277    program   0x000000
-       .romdata_fxm3232.o    romdata   0x004277    program   0x000000
-      .idata_vfprintf.o_i    romdata   0x004277    program   0x000000
-        .romdata_stdout.o    romdata   0x004277    program   0x000000
-          .idata_main.o_i    romdata   0x004277    program   0x000000
-    .idata_usbctrltrf.o_i    romdata   0x004277    program   0x000000
-                     PROG       code   0x004278    program   0x0000ec
-          .code_c018iBL.o       code   0x004278    program   0x000000
-        .romdata_usbdsc.o    romdata   0x004364    program   0x0000cd
-          .romdata_putc.o    romdata   0x004431    program   0x000000
-       .idata_fxm3232.o_i    romdata   0x004431    program   0x000000
-      .romdata_fxd3232u.o    romdata   0x004431    program   0x000000
-       .idata_usbmmap.o_i    romdata   0x004431    program   0x000000
-        .romdata_usbdrv.o    romdata   0x004431    program   0x000000
-          .idata_usb9.o_i    romdata   0x004431    program   0x000000
-               _cinit_scn       code   0x004432    program   0x00009e
-          .code_usbmmap.o       code   0x004432    program   0x000000
-           .code_printf.o       code   0x0044d0    program   0x000098
-             .code_putc.o       code   0x004568    program   0x000084
-          .code_fxm3232.o       code   0x0045ec    program   0x000070
-                   STRING       code   0x00465c    program   0x000066
-                    CTYPE       code   0x0046c2    program   0x00004c
-         .code_fxd3232u.o       code   0x00470e    program   0x000048
-          .romdata_user.o    romdata   0x004756    program   0x00003d
-          .idata_putc.o_i    romdata   0x004793    program   0x000000
-      .idata_fxd3232u.o_i    romdata   0x004793    program   0x000000
-    .romdata_usbctrltrf.o    romdata   0x004793    program   0x000000
-           .romdata_cdc.o    romdata   0x004793    program   0x000000
-        .idata_usbdsc.o_i    romdata   0x004793    program   0x000000
-        .romdata_printf.o    romdata   0x004793    program   0x000000
-           .code_usbdsc.o       code   0x004794    program   0x000000
-             .code_main.o       code   0x004794    program   0x000038
-                    STDIO       code   0x0047cc    program   0x00001c
-             _startup_scn       code   0x0047e8    program   0x000018
-              D10TCYXCODE       code   0x004800    program   0x000016
-      .romdata_vfprintf.o    romdata   0x004816    program   0x000011
-           .idata_cdc.o_i    romdata   0x004827    program   0x000000
-        .idata_usbdrv.o_i    romdata   0x004827    program   0x000000
-          .romdata_usb9.o    romdata   0x004827    program   0x000000
-       .romdata_c018iBL.o    romdata   0x004827    program   0x000000
-          .romdata_main.o    romdata   0x004827    program   0x000000
-        .idata_printf.o_i    romdata   0x004827    program   0x000000
-                    .code       code   0x004828    program   0x00000e
-           .code_stdout.o       code   0x004828    program   0x000000
-          .idata_user.o_i    romdata   0x004836    program   0x00000a
-        .idata_stdout.o_i    romdata   0x004840    program   0x000002
+             .stringtable    romdata   0x004120    program   0x00015d
+       .idata_c018iBL.o_i    romdata   0x00427d    program   0x000000
+       .romdata_usbmmap.o    romdata   0x00427d    program   0x000000
+          .idata_putc.o_i    romdata   0x00427d    program   0x000000
+        .idata_usbdrv.o_i    romdata   0x00427d    program   0x000000
+       .idata_fxm3232.o_i    romdata   0x00427d    program   0x000000
+      .romdata_fxd3232u.o    romdata   0x00427d    program   0x000000
+          .romdata_usb9.o    romdata   0x00427d    program   0x000000
+      .idata_vfprintf.o_i    romdata   0x00427d    program   0x000000
+        .romdata_printf.o    romdata   0x00427d    program   0x000000
+           .code_stdout.o       code   0x00427e    program   0x000000
+                     PROG       code   0x00427e    program   0x0000ec
+        .romdata_usbdsc.o    romdata   0x00436a    program   0x0000cd
+      .idata_fxd3232u.o_i    romdata   0x004437    program   0x000000
+        .romdata_stdout.o    romdata   0x004437    program   0x000000
+        .idata_printf.o_i    romdata   0x004437    program   0x000000
+           .romdata_cdc.o    romdata   0x004437    program   0x000000
+       .idata_usbmmap.o_i    romdata   0x004437    program   0x000000
+        .romdata_usbdrv.o    romdata   0x004437    program   0x000000
+          .romdata_main.o    romdata   0x004437    program   0x000000
+    .idata_usbctrltrf.o_i    romdata   0x004437    program   0x000000
+               _cinit_scn       code   0x004438    program   0x00009e
+          .code_usbmmap.o       code   0x004438    program   0x000000
+          .code_c018iBL.o       code   0x004438    program   0x000000
+           .code_printf.o       code   0x0044d6    program   0x000098
+             .code_putc.o       code   0x00456e    program   0x000084
+          .code_fxm3232.o       code   0x0045f2    program   0x000070
+                   STRING       code   0x004662    program   0x000066
+                    CTYPE       code   0x0046c8    program   0x00004c
+         .code_fxd3232u.o       code   0x004714    program   0x000048
+          .romdata_user.o    romdata   0x00475c    program   0x00003e
+             .code_main.o       code   0x00479a    program   0x000038
+                    STDIO       code   0x0047d2    program   0x00001c
+             _startup_scn       code   0x0047ee    program   0x000018
+              D10TCYXCODE       code   0x004806    program   0x000016
+      .romdata_vfprintf.o    romdata   0x00481c    program   0x000011
+           .idata_cdc.o_i    romdata   0x00482d    program   0x000000
+          .romdata_putc.o    romdata   0x00482d    program   0x000000
+       .romdata_fxm3232.o    romdata   0x00482d    program   0x000000
+          .idata_usb9.o_i    romdata   0x00482d    program   0x000000
+       .romdata_c018iBL.o    romdata   0x00482d    program   0x000000
+          .idata_main.o_i    romdata   0x00482d    program   0x000000
+    .romdata_usbctrltrf.o    romdata   0x00482d    program   0x000000
+        .idata_usbdsc.o_i    romdata   0x00482d    program   0x000000
+           .code_usbdsc.o       code   0x00482e    program   0x000000
+                    .code       code   0x00482e    program   0x00000e
+          .idata_user.o_i    romdata   0x00483c    program   0x00000a
+        .idata_stdout.o_i    romdata   0x004846    program   0x000002
                 fast_vars      udata   0x000000       data   0x000016
                 MATH_DATA      udata   0x000016       data   0x000014
                  .tmpdata      udata   0x00002a       data   0x00000e
               low_ISR_tmp      udata   0x000038       data   0x000006
                   ISR_buf      udata   0x000100       data   0x000099
-            .udata_user.o      udata   0x000199       data   0x000019
-             .udata_cdc.o      udata   0x0001b2       data   0x000018
-         .udata_c018iBL.o      udata   0x0001ca       data   0x00000a
-            .idata_user.o      idata   0x0001d4       data   0x00000a
-      .udata_usbctrltrf.o      udata   0x0001de       data   0x000008
-         .udata_usbmmap.o      udata   0x0001e6       data   0x000004
-          .udata_usbdrv.o      udata   0x0001ea       data   0x000002
-          .idata_stdout.o      idata   0x0001ec       data   0x000002
-        .udata_vfprintf.o      udata   0x0001ee       data   0x000000
-          .udata_stdout.o      udata   0x0001ee       data   0x000000
-          .idata_printf.o      idata   0x0001ee       data   0x000000
-        .idata_vfprintf.o      idata   0x0001ee       data   0x000000
-          .udata_printf.o      udata   0x0001ee       data   0x000000
-        .udata_fxd3232u.o      udata   0x0001ee       data   0x000000
-        .idata_fxd3232u.o      idata   0x0001ee       data   0x000000
-         .udata_fxm3232.o      udata   0x0001ee       data   0x000000
-         .idata_fxm3232.o      idata   0x0001ee       data   0x000000
-             .idata_cdc.o      idata   0x0001ee       data   0x000000
-            .udata_putc.o      udata   0x0001ee       data   0x000000
-            .idata_putc.o      idata   0x0001ee       data   0x000000
-      .idata_usbctrltrf.o      idata   0x0001ee       data   0x000000
-          .idata_usbdsc.o      idata   0x0001ee       data   0x000000
-          .udata_usbdsc.o      udata   0x0001ee       data   0x000000
-            .idata_usb9.o      idata   0x0001ee       data   0x000000
-            .udata_usb9.o      udata   0x0001ee       data   0x000000
-          .idata_usbdrv.o      idata   0x0001ee       data   0x000000
-         .idata_usbmmap.o      idata   0x0001ee       data   0x000000
-            .idata_main.o      idata   0x0001ee       data   0x000000
-            .udata_main.o      udata   0x0001ee       data   0x000000
-         .idata_c018iBL.o      idata   0x0001ee       data   0x000000
+            .udata_user.o      udata   0x000199       data   0x00001b
+             .udata_cdc.o      udata   0x0001b4       data   0x000018
+         .udata_c018iBL.o      udata   0x0001cc       data   0x00000a
+            .idata_user.o      idata   0x0001d6       data   0x00000a
+      .udata_usbctrltrf.o      udata   0x0001e0       data   0x000008
+         .udata_usbmmap.o      udata   0x0001e8       data   0x000004
+          .udata_usbdrv.o      udata   0x0001ec       data   0x000002
+          .idata_stdout.o      idata   0x0001ee       data   0x000002
+        .udata_vfprintf.o      udata   0x0001f0       data   0x000000
+          .udata_stdout.o      udata   0x0001f0       data   0x000000
+          .idata_printf.o      idata   0x0001f0       data   0x000000
+        .idata_vfprintf.o      idata   0x0001f0       data   0x000000
+          .udata_printf.o      udata   0x0001f0       data   0x000000
+        .udata_fxd3232u.o      udata   0x0001f0       data   0x000000
+        .idata_fxd3232u.o      idata   0x0001f0       data   0x000000
+         .udata_fxm3232.o      udata   0x0001f0       data   0x000000
+         .idata_fxm3232.o      idata   0x0001f0       data   0x000000
+             .idata_cdc.o      idata   0x0001f0       data   0x000000
+            .udata_putc.o      udata   0x0001f0       data   0x000000
+            .idata_putc.o      idata   0x0001f0       data   0x000000
+      .idata_usbctrltrf.o      idata   0x0001f0       data   0x000000
+          .idata_usbdsc.o      idata   0x0001f0       data   0x000000
+          .udata_usbdsc.o      udata   0x0001f0       data   0x000000
+            .idata_usb9.o      idata   0x0001f0       data   0x000000
+            .udata_usb9.o      udata   0x0001f0       data   0x000000
+          .idata_usbdrv.o      idata   0x0001f0       data   0x000000
+         .idata_usbmmap.o      idata   0x0001f0       data   0x000000
+            .idata_main.o      idata   0x0001f0       data   0x000000
+            .udata_main.o      udata   0x0001f0       data   0x000000
+         .idata_c018iBL.o      idata   0x0001f0       data   0x000000
                   com_buf      udata   0x000200       data   0x000100
                    .stack      udata   0x000300       data   0x000100
                   usbram4      udata   0x000400       data   0x000030
@@ -111,117 +111,115 @@ Linker Map File - Created Wed Sep 19 00:47:11 2007
                             0x000800    0x000805      
                             0x000808    0x00080d      
                             0x000818    0x00081d      
-                            0x00082a    0x004276      
-                            0x004278    0x004430      
-                            0x004432    0x004792      
-                            0x004794    0x004826      
-                            0x004828    0x004841      
-            16422 out of 24856 program addresses used, program memory utilization is 66%
+                            0x00082a    0x00427c      
+                            0x00427e    0x004436      
+                            0x004438    0x00482c      
+                            0x00482e    0x004847      
+            16429 out of 24856 program addresses used, program memory utilization is 66%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-           BlinkUSBStatus   0x0026f0    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                CDCInitEP   0x00363c    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-             CDCTxService   0x003832    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-           CheckRaceTimer   0x000844    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          ClassReqHandler   0x00442f    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-               ClearArray   0x0040f6    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-                    D10_1   0x004810    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-                     D10x   0x004808    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-              Delay10TCYx   0x004800    program     extern C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-                 FXD3232U   0x00470e    program     extern C:\MCC18\src\TRADIT~1\math\fxd3232u.c
-                 FXM1616S   0x00430a    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
-                 FXM2424U   0x004278    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm2424u.asm
-                  FXM3232   0x0045ec    program     extern C:\MCC18\src\TRADIT~1\math\fxm3232.c
-           HallEffSensors   0x0027d6    program     extern e:\iro_svn\opensprints\FW\user\user.c
-         InitializeSystem   0x0047a0    program     static e:\iro_svn\opensprints\FW\main.c
-                ProcessIO   0x000db8    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                 RaceInit   0x000bc0    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          SwitchIsPressed   0x0027c6    program     extern e:\iro_svn\opensprints\FW\user\user.c
-               TSIGN1616A   0x004356    program     static C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
-        USBCheckBusStatus   0x003f9e    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-       USBCheckCDCRequest   0x00356e    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-       USBCheckStdRequest   0x003c80    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-         USBCtrlEPService   0x003946    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
- USBCtrlEPServiceComplete   0x003bc2    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-      USBCtrlTrfInHandler   0x003a10    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-     USBCtrlTrfOutHandler   0x0039ec    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-      USBCtrlTrfRxService   0x003b3e    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-   USBCtrlTrfSetupHandler   0x00397c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-      USBCtrlTrfTxService   0x003a52    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-         USBDriverService   0x003fde    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBErrorHandler   0x0040ae    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-         USBModuleDisable   0x003fd0    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBModuleEnable   0x003fc2    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-  USBProtocolResetHandler   0x0040b2    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBRemoteWakeup   0x004074    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-            USBSoftDetach   0x003fda    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBStallHandler   0x0040a0    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-  USBStdFeatureReqHandler   0x003ef2    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-      USBStdGetDscHandler   0x003d48    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-   USBStdGetStatusHandler   0x003e52    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-      USBStdSetCfgHandler   0x003e02    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-               USBSuspend   0x00405c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-                 USBTasks   0x0047ba    program     extern e:\iro_svn\opensprints\FW\main.c
-       USBWakeFromSuspend   0x00406c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-               USB_CD_Ptr   0x004425    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-               USB_SD_Ptr   0x004429    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-          USB_SOF_Handler   0x00409c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-                 UserInit   0x000c22    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                   _2jEnd   0x0046ac    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-        _D10TCYXCODE_000A   0x00480a    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-        _D10TCYXCODE_000C   0x00480c    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-        _D10TCYXCODE_000E   0x00480e    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-         ___else_lbl00234   0x001f34    program     static                          
-         ___else_lbl00236   0x001f06    program     static                          
-         ___else_lbl00242   0x001fea    program     static                          
-         ___else_lbl00244   0x001fbc    program     static                          
-           ___if_lbl00227   0x001e74    program     static                          
-           ___if_lbl00228   0x001e84    program     static                          
-           ___if_lbl00233   0x001f38    program     static                          
-           ___if_lbl00235   0x001f38    program     static                          
-           ___if_lbl00237   0x001f50    program     static                          
-           ___if_lbl00238   0x001f6c    program     static                          
-           ___if_lbl00241   0x001fee    program     static                          
-           ___if_lbl00243   0x001fee    program     static                          
-           ___if_lbl00245   0x002006    program     static                          
-           ___if_lbl00246   0x002020    program     static                          
-           ___if_lbl00253   0x00208a    program     static                          
-           ___if_lbl00256   0x0020d8    program     static                          
-           ___if_lbl00257   0x002126    program     static                          
-           ___if_lbl00258   0x002136    program     static                          
-           ___if_lbl00261   0x00217a    program     static                          
-           ___if_lbl00262   0x002198    program     static                          
-           ___if_lbl00269   0x002202    program     static                          
+           BlinkUSBStatus   0x0026e0    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                CDCInitEP   0x00363c    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+             CDCTxService   0x003832    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+          ClassReqHandler   0x004435    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+               ClearArray   0x0040f6    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+                    D10_1   0x004816    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+                     D10x   0x00480e    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+              Delay10TCYx   0x004806    program     extern C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+                 FXD3232U   0x004714    program     extern C:\MCC18\src\TRADIT~1\math\fxd3232u.c
+                 FXM1616S   0x004310    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
+                 FXM2424U   0x00427e    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm2424u.asm
+                  FXM3232   0x0045f2    program     extern C:\MCC18\src\TRADIT~1\math\fxm3232.c
+           HallEffSensors   0x0027c6    program     extern E:\iro_svn\opensprints\FW\user\user.c
+         InitializeSystem   0x0047a6    program     static E:\iro_svn\opensprints\FW\main.c
+                ProcessIO   0x000da2    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                 RaceInit   0x000baa    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          SwitchIsPressed   0x0027b6    program     extern E:\iro_svn\opensprints\FW\user\user.c
+               TSIGN1616A   0x00435c    program     static C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
+        USBCheckBusStatus   0x003f9e    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+       USBCheckCDCRequest   0x00356e    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+       USBCheckStdRequest   0x003c80    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+         USBCtrlEPService   0x003946    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+ USBCtrlEPServiceComplete   0x003bc2    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+      USBCtrlTrfInHandler   0x003a10    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+     USBCtrlTrfOutHandler   0x0039ec    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+      USBCtrlTrfRxService   0x003b3e    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+   USBCtrlTrfSetupHandler   0x00397c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+      USBCtrlTrfTxService   0x003a52    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+         USBDriverService   0x003fde    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBErrorHandler   0x0040ae    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+         USBModuleDisable   0x003fd0    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBModuleEnable   0x003fc2    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+USBPrepareForNextSetupTrf   0x003c60    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+  USBProtocolResetHandler   0x0040b2    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBRemoteWakeup   0x004074    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+            USBSoftDetach   0x003fda    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBStallHandler   0x0040a0    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+  USBStdFeatureReqHandler   0x003ef2    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+      USBStdGetDscHandler   0x003d48    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+   USBStdGetStatusHandler   0x003e52    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+      USBStdSetCfgHandler   0x003e02    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+               USBSuspend   0x00405c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+                 USBTasks   0x0047c0    program     extern E:\iro_svn\opensprints\FW\main.c
+       USBWakeFromSuspend   0x00406c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+               USB_CD_Ptr   0x00442b    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+               USB_SD_Ptr   0x00442f    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+          USB_SOF_Handler   0x00409c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+                 UserInit   0x000c0c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                   _2jEnd   0x0046b2    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+        _D10TCYXCODE_000A   0x004810    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+        _D10TCYXCODE_000C   0x004812    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+        _D10TCYXCODE_000E   0x004814    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+         ___else_lbl00231   0x001f1e    program     static                          
+         ___else_lbl00233   0x001ef0    program     static                          
+         ___else_lbl00239   0x001fd4    program     static                          
+         ___else_lbl00241   0x001fa6    program     static                          
+           ___if_lbl00224   0x001e5e    program     static                          
+           ___if_lbl00225   0x001e6e    program     static                          
+           ___if_lbl00230   0x001f22    program     static                          
+           ___if_lbl00232   0x001f22    program     static                          
+           ___if_lbl00234   0x001f3a    program     static                          
+           ___if_lbl00235   0x001f56    program     static                          
+           ___if_lbl00238   0x001fd8    program     static                          
+           ___if_lbl00240   0x001fd8    program     static                          
+           ___if_lbl00242   0x001ff0    program     static                          
+           ___if_lbl00243   0x00200a    program     static                          
+           ___if_lbl00250   0x002074    program     static                          
+           ___if_lbl00253   0x0020c2    program     static                          
+           ___if_lbl00254   0x002110    program     static                          
+           ___if_lbl00255   0x002120    program     static                          
+           ___if_lbl00258   0x002164    program     static                          
+           ___if_lbl00259   0x002182    program     static                          
+           ___if_lbl00266   0x0021ec    program     static                          
        ___return_lbl00000   0x00080c    program     static                          
-       ___return_lbl00000   0x00465a    program     static                          
+       ___return_lbl00000   0x004660    program     static                          
        ___return_lbl00000   0x000804    program     static                          
-       ___return_lbl00000   0x004754    program     static                          
-       ___return_lbl00001   0x0047fe    program     static                          
+       ___return_lbl00000   0x00475a    program     static                          
+       ___return_lbl00001   0x004804    program     static                          
        ___return_lbl00001   0x00081c    program     static                          
-       ___return_lbl00002   0x0044ce    program     static                          
+       ___return_lbl00002   0x0044d4    program     static                          
        ___return_lbl00028   0x00406a    program     static                          
        ___return_lbl00042   0x004118    program     static                          
-       ___return_lbl00226   0x002090    program     static                          
-       ___return_lbl00254   0x002208    program     static                          
+       ___return_lbl00223   0x00207a    program     static                          
+       ___return_lbl00251   0x0021f2    program     static                          
         ___while_lbl00043   0x00410a    program     static                          
         ___while_lbl00044   0x004118    program     static                          
-        ___while_lbl00229   0x001ea0    program     static                          
-        ___while_lbl00230   0x00208c    program     static                          
-        ___while_lbl00247   0x002030    program     static                          
-        ___while_lbl00248   0x00205a    program     static                          
-        ___while_lbl00250   0x002060    program     static                          
-        ___while_lbl00251   0x00208a    program     static                          
-        ___while_lbl00259   0x002152    program     static                          
-        ___while_lbl00260   0x002204    program     static                          
-        ___while_lbl00263   0x0021a8    program     static                          
-        ___while_lbl00264   0x0021d2    program     static                          
-        ___while_lbl00266   0x0021d8    program     static                          
-        ___while_lbl00267   0x002202    program     static                          
+        ___while_lbl00226   0x001e8a    program     static                          
+        ___while_lbl00227   0x002076    program     static                          
+        ___while_lbl00244   0x00201a    program     static                          
+        ___while_lbl00245   0x002044    program     static                          
+        ___while_lbl00247   0x00204a    program     static                          
+        ___while_lbl00248   0x002074    program     static                          
+        ___while_lbl00256   0x00213c    program     static                          
+        ___while_lbl00257   0x0021ee    program     static                          
+        ___while_lbl00260   0x002192    program     static                          
+        ___while_lbl00261   0x0021bc    program     static                          
+        ___while_lbl00263   0x0021c2    program     static                          
+        ___while_lbl00264   0x0021ec    program     static                          
                    __pa_0   0x00328c    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                    __pa_1   0x003294    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                   __pa_10   0x003348    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
@@ -269,127 +267,127 @@ USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprint
                    __pa_7   0x0032fa    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                    __pa_8   0x003306    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                    __pa_9   0x003328    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
-              __string_10   0x0041b7    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_11   0x00418f    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_12   0x00417c    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_13   0x00417a    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_14   0x004174    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_15   0x00416a    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_16   0x004161    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_17   0x00413a    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_18   0x00412e    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_19   0x004127    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_20   0x004120    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_3   0x004271    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_4   0x00426b    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_5   0x00424f    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_6   0x004233    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_7   0x004214    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_8   0x0041f3    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_9   0x0041da    program     static e:\iro_svn\opensprints\FW\user\user.c
+              __string_10   0x0041bd    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_11   0x004195    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_12   0x004182    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_13   0x004180    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_14   0x00417a    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_15   0x004170    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_16   0x004167    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_17   0x004140    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_18   0x004134    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_19   0x00412a    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_20   0x004120    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_3   0x004277    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_4   0x004271    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_5   0x004255    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_6   0x004239    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_7   0x00421a    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_8   0x0041f9    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_9   0x0041e0    program     static E:\iro_svn\opensprints\FW\user\user.c
               __tmplbl_42   0x003422    program     static                          
               __tmplbl_43   0x00326a    program     static                          
-              __tmplbl_44   0x001ef0    program     static                          
+              __tmplbl_44   0x001eda    program     static                          
               __tmplbl_44   0x003250    program     static                          
-              __tmplbl_45   0x001ee8    program     static                          
-              __tmplbl_46   0x001f1e    program     static                          
-              __tmplbl_47   0x001f16    program     static                          
-              __tmplbl_48   0x001fa6    program     static                          
-              __tmplbl_49   0x001f9e    program     static                          
-              __tmplbl_50   0x001fd4    program     static                          
-              __tmplbl_51   0x001fcc    program     static                          
-              __tmplbl_52   0x00204a    program     static                          
-              __tmplbl_53   0x002044    program     static                          
-              __tmplbl_54   0x00207a    program     static                          
-              __tmplbl_55   0x002074    program     static                          
-              __tmplbl_56   0x0020d4    program     static                          
-              __tmplbl_57   0x0020cc    program     static                          
-              __tmplbl_58   0x0021c2    program     static                          
-              __tmplbl_59   0x0021bc    program     static                          
-              __tmplbl_60   0x0021f2    program     static                          
-              __tmplbl_61   0x0021ec    program     static                          
+              __tmplbl_45   0x001ed2    program     static                          
+              __tmplbl_46   0x001f08    program     static                          
+              __tmplbl_47   0x001f00    program     static                          
+              __tmplbl_48   0x001f90    program     static                          
+              __tmplbl_49   0x001f88    program     static                          
+              __tmplbl_50   0x001fbe    program     static                          
+              __tmplbl_51   0x001fb6    program     static                          
+              __tmplbl_52   0x002034    program     static                          
+              __tmplbl_53   0x00202e    program     static                          
+              __tmplbl_54   0x002064    program     static                          
+              __tmplbl_55   0x00205e    program     static                          
+              __tmplbl_56   0x0020be    program     static                          
+              __tmplbl_57   0x0020b6    program     static                          
+              __tmplbl_58   0x0021ac    program     static                          
+              __tmplbl_59   0x0021a6    program     static                          
+              __tmplbl_60   0x0021dc    program     static                          
+              __tmplbl_61   0x0021d6    program     static                          
               __tmplbl_85   0x0029a2    program     static                          
-            __zero_memory   0x004828    program     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                _do_cinit   0x004432    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
+            __zero_memory   0x00482e    program     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                _do_cinit   0x004438    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
                    _entry   0x000800    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
-                   _false   0x004750    program     static                          
-                 _startup   0x0047e8    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
-              _usart_putc   0x0047cc    program     extern C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
-               _user_putc   0x000ffa    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                    cfg01   0x004376    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-   check_and_send_TX_data   0x001050    program     extern e:\iro_svn\opensprints\FW\user\user.c
-               clear_loop   0x00482e    program     static C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                copy_loop   0x0044a4    program     static                          
-            copy_one_byte   0x0044aa    program     static                          
-               device_dsc   0x004364    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                     done   0x0044ce    program     static                          
-             done_copying   0x0044b8    program     static                          
-            extract_digit   0x0025cc    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           extract_number   0x002260    program     extern e:\iro_svn\opensprints\FW\user\user.c
-             getsUSBUSART   0x0036a0    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                 high_ISR   0x000bae    program     extern e:\iro_svn\opensprints\FW\user\user.c
-              high_vector   0x000808    program     extern e:\iro_svn\opensprints\FW\main.c
-                  isdigit   0x0046ea    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
-                     jEnd   0x004676    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
-                     jEnd   0x0046ae    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-                    jLoop   0x00466c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
-                    jLoop   0x004696    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-                   jMatch   0x00470a    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
-                 jNoMatch   0x00470c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
-                 jNoMatch   0x0046e8    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
-                     loop   0x0047f8    program     static                          
-                     loop   0x00471c    program     static                          
-                     loop   0x0047dc    program     static C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
-                  low_ISR   0x000874    program     extern e:\iro_svn\opensprints\FW\user\user.c
-               low_vector   0x000818    program     extern e:\iro_svn\opensprints\FW\main.c
-                     main   0x004794    program     extern e:\iro_svn\opensprints\FW\main.c
-           parse_A_packet   0x00171a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_BC_packet   0x001d88    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_BO_packet   0x001e16    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_BS_packet   0x0020a4    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CI_packet   0x00223a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CS_packet   0x002228    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CU_packet   0x0014a0    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CX_packet   0x001c3a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_C_packet   0x0015a2    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_GO_packet   0x002240    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_I_packet   0x0016c2    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_MR_packet   0x001846    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_MW_packet   0x0017dc    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_O_packet   0x00165c    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_PD_packet   0x0018c8    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_PI_packet   0x001a00    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_PO_packet   0x001b00    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RC_packet   0x001c3e    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RI_packet   0x002234    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RS_packet   0x002222    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RX_packet   0x001c36    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_R_packet   0x001498    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_SI_packet   0x00222e    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_SS_packet   0x00221c    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_ST_packet   0x00225a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_TX_packet   0x001c32    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_T_packet   0x001520    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_V_packet   0x0016f8    program     extern e:\iro_svn\opensprints\FW\user\user.c
-             parse_packet   0x0010e6    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                print_ack   0x001470    program     extern e:\iro_svn\opensprints\FW\user\user.c
-             print_status   0x0026c6    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                   printf   0x0044d0    program     extern C:\MCC18\src\TRADIT~1\stdclib\printf.c
-                     putc   0x004568    program     extern C:\MCC18\src\TRADIT~1\stdclib\putc.c
-            putrsUSBUSART   0x0037b0    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-             putsUSBUSART   0x003732    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                 s_digits   0x004816    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
+                   _false   0x004756    program     static                          
+                 _startup   0x0047ee    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
+              _usart_putc   0x0047d2    program     extern C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
+               _user_putc   0x000fe4    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                    cfg01   0x00437c    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+   check_and_send_TX_data   0x00103a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+               clear_loop   0x004834    program     static C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                copy_loop   0x0044aa    program     static                          
+            copy_one_byte   0x0044b0    program     static                          
+               device_dsc   0x00436a    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                     done   0x0044d4    program     static                          
+             done_copying   0x0044be    program     static                          
+            extract_digit   0x0025bc    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           extract_number   0x002250    program     extern E:\iro_svn\opensprints\FW\user\user.c
+             getsUSBUSART   0x0036a0    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                 high_ISR   0x000b98    program     extern E:\iro_svn\opensprints\FW\user\user.c
+              high_vector   0x000808    program     extern E:\iro_svn\opensprints\FW\main.c
+                  isdigit   0x0046f0    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
+                     jEnd   0x00467c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
+                     jEnd   0x0046b4    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+                    jLoop   0x004672    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
+                    jLoop   0x00469c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+                   jMatch   0x004710    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
+                 jNoMatch   0x004712    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
+                 jNoMatch   0x0046ee    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
+                     loop   0x0047fe    program     static                          
+                     loop   0x004722    program     static                          
+                     loop   0x0047e2    program     static C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
+                  low_ISR   0x000844    program     extern E:\iro_svn\opensprints\FW\user\user.c
+               low_vector   0x000818    program     extern E:\iro_svn\opensprints\FW\main.c
+                     main   0x00479a    program     extern E:\iro_svn\opensprints\FW\main.c
+           parse_A_packet   0x001704    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_BC_packet   0x001d72    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_BO_packet   0x001e00    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_BS_packet   0x00208e    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CI_packet   0x002224    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CS_packet   0x002212    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CU_packet   0x00148a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CX_packet   0x001c24    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_C_packet   0x00158c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_GO_packet   0x00222a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_I_packet   0x0016ac    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_MR_packet   0x001830    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_MW_packet   0x0017c6    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_O_packet   0x001646    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_PD_packet   0x0018b2    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_PI_packet   0x0019ea    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_PO_packet   0x001aea    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RC_packet   0x001c28    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RI_packet   0x00221e    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RS_packet   0x00220c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RX_packet   0x001c20    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_R_packet   0x001482    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_SI_packet   0x002218    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_SS_packet   0x002206    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_ST_packet   0x00224a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_TX_packet   0x001c1c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_T_packet   0x00150a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_V_packet   0x0016e2    program     extern E:\iro_svn\opensprints\FW\user\user.c
+             parse_packet   0x0010d0    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                print_ack   0x00145a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+             print_status   0x0026b6    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                   printf   0x0044d6    program     extern C:\MCC18\src\TRADIT~1\stdclib\printf.c
+                     putc   0x00456e    program     extern C:\MCC18\src\TRADIT~1\stdclib\putc.c
+            putrsUSBUSART   0x0037b0    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+             putsUSBUSART   0x003732    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                 s_digits   0x00481c    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
             s_put_n_chars   0x00294c    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
-                    sd000   0x0043b9    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                    sd001   0x0043bd    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                    sd002   0x0043f1    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                  st_LFCR   0x00475b    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                    st_OK   0x004756    program     extern e:\iro_svn\opensprints\FW\user\user.c
-               st_version   0x00475e    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                   strlen   0x00465c    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
-                strlenpgm   0x004678    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-                     test   0x00444c    program     static                          
-                  toupper   0x0046c2    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
+                    sd000   0x0043bf    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                    sd001   0x0043c3    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                    sd002   0x0043f7    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                  st_LFCR   0x004761    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                    st_OK   0x00475c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+               st_version   0x004764    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                   strlen   0x004662    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
+                strlenpgm   0x00467e    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+                     test   0x004452    program     static                          
+                  toupper   0x0046c8    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
                  vfprintf   0x002978    program     extern C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                    ADCON0   0x000fc2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
@@ -400,9 +398,9 @@ USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprint
                     ADRES   0x000fc3       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    ADRESH   0x000fc4       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    ADRESL   0x000fc3       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-            A_cur_channel   0x000015       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           A_tick_counter   0x000013       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             AnalogEnable   0x00000c       data     extern e:\iro_svn\opensprints\FW\user\user.c
+            A_cur_channel   0x000015       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           A_tick_counter   0x000013       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             AnalogEnable   0x00000c       data     extern E:\iro_svn\opensprints\FW\user\user.c
                   BAUDCON   0x000fb8       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
               BAUDCONbits   0x000fb8       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                       BSR   0x000fe0       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
@@ -424,14 +422,14 @@ USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprint
                 CMCONbits   0x000fb4       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    CVRCON   0x000fb5       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                CVRCONbits   0x000fb5       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-              CtrlTrfData   0x000428       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+              CtrlTrfData   0x000428       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
                      DDRA   0x000f92       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  DDRAbits   0x000f92       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      DDRB   0x000f93       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  DDRBbits   0x000f93       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      DDRC   0x000f94       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  DDRCbits   0x000f94       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-           D_tick_counter   0x000011       data     extern e:\iro_svn\opensprints\FW\user\user.c
+           D_tick_counter   0x000011       data     extern E:\iro_svn\opensprints\FW\user\user.c
                   ECCP1AS   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
               ECCP1ASbits   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  ECCP1DEL   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
@@ -465,24 +463,24 @@ USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprint
                  IPR1bits   0x000f9f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      IPR2   0x000fa2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  IPR2bits   0x000fa2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-               ISR_A_FIFO   0x000100       data     extern e:\iro_svn\opensprints\FW\user\user.c
-            ISR_A_FIFO_in   0x000009       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        ISR_A_FIFO_length   0x00000b       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           ISR_A_FIFO_out   0x00000a       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         ISR_A_RepeatRate   0x000007       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               ISR_D_FIFO   0x000148       data     extern e:\iro_svn\opensprints\FW\user\user.c
-            ISR_D_FIFO_in   0x000004       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        ISR_D_FIFO_length   0x000006       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           ISR_D_FIFO_out   0x000005       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         ISR_D_RepeatRate   0x000002       data     extern e:\iro_svn\opensprints\FW\user\user.c
+               ISR_A_FIFO   0x000100       data     extern E:\iro_svn\opensprints\FW\user\user.c
+            ISR_A_FIFO_in   0x000009       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        ISR_A_FIFO_length   0x00000b       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           ISR_A_FIFO_out   0x00000a       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         ISR_A_RepeatRate   0x000007       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               ISR_D_FIFO   0x000148       data     extern E:\iro_svn\opensprints\FW\user\user.c
+            ISR_D_FIFO_in   0x000004       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        ISR_D_FIFO_length   0x000006       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           ISR_D_FIFO_out   0x000005       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         ISR_D_RepeatRate   0x000002       data     extern E:\iro_svn\opensprints\FW\user\user.c
                      LATA   0x000f89       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  LATAbits   0x000f89       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      LATB   0x000f8a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  LATBbits   0x000f8a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      LATC   0x000f8b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  LATCbits   0x000f8b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                 LEDCount   0x0001d6       data     static e:\iro_svn\opensprints\FW\user\user.c
-                 LEDState   0x0001d8       data     static e:\iro_svn\opensprints\FW\user\user.c
+                 LEDCount   0x0001d8       data     static E:\iro_svn\opensprints\FW\user\user.c
+                 LEDState   0x0001da       data     static E:\iro_svn\opensprints\FW\user\user.c
                    LVDCON   0x000fd2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                LVDCONbits   0x000fd2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    OSCCON   0x000fd3       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
@@ -545,9 +543,9 @@ USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprint
                STATUSbits   0x000fd8       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    STKPTR   0x000ffc       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                STKPTRbits   0x000ffc       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-          Sensor0PortApin   0x0001da       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          Sensor1PortApin   0x0001dc       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                 SetupPkt   0x000420       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+          Sensor0PortApin   0x0001dc       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          Sensor1PortApin   0x0001de       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                 SetupPkt   0x000420       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
                     T0CON   0x000fd5       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 T0CONbits   0x000fd5       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     T1CON   0x000fcd       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
@@ -665,80 +663,81 @@ USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprint
                   __tmp_0   0x00002a       data     static C:\MCC18\src\TRADIT~1\stdclib\printf.c
                   __tmp_0   0x00002a       data     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                   __tmp_0   0x00002a       data     static C:\MCC18\src\TRADIT~1\stdclib\putc.c
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\user\user.c
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-                  __tmp_1   0x000038       data     static e:\iro_svn\opensprints\FW\user\user.c
-              cdc_data_rx   0x000508       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-              cdc_data_tx   0x000548       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-             cdc_mem_type   0x0001b9       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-               cdc_notice   0x000500       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-               cdc_rx_len   0x0001b2       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-            cdc_trf_state   0x0001b3       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-               cdc_tx_len   0x0001b8       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-    control_signal_bitmap   0x0001c1       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-   ctrl_trf_session_owner   0x0001df       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-           ctrl_trf_state   0x0001de       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-                curr_byte   0x0001cd       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-               curr_entry   0x0001cf       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-      currentValueSensor0   0x0001ae       data     extern e:\iro_svn\opensprints\FW\user\user.c
-      currentValueSensor1   0x0001b0       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                 data_ptr   0x0001d1       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-              delay_count   0x0001ea       data     static e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-dummy_encapsulated_cmd_response   0x0001c2       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                    ep0Bi   0x000404       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep0Bo   0x000400       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep1Bi   0x00040c       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep1Bo   0x000408       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep2Bi   0x000414       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep2Bo   0x000410       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep3Bi   0x00041c       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep3Bo   0x000418       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-               error_byte   0x00000d       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                g_BO_init   0x000199       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        g_BO_strobe_delay   0x00019d       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         g_BO_strobe_mask   0x00019a       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          g_BO_wait_delay   0x00019c       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           g_BO_wait_mask   0x00019b       data     extern e:\iro_svn\opensprints\FW\user\user.c
-            g_RC_next_ptr   0x00000f       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          g_RC_primed_ptr   0x00000e       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               g_RC_state   0x000151       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          g_RC_timing_ptr   0x000010       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               g_RC_value   0x000169       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                 g_RX_buf   0x000240       data     extern e:\iro_svn\opensprints\FW\user\user.c
-              g_RX_buf_in   0x0001a0       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             g_RX_buf_out   0x0001a1       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                 g_TX_buf   0x000200       data     extern e:\iro_svn\opensprints\FW\user\user.c
-              g_TX_buf_in   0x00019e       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             g_TX_buf_out   0x00019f       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           g_USART_RX_buf   0x000280       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        g_USART_RX_buf_in   0x0001a2       data     extern e:\iro_svn\opensprints\FW\user\user.c
-       g_USART_RX_buf_out   0x0001a3       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           g_USART_TX_buf   0x0002c0       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        g_USART_TX_buf_in   0x0001a4       data     extern e:\iro_svn\opensprints\FW\user\user.c
-       g_USART_TX_buf_out   0x0001a5       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             g_ack_enable   0x0001a6       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                    in_cr   0x0001d5       data     static e:\iro_svn\opensprints\FW\user\user.c
-                is_racing   0x0001d4       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                justBegun   0x0001d9       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           last_fifo_size   0x0001a9       data     static e:\iro_svn\opensprints\FW\user\user.c
-              line_coding   0x0001ba       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                  pCDCDst   0x0001b6       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                  pCDCSrc   0x0001b4       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                     pDst   0x0001e2       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-                     pSrc   0x0001e0       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-         prevValueSensor0   0x0001aa       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         prevValueSensor1   0x0001ac       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                     prom   0x0001ca       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-                 raceTime   0x0001a7       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                   stdout   0x0001ec       data     extern C:\MCC18\src\TRADIT~1\stdclib\stdout.c
-     time_between_updates   0x000000       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           usb_active_cfg   0x0001e8       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-             usb_alt_intf   0x0001e9       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-         usb_device_state   0x0001e6       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                 usb_stat   0x0001e7       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                   wCount   0x0001e4       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\user\user.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                  __tmp_1   0x000038       data     static E:\iro_svn\opensprints\FW\user\user.c
+              cdc_data_rx   0x000508       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+              cdc_data_tx   0x000548       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+             cdc_mem_type   0x0001bb       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+               cdc_notice   0x000500       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+               cdc_rx_len   0x0001b4       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+            cdc_trf_state   0x0001b5       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+               cdc_tx_len   0x0001ba       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+    control_signal_bitmap   0x0001c3       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+   ctrl_trf_session_owner   0x0001e1       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+           ctrl_trf_state   0x0001e0       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                curr_byte   0x0001cf       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+               curr_entry   0x0001d1       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+      currentValueSensor0   0x0001b0       data     extern E:\iro_svn\opensprints\FW\user\user.c
+      currentValueSensor1   0x0001b2       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                 data_ptr   0x0001d3       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+              delay_count   0x0001ec       data     static E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+dummy_encapsulated_cmd_response   0x0001c4       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                    ep0Bi   0x000404       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep0Bo   0x000400       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep1Bi   0x00040c       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep1Bo   0x000408       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep2Bi   0x000414       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep2Bo   0x000410       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep3Bi   0x00041c       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep3Bo   0x000418       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+               error_byte   0x00000d       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                g_BO_init   0x000199       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        g_BO_strobe_delay   0x00019d       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         g_BO_strobe_mask   0x00019a       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          g_BO_wait_delay   0x00019c       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           g_BO_wait_mask   0x00019b       data     extern E:\iro_svn\opensprints\FW\user\user.c
+            g_RC_next_ptr   0x00000f       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          g_RC_primed_ptr   0x00000e       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               g_RC_state   0x000151       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          g_RC_timing_ptr   0x000010       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               g_RC_value   0x000169       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                 g_RX_buf   0x000240       data     extern E:\iro_svn\opensprints\FW\user\user.c
+              g_RX_buf_in   0x0001a0       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             g_RX_buf_out   0x0001a1       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                 g_TX_buf   0x000200       data     extern E:\iro_svn\opensprints\FW\user\user.c
+              g_TX_buf_in   0x00019e       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             g_TX_buf_out   0x00019f       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           g_USART_RX_buf   0x000280       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        g_USART_RX_buf_in   0x0001a2       data     extern E:\iro_svn\opensprints\FW\user\user.c
+       g_USART_RX_buf_out   0x0001a3       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           g_USART_TX_buf   0x0002c0       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        g_USART_TX_buf_in   0x0001a4       data     extern E:\iro_svn\opensprints\FW\user\user.c
+       g_USART_TX_buf_out   0x0001a5       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             g_ack_enable   0x0001a6       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                    in_cr   0x0001d7       data     static E:\iro_svn\opensprints\FW\user\user.c
+                is_racing   0x0001d6       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                justBegun   0x0001db       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           last_fifo_size   0x0001ab       data     static E:\iro_svn\opensprints\FW\user\user.c
+              line_coding   0x0001bc       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                  pCDCDst   0x0001b8       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                  pCDCSrc   0x0001b6       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                     pDst   0x0001e4       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                     pSrc   0x0001e2       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+         prevValueSensor0   0x0001ac       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         prevValueSensor1   0x0001ae       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                     prom   0x0001cc       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+        raceTimeCentisecs   0x0001a9       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             raceTimeMins   0x0001a7       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                   stdout   0x0001ee       data     extern C:\MCC18\src\TRADIT~1\stdclib\stdout.c
+     time_between_updates   0x000000       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           usb_active_cfg   0x0001ea       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+             usb_alt_intf   0x0001eb       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+         usb_device_state   0x0001e8       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                 usb_stat   0x0001e9       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                   wCount   0x0001e6       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
 
 
 
@@ -747,107 +746,106 @@ dummy_encapsulated_cmd_response   0x0001c2       data     extern e:\iro_svn\open
                 ---------  ---------  ---------  --------- ---------                
                    _entry   0x000800    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
        ___return_lbl00000   0x000804    program     static                          
-              high_vector   0x000808    program     extern e:\iro_svn\opensprints\FW\main.c
+              high_vector   0x000808    program     extern E:\iro_svn\opensprints\FW\main.c
        ___return_lbl00000   0x00080c    program     static                          
-               low_vector   0x000818    program     extern e:\iro_svn\opensprints\FW\main.c
+               low_vector   0x000818    program     extern E:\iro_svn\opensprints\FW\main.c
        ___return_lbl00001   0x00081c    program     static                          
-           CheckRaceTimer   0x000844    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                  low_ISR   0x000874    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                 high_ISR   0x000bae    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                 RaceInit   0x000bc0    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                 UserInit   0x000c22    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                ProcessIO   0x000db8    program     extern e:\iro_svn\opensprints\FW\user\user.c
-               _user_putc   0x000ffa    program     extern e:\iro_svn\opensprints\FW\user\user.c
-   check_and_send_TX_data   0x001050    program     extern e:\iro_svn\opensprints\FW\user\user.c
-             parse_packet   0x0010e6    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                print_ack   0x001470    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_R_packet   0x001498    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CU_packet   0x0014a0    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_T_packet   0x001520    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_C_packet   0x0015a2    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_O_packet   0x00165c    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_I_packet   0x0016c2    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_V_packet   0x0016f8    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           parse_A_packet   0x00171a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_MW_packet   0x0017dc    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_MR_packet   0x001846    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_PD_packet   0x0018c8    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_PI_packet   0x001a00    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_PO_packet   0x001b00    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_TX_packet   0x001c32    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RX_packet   0x001c36    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CX_packet   0x001c3a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RC_packet   0x001c3e    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_BC_packet   0x001d88    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_BO_packet   0x001e16    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           ___if_lbl00227   0x001e74    program     static                          
-           ___if_lbl00228   0x001e84    program     static                          
-        ___while_lbl00229   0x001ea0    program     static                          
-              __tmplbl_45   0x001ee8    program     static                          
-              __tmplbl_44   0x001ef0    program     static                          
-         ___else_lbl00236   0x001f06    program     static                          
-              __tmplbl_47   0x001f16    program     static                          
-              __tmplbl_46   0x001f1e    program     static                          
-         ___else_lbl00234   0x001f34    program     static                          
-           ___if_lbl00235   0x001f38    program     static                          
-           ___if_lbl00233   0x001f38    program     static                          
-           ___if_lbl00237   0x001f50    program     static                          
-           ___if_lbl00238   0x001f6c    program     static                          
-              __tmplbl_49   0x001f9e    program     static                          
-              __tmplbl_48   0x001fa6    program     static                          
-         ___else_lbl00244   0x001fbc    program     static                          
-              __tmplbl_51   0x001fcc    program     static                          
-              __tmplbl_50   0x001fd4    program     static                          
-         ___else_lbl00242   0x001fea    program     static                          
-           ___if_lbl00243   0x001fee    program     static                          
-           ___if_lbl00241   0x001fee    program     static                          
-           ___if_lbl00245   0x002006    program     static                          
-           ___if_lbl00246   0x002020    program     static                          
-        ___while_lbl00247   0x002030    program     static                          
-              __tmplbl_53   0x002044    program     static                          
-              __tmplbl_52   0x00204a    program     static                          
-        ___while_lbl00248   0x00205a    program     static                          
-        ___while_lbl00250   0x002060    program     static                          
-              __tmplbl_55   0x002074    program     static                          
-              __tmplbl_54   0x00207a    program     static                          
-        ___while_lbl00251   0x00208a    program     static                          
-           ___if_lbl00253   0x00208a    program     static                          
-        ___while_lbl00230   0x00208c    program     static                          
-       ___return_lbl00226   0x002090    program     static                          
-          parse_BS_packet   0x0020a4    program     extern e:\iro_svn\opensprints\FW\user\user.c
-              __tmplbl_57   0x0020cc    program     static                          
-              __tmplbl_56   0x0020d4    program     static                          
-           ___if_lbl00256   0x0020d8    program     static                          
-           ___if_lbl00257   0x002126    program     static                          
-           ___if_lbl00258   0x002136    program     static                          
-        ___while_lbl00259   0x002152    program     static                          
-           ___if_lbl00261   0x00217a    program     static                          
-           ___if_lbl00262   0x002198    program     static                          
-        ___while_lbl00263   0x0021a8    program     static                          
-              __tmplbl_59   0x0021bc    program     static                          
-              __tmplbl_58   0x0021c2    program     static                          
-        ___while_lbl00264   0x0021d2    program     static                          
-        ___while_lbl00266   0x0021d8    program     static                          
-              __tmplbl_61   0x0021ec    program     static                          
-              __tmplbl_60   0x0021f2    program     static                          
-           ___if_lbl00269   0x002202    program     static                          
-        ___while_lbl00267   0x002202    program     static                          
-        ___while_lbl00260   0x002204    program     static                          
-       ___return_lbl00254   0x002208    program     static                          
-          parse_SS_packet   0x00221c    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RS_packet   0x002222    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CS_packet   0x002228    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_SI_packet   0x00222e    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_RI_packet   0x002234    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_CI_packet   0x00223a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_GO_packet   0x002240    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          parse_ST_packet   0x00225a    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           extract_number   0x002260    program     extern e:\iro_svn\opensprints\FW\user\user.c
-            extract_digit   0x0025cc    program     extern e:\iro_svn\opensprints\FW\user\user.c
-             print_status   0x0026c6    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           BlinkUSBStatus   0x0026f0    program     extern e:\iro_svn\opensprints\FW\user\user.c
-          SwitchIsPressed   0x0027c6    program     extern e:\iro_svn\opensprints\FW\user\user.c
-           HallEffSensors   0x0027d6    program     extern e:\iro_svn\opensprints\FW\user\user.c
+                  low_ISR   0x000844    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                 high_ISR   0x000b98    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                 RaceInit   0x000baa    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                 UserInit   0x000c0c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                ProcessIO   0x000da2    program     extern E:\iro_svn\opensprints\FW\user\user.c
+               _user_putc   0x000fe4    program     extern E:\iro_svn\opensprints\FW\user\user.c
+   check_and_send_TX_data   0x00103a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+             parse_packet   0x0010d0    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                print_ack   0x00145a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_R_packet   0x001482    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CU_packet   0x00148a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_T_packet   0x00150a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_C_packet   0x00158c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_O_packet   0x001646    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_I_packet   0x0016ac    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_V_packet   0x0016e2    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           parse_A_packet   0x001704    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_MW_packet   0x0017c6    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_MR_packet   0x001830    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_PD_packet   0x0018b2    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_PI_packet   0x0019ea    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_PO_packet   0x001aea    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_TX_packet   0x001c1c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RX_packet   0x001c20    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CX_packet   0x001c24    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RC_packet   0x001c28    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_BC_packet   0x001d72    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_BO_packet   0x001e00    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           ___if_lbl00224   0x001e5e    program     static                          
+           ___if_lbl00225   0x001e6e    program     static                          
+        ___while_lbl00226   0x001e8a    program     static                          
+              __tmplbl_45   0x001ed2    program     static                          
+              __tmplbl_44   0x001eda    program     static                          
+         ___else_lbl00233   0x001ef0    program     static                          
+              __tmplbl_47   0x001f00    program     static                          
+              __tmplbl_46   0x001f08    program     static                          
+         ___else_lbl00231   0x001f1e    program     static                          
+           ___if_lbl00232   0x001f22    program     static                          
+           ___if_lbl00230   0x001f22    program     static                          
+           ___if_lbl00234   0x001f3a    program     static                          
+           ___if_lbl00235   0x001f56    program     static                          
+              __tmplbl_49   0x001f88    program     static                          
+              __tmplbl_48   0x001f90    program     static                          
+         ___else_lbl00241   0x001fa6    program     static                          
+              __tmplbl_51   0x001fb6    program     static                          
+              __tmplbl_50   0x001fbe    program     static                          
+         ___else_lbl00239   0x001fd4    program     static                          
+           ___if_lbl00240   0x001fd8    program     static                          
+           ___if_lbl00238   0x001fd8    program     static                          
+           ___if_lbl00242   0x001ff0    program     static                          
+           ___if_lbl00243   0x00200a    program     static                          
+        ___while_lbl00244   0x00201a    program     static                          
+              __tmplbl_53   0x00202e    program     static                          
+              __tmplbl_52   0x002034    program     static                          
+        ___while_lbl00245   0x002044    program     static                          
+        ___while_lbl00247   0x00204a    program     static                          
+              __tmplbl_55   0x00205e    program     static                          
+              __tmplbl_54   0x002064    program     static                          
+        ___while_lbl00248   0x002074    program     static                          
+           ___if_lbl00250   0x002074    program     static                          
+        ___while_lbl00227   0x002076    program     static                          
+       ___return_lbl00223   0x00207a    program     static                          
+          parse_BS_packet   0x00208e    program     extern E:\iro_svn\opensprints\FW\user\user.c
+              __tmplbl_57   0x0020b6    program     static                          
+              __tmplbl_56   0x0020be    program     static                          
+           ___if_lbl00253   0x0020c2    program     static                          
+           ___if_lbl00254   0x002110    program     static                          
+           ___if_lbl00255   0x002120    program     static                          
+        ___while_lbl00256   0x00213c    program     static                          
+           ___if_lbl00258   0x002164    program     static                          
+           ___if_lbl00259   0x002182    program     static                          
+        ___while_lbl00260   0x002192    program     static                          
+              __tmplbl_59   0x0021a6    program     static                          
+              __tmplbl_58   0x0021ac    program     static                          
+        ___while_lbl00261   0x0021bc    program     static                          
+        ___while_lbl00263   0x0021c2    program     static                          
+              __tmplbl_61   0x0021d6    program     static                          
+              __tmplbl_60   0x0021dc    program     static                          
+        ___while_lbl00264   0x0021ec    program     static                          
+           ___if_lbl00266   0x0021ec    program     static                          
+        ___while_lbl00257   0x0021ee    program     static                          
+       ___return_lbl00251   0x0021f2    program     static                          
+          parse_SS_packet   0x002206    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RS_packet   0x00220c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CS_packet   0x002212    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_SI_packet   0x002218    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_RI_packet   0x00221e    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_CI_packet   0x002224    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_GO_packet   0x00222a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          parse_ST_packet   0x00224a    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           extract_number   0x002250    program     extern E:\iro_svn\opensprints\FW\user\user.c
+            extract_digit   0x0025bc    program     extern E:\iro_svn\opensprints\FW\user\user.c
+             print_status   0x0026b6    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           BlinkUSBStatus   0x0026e0    program     extern E:\iro_svn\opensprints\FW\user\user.c
+          SwitchIsPressed   0x0027b6    program     extern E:\iro_svn\opensprints\FW\user\user.c
+           HallEffSensors   0x0027c6    program     extern E:\iro_svn\opensprints\FW\user\user.c
             s_put_n_chars   0x00294c    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                  vfprintf   0x002978    program     extern C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
               __tmplbl_85   0x0029a2    program     static                          
@@ -901,135 +899,135 @@ dummy_encapsulated_cmd_response   0x0001c2       data     extern e:\iro_svn\open
                   __pa_44   0x00354e    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                   __pa_45   0x003558    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
                   __pa_46   0x003564    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
-       USBCheckCDCRequest   0x00356e    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                CDCInitEP   0x00363c    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-             getsUSBUSART   0x0036a0    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-             putsUSBUSART   0x003732    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-            putrsUSBUSART   0x0037b0    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-             CDCTxService   0x003832    program     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-         USBCtrlEPService   0x003946    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-   USBCtrlTrfSetupHandler   0x00397c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-     USBCtrlTrfOutHandler   0x0039ec    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-      USBCtrlTrfInHandler   0x003a10    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-      USBCtrlTrfTxService   0x003a52    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-      USBCtrlTrfRxService   0x003b3e    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
- USBCtrlEPServiceComplete   0x003bc2    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-       USBCheckStdRequest   0x003c80    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-      USBStdGetDscHandler   0x003d48    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-      USBStdSetCfgHandler   0x003e02    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-   USBStdGetStatusHandler   0x003e52    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-  USBStdFeatureReqHandler   0x003ef2    program     extern e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-        USBCheckBusStatus   0x003f9e    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBModuleEnable   0x003fc2    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-         USBModuleDisable   0x003fd0    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-            USBSoftDetach   0x003fda    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-         USBDriverService   0x003fde    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-               USBSuspend   0x00405c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+       USBCheckCDCRequest   0x00356e    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                CDCInitEP   0x00363c    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+             getsUSBUSART   0x0036a0    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+             putsUSBUSART   0x003732    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+            putrsUSBUSART   0x0037b0    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+             CDCTxService   0x003832    program     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+         USBCtrlEPService   0x003946    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+   USBCtrlTrfSetupHandler   0x00397c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+     USBCtrlTrfOutHandler   0x0039ec    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+      USBCtrlTrfInHandler   0x003a10    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+      USBCtrlTrfTxService   0x003a52    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+      USBCtrlTrfRxService   0x003b3e    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+ USBCtrlEPServiceComplete   0x003bc2    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+USBPrepareForNextSetupTrf   0x003c60    program     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+       USBCheckStdRequest   0x003c80    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+      USBStdGetDscHandler   0x003d48    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+      USBStdSetCfgHandler   0x003e02    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+   USBStdGetStatusHandler   0x003e52    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+  USBStdFeatureReqHandler   0x003ef2    program     extern E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+        USBCheckBusStatus   0x003f9e    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBModuleEnable   0x003fc2    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+         USBModuleDisable   0x003fd0    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+            USBSoftDetach   0x003fda    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+         USBDriverService   0x003fde    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+               USBSuspend   0x00405c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
        ___return_lbl00028   0x00406a    program     static                          
-       USBWakeFromSuspend   0x00406c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBRemoteWakeup   0x004074    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USB_SOF_Handler   0x00409c    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBStallHandler   0x0040a0    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-          USBErrorHandler   0x0040ae    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-  USBProtocolResetHandler   0x0040b2    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-               ClearArray   0x0040f6    program     extern e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+       USBWakeFromSuspend   0x00406c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBRemoteWakeup   0x004074    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USB_SOF_Handler   0x00409c    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBStallHandler   0x0040a0    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+          USBErrorHandler   0x0040ae    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+  USBProtocolResetHandler   0x0040b2    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+               ClearArray   0x0040f6    program     extern E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
         ___while_lbl00043   0x00410a    program     static                          
        ___return_lbl00042   0x004118    program     static                          
         ___while_lbl00044   0x004118    program     static                          
-              __string_20   0x004120    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_19   0x004127    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_18   0x00412e    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_17   0x00413a    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_16   0x004161    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_15   0x00416a    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_14   0x004174    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_13   0x00417a    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_12   0x00417c    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_11   0x00418f    program     static e:\iro_svn\opensprints\FW\user\user.c
-              __string_10   0x0041b7    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_9   0x0041da    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_8   0x0041f3    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_7   0x004214    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_6   0x004233    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_5   0x00424f    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_4   0x00426b    program     static e:\iro_svn\opensprints\FW\user\user.c
-               __string_3   0x004271    program     static e:\iro_svn\opensprints\FW\user\user.c
-                 FXM2424U   0x004278    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm2424u.asm
-                 FXM1616S   0x00430a    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
-               TSIGN1616A   0x004356    program     static C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
-               device_dsc   0x004364    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                    cfg01   0x004376    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                    sd000   0x0043b9    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                    sd001   0x0043bd    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                    sd002   0x0043f1    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-               USB_CD_Ptr   0x004425    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-               USB_SD_Ptr   0x004429    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-          ClassReqHandler   0x00442f    program     extern e:\iro_svn\opensprints\FW\autofiles\usbdsc.c
-                _do_cinit   0x004432    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
-                     test   0x00444c    program     static                          
-                copy_loop   0x0044a4    program     static                          
-            copy_one_byte   0x0044aa    program     static                          
-             done_copying   0x0044b8    program     static                          
-       ___return_lbl00002   0x0044ce    program     static                          
-                     done   0x0044ce    program     static                          
-                   printf   0x0044d0    program     extern C:\MCC18\src\TRADIT~1\stdclib\printf.c
-                     putc   0x004568    program     extern C:\MCC18\src\TRADIT~1\stdclib\putc.c
-                  FXM3232   0x0045ec    program     extern C:\MCC18\src\TRADIT~1\math\fxm3232.c
-       ___return_lbl00000   0x00465a    program     static                          
-                   strlen   0x00465c    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
-                    jLoop   0x00466c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
-                     jEnd   0x004676    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
-                strlenpgm   0x004678    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-                    jLoop   0x004696    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-                   _2jEnd   0x0046ac    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-                     jEnd   0x0046ae    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
-                  toupper   0x0046c2    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
-                 jNoMatch   0x0046e8    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
-                  isdigit   0x0046ea    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
-                   jMatch   0x00470a    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
-                 jNoMatch   0x00470c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
-                 FXD3232U   0x00470e    program     extern C:\MCC18\src\TRADIT~1\math\fxd3232u.c
-                     loop   0x00471c    program     static                          
-                   _false   0x004750    program     static                          
-       ___return_lbl00000   0x004754    program     static                          
-                    st_OK   0x004756    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                  st_LFCR   0x00475b    program     extern e:\iro_svn\opensprints\FW\user\user.c
-               st_version   0x00475e    program     extern e:\iro_svn\opensprints\FW\user\user.c
-                     main   0x004794    program     extern e:\iro_svn\opensprints\FW\main.c
-         InitializeSystem   0x0047a0    program     static e:\iro_svn\opensprints\FW\main.c
-                 USBTasks   0x0047ba    program     extern e:\iro_svn\opensprints\FW\main.c
-              _usart_putc   0x0047cc    program     extern C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
-                     loop   0x0047dc    program     static C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
-                 _startup   0x0047e8    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
-                     loop   0x0047f8    program     static                          
-       ___return_lbl00001   0x0047fe    program     static                          
-              Delay10TCYx   0x004800    program     extern C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-                     D10x   0x004808    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-        _D10TCYXCODE_000A   0x00480a    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-        _D10TCYXCODE_000C   0x00480c    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-        _D10TCYXCODE_000E   0x00480e    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-                    D10_1   0x004810    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
-                 s_digits   0x004816    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
-            __zero_memory   0x004828    program     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-               clear_loop   0x00482e    program     static C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-     time_between_updates   0x000000       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         ISR_D_RepeatRate   0x000002       data     extern e:\iro_svn\opensprints\FW\user\user.c
-            ISR_D_FIFO_in   0x000004       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           ISR_D_FIFO_out   0x000005       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        ISR_D_FIFO_length   0x000006       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         ISR_A_RepeatRate   0x000007       data     extern e:\iro_svn\opensprints\FW\user\user.c
-            ISR_A_FIFO_in   0x000009       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           ISR_A_FIFO_out   0x00000a       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        ISR_A_FIFO_length   0x00000b       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             AnalogEnable   0x00000c       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               error_byte   0x00000d       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          g_RC_primed_ptr   0x00000e       data     extern e:\iro_svn\opensprints\FW\user\user.c
-            g_RC_next_ptr   0x00000f       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          g_RC_timing_ptr   0x000010       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           D_tick_counter   0x000011       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           A_tick_counter   0x000013       data     extern e:\iro_svn\opensprints\FW\user\user.c
-            A_cur_channel   0x000015       data     extern e:\iro_svn\opensprints\FW\user\user.c
+              __string_20   0x004120    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_19   0x00412a    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_18   0x004134    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_17   0x004140    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_16   0x004167    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_15   0x004170    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_14   0x00417a    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_13   0x004180    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_12   0x004182    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_11   0x004195    program     static E:\iro_svn\opensprints\FW\user\user.c
+              __string_10   0x0041bd    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_9   0x0041e0    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_8   0x0041f9    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_7   0x00421a    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_6   0x004239    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_5   0x004255    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_4   0x004271    program     static E:\iro_svn\opensprints\FW\user\user.c
+               __string_3   0x004277    program     static E:\iro_svn\opensprints\FW\user\user.c
+                 FXM2424U   0x00427e    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm2424u.asm
+                 FXM1616S   0x004310    program     extern C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
+               TSIGN1616A   0x00435c    program     static C:\MCC18\SRC\TRADIT~1\MATH\fxm1616s.asm
+               device_dsc   0x00436a    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                    cfg01   0x00437c    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                    sd000   0x0043bf    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                    sd001   0x0043c3    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                    sd002   0x0043f7    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+               USB_CD_Ptr   0x00442b    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+               USB_SD_Ptr   0x00442f    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+          ClassReqHandler   0x004435    program     extern E:\iro_svn\opensprints\FW\autofiles\usbdsc.c
+                _do_cinit   0x004438    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
+                     test   0x004452    program     static                          
+                copy_loop   0x0044aa    program     static                          
+            copy_one_byte   0x0044b0    program     static                          
+             done_copying   0x0044be    program     static                          
+       ___return_lbl00002   0x0044d4    program     static                          
+                     done   0x0044d4    program     static                          
+                   printf   0x0044d6    program     extern C:\MCC18\src\TRADIT~1\stdclib\printf.c
+                     putc   0x00456e    program     extern C:\MCC18\src\TRADIT~1\stdclib\putc.c
+                  FXM3232   0x0045f2    program     extern C:\MCC18\src\TRADIT~1\math\fxm3232.c
+       ___return_lbl00000   0x004660    program     static                          
+                   strlen   0x004662    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
+                    jLoop   0x004672    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
+                     jEnd   0x00467c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\strlen.asm
+                strlenpgm   0x00467e    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+                    jLoop   0x00469c    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+                   _2jEnd   0x0046b2    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+                     jEnd   0x0046b4    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\slenpgm.asm
+                  toupper   0x0046c8    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
+                 jNoMatch   0x0046ee    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\toupper.asm
+                  isdigit   0x0046f0    program     extern C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
+                   jMatch   0x004710    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
+                 jNoMatch   0x004712    program     static C:\MCC18\SRC\TRADIT~1\STDCLIB\isdigit.asm
+                 FXD3232U   0x004714    program     extern C:\MCC18\src\TRADIT~1\math\fxd3232u.c
+                     loop   0x004722    program     static                          
+                   _false   0x004756    program     static                          
+       ___return_lbl00000   0x00475a    program     static                          
+                    st_OK   0x00475c    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                  st_LFCR   0x004761    program     extern E:\iro_svn\opensprints\FW\user\user.c
+               st_version   0x004764    program     extern E:\iro_svn\opensprints\FW\user\user.c
+                     main   0x00479a    program     extern E:\iro_svn\opensprints\FW\main.c
+         InitializeSystem   0x0047a6    program     static E:\iro_svn\opensprints\FW\main.c
+                 USBTasks   0x0047c0    program     extern E:\iro_svn\opensprints\FW\main.c
+              _usart_putc   0x0047d2    program     extern C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
+                     loop   0x0047e2    program     static C:\MCC18\SRC\TRADIT~1\PMC\USART\_usartpc.asm
+                 _startup   0x0047ee    program     extern C:\MCC18\src\traditional\startup\c018iBL.c
+                     loop   0x0047fe    program     static                          
+       ___return_lbl00001   0x004804    program     static                          
+              Delay10TCYx   0x004806    program     extern C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+                     D10x   0x00480e    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+        _D10TCYXCODE_000A   0x004810    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+        _D10TCYXCODE_000C   0x004812    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+        _D10TCYXCODE_000E   0x004814    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+                    D10_1   0x004816    program     static C:\MCC18\SRC\TRADIT~1\DELAYS\d10tcyx.asm
+                 s_digits   0x00481c    program     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
+            __zero_memory   0x00482e    program     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+               clear_loop   0x004834    program     static C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+     time_between_updates   0x000000       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         ISR_D_RepeatRate   0x000002       data     extern E:\iro_svn\opensprints\FW\user\user.c
+            ISR_D_FIFO_in   0x000004       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           ISR_D_FIFO_out   0x000005       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        ISR_D_FIFO_length   0x000006       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         ISR_A_RepeatRate   0x000007       data     extern E:\iro_svn\opensprints\FW\user\user.c
+            ISR_A_FIFO_in   0x000009       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           ISR_A_FIFO_out   0x00000a       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        ISR_A_FIFO_length   0x00000b       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             AnalogEnable   0x00000c       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               error_byte   0x00000d       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          g_RC_primed_ptr   0x00000e       data     extern E:\iro_svn\opensprints\FW\user\user.c
+            g_RC_next_ptr   0x00000f       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          g_RC_timing_ptr   0x000010       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           D_tick_counter   0x000011       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           A_tick_counter   0x000013       data     extern E:\iro_svn\opensprints\FW\user\user.c
+            A_cur_channel   0x000015       data     extern E:\iro_svn\opensprints\FW\user\user.c
                      SIGN   0x000016       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
             __FPFLAGSbits   0x000017       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
                 __FPFLAGS   0x000017       data     extern C:\MCC18\SRC\TRADIT~1\MATH\cmath18.asm
@@ -1056,177 +1054,178 @@ USBPrepareForNextSetupTrf   0x003c60    program     extern e:\iro_svn\opensprint
                  __TEMPB1   0x000028       data     extern C:\MCC18\SRC\TRADIT~1\MATH\temparg.asm
                    __TEMP   0x000029       data     extern C:\MCC18\SRC\TRADIT~1\MATH\temparg.asm
                  __TEMPB0   0x000029       data     extern C:\MCC18\SRC\TRADIT~1\MATH\temparg.asm
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\user\user.c
-                  __tmp_0   0x00002a       data     static e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-                  __tmp_0   0x00002a       data     static C:\MCC18\src\TRADIT~1\stdclib\putc.c
                   __tmp_0   0x00002a       data     static C:\MCC18\src\TRADIT~1\stdclib\printf.c
                   __tmp_0   0x00002a       data     static C:\MCC18\src\TRADIT~1\stdclib\vfprintf.c
-                  __tmp_1   0x000038       data     static e:\iro_svn\opensprints\FW\user\user.c
-               ISR_A_FIFO   0x000100       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               ISR_D_FIFO   0x000148       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               g_RC_state   0x000151       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               g_RC_value   0x000169       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                g_BO_init   0x000199       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         g_BO_strobe_mask   0x00019a       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           g_BO_wait_mask   0x00019b       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          g_BO_wait_delay   0x00019c       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        g_BO_strobe_delay   0x00019d       data     extern e:\iro_svn\opensprints\FW\user\user.c
-              g_TX_buf_in   0x00019e       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             g_TX_buf_out   0x00019f       data     extern e:\iro_svn\opensprints\FW\user\user.c
-              g_RX_buf_in   0x0001a0       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             g_RX_buf_out   0x0001a1       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        g_USART_RX_buf_in   0x0001a2       data     extern e:\iro_svn\opensprints\FW\user\user.c
-       g_USART_RX_buf_out   0x0001a3       data     extern e:\iro_svn\opensprints\FW\user\user.c
-        g_USART_TX_buf_in   0x0001a4       data     extern e:\iro_svn\opensprints\FW\user\user.c
-       g_USART_TX_buf_out   0x0001a5       data     extern e:\iro_svn\opensprints\FW\user\user.c
-             g_ack_enable   0x0001a6       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                 raceTime   0x0001a7       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           last_fifo_size   0x0001a9       data     static e:\iro_svn\opensprints\FW\user\user.c
-         prevValueSensor0   0x0001aa       data     extern e:\iro_svn\opensprints\FW\user\user.c
-         prevValueSensor1   0x0001ac       data     extern e:\iro_svn\opensprints\FW\user\user.c
-      currentValueSensor0   0x0001ae       data     extern e:\iro_svn\opensprints\FW\user\user.c
-      currentValueSensor1   0x0001b0       data     extern e:\iro_svn\opensprints\FW\user\user.c
-               cdc_rx_len   0x0001b2       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-            cdc_trf_state   0x0001b3       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                  pCDCSrc   0x0001b4       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                  pCDCDst   0x0001b6       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-               cdc_tx_len   0x0001b8       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-             cdc_mem_type   0x0001b9       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-              line_coding   0x0001ba       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-    control_signal_bitmap   0x0001c1       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-dummy_encapsulated_cmd_response   0x0001c2       data     extern e:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
-                     prom   0x0001ca       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-                curr_byte   0x0001cd       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-               curr_entry   0x0001cf       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-                 data_ptr   0x0001d1       data     static C:\MCC18\src\traditional\startup\c018iBL.c
-                is_racing   0x0001d4       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                    in_cr   0x0001d5       data     static e:\iro_svn\opensprints\FW\user\user.c
-                 LEDCount   0x0001d6       data     static e:\iro_svn\opensprints\FW\user\user.c
-                 LEDState   0x0001d8       data     static e:\iro_svn\opensprints\FW\user\user.c
-                justBegun   0x0001d9       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          Sensor0PortApin   0x0001da       data     extern e:\iro_svn\opensprints\FW\user\user.c
-          Sensor1PortApin   0x0001dc       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           ctrl_trf_state   0x0001de       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-   ctrl_trf_session_owner   0x0001df       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-                     pSrc   0x0001e0       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-                     pDst   0x0001e2       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-                   wCount   0x0001e4       data     extern e:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
-         usb_device_state   0x0001e6       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                 usb_stat   0x0001e7       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-           usb_active_cfg   0x0001e8       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-             usb_alt_intf   0x0001e9       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-              delay_count   0x0001ea       data     static e:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
-                   stdout   0x0001ec       data     extern C:\MCC18\src\TRADIT~1\stdclib\stdout.c
-                 g_TX_buf   0x000200       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                 g_RX_buf   0x000240       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           g_USART_RX_buf   0x000280       data     extern e:\iro_svn\opensprints\FW\user\user.c
-           g_USART_TX_buf   0x0002c0       data     extern e:\iro_svn\opensprints\FW\user\user.c
-                    ep0Bo   0x000400       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep0Bi   0x000404       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep1Bo   0x000408       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep1Bi   0x00040c       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep2Bo   0x000410       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep2Bi   0x000414       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep3Bo   0x000418       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                    ep3Bi   0x00041c       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-                 SetupPkt   0x000420       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-              CtrlTrfData   0x000428       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-               cdc_notice   0x000500       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-              cdc_data_rx   0x000508       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
-              cdc_data_tx   0x000548       data     extern e:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                  __tmp_0   0x00002a       data     static C:\MCC18\src\TRADIT~1\stdclib\putc.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\user\user.c
+                  __tmp_0   0x00002a       data     static E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                  __tmp_1   0x000038       data     static E:\iro_svn\opensprints\FW\user\user.c
+               ISR_A_FIFO   0x000100       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               ISR_D_FIFO   0x000148       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               g_RC_state   0x000151       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               g_RC_value   0x000169       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                g_BO_init   0x000199       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         g_BO_strobe_mask   0x00019a       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           g_BO_wait_mask   0x00019b       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          g_BO_wait_delay   0x00019c       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        g_BO_strobe_delay   0x00019d       data     extern E:\iro_svn\opensprints\FW\user\user.c
+              g_TX_buf_in   0x00019e       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             g_TX_buf_out   0x00019f       data     extern E:\iro_svn\opensprints\FW\user\user.c
+              g_RX_buf_in   0x0001a0       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             g_RX_buf_out   0x0001a1       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        g_USART_RX_buf_in   0x0001a2       data     extern E:\iro_svn\opensprints\FW\user\user.c
+       g_USART_RX_buf_out   0x0001a3       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        g_USART_TX_buf_in   0x0001a4       data     extern E:\iro_svn\opensprints\FW\user\user.c
+       g_USART_TX_buf_out   0x0001a5       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             g_ack_enable   0x0001a6       data     extern E:\iro_svn\opensprints\FW\user\user.c
+             raceTimeMins   0x0001a7       data     extern E:\iro_svn\opensprints\FW\user\user.c
+        raceTimeCentisecs   0x0001a9       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           last_fifo_size   0x0001ab       data     static E:\iro_svn\opensprints\FW\user\user.c
+         prevValueSensor0   0x0001ac       data     extern E:\iro_svn\opensprints\FW\user\user.c
+         prevValueSensor1   0x0001ae       data     extern E:\iro_svn\opensprints\FW\user\user.c
+      currentValueSensor0   0x0001b0       data     extern E:\iro_svn\opensprints\FW\user\user.c
+      currentValueSensor1   0x0001b2       data     extern E:\iro_svn\opensprints\FW\user\user.c
+               cdc_rx_len   0x0001b4       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+            cdc_trf_state   0x0001b5       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                  pCDCSrc   0x0001b6       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                  pCDCDst   0x0001b8       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+               cdc_tx_len   0x0001ba       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+             cdc_mem_type   0x0001bb       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+              line_coding   0x0001bc       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+    control_signal_bitmap   0x0001c3       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+dummy_encapsulated_cmd_response   0x0001c4       data     extern E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c
+                     prom   0x0001cc       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+                curr_byte   0x0001cf       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+               curr_entry   0x0001d1       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+                 data_ptr   0x0001d3       data     static C:\MCC18\src\traditional\startup\c018iBL.c
+                is_racing   0x0001d6       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                    in_cr   0x0001d7       data     static E:\iro_svn\opensprints\FW\user\user.c
+                 LEDCount   0x0001d8       data     static E:\iro_svn\opensprints\FW\user\user.c
+                 LEDState   0x0001da       data     static E:\iro_svn\opensprints\FW\user\user.c
+                justBegun   0x0001db       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          Sensor0PortApin   0x0001dc       data     extern E:\iro_svn\opensprints\FW\user\user.c
+          Sensor1PortApin   0x0001de       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           ctrl_trf_state   0x0001e0       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+   ctrl_trf_session_owner   0x0001e1       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                     pSrc   0x0001e2       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                     pDst   0x0001e4       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+                   wCount   0x0001e6       data     extern E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c
+         usb_device_state   0x0001e8       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                 usb_stat   0x0001e9       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+           usb_active_cfg   0x0001ea       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+             usb_alt_intf   0x0001eb       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+              delay_count   0x0001ec       data     static E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c
+                   stdout   0x0001ee       data     extern C:\MCC18\src\TRADIT~1\stdclib\stdout.c
+                 g_TX_buf   0x000200       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                 g_RX_buf   0x000240       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           g_USART_RX_buf   0x000280       data     extern E:\iro_svn\opensprints\FW\user\user.c
+           g_USART_TX_buf   0x0002c0       data     extern E:\iro_svn\opensprints\FW\user\user.c
+                    ep0Bo   0x000400       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep0Bi   0x000404       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep1Bo   0x000408       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep1Bi   0x00040c       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep2Bo   0x000410       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep2Bi   0x000414       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep3Bo   0x000418       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                    ep3Bi   0x00041c       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                 SetupPkt   0x000420       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+              CtrlTrfData   0x000428       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+               cdc_notice   0x000500       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+              cdc_data_rx   0x000508       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+              cdc_data_tx   0x000548       data     extern E:\iro_svn\opensprints\FW\system\usb\usbmmap.c
+                UFRMLbits   0x000f66       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     UFRML   0x000f66       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      UFRM   0x000f66       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                UFRMLbits   0x000f66       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 UFRMHbits   0x000f67       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     UFRMH   0x000f67       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                       UIR   0x000f68       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                   UIRbits   0x000f68       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                      UIE   0x000f69       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                   UIEbits   0x000f69       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UEIR   0x000f6a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                      UIE   0x000f69       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEIRbits   0x000f6a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UEIE   0x000f6b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UEIR   0x000f6a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEIEbits   0x000f6b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UEIE   0x000f6b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 USTATbits   0x000f6c       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     USTAT   0x000f6c       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UCON   0x000f6d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UCONbits   0x000f6d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UCON   0x000f6d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     UADDR   0x000f6e       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 UADDRbits   0x000f6e       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UCFG   0x000f6f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UCFGbits   0x000f6f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UCFG   0x000f6f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      UEP0   0x000f70       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP0bits   0x000f70       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP1bits   0x000f71       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      UEP1   0x000f71       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                 UEP2bits   0x000f72       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      UEP2   0x000f72       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                 UEP2bits   0x000f72       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP3bits   0x000f73       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      UEP3   0x000f73       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP4bits   0x000f74       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      UEP4   0x000f74       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UEP5   0x000f75       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP5bits   0x000f75       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UEP6   0x000f76       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UEP5   0x000f75       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP6bits   0x000f76       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UEP7   0x000f77       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UEP6   0x000f76       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP7bits   0x000f77       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                 UEP8bits   0x000f78       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UEP7   0x000f77       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      UEP8   0x000f78       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     UEP9   0x000f79       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                 UEP8bits   0x000f78       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  UEP9bits   0x000f79       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                UEP10bits   0x000f7a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     UEP9   0x000f79       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     UEP10   0x000f7a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                UEP11bits   0x000f7b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                UEP10bits   0x000f7a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     UEP11   0x000f7b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                    UEP12   0x000f7c       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                UEP11bits   0x000f7b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 UEP12bits   0x000f7c       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                    UEP13   0x000f7d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                    UEP12   0x000f7c       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 UEP13bits   0x000f7d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                    UEP14   0x000f7e       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                    UEP13   0x000f7d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 UEP14bits   0x000f7e       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                    UEP15   0x000f7f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                    UEP14   0x000f7e       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 UEP15bits   0x000f7f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                    PORTA   0x000f80       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                    UEP15   0x000f7f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 PORTAbits   0x000f80       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                    PORTA   0x000f80       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 PORTBbits   0x000f81       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     PORTB   0x000f81       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                    PORTC   0x000f82       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 PORTCbits   0x000f82       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                    PORTC   0x000f82       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     PORTE   0x000f84       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 PORTEbits   0x000f84       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     LATA   0x000f89       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  LATAbits   0x000f89       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     LATA   0x000f89       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  LATBbits   0x000f8a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      LATB   0x000f8a       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  LATCbits   0x000f8b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      LATC   0x000f8b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 TRISAbits   0x000f92       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     TRISA   0x000f92       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                 DDRAbits   0x000f92       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      DDRA   0x000f92       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                 DDRAbits   0x000f92       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     DDRB   0x000f93       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  DDRBbits   0x000f93       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 TRISBbits   0x000f93       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     TRISB   0x000f93       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     DDRB   0x000f93       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                 DDRCbits   0x000f94       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      DDRC   0x000f94       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                 TRISCbits   0x000f94       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                     TRISC   0x000f94       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                 DDRCbits   0x000f94       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                   OSCTUNE   0x000f9b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     PIE1   0x000f9d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  PIE1bits   0x000f9d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     PIE1   0x000f9d       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      PIR1   0x000f9e       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  PIR1bits   0x000f9e       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     IPR1   0x000f9f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  IPR1bits   0x000f9f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     IPR1   0x000f9f       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      PIE2   0x000fa0       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  PIE2bits   0x000fa0       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                     PIR2   0x000fa1       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  PIR2bits   0x000fa1       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                      IPR2   0x000fa2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  IPR2bits   0x000fa2       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                EECON1bits   0x000fa6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
@@ -1250,20 +1249,20 @@ dummy_encapsulated_cmd_response   0x0001c2       data     extern e:\iro_svn\open
                 CMCONbits   0x000fb4       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    CVRCON   0x000fb5       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                CVRCONbits   0x000fb5       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                   CCP1AS   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                CCP1ASbits   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                  ECCP1AS   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                   CCP1AS   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
               ECCP1ASbits   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                  CCP1DEL   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-              CCP1DELbits   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-             ECCP1DELbits   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                  ECCP1AS   0x000fb6       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                  ECCP1DEL   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+             ECCP1DELbits   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+              CCP1DELbits   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                  CCP1DEL   0x000fb7       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                   BAUDCON   0x000fb8       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
               BAUDCONbits   0x000fb8       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-              CCP2CONbits   0x000fba       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                   CCP2CON   0x000fba       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
-                    CCPR2   0x000fbb       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+              CCP2CONbits   0x000fba       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    CCPR2L   0x000fbb       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
+                    CCPR2   0x000fbb       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                    CCPR2H   0x000fbc       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
                   CCP1CON   0x000fbd       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm
               CCP1CONbits   0x000fbd       data     extern C:\MCC18\SRC\TRADIT~1\PROC\p18f2455.asm

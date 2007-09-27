@@ -1,6 +1,0 @@
-document backup - dervish
-
-
-subversion
-userid: orluke@mindsplatter.net
-passwd: 135bcd
