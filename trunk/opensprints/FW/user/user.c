@@ -56,6 +56,7 @@
  * BPS					05/24/07	v1.4.2 - Fixed RC command bug - it
  *									wouldn't shut off.
  * Luke Orland			2007/08/28	added some stuff
+ * Luke Orland			2007/09/29  added race test mode and timeclock
  *
  ********************************************************************/
 
@@ -163,7 +164,7 @@ near unsigned char A_cur_channel;
 // ROM strings
 const rom char st_OK[] = {"OK\r\n"};
 const rom char st_LFCR[] = {"\r\n"};
-const rom char st_version[] = {"opensprints FW 0.31 based on UBW FW D Version 1.4.2\r\n"};
+const rom char st_version[] = {"opensprints FW 0.32 based on UBW FW D Version 1.4.2\r\n"};
 
 #pragma udata ISR_buf=0x100
 volatile unsigned int ISR_A_FIFO[12][kISR_FIFO_A_DEPTH];	// Stores the most recent analog conversions
@@ -214,6 +215,7 @@ BOOL	g_ack_enable;
 
 // sensor stuff
 BOOL is_racing = FALSE;
+BOOL raceTestMode = FALSE;
 unsigned int raceTimeMins;
 unsigned int raceTimeCentisecs;
 
@@ -253,6 +255,7 @@ void parse_CI_packet (void);	// CI Configure I2C
 
 void parse_GO_packet (void);	// start sending sensor messages to PC
 void parse_ST_packet (void);	// stop sending sensor messages to PC
+void parse_HW_packet (void);	// test mode. periodic sensor messages to PC
 
 void check_and_send_TX_data (void); // See if there is any data to send to PC, and if so, do it
 void print_ack (void);			// Print "OK" after packet is parsed
@@ -501,130 +504,6 @@ void low_ISR(void)
 void high_ISR(void)
 {
 }
-
-void RaceInit(void)
-{
-
-//	char i, j;
-
-	// Make all of 3 digital inputs
-	LATA = 0x00;
-	TRISA = 0xFF;
-	// Turn all analog inputs into digital inputs
-	ADCON1 = 0x0F;
-	// Turn off the ADC
-	ADCON0bits.ADON = 0;
-	// Turn off our own idea of how many analog channels to convert
-	AnalogEnable = 0;
-	CMCON = 0x07;	// Comparators as digital inputs
-	// Make all of PORTB inputs
-	LATB = 0x00;
-	TRISB = 0xFF;
-	// Make all of PORTC inputs
-	LATC = 0x00;
-	TRISC = 0xFF;
-#ifdef __18F4550
-	// Make all of PORTD and PORTE inputs too
-	LATD = 0x00;
-	TRISD = 0xFF;
-	LATE = 0x00;
-	TRISE = 0xFF;
-#endif
-
-	// Initalize LED I/Os to outputs
-//    mInitAllLEDs();
-	// Initalize switch as an input
-//    mInitSwitch();
-
-	// Start off always using "OK" acknoledge.
-//	g_ack_enable = TRUE;
-
-	// Use our own special output function for STDOUT
-//	stdout = _H_USER;
-
-	// Initalize all of the ISR FIFOs
-    ISR_A_FIFO_out = 0;
-    ISR_A_FIFO_in = 0;
-    ISR_A_FIFO_length = 0;
-    ISR_D_FIFO_out = 0;
-    ISR_D_FIFO_in = 0;
-    ISR_D_FIFO_length = 0;
-
-	// Make sure that our timer stuff starts out disabled
-	ISR_D_RepeatRate = 0;
-	ISR_A_RepeatRate = 0;
-	D_tick_counter = 0;
-	A_tick_counter = 0;
-	A_cur_channel = 0;
-	
-    // Now init our registers
-	// The prescaler will be at 16
-    T2CONbits.T2CKPS1 = 1;
-    T2CONbits.T2CKPS0 = 1;
-    // We want the TMR2 post scaler to be a 3
-    T2CONbits.T2OUTPS3 = 0;
-    T2CONbits.T2OUTPS2 = 0;
-    T2CONbits.T2OUTPS1 = 1;
-    T2CONbits.T2OUTPS0 = 0;
-	// Set our reload value
-	PR2 = kPR2_RELOAD;
-
-/*	// Set up the Analog to Digital converter
-	// Clear out the FIFO data
-	for (i = 0; i < 12; i++)
-	{
-		for (j = 0; j < kISR_FIFO_A_DEPTH; j++)
-		{
-			ISR_A_FIFO[i][j] = 0;
-		}
-	}	
-
-    // Inialize USB TX and RX buffer management
-    g_RX_buf_in = 0;
-    g_RX_buf_out = 0;
-	g_TX_buf_in = 0;
-	g_TX_buf_out = 0;
-
-	// And the USART TX and RX buffer management
-	g_USART_RX_buf_in = 0;
-	g_USART_RX_buf_out = 0;
-	g_USART_TX_buf_in = 0;
-	g_USART_TX_buf_out = 0;
-
-	// Clear out the RC servo output pointer values
-	g_RC_primed_ptr = 0;
-	g_RC_next_ptr = 0;
-	g_RC_timing_ptr = 0;
-
-	// Clear the RC data structure
-	for (i = 0; i < kRC_DATA_SIZE; i++)
-	{
-		g_RC_value[i] = 0;
-		g_RC_state[i] = kOFF;
-	}
-*/
-	// Enable TMR0 for our RC timing operation
-	T0CONbits.PSA = 1;		// Do NOT use the prescaler
-	T0CONbits.T0CS = 0;		// Use internal clock
-	T0CONbits.T08BIT = 0;	// 16 bit timer
-	INTCONbits.TMR0IF = 0;	// Clear the interrupt flag
-	INTCONbits.TMR0IE = 0;	// And clear the interrupt enable
-	INTCON2bits.TMR0IP = 0;	// Low priority
-
-    // Enable interrupt priorities
-    RCONbits.IPEN = 1;
-	T2CONbits.TMR2ON = 0;
-    
-    PIE1bits.TMR2IE = 1;
-    IPR1bits.TMR2IP = 0;
-    
-    INTCONbits.GIEH = 1;	// Turn high priority interrupts on
-    INTCONbits.GIEL = 1;	// Turn low priority interrupts on
-
-	// Turn on the Timer2
-	T2CONbits.TMR2ON = 1;    
-
-}//end RaceInit
 
 void UserInit(void)
 {
@@ -1192,6 +1071,12 @@ void parse_packet(void)
 		case ('S' * 256) + 'T':
 		{
 			parse_ST_packet ();
+			break;
+		}
+
+		case ('H' * 256) + 'W':
+		{
+			parse_HW_packet();
 			break;
 		}
 
@@ -2359,20 +2244,24 @@ void parse_CI_packet (void)
 void parse_GO_packet (void)
 {
 	is_racing = TRUE;				// make it possible to start monitoring sensors
-	RaceInit();
-	ISR_D_RepeatRate = 10;
-	raceTimeCentisecs=0;
+	raceTimeCentisecs=0;			// restart the stopwatch
 	raceTimeMins=0;
-	T2CONbits.TMR2ON=1;
-
-	// clear the tx buffer just in case there is some old data remaining
-
+	T2CONbits.TMR2ON=1;				// turn on the timer
+	ISR_D_RepeatRate = 10;			// every 10ms advance the timer
 }	
 
 void parse_ST_packet (void)
 {
 	is_racing = FALSE;				// stop monitoring sensors
+	raceTestMode = FALSE;
 }	
+
+void parse_HW_packet (void)
+{
+	raceTestMode = TRUE;
+	parse_GO_packet();
+}	
+
 
 // Look at the string pointed to by ptr
 // There should be a comma where ptr points to upon entry.
@@ -2660,11 +2549,25 @@ unsigned int currentValueSensor0;
 unsigned int currentValueSensor1;
 unsigned int Sensor0PortApin=0;
 unsigned int Sensor1PortApin=1;
-
+unsigned int sensor0Status;
+unsigned int sensor1Status;
+unsigned int lastRaceTime;
+unsigned int lastSensor0Time;
+unsigned int lastSensor1Time;
+unsigned int momentRaceTimeCentisecs;
+unsigned int momentRaceTimeMins;
+#define TEST_PERIOD 20 		// in centiseconds
+#define TEST_PERIOD_HALF (TEST_PERIOD/2)
 void HallEffSensors(void)
 {
 	if(is_racing)
 	{
+		unsigned int momentRaceTimeCentisecs;
+		unsigned int momentRaceTimeMins;
+		// check the race stopwatch
+		momentRaceTimeCentisecs = raceTimeCentisecs;
+		momentRaceTimeMins = raceTimeMins;
+
 		if(justBegun)
 		{
 			// initialize the pins
@@ -2679,30 +2582,48 @@ void HallEffSensors(void)
 
 		else
 		{
-			//CheckRaceTimer();
-
-			// remember previous state of pins
-			prevValueSensor0=currentValueSensor0;
-			prevValueSensor1=currentValueSensor1;
-	
-			// read the pins
-			currentValueSensor0 = bittst (PORTA, Sensor0PortApin);  	// read state of Port A Pin x
-			currentValueSensor1 = bittst (PORTA, Sensor1PortApin);  	// read state of Port A Pin x
-		
-			if((currentValueSensor0^prevValueSensor0)&~currentValueSensor0)
+			if (raceTestMode)
 			{
-				// get the current time
-
-				// send a char string through USB packet stating that sensor x switched to high
-				printf("1;%i:%i\r\n",raceTimeMins,raceTimeCentisecs);
+				if (momentRaceTimeCentisecs%TEST_PERIOD==0 && momentRaceTimeCentisecs!=lastSensor0Time)
+				{
+					sensor0Status=1;
+					lastSensor0Time=momentRaceTimeCentisecs;
+				}
+				else
+					sensor0Status=0;
+				if (momentRaceTimeCentisecs%TEST_PERIOD==TEST_PERIOD_HALF && momentRaceTimeCentisecs!=lastSensor1Time)
+				{
+					sensor1Status=1;
+					lastSensor1Time=momentRaceTimeCentisecs;
+				}
+				else
+					sensor1Status=0;
 			}
-		
-			if((currentValueSensor1^prevValueSensor1)&~currentValueSensor1)
-			{
-				// get the current time
 
-				// send a char string through USB packet stating that sensor x switched to high
-				printf("2;%i:%i\r\n",raceTimeMins,raceTimeCentisecs);
+			else	// not test mode
+			{
+				// remember previous state of pins
+				prevValueSensor0=currentValueSensor0;
+				prevValueSensor1=currentValueSensor1;
+	
+				// read the pins
+				currentValueSensor0 = bittst(PORTA,Sensor0PortApin);  	// read state of Port A Pin x
+				currentValueSensor1 = bittst(PORTA,Sensor1PortApin);  	// read state of Port A Pin x
+				
+				sensor0Status=(currentValueSensor0^prevValueSensor0)&~currentValueSensor0;
+				sensor1Status=(currentValueSensor1^prevValueSensor1)&~currentValueSensor1;
+			}
+
+			if(sensor0Status)
+			{
+				// send a string through USB packet stating that sensor 0 switched to high
+				printf("1;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
+			}
+
+			if(sensor1Status)
+			{
+				// send a string through USB packet stating that sensor 1 switched to high
+				printf("2;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
 			}
 		}
 	}
