@@ -23,7 +23,7 @@ class DashboardController
     end
   end
   def read_blue
-    blue_log = @partial_log.grep(/2/)
+    blue_log = @partial_log.grep(/^2/)
     if blue_log
       @blue.update(blue_log)
       track = BLUE_TRACK_LENGTH*@blue.distance
@@ -31,7 +31,7 @@ class DashboardController
     end
   end
   def read_red
-    red_log = @partial_log.grep(/1/)
+    red_log = @partial_log.grep(/^1/)
     if red_log
       @red.update(red_log)
       track = RED_TRACK_LENGTH*@red.distance

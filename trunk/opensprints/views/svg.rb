@@ -1,4 +1,4 @@
-xml.svg(:height => "741", :width => "993", :viewBox => "0 0 499 378",
+xml.svg(:height => "597", :width => "800", :viewBox => "0 0 499 378",
         :xmlns => "http://www.w3.org/2000/svg",
         :'xmlns:xlink'=>"http://www.w3.org/1999/xlink",
         :version => "1.0",
