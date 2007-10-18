@@ -5,15 +5,21 @@ require 'units/standard'
 require 'controllers/dashboard_controller'
 require 'rsvg2'
 require 'gtk2'
+require 'yaml'
 
-RACE_DISTANCE = 0.110.km
+options = YAML::load(File.read('conf.yml'))
+require "sensors/#{options['sensor']['file']}_sensor"
+SENSOR_LOCATION = options['sensor']['device']
+RACE_DISTANCE = options['race_distance'].meters.to_km
 RED_TRACK_LENGTH = 1315
 BLUE_TRACK_LENGTH = 1200
-RED_WHEEL_CIRCUMFERENCE = 85.mm.to_km
-BLUE_WHEEL_CIRCUMFERENCE = 85.mm.to_km
+RED_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['red'].mm.to_km
+BLUE_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['blue'].mm.to_km
+TITLE = options['title']
+
 
 @w = Gtk::Window.new
-@w.title = "IRO Sprints"
+@w.title = TITLE
 @w.resize(993, 741)
 box = Gtk::VBox.new(false, 0)
 @dashboard_controller = DashboardController.new
@@ -53,10 +59,7 @@ end
 end
 def stop_race
   Gtk.timeout_remove(@timeout) if @timeout
-  @dashboard_controller.t.kill if @dashboard_controller.t
-  f = File.open('/dev/ttyACM0', 'w+')
-  f.puts 'st'
-  f.close
+  @dashboard_controller.stop
 end
 box.pack_start(@gi)
 @w << box

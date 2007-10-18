@@ -54,25 +54,14 @@ class DashboardController
     eval svg
     xml_data.gsub!(/%([^s])/,'%%\1')
   end
-  def t
-    @t
-  end
   def begin_logging
     @queue = Queue.new
-    @t.kill if @t
-    @t = Thread.new do
-      f = File.open('/dev/ttyACM0', 'w+')
-      f.puts 'go'
-      while true do
-        l = f.readline
-        @queue << l
-        puts l
-      end
-    end
+    @sensor = Sensor.new(@queue)
+    @sensor.start
   end
 
   def stop
-
+    @sensor.stop
   end
 
   def refresh
@@ -91,7 +80,7 @@ class DashboardController
         @continue = false
       else
         svg = RSVG::Handle.new_from_data(@doc % [@red_dasharray,
-                        @blue_dasharray, "IRO Sprint"])
+                        @blue_dasharray, TITLE])
         svg.base_uri = Dir.pwd
         @continue = true
       end
