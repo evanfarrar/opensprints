@@ -1,14 +1,18 @@
-require 'rubygems'
-require 'models/racer'
-require 'builder'
-require 'units/standard'
-require 'controllers/dashboard_controller'
-require 'rsvg2'
-require 'gtk2'
-require 'yaml'
+puts ((['rubygems','builder','units/standard','rsvg2','gtk2',
+      'gnomecanvas2','yaml'].map do |gem_name|
+  begin
+    require gem_name
+    nil
+  rescue LoadError
+    "#{gem_name} is not installed"
+  end
+end).compact)
+
+require 'lib/dashboard_controller'
+require 'lib/racer'
 
 options = YAML::load(File.read('conf.yml'))
-require "sensors/#{options['sensor']['file']}_sensor"
+require "lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km
 RED_TRACK_LENGTH = 1315
@@ -25,6 +29,7 @@ box = Gtk::VBox.new(false, 0)
 @dashboard_controller = DashboardController.new
 rpb = RSVG::Handle.new_from_data('<svg></svg>')
 @gi = Gtk::Image.new(rpb.pixbuf)
+@gi = Gtk::Image.new("views")
 def start_race
   countdown = 5
   @gi.pixbuf=@dashboard_controller.count(countdown)
@@ -36,7 +41,7 @@ def start_race
       true
     when 0
       @dashboard_controller.begin_logging
-      @timeout = Gtk.timeout_add(100) do
+      @timeout = Gtk.timeout_add(50) do
         @gi.pixbuf=@dashboard_controller.refresh
         continue = @dashboard_controller.continue?
         stop_race unless continue
