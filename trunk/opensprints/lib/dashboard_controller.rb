@@ -1,60 +1,43 @@
 require 'thread'
+
 class DashboardController
   def initialize
-    style
-    @dial_90_degrees = 8
-    @dial_180_degrees = 24
-    @dial_270_degrees = 40
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
                      :track_length => 1315, :yaml_name => '1')
     @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
                     :track_length => 1315, :yaml_name => '2')
     @laps = 1
     @continue = true
-    @doc = build_template
-    @svg = RSVG::Handle.new
-  end
-  def quadrantificate(offset, total, distance=0)
-    distance*=1/RACE_DISTANCE
-    if distance > offset
-      [0,0,offset,((total-offset)-(distance-offset))]
-    else
-      [0,(offset-distance),distance,(total-offset)]
-    end
-  end
-  def read_blue
-    blue_log = @partial_log.grep(/^2/)
-    if blue_log
-      @blue.update(blue_log)
-      track = BLUE_TRACK_LENGTH*@blue.distance
-      @blue_dasharray = quadrantificate(700, BLUE_TRACK_LENGTH, track).join(',')
-    end
-  end
-  def read_red
-    red_log = @partial_log.grep(/^1/)
-    if red_log
-      @red.update(red_log)
-      track = RED_TRACK_LENGTH*@red.distance
-      @red_dasharray = quadrantificate(765, RED_TRACK_LENGTH, track).join(',')
-    end
-  end
-  def style
-    File.open('views/style.css') do |f|
-      @stylishness = f.readlines.join
-    end
-  end
+    @surface = Rubygame::Surface.new([794,614])
+    @surface.fill([61,52,53])
+#    @surface = Rubygame::Surface.load_image('views/mockup.jpg')
+    @chris_awesome_font = Rubygame::TTF.new('views/DINMittelschriftStd.otf', 60)
+    @chris_awesome_font.render('IRO', true, [254,240,2]).blit(@surface,[70,47]) 
+    @chris_awesome_font.render('Sprints', true, [255,255,255]).blit(@surface,[157,47])
+#title underline
+    @surface.draw_box_s([30, 97], [187, 97], [252,252,252])
+    @surface.draw_box_s([210, 97], [740, 97], [252,252,252])
+#start/end labels
+    @surface.draw_box_s([27, 129], [44, 318], [203,195,192])
+    @surface.draw_box_s([727, 129], [745, 318], [203,195,192])
+#progress borders
+    @surface.draw_box_s([27, 129], [745, 129], [203,195,192])
+    @surface.draw_box_s([27, 318], [745, 318], [203,195,192])
+#statboxes
+    @surface.draw_box_s([27, 332], [253, 456], [165,86,64])
+    @surface.draw_box_s([269, 332], [495, 456], [77,134,161])
+#nameboxes
+    @surface.draw_box_s([27, 332], [253, 357], [207,95,55])
+    @surface.draw_box_s([269, 332], [495, 357], [65,167,207])
+#message box
+    @surface.draw_box([27, 471], [745, 559], [203,195,192])
 
-  def build_template
-    xml_data = ''
-    xml = Builder::XmlMarkup.new(:target => xml_data)
-    svg = ''
-    File.open('views/svg.rb') do |f|
-      svg = f.readlines.join
-    end
-    eval svg
-    xml_data.gsub!(/%([^s])/,'%%\1')
   end
-  def begin_logging
+  
+  def read
+  end
+ 
+  def start
     @queue = Queue.new
     @sensor = Sensor.new(@queue)
     @sensor.start
@@ -64,46 +47,29 @@ class DashboardController
     @sensor.stop
   end
 
-  def refresh
-    @partial_log = []
+  def update
+    partial_log = []
     @queue.length.times do
-      @partial_log << @queue.pop
+      partial_log << @queue.pop
     end
-    if @partial_log.any?
-      read_red
-      read_blue
-      if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
-        puts @blue.tix
-        winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
-        svg = RSVG::Handle.new_from_data(@doc % [0,0,"#{winner} WINS!!!",4,5,6])
-        svg.base_uri = Dir.pwd
-        @continue = false
-      else
-        svg = RSVG::Handle.new_from_data(@doc % [@red_dasharray,
-                        @blue_dasharray, TITLE])
-        svg.base_uri = Dir.pwd
-        @continue = true
+    if partial_log.any?
+      if (blue_log = partial_log.grep(/^2/))
+        @blue.update(blue_log)
       end
-      @pix = svg ? svg.pixbuf : nil
+      if (red_log = partial_log.grep(/^1/))
+        @red.update(red_log)
+      end
+      if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
+        winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
+        @sensor.stop
+        @chris_awesome_font.render("#{winner} WINS!", true, [255,255,255]).blit(@surface, [0,0])
+      end
+      blue_progress = 683*@blue.percent_complete
+      @surface.draw_box_s([45, 129], [44+blue_progress, 149], [54,127,155])
+      red_progress = 683*@red.percent_complete
+      @surface.draw_box_s([45, 150], [44+red_progress, 170], [159,77,56])
     end
-    @pix||RSVG::Handle.new_from_data(@doc % [0,0,"0...",0,0,4,5,6]).pixbuf
-  end
-  def continue?
-    @continue
-  end
-  def count(n)
-    svg = RSVG::Handle.new_from_data(@doc % [0,0,"#{n}...",0,0,4,5,6])
-    svg.pixbuf
+    @surface
   end
 
-  def background
-    xml_data = ''
-    xml = Builder::XmlMarkup.new(:target => xml_data)
-    svg = ''
-    File.open('views/svg.rb') do |f|
-      svg = f.readlines.join
-    end
-    eval svg
-    xml_data
-  end
 end
