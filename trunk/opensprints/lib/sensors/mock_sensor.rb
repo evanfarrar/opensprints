@@ -13,7 +13,7 @@ class Sensor
       else
         t = 0.0
         f = []
-        800.times { f << "#{rand(2)+1}: #{t+=(rand(10)/1000.0)}" }
+        800.times { f << "#{rand(2)+1}: #{t+=(rand(10)/100.0)}" }
       end
       t_start = Time.now.to_f
       while true do
