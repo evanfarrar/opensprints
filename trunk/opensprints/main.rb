@@ -23,7 +23,7 @@ TITLE = options['title']
 
 class OpenSprintsGame
   def self.run
-    @clock = Rubygame::Clock.new
+    @clock = Rubygame::Clock.new{|c| c.target_framerate = 60}
     Rubygame.init
     Rubygame::TTF.setup
     screen = Rubygame::Screen.set_mode([794,614], 16, [Rubygame::HWSURFACE,Rubygame::ANYFORMAT])
@@ -42,7 +42,8 @@ class OpenSprintsGame
       end
       screen.fill([61,52,53])
       @dashboard_controller.update.blit(screen,[0,0])
-      Rubygame::Clock.wait 15
+#      Rubygame::Clock.wait 15
+      puts @clock.tick()      
     end
   end
 end

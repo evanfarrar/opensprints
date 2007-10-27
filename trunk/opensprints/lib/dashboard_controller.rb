@@ -15,6 +15,12 @@ class DashboardController
     @chris_awesome_font2 = Rubygame::TTF.new('views/DINEngschriftStd.otf', 115)
     @chris_awesome_font.render('IRO', true, [254,240,2]).blit(@surface,[70,47]) 
     @chris_awesome_font.render('Sprints', true, [255,255,255]).blit(@surface,[157,47])
+# "gradient"
+    h = 2
+    (1..50).each do |n|
+      @surface.draw_box_s([0, 613-((n*h)-h)], [794, 614-(n*h)], [252,252,252, (255-(255*(n/50.0)))*0.5])
+    end
+
 #title underline
     @surface.draw_box_s([30, 97], [187, 97], [252,252,252])
     @surface.draw_box_s([210, 97], [740, 97], [252,252,252])
