@@ -22,6 +22,10 @@ class Racer
     @ticks.length
   end
 
+  def percent_complete
+    @ticks.length*@wheel_circumference/RACE_DISTANCE.to_f
+  end
+
 private
   def rotation_elapsed_to_kmh(elapsed)
     ((@wheel_circumference/(elapsed))/(1.km))*1.hour.to_seconds

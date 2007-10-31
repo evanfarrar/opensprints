@@ -1,4 +1,4 @@
-puts ((['rubygems','builder','units/standard','rsvg2','gtk2',
+puts ((['rubygems','builder','units/standard','rsvg2','gtk2','cairo',
       'gnomecanvas2','yaml'].map do |gem_name|
   begin
     require gem_name
@@ -26,23 +26,38 @@ TITLE = options['title']
 @w.title = TITLE
 @w.resize(993, 741)
 box = Gtk::VBox.new(false, 0)
-@dashboard_controller = DashboardController.new
-rpb = RSVG::Handle.new_from_data('<svg></svg>')
-@gi = Gtk::Image.new(rpb.pixbuf)
-@gi = Gtk::Image.new("views")
+#rpb = RSVG::Handle.new_from_data('<svg></svg>')
+#@gi = Gtk::Image.new(rpb.pixbuf)
+
+
+@drawing_area = Gtk::DrawingArea.new
+
+foo = lambda do
+  @gc = Gdk::GC.new(@drawing_area.window)
+  @pixmap = Gdk::Pixmap.new(nil, 993, 741, 24)
+  context = @pixmap.create_cairo_context
+  @dashboard_controller = DashboardController.new(context)
+  @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
+end
+bar = foo
+@foo = 5
+@drawing_area.signal_connect("realize", &foo)
+@drawing_area.signal_connect("expose_event") do
+  @dashboard_controller.refresh if @dashboard_controller.continue?
+  @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
+end
 def start_race
   countdown = 5
-  @gi.pixbuf=@dashboard_controller.count(countdown)
   @timeout = Gtk.timeout_add(1000) do
     case countdown
-    when (1..10)
-      @gi.pixbuf=@dashboard_controller.count(countdown)
+    when (1..5)
+      puts countdown
       countdown-=1
       true
     when 0
-      @dashboard_controller.begin_logging
+      @dashboard_controller.start
       @timeout = Gtk.timeout_add(50) do
-        @gi.pixbuf=@dashboard_controller.refresh
+        @drawing_area.queue_draw
         continue = @dashboard_controller.continue?
         stop_race unless continue
         continue
@@ -66,7 +81,7 @@ def stop_race
   Gtk.timeout_remove(@timeout) if @timeout
   @dashboard_controller.stop
 end
-box.pack_start(@gi)
+box.pack_start(@drawing_area)
 @w << box
 @w.show_all
 Gtk.main
