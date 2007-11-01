@@ -47,6 +47,9 @@ end
     @last_blue_tick = [45,318]
     @last_red_tick = [45,318]
     @context = context
+
+    @width = context.line_width
+    @cap = context.line_cap
   end
   
   def build_template
@@ -104,6 +107,8 @@ end
         @context.rectangle(27, 171, 718, 1)
         @context.fill
 
+        @context.line_width = 3
+        @context.line_cap = Cairo::LineCap::ROUND
         tick_at = graph_tick(@red.distance, @red.speed)
         @context.set_source_color rgb(159,77,56)
         @context.move_to(*@last_red_tick)
@@ -119,6 +124,8 @@ end
         @context.stroke
         @last_blue_tick = tick_at
 
+        @context.line_width = @width
+        @context.line_cap = @cap
         @continue = true
       end
     end
