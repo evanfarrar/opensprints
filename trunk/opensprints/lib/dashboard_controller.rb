@@ -44,10 +44,9 @@ end
     context.set_source_color rgb(203,195,192)
     context.rectangle(27, 471, 718, 98)
     context.stroke
-    puts "hey we just redrew"
-
+    @last_blue_tick = [45,318]
+    @last_red_tick = [45,318]
     @context = context
-
   end
   
   def build_template
@@ -99,12 +98,26 @@ end
         @context.rectangle(45, 129, red_progress, 20)
         @context.fill
 #        @surface.draw_box_s([27, 357], [253, 456], [165,86,64])
-     
         @context.set_source_color rgb(203,195,192) 
         @context.rectangle(27, 129, 718, 1)
         @context.rectangle(27, 150, 718, 1)
         @context.rectangle(27, 171, 718, 1)
         @context.fill
+
+        tick_at = graph_tick(@red.distance, @red.speed)
+        @context.set_source_color rgb(159,77,56)
+        @context.move_to(*@last_red_tick)
+        @context.curve_to(*(@last_red_tick+tick_at+tick_at))
+        @context.stroke
+        @last_red_tick = tick_at
+        
+
+        tick_at = graph_tick(@blue.distance, @blue.speed)
+        @context.set_source_color rgb(54,127,155)
+        @context.move_to(*@last_blue_tick)
+        @context.curve_to(*(@last_blue_tick+tick_at+tick_at))
+        @context.stroke
+        @last_blue_tick = tick_at
 
         @continue = true
       end
@@ -113,17 +126,12 @@ end
   def continue?
     @continue
   end
-  def count(n)
-    svg = RSVG::Handle.new_from_data(@doc % [0,0,"#{n}...",0,0,4,5,6])
-    svg.pixbuf
+
+
+  def graph_tick(distance, speed)
+    [(distance/RACE_DISTANCE.to_f*(726-45) + 45),
+     (147 - ([speed,50.0].min/50.0 * 147) + 171)]
   end
 
-  def quadrantificate(offset, total, distance=0)
-    distance*=1/RACE_DISTANCE
-    if distance > offset
-      [0,0,offset,((total-offset)-(distance-offset))]
-    else
-      [0,(offset-distance),distance,(total-offset)]
-    end
-  end
+
 end

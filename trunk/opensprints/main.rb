@@ -39,15 +39,13 @@ foo = lambda do
   @dashboard_controller = DashboardController.new(context)
   @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
 end
-bar = foo
-@foo = 5
 @drawing_area.signal_connect("realize", &foo)
 @drawing_area.signal_connect("expose_event") do
   @dashboard_controller.refresh if @dashboard_controller.continue?
   @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
 end
 def start_race
-  countdown = 5
+  countdown = 1
   @timeout = Gtk.timeout_add(1000) do
     case countdown
     when (1..5)
