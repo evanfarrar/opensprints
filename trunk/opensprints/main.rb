@@ -1,5 +1,5 @@
-puts ((['rubygems','builder','units/standard','rsvg2','gtk2','cairo',
-      'gnomecanvas2','yaml'].map do |gem_name|
+puts ((['rubygems','builder','units/standard','gtk2','cairo',
+        'yaml'].map do |gem_name|
   begin
     require gem_name
     nil

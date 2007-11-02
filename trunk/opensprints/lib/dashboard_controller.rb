@@ -1,8 +1,16 @@
 require 'thread'
 class DashboardController
-def rgb(r,g,b)
-  Gdk::Color.new((r*65535)/255,(g*65535)/255,(b*65535)/255)
-end
+  def rgb(r,g,b)
+    Gdk::Color.new((r*65535)/255,(g*65535)/255,(b*65535)/255)
+  end
+  
+  def make_layout(cr, text)
+    layout = cr.create_pango_layout
+    layout.text = text
+    layout.font_description = Pango::FontDescription.new("DIN 1451 Std 18")
+    cr.update_pango_layout(layout)
+    layout
+  end
 
   def initialize(context)
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
@@ -21,12 +29,33 @@ end
 ##sstart/end labels
 ##   context.set_source_rgb(203,195,192)
     context.set_source_color rgb(203,195,192)
-    context.rectangle(27, 129, 19, 189)
-    context.rectangle(727, 129, 19, 189)
+#    context.rectangle(27, 129, 19, 189)
+#    context.rectangle(727, 129, 19, 189)
 ##pprogress borders
     context.rectangle(27, 129, 718, 1)
     context.rectangle(27, 318, 718, 1)
     context.fill
+
+    context.set_source_color rgb(61,52,52)
+
+    context.move_to(44, 362)
+    context.line_to(44, 0)
+    path = context.copy_path_flat
+    start_text = make_layout(context, 'START')
+    context.pango_layout_line_path(start_text.get_line(0))
+    context.map_path_onto(path)
+    context.fill
+
+    context.set_source_color rgb(0,252,252)
+    context.move_to(625, 362)
+    context.line_to(625, 0)
+    path = context.copy_path_flat
+    start_text = make_layout(context, 'FINISH')    
+    context.pango_layout_line_path(start_text.get_line(0))
+    context.map_path_onto(path)
+
+    context.fill
+
 ##sstatboxes
     context.set_source_color rgb(165,86,64)
     context.rectangle(27, 357, 226, 99)
