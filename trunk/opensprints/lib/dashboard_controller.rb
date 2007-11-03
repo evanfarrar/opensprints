@@ -4,11 +4,11 @@ class DashboardController
     Gdk::Color.new((r*65535)/255,(g*65535)/255,(b*65535)/255)
   end
   
-  def make_layout(cr, text, size)
+  def make_layout(cr, text, size, bold = nil)
     layout = cr.create_pango_layout
     layout.text = text
     layout.font_description = 
-      Pango::FontDescription.new("DIN 1451 Std bold #{size.to_s}")
+      Pango::FontDescription.new("DIN 1451 Std #{bold} #{size.to_s}")
     cr.update_pango_layout(layout)
     layout
   end
@@ -60,7 +60,7 @@ class DashboardController
     context.line_to(44, 0)
     path = context.copy_path_flat
     context.new_path
-    start_text = make_layout(context, 'START', 16)
+    start_text = make_layout(context, 'START', 16, 'bold')
     context.pango_layout_line_path(start_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -72,7 +72,7 @@ class DashboardController
     context.line_to(745, 0)
     path = context.copy_path_flat
     context.new_path
-    finish_text = make_layout(context, 'FINISH', 16)    
+    finish_text = make_layout(context, 'FINISH', 16, 'bold')    
     context.pango_layout_line_path(finish_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -84,7 +84,7 @@ class DashboardController
     context.line_to(500,90)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, 'IRO', 42)    
+    iro_text = make_layout(context, 'IRO', 42, 'bold')    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -96,7 +96,7 @@ class DashboardController
     context.line_to(600,90)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, 'Sprints', 42)    
+    iro_text = make_layout(context, 'Sprints', 42, 'bold')    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
