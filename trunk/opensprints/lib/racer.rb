@@ -3,13 +3,14 @@ require 'units/standard'
 class Racer
   attr_accessor :distance
   attr :wheel_circumference
+  attr :name
   attr :yaml_name
   def initialize(attributes = {})
     @distance = 0
     @speed = 0
     @wheel_circumference = attributes[:wheel_circumference]||2097.mm.to_km
-#    @yaml_name = attributes[:yaml_name]||(raise "yaml key neccessary")
     @ticks = []
+    @name = attributes[:name]
   end
 
   def update(new_ticks)

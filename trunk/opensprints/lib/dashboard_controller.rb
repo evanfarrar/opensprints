@@ -1,7 +1,12 @@
 require 'thread'
 class DashboardController
-  def rgb(r,g,b)
+ 
+  def DashboardController.rgb(r,g,b)
     Gdk::Color.new((r*65535)/255,(g*65535)/255,(b*65535)/255)
+  end 
+  @@gray = rgb(61, 52, 53)
+  def rgb(r,g,b)
+    self.class.rgb(r,g,b)
   end
   
   def make_layout(cr, text, size, bold = nil)
@@ -15,24 +20,26 @@ class DashboardController
 
   def initialize(context)
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
-                     :track_length => 1315, :yaml_name => '1')
+                     :track_length => 1315, :yaml_name => '1',
+                     :name => 'Racer 1')
     @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
-                    :track_length => 1315, :yaml_name => '2')
+                      :track_length => 1315, :yaml_name => '2',
+                      :name => 'Racer 2')
     @continue = false
-    sp = Cairo::SurfacePattern.new(Cairo::ImageSurface.from_png('views/mockup.png'))
-    context.set_source(sp)
+#   sp = Cairo::SurfacePattern.new(Cairo::ImageSurface.from_png('views/mockup.png'))
+#   context.set_source(sp)
+       
+    context.set_source_color @@gray
     context.paint
-    
     context.set_source_color rgb(252,252,252)
     context.rectangle(30, 97, 157, 1)
     context.rectangle(210, 97, 530, 1)
-    context.stroke
-##sstart/end labels
-##   context.set_source_rgb(203,195,192)
+    context.fill
+#start/end labels
     context.set_source_color rgb(203,195,192)
     context.rectangle(27, 129, 19, 189)
     context.rectangle(727, 129, 19, 189)
-##pprogress borders
+#progress borders
     context.rectangle(27, 129, 718, 1)
     context.rectangle(27, 318, 718, 1)
     context.fill
@@ -55,8 +62,8 @@ class DashboardController
     context.rectangle(27, 471, 718, 98)
     context.stroke
 # START
-    context.set_source_color rgb(61,52,52)
-    context.move_to(44, 320)
+    context.set_source_color @@gray
+    context.move_to(44, 316)
     context.line_to(44, 0)
     path = context.copy_path_flat
     context.new_path
@@ -67,8 +74,8 @@ class DashboardController
 
 # FINISH
     context.new_path
-    context.set_source_color rgb(61,52,52)
-    context.move_to(745, 320)
+    context.set_source_color @@gray
+    context.move_to(745, 316)
     context.line_to(745, 0)
     path = context.copy_path_flat
     context.new_path
@@ -80,11 +87,11 @@ class DashboardController
 # IRO
     context.new_path
     context.set_source_color rgb(255,255,0)
-    context.move_to(50, 90)
+    context.move_to(70, 90)
     context.line_to(500,90)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, 'IRO', 42, 'bold')    
+    iro_text = make_layout(context, 'IRO', 42)    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -96,31 +103,32 @@ class DashboardController
     context.line_to(600,90)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, 'Sprints', 42, 'bold')    
+    iro_text = make_layout(context, 'Sprints', 42)    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
 
 # Racer1
     context.new_path
-    context.set_source_color rgb(61,52,52)
+    context.set_source_color @@gray
     context.move_to(30, 352)
     context.line_to(600,352)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, 'Racer 1', 16)    
+    iro_text = make_layout(context, @red.name, 16)    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
+    context.stroke
 
 # Racer2
     context.new_path
-    context.set_source_color rgb(61,52,52)
+    context.set_source_color @@gray
     context.move_to(272, 352)
     context.line_to(600,352)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, 'Racer 2', 16)    
+    iro_text = make_layout(context, @blue.name, 16)    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -171,21 +179,21 @@ class DashboardController
         @sensor.stop
         @continue = false
       else
-        blue_progress = 683*@blue.percent_complete
+        blue_progress = 685*@blue.percent_complete
         @context.set_source_color rgb(54,127,155) 
-        @context.rectangle(45, 150, blue_progress, 20)
+        @context.rectangle(47, 150, blue_progress, 20)
         @context.fill
 #        @surface.draw_box_s([269, 357], [495, 456], [77,134,161])
         
-        red_progress = 683*@red.percent_complete
+        red_progress = 685*@red.percent_complete
         @context.set_source_color rgb(159,77,56)
-        @context.rectangle(45, 129, red_progress, 20)
+        @context.rectangle(47, 129, red_progress, 20)
         @context.fill
 #        @surface.draw_box_s([27, 357], [253, 456], [165,86,64])
         @context.set_source_color rgb(203,195,192) 
         @context.rectangle(27, 129, 718, 1)
-        @context.rectangle(27, 150, 718, 1)
-        @context.rectangle(27, 171, 718, 1)
+        @context.rectangle(27, 149, 718, 1)
+        @context.rectangle(27, 170, 718, 1)
         @context.fill
 
         @context.line_width = 3
@@ -217,7 +225,7 @@ class DashboardController
 
 
   def graph_tick(distance, speed)
-    [(distance/RACE_DISTANCE.to_f*(726-45) + 45),
+    [(distance/RACE_DISTANCE.to_f*(726-45) + 47),
      (147 - ([speed,50.0].min/50.0 * 147) + 171)]
   end
 
