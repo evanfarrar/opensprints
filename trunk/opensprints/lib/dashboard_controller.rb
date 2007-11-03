@@ -4,10 +4,11 @@ class DashboardController
     Gdk::Color.new((r*65535)/255,(g*65535)/255,(b*65535)/255)
   end
   
-  def make_layout(cr, text)
+  def make_layout(cr, text, size)
     layout = cr.create_pango_layout
     layout.text = text
-    layout.font_description = Pango::FontDescription.new("DIN 1451 Std 18")
+    layout.font_description = 
+      Pango::FontDescription.new("DIN 1451 Std bold #{size.to_s}")
     cr.update_pango_layout(layout)
     layout
   end
@@ -29,31 +30,11 @@ class DashboardController
 ##sstart/end labels
 ##   context.set_source_rgb(203,195,192)
     context.set_source_color rgb(203,195,192)
-#    context.rectangle(27, 129, 19, 189)
-#    context.rectangle(727, 129, 19, 189)
+    context.rectangle(27, 129, 19, 189)
+    context.rectangle(727, 129, 19, 189)
 ##pprogress borders
     context.rectangle(27, 129, 718, 1)
     context.rectangle(27, 318, 718, 1)
-    context.fill
-
-    context.set_source_color rgb(61,52,52)
-
-    context.move_to(44, 362)
-    context.line_to(44, 0)
-    path = context.copy_path_flat
-    start_text = make_layout(context, 'START')
-    context.pango_layout_line_path(start_text.get_line(0))
-    context.map_path_onto(path)
-    context.fill
-
-    context.set_source_color rgb(0,252,252)
-    context.move_to(625, 362)
-    context.line_to(625, 0)
-    path = context.copy_path_flat
-    start_text = make_layout(context, 'FINISH')    
-    context.pango_layout_line_path(start_text.get_line(0))
-    context.map_path_onto(path)
-
     context.fill
 
 ##sstatboxes
@@ -73,6 +54,77 @@ class DashboardController
     context.set_source_color rgb(203,195,192)
     context.rectangle(27, 471, 718, 98)
     context.stroke
+# START
+    context.set_source_color rgb(61,52,52)
+    context.move_to(44, 320)
+    context.line_to(44, 0)
+    path = context.copy_path_flat
+    context.new_path
+    start_text = make_layout(context, 'START', 16)
+    context.pango_layout_line_path(start_text.get_line(0))
+    context.map_path_onto(path)
+    context.fill
+
+# FINISH
+    context.new_path
+    context.set_source_color rgb(61,52,52)
+    context.move_to(745, 320)
+    context.line_to(745, 0)
+    path = context.copy_path_flat
+    context.new_path
+    finish_text = make_layout(context, 'FINISH', 16)    
+    context.pango_layout_line_path(finish_text.get_line(0))
+    context.map_path_onto(path)
+    context.fill
+
+# IRO
+    context.new_path
+    context.set_source_color rgb(255,255,0)
+    context.move_to(50, 90)
+    context.line_to(500,90)
+    path = context.copy_path_flat
+    context.new_path
+    iro_text = make_layout(context, 'IRO', 42)    
+    context.pango_layout_line_path(iro_text.get_line(0))
+    context.map_path_onto(path)
+    context.fill
+
+# Sprints
+    context.new_path
+    context.set_source_color rgb(255,255,255)
+    context.move_to(160, 90)
+    context.line_to(600,90)
+    path = context.copy_path_flat
+    context.new_path
+    iro_text = make_layout(context, 'Sprints', 42)    
+    context.pango_layout_line_path(iro_text.get_line(0))
+    context.map_path_onto(path)
+    context.fill
+
+# Racer1
+    context.new_path
+    context.set_source_color rgb(61,52,52)
+    context.move_to(30, 352)
+    context.line_to(600,352)
+    path = context.copy_path_flat
+    context.new_path
+    iro_text = make_layout(context, 'Racer 1', 16)    
+    context.pango_layout_line_path(iro_text.get_line(0))
+    context.map_path_onto(path)
+    context.fill
+
+# Racer2
+    context.new_path
+    context.set_source_color rgb(61,52,52)
+    context.move_to(272, 352)
+    context.line_to(600,352)
+    path = context.copy_path_flat
+    context.new_path
+    iro_text = make_layout(context, 'Racer 2', 16)    
+    context.pango_layout_line_path(iro_text.get_line(0))
+    context.map_path_onto(path)
+    context.fill
+
     @last_blue_tick = [45,318]
     @last_red_tick = [45,318]
     @context = context
