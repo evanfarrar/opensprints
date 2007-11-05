@@ -1,4 +1,5 @@
-puts ((['rubygems','builder','units/standard','gtk2','cairo',
+errors = []
+errors += ((['rubygems','builder','units/standard','gtk2','cairo',
         'yaml'].map do |gem_name|
   begin
     require gem_name
@@ -8,10 +9,18 @@ puts ((['rubygems','builder','units/standard','gtk2','cairo',
   end
 end).compact)
 
+begin
+  options = YAML::load(File.read('conf.yml'))
+rescue
+  errors<< "You must write a conf.yml. See samples conf-race.yml conf-debug.yml"
+end
+if errors.any?
+  puts errors
+  exit
+end
+
 require 'lib/dashboard_controller'
 require 'lib/racer'
-
-options = YAML::load(File.read('conf.yml'))
 require "lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km
@@ -26,8 +35,6 @@ TITLE = options['title']
 @w.title = TITLE
 @w.resize(993, 741)
 box = Gtk::VBox.new(false, 0)
-#rpb = RSVG::Handle.new_from_data('<svg></svg>')
-#@gi = Gtk::Image.new(rpb.pixbuf)
 
 
 @drawing_area = Gtk::DrawingArea.new

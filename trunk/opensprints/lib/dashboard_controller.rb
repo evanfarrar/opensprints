@@ -26,6 +26,7 @@ class DashboardController
                       :track_length => 1315, :yaml_name => '2',
                       :name => 'Racer 2')
     @continue = false
+    @last_time = '0:00:00'
 #   sp = Cairo::SurfacePattern.new(Cairo::ImageSurface.from_png('views/mockup.png'))
 #   context.set_source(sp)
        
@@ -44,14 +45,14 @@ class DashboardController
     context.rectangle(27, 318, 718, 1)
     context.fill
 
-##sstatboxes
+#statboxes
     context.set_source_color rgb(165,86,64)
     context.rectangle(27, 357, 226, 99)
     context.fill
     context.set_source_color rgb(77,134,161)
     context.rectangle(269, 357, 226, 99)
     context.fill
-##nnameboxes
+#nameboxes
     context.set_source_color rgb(207,95,55)
     context.rectangle(27, 332, 226, 25)
     context.fill
@@ -168,6 +169,7 @@ class DashboardController
       partial_log << @queue.pop
     end
     if partial_log.any?
+      @last_time = timeize(partial_log[-1].split(": ")[1].to_f)
       if (blue_log = partial_log.grep(/^2/))
         @blue.update(blue_log)
       end
@@ -212,12 +214,52 @@ class DashboardController
         @context.curve_to(*(@last_blue_tick+tick_at+tick_at))
         @context.stroke
         @last_blue_tick = tick_at
-
+#Draw red speed
+        @context.set_source_color rgb(165,86,64)
+        @context.rectangle(27, 357, 226, 99)
+        @context.fill
+        @context.new_path
+        @context.set_source_color @@gray
+        @context.move_to(30, 450)
+        @context.line_to(600,450)
+        path = @context.copy_path_flat
+        @context.new_path
+        iro_text = make_layout(@context, [@red.speed.round.to_i,99].min.to_s, 76, false)    
+        @context.pango_layout_line_path(iro_text.get_line(0))
+        @context.map_path_onto(path)
+        @context.fill
+#Draw blue speed
+        @context.set_source_color rgb(77,134,161)
+        @context.rectangle(269, 357, 226, 99)
+        @context.fill
+        @context.new_path
+        @context.set_source_color @@gray
+        @context.move_to(272, 450)
+        @context.line_to(600,450)
+        path = @context.copy_path_flat
+        @context.new_path
+        iro_text = make_layout(@context, [@blue.speed.round.to_i,99].min.to_s, 76, false)    
+        @context.pango_layout_line_path(iro_text.get_line(0))
+        @context.map_path_onto(path)
+        @context.fill
         @context.line_width = @width
         @context.line_cap = @cap
         @continue = true
       end
     end
+    @context.rectangle(610, 325, 140, 40)
+    @context.set_source_color @@gray
+    @context.fill
+    @context.new_path
+    @context.set_source_color rgb(255,255,255)
+    @context.move_to(610, 350)
+    @context.line_to(740,350)
+    path = @context.copy_path_flat
+    @context.new_path
+    iro_text = make_layout(@context, @last_time, 24, true)    
+    @context.pango_layout_line_path(iro_text.get_line(0))
+    @context.map_path_onto(path)
+    @context.fill
   end
   def continue?
     @continue
@@ -229,5 +271,7 @@ class DashboardController
      (147 - ([speed,50.0].min/50.0 * 147) + 171)]
   end
 
-
+  def timeize(t)
+    "%1i:%02i.%02i" % [(t / 60 % 10),(t % 60),(t % 1 * 100)]
+  end
 end
