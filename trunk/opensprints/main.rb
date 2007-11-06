@@ -21,6 +21,7 @@ end
 
 require 'lib/dashboard_controller'
 require 'lib/racer'
+require 'lib/secsy_time'
 require "lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km

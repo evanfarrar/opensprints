@@ -8,13 +8,13 @@ class Racer
   def initialize(attributes = {})
     @distance = 0
     @speed = 0
-    @wheel_circumference = attributes[:wheel_circumference]||2097.mm.to_km
+    @wheel_circumference = attributes[:wheel_circumference].mm.to_km
     @ticks = []
     @name = attributes[:name]
   end
 
   def update(new_ticks)
-    @ticks += new_ticks.map{|t| t.split(/: /)[1].to_f}
+    @ticks += new_ticks.map{|t| SecsyTime.parse(t.split(/;/)[1]).in_seconds}
     ticks_length = @ticks.length
     @distance = ((ticks_length)*(@wheel_circumference))
     if ticks_length>5

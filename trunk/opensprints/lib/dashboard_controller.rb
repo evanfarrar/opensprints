@@ -142,21 +142,10 @@ class DashboardController
     @cap = context.line_cap
   end
   
-  def build_template
-    xml_data = ''
-    xml = Builder::XmlMarkup.new(:target => xml_data)
-    svg = ''
-    File.open('views/svg.rb') do |f|
-      svg = f.readlines.join
-    end
-    eval svg
-    xml_data.gsub!(/%([^s])/,'%%\1')
-  end
-
   def start
     @continue = true
     @queue = Queue.new
-    @sensor = Sensor.new(@queue)
+    @sensor = Sensor.new(@queue, SENSOR_LOCATION)
     @sensor.start
   end
   def stop
@@ -169,7 +158,7 @@ class DashboardController
       partial_log << @queue.pop
     end
     if partial_log.any?
-      @last_time = timeize(partial_log[-1].split(": ")[1].to_f)
+      @last_time = timeize(SecsyTime.parse(partial_log[-1].split(";")[1]))
       if (blue_log = partial_log.grep(/^2/))
         @blue.update(blue_log)
       end
@@ -272,6 +261,6 @@ class DashboardController
   end
 
   def timeize(t)
-    "%1i:%02i.%02i" % [(t / 60 % 10),(t % 60),(t % 1 * 100)]
+    "%1i:%02i.%02i" % [(t.mins),(t.secs),(t.hunds)]
   end
 end

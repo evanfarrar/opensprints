@@ -2,7 +2,7 @@
 class Sensor
   def initialize(queue, filename=nil)
     @queue = queue
-    @filename = filename
+    @filename = nil
   end
 
   def start
@@ -11,15 +11,15 @@ class Sensor
       if @filename
         f = File.readlines(@filename, 'w+')
       else
-        t = 0.0
+        t = 0
         f = []
-        800.times { f << "#{rand(2)+1}: #{t+=(rand(10)/100.0)}" }
+        800.times { f << "#{rand(2)+1};0:#{t+=rand(10)}" }
       end
       t_start = Time.now.to_f
       while true do
         l = f.shift
         if l
-          sleep (l.split(': ')[1].to_f - (Time.now.to_f-t_start)).naturalize
+          sleep (SecsyTime.parse(l.split(';')[1]).in_seconds - (Time.now.to_f-t_start)).naturalize
           @queue << l 
           puts l
         end
