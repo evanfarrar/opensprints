@@ -7,9 +7,10 @@ class Sensor
 
   def start
     @t.kill if @t
-    @f = File.open(@filename, 'w+')
     @t = Thread.new do
-      @f.puts 'go'
+      `echo 'go'>> #{@filename}`
+      @f = File.open(@filename)
+#      @f.puts 'go'
       while true do
         l = @f.readline
         if l=~/;/
@@ -24,7 +25,7 @@ class Sensor
 
   def stop
     @t.kill
-    @f = File.open(@filename, 'w+')
+    @f = File.open(@filename, 'w')
     @f.puts 'st'
     @f.close
   end

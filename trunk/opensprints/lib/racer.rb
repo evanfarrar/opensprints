@@ -47,7 +47,8 @@ class Racer
   end
 
   def percent_complete
-    @ticks.length*@wheel_circumference/RACE_DISTANCE.to_f
+    [1.0, @distance/RACE_DISTANCE.to_f].min
+    #@ticks.length*@wheel_circumference/RACE_DISTANCE.to_f
   end
 
   def last_tick

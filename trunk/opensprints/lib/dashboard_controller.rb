@@ -59,6 +59,7 @@ class DashboardController
     context.set_source_color rgb(65,167,207)
     context.rectangle(269, 332, 226, 25)
     context.fill
+#status box
     context.set_source_color rgb(203,195,192)
     context.rectangle(27, 471, 718, 98)
     context.stroke
@@ -170,22 +171,31 @@ class DashboardController
       end
       if @blue.distance>RACE_DISTANCE and @red.distance>RACE_DISTANCE
         winner = (@red.last_tick<@blue.last_tick) ? @red : @blue
+        
         puts "#{@red.name}: #{@red.last_tick}"
         puts "#{@blue.name}: #{@blue.last_tick}"
         @sensor.stop
+        @blue_display_speed = @blue.last_tick.to_s
+        @red_display_speed = @red.last_tick.to_s
       
         @continue = false
+      else
+        @blue_display_speed = [@blue.speed.round.to_i,99].min.to_s
+        @red_display_speed = [@red.speed.round.to_i,99].min.to_s
       end
+
         blue_progress = 685*@blue.percent_complete
         @context.set_source_color rgb(54,127,155) 
         @context.rectangle(47, 150, blue_progress, 20)
         @context.fill
 #        @surface.draw_box_s([269, 357], [495, 456], [77,134,161])
         
-        red_progress = 685*@red.percent_complete
+        red_progress = 685*@red.percent_complete 
         @context.set_source_color rgb(159,77,56)
         @context.rectangle(47, 129, red_progress, 20)
         @context.fill
+        
+        #progress bar separators
 #        @surface.draw_box_s([27, 357], [253, 456], [165,86,64])
         @context.set_source_color rgb(203,195,192) 
         @context.rectangle(27, 129, 718, 1)
@@ -195,15 +205,14 @@ class DashboardController
 
         @context.line_width = 3
         @context.line_cap = Cairo::LineCap::ROUND
-        tick_at = graph_tick(@red.distance, @red.speed)
+        tick_at = graph_tick(@red.percent_complete, @red.speed)
         @context.set_source_color rgb(159,77,56)
         @context.move_to(*@last_red_tick)
         @context.curve_to(*(@last_red_tick+tick_at+tick_at))
         @context.stroke
         @last_red_tick = tick_at
         
-
-        tick_at = graph_tick(@blue.distance, @blue.speed)
+        tick_at = graph_tick(@blue.percent_complete, @blue.speed)
         @context.set_source_color rgb(54,127,155)
         @context.move_to(*@last_blue_tick)
         @context.curve_to(*(@last_blue_tick+tick_at+tick_at))
@@ -214,28 +223,28 @@ class DashboardController
         @context.rectangle(27, 357, 226, 99)
         @context.fill
         @context.new_path
-        @context.set_source_color @@gray
         @context.move_to(30, 450)
         @context.line_to(600,450)
         path = @context.copy_path_flat
         @context.new_path
-        iro_text = make_layout(@context, [@red.speed.round.to_i,99].min.to_s, 76, false)    
+        iro_text = make_layout(@context, @red_display_speed, 76, 'bold')    
         @context.pango_layout_line_path(iro_text.get_line(0))
         @context.map_path_onto(path)
+        @context.set_source_color rgb(207,95,55)
         @context.fill
 #Draw blue speed
         @context.set_source_color rgb(77,134,161)
         @context.rectangle(269, 357, 226, 99)
         @context.fill
         @context.new_path
-        @context.set_source_color @@gray
         @context.move_to(272, 450)
         @context.line_to(600,450)
         path = @context.copy_path_flat
         @context.new_path
-        iro_text = make_layout(@context, [@blue.speed.round.to_i,99].min.to_s, 76, false)    
+        iro_text = make_layout(@context, @blue_display_speed, 76, 'bold')    
         @context.pango_layout_line_path(iro_text.get_line(0))
         @context.map_path_onto(path)
+        @context.set_source_color rgb(65,167,207)
         @context.fill
         @context.line_width = @width
         @context.line_cap = @cap
@@ -260,8 +269,8 @@ class DashboardController
   end
 
 
-  def graph_tick(distance, speed)
-    [(distance/RACE_DISTANCE.to_f*(726-45) + 47),
+  def graph_tick(percent, speed)
+    [(percent*(726-45) + 47),
      (147 - ([speed,50.0].min/50.0 * 147) + 171)]
   end
 
