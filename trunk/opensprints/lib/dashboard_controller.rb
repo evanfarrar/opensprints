@@ -157,7 +157,8 @@ class DashboardController
     @queue.length.times do
       partial_log << @queue.pop
     end
-    if partial_log.any?
+    if (partial_log=partial_log.grep(/^[12]/)).any?
+      
       @last_time = timeize(SecsyTime.parse(partial_log[-1].split(";")[1]))
       if (blue_log = partial_log.grep(/^2/))
         @blue.update(blue_log)

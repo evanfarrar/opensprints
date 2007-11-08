@@ -8,6 +8,7 @@ class SecsyTime
     @hunds = hunds
   end
   def SecsyTime.parse(str)
+    return SecsyTime.new(0,0,0) unless str
     mins,secshunds = str.split(':')
     four_chars = '%04i' % secshunds
     secs,hunds = four_chars[0..1].to_i,four_chars[2..3].to_i
