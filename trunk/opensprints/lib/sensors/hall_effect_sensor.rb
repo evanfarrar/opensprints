@@ -10,7 +10,7 @@ class Sensor
     @t = Thread.new do
       `echo 'go'>> #{@filename}`
       @f = File.open(@filename)
-#      @f.puts 'go'
+      @f.puts 'go'
       while true do
         l = @f.readline
         if l=~/;/
