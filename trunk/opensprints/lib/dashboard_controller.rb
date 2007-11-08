@@ -18,13 +18,13 @@ class DashboardController
     layout
   end
 
-  def initialize(context)
+  def initialize(context, racer1, racer2)
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
                      :track_length => 1315, :yaml_name => '1',
-                     :name => 'Racer 1')
+                     :name => racer1)
     @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
                       :track_length => 1315, :yaml_name => '2',
-                      :name => 'Racer 2')
+                      :name => racer2)
     @continue = false
     @last_time = '0:00:00'
 #   sp = Cairo::SurfacePattern.new(Cairo::ImageSurface.from_png('views/mockup.png'))
@@ -155,10 +155,12 @@ class DashboardController
   def refresh
     partial_log = []
     @queue.length.times do
-      partial_log << @queue.pop
+      q = @queue.pop
+      if q =~ /;/
+        partial_log << q
+      end
     end
     if (partial_log=partial_log.grep(/^[12]/)).any?
-      
       @last_time = timeize(SecsyTime.parse(partial_log[-1].split(";")[1]))
       if (blue_log = partial_log.grep(/^2/))
         @blue.update(blue_log)
@@ -166,11 +168,14 @@ class DashboardController
       if (red_log = partial_log.grep(/^1/))
         @red.update(red_log)
       end
-      if @blue.distance>RACE_DISTANCE or @red.distance>RACE_DISTANCE
-        winner = (@red.distance>@blue.distance) ? 'RED' : 'BLUE'
+      if @blue.distance>RACE_DISTANCE and @red.distance>RACE_DISTANCE
+        winner = (@red.last_tick<@blue.last_tick) ? @red : @blue
+        puts "#{@red.name}: #{@red.last_tick}"
+        puts "#{@blue.name}: #{@blue.last_tick}"
         @sensor.stop
+      
         @continue = false
-      else
+      end
         blue_progress = 685*@blue.percent_complete
         @context.set_source_color rgb(54,127,155) 
         @context.rectangle(47, 150, blue_progress, 20)
@@ -235,7 +240,6 @@ class DashboardController
         @context.line_width = @width
         @context.line_cap = @cap
         @continue = true
-      end
     end
     @context.rectangle(610, 325, 140, 40)
     @context.set_source_color @@gray

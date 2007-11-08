@@ -44,7 +44,7 @@ foo = lambda do
   @gc = Gdk::GC.new(@drawing_area.window)
   @pixmap = Gdk::Pixmap.new(nil, 993, 741, 24)
   context = @pixmap.create_cairo_context
-  @dashboard_controller = DashboardController.new(context)
+  @dashboard_controller = DashboardController.new(context,ARGV[0],ARGV[1])
   @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
 end
 @drawing_area.signal_connect("realize", &foo)

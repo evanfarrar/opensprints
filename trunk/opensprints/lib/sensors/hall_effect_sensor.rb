@@ -2,7 +2,6 @@
 class Sensor
   def initialize(queue, filename=nil)
     @queue = queue
-puts filename
     @filename = filename
   end
 
@@ -13,7 +12,9 @@ puts filename
       @f.puts 'go'
       while true do
         l = @f.readline
-        @queue << l
+        if l=~/;/
+          @queue << l
+        end
         puts l
       end
     end
@@ -26,11 +27,5 @@ puts filename
     @f = File.open(@filename, 'w+')
     @f.puts 'st'
     @f.close
-  end
-end
-
-class Float
-  def naturalize
-    self > 0 ? self : 0
   end
 end

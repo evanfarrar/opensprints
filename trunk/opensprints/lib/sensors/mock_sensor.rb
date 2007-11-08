@@ -18,11 +18,9 @@ class Sensor
       t_start = Time.now.to_f
       while true do
         l = f.shift
-        if l
           sleep (SecsyTime.parse(l.split(';')[1]).in_seconds - (Time.now.to_f-t_start)).naturalize
           @queue << l 
           puts l
-        end
       end
     end
  
