@@ -7,7 +7,7 @@ class Sensor
 
   def start
     @t.kill if @t
-    raise 'poop' unless File.writable?(@filename)
+    raise 'File Not Writable!' unless File.writable?(@filename)
     @t = Thread.new do
       @f = File.open(@filename, 'w+')
       @f.putc 'g'
