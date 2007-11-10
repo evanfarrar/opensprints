@@ -2,11 +2,13 @@ class SecsyTime
   attr :mins
   attr :secs
   attr :hunds
+
   def initialize(mins,secs,hunds)
     @mins = mins
     @secs = secs
     @hunds = hunds
   end
+
   def SecsyTime.parse(str)
     return SecsyTime.new(0,0,0) unless str
     mins,secshunds = str.split(':')

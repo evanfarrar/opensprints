@@ -7,10 +7,12 @@ class Sensor
 
   def start
     @t.kill if @t
+    raise 'poop' unless File.writable?(@filename)
     @t = Thread.new do
-      `echo 'go'>> #{@filename}`
-      @f = File.open(@filename)
-      @f.puts 'go'
+      @f = File.open(@filename, 'w+')
+      @f.putc 'g'
+      @f.putc 'o'
+      @f.putc "\n"
       while true do
         l = @f.readline
         if l=~/;/
