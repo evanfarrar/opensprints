@@ -34,7 +34,7 @@ TITLE = options['title']
 
 @w = Gtk::Window.new
 @w.title = TITLE
-@w.resize(993, 741)
+@w.resize(800, 600)
 box = Gtk::VBox.new(false, 0)
 
 
@@ -53,14 +53,17 @@ end
   @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
 end
 def start_race
-  countdown = 1
+  countdown = 5
   @timeout = Gtk.timeout_add(1000) do
     case countdown
     when (1..5)
+      @drawing_area.queue_draw
+      @dashboard_controller.countdown("#{countdown}...")
       puts countdown
       countdown-=1
       true
     when 0
+      @dashboard_controller.countdown('Go!')
       @dashboard_controller.start
       @timeout = Gtk.timeout_add(50) do
         @drawing_area.queue_draw

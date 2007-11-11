@@ -60,9 +60,9 @@ class DashboardController
     context.rectangle(269, 332, 226, 25)
     context.fill
 #status box
-    context.set_source_color rgb(203,195,192)
-    context.rectangle(27, 471, 718, 98)
-    context.stroke
+#    context.set_source_color rgb(203,195,192)
+#    context.rectangle(27, 471, 718, 98)
+#    context.stroke
 # START
     context.set_source_color @@gray
     context.move_to(44, 316)
@@ -88,7 +88,7 @@ class DashboardController
 
 # IRO
     context.new_path
-    context.set_source_color rgb(255,255,0)
+    context.set_source_color rgb(255,238,3)
     context.move_to(70, 90)
     context.line_to(500,90)
     path = context.copy_path_flat
@@ -149,8 +149,25 @@ class DashboardController
     @sensor = Sensor.new(@queue, SENSOR_LOCATION)
     @sensor.start
   end
+
   def stop
     @sensor.stop
+  end
+
+  def countdown(time)
+    @context.set_source_color @@gray
+    @context.rectangle(530, 357, 226, 99)
+    @context.fill    
+    
+    @context.move_to(530,450)
+    @context.line_to(800,450)
+    path = @context.copy_path_flat
+    @context.new_path
+    text = make_layout(@context, time, 72, 'bold')
+    @context.pango_layout_line_path(text.get_line(0))
+    @context.map_path_onto(path)
+    @context.set_source_color rgb(255,255,255)
+    @context.fill    
   end
 
   def refresh
@@ -170,15 +187,34 @@ class DashboardController
         @red.update(red_log)
       end
       if @blue.distance>RACE_DISTANCE and @red.distance>RACE_DISTANCE
-        winner = (@red.last_tick<@blue.last_tick) ? @red : @blue
-        
+        winner = (@red.last_tick<@blue.last_tick) ? [19,130] : [261,372]
+
+        #clear go text
+        @context.set_source_color @@gray
+        @context.rectangle(530, 357, 226, 99)
+        @context.fill    
+
         puts "#{@red.name}: #{@red.last_tick}"
         puts "#{@blue.name}: #{@blue.last_tick}"
         @sensor.stop
-        @blue_display_speed = @blue.last_tick.to_s
-        @red_display_speed = @red.last_tick.to_s
+        blue_final_time = @blue.last_tick.to_s
+        red_final_time = @red.last_tick.to_s
       
         @continue = false
+
+        @context.set_source_color rgb(255,238,3)
+        @context.rectangle(winner[0], 324, 242, 186)
+        @context.stroke
+
+        @context.move_to(winner[1],535)
+        @context.line_to(600,535)
+        path = @context.copy_path_flat
+        @context.new_path
+        text = make_layout(@context, 'WINNER', 20, 'bold')
+        @context.pango_layout_line_path(text.get_line(0))
+        @context.map_path_onto(path)
+        @context.set_source_color rgb(255,238,3)
+        @context.fill
       else
         @blue_display_speed = [@blue.speed.round.to_i,99].min.to_s
         @red_display_speed = [@red.speed.round.to_i,99].min.to_s
@@ -238,7 +274,7 @@ class DashboardController
         @context.fill
         @context.new_path
         @context.move_to(272, 450)
-        @context.line_to(600,450)
+        @context.line_to(600, 450)
         path = @context.copy_path_flat
         @context.new_path
         iro_text = make_layout(@context, @blue_display_speed, 76, 'bold')    
@@ -249,6 +285,30 @@ class DashboardController
         @context.line_width = @width
         @context.line_cap = @cap
         @continue = true
+      #draw blue final time
+      if blue_final_time
+        @context.move_to(272,500)
+        @context.line_to(600,500)
+        path = @context.copy_path_flat
+        @context.new_path
+        text = make_layout(@context, blue_final_time, 36, 'bold')
+        @context.pango_layout_line_path(text.get_line(0))
+        @context.map_path_onto(path)
+        @context.set_source_color rgb(65,167,207)
+        @context.fill
+      end
+      #draw red final time
+      if blue_final_time
+        @context.move_to(30,500)
+        @context.line_to(600,500)
+        path = @context.copy_path_flat
+        @context.new_path
+        text = make_layout(@context, red_final_time, 36, 'bold')
+        @context.pango_layout_line_path(text.get_line(0))
+        @context.map_path_onto(path)
+        @context.set_source_color rgb(207,95,55)
+        @context.fill
+      end      
     end
     @context.rectangle(610, 325, 140, 40)
     @context.set_source_color @@gray
@@ -271,7 +331,7 @@ class DashboardController
 
   def graph_tick(percent, speed)
     [(percent*(726-45) + 47),
-     (147 - ([speed,50.0].min/50.0 * 147) + 171)]
+     (147 - ([speed,60.0].min/60.0 * 147) + 171)]
   end
 
   def timeize(t)

@@ -8,7 +8,7 @@ class Racer
   def initialize(attributes = {})
     @distance = 0
     @speed = 0
-    @wheel_circumference = attributes[:wheel_circumference].mm.to_km
+    @wheel_circumference = attributes[:wheel_circumference]
     @ticks = []
     @name = attributes[:name]
   end
@@ -56,6 +56,6 @@ class Racer
   end
 private
   def rotation_elapsed_to_kmh(elapsed)
-    ((@wheel_circumference/(elapsed))/(1.km))*1.hour.to_seconds
+    ((@wheel_circumference/(elapsed))/(1.0.km))*1.hour.to_seconds
   end 
 end

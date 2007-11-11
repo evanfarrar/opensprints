@@ -13,8 +13,8 @@ race_distance: 200
 
 # the size of each wheel, in millimeters
 wheel_circumference:
-  red: 508
-  blue: 508
+  red: 2108
+  blue: 2108
 
 #the title of the window and label displayed on the track during races
 title: OpenSprints
