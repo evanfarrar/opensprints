@@ -194,8 +194,8 @@ class DashboardController
         @context.rectangle(530, 357, 226, 99)
         @context.fill    
 
-        puts "#{@red.name}: #{@red.last_tick}"
-        puts "#{@blue.name}: #{@blue.last_tick}"
+        puts "#{@red.name}: #{@red.first_tick} #{@red.last_tick}"
+        puts "#{@blue.name}: #{@red.first_tick} #{@blue.last_tick}"
         @sensor.stop
         blue_final_time = @blue.last_tick.to_s
         red_final_time = @red.last_tick.to_s
@@ -241,6 +241,7 @@ class DashboardController
 
         @context.line_width = 3
         @context.line_cap = Cairo::LineCap::ROUND
+        @context.line_join = Cairo::LineJoin::ROUND
         tick_at = graph_tick(@red.percent_complete, @red.speed)
         @context.set_source_color rgb(159,77,56)
         @context.move_to(*@last_red_tick)

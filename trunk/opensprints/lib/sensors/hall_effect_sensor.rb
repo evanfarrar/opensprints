@@ -9,10 +9,10 @@ class Sensor
     @t.kill if @t
     raise 'File Not Writable!' unless File.writable?(@filename)
     @t = Thread.new do
-      @f = File.open(@filename, 'r+')
+      @f = File.open(@filename, 'w+')
+#      @f.putc "\n"
       @f.putc 'g'
       @f.putc 'o'
-#      @f.puts ''
       @f.putc "\n"
       while true do
         l = @f.readline

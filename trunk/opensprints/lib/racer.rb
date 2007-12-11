@@ -5,6 +5,8 @@ class Racer
   attr :wheel_circumference
   attr :name
   attr :yaml_name
+  attr :ticks
+
   def initialize(attributes = {})
     @distance = 0
     @speed = 0
@@ -51,6 +53,9 @@ class Racer
     #@ticks.length*@wheel_circumference/RACE_DISTANCE.to_f
   end
 
+  def first_tick
+    @ticks.first
+  end
   def last_tick
     @ticks[RACE_DISTANCE / @wheel_circumference]
   end
