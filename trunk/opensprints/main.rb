@@ -1,6 +1,6 @@
+base_dir = '/home/evan/doc/irosprints/trunk/opensprints/'
 errors = []
-errors += ((['rubygems','builder','units/standard','gtk2','cairo',
-        'yaml'].map do |gem_name|
+errors += ((['builder','units/standard','yaml'].map do |gem_name|
   begin
     require gem_name
     nil
@@ -16,81 +16,74 @@ rescue
 end
 if errors.any?
   puts errors
-  exit
+  quit
 end
 
-require 'lib/dashboard_controller'
-require 'lib/racer'
-require 'lib/secsy_time'
-require "lib/sensors/#{options['sensor']['file']}_sensor"
+require 'thread'
+require base_dir+'lib/racer'
+require base_dir+'lib/racer'
+require base_dir+'lib/secsy_time'
+require base_dir+"lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km
-RED_TRACK_LENGTH = 1315
-BLUE_TRACK_LENGTH = 1200
 RED_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['red'].mm.to_km
 BLUE_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['blue'].mm.to_km
 TITLE = options['title']
 
-
-@w = Gtk::Window.new
-@w.title = TITLE
-@w.resize(800, 600)
-box = Gtk::VBox.new(false, 0)
-
-
-@drawing_area = Gtk::DrawingArea.new
-
-foo = lambda do
-  @gc = Gdk::GC.new(@drawing_area.window)
-  @pixmap = Gdk::Pixmap.new(nil, 993, 741, 24)
-  context = @pixmap.create_cairo_context
-  @dashboard_controller = DashboardController.new(context,ARGV[0],ARGV[1])
-  @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
-end
-@drawing_area.signal_connect("realize", &foo)
-@drawing_area.signal_connect("expose_event") do
-  @dashboard_controller.refresh if @dashboard_controller.continue?
-  @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
-end
-def start_race
-  countdown = 5
-  @timeout = Gtk.timeout_add(1000) do
-    case countdown
-    when (1..5)
-      @drawing_area.queue_draw
-      @dashboard_controller.countdown("#{countdown}...")
-      puts countdown
-      countdown-=1
-      true
-    when 0
-      @dashboard_controller.countdown('Go!')
-      @dashboard_controller.start
-      @timeout = Gtk.timeout_add(50) do
-        @drawing_area.queue_draw
-        continue = @dashboard_controller.continue?
-        stop_race unless continue
-        continue
+Shoes.app :width => 800, :height => 600 do
+  @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
+                   :name => "racer1")
+  @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
+                    :name => "racer2")
+  @queue = Queue.new
+  @sensor = Sensor.new(@queue, SENSOR_LOCATION)
+  @sensor.start
+  bar_size = 800-2*60
+  refresh = lambda do
+    partial_log = []
+    @queue.length.times do
+      q = @queue.pop
+      if q =~ /;/
+        partial_log << q
       end
-      false    
+    end
+    if (partial_log=partial_log.grep(/^[12]/)).any?
+      if (blue_log = partial_log.grep(/^2/))
+        @blue.update(blue_log)
+      end
+      if (red_log = partial_log.grep(/^1/))
+        @red.update(red_log)
+      end
+      clear do
+        fill black
+        banner TITLE, :align => "center"
+        stroke gray 0.5
+        strokewidth 4
+        line 60-4,280,60-4,380
+        line 800-60+4,280,800-60+4,380
+        blue_progress = bar_size*@blue.percent_complete
+        stroke "#00F"
+        fill "#FEE".."#32F", :angle => 90, :radius => 10
+        rect 60, 300, blue_progress, 20 
+        
+        red_progress = bar_size*@red.percent_complete
+        stroke "#F00"
+        fill "#FEE".."#F23", :angle => 90, :radius => 10
+        rect 60, 340, red_progress, 20 
+        if @blue.distance>RACE_DISTANCE and @red.distance>RACE_DISTANCE
+          winner = (@red.last_tick<@blue.last_tick) ? "RED" : "BLUE"
+          title "#{winner} WINS!!!\n", :align => "center", 
+                   :top => 380, :width => 800
+          title "red: #{@red.last_tick}, blue: #{@blue.last_tick}",
+                :align => 'center', :top => 450, :width => 800
+          @sensor.stop
+        end
+      end    
     end
   end
+  stack{
+    animate(14) do
+      refresh.call
+    end
+  }
 end
-@w.signal_connect("destroy") do
-  Gtk.main_quit
-end
-@w.signal_connect("key_press_event") do |window,event|
-  if event.keyval == ?a
-  #  stop_race
-    start_race
-  elsif event.keyval == ?z
-    stop_race
-  end
-end
-def stop_race
-  Gtk.timeout_remove(@timeout) if @timeout
-  @dashboard_controller.stop
-end
-box.pack_start(@drawing_area)
-@w << box
-@w.show_all
-Gtk.main
