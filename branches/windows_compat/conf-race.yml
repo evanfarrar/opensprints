@@ -1,0 +1,20 @@
+# choose a sensor
+sensor:
+  file: hall_effect
+  device: /dev/ttyACM0
+  #for windows:
+  #device: com6
+# other sensors
+#  MockSensor, for testing
+#  SerialSensor, for a simple, lowspeed, lowcost cyclocomputer switch based sensor
+
+# how long the race should be, in meters
+race_distance: 200
+
+# the size of each wheel, in millimeters
+wheel_circumference:
+  red: 2108
+  blue: 2108
+
+#the title of the window and label displayed on the track during races
+title: OpenSprints
