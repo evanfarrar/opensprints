@@ -1,4 +1,3 @@
-require 'units/standard'
 class Racer
   attr_accessor :distance
   attr :wheel_circumference

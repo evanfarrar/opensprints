@@ -1,13 +1,6 @@
 base_dir = ENV['BASE_DIR']+'/'
 errors = []
-errors += ((['units/standard','yaml'].map do |gem_name|
-  begin
-    require gem_name
-    nil
-  rescue LoadError
-    "#{gem_name} is not installed"
-  end
-end).compact)
+require 'yaml'
 
 begin
   options = YAML::load(File.read('conf.yml'))
@@ -22,6 +15,8 @@ end
 require 'thread'
 require base_dir+'lib/racer'
 require base_dir+'lib/racer'
+require base_dir+'lib/units/base'
+require base_dir+'lib/units/standard'
 require base_dir+'lib/secsy_time'
 require base_dir+"lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
