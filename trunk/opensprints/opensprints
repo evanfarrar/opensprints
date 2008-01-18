@@ -1,0 +1,3 @@
+#!/bin/bash
+export BASE_DIR=`pwd`
+shoes main.rb

@@ -1,6 +1,6 @@
-base_dir = '/home/evan/doc/irosprints/trunk/opensprints/'
+base_dir = ENV['BASE_DIR']+'/'
 errors = []
-errors += ((['builder','units/standard','yaml'].map do |gem_name|
+errors += ((['units/standard','yaml'].map do |gem_name|
   begin
     require gem_name
     nil
@@ -35,9 +35,6 @@ Shoes.app :width => 800, :height => 600 do
                    :name => "racer1")
   @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
                     :name => "racer2")
-  @queue = Queue.new
-  @sensor = Sensor.new(@queue, SENSOR_LOCATION)
-  @sensor.start
   bar_size = 800-2*60
   refresh = lambda do
     partial_log = []
@@ -82,8 +79,27 @@ Shoes.app :width => 800, :height => 600 do
     end
   end
   stack{
+    fill black
+    banner TITLE, :align => "center"
+    @countdown = 5
+    @start_time = Time.now+5
+    @label = para "#{@countdown}..."
     animate(14) do
-      refresh.call
+      @now = Time.now
+      if @now < @start_time
+        clear do
+          banner "#{(@start_time-@now).round}..."
+          puts (@start_time-@now).to_int
+        end
+      else
+        unless @started
+          @queue = Queue.new
+          @sensor = Sensor.new(@queue, SENSOR_LOCATION)
+          @sensor.start
+          @started=true
+        end
+        refresh.call
+      end
     end
   }
 end
