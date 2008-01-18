@@ -89,7 +89,6 @@ Shoes.app :width => 800, :height => 600 do
       if @now < @start_time
         clear do
           banner "#{(@start_time-@now).round}..."
-          puts (@start_time-@now).to_int
         end
       else
         unless @started
