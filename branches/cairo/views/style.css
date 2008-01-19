@@ -1,0 +1,22 @@
+* { 
+  fill: none;
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  opacity: 1;
+  stroke-dasharray: none;
+  stroke-miterlimit: 4;
+}
+
+text{ font-family:Ubuntu-Title; }
+
+.distance_marking {
+  fill: none;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 2;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}
