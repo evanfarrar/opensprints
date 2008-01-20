@@ -30,6 +30,12 @@ BLUE_TRACK_LENGTH = 1200
 RED_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['red'].mm.to_km
 BLUE_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['blue'].mm.to_km
 TITLE = options['title']
+if options['units'] == 'standard'
+  UNIT_SYSTEM = :mph
+else    
+  UNIT_SYSTEM = :kmph
+end
+  
 
 
 @w = Gtk::Window.new
@@ -44,7 +50,7 @@ foo = lambda do
   @gc = Gdk::GC.new(@drawing_area.window)
   @pixmap = Gdk::Pixmap.new(nil, 993, 741, 24)
   context = @pixmap.create_cairo_context
-  @dashboard_controller = DashboardController.new(context,ARGV[0]||'red',ARGV[1]||'blue')
+  @dashboard_controller = DashboardController.new(context,ARGV[0]||'red',ARGV[1]||'blue',UNIT_SYSTEM||:kmph)
   @drawing_area.window.draw_drawable(@gc, @pixmap, 0, 0, 0, 0, -1, -1)
 end
 @drawing_area.signal_connect("realize", &foo)

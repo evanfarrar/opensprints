@@ -13,6 +13,11 @@ class Racer
     @wheel_circumference = attributes[:wheel_circumference]
     @ticks = []
     @name = attributes[:name]
+    if attributes[:units] == :standard
+      alias :rotation_elapsed_to_speed :rotation_elapsed_to_kmh
+    else
+      alias :rotation_elapsed_to_speed :rotation_elapsed_to_kmh
+    end
   end
 
   def update(new_ticks)
@@ -26,7 +31,7 @@ class Racer
         (diffs<<(last[i+1]-e)) if last[i+1]
       }
       ave_elapsed = (diffs.inject(0){|acc,n| acc=acc+n})/5.0
-      @speed = rotation_elapsed_to_kmh(ave_elapsed)
+      @speed = rotation_elapsed_to_speed(ave_elapsed)
     elsif ticks_length>1
       this = @ticks[-1]
       last = @ticks[-2]
@@ -62,5 +67,8 @@ class Racer
 private
   def rotation_elapsed_to_kmh(elapsed)
     ((@wheel_circumference/(elapsed))/(1.0.km))*1.hour.to_seconds
+  end 
+  def rotation_elapsed_to_mph(elapsed)
+    ((@wheel_circumference/(elapsed))/(1.0.mile))*1.hour.to_seconds
   end 
 end

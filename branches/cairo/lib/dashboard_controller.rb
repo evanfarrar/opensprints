@@ -18,13 +18,14 @@ class DashboardController
     layout
   end
 
-  def initialize(context, racer1, racer2)
+  def initialize(context, racer1, racer2, unit_system)
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
                      :track_length => 1315, :yaml_name => '1',
                      :name => racer1)
     @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
                       :track_length => 1315, :yaml_name => '2',
                       :name => racer2)
+    @unit_system = unit_system
     @continue = false
     @last_time = '0:00:00'
 #   sp = Cairo::SurfacePattern.new(Cairo::ImageSurface.from_png('views/mockup.png'))
@@ -33,7 +34,7 @@ class DashboardController
     context.set_source_color @@gray
     context.paint
     context.set_source_color rgb(252,252,252)
-    context.rectangle(30, 97, 157, 1)
+    context.rectangle(30, 97, 210, 1)
     context.rectangle(210, 97, 530, 1)
     context.fill
 #start/end labels
@@ -86,26 +87,14 @@ class DashboardController
     context.map_path_onto(path)
     context.fill
 
-# IRO
+# TITLE
     context.new_path
     context.set_source_color rgb(255,238,3)
     context.move_to(70, 90)
     context.line_to(500,90)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, 'IRO', 42)    
-    context.pango_layout_line_path(iro_text.get_line(0))
-    context.map_path_onto(path)
-    context.fill
-
-# Sprints
-    context.new_path
-    context.set_source_color rgb(255,255,255)
-    context.move_to(160, 90)
-    context.line_to(600,90)
-    path = context.copy_path_flat
-    context.new_path
-    iro_text = make_layout(context, 'Sprints', 42)    
+    iro_text = make_layout(context, TITLE, 42)    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -117,7 +106,7 @@ class DashboardController
     context.line_to(600,352)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, @red.name, 16)    
+    iro_text = make_layout(context, @red.name + " speed #{@unit_system}", 16)    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -130,7 +119,7 @@ class DashboardController
     context.line_to(600,352)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, @blue.name, 16)    
+    iro_text = make_layout(context, @blue.name + " speed #{@unit_system}", 16)    
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -292,7 +281,7 @@ class DashboardController
         @context.line_to(600,500)
         path = @context.copy_path_flat
         @context.new_path
-        text = make_layout(@context, blue_final_time, 36, 'bold')
+        text = make_layout(@context, blue_final_time+'secs', 36, 'bold')
         @context.pango_layout_line_path(text.get_line(0))
         @context.map_path_onto(path)
         @context.set_source_color rgb(65,167,207)
@@ -304,7 +293,7 @@ class DashboardController
         @context.line_to(600,500)
         path = @context.copy_path_flat
         @context.new_path
-        text = make_layout(@context, red_final_time, 36, 'bold')
+        text = make_layout(@context, red_final_time+'secs', 36, 'bold')
         @context.pango_layout_line_path(text.get_line(0))
         @context.map_path_onto(path)
         @context.set_source_color rgb(207,95,55)

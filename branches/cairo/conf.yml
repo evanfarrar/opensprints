@@ -18,3 +18,7 @@ wheel_circumference:
 
 #the title of the window and label displayed on the track during races
 title: OpenSprints
+
+#the measurement system velocity, standard or metric
+#units: standard
+units: metric
