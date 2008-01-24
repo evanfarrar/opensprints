@@ -25,10 +25,11 @@ require 'lib/secsy_time'
 require "lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km
+GRAPH_MAX = (options['graph_max']||60).to_f
 RED_TRACK_LENGTH = 1315
 BLUE_TRACK_LENGTH = 1200
-RED_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['red'].mm.to_km
-BLUE_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['blue'].mm.to_km
+RED_WHEEL_CIRCUMFERENCE = options['roller_circumference']['red'].mm.to_km
+BLUE_WHEEL_CIRCUMFERENCE = options['roller_circumference']['blue'].mm.to_km
 TITLE = options['title']
 if options['units'] == 'standard'
   UNIT_SYSTEM = :mph

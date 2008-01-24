@@ -11,8 +11,8 @@ sensor:
 # how long the race should be, in meters
 race_distance: 200
 
-# the size of each wheel, in millimeters
-wheel_circumference:
+# the circumference of the rollers, in millimeters
+roller_circumference:
   red: 2108
   blue: 2108
 
@@ -22,3 +22,6 @@ title: OpenSprints
 #the measurement system for velocity: standard or metric
 units: standard
 #units: metric
+
+#the speed at which the speed vs. time graph maxes out
+graph_max: 90 

@@ -106,7 +106,7 @@ class DashboardController
     context.line_to(600,352)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, @red.name + " speed #{@unit_system}", 16)    
+    iro_text = make_layout(context, @red.name + " speed #{@unit_system}", 16)
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -119,7 +119,7 @@ class DashboardController
     context.line_to(600,352)
     path = context.copy_path_flat
     context.new_path
-    iro_text = make_layout(context, @blue.name + " speed #{@unit_system}", 16)    
+    iro_text = make_layout(context, @blue.name + " speed #{@unit_system}", 16) 
     context.pango_layout_line_path(iro_text.get_line(0))
     context.map_path_onto(path)
     context.fill
@@ -321,7 +321,7 @@ class DashboardController
 
   def graph_tick(percent, speed)
     [(percent*(726-45) + 47),
-     (147 - ([speed,60.0].min/60.0 * 147) + 171)]
+     (147 - ([speed,GRAPH_MAX].min/GRAPH_MAX * 147) + 171)]
   end
 
   def timeize(t)
