@@ -17,6 +17,7 @@ require base_dir+'lib/racer'
 require base_dir+'lib/units/base'
 require base_dir+'lib/units/standard'
 require base_dir+'lib/secsy_time'
+Kernel::require Dir.pwd+'/lib/serialport.so'
 require base_dir+"lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km
