@@ -11,17 +11,19 @@ class Sensor
     Thread.abort_on_exception = true 
     @t.kill if @t
     @t = Thread.new do
-      sp = SerialPort.new(@filename, 115200)
+      sp = SerialPort.new(@filename, 115200, 8, 1, SerialPort::NONE )
       sp.putc 'g'
       sp.putc 'o'
       sp.putc "\n"
       sp.close
-
       @s = TCPSocket.new('127.0.0.1',5000)
       loop do
         @queue << @s.readline.strip
       end
     end
   end
-  def stop; end
+  def stop
+    @t.kill
+    @s.close
+  end
 end

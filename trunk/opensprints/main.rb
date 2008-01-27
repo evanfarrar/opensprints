@@ -11,7 +11,6 @@ if errors.any?
   puts errors
   quit
 end
-
 require base_dir+'lib/racer'
 require base_dir+'lib/racer'
 require base_dir+'lib/units/base'
