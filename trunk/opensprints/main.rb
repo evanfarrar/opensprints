@@ -12,7 +12,6 @@ if errors.any?
   quit
 end
 
-require 'thread'
 require base_dir+'lib/racer'
 require base_dir+'lib/racer'
 require base_dir+'lib/units/base'
@@ -26,6 +25,7 @@ BLUE_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['blue'].mm.to_km
 TITLE = options['title']
 
 Shoes.app :width => 800, :height => 600 do
+
   @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
                    :name => "racer1")
   @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
