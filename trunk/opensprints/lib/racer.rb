@@ -36,15 +36,8 @@ class Racer
     end
   end
 
-  def percent_complete
-    [1.0, @distance/@race_distance.to_f].min
-  end
-
-  def first_tick
-    @ticks.first
-  end
-  def last_tick
-    @ticks[@race_distance / @wheel_circumference]
+  def tick_at(distance)
+    @ticks[distance / @wheel_circumference]
   end
 private
   def rotation_elapsed_to_mph(elapsed)
