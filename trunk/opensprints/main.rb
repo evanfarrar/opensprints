@@ -31,7 +31,7 @@ else
 end
 
 class Race
-  def initialize(shoes_instance, distance)
+  def initialize(shoes_instance, distance, update_area)
     @shoes_instance = shoes_instance
     blue = @shoes_instance.ask "Who is on the blue bike?"
     red = @shoes_instance.ask "Who is on the red bike?"
@@ -43,7 +43,10 @@ class Race
                       :units => UNIT_SYSTEM)
     @bar_size = 800-2*60
     @race_distance = distance
+    @update_area = update_area
   end
+
+  def continue?; @continue end
 
   def refresh
     unless @started
@@ -51,6 +54,7 @@ class Race
       @sensor = Sensor.new(@queue, SENSOR_LOCATION)
       @sensor.start
       @started=true
+      @continue = true
     end
     partial_log = []
     @queue.length.times do
@@ -66,9 +70,7 @@ class Race
       if (red_log = partial_log.grep(/^1/))
         @red.update(red_log)
       end
-      @shoes_instance.clear do
-        @shoes_instance.fill @shoes_instance.black
-        @shoes_instance.banner TITLE, :align => "center"
+      @update_area.clear do
         @shoes_instance.stroke gray 0.5
         @shoes_instance.strokewidth 4
         @shoes_instance.line 60-4,280,60-4,380
@@ -89,6 +91,7 @@ class Race
           @shoes_instance.title "red: #{@red.tick_at(@race_distance)}, blue: #{@blue.tick_at(@race_distance)}",
                 :align => 'center', :top => 450, :width => 800
           @sensor.stop
+          @continue = false
         end
       end    
     end
@@ -99,25 +102,35 @@ class Race
   end
 end
 
+
 Shoes.app :width => 800, :height => 600 do
-  r = Race.new(self, RACE_DISTANCE)
   stack{
     fill black
     banner TITLE, :align => "center"
+    @update_area = stack {}
+  race = lambda do
+    @start.hide
+    r = Race.new(self, RACE_DISTANCE, @update_area)
     @countdown = 5
-
     @start_time = Time.now+5
     count_box = stack{ @label = banner "#{@countdown}..." }
     animate(14) do
       @now = Time.now
-      stack{
       if @now < @start_time
         count_box.clear do
           banner "#{(@start_time-@now).round}..."
         end
       else
+        count_box.remove
         r.refresh
+        @start.show unless r.continue?
       end
     end
+  end
+    @start = button("Start Race") {
+      race.call
+    }
+
+    button("Quit") { exit }
   }
 end
