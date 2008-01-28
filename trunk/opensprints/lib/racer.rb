@@ -4,13 +4,18 @@ class Racer
   attr :name
   attr :yaml_name
   attr :ticks
-
   def initialize(attributes = {})
     @distance = 0
     @speed = 0
     @wheel_circumference = attributes[:wheel_circumference]
     @ticks = []
     @name = attributes[:name]
+    @race_distance = attributes[:race_distance]
+    if attributes[:units] == :standard
+      alias :rotation_elapsed_to_speed :rotation_elapsed_to_mph
+    else
+      alias :rotation_elapsed_to_speed :rotation_elapsed_to_kmh
+    end
   end
 
   def update(new_ticks)
@@ -32,16 +37,19 @@ class Racer
   end
 
   def percent_complete
-    [1.0, @distance/RACE_DISTANCE.to_f].min
+    [1.0, @distance/@race_distance.to_f].min
   end
 
   def first_tick
     @ticks.first
   end
   def last_tick
-    @ticks[RACE_DISTANCE / @wheel_circumference]
+    @ticks[@race_distance / @wheel_circumference]
   end
 private
+  def rotation_elapsed_to_mph(elapsed)
+    ((@wheel_circumference/(elapsed))/(1.0.mile))*1.hour.to_seconds
+  end 
   def rotation_elapsed_to_kmh(elapsed)
     ((@wheel_circumference/(elapsed))/(1.0.km))*1.hour.to_seconds
   end 

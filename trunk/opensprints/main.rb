@@ -24,12 +24,22 @@ RED_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['red'].mm.to_km
 BLUE_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['blue'].mm.to_km
 TITLE = options['title']
 
-Shoes.app :width => 800, :height => 600 do
+if options['units'] == 'standard'
+  UNIT_SYSTEM = :mph
+else    
+  UNIT_SYSTEM = :kmph
+end
 
+Shoes.app :width => 800, :height => 600 do
+  #need a race object...
   @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
-                   :name => "racer1")
+                   :name => "racer1",
+                   :race_distance => RACE_DISTANCE,
+                   :units => UNIT_SYSTEM)
   @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
-                    :name => "racer2")
+                    :name => "racer2",
+                    :race_distance => RACE_DISTANCE,
+                    :units => UNIT_SYSTEM)
   bar_size = 800-2*60
   refresh = lambda do
     partial_log = []
