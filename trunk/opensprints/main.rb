@@ -1,15 +1,14 @@
 base_dir = ENV['BASE_DIR']+'/'
 errors = []
 require 'yaml'
+unless defined? Shoes
+  exit "Install shoes: http://code.whytheluckystiff.net/shoes/"
+end
 
 begin
   options = YAML::load(File.read('conf.yml'))
 rescue
-  errors<< "You must write a conf.yml. See samples conf-race.yml conf-debug.yml"
-end
-if errors.any?
-  puts errors
-  quit
+  alert "You must write a conf.yml. See sample in conf-sample.yml"
 end
 require base_dir+'lib/racer'
 require base_dir+'lib/racer'
@@ -20,8 +19,8 @@ Kernel::require Dir.pwd+'/lib/serialport.so'
 require base_dir+"lib/sensors/#{options['sensor']['file']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km
-RED_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['red'].mm.to_km
-BLUE_WHEEL_CIRCUMFERENCE = options['wheel_circumference']['blue'].mm.to_km
+RED_WHEEL_CIRCUMFERENCE = options['roller_circumference']['red'].mm.to_km
+BLUE_WHEEL_CIRCUMFERENCE = options['roller_circumference']['blue'].mm.to_km
 TITLE = options['title']
 
 if options['units'] == 'standard'
