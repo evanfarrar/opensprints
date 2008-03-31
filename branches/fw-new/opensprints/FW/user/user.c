@@ -29,13 +29,13 @@
  * IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR
  * CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
  *
- * Author               Date        Comment
+ * Author               Date		Comment
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Rawin Rojvanit       11/19/04    Original.
- * Brian Schmalz		03/15/06	Added user code to impliment
+ * Rawin Rojvanit       11/19/04	Original.
+ * Brian Schmalz	03/15/06	Added user code to impliment
  *									firmware version D v1.0 for UBW
  *									project. See www.greta.dhs.org/UBW
- * Brian Schmalz		05/04/06	Starting version 1.1, which will 
+ * Brian Schmalz	05/04/06	Starting version 1.1, which will 
  * 									include several fixes. See website.
  * BPS					06/21/06	Starting v1.2 -
  * - Fixed problem with I packets (from T command) filling up TX buffer
@@ -43,22 +43,37 @@
  * - Adding several commands - Analog inputs being the biggest set.
  * - Also Byte read/Byte write (PEEK/POKE) anywhere in memory
  * - Individual pin I/O and direction
- * BPS					08/16/06	v1.3 - Fixed bug with USB startup
- * BPS					09/09/06	v1.4 - Starting 1.4
+ * BPS			08/16/06	v1.3 - Fixed bug with USB startup
+ * BPS			09/09/06	v1.4 - Starting 1.4
  * - Fixed Microchip bug with early silicon - UCONbits.PKTDIS = 0;
  * - Adding BO and BC commands for parallel output to graphics pannels
- * BPS					12/06/06	v1.4 - More work on 1.4
+ * BPS			12/06/06	v1.4 - More work on 1.4
  * - Re-wrote all I/O buffering code for increased speed and functionality
  * - Re-wrote error handling code
  * - Added delays to BC/BO commands to help Corey
- * BPS					01/06/07	v1.4 - Added RC command for servos
- * BPS					03/07/07	v1.4.1 - Changed blink rate for SFE
- * BPS					05/24/07	v1.4.2 - Fixed RC command bug - it
+ * BPS			01/06/07	v1.4 - Added RC command for servos
+ * BPS			03/07/07	v1.4.1 - Changed blink rate for SFE
+ * BPS			05/24/07	v1.4.2 - Fixed RC command bug - it
  *									wouldn't shut off.
- * Luke Orland			2007/08/28	added some stuff
- * Luke Orland			2007/09/29  added race test mode and timeclock
+ * Luke Orland		2007/08/28	added some stuff
+ * LJO			2007/09/29	added race test mode and timeclock
  *
- ********************************************************************/
+ * To Do:
+ *  - switch to milliseconds instead of centiseconds
+ *  - incorporate new changes
+ *    * stop after finish_tick is reached
+ *    * activate specified rollers
+ *    * new messages to PC sw
+ *    * change timestamps to 1000ths of a second
+ *  - test and debug
+ *  - ECHO mode
+ *  - FW sends confirmation message back to SW when receives a command.
+ *
+ * Scratch list:
+ *  - HW and GO commands.
+ *  - Try moving low_ISR stuff to high_ISR
+ *
+ *****************************************************************************/
 
 /** I N C L U D E S **********************************************************/
 #include <p18cxxx.h>
@@ -106,29 +121,29 @@ typedef enum {
 	,kUCASE_ASCII_CHAR
 } tExtractType;
 
-#define advance_RX_buf_out()						\
-{ 													\
-	g_RX_buf_out++;									\
-	if (kRX_BUF_SIZE == g_RX_buf_out)				\
-	{												\
-		g_RX_buf_out = 0;							\
-	}												\
+#define advance_RX_buf_out()			\
+{ 						\
+	g_RX_buf_out++;				\
+	if (kRX_BUF_SIZE == g_RX_buf_out)	\
+	{					\
+		g_RX_buf_out = 0;		\
+	}					\
 }
 
-#define kISR_FIFO_A_DEPTH		3
-#define kISR_FIFO_D_DEPTH		3
+#define kISR_FIFO_A_DEPTH			3
+#define kISR_FIFO_D_DEPTH			3
 #define kPR2_RELOAD				250		// For 1ms TMR2 tick
-#define kCR						0x0D
-#define kLF						0x0A
+#define kCR					0x0D
+#define kL					0x0A
 
 // defines for the error_byte byte - each bit has a meaning
-#define kERROR_BYTE_TX_BUF_OVERRUN			2
+#define kERROR_BYTE_TX_BUF_OVERRUN		2
 #define kERROR_BYTE_RX_BUFFER_OVERRUN		3
 #define kERROR_BYTE_MISSING_PARAMETER		4
-#define kERROR_BYTE_PRINTED_ERROR			5			// We've already printed out an error
-#define kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT	6
+#define kERROR_BYTE_PRINTED_ERROR		5		// We've already printed out an error
+#define kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT	6
 #define kERROR_BYTE_EXTRA_CHARACTERS 		7
-#define kERROR_BYTE_UNKNOWN_COMMAND			8			// Part of command parser, not error handler
+#define kERROR_BYTE_UNKNOWN_COMMAND		8		// Part of command parser, not error handler
 
 /** V A R I A B L E S ********************************************************/
 #pragma udata access fast_vars
@@ -137,15 +152,15 @@ typedef enum {
 near unsigned int time_between_updates;
 
 near volatile unsigned int ISR_D_RepeatRate;			// How many 1ms ticks between Digital updates
-near volatile unsigned char ISR_D_FIFO_in;				// In pointer
-near volatile unsigned char ISR_D_FIFO_out;				// Out pointer
+near volatile unsigned char ISR_D_FIFO_in;			// In pointer
+near volatile unsigned char ISR_D_FIFO_out;			// Out pointer
 near volatile unsigned char ISR_D_FIFO_length;			// Current FIFO depth
 
 near volatile unsigned int ISR_A_RepeatRate;			// How many 1ms ticks between Analog updates
-near volatile unsigned char ISR_A_FIFO_in;				// In pointer
-near volatile unsigned char ISR_A_FIFO_out;				// Out pointer
+near volatile unsigned char ISR_A_FIFO_in;			// In pointer
+near volatile unsigned char ISR_A_FIFO_out;			// Out pointer
 near volatile unsigned char ISR_A_FIFO_length;			// Current FIFO depth
-near volatile unsigned char AnalogEnable;				// Maximum ADC channel to convert
+near volatile unsigned char AnalogEnable;			// Maximum ADC channel to convert
 
 // This byte has each of its bits used as a seperate error flag
 near unsigned char error_byte;
@@ -169,8 +184,8 @@ const rom char st_version[] = {"opensprints FW 0.32 based on UBW FW D Version 1.
 #pragma udata ISR_buf=0x100
 volatile unsigned int ISR_A_FIFO[12][kISR_FIFO_A_DEPTH];	// Stores the most recent analog conversions
 volatile unsigned char ISR_D_FIFO[3][kISR_FIFO_D_DEPTH];	// FIFO of actual data
-volatile tRC_state g_RC_state[kRC_DATA_SIZE];				// Stores states for each pin for RC command
-volatile unsigned int g_RC_value[kRC_DATA_SIZE];			// Stores reload values for TMR0
+volatile tRC_state g_RC_state[kRC_DATA_SIZE];			// Stores states for each pin for RC command
+volatile unsigned int g_RC_value[kRC_DATA_SIZE];		// Stores reload values for TMR0
 
 #pragma udata com_buf=0x200
 // USB Transmit buffer for packets (back to PC)
@@ -217,23 +232,30 @@ BOOL	g_ack_enable;
 BOOL is_racing = FALSE;
 BOOL raceTestMode = FALSE;
 unsigned int raceTimeMins;
+unsigned int raceTimeSecs;
 unsigned int raceTimeCentisecs;
+unsigned int raceTimeMillisecs;
+unsigned int rollerTickTimeMins[NUM_ROLLERS];
+unsigned int rollerTickTimeSecs[NUM_ROLLERS];
+unsigned int rollerTickTimeCentisecs[NUM_ROLLERS];
+unsigned int rollerTickTimeMillisecs[NUM_ROLLERS];
+
 
 
 /** P R I V A T E  P R O T O T Y P E S ***************************************/
 void BlinkUSBStatus (void);		// Handles blinking the USB status LED
-BOOL SwitchIsPressed (void);	// Check to see if the user (PRG) switch is pressed
+BOOL SwitchIsPressed (void);		// Check to see if the user (PRG) switch is pressed
 void parse_packet (void);		// Take a full packet and dispatch it to the right function
-signed short long extract_number (tExtractType type); // Pull a number paramter out of the packet
+signed short long extract_number (tExtractType type); 		// Pull a number paramter out of the packet
 signed char extract_digit (signed short long * acc, unsigned char digits); // Pull a character out of the packet
-void parse_R_packet (void);		// R for resetting UBW
-void parse_C_packet (void);		// C for configuring I/O and analog pins
+void parse_R_packet (void);	// R for resetting UBW
+void parse_C_packet (void);	// C for configuring I/O and analog pins
 void parse_CX_packet (void); 	// CX For configuring serial port
-void parse_O_packet (void);		// O for output digital to pins
-void parse_I_packet (void);		// I for input digital from pins
-void parse_V_packet (void);		// V for printing version
-void parse_A_packet (void);		// A for requesting analog inputs
-void parse_T_packet (void);		// T for setting up timed I/O (digital or analog)
+void parse_O_packet (void);	// O for output digital to pins
+void parse_I_packet (void);	// I for input digital from pins
+void parse_V_packet (void);	// V for printing version
+void parse_A_packet (void);	// A for requesting analog inputs
+void parse_T_packet (void);	// T for setting up timed I/O (digital or analog)
 void parse_PI_packet (void);	// PI for reading a single pin
 void parse_PO_packet (void);	// PO for setting a single pin state
 void parse_PD_packet (void);	// PD for setting a pin's direction
@@ -258,8 +280,21 @@ void parse_ST_packet (void);	// stop sending sensor messages to PC
 void parse_HW_packet (void);	// test mode. periodic sensor messages to PC
 
 void check_and_send_TX_data (void); // See if there is any data to send to PC, and if so, do it
-void print_ack (void);			// Print "OK" after packet is parsed
-int _user_putc (char c);		// Our UBS based stream character printer
+void print_ack (void);		// Print "OK" after packet is parsed
+int _user_putc (char c);	// Our UBS based stream character printer
+
+BOOL justBegun = TRUE;
+unsigned char prevSensorValues;
+unsigned char currentSensorValues;
+unsigned int sensorsStatus;
+unsigned int lastRaceTime;
+unsigned int lastSensorsTime[NUM_ROLLERS];
+unsigned int momentRaceTimeMillisecs;
+unsigned int momentRaceTimeCentisecs;
+unsigned int momentRaceTimeSecs;
+unsigned int momentRaceTimeMins;
+#define TEST_PERIOD 20 		// in centiseconds
+#define TEST_PERIOD_HALF (TEST_PERIOD/2)
 
 /** D E C L A R A T I O N S **************************************************/
 
@@ -273,228 +308,27 @@ void low_ISR(void)
 	{
 		// Clear the interrupt 
 		PIR1bits.TMR2IF = 0;
-		
-		// The most time critical part of this interrupt service routine is the 
-		// handling of the RC command's servo output pulses.
-		// Each time we get this interrupt, we look to see if the next pin on the
-		// list has a value greater than zero. If so, we arm set it high and set
-		// it's state to PRIMED. Then we advance the pointers to the next pair.
-		if (kPRIMED == g_RC_state[g_RC_primed_ptr])
+		if (++raceTimeMillisecs==10)
 		{
-			// This is easy, throw the value into the timer
-			TMR0H = g_RC_value[g_RC_primed_ptr] >> 8;
-			TMR0L = g_RC_value[g_RC_primed_ptr] & 0xFF;
-	
-			// Then make sure the timer's interrupt enable is set
-			INTCONbits.TMR0IE = 1;
-			// And be sure to clear the flag too
-			INTCONbits.TMR0IF = 0;
-			// Turn on Timer0
-			T0CONbits.TMR0ON = 1;
-	
-			// And set this pin's state to timing
-			g_RC_state[g_RC_primed_ptr] = kTIMING;
-			
-			// Remember which pin is now timing
-			g_RC_timing_ptr = g_RC_primed_ptr;
-		}
-
-		if (kWAITING == g_RC_state[g_RC_next_ptr])
-		{
-			// If the value is zero, then shut this pin off
-			// otherwise, prime it for sending a pulse
-			if (0 == g_RC_value[g_RC_next_ptr])
+			raceTimeMillisecs=0;
+			if (++raceTimeCentisecs==60)
 			{
-				g_RC_state[g_RC_next_ptr] = kOFF;
-			}
-			else
-			{
-				// Set the bit high
-				if (g_RC_next_ptr < 8)
+				raceTimeCentisecs=0;
+				if (++raceTimeSecs==60)
 				{
-					bitset (LATA, g_RC_next_ptr & 0x7);
-				}
-				else if (g_RC_next_ptr < 16)
-				{
-					bitset (LATB, g_RC_next_ptr & 0x7);
-				}
-				else
-				{
-					bitset (LATC, g_RC_next_ptr & 0x7);
-				}
-				// Set the state to primed so we know to do next
-				g_RC_state[g_RC_next_ptr] = kPRIMED;
-				// And remember which pin is primed
-				g_RC_primed_ptr = g_RC_next_ptr;
-			}
-		}
-
-		// And always advance the main pointer
-		// NOTE: we need to skip RA6, RA7, and RC3, RC4, and RC5
-		// (Because UBW doesn't bring those pins out to headers)
-		g_RC_next_ptr++;
-		if (6 == g_RC_next_ptr)
-		{
-			g_RC_next_ptr = 8;
-		}
-		else if (19 == g_RC_next_ptr)
-		{
-			g_RC_next_ptr = 22;
-		}
-		else if (kRC_DATA_SIZE == g_RC_next_ptr)
-		{
-			g_RC_next_ptr = 0;
-		}
-				
-		// See if it's time to fire off an I packet
-		if (ISR_D_RepeatRate > 0)
-		{
-			D_tick_counter++;
-			if (D_tick_counter >= ISR_D_RepeatRate)
-			{
-				raceTimeCentisecs++;
-				if (raceTimeCentisecs >= 6000)
-				{
-					raceTimeCentisecs=0;
+					raceTimeSecs=0;
 					raceTimeMins++;
 				}
-				D_tick_counter = 0;
-				// Tell the main code to send an I packet
-				if (ISR_D_FIFO_length < kISR_FIFO_D_DEPTH)
-				{
-					// And copy over our port values
-					ISR_D_FIFO[0][ISR_D_FIFO_in] = PORTA;
-					ISR_D_FIFO[1][ISR_D_FIFO_in] = PORTB;
-					ISR_D_FIFO[2][ISR_D_FIFO_in] = PORTC;
-					ISR_D_FIFO_in++;
-					if (ISR_D_FIFO_in >= kISR_FIFO_D_DEPTH)
-					{
-						ISR_D_FIFO_in = 0;	
-					}
-					ISR_D_FIFO_length++;
-				}
-				else
-				{
-					// Stop the madness! Something is wrong, we're
-					// not getting our packets out. So kill the 
-					// timer.
-					ISR_D_RepeatRate = 0;
-				}
-			}	
-		}
-		
-		// See if it's time to fire off an A packet
-		if ((ISR_A_RepeatRate > 0) && (AnalogEnable > 0))
-		{
-			A_tick_counter++;
-			if (A_tick_counter >= ISR_A_RepeatRate)
-			{
-				A_tick_counter = 0;
-				// Tell the main code to send an A packet
-				if (ISR_A_FIFO_length < kISR_FIFO_A_DEPTH)
-				{
-					ISR_A_FIFO_in++;
-					if (ISR_A_FIFO_in >= kISR_FIFO_A_DEPTH)
-					{
-						ISR_A_FIFO_in = 0;	
-					}
-					ISR_A_FIFO_length++;
-				}
-				else
-				{
-					// Stop the madness! Something is wrong, we're
-					// not getting our packets out. So kill the A
-					// packets.
-					ISR_A_RepeatRate = 0;
-				}
-			}	
-		}
-
-		// See if it's time to start analog conversions
-		if (AnalogEnable > 0)
-		{
-			// Set the channel to zero to start off with
-			A_cur_channel = 0;
-			ADCON0 = (A_cur_channel << 2) + 1;
-
-			// Clear the interrupt
-			PIR1bits.ADIF = 0;
-
-			// And make sure to always use low priority.
-			IPR1bits.ADIP = 0;
-
-			// Set the interrupt enable
-			PIE1bits.ADIE = 1;
-
-			// Make sure it's on!
-			ADCON0bits.ADON = 1;
-
-			// And tell the A/D to GO!
-			ADCON0bits.GO_DONE = 1;
-		}
-		
-	}
-
-	// Do we have an analog interrupt?
-	if (PIR1bits.ADIF)
-	{
-		// Clear the interrupt
-		PIR1bits.ADIF = 0;
-
-		// Read out the value that we just converted, and store it.
-		ISR_A_FIFO[A_cur_channel][ISR_A_FIFO_in] = 
-			(unsigned int)ADRESL 
-			| 
-			((unsigned int)ADRESH << 8);
-	
-		// Incriment the channel and write the new one in 
-		A_cur_channel++;
-		if (A_cur_channel >= AnalogEnable)
-		{
-			// We're done, so just sit and wait
-			// Turn off our interrupts though.
-			PIE1bits.ADIE = 0;
-		}
-		else
-		{
-			// Update the channel number
-			ADCON0 = (A_cur_channel << 2) + 1;
-			// And start the next conversion
-			ADCON0bits.GO_DONE = 1;
-		}
-	}
-
-	// Do we have a TMR0 interrupt? (RC command)
-	// TMR0 is in 16 bit mode, and counts up to FFFF and overflows, generating
-	// this interrupt.
-	if (INTCONbits.TMR0IF)
-	{
-		// Turn off Timer0
-		T0CONbits.TMR0ON = 0;
-
-		// Clear the interrupt
-		INTCONbits.TMR0IF = 0;
-		
-		// And disable it
-		INTCONbits.TMR0IE = 0;
-
-		// Only do our stuff if the pin is in the proper state
-		if (kTIMING == g_RC_state[g_RC_timing_ptr])
-		{
-			// All we need to do is clear the pin and change its state to kWAITING
-			if (g_RC_timing_ptr < 8)
-			{
-				bitclr (LATA, g_RC_timing_ptr & 0x7);
 			}
-			else if (g_RC_timing_ptr < 16)
-			{
-				bitclr (LATB, g_RC_timing_ptr & 0x7);
-			}
-			else
-			{
-				bitclr (LATC, g_RC_timing_ptr & 0x7);
-			}
-			g_RC_state[g_RC_timing_ptr] = kWAITING;		
+		}
+		for(int roller=0,roller<NUM_ROLLERS;roller++)
+		{
+			// remember previous state of pins
+			prevSensorValues=currentValueSensor0;
+		
+			// read the pins
+			currentSensorValues = bittst(PORTB,Sensor0PortApin);  	// read state of Port A Pin x
+			sensorsStatus=(currentValueSensor1^prevValueSensor1)&~currentValueSensor1;
 		}
 	}
 }
@@ -534,23 +368,23 @@ void UserInit(void)
 #endif
 
 	// Initalize LED I/Os to outputs
-    mInitAllLEDs();
+	mInitAllLEDs();
 	// Initalize switch as an input
-    mInitSwitch();
+	mInitSwitch();
 
-	// Start off always using "OK" acknoledge.
+	// Start off always using "OK" acknowledge.
 	g_ack_enable = TRUE;
 
 	// Use our own special output function for STDOUT
 	stdout = _H_USER;
 
 	// Initalize all of the ISR FIFOs
-    ISR_A_FIFO_out = 0;
-    ISR_A_FIFO_in = 0;
-    ISR_A_FIFO_length = 0;
-    ISR_D_FIFO_out = 0;
-    ISR_D_FIFO_in = 0;
-    ISR_D_FIFO_length = 0;
+	ISR_A_FIFO_out = 0;
+	ISR_A_FIFO_in = 0;
+	ISR_A_FIFO_length = 0;
+	ISR_D_FIFO_out = 0;
+	ISR_D_FIFO_in = 0;
+	ISR_D_FIFO_length = 0;
 
 	// Make sure that our timer stuff starts out disabled
 	ISR_D_RepeatRate = 0;
@@ -559,31 +393,21 @@ void UserInit(void)
 	A_tick_counter = 0;
 	A_cur_channel = 0;
 	
-    // Now init our registers
+	// Now init our registers
 	// The prescaler will be at 16
-    T2CONbits.T2CKPS1 = 1;
-    T2CONbits.T2CKPS0 = 1;
-    // We want the TMR2 post scaler to be a 3
-    T2CONbits.T2OUTPS3 = 0;
-    T2CONbits.T2OUTPS2 = 0;
-    T2CONbits.T2OUTPS1 = 1;
-    T2CONbits.T2OUTPS0 = 0;
+	T2CONbits.T2CKPS1 = 1;
+	T2CONbits.T2CKPS0 = 1;
+	// We want the TMR2 post scaler to be a 3
+	T2CONbits.T2OUTPS3 = 0;
+	T2CONbits.T2OUTPS2 = 0;
+	T2CONbits.T2OUTPS1 = 1;
+	T2CONbits.T2OUTPS0 = 0;
 	// Set our reload value
 	PR2 = kPR2_RELOAD;
 
-	// Set up the Analog to Digital converter
-	// Clear out the FIFO data
-	for (i = 0; i < 12; i++)
-	{
-		for (j = 0; j < kISR_FIFO_A_DEPTH; j++)
-		{
-			ISR_A_FIFO[i][j] = 0;
-		}
-	}	
-
-    // Inialize USB TX and RX buffer management
-    g_RX_buf_in = 0;
-    g_RX_buf_out = 0;
+	// Inialize USB TX and RX buffer management
+	g_RX_buf_in = 0;
+	g_RX_buf_out = 0;
 	g_TX_buf_in = 0;
 	g_TX_buf_out = 0;
 
@@ -605,26 +429,26 @@ void UserInit(void)
 		g_RC_state[i] = kOFF;
 	}
 
-	// Enable TMR0 for our RC timing operation
-	T0CONbits.PSA = 1;		// Do NOT use the prescaler
-	T0CONbits.T0CS = 0;		// Use internal clock
+	// Enable TMR0 for our OpenSprints timing operation
+	T0CONbits.PSA = 1;	// Do NOT use the prescaler
+	T0CONbits.T0CS = 0;	// Use internal clock
 	T0CONbits.T08BIT = 0;	// 16 bit timer
 	INTCONbits.TMR0IF = 0;	// Clear the interrupt flag
 	INTCONbits.TMR0IE = 0;	// And clear the interrupt enable
 	INTCON2bits.TMR0IP = 0;	// Low priority
 
-    // Enable interrupt priorities
-    RCONbits.IPEN = 1;
+	// Enable interrupt priorities
+	RCONbits.IPEN = 1;
 	T2CONbits.TMR2ON = 0;
     
-    PIE1bits.TMR2IE = 1;
-    IPR1bits.TMR2IP = 0;
+	PIE1bits.TMR2IE = 1;
+	IPR1bits.TMR2IP = 0;
     
-    INTCONbits.GIEH = 1;	// Turn high priority interrupts on
-    INTCONbits.GIEL = 1;	// Turn low priority interrupts on
+	INTCONbits.GIEH = 1;	// Turn high priority interrupts on
+	INTCONbits.GIEL = 1;	// Turn low priority interrupts on
 
 	// Turn on the Timer2
-	T2CONbits.TMR2ON = 1;    
+	//T2CONbits.TMR2ON = 1;    
 
 }//end UserInit
 
@@ -657,7 +481,7 @@ void ProcessIO(void)
 {   
 	static BOOL in_cr = FALSE;
 	static byte last_fifo_size;
-    unsigned char tst_char;
+	unsigned char tst_char;
 	BOOL	got_full_packet = FALSE;
 	cdc_rx_len = 0;
 
@@ -666,8 +490,8 @@ void ProcessIO(void)
 
 
 
-    // User Application USB tasks
-    if((usb_device_state < CONFIGURED_STATE) || (UCONbits.SUSPND == 1))
+	// User Application USB tasks
+	if((usb_device_state < CONFIGURED_STATE) || (UCONbits.SUSPND == 1))
 	{	
 		return;
 	}
@@ -799,7 +623,7 @@ void ProcessIO(void)
 			// We don't need to do anything since something has already been printed out
 			//printf ((rom char *)"!5\r\n");
 		}
-		if (bittst (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT))
+		if (bittst (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT))
 		{
 			printf ((rom char *)"!6 Err: Invalid paramter value\r\n");
 		}
@@ -829,7 +653,7 @@ int _user_putc (char c)
 		g_TX_buf_in = 0;
 	}
 	
-	// Also check to see if we bumpted up against our output pointer
+	// Also check to see if we bumped up against our output pointer
 	if (g_TX_buf_in == g_TX_buf_out)
 	{
 		bitset (error_byte, kERROR_BYTE_TX_BUF_OVERRUN);
@@ -1168,7 +992,7 @@ void parse_CU_packet(void)
 		}
 		else
 		{
-			bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+			bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		}
 	}
 	print_ack();
@@ -1542,12 +1366,12 @@ void parse_PD_packet(void)
 	// Limit check the parameters
 	if (direction > 1)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 	if (pin > 7)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 	if ('A' == port)
@@ -1609,7 +1433,7 @@ void parse_PD_packet(void)
 #endif
 	else
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;	
 	}
 	
@@ -1641,7 +1465,7 @@ void parse_PI_packet(void)
 	// Limit check the parameters
 	if (pin > 7)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 	
@@ -1670,7 +1494,7 @@ void parse_PI_packet(void)
 #endif
 	else
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;	
 	}
 	
@@ -1705,12 +1529,12 @@ void parse_PO_packet(void)
 	// Limit check the parameters
 	if (value > 1)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 	if (pin > 7)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 	if ('A' == port)
@@ -1772,7 +1596,7 @@ void parse_PO_packet(void)
 #endif
 	else
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;	
 	}
 	
@@ -1868,7 +1692,7 @@ void parse_RC_packet(void)
 	// Max value user can input. (min is zero)
 	if (value > 11890)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 	
@@ -1881,7 +1705,7 @@ void parse_RC_packet(void)
 
 	if (pin > 7)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 	if ('A' == port)
@@ -1898,7 +1722,7 @@ void parse_RC_packet(void)
 	}
 	else
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;	
 	}
 
@@ -1998,7 +1822,7 @@ void parse_BO_packet(void)
 		}
 		else 
 		{
-			bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+			bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 			return;
 		}
 		BO_data_byte = tmp << 4;
@@ -2022,7 +1846,7 @@ void parse_BO_packet(void)
 		}
 		else
 		{
-			bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+			bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 			return;
 		}
 		BO_data_byte = BO_data_byte + tmp;
@@ -2116,7 +1940,7 @@ void parse_BS_packet(void)
 	// Limit check it
 	if (0 == byte_count || byte_count > 56)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return;
 	}
 
@@ -2241,27 +2065,57 @@ void parse_CI_packet (void)
 
 }	
 
-void parse_GO_packet (void)
+char finish_tick;
+char active_rollers;
+char refresh_rate = 100;
+
+void start_race (void)
 {
-	is_racing = TRUE;				// make it possible to start monitoring sensors
-	raceTimeCentisecs=0;			// restart the stopwatch
+	is_racing = TRUE;			// make it possible to start monitoring sensors
+	raceTimeMillisecs=0;			// restart the stopwatch
+	raceTimeCentisecs=0;
 	raceTimeMins=0;
-	T2CONbits.TMR2ON=1;				// turn on the timer
-	ISR_D_RepeatRate = 10;			// every 10ms advance the timer
+	T2CONbits.TMR2ON=1;			// turn on the timer
+	ISR_D_RepeatRate = 1;			// every 10ms advance the timer
+}
+
+void parse_GO_packet (void)			// Start a race
+{
+	start_race();
+	// Extract values of each argument.
+	finish_tick = extract_number (kUCHAR);
+	active_rollers = extract_number (kUCHAR);
+	refresh_rate = extract_number (kUCHAR);
+	
+	// Bail if we got a conversion error
+	if (error_byte)
+	{
+		return;
+	}
 }	
 
-void parse_ST_packet (void)
+void parse_ST_packet (void)			// Stop the race.
 {
-	is_racing = FALSE;				// stop monitoring sensors
+	is_racing = FALSE;			// stop monitoring sensors
 	raceTestMode = FALSE;
 }	
 
-void parse_HW_packet (void)
+void parse_HW_packet (void)			// Initiate hardware test mode.
 {
 	raceTestMode = TRUE;
-	parse_GO_packet();
-}	
+	start_race();
 
+	// Extract values of each argument.
+	finish_tick = extract_number (kUCHAR);
+	active_rollers = extract_number (kUCHAR);
+	refresh_rate = extract_number (kUCHAR);
+	
+	// Bail if we got a conversion error
+	if (error_byte)
+	{
+		return;
+	}
+}	
 
 // Look at the string pointed to by ptr
 // There should be a comma where ptr points to upon entry.
@@ -2269,7 +2123,7 @@ void parse_HW_packet (void)
 // If so, then look for up to three bytes after the
 // comma for numbers, and put them all into one
 // byte (0-255). If the number is greater than 255, then
-// thow a range error.
+// throw a range error.
 // Advance the pointer to the byte after the last number
 // and return.
 signed short long extract_number(tExtractType type)
@@ -2313,7 +2167,7 @@ signed short long extract_number(tExtractType type)
 			(kUINT == type)
 		)
 		{
-			bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+			bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 			return (0);
 		}
 		else
@@ -2397,7 +2251,7 @@ signed short long extract_number(tExtractType type)
 		)
 	)
 	{
-		bitset (error_byte, kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT);
+		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
 		return (0);
 	}
 
@@ -2536,48 +2390,32 @@ BOOL SwitchIsPressed(void)
 	}
 	else
 	{
-		return (FALSE);					// Was not pressed
+		return (FALSE);			// Was not pressed
 	}
 }
 
-
 /** Start Luke Orland code **************************************************/
-BOOL justBegun = TRUE;
-unsigned int prevValueSensor0;
-unsigned int prevValueSensor1;
-unsigned int currentValueSensor0;
-unsigned int currentValueSensor1;
-unsigned int Sensor0PortApin=0;
-unsigned int Sensor1PortApin=1;
-unsigned int sensor0Status;
-unsigned int sensor1Status;
-unsigned int lastRaceTime;
-unsigned int lastSensor0Time;
-unsigned int lastSensor1Time;
-unsigned int momentRaceTimeCentisecs;
-unsigned int momentRaceTimeMins;
-#define TEST_PERIOD 20 		// in centiseconds
-#define TEST_PERIOD_HALF (TEST_PERIOD/2)
 void HallEffSensors(void)
 {
-	if(is_racing)
+	if (is_racing)
 	{
-		unsigned int momentRaceTimeCentisecs;
-		unsigned int momentRaceTimeMins;
 		// check the race stopwatch
+		momentRaceTimeMillisecs = raceTimeMillisecs;
 		momentRaceTimeCentisecs = raceTimeCentisecs;
+		momentRaceTimeSecs = raceTimeSecs;
 		momentRaceTimeMins = raceTimeMins;
 
-		if(justBegun)
+		if (justBegun)
 		{
-			// initialize the pins
-			bitset (DDRA, Sensor0PortApin);     // set Port A Pin x as input
-			bitset (DDRA, Sensor1PortApin);     // set Port A Pin x as input
-			// read the pins
-			currentValueSensor0 = bittst (PORTA, Sensor0PortApin);  	// read Port A Pin x state
-			currentValueSensor1 = bittst (PORTA, Sensor1PortApin);  	// read Port A Pin x state
+			for (int roller=0;roller<NUM_ROLLERS;roller++)
+			{
+				// initialize the pins
+				bitset (DDRA, roller);  		// (move this to _init part of code?) set Port A Pin i as input
+				// read the pins
+				currentSensorValues = bittst (PORTA, roller);	// read Port A Pin i state
 	
-			justBegun=0;
+				justBegun=0;
+			}
 		}
 
 		else
@@ -2602,28 +2440,12 @@ void HallEffSensors(void)
 
 			else	// not test mode
 			{
-				// remember previous state of pins
-				prevValueSensor0=currentValueSensor0;
-				prevValueSensor1=currentValueSensor1;
-	
-				// read the pins
-				currentValueSensor0 = bittst(PORTA,Sensor0PortApin);  	// read state of Port A Pin x
-				currentValueSensor1 = bittst(PORTA,Sensor1PortApin);  	// read state of Port A Pin x
-				
-				sensor0Status=(currentValueSensor0^prevValueSensor0)&~currentValueSensor0;
-				sensor1Status=(currentValueSensor1^prevValueSensor1)&~currentValueSensor1;
 			}
 
 			if(sensor0Status)
 			{
 				// send a string through USB packet stating that sensor 0 switched to high
-				printf("1;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
-			}
-
-			if(sensor1Status)
-			{
-				// send a string through USB packet stating that sensor 1 switched to high
-				printf("2;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
+				printf("%i:\n  last_tick_time: %i:%i.%i%i\n",i,momentRaceTimeMins,momentRaceTimeCentisecs);
 			}
 		}
 	}
