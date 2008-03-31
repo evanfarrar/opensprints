@@ -32,7 +32,7 @@
  * Author               Date		Comment
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Rawin Rojvanit       11/19/04	Original.
- * Brian Schmalz	03/15/06	Added user code to impliment
+ * Brian Schmalz	03/15/06	Added user code to implement
  *									firmware version D v1.0 for UBW
  *									project. See www.greta.dhs.org/UBW
  * Brian Schmalz	05/04/06	Starting version 1.1, which will 
@@ -72,6 +72,12 @@
  * Scratch list:
  *  - HW and GO commands.
  *  - Try moving low_ISR stuff to high_ISR
+ *  - check ports during ISR
+ *  - handshaking
+ *    * if PC doesn't get the message in the precise format, asks for a resend
+ *  - LB and HB for ticks
+ *  - parse_RS_packet
+ *  - SendUpdateToPc()
  *
  *****************************************************************************/
 
@@ -2395,6 +2401,11 @@ BOOL SwitchIsPressed(void)
 }
 
 /** Start Luke Orland code **************************************************/
+void SendUpdateToPc (void)
+{
+	printf("%i:\n  last_tick_time: %i:%i.%i%i\n",i,momentRaceTimeMins,momentRaceTimeCentisecs);
+}
+
 void HallEffSensors(void)
 {
 	if (is_racing)
@@ -2445,11 +2456,10 @@ void HallEffSensors(void)
 			if(sensor0Status)
 			{
 				// send a string through USB packet stating that sensor 0 switched to high
-				printf("%i:\n  last_tick_time: %i:%i.%i%i\n",i,momentRaceTimeMins,momentRaceTimeCentisecs);
+				SendUpdateToPc();
 			}
 		}
 	}
 }
-
 
 /** EOF user.c ***************************************************************/
