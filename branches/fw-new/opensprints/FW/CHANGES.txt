@@ -1,0 +1,16 @@
+CHANGES.
+
+
+move HallEffSensors() from main() in main.c to ProcessIO() in user.c
+void parse_GO_packet (void);	// start sending sensor messages to PC
+void parse_STOP_packet (void);	// stop sending sensor messages to PC
+
+	BOOL	is_race_on = FALSE;
+
+
+		case ('G' * 256) + 'O':
+		{
+			// CI for Configure I2C
+			parse_GO_packet ();
+			break;
+		}
