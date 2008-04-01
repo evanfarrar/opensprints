@@ -145,7 +145,7 @@ typedef enum {
 #define kISR_FIFO_D_DEPTH			3
 #define kPR2_RELOAD				250		// For 1ms TMR2 tick
 #define kCR					0x0D
-#define kL					0x0A
+#define kLF					0x0A
 
 // defines for the error_byte byte - each bit has a meaning
 #define kERROR_BYTE_TX_BUF_OVERRUN		2
@@ -278,10 +278,12 @@ BOOL justBegun = TRUE;
 
 void SendUpdateToPc (void)
 {
+	char roller;
+
 	printf("time: %i\n",raceTime);
 
-	for(int roller=0; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
 	// Only print out the tick times and number of ticks for the active rollers
+	for (roller=0; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
 	{
 		if(raceTestMode)
 		{
@@ -307,6 +309,8 @@ void low_ISR(void)
 #pragma interrupt high_ISR
 void high_ISR(void)
 {
+	char roller;
+
 	// Do we have a Timer2 interrupt? (1ms rate)
 	if (PIR1bits.TMR2IF)
 	{
@@ -317,11 +321,12 @@ void high_ISR(void)
 			raceTime++;		// add another ms to the time counter
 			prevSensorStates = currentSensorStates;		// remember previous state of pins
 			currentSensorStates = PORTB;			// read the pins
-			for(int roller=0;roller<NUM_ROLLERS;roller++)
+
+			for(roller=0;roller<NUM_ROLLERS;roller++)
 			{
 				unsigned char rollerMask;
 				rollerMask = (1<<roller);
-				if(rollerMask & activeRollers & (currentSensorValues^prevSensorValues) & currentSensorValues)
+				if(rollerMask & activeRollers & (currentSensorStates^prevSensorStates) & currentSensorStates)
 				// Check each active roller for a change from 0 to 1
 				{
 					// If so, increase the tick count for that roller and save the time
@@ -329,7 +334,6 @@ void high_ISR(void)
 					rollerTickTimes[roller] = raceTime;
 				}
 			}
-
 		}
 	}
 }
@@ -812,9 +816,7 @@ void startRace (void)
 	DDRB = 0xff;			// initialize the pins
 	
 	isRacing = TRUE;		// make it possible to start monitoring sensors
-	raceTimeMillisecs=0;		// restart the stopwatch
-	raceTimeCentisecs=0;
-	raceTimeMins=0;
+	raceTime=0;		// restart the stopwatch
 	T2CONbits.TMR2ON=1;		// turn on the timer
 	ISR_D_RepeatRate = 1;		// every 10ms advance the timer
 }
@@ -826,7 +828,7 @@ void parse_GO_packet (void)		// Start a race
 	// Extract values of each argument.
 	//finish_tick = extract_number (kUCHAR);
 	activeRollers = extract_number (kUCHAR);
-	refreshRate = extract_number (kUCHAR);
+	refreshInterval = extract_number (kUCHAR);
 	
 	// Bail if we got a conversion error
 	if (error_byte)
@@ -851,7 +853,7 @@ void parse_HW_packet (void)			// Initiate hardware test mode.
 	// Extract values of each argument.
 	//finish_tick = extract_number (kUCHAR);
 	activeRollers = extract_number (kUCHAR);
-	refreshRate = extract_number (kUCHAR);
+	refreshInterval = extract_number (kUCHAR);
 	
 	// Bail if we got a conversion error
 	if (error_byte)

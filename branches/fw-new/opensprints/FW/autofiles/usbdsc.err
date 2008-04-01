@@ -1,5 +1,5 @@
-Warning[2054] C:\iro-svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c 260 : suspicious pointer conversion
-Warning[2054] C:\iro-svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c 260 : suspicious pointer conversion
-Warning[2054] C:\iro-svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c 261 : suspicious pointer conversion
-Warning[2054] C:\iro-svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c 261 : suspicious pointer conversion
-Warning[2054] C:\iro-svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c 261 : suspicious pointer conversion
+Warning[2054] O:\autofiles\usbdsc.c 260 : suspicious pointer conversion
+Warning[2054] O:\autofiles\usbdsc.c 260 : suspicious pointer conversion
+Warning[2054] O:\autofiles\usbdsc.c 261 : suspicious pointer conversion
+Warning[2054] O:\autofiles\usbdsc.c 261 : suspicious pointer conversion
+Warning[2054] O:\autofiles\usbdsc.c 261 : suspicious pointer conversion
