@@ -80,9 +80,9 @@
  *  - switch to sending serial data instead of ascii chars. (yaml?)
 	* DONE: ISR
 	* DONE: check in ProcessIO() {?} if it is time to send update
-	* send update to pc
-	* init pins for input on REGB
-	* HW and GO commands
+	* DONE: send update to pc
+	* DONE: init pins for input on REGB
+	* DONE: HW and GO commands
  *
  *************************************************************************/
 
