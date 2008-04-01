@@ -278,7 +278,7 @@ BOOL justBegun = TRUE;
 
 void SendUpdateToPc (void)
 {
-/*	printf("time: %i\n",raceTime);
+	printf("time: %i\n",raceTime);
 
 	for(int roller=0; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
 	// Only print out the tick times and number of ticks for the active rollers
@@ -293,7 +293,7 @@ void SendUpdateToPc (void)
 		}
 	}
 	printf("eom.\n");
-*/
+
 }
 
 #pragma code
@@ -317,7 +317,7 @@ void high_ISR(void)
 			raceTime++;		// add another ms to the time counter
 			prevSensorStates = currentSensorStates;		// remember previous state of pins
 			currentSensorStates = PORTB;			// read the pins
-/*			for(int roller=0;roller<NUM_ROLLERS;roller++)
+			for(int roller=0;roller<NUM_ROLLERS;roller++)
 			{
 				unsigned char rollerMask;
 				rollerMask = (1<<roller);
@@ -329,7 +329,7 @@ void high_ISR(void)
 					rollerTickTimes[roller] = raceTime;
 				}
 			}
-*/
+
 		}
 	}
 }
