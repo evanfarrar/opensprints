@@ -190,7 +190,7 @@ near unsigned char A_cur_channel;
 // ROM strings
 const rom char st_OK[] = {"OK\r\n"};
 const rom char st_LFCR[] = {"\r\n"};
-const rom char st_version[] = {"opensprints FW 0.32 based on UBW FW D Version 1.4.2\r\n"};
+const rom char st_version[] = {"opensprints FW 0.33 based on UBW FW D Version 1.4.2\r\n"};
 
 #pragma udata ISR_buf=0x100
 volatile unsigned int ISR_A_FIFO[12][kISR_FIFO_A_DEPTH];	// Stores the most recent analog conversions
