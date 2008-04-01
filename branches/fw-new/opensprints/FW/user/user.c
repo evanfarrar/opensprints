@@ -256,6 +256,7 @@ void print_ack (void);		// Print "OK" after packet is parsed
 int _user_putc (char c);	// Our UBS based stream character printer
 
 // sensor stuff
+#define	NUM_ROLLERS		8
 unsigned int finishTick;		// this value determines the length of the race in roller rotations
 unsigned char activeRollers;		// 8 flags: Are the rollers active?
 unsigned int refreshInterval = 66;	// default value is 15 frames per second
@@ -274,10 +275,12 @@ BOOL justBegun = TRUE;
 /** D E C L A R A T I O N S **************************************************/
 
 /** Start OpenSprints FW code ************************************************/
+
 void SendUpdateToPc (void)
 {
-	printf("time: %i\n",raceTime);
-	for(char roller; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
+/*	printf("time: %i\n",raceTime);
+
+	for(int roller=0; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
 	// Only print out the tick times and number of ticks for the active rollers
 	{
 		if(raceTestMode)
@@ -290,47 +293,8 @@ void SendUpdateToPc (void)
 		}
 	}
 	printf("eom.\n");
+*/
 }
-
-			// read the pins
-				currentSensorValues = bittst (PORTA, roller);	// read Port A Pin i state
-	
-				justBegun=0;
-			}
-		}
-
-		else
-		{
-			if (raceTestMode)
-			{
-				if (momentRaceTimeCentisecs%TEST_PERIOD==0 && momentRaceTimeCentisecs!=lastSensor0Time)
-				{
-					sensor0Status=1;
-					lastSensor0Time=momentRaceTimeCentisecs;
-				}
-				else
-					sensor0Status=0;
-				if (momentRaceTimeCentisecs%TEST_PERIOD==TEST_PERIOD_HALF && momentRaceTimeCentisecs!=lastSensor1Time)
-				{
-					sensor1Status=1;
-					lastSensor1Time=momentRaceTimeCentisecs;
-				}
-				else
-					sensor1Status=0;
-			}
-
-			else	// not test mode
-			{
-			}
-
-			if(sensor0Status)
-			{
-				// send a string through USB packet stating that sensor 0 switched to high
-			}
-		}
-	}
-}
-
 
 #pragma code
 
@@ -351,9 +315,9 @@ void high_ISR(void)
 		if (isRacing)
 		{
 			raceTime++;		// add another ms to the time counter
-			prevSensorValues = currentSensorValues;		// remember previous state of pins
-			currentSensorValues = PORTB;			// read the pins
-			for(int roller=0;roller<NUM_ROLLERS;roller++)
+			prevSensorStates = currentSensorStates;		// remember previous state of pins
+			currentSensorStates = PORTB;			// read the pins
+/*			for(int roller=0;roller<NUM_ROLLERS;roller++)
 			{
 				unsigned char rollerMask;
 				rollerMask = (1<<roller);
@@ -365,6 +329,7 @@ void high_ISR(void)
 					rollerTickTimes[roller] = raceTime;
 				}
 			}
+*/
 		}
 	}
 }

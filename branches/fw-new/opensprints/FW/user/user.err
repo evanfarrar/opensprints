@@ -1,24 +1,26 @@
-Warning[2060] e:\iro_svn\opensprints\FW\user\user.c 775 : shift expression has no effect
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 778 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 783 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 787 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 791 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 795 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 804 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 808 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1090 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1099 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1134 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1417 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1428 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1448 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1455 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1460 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1517 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1680 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 1975 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 2126 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 2290 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 2442 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 2620 : type qualifier mismatch in assignment
-Warning[2066] e:\iro_svn\opensprints\FW\user\user.c 2626 : type qualifier mismatch in assignment
+Error[1105] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 540 : symbol 'kLF' has not been defined
+Error[1105] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 555 : symbol 'kLF' has not been defined
+Warning[2060] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 596 : shift expression has no effect
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 599 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 604 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 608 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 612 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 616 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 625 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 629 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 756 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 765 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 800 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 807 : type qualifier mismatch in assignment
+Error[1105] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 815 : symbol 'raceTimeMillisecs' has not been defined
+Error[1101] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 815 : lvalue required
+Error[1105] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 816 : symbol 'raceTimeCentisecs' has not been defined
+Error[1101] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 816 : lvalue required
+Error[1105] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 817 : symbol 'raceTimeMins' has not been defined
+Error[1101] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 817 : lvalue required
+Error[1105] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 829 : symbol 'refreshRate' has not been defined
+Error[1101] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 829 : lvalue required
+Error[1105] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 854 : symbol 'refreshRate' has not been defined
+Error[1101] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 854 : lvalue required
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 887 : type qualifier mismatch in assignment
+Warning[2066] C:\iro-svn\branches\fw-new\opensprints\FW\user\user.c 1039 : type qualifier mismatch in assignment
