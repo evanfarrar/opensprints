@@ -280,21 +280,21 @@ void SendUpdateToPc (void)
 {
 	char roller;
 
-	printf("time: %i\n",raceTime);
+	printf((rom char *)"time: %i\n",raceTime);
 
 	// Only print out the tick times and number of ticks for the active rollers
 	for (roller=0; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
 	{
 		if(raceTestMode)
 		{
-			printf("%i:\n  last_tick_time: %i\n",roller,raceTime,raceTime/refreshInterval);
+			printf((rom char *)"%i:\n  last_tick_time: %i\n",roller,raceTime,raceTime/refreshInterval);
 		}
 		else
 		{
-			printf("%i:\n  last_tick_time: %i\n",roller,rollerTickTimes[roller],rollerTicks[roller]);
+			printf((rom char *)"%i:\n  last_tick_time: %i\n",roller,rollerTickTimes[roller],rollerTicks[roller]);
 		}
 	}
-	printf("eom.\n");
+	printf((rom char *)"eom.\n");
 
 }
 
@@ -823,7 +823,7 @@ void startRace (void)
 
 void parse_GO_packet (void)		// Start a race
 {
-	print_ack();
+	//print_ack();
 	startRace();
 	// Extract values of each argument.
 	//finish_tick = extract_number (kUCHAR);
