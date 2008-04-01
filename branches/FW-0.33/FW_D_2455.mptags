@@ -1,0 +1,1134 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+ABDEN	C:\MCC18\h\p18f2455.h	638;"	m	line:638
+ABDOVF	C:\MCC18\h\p18f2455.h	645;"	m	line:645
+ABSTRACT_CONTROL_MODEL::0x02	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	71;"	d	line:71
+ABSTRACT_STATE::0x01	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	85;"	d	line:85
+ACCESS::0	C:\MCC18\h\p18f2455.h	1079;"	d	line:1079
+ACKDT	C:\MCC18\h\p18f2455.h	731;"	m	line:731
+ACKEN	C:\MCC18\h\p18f2455.h	730;"	m	line:730
+ACKSTAT	C:\MCC18\h\p18f2455.h	732;"	m	line:732
+ACQT0	C:\MCC18\h\p18f2455.h	683;"	m	line:683
+ACQT1	C:\MCC18\h\p18f2455.h	684;"	m	line:684
+ACQT2	C:\MCC18\h\p18f2455.h	685;"	m	line:685
+ACTVIE	C:\MCC18\h\p18f2455.h	42;"	m	line:42
+ACTVIF	C:\MCC18\h\p18f2455.h	32;"	m	line:32
+ADCS0	C:\MCC18\h\p18f2455.h	680;"	m	line:680
+ADCS1	C:\MCC18\h\p18f2455.h	681;"	m	line:681
+ADCS2	C:\MCC18\h\p18f2455.h	682;"	m	line:682
+ADDEN	C:\MCC18\h\p18f2455.h	528;"	m	line:528
+ADDR0	C:\MCC18\h\p18f2455.h	90;"	m	line:90
+ADDR1	C:\MCC18\h\p18f2455.h	91;"	m	line:91
+ADDR2	C:\MCC18\h\p18f2455.h	92;"	m	line:92
+ADDR3	C:\MCC18\h\p18f2455.h	93;"	m	line:93
+ADDR4	C:\MCC18\h\p18f2455.h	94;"	m	line:94
+ADDR5	C:\MCC18\h\p18f2455.h	95;"	m	line:95
+ADDR6	C:\MCC18\h\p18f2455.h	96;"	m	line:96
+ADDRESS_STATE::5	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	62;"	d	line:62
+ADEN	C:\MCC18\h\p18f2455.h	536;"	m	line:536
+ADFM	C:\MCC18\h\p18f2455.h	687;"	m	line:687
+ADIE	C:\MCC18\h\p18f2455.h	435;"	m	line:435
+ADIF	C:\MCC18\h\p18f2455.h	445;"	m	line:445
+ADIP	C:\MCC18\h\p18f2455.h	455;"	m	line:455
+ADON	C:\MCC18\h\p18f2455.h	701;"	m	line:701
+ADR	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	123;"	m	line:123	struct:_BDT::<anonymous>
+ADRH	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	117;"	m	line:117	struct:_BDT::<anonymous>
+ADRL	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	116;"	m	line:116	struct:_BDT::<anonymous>
+ADR_PENDING_STATE::4	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	61;"	d	line:61
+AN0	C:\MCC18\h\p18f2455.h	249;"	m	line:249
+AN1	C:\MCC18\h\p18f2455.h	250;"	m	line:250
+AN2	C:\MCC18\h\p18f2455.h	251;"	m	line:251
+AN3	C:\MCC18\h\p18f2455.h	252;"	m	line:252
+AN4	C:\MCC18\h\p18f2455.h	254;"	m	line:254
+ATTACHED_STATE::1	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	58;"	d	line:58
+A_cur_channel	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	188;"	v	line:188
+A_tick_counter	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	187;"	v	line:187
+AnalogEnable	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	174;"	v	line:174
+BANKED::1	C:\MCC18\h\p18f2455.h	1080;"	d	line:1080
+BC8	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	84;"	m	line:84	struct:_BD_STAT::<anonymous>
+BC8	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	94;"	m	line:94	struct:_BD_STAT::<anonymous>
+BC9	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	85;"	m	line:85	struct:_BD_STAT::<anonymous>
+BC9	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	95;"	m	line:95	struct:_BD_STAT::<anonymous>
+BCLIE	C:\MCC18\h\p18f2455.h	463;"	m	line:463
+BCLIF	C:\MCC18\h\p18f2455.h	480;"	m	line:480
+BCLIP	C:\MCC18\h\p18f2455.h	497;"	m	line:497
+BDT	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	125;"	t	line:125
+BD_STAT	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	108;"	t	line:108
+BF	C:\MCC18\h\p18f2455.h	749;"	m	line:749
+BGST	C:\MCC18\h\p18f2455.h	870;"	m	line:870
+BGST	C:\MCC18\h\p18f2455.h	902;"	m	line:902
+BOOL	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	150;"	t	line:150
+BOR	C:\MCC18\h\p18f2455.h	836;"	m	line:836
+BRG16	C:\MCC18\h\p18f2455.h	641;"	m	line:641
+BRGH	C:\MCC18\h\p18f2455.h	543;"	m	line:543
+BSTALL	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	86;"	m	line:86	struct:_BD_STAT::<anonymous>
+BTOEE	C:\MCC18\h\p18f2455.h	64;"	m	line:64
+BTOEF	C:\MCC18\h\p18f2455.h	54;"	m	line:54
+BTSEE	C:\MCC18\h\p18f2455.h	66;"	m	line:66
+BTSEF	C:\MCC18\h\p18f2455.h	56;"	m	line:56
+BYTE	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	58;"	t	line:58
+BlinkUSBStatus	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1063;"	f	line:1063	signature:(void)
+BlinkUSBStatus	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	243;"	p	line:243	file:	signature:(void)
+Byte0	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	103;"	m	line:103	struct:_DWORD::<anonymous>
+Byte0	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	70;"	m	line:70	struct:_WORD::<anonymous>
+Byte1	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	104;"	m	line:104	struct:_DWORD::<anonymous>
+Byte1	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	71;"	m	line:71	struct:_WORD::<anonymous>
+Byte2	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	105;"	m	line:105	struct:_DWORD::<anonymous>
+Byte3	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	106;"	m	line:106	struct:_DWORD::<anonymous>
+C	C:\MCC18\h\p18f2455.h	950;"	m	line:950
+C1INV	C:\MCC18\h\p18f2455.h	583;"	m	line:583
+C1OUT	C:\MCC18\h\p18f2455.h	585;"	m	line:585
+C2INV	C:\MCC18\h\p18f2455.h	584;"	m	line:584
+C2OUT	C:\MCC18\h\p18f2455.h	586;"	m	line:586
+CARRIER_CONTROL	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	300;"	m	line:300	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
+CCP1	C:\MCC18\h\p18f2455.h	308;"	m	line:308
+CCP1IE	C:\MCC18\h\p18f2455.h	431;"	m	line:431
+CCP1IF	C:\MCC18\h\p18f2455.h	441;"	m	line:441
+CCP1IP	C:\MCC18\h\p18f2455.h	451;"	m	line:451
+CCP1M0	C:\MCC18\h\p18f2455.h	668;"	m	line:668
+CCP1M1	C:\MCC18\h\p18f2455.h	669;"	m	line:669
+CCP1M2	C:\MCC18\h\p18f2455.h	670;"	m	line:670
+CCP1M3	C:\MCC18\h\p18f2455.h	671;"	m	line:671
+CCP2IE	C:\MCC18\h\p18f2455.h	460;"	m	line:460
+CCP2IF	C:\MCC18\h\p18f2455.h	477;"	m	line:477
+CCP2IP	C:\MCC18\h\p18f2455.h	494;"	m	line:494
+CCP2M0	C:\MCC18\h\p18f2455.h	656;"	m	line:656
+CCP2M1	C:\MCC18\h\p18f2455.h	657;"	m	line:657
+CCP2M2	C:\MCC18\h\p18f2455.h	658;"	m	line:658
+CCP2M3	C:\MCC18\h\p18f2455.h	659;"	m	line:659
+CDCInitEP	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	169;"	f	line:169	signature:(void)
+CDCInitEP	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	360;"	p	line:360	signature:(void)
+CDCTxService	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	456;"	f	line:456	signature:(void)
+CDCTxService	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	364;"	p	line:364	signature:(void)
+CDC_BULK_BD_IN::ep3Bi	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	77;"	d	line:77
+CDC_BULK_BD_OUT::ep3Bo	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	75;"	d	line:75
+CDC_BULK_IN_EP_SIZE::64	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	78;"	d	line:78
+CDC_BULK_OUT_EP_SIZE::64	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	76;"	d	line:76
+CDC_COMM_INTF_ID::0x00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	68;"	d	line:68
+CDC_COMM_UEP::UEP2	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	69;"	d	line:69
+CDC_DATA_INTF_ID::0x01	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	73;"	d	line:73
+CDC_DATA_UEP::UEP3	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	74;"	d	line:74
+CDC_DEVICE::0x02	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	65;"	d	line:65
+CDC_H	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	37;"	d	line:37
+CDC_INT_BD_IN::ep2Bi	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	70;"	d	line:70
+CDC_INT_EP_SIZE::8	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	71;"	d	line:71
+CDC_TX_BUSY::1	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	108;"	d	line:108
+CDC_TX_BUSY_ZLP::2	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	109;"	d	line:109
+CDC_TX_COMPLETING::3	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	110;"	d	line:110
+CDC_TX_READY::0	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	107;"	d	line:107
+CFG01::romstruct\	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	54;"	d	line:54
+CFGS	C:\MCC18\h\p18f2455.h	516;"	m	line:516
+CHS0	C:\MCC18\h\p18f2455.h	703;"	m	line:703
+CHS1	C:\MCC18\h\p18f2455.h	704;"	m	line:704
+CHS2	C:\MCC18\h\p18f2455.h	705;"	m	line:705
+CHS3	C:\MCC18\h\p18f2455.h	706;"	m	line:706
+CIS	C:\MCC18\h\p18f2455.h	582;"	m	line:582
+CK	C:\MCC18\h\p18f2455.h	318;"	m	line:318
+CKE	C:\MCC18\h\p18f2455.h	755;"	m	line:755
+CKP	C:\MCC18\h\p18f2455.h	741;"	m	line:741
+CLEAR_COMM_FEATURE::0x04	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	49;"	d	line:49
+CM0	C:\MCC18\h\p18f2455.h	579;"	m	line:579
+CM1	C:\MCC18\h\p18f2455.h	580;"	m	line:580
+CM2	C:\MCC18\h\p18f2455.h	581;"	m	line:581
+CMIE	C:\MCC18\h\p18f2455.h	466;"	m	line:466
+CMIF	C:\MCC18\h\p18f2455.h	483;"	m	line:483
+CMIP	C:\MCC18\h\p18f2455.h	500;"	m	line:500
+COMM_INTF::0x02	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	68;"	d	line:68
+CONFIGURED_STATE::6	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	63;"	d	line:63
+CONTROL_SIGNAL_BITMAP	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	302;"	t	line:302
+COUNTRY_SETTING::0x02	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	86;"	d	line:86
+CRC16EE	C:\MCC18\h\p18f2455.h	62;"	m	line:62
+CRC16EF	C:\MCC18\h\p18f2455.h	52;"	m	line:52
+CRC5EE	C:\MCC18\h\p18f2455.h	61;"	m	line:61
+CRC5EF	C:\MCC18\h\p18f2455.h	51;"	m	line:51
+CREN	C:\MCC18\h\p18f2455.h	529;"	m	line:529
+CSRC	C:\MCC18\h\p18f2455.h	548;"	m	line:548
+CS_ENDPOINT::0x25	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	91;"	d	line:91
+CS_INTERFACE::0x24	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	90;"	d	line:90
+CVR0	C:\MCC18\h\p18f2455.h	591;"	m	line:591
+CVR1	C:\MCC18\h\p18f2455.h	592;"	m	line:592
+CVR2	C:\MCC18\h\p18f2455.h	593;"	m	line:593
+CVR3	C:\MCC18\h\p18f2455.h	594;"	m	line:594
+CVREF	C:\MCC18\h\p18f2455.h	595;"	m	line:595
+CVREN	C:\MCC18\h\p18f2455.h	598;"	m	line:598
+CVROE	C:\MCC18\h\p18f2455.h	597;"	m	line:597
+CVRR	C:\MCC18\h\p18f2455.h	596;"	m	line:596
+CVRSS	C:\MCC18\h\p18f2455.h	602;"	m	line:602
+ClassReqHandler	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	263;"	v	line:263
+ClearArray	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	575;"	f	line:575	signature:(byte* startAdr,byte count)
+ClrWdt::{_asmclrwdt_endasm}	C:\MCC18\h\p18f2455.h	1086;"	d	line:1086
+Cnt	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	115;"	m	line:115	struct:_BDT::<anonymous>
+CtrlTrfData	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	269;"	v	line:269
+D	C:\MCC18\h\p18f2455.h	787;"	m	line:787
+DATA_ADDRESS	C:\MCC18\h\p18f2455.h	781;"	m	line:781
+DATA_INTF::0x0A	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	78;"	d	line:78
+DC	C:\MCC18\h\p18f2455.h	951;"	m	line:951
+DC1B0	C:\MCC18\h\p18f2455.h	672;"	m	line:672
+DC1B1	C:\MCC18\h\p18f2455.h	673;"	m	line:673
+DC2B0	C:\MCC18\h\p18f2455.h	660;"	m	line:660
+DC2B1	C:\MCC18\h\p18f2455.h	661;"	m	line:661
+DEFAULT_STATE::3	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	60;"	d	line:60
+DETACHED_STATE::0	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	57;"	d	line:57
+DFN8EE	C:\MCC18\h\p18f2455.h	63;"	m	line:63
+DFN8EF	C:\MCC18\h\p18f2455.h	53;"	m	line:53
+DIR	C:\MCC18\h\p18f2455.h	72;"	m	line:72
+DONE	C:\MCC18\h\p18f2455.h	710;"	m	line:710
+DSC_FN_ACM::0x02	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	96;"	d	line:96
+DSC_FN_CALL_MGT::0x01	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	95;"	d	line:95
+DSC_FN_COUNTRY_SELECTION::0x07	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	101;"	d	line:101
+DSC_FN_DLM::0x03	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	97;"	d	line:97
+DSC_FN_HEADER::0x00	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	94;"	d	line:94
+DSC_FN_RPT_CAPABILITIES::0x05	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	99;"	d	line:99
+DSC_FN_TELEPHONE_RINGER::0x04	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	98;"	d	line:98
+DSC_FN_TEL_OP_MODES::0x08	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	102;"	d	line:102
+DSC_FN_UNION::0x06	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	100;"	d	line:100
+DSC_FN_USB_TERMINAL::0x09	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	103;"	d	line:103
+DT	C:\MCC18\h\p18f2455.h	319;"	m	line:319
+DTE_PRESENT	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	299;"	m	line:299	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
+DTS	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	90;"	m	line:90	struct:_BD_STAT::<anonymous>
+DTSEN	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	87;"	m	line:87	struct:_BD_STAT::<anonymous>
+DWORD	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	117;"	t	line:117
+D_A	C:\MCC18\h\p18f2455.h	754;"	m	line:754
+D_tick_counter	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	186;"	v	line:186
+ECCPAS0	C:\MCC18\h\p18f2455.h	610;"	m	line:610
+ECCPAS0	C:\MCC18\h\p18f2455.h	620;"	m	line:620
+ECCPAS1	C:\MCC18\h\p18f2455.h	611;"	m	line:611
+ECCPAS1	C:\MCC18\h\p18f2455.h	621;"	m	line:621
+ECCPAS2	C:\MCC18\h\p18f2455.h	612;"	m	line:612
+ECCPAS2	C:\MCC18\h\p18f2455.h	622;"	m	line:622
+ECCPASE	C:\MCC18\h\p18f2455.h	613;"	m	line:613
+ECCPASE	C:\MCC18\h\p18f2455.h	623;"	m	line:623
+EEIE	C:\MCC18\h\p18f2455.h	464;"	m	line:464
+EEIF	C:\MCC18\h\p18f2455.h	481;"	m	line:481
+EEIP	C:\MCC18\h\p18f2455.h	498;"	m	line:498
+EEPGD	C:\MCC18\h\p18f2455.h	517;"	m	line:517
+ENDP0	C:\MCC18\h\p18f2455.h	73;"	m	line:73
+ENDP1	C:\MCC18\h\p18f2455.h	74;"	m	line:74
+ENDP2	C:\MCC18\h\p18f2455.h	75;"	m	line:75
+ENDP3	C:\MCC18\h\p18f2455.h	76;"	m	line:76
+EP0_BUFF_SIZE::8	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	38;"	d	line:38
+EPCONDIS	C:\MCC18\h\p18f2455.h	114;"	m	line:114
+EPCONDIS	C:\MCC18\h\p18f2455.h	122;"	m	line:122
+EPCONDIS	C:\MCC18\h\p18f2455.h	130;"	m	line:130
+EPCONDIS	C:\MCC18\h\p18f2455.h	138;"	m	line:138
+EPCONDIS	C:\MCC18\h\p18f2455.h	146;"	m	line:146
+EPCONDIS	C:\MCC18\h\p18f2455.h	154;"	m	line:154
+EPCONDIS	C:\MCC18\h\p18f2455.h	162;"	m	line:162
+EPCONDIS	C:\MCC18\h\p18f2455.h	170;"	m	line:170
+EPCONDIS	C:\MCC18\h\p18f2455.h	178;"	m	line:178
+EPCONDIS	C:\MCC18\h\p18f2455.h	186;"	m	line:186
+EPCONDIS	C:\MCC18\h\p18f2455.h	194;"	m	line:194
+EPCONDIS	C:\MCC18\h\p18f2455.h	202;"	m	line:202
+EPCONDIS	C:\MCC18\h\p18f2455.h	210;"	m	line:210
+EPCONDIS	C:\MCC18\h\p18f2455.h	218;"	m	line:218
+EPCONDIS	C:\MCC18\h\p18f2455.h	226;"	m	line:226
+EPCONDIS	C:\MCC18\h\p18f2455.h	234;"	m	line:234
+EPHSHK	C:\MCC18\h\p18f2455.h	115;"	m	line:115
+EPHSHK	C:\MCC18\h\p18f2455.h	123;"	m	line:123
+EPHSHK	C:\MCC18\h\p18f2455.h	131;"	m	line:131
+EPHSHK	C:\MCC18\h\p18f2455.h	139;"	m	line:139
+EPHSHK	C:\MCC18\h\p18f2455.h	147;"	m	line:147
+EPHSHK	C:\MCC18\h\p18f2455.h	155;"	m	line:155
+EPHSHK	C:\MCC18\h\p18f2455.h	163;"	m	line:163
+EPHSHK	C:\MCC18\h\p18f2455.h	171;"	m	line:171
+EPHSHK	C:\MCC18\h\p18f2455.h	179;"	m	line:179
+EPHSHK	C:\MCC18\h\p18f2455.h	187;"	m	line:187
+EPHSHK	C:\MCC18\h\p18f2455.h	195;"	m	line:195
+EPHSHK	C:\MCC18\h\p18f2455.h	203;"	m	line:203
+EPHSHK	C:\MCC18\h\p18f2455.h	211;"	m	line:211
+EPHSHK	C:\MCC18\h\p18f2455.h	219;"	m	line:219
+EPHSHK	C:\MCC18\h\p18f2455.h	227;"	m	line:227
+EPHSHK	C:\MCC18\h\p18f2455.h	235;"	m	line:235
+EPINEN	C:\MCC18\h\p18f2455.h	112;"	m	line:112
+EPINEN	C:\MCC18\h\p18f2455.h	120;"	m	line:120
+EPINEN	C:\MCC18\h\p18f2455.h	128;"	m	line:128
+EPINEN	C:\MCC18\h\p18f2455.h	136;"	m	line:136
+EPINEN	C:\MCC18\h\p18f2455.h	144;"	m	line:144
+EPINEN	C:\MCC18\h\p18f2455.h	152;"	m	line:152
+EPINEN	C:\MCC18\h\p18f2455.h	160;"	m	line:160
+EPINEN	C:\MCC18\h\p18f2455.h	168;"	m	line:168
+EPINEN	C:\MCC18\h\p18f2455.h	176;"	m	line:176
+EPINEN	C:\MCC18\h\p18f2455.h	184;"	m	line:184
+EPINEN	C:\MCC18\h\p18f2455.h	192;"	m	line:192
+EPINEN	C:\MCC18\h\p18f2455.h	200;"	m	line:200
+EPINEN	C:\MCC18\h\p18f2455.h	208;"	m	line:208
+EPINEN	C:\MCC18\h\p18f2455.h	216;"	m	line:216
+EPINEN	C:\MCC18\h\p18f2455.h	224;"	m	line:224
+EPINEN	C:\MCC18\h\p18f2455.h	232;"	m	line:232
+EPOUTEN	C:\MCC18\h\p18f2455.h	113;"	m	line:113
+EPOUTEN	C:\MCC18\h\p18f2455.h	121;"	m	line:121
+EPOUTEN	C:\MCC18\h\p18f2455.h	129;"	m	line:129
+EPOUTEN	C:\MCC18\h\p18f2455.h	137;"	m	line:137
+EPOUTEN	C:\MCC18\h\p18f2455.h	145;"	m	line:145
+EPOUTEN	C:\MCC18\h\p18f2455.h	153;"	m	line:153
+EPOUTEN	C:\MCC18\h\p18f2455.h	161;"	m	line:161
+EPOUTEN	C:\MCC18\h\p18f2455.h	169;"	m	line:169
+EPOUTEN	C:\MCC18\h\p18f2455.h	177;"	m	line:177
+EPOUTEN	C:\MCC18\h\p18f2455.h	185;"	m	line:185
+EPOUTEN	C:\MCC18\h\p18f2455.h	193;"	m	line:193
+EPOUTEN	C:\MCC18\h\p18f2455.h	201;"	m	line:201
+EPOUTEN	C:\MCC18\h\p18f2455.h	209;"	m	line:209
+EPOUTEN	C:\MCC18\h\p18f2455.h	217;"	m	line:217
+EPOUTEN	C:\MCC18\h\p18f2455.h	225;"	m	line:225
+EPOUTEN	C:\MCC18\h\p18f2455.h	233;"	m	line:233
+EPSTALL	C:\MCC18\h\p18f2455.h	111;"	m	line:111
+EPSTALL	C:\MCC18\h\p18f2455.h	119;"	m	line:119
+EPSTALL	C:\MCC18\h\p18f2455.h	127;"	m	line:127
+EPSTALL	C:\MCC18\h\p18f2455.h	135;"	m	line:135
+EPSTALL	C:\MCC18\h\p18f2455.h	143;"	m	line:143
+EPSTALL	C:\MCC18\h\p18f2455.h	151;"	m	line:151
+EPSTALL	C:\MCC18\h\p18f2455.h	159;"	m	line:159
+EPSTALL	C:\MCC18\h\p18f2455.h	167;"	m	line:167
+EPSTALL	C:\MCC18\h\p18f2455.h	175;"	m	line:175
+EPSTALL	C:\MCC18\h\p18f2455.h	183;"	m	line:183
+EPSTALL	C:\MCC18\h\p18f2455.h	191;"	m	line:191
+EPSTALL	C:\MCC18\h\p18f2455.h	199;"	m	line:199
+EPSTALL	C:\MCC18\h\p18f2455.h	207;"	m	line:207
+EPSTALL	C:\MCC18\h\p18f2455.h	215;"	m	line:215
+EPSTALL	C:\MCC18\h\p18f2455.h	223;"	m	line:223
+EPSTALL	C:\MCC18\h\p18f2455.h	231;"	m	line:231
+FAIL::FALSE	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	153;"	d	line:153
+FALSE	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+FERR	C:\MCC18\h\p18f2455.h	527;"	m	line:527
+FLTS	C:\MCC18\h\p18f2455.h	932;"	m	line:932
+FREE	C:\MCC18\h\p18f2455.h	514;"	m	line:514
+FRM0	C:\MCC18\h\p18f2455.h	13;"	m	line:13
+FRM1	C:\MCC18\h\p18f2455.h	14;"	m	line:14
+FRM10	C:\MCC18\h\p18f2455.h	26;"	m	line:26
+FRM2	C:\MCC18\h\p18f2455.h	15;"	m	line:15
+FRM3	C:\MCC18\h\p18f2455.h	16;"	m	line:16
+FRM4	C:\MCC18\h\p18f2455.h	17;"	m	line:17
+FRM5	C:\MCC18\h\p18f2455.h	18;"	m	line:18
+FRM6	C:\MCC18\h\p18f2455.h	19;"	m	line:19
+FRM7	C:\MCC18\h\p18f2455.h	20;"	m	line:20
+FRM8	C:\MCC18\h\p18f2455.h	24;"	m	line:24
+FRM9	C:\MCC18\h\p18f2455.h	25;"	m	line:25
+FSEN	C:\MCC18\h\p18f2455.h	102;"	m	line:102
+GCEN	C:\MCC18\h\p18f2455.h	733;"	m	line:733
+GET_COMM_FEATURE::0x03	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	48;"	d	line:48
+GET_ENCAPSULATED_RESPONSE::0x01	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	46;"	d	line:46
+GET_LINE_CODING::0x21	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	51;"	d	line:51
+GIE	C:\MCC18\h\p18f2455.h	1034;"	m	line:1034
+GIEH	C:\MCC18\h\p18f2455.h	1044;"	m	line:1044
+GIEL	C:\MCC18\h\p18f2455.h	1043;"	m	line:1043
+GO	C:\MCC18\h\p18f2455.h	714;"	m	line:714
+GO_DONE	C:\MCC18\h\p18f2455.h	702;"	m	line:702
+HLVDEN	C:\MCC18\h\p18f2455.h	877;"	m	line:877
+HLVDEN	C:\MCC18\h\p18f2455.h	909;"	m	line:909
+HLVDIE	C:\MCC18\h\p18f2455.h	471;"	m	line:471
+HLVDIF	C:\MCC18\h\p18f2455.h	488;"	m	line:488
+HLVDIN	C:\MCC18\h\p18f2455.h	266;"	m	line:266
+HLVDIP	C:\MCC18\h\p18f2455.h	505;"	m	line:505
+HLVDL0	C:\MCC18\h\p18f2455.h	873;"	m	line:873
+HLVDL0	C:\MCC18\h\p18f2455.h	905;"	m	line:905
+HLVDL1	C:\MCC18\h\p18f2455.h	874;"	m	line:874
+HLVDL1	C:\MCC18\h\p18f2455.h	906;"	m	line:906
+HLVDL2	C:\MCC18\h\p18f2455.h	875;"	m	line:875
+HLVDL2	C:\MCC18\h\p18f2455.h	907;"	m	line:907
+HLVDL3	C:\MCC18\h\p18f2455.h	876;"	m	line:876
+HLVDL3	C:\MCC18\h\p18f2455.h	908;"	m	line:908
+HallEffSensors	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.h	45;"	p	line:45	signature:(void)
+HighB	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	76;"	m	line:76	struct:_WORD::<anonymous>
+I2C_DAT	C:\MCC18\h\p18f2455.h	763;"	m	line:763
+I2C_READ	C:\MCC18\h\p18f2455.h	760;"	m	line:760
+I2C_START	C:\MCC18\h\p18f2455.h	761;"	m	line:761
+I2C_STOP	C:\MCC18\h\p18f2455.h	762;"	m	line:762
+IDLEIE	C:\MCC18\h\p18f2455.h	44;"	m	line:44
+IDLEIF	C:\MCC18\h\p18f2455.h	34;"	m	line:34
+IDLEN	C:\MCC18\h\p18f2455.h	928;"	m	line:928
+INCDIS	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	88;"	m	line:88	struct:_BD_STAT::<anonymous>
+INPUT_PIN::1	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	55;"	d	line:55
+INT0	C:\MCC18\h\p18f2455.h	282;"	m	line:282
+INT0E	C:\MCC18\h\p18f2455.h	1041;"	m	line:1041
+INT0F	C:\MCC18\h\p18f2455.h	1038;"	m	line:1038
+INT0IE	C:\MCC18\h\p18f2455.h	1031;"	m	line:1031
+INT0IF	C:\MCC18\h\p18f2455.h	1028;"	m	line:1028
+INT1	C:\MCC18\h\p18f2455.h	283;"	m	line:283
+INT1E	C:\MCC18\h\p18f2455.h	998;"	m	line:998
+INT1F	C:\MCC18\h\p18f2455.h	995;"	m	line:995
+INT1IE	C:\MCC18\h\p18f2455.h	988;"	m	line:988
+INT1IF	C:\MCC18\h\p18f2455.h	985;"	m	line:985
+INT1IP	C:\MCC18\h\p18f2455.h	991;"	m	line:991
+INT1P	C:\MCC18\h\p18f2455.h	1001;"	m	line:1001
+INT2	C:\MCC18\h\p18f2455.h	284;"	m	line:284
+INT2E	C:\MCC18\h\p18f2455.h	999;"	m	line:999
+INT2F	C:\MCC18\h\p18f2455.h	996;"	m	line:996
+INT2IE	C:\MCC18\h\p18f2455.h	989;"	m	line:989
+INT2IF	C:\MCC18\h\p18f2455.h	986;"	m	line:986
+INT2IP	C:\MCC18\h\p18f2455.h	992;"	m	line:992
+INT2P	C:\MCC18\h\p18f2455.h	1002;"	m	line:1002
+INTEDG0	C:\MCC18\h\p18f2455.h	1014;"	m	line:1014
+INTEDG1	C:\MCC18\h\p18f2455.h	1013;"	m	line:1013
+INTEDG2	C:\MCC18\h\p18f2455.h	1012;"	m	line:1012
+INTSAVELOCS::TBLPTR,TABLAT,PROD	C:\MCC18\h\p18f2455.h	1100;"	d	line:1100
+INTSRC	C:\MCC18\h\p18f2455.h	425;"	m	line:425
+IOFS	C:\MCC18\h\p18f2455.h	923;"	m	line:923
+IO_CFG_H	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	49;"	d	line:49
+IPEN	C:\MCC18\h\p18f2455.h	842;"	m	line:842
+IRCF0	C:\MCC18\h\p18f2455.h	925;"	m	line:925
+IRCF1	C:\MCC18\h\p18f2455.h	926;"	m	line:926
+IRCF2	C:\MCC18\h\p18f2455.h	927;"	m	line:927
+IRVST	C:\MCC18\h\p18f2455.h	862;"	m	line:862
+IRVST	C:\MCC18\h\p18f2455.h	894;"	m	line:894
+ISR_A_FIFO	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	196;"	v	line:196
+ISR_A_FIFO_in	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	171;"	v	line:171
+ISR_A_FIFO_length	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	173;"	v	line:173
+ISR_A_FIFO_out	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	172;"	v	line:172
+ISR_A_RepeatRate	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	170;"	v	line:170
+ISR_D_FIFO	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	197;"	v	line:197
+ISR_D_FIFO_in	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	166;"	v	line:166
+ISR_D_FIFO_length	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	168;"	v	line:168
+ISR_D_FIFO_out	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	167;"	v	line:167
+ISR_D_RepeatRate	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	165;"	v	line:165
+IVRST	C:\MCC18\h\p18f2455.h	883;"	m	line:883
+IVRST	C:\MCC18\h\p18f2455.h	915;"	m	line:915
+InitializeSystem	E:\iro_svn\branches\fw-new\opensprints\FW\main.c	50;"	p	line:50	file:	signature:(void)
+KEN	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	89;"	m	line:89	struct:_BD_STAT::<anonymous>
+LATA0	C:\MCC18\h\p18f2455.h	329;"	m	line:329
+LATA1	C:\MCC18\h\p18f2455.h	330;"	m	line:330
+LATA2	C:\MCC18\h\p18f2455.h	331;"	m	line:331
+LATA3	C:\MCC18\h\p18f2455.h	332;"	m	line:332
+LATA4	C:\MCC18\h\p18f2455.h	333;"	m	line:333
+LATA5	C:\MCC18\h\p18f2455.h	334;"	m	line:334
+LATA6	C:\MCC18\h\p18f2455.h	335;"	m	line:335
+LATB0	C:\MCC18\h\p18f2455.h	339;"	m	line:339
+LATB1	C:\MCC18\h\p18f2455.h	340;"	m	line:340
+LATB2	C:\MCC18\h\p18f2455.h	341;"	m	line:341
+LATB3	C:\MCC18\h\p18f2455.h	342;"	m	line:342
+LATB4	C:\MCC18\h\p18f2455.h	343;"	m	line:343
+LATB5	C:\MCC18\h\p18f2455.h	344;"	m	line:344
+LATB6	C:\MCC18\h\p18f2455.h	345;"	m	line:345
+LATB7	C:\MCC18\h\p18f2455.h	346;"	m	line:346
+LATC0	C:\MCC18\h\p18f2455.h	350;"	m	line:350
+LATC1	C:\MCC18\h\p18f2455.h	351;"	m	line:351
+LATC2	C:\MCC18\h\p18f2455.h	352;"	m	line:352
+LATC6	C:\MCC18\h\p18f2455.h	354;"	m	line:354
+LATC7	C:\MCC18\h\p18f2455.h	355;"	m	line:355
+LEDCount	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1065;"	l	line:1065	file:
+LEDState	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1066;"	l	line:1066	file:
+LINE_CODING	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	282;"	t	line:282
+LINE_CODING_LENGTH::0x07	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	267;"	d	line:267
+LOWER_LSB::(a)((a).v[0])	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	118;"	d	line:118
+LOWER_MSB::(a)((a).v[1])	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	119;"	d	line:119
+LSB::(a)((a).v[0])	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	83;"	d	line:83
+LVDEN	C:\MCC18\h\p18f2455.h	861;"	m	line:861
+LVDEN	C:\MCC18\h\p18f2455.h	893;"	m	line:893
+LVDIE	C:\MCC18\h\p18f2455.h	462;"	m	line:462
+LVDIF	C:\MCC18\h\p18f2455.h	479;"	m	line:479
+LVDIN	C:\MCC18\h\p18f2455.h	262;"	m	line:262
+LVDIP	C:\MCC18\h\p18f2455.h	496;"	m	line:496
+LVDL0	C:\MCC18\h\p18f2455.h	857;"	m	line:857
+LVDL0	C:\MCC18\h\p18f2455.h	889;"	m	line:889
+LVDL1	C:\MCC18\h\p18f2455.h	858;"	m	line:858
+LVDL1	C:\MCC18\h\p18f2455.h	890;"	m	line:890
+LVDL2	C:\MCC18\h\p18f2455.h	859;"	m	line:859
+LVDL2	C:\MCC18\h\p18f2455.h	891;"	m	line:891
+LVDL3	C:\MCC18\h\p18f2455.h	860;"	m	line:860
+LVDL3	C:\MCC18\h\p18f2455.h	892;"	m	line:892
+LVV0	C:\MCC18\h\p18f2455.h	865;"	m	line:865
+LVV0	C:\MCC18\h\p18f2455.h	897;"	m	line:897
+LVV1	C:\MCC18\h\p18f2455.h	866;"	m	line:866
+LVV1	C:\MCC18\h\p18f2455.h	898;"	m	line:898
+LVV2	C:\MCC18\h\p18f2455.h	867;"	m	line:867
+LVV2	C:\MCC18\h\p18f2455.h	899;"	m	line:899
+LVV3	C:\MCC18\h\p18f2455.h	868;"	m	line:868
+LVV3	C:\MCC18\h\p18f2455.h	900;"	m	line:900
+LowB	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	75;"	m	line:75	struct:_WORD::<anonymous>
+MAX_EP_NUMBER::3	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	80;"	d	line:80
+MAX_NUM_INT::1	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	39;"	d	line:39
+MODE_PP::_PPBM0	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	42;"	d	line:42
+MSB::(a)((a).v[1])	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	84;"	d	line:84
+MUID_CDC::3	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	59;"	d	line:59
+MUID_HID::2	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	58;"	d	line:58
+MUID_MSD::4	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	60;"	d	line:60
+MUID_NULL::0	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	56;"	d	line:56
+MUID_USB9::1	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	57;"	d	line:57
+N	C:\MCC18\h\p18f2455.h	954;"	m	line:954
+NETWORK_CONNECTION::0x00	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	59;"	d	line:59
+NOT_A	C:\MCC18\h\p18f2455.h	769;"	m	line:769
+NOT_ADDRESS	C:\MCC18\h\p18f2455.h	775;"	m	line:775
+NOT_BOR	C:\MCC18\h\p18f2455.h	826;"	m	line:826
+NOT_DONE	C:\MCC18\h\p18f2455.h	718;"	m	line:718
+NOT_IPEN	C:\MCC18\h\p18f2455.h	833;"	m	line:833
+NOT_PD	C:\MCC18\h\p18f2455.h	828;"	m	line:828
+NOT_POR	C:\MCC18\h\p18f2455.h	827;"	m	line:827
+NOT_RBPU	C:\MCC18\h\p18f2455.h	1015;"	m	line:1015
+NOT_RI	C:\MCC18\h\p18f2455.h	830;"	m	line:830
+NOT_T1SYNC	C:\MCC18\h\p18f2455.h	818;"	m	line:818
+NOT_T3SYNC	C:\MCC18\h\p18f2455.h	572;"	m	line:572
+NOT_TO	C:\MCC18\h\p18f2455.h	829;"	m	line:829
+NOT_W	C:\MCC18\h\p18f2455.h	767;"	m	line:767
+NOT_WRITE	C:\MCC18\h\p18f2455.h	773;"	m	line:773
+NO_PROTOCOL::0x00	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	81;"	d	line:81
+NUM_ROLLERS::8	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	259;"	d	line:259	file:
+Nop::{_asmnop_endasm}	C:\MCC18\h\p18f2455.h	1085;"	d	line:1085
+OERR	C:\MCC18\h\p18f2455.h	526;"	m	line:526
+OK::TRUE	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	152;"	d	line:152
+OSC2	C:\MCC18\h\p18f2455.h	255;"	m	line:255
+OSCFIE	C:\MCC18\h\p18f2455.h	467;"	m	line:467
+OSCFIF	C:\MCC18\h\p18f2455.h	484;"	m	line:484
+OSCFIP	C:\MCC18\h\p18f2455.h	501;"	m	line:501
+OSTS	C:\MCC18\h\p18f2455.h	924;"	m	line:924
+OUTPUT_PIN::0	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	56;"	d	line:56
+OV	C:\MCC18\h\p18f2455.h	953;"	m	line:953
+P	C:\MCC18\h\p18f2455.h	753;"	m	line:753
+P1A	C:\MCC18\h\p18f2455.h	316;"	m	line:316
+PCFG0	C:\MCC18\h\p18f2455.h	691;"	m	line:691
+PCFG1	C:\MCC18\h\p18f2455.h	692;"	m	line:692
+PCFG2	C:\MCC18\h\p18f2455.h	693;"	m	line:693
+PCFG3	C:\MCC18\h\p18f2455.h	694;"	m	line:694
+PD	C:\MCC18\h\p18f2455.h	838;"	m	line:838
+PEIE	C:\MCC18\h\p18f2455.h	1033;"	m	line:1033
+PEN	C:\MCC18\h\p18f2455.h	728;"	m	line:728
+PGC	C:\MCC18\h\p18f2455.h	289;"	m	line:289
+PGD	C:\MCC18\h\p18f2455.h	290;"	m	line:290
+PGM	C:\MCC18\h\p18f2455.h	288;"	m	line:288
+PID	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	105;"	m	line:105	struct:_BD_STAT::<anonymous>
+PID0	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	96;"	m	line:96	struct:_BD_STAT::<anonymous>
+PID1	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	97;"	m	line:97	struct:_BD_STAT::<anonymous>
+PID2	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	98;"	m	line:98	struct:_BD_STAT::<anonymous>
+PID3	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	99;"	m	line:99	struct:_BD_STAT::<anonymous>
+PIDEE	C:\MCC18\h\p18f2455.h	60;"	m	line:60
+PIDEF	C:\MCC18\h\p18f2455.h	50;"	m	line:50
+PKTDIS	C:\MCC18\h\p18f2455.h	84;"	m	line:84
+POINTER	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	148;"	t	line:148
+POR	C:\MCC18\h\p18f2455.h	837;"	m	line:837
+POWERED_STATE::2	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	59;"	d	line:59
+PPB0	C:\MCC18\h\p18f2455.h	100;"	m	line:100
+PPB1	C:\MCC18\h\p18f2455.h	101;"	m	line:101
+PPBI	C:\MCC18\h\p18f2455.h	71;"	m	line:71
+PPBRST	C:\MCC18\h\p18f2455.h	86;"	m	line:86
+PRSEN	C:\MCC18\h\p18f2455.h	628;"	m	line:628
+PRSEN	C:\MCC18\h\p18f2455.h	633;"	m	line:633
+PSA	C:\MCC18\h\p18f2455.h	940;"	m	line:940
+PSSAC0	C:\MCC18\h\p18f2455.h	608;"	m	line:608
+PSSAC0	C:\MCC18\h\p18f2455.h	618;"	m	line:618
+PSSAC1	C:\MCC18\h\p18f2455.h	609;"	m	line:609
+PSSAC1	C:\MCC18\h\p18f2455.h	619;"	m	line:619
+ProcessIO	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	479;"	f	line:479	signature:(void)
+ProcessIO	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.h	42;"	p	line:42	signature:(void)
+R	C:\MCC18\h\p18f2455.h	785;"	m	line:785
+RA0	C:\MCC18\h\p18f2455.h	240;"	m	line:240
+RA0	C:\MCC18\h\p18f2455.h	359;"	m	line:359
+RA1	C:\MCC18\h\p18f2455.h	241;"	m	line:241
+RA1	C:\MCC18\h\p18f2455.h	360;"	m	line:360
+RA2	C:\MCC18\h\p18f2455.h	242;"	m	line:242
+RA2	C:\MCC18\h\p18f2455.h	361;"	m	line:361
+RA3	C:\MCC18\h\p18f2455.h	243;"	m	line:243
+RA3	C:\MCC18\h\p18f2455.h	362;"	m	line:362
+RA4	C:\MCC18\h\p18f2455.h	244;"	m	line:244
+RA4	C:\MCC18\h\p18f2455.h	363;"	m	line:363
+RA5	C:\MCC18\h\p18f2455.h	245;"	m	line:245
+RA5	C:\MCC18\h\p18f2455.h	364;"	m	line:364
+RA6	C:\MCC18\h\p18f2455.h	246;"	m	line:246
+RA6	C:\MCC18\h\p18f2455.h	365;"	m	line:365
+RB0	C:\MCC18\h\p18f2455.h	272;"	m	line:272
+RB0	C:\MCC18\h\p18f2455.h	379;"	m	line:379
+RB1	C:\MCC18\h\p18f2455.h	273;"	m	line:273
+RB1	C:\MCC18\h\p18f2455.h	380;"	m	line:380
+RB2	C:\MCC18\h\p18f2455.h	274;"	m	line:274
+RB2	C:\MCC18\h\p18f2455.h	381;"	m	line:381
+RB3	C:\MCC18\h\p18f2455.h	275;"	m	line:275
+RB3	C:\MCC18\h\p18f2455.h	382;"	m	line:382
+RB4	C:\MCC18\h\p18f2455.h	276;"	m	line:276
+RB4	C:\MCC18\h\p18f2455.h	383;"	m	line:383
+RB5	C:\MCC18\h\p18f2455.h	277;"	m	line:277
+RB5	C:\MCC18\h\p18f2455.h	384;"	m	line:384
+RB6	C:\MCC18\h\p18f2455.h	278;"	m	line:278
+RB6	C:\MCC18\h\p18f2455.h	385;"	m	line:385
+RB7	C:\MCC18\h\p18f2455.h	279;"	m	line:279
+RB7	C:\MCC18\h\p18f2455.h	386;"	m	line:386
+RBIE	C:\MCC18\h\p18f2455.h	1030;"	m	line:1030
+RBIF	C:\MCC18\h\p18f2455.h	1027;"	m	line:1027
+RBIP	C:\MCC18\h\p18f2455.h	1008;"	m	line:1008
+RBPU	C:\MCC18\h\p18f2455.h	1021;"	m	line:1021
+RC0	C:\MCC18\h\p18f2455.h	296;"	m	line:296
+RC0	C:\MCC18\h\p18f2455.h	401;"	m	line:401
+RC1	C:\MCC18\h\p18f2455.h	297;"	m	line:297
+RC1	C:\MCC18\h\p18f2455.h	402;"	m	line:402
+RC2	C:\MCC18\h\p18f2455.h	298;"	m	line:298
+RC2	C:\MCC18\h\p18f2455.h	403;"	m	line:403
+RC4	C:\MCC18\h\p18f2455.h	300;"	m	line:300
+RC5	C:\MCC18\h\p18f2455.h	301;"	m	line:301
+RC6	C:\MCC18\h\p18f2455.h	302;"	m	line:302
+RC6	C:\MCC18\h\p18f2455.h	405;"	m	line:405
+RC7	C:\MCC18\h\p18f2455.h	303;"	m	line:303
+RC7	C:\MCC18\h\p18f2455.h	406;"	m	line:406
+RCEN	C:\MCC18\h\p18f2455.h	729;"	m	line:729
+RCIDL	C:\MCC18\h\p18f2455.h	644;"	m	line:644
+RCIE	C:\MCC18\h\p18f2455.h	434;"	m	line:434
+RCIF	C:\MCC18\h\p18f2455.h	444;"	m	line:444
+RCIP	C:\MCC18\h\p18f2455.h	454;"	m	line:454
+RCMT	C:\MCC18\h\p18f2455.h	651;"	m	line:651
+RD	C:\MCC18\h\p18f2455.h	510;"	m	line:510
+RD16	C:\MCC18\h\p18f2455.h	564;"	m	line:564
+RD16	C:\MCC18\h\p18f2455.h	814;"	m	line:814
+RE3	C:\MCC18\h\p18f2455.h	325;"	m	line:325
+READ_WRITE	C:\MCC18\h\p18f2455.h	779;"	m	line:779
+RESPONSE_AVAILABLE::0x01	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	60;"	d	line:60
+RESUME	C:\MCC18\h\p18f2455.h	82;"	m	line:82
+RI	C:\MCC18\h\p18f2455.h	840;"	m	line:840
+RSEN	C:\MCC18\h\p18f2455.h	727;"	m	line:727
+RX	C:\MCC18\h\p18f2455.h	311;"	m	line:311
+RX9	C:\MCC18\h\p18f2455.h	531;"	m	line:531
+RX9D	C:\MCC18\h\p18f2455.h	525;"	m	line:525
+RXDTP	C:\MCC18\h\p18f2455.h	650;"	m	line:650
+R_W	C:\MCC18\h\p18f2455.h	751;"	m	line:751
+RemoteWakeup	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	75;"	m	line:75	struct:_USB_DEVICE_STATUS::<anonymous>
+Reset::{_asmreset_endasm}	C:\MCC18\h\p18f2455.h	1088;"	d	line:1088
+Rlcf::(f,dest,access){_asmmovlbfrlcf	C:\MCC18\h\p18f2455.h	1090;"	d	line:1090
+Rlncf::(f,dest,access){_asmmovlbfrlnc	C:\MCC18\h\p18f2455.h	1091;"	d	line:1091
+Rrcf::(f,dest,access){_asmmovlbfrrcf	C:\MCC18\h\p18f2455.h	1092;"	d	line:1092
+Rrncf::(f,dest,access){_asmmovlbfrrnc	C:\MCC18\h\p18f2455.h	1093;"	d	line:1093
+S	C:\MCC18\h\p18f2455.h	752;"	m	line:752
+SBOREN	C:\MCC18\h\p18f2455.h	832;"	m	line:832
+SCKP	C:\MCC18\h\p18f2455.h	642;"	m	line:642
+SCS0	C:\MCC18\h\p18f2455.h	921;"	m	line:921
+SCS1	C:\MCC18\h\p18f2455.h	922;"	m	line:922
+SE0	C:\MCC18\h\p18f2455.h	85;"	m	line:85
+SEN	C:\MCC18\h\p18f2455.h	726;"	m	line:726
+SENDB	C:\MCC18\h\p18f2455.h	544;"	m	line:544
+SEND_BREAK::0x23	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	53;"	d	line:53
+SEND_ENCAPSULATED_COMMAND::0x00	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	45;"	d	line:45
+SERIAL_STATE::0x20	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	61;"	d	line:61
+SET_COMM_FEATURE::0x02	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	47;"	d	line:47
+SET_CONTROL_LINE_STATE::0x22	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	52;"	d	line:52
+SET_LINE_CODING::0x20	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	50;"	d	line:50
+SMP	C:\MCC18\h\p18f2455.h	756;"	m	line:756
+SOFIE	C:\MCC18\h\p18f2455.h	46;"	m	line:46
+SOFIF	C:\MCC18\h\p18f2455.h	36;"	m	line:36
+SPEN	C:\MCC18\h\p18f2455.h	532;"	m	line:532
+SREN	C:\MCC18\h\p18f2455.h	530;"	m	line:530
+SSPEN	C:\MCC18\h\p18f2455.h	742;"	m	line:742
+SSPIE	C:\MCC18\h\p18f2455.h	432;"	m	line:432
+SSPIF	C:\MCC18\h\p18f2455.h	442;"	m	line:442
+SSPIP	C:\MCC18\h\p18f2455.h	452;"	m	line:452
+SSPM0	C:\MCC18\h\p18f2455.h	737;"	m	line:737
+SSPM1	C:\MCC18\h\p18f2455.h	738;"	m	line:738
+SSPM2	C:\MCC18\h\p18f2455.h	739;"	m	line:739
+SSPM3	C:\MCC18\h\p18f2455.h	740;"	m	line:740
+SSPOV	C:\MCC18\h\p18f2455.h	743;"	m	line:743
+STALLIE	C:\MCC18\h\p18f2455.h	45;"	m	line:45
+STALLIF	C:\MCC18\h\p18f2455.h	35;"	m	line:35
+STKFUL	C:\MCC18\h\p18f2455.h	1068;"	m	line:1068
+STKPTR0	C:\MCC18\h\p18f2455.h	1061;"	m	line:1061
+STKPTR1	C:\MCC18\h\p18f2455.h	1062;"	m	line:1062
+STKPTR2	C:\MCC18\h\p18f2455.h	1063;"	m	line:1063
+STKPTR3	C:\MCC18\h\p18f2455.h	1064;"	m	line:1064
+STKPTR4	C:\MCC18\h\p18f2455.h	1065;"	m	line:1065
+STKUNF	C:\MCC18\h\p18f2455.h	1067;"	m	line:1067
+SUSPND	C:\MCC18\h\p18f2455.h	81;"	m	line:81
+SWDTE	C:\MCC18\h\p18f2455.h	851;"	m	line:851
+SWDTEN	C:\MCC18\h\p18f2455.h	848;"	m	line:848
+SYNC	C:\MCC18\h\p18f2455.h	545;"	m	line:545
+SendUpdateToPc	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	279;"	f	line:279	signature:(void)
+SetupPkt	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	268;"	v	line:268
+Sleep::{_asmsleep_endasm}	C:\MCC18\h\p18f2455.h	1087;"	d	line:1087
+Stat	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	114;"	m	line:114	struct:_BDT::<anonymous>
+Swapf::(f,dest,access){_asmmovlbfswap	C:\MCC18\h\p18f2455.h	1094;"	d	line:1094
+SwitchIsPressed	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1130;"	f	line:1130	signature:(void)
+SwitchIsPressed	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	244;"	p	line:244	file:	signature:(void)
+T08BIT	C:\MCC18\h\p18f2455.h	943;"	m	line:943
+T0CKI	C:\MCC18\h\p18f2455.h	253;"	m	line:253
+T0CS	C:\MCC18\h\p18f2455.h	942;"	m	line:942
+T0IE	C:\MCC18\h\p18f2455.h	1042;"	m	line:1042
+T0IF	C:\MCC18\h\p18f2455.h	1039;"	m	line:1039
+T0IP	C:\MCC18\h\p18f2455.h	1019;"	m	line:1019
+T0PS0	C:\MCC18\h\p18f2455.h	937;"	m	line:937
+T0PS1	C:\MCC18\h\p18f2455.h	938;"	m	line:938
+T0PS2	C:\MCC18\h\p18f2455.h	939;"	m	line:939
+T0SE	C:\MCC18\h\p18f2455.h	941;"	m	line:941
+T13CKI	C:\MCC18\h\p18f2455.h	314;"	m	line:314
+T1CKPS0	C:\MCC18\h\p18f2455.h	811;"	m	line:811
+T1CKPS1	C:\MCC18\h\p18f2455.h	812;"	m	line:812
+T1OSCEN	C:\MCC18\h\p18f2455.h	810;"	m	line:810
+T1OSI	C:\MCC18\h\p18f2455.h	307;"	m	line:307
+T1OSO	C:\MCC18\h\p18f2455.h	306;"	m	line:306
+T1RUN	C:\MCC18\h\p18f2455.h	813;"	m	line:813
+T1SYNC	C:\MCC18\h\p18f2455.h	809;"	m	line:809
+T2CKPS0	C:\MCC18\h\p18f2455.h	794;"	m	line:794
+T2CKPS1	C:\MCC18\h\p18f2455.h	795;"	m	line:795
+T2OUTPS0	C:\MCC18\h\p18f2455.h	797;"	m	line:797
+T2OUTPS1	C:\MCC18\h\p18f2455.h	798;"	m	line:798
+T2OUTPS2	C:\MCC18\h\p18f2455.h	799;"	m	line:799
+T2OUTPS3	C:\MCC18\h\p18f2455.h	800;"	m	line:800
+T3CCP1	C:\MCC18\h\p18f2455.h	560;"	m	line:560
+T3CCP2	C:\MCC18\h\p18f2455.h	563;"	m	line:563
+T3CKPS0	C:\MCC18\h\p18f2455.h	561;"	m	line:561
+T3CKPS1	C:\MCC18\h\p18f2455.h	562;"	m	line:562
+T3NSYNC	C:\MCC18\h\p18f2455.h	568;"	m	line:568
+T3SYNC	C:\MCC18\h\p18f2455.h	559;"	m	line:559
+TMR0IE	C:\MCC18\h\p18f2455.h	1032;"	m	line:1032
+TMR0IF	C:\MCC18\h\p18f2455.h	1029;"	m	line:1029
+TMR0IP	C:\MCC18\h\p18f2455.h	1010;"	m	line:1010
+TMR0ON	C:\MCC18\h\p18f2455.h	944;"	m	line:944
+TMR1CS	C:\MCC18\h\p18f2455.h	808;"	m	line:808
+TMR1IE	C:\MCC18\h\p18f2455.h	429;"	m	line:429
+TMR1IF	C:\MCC18\h\p18f2455.h	439;"	m	line:439
+TMR1IP	C:\MCC18\h\p18f2455.h	449;"	m	line:449
+TMR1ON	C:\MCC18\h\p18f2455.h	807;"	m	line:807
+TMR2IE	C:\MCC18\h\p18f2455.h	430;"	m	line:430
+TMR2IF	C:\MCC18\h\p18f2455.h	440;"	m	line:440
+TMR2IP	C:\MCC18\h\p18f2455.h	450;"	m	line:450
+TMR2ON	C:\MCC18\h\p18f2455.h	796;"	m	line:796
+TMR3CS	C:\MCC18\h\p18f2455.h	558;"	m	line:558
+TMR3IE	C:\MCC18\h\p18f2455.h	461;"	m	line:461
+TMR3IF	C:\MCC18\h\p18f2455.h	478;"	m	line:478
+TMR3IP	C:\MCC18\h\p18f2455.h	495;"	m	line:495
+TMR3ON	C:\MCC18\h\p18f2455.h	557;"	m	line:557
+TO	C:\MCC18\h\p18f2455.h	839;"	m	line:839
+TRISA0	C:\MCC18\h\p18f2455.h	369;"	m	line:369
+TRISA1	C:\MCC18\h\p18f2455.h	370;"	m	line:370
+TRISA2	C:\MCC18\h\p18f2455.h	371;"	m	line:371
+TRISA3	C:\MCC18\h\p18f2455.h	372;"	m	line:372
+TRISA4	C:\MCC18\h\p18f2455.h	373;"	m	line:373
+TRISA5	C:\MCC18\h\p18f2455.h	374;"	m	line:374
+TRISA6	C:\MCC18\h\p18f2455.h	375;"	m	line:375
+TRISB0	C:\MCC18\h\p18f2455.h	390;"	m	line:390
+TRISB1	C:\MCC18\h\p18f2455.h	391;"	m	line:391
+TRISB2	C:\MCC18\h\p18f2455.h	392;"	m	line:392
+TRISB3	C:\MCC18\h\p18f2455.h	393;"	m	line:393
+TRISB4	C:\MCC18\h\p18f2455.h	394;"	m	line:394
+TRISB5	C:\MCC18\h\p18f2455.h	395;"	m	line:395
+TRISB6	C:\MCC18\h\p18f2455.h	396;"	m	line:396
+TRISB7	C:\MCC18\h\p18f2455.h	397;"	m	line:397
+TRISC0	C:\MCC18\h\p18f2455.h	410;"	m	line:410
+TRISC1	C:\MCC18\h\p18f2455.h	411;"	m	line:411
+TRISC2	C:\MCC18\h\p18f2455.h	412;"	m	line:412
+TRISC6	C:\MCC18\h\p18f2455.h	414;"	m	line:414
+TRISC7	C:\MCC18\h\p18f2455.h	415;"	m	line:415
+TRMT	C:\MCC18\h\p18f2455.h	542;"	m	line:542
+TRNIE	C:\MCC18\h\p18f2455.h	43;"	m	line:43
+TRNIF	C:\MCC18\h\p18f2455.h	33;"	m	line:33
+TRUE	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+TUN0	C:\MCC18\h\p18f2455.h	419;"	m	line:419
+TUN1	C:\MCC18\h\p18f2455.h	420;"	m	line:420
+TUN2	C:\MCC18\h\p18f2455.h	421;"	m	line:421
+TUN3	C:\MCC18\h\p18f2455.h	422;"	m	line:422
+TUN4	C:\MCC18\h\p18f2455.h	423;"	m	line:423
+TX	C:\MCC18\h\p18f2455.h	310;"	m	line:310
+TX9	C:\MCC18\h\p18f2455.h	547;"	m	line:547
+TX9D	C:\MCC18\h\p18f2455.h	541;"	m	line:541
+TXCKP	C:\MCC18\h\p18f2455.h	649;"	m	line:649
+TXEN	C:\MCC18\h\p18f2455.h	546;"	m	line:546
+TXIE	C:\MCC18\h\p18f2455.h	433;"	m	line:433
+TXIF	C:\MCC18\h\p18f2455.h	443;"	m	line:443
+TXIP	C:\MCC18\h\p18f2455.h	453;"	m	line:453
+TYPEDEFS_H	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	38;"	d	line:38
+UA	C:\MCC18\h\p18f2455.h	750;"	m	line:750
+UCFG_VAL::_PUEN|_TRINT|_FS|MODE_PP	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	43;"	d	line:43
+UERRIE	C:\MCC18\h\p18f2455.h	41;"	m	line:41
+UERRIF	C:\MCC18\h\p18f2455.h	31;"	m	line:31
+UOEMON	C:\MCC18\h\p18f2455.h	106;"	m	line:106
+UOWN	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	101;"	m	line:101	struct:_BD_STAT::<anonymous>
+UOWN	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	91;"	m	line:91	struct:_BD_STAT::<anonymous>
+UPPER_LSB::(a)((a).v[2])	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	120;"	d	line:120
+UPPER_MSB::(a)((a).v[3])	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	121;"	d	line:121
+UPUEN	C:\MCC18\h\p18f2455.h	104;"	m	line:104
+URSTIE	C:\MCC18\h\p18f2455.h	40;"	m	line:40
+URSTIF	C:\MCC18\h\p18f2455.h	30;"	m	line:30
+USBCFG_H	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	35;"	d	line:35
+USBCheckBusStatus	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	76;"	f	line:76	signature:(void)
+USBCheckCDCRequest	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	88;"	f	line:88	signature:(void)
+USBCheckCDCRequest	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	359;"	p	line:359	signature:(void)
+USBCheckStdRequest	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	70;"	f	line:70	signature:(void)
+USBCtrlEPService	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	78;"	f	line:78	signature:(void)
+USBCtrlEPServiceComplete	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	382;"	f	line:382	signature:(void)
+USBCtrlTrfInHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	221;"	f	line:221	signature:(void)
+USBCtrlTrfInHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	54;"	p	line:54	file:	signature:(void)
+USBCtrlTrfOutHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	176;"	f	line:176	signature:(void)
+USBCtrlTrfOutHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	53;"	p	line:53	file:	signature:(void)
+USBCtrlTrfRxService	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	330;"	f	line:330	signature:(void)
+USBCtrlTrfSetupHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	133;"	f	line:133	signature:(void)
+USBCtrlTrfSetupHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	52;"	p	line:52	file:	signature:(void)
+USBCtrlTrfTxService	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	260;"	f	line:260	signature:(void)
+USBDSC_H	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	40;"	d	line:40
+USBDriverService	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	215;"	f	line:215	signature:(void)
+USBEN	C:\MCC18\h\p18f2455.h	83;"	m	line:83
+USBErrorHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	524;"	f	line:524	signature:(void)
+USBErrorHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	56;"	p	line:56	file:	signature:(void)
+USBIE	C:\MCC18\h\p18f2455.h	465;"	m	line:465
+USBIF	C:\MCC18\h\p18f2455.h	482;"	m	line:482
+USBIP	C:\MCC18\h\p18f2455.h	499;"	m	line:499
+USBMMAP_H	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	38;"	d	line:38
+USBModuleDisable	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	161;"	f	line:161	signature:(void)
+USBModuleDisable	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	48;"	p	line:48	file:	signature:(void)
+USBModuleEnable	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	135;"	f	line:135	signature:(void)
+USBModuleEnable	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	47;"	p	line:47	file:	signature:(void)
+USBPrepareForNextSetupTrf	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	489;"	f	line:489	signature:(void)
+USBProtocolResetHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	53;"	p	line:53	file:	signature:(void)
+USBProtocolResetHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	551;"	f	line:551	signature:(void)
+USBRemoteWakeup	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	404;"	f	line:404	signature:(void)
+USBSoftDetach	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	192;"	f	line:192	signature:(void)
+USBStallHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	488;"	f	line:488	signature:(void)
+USBStallHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	55;"	p	line:55	file:	signature:(void)
+USBStdFeatureReqHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	275;"	f	line:275	signature:(void)
+USBStdFeatureReqHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	50;"	p	line:50	file:	signature:(void)
+USBStdGetDscHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	136;"	f	line:136	signature:(void)
+USBStdGetDscHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	47;"	p	line:47	file:	signature:(void)
+USBStdGetStatusHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	218;"	f	line:218	signature:(void)
+USBStdGetStatusHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	49;"	p	line:49	file:	signature:(void)
+USBStdSetCfgHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	180;"	f	line:180	signature:(void)
+USBStdSetCfgHandler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb9\usb9.c	48;"	p	line:48	file:	signature:(void)
+USBSuspend	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	297;"	f	line:297	signature:(void)
+USBSuspend	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	50;"	p	line:50	file:	signature:(void)
+USBTasks	E:\iro_svn\branches\fw-new\opensprints\FW\main.c	51;"	p	line:51	file:	signature:(void)
+USBWakeFromSuspend	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	355;"	f	line:355	signature:(void)
+USBWakeFromSuspend	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	51;"	p	line:51	file:	signature:(void)
+USB_BUS_ATTACHED::1	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	82;"	d	line:82	file:
+USB_BUS_DETACHED::0	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	83;"	d	line:83	file:
+USB_CDC_ACM_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	323;"	t	line:323
+USB_CDC_CALL_MGT_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	343;"	t	line:343
+USB_CDC_HEADER_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	314;"	t	line:314
+USB_CDC_UNION_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	333;"	t	line:333
+USB_CD_Ptr	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	260;"	v	line:260
+USB_DEVICE_STATUS	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	78;"	t	line:78
+USB_H	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usb.h	37;"	d	line:37
+USB_SD_Ptr	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	261;"	v	line:261
+USB_SOF_Handler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	445;"	f	line:445	signature:(void)
+USB_SOF_Handler	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	54;"	p	line:54	file:	signature:(void)
+USB_USE_CDC	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbcfg.h	49;"	d	line:49
+USER_H	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.h	38;"	d	line:38
+UTEYE	C:\MCC18\h\p18f2455.h	107;"	m	line:107
+UTRDIS	C:\MCC18\h\p18f2455.h	103;"	m	line:103
+UserInit	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	341;"	f	line:341	signature:(void)
+UserInit	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.h	41;"	p	line:41	signature:(void)
+UserSW::PORTCbits.RC2	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	81;"	d	line:81
+V25TER::0x01	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	74;"	d	line:74
+VCFG0	C:\MCC18\h\p18f2455.h	695;"	m	line:695
+VCFG1	C:\MCC18\h\p18f2455.h	696;"	m	line:696
+VDIRMAG	C:\MCC18\h\p18f2455.h	879;"	m	line:879
+VDIRMAG	C:\MCC18\h\p18f2455.h	911;"	m	line:911
+VREFM	C:\MCC18\h\p18f2455.h	259;"	m	line:259
+VREFP	C:\MCC18\h\p18f2455.h	260;"	m	line:260
+WCOL	C:\MCC18\h\p18f2455.h	744;"	m	line:744
+WORD	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	82;"	t	line:82
+WR	C:\MCC18\h\p18f2455.h	511;"	m	line:511
+WREN	C:\MCC18\h\p18f2455.h	512;"	m	line:512
+WRERR	C:\MCC18\h\p18f2455.h	513;"	m	line:513
+WUE	C:\MCC18\h\p18f2455.h	639;"	m	line:639
+Word0	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	110;"	m	line:110	struct:_DWORD::<anonymous>
+Word1	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	111;"	m	line:111	struct:_DWORD::<anonymous>
+Z	C:\MCC18\h\p18f2455.h	952;"	m	line:952
+_BDT	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	110;"	u	line:110
+_BD_STAT	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	80;"	u	line:80
+_BOOL	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	150;"	g	line:150
+_BSTALL::0x04	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	46;"	d	line:46
+_BYTE	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	44;"	u	line:44
+_CONTROL_SIGNAL_BITMAP	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	284;"	u	line:284
+_DAT0::0x00	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	50;"	d	line:50
+_DAT1::0x40	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	51;"	d	line:51
+_DTSEN::0x08	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	47;"	d	line:47
+_DTSMASK::0x40	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	52;"	d	line:52
+_DWORD	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	86;"	u	line:86
+_INCDIS::0x10	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	48;"	d	line:48
+_KEN::0x20	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	49;"	d	line:49
+_LINE_CODING	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	269;"	u	line:269
+_POINTER	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	125;"	u	line:125
+_RAM::0	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	66;"	d	line:66
+_ROM::1	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	67;"	d	line:67
+_UCPU::0x00	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	54;"	d	line:54
+_USB_CDC_ACM_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	317;"	s	line:317
+_USB_CDC_CALL_MGT_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	336;"	s	line:336
+_USB_CDC_HEADER_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	308;"	s	line:308
+_USB_CDC_UNION_FN_DSC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	326;"	s	line:326
+_USB_DEVICE_STATUS	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	70;"	u	line:70
+_USIE::0x80	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	53;"	d	line:53
+_WORD	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	60;"	u	line:60
+__18F2455_H	C:\MCC18\h\p18f2455.h	8;"	d	line:8
+_byte	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	46;"	m	line:46	union:_BYTE
+_byte	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	273;"	m	line:273	struct:_LINE_CODING::<anonymous>
+_byte	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	286;"	m	line:286	union:_CONTROL_SIGNAL_BITMAP
+_byte	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	72;"	m	line:72	union:_USB_DEVICE_STATUS
+_byte	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	82;"	m	line:82	union:_BD_STAT
+_dword	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	88;"	m	line:88	union:_DWORD
+_user_putc	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	256;"	p	line:256	file:	signature:(char c)
+_user_putc	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	645;"	f	line:645	signature:(char c)
+_word	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	133;"	m	line:133	union:_POINTER
+_word	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	62;"	m	line:62	union:_WORD
+acc	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	876;"	l	line:876
+activeRollers	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	261;"	v	line:261
+advance_RX_buf_out::\	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	135;"	d	line:135	file:
+b0	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	49;"	m	line:49	struct:_BYTE::<anonymous>
+b1	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	50;"	m	line:50	struct:_BYTE::<anonymous>
+b2	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	51;"	m	line:51	struct:_BYTE::<anonymous>
+b3	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	52;"	m	line:52	struct:_BYTE::<anonymous>
+b4	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	53;"	m	line:53	struct:_BYTE::<anonymous>
+b5	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	54;"	m	line:54	struct:_BYTE::<anonymous>
+b6	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	55;"	m	line:55	struct:_BYTE::<anonymous>
+b7	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	56;"	m	line:56	struct:_BYTE::<anonymous>
+bCharFormat	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	278;"	m	line:278	struct:_LINE_CODING::<anonymous>
+bDataBits	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	280;"	m	line:280	struct:_LINE_CODING::<anonymous>
+bDataInterface	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	342;"	m	line:342	struct:_USB_CDC_CALL_MGT_FN_DSC
+bDscSubType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	312;"	m	line:312	struct:_USB_CDC_HEADER_FN_DSC
+bDscSubType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	321;"	m	line:321	struct:_USB_CDC_ACM_FN_DSC
+bDscSubType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	330;"	m	line:330	struct:_USB_CDC_UNION_FN_DSC
+bDscSubType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	340;"	m	line:340	struct:_USB_CDC_CALL_MGT_FN_DSC
+bDscType	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	247;"	m	line:247	file:
+bDscType	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	250;"	m	line:250	file:
+bDscType	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	255;"	m	line:255	file:
+bDscType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	311;"	m	line:311	struct:_USB_CDC_HEADER_FN_DSC
+bDscType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	320;"	m	line:320	struct:_USB_CDC_ACM_FN_DSC
+bDscType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	329;"	m	line:329	struct:_USB_CDC_UNION_FN_DSC
+bDscType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	339;"	m	line:339	struct:_USB_CDC_CALL_MGT_FN_DSC
+bFNLength	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	310;"	m	line:310	struct:_USB_CDC_HEADER_FN_DSC
+bFNLength	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	319;"	m	line:319	struct:_USB_CDC_ACM_FN_DSC
+bFNLength	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	328;"	m	line:328	struct:_USB_CDC_UNION_FN_DSC
+bFNLength	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	338;"	m	line:338	struct:_USB_CDC_CALL_MGT_FN_DSC
+bHigh	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	130;"	m	line:130	struct:_POINTER::<anonymous>
+bLength	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	247;"	m	line:247	file:
+bLength	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	250;"	m	line:250	file:
+bLength	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	255;"	m	line:255	file:
+bLow	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	129;"	m	line:129	struct:_POINTER::<anonymous>
+bMasterIntf	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	331;"	m	line:331	struct:_USB_CDC_UNION_FN_DSC
+bParityType	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	279;"	m	line:279	struct:_LINE_CODING::<anonymous>
+bRam	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	137;"	m	line:137	union:_POINTER
+bRom	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	142;"	m	line:142	union:_POINTER
+bSaveIntf0	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	332;"	m	line:332	struct:_USB_CDC_UNION_FN_DSC
+bcdCDC	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	313;"	m	line:313	struct:_USB_CDC_HEADER_FN_DSC
+bitclr::(var,bitno)((var)&=~(1<<(bitno	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	102;"	d	line:102	file:
+bitset::(var,bitno)((var)|=(1<<(bitno)	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	101;"	d	line:101	file:
+bittst::(var,bitno)(var&(1<<(bitno)))	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	103;"	d	line:103	file:
+bmCapabilities	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	322;"	m	line:322	struct:_USB_CDC_ACM_FN_DSC
+bmCapabilities	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	341;"	m	line:341	struct:_USB_CDC_CALL_MGT_FN_DSC
+byte	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	40;"	t	line:40
+byte0	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	65;"	m	line:65	struct:_WORD::<anonymous>
+byte0	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	91;"	m	line:91	struct:_DWORD::<anonymous>
+byte1	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	66;"	m	line:66	struct:_WORD::<anonymous>
+byte1	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	92;"	m	line:92	struct:_DWORD::<anonymous>
+byte2	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	93;"	m	line:93	struct:_DWORD::<anonymous>
+byte3	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	94;"	m	line:94	struct:_DWORD::<anonymous>
+byte_to_read	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	332;"	l	line:332
+byte_to_send	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	458;"	l	line:458
+byte_to_send	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	262;"	l	line:262
+cd01	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	55;"	v	line:55
+cdc_acm_fn_i01a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	58;"	v	line:58
+cdc_call_mgt_fn_i01a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	60;"	v	line:60
+cdc_data_rx	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	279;"	v	line:279
+cdc_data_tx	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	280;"	v	line:280
+cdc_header_fn_i01a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	57;"	v	line:57
+cdc_mem_type	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	52;"	v	line:52
+cdc_notice	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	278;"	v	line:278
+cdc_rx_len	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	46;"	v	line:46
+cdc_trf_state	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	48;"	v	line:48
+cdc_tx_len	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	51;"	v	line:51
+cdc_union_fn_i01a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	59;"	v	line:59
+check_and_send_TX_data	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	254;"	p	line:254	file:	signature:(void)
+check_and_send_TX_data	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	668;"	f	line:668	signature:(void)
+cmd1	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	713;"	l	line:713
+cmd2	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	714;"	l	line:714
+command	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	712;"	l	line:712
+control_signal_bitmap	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	55;"	v	line:55
+ctrl_trf_mem	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.h	76;"	m	line:76	struct:_USB_DEVICE_STATUS::<anonymous>
+ctrl_trf_session_owner	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	45;"	v	line:45
+ctrl_trf_state	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	44;"	v	line:44
+currentSensorStates	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	265;"	v	line:265
+delay_count	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbdrv\usbdrv.c	406;"	l	line:406	file:
+device_dsc	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	180;"	v	line:180
+digit_cnt	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1015;"	l	line:1015
+dummy_encapsulated_cmd_response	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	64;"	v	line:64
+dummy_length::0x08	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	63;"	d	line:63	file:
+dwDTERate	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	277;"	m	line:277	struct:_LINE_CODING::<anonymous>
+dword	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	42;"	t	line:42
+ep02i_i01a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	61;"	v	line:61
+ep03i_i02a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	64;"	v	line:64
+ep03o_i02a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	63;"	v	line:63
+ep0Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	175;"	v	line:175
+ep0Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	174;"	v	line:174
+ep10Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	225;"	v	line:225
+ep10Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	224;"	v	line:224
+ep11Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	230;"	v	line:230
+ep11Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	229;"	v	line:229
+ep12Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	235;"	v	line:235
+ep12Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	234;"	v	line:234
+ep13Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	240;"	v	line:240
+ep13Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	239;"	v	line:239
+ep14Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	245;"	v	line:245
+ep14Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	244;"	v	line:244
+ep15Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	250;"	v	line:250
+ep15Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	249;"	v	line:249
+ep1Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	180;"	v	line:180
+ep1Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	179;"	v	line:179
+ep2Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	185;"	v	line:185
+ep2Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	184;"	v	line:184
+ep3Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	190;"	v	line:190
+ep3Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	189;"	v	line:189
+ep4Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	195;"	v	line:195
+ep4Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	194;"	v	line:194
+ep5Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	200;"	v	line:200
+ep5Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	199;"	v	line:199
+ep6Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	205;"	v	line:205
+ep6Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	204;"	v	line:204
+ep7Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	210;"	v	line:210
+ep7Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	209;"	v	line:209
+ep8Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	215;"	v	line:215
+ep8Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	214;"	v	line:214
+ep9Bi	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	220;"	v	line:220
+ep9Bo	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	219;"	v	line:219
+error_byte	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	177;"	v	line:177
+extract_digit	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1012;"	f	line:1012	signature:(signed short long * acc, unsigned char digits)
+extract_digit	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	247;"	p	line:247	file:	signature:(signed short long * acc, unsigned char digits)
+extract_number	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	246;"	p	line:246	file:	signature:(tExtractType type)
+extract_number	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	874;"	f	line:874	signature:(tExtractType type)
+finishTick	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	260;"	v	line:260
+g_BO_init	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	217;"	v	line:217
+g_BO_strobe_delay	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	221;"	v	line:221
+g_BO_strobe_mask	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	218;"	v	line:218
+g_BO_wait_delay	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	220;"	v	line:220
+g_BO_wait_mask	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	219;"	v	line:219
+g_RC_next_ptr	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	182;"	v	line:182
+g_RC_primed_ptr	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	181;"	v	line:181
+g_RC_state	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	198;"	v	line:198
+g_RC_timing_ptr	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	183;"	v	line:183
+g_RC_value	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	199;"	v	line:199
+g_RX_buf	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	205;"	v	line:205
+g_RX_buf_in	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	228;"	v	line:228
+g_RX_buf_out	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	229;"	v	line:229
+g_TX_buf	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	203;"	v	line:203
+g_TX_buf_in	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	224;"	v	line:224
+g_TX_buf_out	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	225;"	v	line:225
+g_USART_RX_buf	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	208;"	v	line:208
+g_USART_RX_buf_in	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	232;"	v	line:232
+g_USART_RX_buf_out	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	233;"	v	line:233
+g_USART_TX_buf	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	211;"	v	line:211
+g_USART_TX_buf_in	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	236;"	v	line:236
+g_USART_TX_buf_out	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	237;"	v	line:237
+g_ack_enable	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	240;"	v	line:240
+getsUSBUSART	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	239;"	f	line:239	signature:(unsigned char *buffer, byte len)
+getsUSBUSART	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	361;"	p	line:361	signature:(unsigned char *buffer, byte len)
+got_full_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	484;"	l	line:484
+high_ISR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	310;"	f	line:310	signature:(void)
+high_ISR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.h	44;"	p	line:44	signature:(void)
+high_vector	E:\iro_svn\branches\fw-new\opensprints\FW\main.c	54;"	f	line:54	signature:(void)
+i	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	135;"	l	line:135
+i	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	343;"	l	line:343
+i01a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	56;"	v	line:56
+i02a00	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.h	62;"	v	line:62
+in_cr	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	481;"	l	line:481	file:
+isRacing	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	270;"	v	line:270
+j	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	343;"	l	line:343
+justBegun	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	273;"	v	line:273
+kASCII_CHAR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	131;"	e	line:131	file:
+kCHAR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	127;"	e	line:127	file:
+kCR::0x0D	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	147;"	d	line:147	file:
+kERROR_BYTE_EXTRA_CHARACTERS::7	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	156;"	d	line:156	file:
+kERROR_BYTE_MISSING_PARAMETER::4	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	153;"	d	line:153	file:
+kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT::6	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	155;"	d	line:155	file:
+kERROR_BYTE_PRINTED_ERROR::5	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	154;"	d	line:154	file:
+kERROR_BYTE_RX_BUFFER_OVERRUN::3	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	152;"	d	line:152	file:
+kERROR_BYTE_TX_BUF_OVERRUN::2	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	151;"	d	line:151	file:
+kERROR_BYTE_UNKNOWN_COMMAND::8	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	157;"	d	line:157	file:
+kINT	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	129;"	e	line:129	file:
+kISR_FIFO_A_DEPTH::3	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	144;"	d	line:144	file:
+kISR_FIFO_D_DEPTH::3	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	145;"	d	line:145	file:
+kLF::0x0A	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	148;"	d	line:148	file:
+kOFF	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	111;"	e	line:111	file:
+kPR2_RELOAD::250	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	146;"	d	line:146	file:
+kPRIMED	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	113;"	e	line:113	file:
+kRC_DATA_SIZE::24	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	117;"	d	line:117	file:
+kRX_BUF_SIZE::64	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	120;"	d	line:120	file:
+kTIMING	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	114;"	e	line:114	file:
+kTX_BUF_SIZE::64	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	119;"	d	line:119	file:
+kUCASE_ASCII_CHAR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	132;"	e	line:132	file:
+kUCHAR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	128;"	e	line:128	file:
+kUINT	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	130;"	e	line:130	file:
+kUSART_RX_BUF_SIZE::64	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	123;"	d	line:123	file:
+kUSART_TX_BUF_SIZE::64	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	122;"	d	line:122	file:
+kWAITING	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	112;"	e	line:112	file:
+last_fifo_size	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	482;"	l	line:482	file:
+len	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	298;"	l	line:298
+len	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	381;"	l	line:381
+line_coding	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	54;"	v	line:54
+low_ISR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	304;"	f	line:304	signature:(void)
+low_ISR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.h	43;"	p	line:43	signature:(void)
+mCDCGetRxLength::cdc_rx_len	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	192;"	d	line:192
+mCDCUsartRxIsBusy::CDC_BULK_BD_OUT.Stat.UOWN	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	154;"	d	line:154
+mCDCUsartTxIsBusy::CDC_BULK_BD_IN.Stat.UOWN	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	173;"	d	line:173
+mInitAllLEDs::LATC&=0xFC;TRISC&=0xFC;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	65;"	d	line:65
+mInitSwitch::TRISCbits.TRISC2=1;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	80;"	d	line:80
+mLED_1::LATCbits.LATC0	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	67;"	d	line:67
+mLED_1_Off::mLED_1=0;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	73;"	d	line:73
+mLED_1_On::mLED_1=1;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	70;"	d	line:70
+mLED_1_Toggle::mLED_1=!mLED_1;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	76;"	d	line:76
+mLED_2::LATCbits.LATC1	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	68;"	d	line:68
+mLED_2_Off::mLED_2=0;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	74;"	d	line:74
+mLED_2_On::mLED_2=1;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	71;"	d	line:71
+mLED_2_Toggle::mLED_2=!mLED_2;	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	77;"	d	line:77
+mLED_Both_Off::{mLED_1_Off;mLED_2_Off;}	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	83;"	d	line:83
+mLED_Both_On::{mLED_1_On;mLED_2_On;}	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	84;"	d	line:84
+mLED_Only_1_On::{mLED_1_On;mLED_2_Off;}	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	85;"	d	line:85
+mLED_Only_2_On::{mLED_1_Off;mLED_2_On;}	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	86;"	d	line:86
+mUSBUSARTIsDTR::control_signal_bitmap.DTE_PRES	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	115;"	d	line:115
+mUSBUSARTIsRTS::control_signal_bitmap.CARRIER_	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	116;"	d	line:116
+mUSBUSARTIsTxTrfReady::(cdc_trf_state==CDC_TX_READY)	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	135;"	d	line:135
+mUSBUSARTTxRam::(pData,len)\	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	221;"	d	line:221
+mUSBUSARTTxRom::(pData,len)\	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	256;"	d	line:256
+neg	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	877;"	l	line:877
+newTick	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	272;"	v	line:272
+pCDCDst	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	50;"	v	line:50
+pCDCSrc	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	49;"	v	line:49
+pDst	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	48;"	v	line:48
+pFunc	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	123;"	t	line:123
+pSrc	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	47;"	v	line:47
+parse_GO_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	250;"	p	line:250	file:	signature:(void)
+parse_GO_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	824;"	f	line:824	signature:(void)
+parse_HW_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	252;"	p	line:252	file:	signature:(void)
+parse_HW_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	847;"	f	line:847	signature:(void)
+parse_ST_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	251;"	p	line:251	file:	signature:(void)
+parse_ST_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	840;"	f	line:840	signature:(void)
+parse_V_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	248;"	p	line:248	file:	signature:(void)
+parse_V_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	809;"	f	line:809	signature:(void)
+parse_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	245;"	p	line:245	file:	signature:(void)
+parse_packet	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	710;"	f	line:710	signature:(void)
+prevSensorStates	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	264;"	v	line:264
+print_ack	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	255;"	p	line:255	file:	signature:(void)
+print_ack	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	800;"	f	line:800	signature:(void)
+print_status	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1037;"	f	line:1037	signature:(void)
+putrsUSBUSART	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	379;"	f	line:379	signature:(const rom unsigned char *data)
+putrsUSBUSART	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	362;"	p	line:362	signature:(unsigned const rom char *data)
+putsUSBUSART	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.c	296;"	f	line:296	signature:(unsigned char *data)
+putsUSBUSART	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\class\cdc\cdc.h	363;"	p	line:363	signature:(unsigned char *data)
+raceTestMode	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	271;"	v	line:271
+raceTime	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	266;"	v	line:266
+refreshInterval	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	262;"	v	line:262
+roller	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	281;"	l	line:281
+roller	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	312;"	l	line:312
+rollerMask	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	327;"	l	line:327
+rollerTickTimes	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	267;"	v	line:267
+rollerTicks	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	268;"	v	line:268
+sd000	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	247;"	v	line:247
+sd001	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	250;"	v	line:250
+sd002	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	255;"	v	line:255
+self_power::1	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	60;"	d	line:60
+st_LFCR	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	192;"	v	line:192
+st_OK	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	191;"	v	line:191
+st_version	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	193;"	v	line:193
+startRace	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	814;"	f	line:814	signature:(void)
+string	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	247;"	m	line:247	file:
+string	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	250;"	m	line:250	file:
+string	E:\iro_svn\branches\fw-new\opensprints\FW\autofiles\usbdsc.c	255;"	m	line:255	file:
+tExtractType	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	133;"	t	line:133	file:
+tRC_state	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	115;"	t	line:115	file:
+temp	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	670;"	l	line:670
+time_between_updates	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	163;"	v	line:163
+tst_char	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	483;"	l	line:483
+usb_active_cfg	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	159;"	v	line:159
+usb_alt_intf	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	160;"	v	line:160
+usb_bus_sense::1	E:\iro_svn\branches\fw-new\opensprints\FW\io_cfg.h	59;"	d	line:59
+usb_device_state	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	157;"	v	line:157
+usb_stat	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbmmap.c	158;"	v	line:158
+v	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	115;"	m	line:115	struct:_DWORD::<anonymous>
+v	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	80;"	m	line:80	struct:_WORD::<anonymous>
+val	E:\iro_svn\branches\fw-new\opensprints\FW\user\user.c	1014;"	l	line:1014
+wCount	E:\iro_svn\branches\fw-new\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	49;"	v	line:49
+wRam	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	139;"	m	line:139	union:_POINTER
+wRom	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	143;"	m	line:143	union:_POINTER
+word	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	41;"	t	line:41
+word0	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	98;"	m	line:98	struct:_DWORD::<anonymous>
+word1	E:\iro_svn\branches\fw-new\opensprints\FW\system\typedefs.h	99;"	m	line:99	struct:_DWORD::<anonymous>
