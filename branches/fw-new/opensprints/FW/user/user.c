@@ -56,8 +56,11 @@
  * BPS			05/24/07	v1.4.2 - Fixed RC command bug - it
  *									wouldn't shut off.
  * Luke Orland		2007/08/28	added some stuff
- * LJO			2007/09/29	added race test mode and timeclock
- *
+ * LJO			2007/09/29	v0.32 - added race test mode and timeclock
+ * LJO			2008/03/31	v0.33 - cheese sandwich day! removed lots of UBW stuff,
+ * 					      - added support for up to 8 rollers,
+ * 					      - changed the timestamp output format.
+ * 
  * To Do:
  *  - switch to milliseconds instead of centiseconds
  *  - incorporate new changes
@@ -68,20 +71,22 @@
  *  - test and debug
  *  - ECHO mode
  *  - FW sends confirmation message back to SW when receives a command.
+ *  - interrupt on state change of pins
  *
  * Scratch list:
- *  - HW and GO commands.
- *  - Try moving low_ISR stuff to high_ISR
- *  - check ports during ISR
  *  - handshaking
  *    * if PC doesn't get the message in the precise format, asks for a resend
- *  - LB and HB for ticks
- *  - parse_RS_packet
- *  - SendUpdateToPc()
+ *  - parse_RS_packet // resend
+ *  - switch to sending serial data instead of ascii chars. (yaml?)
+	* DONE: ISR
+	* DONE: check in ProcessIO() {?} if it is time to send update
+	* send update to pc
+	* init pins for input on REGB
+	* HW and GO commands
  *
- *****************************************************************************/
+ *************************************************************************/
 
-/** I N C L U D E S **********************************************************/
+/** I N C L U D E S ******************************************************/
 #include <p18cxxx.h>
 #include <usart.h>
 #include <stdio.h>
@@ -109,13 +114,13 @@ typedef enum {
 	,kTIMING
 } tRC_state;
 
-#define kRC_DATA_SIZE			24				// In structs, since there are 3 ports of 8 bits each
+#define kRC_DATA_SIZE		24		// In structs, since there are 3 ports of 8 bits each
 
-#define kTX_BUF_SIZE 			64				// In bytes
-#define kRX_BUF_SIZE			64				// In bytes
+#define kTX_BUF_SIZE 		64		// In bytes
+#define kRX_BUF_SIZE		64		// In bytes
 
-#define kUSART_TX_BUF_SIZE		64				// In bytes
-#define kUSART_RX_BUF_SIZE		64				// In bytes
+#define kUSART_TX_BUF_SIZE	64		// In bytes
+#define kUSART_RX_BUF_SIZE	64		// In bytes
 
 // Enum for extract_num() function parameter
 typedef enum {
@@ -234,52 +239,13 @@ unsigned char g_USART_TX_buf_out;
 // Normally set to TRUE. Able to set FALSE to not send "OK" message after packet recepetion
 BOOL	g_ack_enable;
 
-// sensor stuff
-BOOL is_racing = FALSE;
-BOOL raceTestMode = FALSE;
-unsigned int raceTimeMins;
-unsigned int raceTimeSecs;
-unsigned int raceTimeCentisecs;
-unsigned int raceTimeMillisecs;
-unsigned int rollerTickTimeMins[NUM_ROLLERS];
-unsigned int rollerTickTimeSecs[NUM_ROLLERS];
-unsigned int rollerTickTimeCentisecs[NUM_ROLLERS];
-unsigned int rollerTickTimeMillisecs[NUM_ROLLERS];
-
-
-
 /** P R I V A T E  P R O T O T Y P E S ***************************************/
 void BlinkUSBStatus (void);		// Handles blinking the USB status LED
 BOOL SwitchIsPressed (void);		// Check to see if the user (PRG) switch is pressed
 void parse_packet (void);		// Take a full packet and dispatch it to the right function
 signed short long extract_number (tExtractType type); 		// Pull a number paramter out of the packet
 signed char extract_digit (signed short long * acc, unsigned char digits); // Pull a character out of the packet
-void parse_R_packet (void);	// R for resetting UBW
-void parse_C_packet (void);	// C for configuring I/O and analog pins
-void parse_CX_packet (void); 	// CX For configuring serial port
-void parse_O_packet (void);	// O for output digital to pins
-void parse_I_packet (void);	// I for input digital from pins
 void parse_V_packet (void);	// V for printing version
-void parse_A_packet (void);	// A for requesting analog inputs
-void parse_T_packet (void);	// T for setting up timed I/O (digital or analog)
-void parse_PI_packet (void);	// PI for reading a single pin
-void parse_PO_packet (void);	// PO for setting a single pin state
-void parse_PD_packet (void);	// PD for setting a pin's direction
-void parse_MR_packet (void);	// MR for Memory Read
-void parse_MW_packet (void); 	// MW for Memory Write
-void parse_TX_packet (void);	// TX for transmitting serial
-void parse_RX_packet (void);	// RX for receiving serial
-void parse_RC_packet (void);	// RC is for outputing RC servo pulses 
-void parse_BO_packet (void);	// BO sends data to fast parallel output
-void parse_BC_packet (void);	// BC configures fast parallel outputs
-void parse_BS_packet (void);	// BS sends binary data to fast parallel output
-void parse_CU_packet (void);	// CU configures UBW (system wide parameters)
-void parse_SS_packet (void);	// SS Send SPI
-void parse_RS_packet (void);	// RS Receive SPI
-void parse_CS_packet (void);	// CS Configure SPI
-void parse_SI_packet (void);	// SI Send I2C
-void parse_RI_packet (void);	// RI Receive I2C
-void parse_CI_packet (void);	// CI Configure I2C
 
 void parse_GO_packet (void);	// start sending sensor messages to PC
 void parse_ST_packet (void);	// stop sending sensor messages to PC
@@ -289,60 +255,126 @@ void check_and_send_TX_data (void); // See if there is any data to send to PC, a
 void print_ack (void);		// Print "OK" after packet is parsed
 int _user_putc (char c);	// Our UBS based stream character printer
 
+// sensor stuff
+unsigned int finishTick;		// this value determines the length of the race in roller rotations
+unsigned char activeRollers;		// 8 flags: Are the rollers active?
+unsigned int refreshInterval = 66;	// default value is 15 frames per second
+
+unsigned char prevSensorStates;		// 8 flags: Was the hall effect sensor engaged?
+unsigned char currentSensorStates;	// 8 flags: Is the hall effect sensor engaged?
+unsigned short long raceTime;				// in ms
+unsigned short long rollerTickTimes[NUM_ROLLERS];	// in ms
+unsigned int rollerTicks[NUM_ROLLERS];		// number of revolutions of each roller 
+
+BOOL isRacing = FALSE;
+BOOL raceTestMode = FALSE;
+BOOL newTick = FALSE;
 BOOL justBegun = TRUE;
-unsigned char prevSensorValues;
-unsigned char currentSensorValues;
-unsigned int sensorsStatus;
-unsigned int lastRaceTime;
-unsigned int lastSensorsTime[NUM_ROLLERS];
-unsigned int momentRaceTimeMillisecs;
-unsigned int momentRaceTimeCentisecs;
-unsigned int momentRaceTimeSecs;
-unsigned int momentRaceTimeMins;
-#define TEST_PERIOD 20 		// in centiseconds
-#define TEST_PERIOD_HALF (TEST_PERIOD/2)
 
 /** D E C L A R A T I O N S **************************************************/
+
+/** Start OpenSprints FW code ************************************************/
+void SendUpdateToPc (void)
+{
+	printf("time: %i:%02i.%02i%01i\n",momentRaceTimeMins,momentRaceTimeSecs,momentRaceTimeCentisecs,momentRaceTime);
+	for(int roller; roller < NUM_ROLLERS; roller++)
+	{
+		printf("%i:\n  last_tick_time: %i:%02i.%02i%01i\n",i,);
+	}
+	printf("eom.\n");
+}
+
+void HallEffSensors(void)
+{
+	if (is_racing)
+	{
+		// check the race stopwatch
+		momentRaceTimeMins = raceTimeMins;
+		momentRaceTimeSecs = raceTimeSecs;
+		momentRaceTimeCentisecs = raceTimeCentisecs;
+		momentRaceTime = raceTime;
+
+		if (justBegun)
+		{
+			for (int roller=0;roller<NUM_ROLLERS;roller++)
+			{
+				// initialize the pins
+				bitset (DDRA, roller);  		// (move this to _init part of code?) set Port A Pin i as input
+				// read the pins
+				currentSensorValues = bittst (PORTA, roller);	// read Port A Pin i state
+	
+				justBegun=0;
+			}
+		}
+
+		else
+		{
+			if (raceTestMode)
+			{
+				if (momentRaceTimeCentisecs%TEST_PERIOD==0 && momentRaceTimeCentisecs!=lastSensor0Time)
+				{
+					sensor0Status=1;
+					lastSensor0Time=momentRaceTimeCentisecs;
+				}
+				else
+					sensor0Status=0;
+				if (momentRaceTimeCentisecs%TEST_PERIOD==TEST_PERIOD_HALF && momentRaceTimeCentisecs!=lastSensor1Time)
+				{
+					sensor1Status=1;
+					lastSensor1Time=momentRaceTimeCentisecs;
+				}
+				else
+					sensor1Status=0;
+			}
+
+			else	// not test mode
+			{
+			}
+
+			if(sensor0Status)
+			{
+				// send a string through USB packet stating that sensor 0 switched to high
+			}
+		}
+	}
+}
+
 
 #pragma code
 
 #pragma interruptlow low_ISR
 void low_ISR(void)
 {	
-	// Do we have a Timer2 interrupt? (1ms rate)
-	if (PIR1bits.TMR2IF)
-	{
-		// Clear the interrupt 
-		PIR1bits.TMR2IF = 0;
-		if (++raceTimeMillisecs==10)
-		{
-			raceTimeMillisecs=0;
-			if (++raceTimeCentisecs==60)
-			{
-				raceTimeCentisecs=0;
-				if (++raceTimeSecs==60)
-				{
-					raceTimeSecs=0;
-					raceTimeMins++;
-				}
-			}
-		}
-		for(int roller=0,roller<NUM_ROLLERS;roller++)
-		{
-			// remember previous state of pins
-			prevSensorValues=currentValueSensor0;
-		
-			// read the pins
-			currentSensorValues = bittst(PORTB,Sensor0PortApin);  	// read state of Port A Pin x
-			sensorsStatus=(currentValueSensor1^prevValueSensor1)&~currentValueSensor1;
-		}
-	}
 }
 
 
 #pragma interrupt high_ISR
 void high_ISR(void)
 {
+	// Do we have a Timer2 interrupt? (1ms rate)
+	if (PIR1bits.TMR2IF)
+	{
+		// Clear the interrupt 
+		PIR1bits.TMR2IF = 0;
+		if (isRacing)
+		{
+			raceTime++;		// add another ms to the time counter
+			prevSensorValues = currentSensorValues;		// remember previous state of pins
+			currentSensorValues = PORTB;			// read the pins
+			for(int roller=0;roller<NUM_ROLLERS;roller++)
+			{
+				unsigned char rollerMask;
+				rollerMask = (1<<roller);
+				if(rollerMask & active_rollers & (currentSensorValues^prevSensorValues) & currentSensorValues)
+				// Check each active roller for a change from 0 to 1
+				{
+					// If so, increase the tick count for that roller and save the time
+					rollerTicks[roller]++;
+					rollerTickTimes[roller] = raceTime;
+				}
+			}
+		}
+	}
 }
 
 void UserInit(void)
@@ -492,9 +524,11 @@ void ProcessIO(void)
 	cdc_rx_len = 0;
 
 	BlinkUSBStatus();
-	HallEffSensors();	// Function by Luke Orland in user.c
 
-
+	if(raceTime%refreshInterval == 0)
+	{
+		SendUpdateToPc();
+	}
 
 	// User Application USB tasks
 	if((usb_device_state < CONFIGURED_STATE) || (UCONbits.SUSPND == 1))
@@ -734,182 +768,27 @@ void parse_packet(void)
 	// Now 'command' is equal to one or two bytes of our command
 	switch (command)
 	{
-		case ('R' * 256) + 'X':
-		{
-			// For receiving serial
-			parse_RX_packet ();
-			break;
-		}
-		case 'R':
-		{
-			// Reset command (resets everything to power-on state)
-			parse_R_packet ();
-			break;
-		}
-		case 'C':
-		{
-			// Configure command (configure ports for Input or Ouptut)
-			parse_C_packet ();
-			break;
-		}		
-		case ('C' * 256) + 'X':
-		{
-			// For configuring serial port
-			parse_CX_packet ();
-			break;
-		}
-		case ('C' * 256) + 'U':
-		{
-			// For configuring UBW
-			parse_CU_packet ();
-			break;
-		}
-		case 'O':
-		{
-			// Output command (tell the ports to output something)
-			parse_O_packet ();
-			break;
-		}
-		case 'I':
-		{
-			// Input command (return the current status of the ports)
-			parse_I_packet ();
-			break;
-		}
 		case 'V':
 		{
 			// Version command
 			parse_V_packet ();
 			break;
 		}
-		case 'A':
-		{
-			// Analog command
-			parse_A_packet ();
-			break;
-		}
-		case 'T':
-		{
-			// For timed I/O
-			parse_T_packet ();
-			break;
-		}	
-		case ('T' * 256) + 'X':
-		{
-			// For transmitting serial
-			parse_TX_packet ();
-			break;
-		}
-		case ('P' * 256) + 'I':
-		{
-			// PI for reading a single pin
-			parse_PI_packet ();
-			break;
-		}
-		case ('P' * 256) + 'O':
-		{
-			// PO for setting a single pin
-			parse_PO_packet ();
-			break;
-		}
-		
-		case ('P' * 256) + 'D':
-		{
-			// PD for setting a pin's direction
-			parse_PD_packet ();
-			break;
-		}
-		case ('M' * 256) + 'R':
-		{
-			// MR for Memory Read
-			parse_MR_packet ();
-			break;
-		}
-		case ('M' * 256) + 'W':
-		{
-			// MW for Memory Write
-			parse_MW_packet ();
-			break;
-		}
-		case ('B' * 256) + 'O':
-		{
-			// MR for Fast Parallel Output
-			parse_BO_packet ();		
-			break;
-		}
-		case ('R' * 256) + 'C':
-		{
-			// RC for RC servo output
-			parse_RC_packet ();		
-			break;
-		}
-		case ('B' * 256) + 'C':
-		{
-			// BC for Fast Parallel Configure
-			parse_BC_packet ();
-			break;
-		}
-		case ('B' * 256) + 'S':
-		{
-			// BS for Fast Binary Stream output
-			parse_BS_packet ();
-			break;
-		}
-		case ('S' * 256) + 'S':
-		{
-			// SS for Send SPI
-			parse_SS_packet ();
-			break;
-		}
-		case ('R' * 256) + 'S':
-		{
-			// RS for Receive SPI
-			parse_RS_packet ();
-			break;
-		}
-		case ('C' * 256) + 'S':
-		{
-			// CS for Configure SPI
-			parse_CS_packet ();
-			break;
-		}
-		case ('S' * 256) + 'I':
-		{
-			// SI for Send I2C
-			parse_SI_packet ();
-			break;
-		}
-		case ('R' * 256) + 'I':
-		{
-			// RI for Receive I2C
-			parse_RI_packet ();
-			break;
-		}
-		case ('C' * 256) + 'I':
-		{
-			// CI for Configure I2C
-			parse_CI_packet ();
-			break;
-		}
-
 		case ('G' * 256) + 'O':
 		{
 			parse_GO_packet ();
 			break;
 		}
-
 		case ('S' * 256) + 'T':
 		{
 			parse_ST_packet ();
 			break;
 		}
-
 		case ('H' * 256) + 'W':
 		{
 			parse_HW_packet();
 			break;
 		}
-
 		default:
 		{
 			if (0 == cmd2)
@@ -955,7 +834,7 @@ void parse_packet(void)
 	g_RX_buf_out = g_RX_buf_in;
 }
 
-// Print out the positive acknoledgement that the packet was received
+// Print out the positive acknowledgement that the packet was received
 // if we have acks turned on.
 void print_ack(void)
 {
@@ -965,1115 +844,11 @@ void print_ack(void)
 	}
 }
 
-// Return all I/Os to their default power-on values
-void parse_R_packet(void)
-{
-	UserInit ();
-	print_ack ();
-}
-
-// CU is "Configure UBW" and controls system-wide configruation values
-// "CU,<parameter_number>,<paramter_value><CR>"
-// <paramter_number>	<parameter_value>
-// 1					{1|0} turns on or off the 'ack' ("OK" at end of packets)
-void parse_CU_packet(void)
-{
-	unsigned char parameter_number;
-	signed int paramater_value;
-
-	parameter_number = extract_number (kUCHAR);
-	paramater_value = extract_number (kINT);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	if (1 == parameter_number)
-	{
-		if (0 == paramater_value || 1 == paramater_value)
-		{
-			g_ack_enable = paramater_value;			
-		}
-		else
-		{
-			bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		}
-	}
-	print_ack();
-}
-
-// "T" Packet
-// Causes PIC to sample digital or analog inputs at a regular interval and send
-// I (or A) packets back at that interval.
-// Send T,0,0<CR> to stop I (or A) packets
-// FORMAT: T,<TIME_BETWEEN_UPDATES_IN_MS>,<MODE><CR>
-// <MODE> is 0 for digital (I packets) and 1 for analog (A packets)
-// EXAMPLE: "T,4000,0<CR>" to send an I packet back every 4 seconds.
-// EXAMPLE: "T,2000,1<CR>" to send an A packet back every 2 seconds.
-void parse_T_packet(void)
-{
-	unsigned int value;
-	unsigned char mode = 0;
-
-	// Extract the <TIME_BETWEEN_UPDATES_IN_MS> value
-	time_between_updates = extract_number (kUINT);
-	// Extract the <MODE> value
-	mode = extract_number (kUCHAR);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Now start up the timer at the right rate or shut 
-	// it down.
-	if (0 == mode)
-	{
-		if (0 == time_between_updates)
-		{
-			// Turn off sending of I packets.
-			ISR_D_RepeatRate = 0;
-		}
-		else
-		{
-			T2CONbits.TMR2ON = 1;    
-		
-			// Eventually gaurd this section from interrupts
-			ISR_D_RepeatRate = time_between_updates;
-		}
-	}	
-	else
-	{
-		if (0 == time_between_updates)
-		{
-			// Turn off sending of A packets.
-			ISR_A_RepeatRate = 0;
-		}
-		else
-		{
-			T2CONbits.TMR2ON = 1;    
-		
-			// Eventually gaurd this section from interrupts
-			ISR_A_RepeatRate = time_between_updates;
-		}
-	}
-	
-	print_ack ();
-}
-
-
-// FORMAT: C,<portA_IO>,<portB_IO>,<portC_IO>,<analog_config><CR>
-// EXAMPLE: "C,255,0,4,0<CR>"
-// <portX_IO> is the byte sent to the Data Direction (DDR) regsiter for
-// each port. A 1 in a bit location means input, a 0 means output.
-// <analog_config> is a value between 0 and 12. It tells the UBW
-// how many analog inputs to enable. If a zero is sent for this 
-// parameter, all analog inputs are disabled.
-// For the other values, see the following chart to know what pins are 
-// used for what:
-// 
-// Note that in the following chart, PortE is references. This port
-// only exists on the 40 and 44 pin versions of the UBW. For the 
-// 28 pin versions of the UBW, all PortE based analog pins will return
-// zero.
-//
-// <analog_config>	Analog Inputs Enabled	Pins Used For Analog Inputs
-// ---------------	---------------------	-------------------------------
-//	0				<none>					<none>
-//	1				AN0						A0
-//	2				AN0,AN1					A0,A1	
-//	3				AN0,AN1,AN2				A0,A1,A2	
-//	4				AN0,AN1,AN2,AN3			A0,A1,A2,A3	
-//	5				AN0,AN1,AN2,AN3,AN4		A0,A1,A2,A3,A5		
-//	6				AN0,AN1,AN2,AN3,AN4,	A0,A1,A2,A3,A5,E0
-//						AN5						
-//	7				AN0,AN1,AN2,AN3,AN4,	A0,A1,A2,A3,A5,E0,E1
-//						AN5,AN6						
-//	8				AN0,AN1,AN2,AN3,AN4,	A0,A1,A2,A3,A5,E0,E1,E2
-//						AN5,AN6,AN7						
-//	9				AN0,AN1,AN2,AN3,AN4,	A0,A1,A2,A3,A5,E0,E1,E2,B2
-//						AN5,AN6,AN7,AN8						
-//	10				AN0,AN1,AN2,AN3,AN4,	A0,A1,A2,A3,A5,E0,E1,E2,B2,B3
-//						AN5,AN6,AN7,AN8,
-//						AN9						
-//	11				AN0,AN1,AN2,AN3,AN4,	A0,A1,A2,A3,A5,E0,E1,E2,B2,B3,B1
-//						AN5,AN6,AN7,AN8,
-//						AB9,AN10						
-//	12				AN0,AN1,AN2,AN3,AN4,	A0,A1,A2,A3,A5,E0,E1,E2,B2,B3,B1,B4
-//						AN5,AN6,AN7,AN8,
-//						AN9,AN10,AN11
-// NOTE: it is up to the user to tell the proper port direction bits to be
-// inputs for the analog channels they wish to use.
-void parse_C_packet(void)
-{
-	unsigned char PA, PB, PC, AA;
-#ifdef __18F4550
-	unsigned char PD, PE;
-#endif
-
-	// Extract each of the four values.
-	PA = extract_number (kUCHAR);
-	PB = extract_number (kUCHAR);
-	PC = extract_number (kUCHAR);
-#ifdef __18F4550
-	PD = extract_number (kUCHAR);
-	PE = extract_number (kUCHAR);
-#endif
-	AA = extract_number (kUCHAR);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Now write those values to the data direction registers.
-	TRISA = PA;
-	TRISB = PB;
-	TRISC = PC;
-#ifdef __18F4550
-	TRISD = PD;
-	TRISE = PE;
-#endif
-	
-	// Handle the analog value.
-	// Maximum value of 12.
-	if (AA > 12)
-	{
-		AA = 12;
-	}
-	
-	// If we are turning off Analog inputs
-	if (0 == AA)
-	{
-		// Turn all analog inputs into digital inputs
-		ADCON1 = 0x0F;
-		// Turn off the ADC
-		ADCON0bits.ADON = 0;
-		// Turn off our own idea of how many analog channels to convert
-		AnalogEnable = 0;
-	}
-	else
-	{
-		// Some protection from ISR
-		AnalogEnable = 0;
-	
-		// We're turning some on.
-		// Start by selecting channel zero		
-		ADCON0 = 0;
-	
-		// Then enabling the proper number of channels
-		ADCON1 = 15 - AA;
-	
-		// Set up ADCON2 options
-		// A/D Result right justified
-		// Acq time = 20 Tad (?)
-		// Tad = Fosc/64
-		ADCON2 = 0b10111110;
-	
-		// Turn on the ADC
-		ADCON0bits.ADON = 1;
-	
-		// Tell ourselves how many channels to convert, and turn on ISR conversions
-		AnalogEnable = AA;
-	
-		T2CONbits.TMR2ON = 1;
-	}
-	
-	print_ack ();
-}
-
-// Outputs values to the ports pins that are set up as outputs.
-// Example "O,121,224,002<CR>"
-void parse_O_packet(void)
-{
-	unsigned char PA, PB, PC;
-#ifdef __18F4550
-	unsigned char PD, PE;
-#endif
-
-	// Extract each of the values.
-	PA = extract_number (kUCHAR);
-	PB = extract_number (kUCHAR);
-	PC = extract_number (kUCHAR);
-#ifdef __18F4550
-	PD = extract_number (kUCHAR);
-	PE = extract_number (kUCHAR);
-#endif
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-	// Now write those values to the data port registers.
-	LATA = PA;
-	LATB = PB;
-	LATC = PC;
-#ifdef __18F4550
-	LATD = PD;
-	LATE = PE;
-#endif
-		
-	print_ack ();
-}
-
-// Read in the three I/O ports (A,B,C) and create
-// a packet to send back with all of values.
-// Example: "I,143,221,010<CR>"
-// Remember that on UBW 28 pin boards, we only have
-// Port A bits 0 through 5
-// Port B bits 0 through 7
-// Port C bits 0,1,2 and 7,8
-// And that Port C bits 0,1,2 are used for
-// 		User1 LED, User2 LED and Program switch respectively.
-// The rest will be read in as zeros.
-void parse_I_packet(void)
-{
-#ifdef __18F4550
-	printf (
-		(rom char*)"I,%03i,%03i,%03i,%03i,%03i\r\n", 
-		PORTA,
-		PORTB,
-		PORTC,
-		PORTD,
-		PORTE
-	);
-#else
-	printf (
-		(rom char*)"I,%03i,%03i,%03i\r\n", 
-		PORTA,
-		PORTB,
-		PORTC
-	);
-#endif
-}
-
 // All we do here is just print out our version number
 void parse_V_packet(void)
 {
 	printf ((rom char *)st_version);
 }
-
-// A is for read Analog inputs
-// Just print out the last analog values for each of the
-// enabled channels. The number of value returned in the
-// A packet depend upon the number of analog inputs enabled.
-// The user can enabled any number of analog inputs between 
-// 0 and 12. (none enabled, through all 12 analog inputs enabled).
-// Returned packet will look like "A,0,0,0,0,0,0<CR>" if
-// six analog inputs are enabled but they are all
-// grounded. Note that each one is a 10 bit
-// value, where 0 means the intput was at ground, and
-// 1024 means it was at +5 V. (Or whatever the USB +5 
-// pin is at.) 
-void parse_A_packet(void)
-{
-	char channel = 0;
-
-	// Put the beginning of the packet in place
-	printf ((rom char *)"A");
-	
-	// Now add each analog value
-	for (channel = 0; channel < AnalogEnable; channel++)
-	{
-		printf(
-			(rom char *)",%04u" 
-			,ISR_A_FIFO[channel][ISR_A_FIFO_out]
-		);
-	}
-	
-	// Add \r\n and terminating zero.
-	printf ((rom char *)st_LFCR);
-}
-
-// MW is for Memory Write
-// "MW,<location>,<value><CR>"
-// <location> is a decimal value between 0 and 4096 indicating the RAM address to write to 
-// <value> is a decimal value between 0 and 255 that is the value to write
-void parse_MW_packet(void)
-{
-	unsigned int location;
-	unsigned char value;
-
-	location = extract_number (kUINT);
-	value = extract_number (kUCHAR);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-	// Limit check the address and write the byte in
-	if (location < 4096)
-	{
-		*((unsigned char *)location) = value;
-	}
-	
-	print_ack ();
-}
-
-
-// MR is for Memory Read
-// "MW,<location><CR>"
-// <location> is a decimal value between 0 and 4096 indicating the RAM address to read from 
-// The UBW will then send a "MR,<value><CR>" packet back to the PC
-// where <value> is the byte value read from the address
-void parse_MR_packet(void)
-{
-	unsigned int location;
-	unsigned char value;
-
-	location = extract_number (kUINT);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Limit check the address and write the byte in
-	if (location < 4096)
-	{
-		value = *((unsigned char *)location);
-	}
-	
-	// Now send back the MR packet
-	printf (
-		(rom char *)"MR,%03u\r\n" 
-		,value
-	);
-}
-
-// PD is for Pin Direction
-// "PD,<port>,<pin>,<direction><CR>"
-// <port> is "A", "B", "C" and indicates the port
-// <pin> is a number between 0 and 7 and indicates which pin to change direction on
-// <direction> is "1" for input, "0" for output
-void parse_PD_packet(void)
-{
-	unsigned char port;
-	unsigned char pin;
-	unsigned char direction;
-
-	port = extract_number (kUCASE_ASCII_CHAR);
-	pin = extract_number (kUCHAR);
-	direction = extract_number (kUCHAR);
-	
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Limit check the parameters
-	if (direction > 1)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-	if (pin > 7)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-	if ('A' == port)
-	{
-		if (0 == direction)
-		{
-			bitclr (DDRA, pin);  	
-		}
-		else
-		{
-			bitset (DDRA, pin);  	
-		}
-	}
-	else if ('B' == port)
-	{
-		if (0 == direction)
-		{
-			bitclr (DDRB, pin);  	
-		}
-		else
-		{
-			bitset (DDRB, pin);  	
-		}		
-	}
-	else if ('C' == port)
-	{
-		if (0 == direction)
-		{
-			bitclr (DDRC, pin);  	
-		}
-		else
-		{
-			bitset (DDRC, pin);  	
-		}		
-	}
-#ifdef __18F4550
-	else if ('D' == port)
-	{
-		if (0 == direction)
-		{
-			bitclr (DDRD, pin);  	
-		}
-		else
-		{
-			bitset (DDRD, pin);  	
-		}		
-	}
-	else if ('E' == port)
-	{
-		if (0 == direction)
-		{
-			bitclr (DDRE, pin);  	
-		}
-		else
-		{
-			bitset (DDRE, pin);  	
-		}		
-	}
-#endif
-	else
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;	
-	}
-	
-	print_ack ();
-}
-
-// PI is for Pin Input
-// "PI,<port>,<pin><CR>"
-// <port> is "A", "B", "C" and indicates the port
-// <pin> is a number between 0 and 7 and indicates which pin to read
-// The command returns a "PI,<value><CR>" packet,
-// where <value> is the value (0 or 1 for digital, 0 to 1024 for Analog)
-// value for that pin.
-void parse_PI_packet(void)
-{
-	unsigned char port;
-	unsigned char pin;
-	unsigned char value = 0;
-
-	port = extract_number (kUCASE_ASCII_CHAR);
-	pin = extract_number (kUCHAR);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Limit check the parameters
-	if (pin > 7)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-	
-	// Then test the bit in question based upon port
-	if ('A' == port)
-	{
-		value = bittst (PORTA, pin);  	
-	}
-	else if ('B' == port)
-	{
-		value = bittst (PORTB, pin);  	
-	}
-	else if ('C' == port)
-	{
-		value = bittst (PORTC, pin);  	
-	}
-#ifdef __18F4550
-	else if ('D' == port)
-	{
-		value = bittst (PORTD, pin);  	
-	}
-	else if ('E' == port)
-	{
-		value = bittst (PORTE, pin);  	
-	}
-#endif
-	else
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;	
-	}
-	
-	// Now send back our response
-	printf(
-		 (rom char *)"PI,%1u\r\n" 
-		,value
-	);
-}
-
-// PO is for Pin Output
-// "PO,<port>,<pin>,<value><CR>"
-// <port> is "A", "B", "C" and indicates the port
-// <pin> is a number between 0 and 7 and indicates which pin to write out the value to
-// <value> is "1" or "0" and indicates the state to change the pin to
-void parse_PO_packet(void)
-{
-	unsigned char port;
-	unsigned char pin;
-	unsigned char value;
-
-	port = extract_number (kUCASE_ASCII_CHAR);
-	pin = extract_number (kUCHAR);
-	value = extract_number (kUCHAR);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Limit check the parameters
-	if (value > 1)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-	if (pin > 7)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-	if ('A' == port)
-	{
-		if (0 == value)
-		{
-			bitclr (LATA, pin);  	
-		}
-		else
-		{
-			bitset (LATA, pin);  	
-		}
-	}
-	else if ('B' == port)
-	{
-		if (0 == value)
-		{
-			bitclr (LATB, pin);  	
-		}
-		else
-		{
-			bitset (LATB, pin);  	
-		}		
-	}
-	else if ('C' == port)
-	{
-		if (0 == value)
-		{
-			bitclr (LATC, pin);  	
-		}
-		else
-		{
-			bitset (LATC, pin);  	
-		}		
-	}
-#ifdef __18F4550
-	else if ('D' == port)
-	{
-		if (0 == value)
-		{
-			bitclr (LATD, pin);  	
-		}
-		else
-		{
-			bitset (LATD, pin);  	
-		}		
-	}
-	else if ('E' == port)
-	{
-		if (0 == value)
-		{
-			bitclr (LATE, pin);  	
-		}
-		else
-		{
-			bitset (LATE, pin);  	
-		}		
-	}
-#endif
-	else
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;	
-	}
-	
-	print_ack ();
-}
-
-// TX is for Serial Transmit
-// "TX,<data_length>,<variable_length_data><CR>"
-// <data_length> is a count of the number of bytes in the <variable_length_data> field.
-// It must never be larger than the number of bytes that are currently free in the
-// software TX buffer or some data will get lost.
-// <variable_length_data> are the bytes that you want the UBW to send. It will store them
-// in its software TX buffer until there is time to send them out the TX pin.
-// If you send in "0" for a <data_length" (and thus nothing for <variable_length_data>
-// then the UBW will send back a "TX,<free_buffer_space><CR>" packet,
-// where <free_buffer_space> is the number of bytes currently available in the 
-// software TX buffer.
-void parse_TX_packet(void)
-{
-	print_ack ();
-}
-
-// RX is for Serial Receive
-// "RX,<length_request><CR>"
-// <length_request> is the maximum number of characters that you want the UBW to send
-// back to you in the RX packet. If you use "0" for <length_request> then the UBW
-// will just send you the current number of bytes in it's RX buffer, and if
-// there have been any buffer overruns since the last time a <length_request> of 
-// "0" was received by the UBW.
-// This command will send back a "RX,<length>,<variable_length_data><CR>"
-// or "RX,<buffer_fullness>,<status><CR>" packet depending upon if you send
-// "0" or something else for <length_request>
-// <length> in the returning RX packet is a count of the number of bytes
-// in the <variable_length_data> field. It will never be more than the
-// <length_request> you sent in.
-// <variable_length_data> is the data (in raw form - byte for byte what was received - 
-// i.e. not translated in any way, into ASCII values or anything else) that the UBW
-// received. This may include <CR>s and NULLs among any other bytes, so make sure
-// your PC application treates the RX packet coming back from the UBW in a speical way
-// so as not to screw up normal packet processing if any special caracters are received.
-// <buffer_fullness> is a valule between 0 and MAX_SERIAL_RX_BUFFER_SIZE that records
-// the total number of bytes, at that point in time, that the UBW is holding, waiting
-// to pass on to the PC.
-// <status> has several bits. 
-//	Bit 0 = Software RX Buffer Overrun (1 means software RX buffer (on RX pin)
-//		has been overrun and data has been lost) This will happen if you don't
-//		read the data out of the UWB often enough and the data is coming in too fast.
-//	Bit 1 = Software TX Buffer Overrun (1 means software TX buffer (on TX pin)
-//		as been overrun and data hs been lost. This will happen if you send too much
-//		data to the UBW and you have the serial port set to a low baud rate.
-void parse_RX_packet(void)
-{
-	print_ack ();
-}
-
-// CX is for setting up serial port parameters
-// TBD
-void parse_CX_packet(void)
-{
-	print_ack ();
-}
-
-// RC is for outputting RC servo pulses on a pin
-// "RC,<port>,<pin>,<value><CR>"
-// <port> is "A", "B", "C" and indicates the port
-// <pin> is a number between 0 and 7 and indicates which pin to output the new value on
-// <value> is an unsigned 16 bit number between 0 and 11890.
-// If <value> is "0" then the RC output on that pin is disabled.
-// Otherwise <value> = 1 means 1ms pulse, <value> = 11890 means 2ms pulse,
-// any value inbetween means proportional pulse values between those two
-// Note: The pin used for RC output must be set as an output, or not much will happen.
-// The RC command will continue to send out pulses at the last set value on 
-// each pin that has RC output with a repition rate of 1 pulse about every 19ms.
-// If you have RC output enabled on a pin, outputting a digital value to that pin
-// will be overwritten the next time the RC pulses. Make sure to turn off the RC
-// output if you want to use the pin for something else.
-void parse_RC_packet(void)
-{
-	unsigned char port;
-	unsigned char pin;
-	unsigned int value;
-
-	port = extract_number (kUCASE_ASCII_CHAR);
-	pin = extract_number (kUCHAR);
-	value = extract_number (kUINT);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Max value user can input. (min is zero)
-	if (value > 11890)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-	
-	// Now get Value in the form that TMR0 needs it
-	// TMR0 needs to get filled with values from 65490 (1ms) to 53600 (2ms)
-	if (value != 0)
-	{
-		value = (65535 - (value + 45));
-	}
-
-	if (pin > 7)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-	if ('A' == port)
-	{
-		port = 0;
-	}
-	else if ('B' == port)
-	{
-		port = 8;
-	}
-	else if ('C' == port)
-	{
-		port = 16;
-	}
-	else
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;	
-	}
-
-	// Store the new RC time value
-	g_RC_value[pin + port] = value;
-	// Only set this state if we are off - if we are already running on 
-	// this pin, then the new value will be picked up next time around (19ms)
-	if (kOFF == g_RC_state[pin + port])
-	{
-		g_RC_state[pin + port] = kWAITING;
-	}
-
-	print_ack ();
-}
-
-// BC is for Bulk Configure
-// BC,<port A init>,<waitmask>,<wait delay>,<strobemask>,<strobe delay><CR>
-// This command sets up the mask and strobe bits on port A for the
-// BO (Bulk Output) command below. Also suck in wait delay, strobe delay, etc.
-void parse_BC_packet(void)
-{
-	unsigned char BO_init;
-	unsigned char BO_strobe_mask;
-	unsigned char BO_wait_mask;
-	unsigned char BO_wait_delay;
-	unsigned char BO_strobe_delay;
-
-	BO_init = extract_number (kUCHAR);
-	BO_wait_mask = extract_number (kUCHAR);
-	BO_wait_delay = extract_number (kUCHAR);
-	BO_strobe_mask = extract_number (kUCHAR);
-	BO_strobe_delay = extract_number (kUCHAR);
-
-	// Bail if we got a conversion error
-	if (error_byte)
-	{
-		return;
-	}
-
-	// Copy over values to their gloabls
-	g_BO_init = BO_init;
-	g_BO_wait_mask = BO_wait_mask;
-	g_BO_strobe_mask = BO_strobe_mask;
-	g_BO_wait_delay = BO_wait_delay;
-	g_BO_strobe_delay = BO_strobe_delay;
-	// And initalize Port A
-	LATA = g_BO_init;
-	
-	print_ack ();
-}
-
-// Bulk Output (BO)
-// BO,4AF2C124<CR>
-// After the inital comma, pull in hex values and spit them out to port A
-// Note that the procedure here is as follows:
-//	1) Write new value to PortB
-//	2) Assert <strobemask>
-//	3) Wait for <strobdelay> (if not zero)
-//	4) Deassert <strobemask>
-//	5) Wait for <waitmask> to be asserted
-//	6) Wait for <waitmask> to be deasserted
-//	7) If 5) or 6) takes longer than <waitdelay> then just move on to next byte
-//	Repeat for each byte
-void parse_BO_packet(void)
-{
-	unsigned char BO_data_byte;
-	unsigned char new_port_A_value;
-	unsigned char tmp;
-	unsigned char wait_count = 0;
-	
-	// Check for comma where ptr points
-	if (g_RX_buf[g_RX_buf_out] != ',')
-	{
-		printf ((rom char *)"!5 Err: Need comma next, found: '%c'\r\n", g_RX_buf[g_RX_buf_out]);
-		bitset (error_byte, kERROR_BYTE_PRINTED_ERROR);
-		return;
-	}
-
-	// Move to the next character
-	advance_RX_buf_out ();
-
-	// Make sure Port A is correct
-	LATA = g_BO_init;
-	new_port_A_value = ((~LATA & g_BO_strobe_mask)) | (LATA & ~g_BO_strobe_mask);
-	
-	while (g_RX_buf[g_RX_buf_out] != 13)
-	{
-		// Pull in a nibble from the input buffer
-		tmp = toupper (g_RX_buf[g_RX_buf_out]);
-		if (tmp >= '0' && tmp <= '9')
-		{
-			tmp -= '0';	
-		}
-		else if (tmp >= 'A' && tmp <= 'F')
-		{
-			tmp -= 55;
-		}
-		else 
-		{
-			bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-			return;
-		}
-		BO_data_byte = tmp << 4;
-		advance_RX_buf_out ();
-
-		// Check for CR next
-		if (kCR == g_RX_buf[g_RX_buf_out])
-		{
-			bitset (error_byte, kERROR_BYTE_MISSING_PARAMETER);
-			return;
-		}
-
-		tmp =  toupper (g_RX_buf[g_RX_buf_out]);
-		if (tmp >= '0' && tmp <= '9')
-		{
-			tmp -= '0';	
-		}
-		else if (tmp >= 'A' && tmp <= 'F')
-		{
-			tmp -= 55;
-		}
-		else
-		{
-			bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-			return;
-		}
-		BO_data_byte = BO_data_byte + tmp;
-		advance_RX_buf_out ();
-	
-		// Output the byte on Port B
-		LATB = BO_data_byte;
-		
-		// And strobe the Port A bits that we're supposed to
-		LATA = new_port_A_value;
-		if (g_BO_strobe_delay)
-		{
-			Delay10TCYx (g_BO_strobe_delay);
-		}
-		LATA = g_BO_init;
-
-		if (g_BO_wait_delay)
-		{
-			// Now we spin on the wait bit specified in WaitMask
-			// (Used for Busy Bits) We also have to wait here
-			// for a maximum of g_BO_wait_delay, which is in 10 clock units
-			// First we wait for the wait mask to become asserted
-
-			// Set the wait counter to the number of delays we want
-			wait_count = g_BO_wait_delay;
-			while (
-				((g_BO_init & g_BO_wait_mask) == (PORTA & g_BO_wait_mask))
-				&& 
-				(wait_count != 0)
-			)
-			{
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				wait_count--;
-			}
-
-			// Set the wait counter to the number of delays we want
-			wait_count = g_BO_wait_delay;
-			// Then we wait for the wait mask to become de-asserted
-			while ( 
-				((g_BO_init & g_BO_wait_mask) != (PORTA & g_BO_wait_mask))
-				&&
-				(wait_count != 0)
-			)
-			{
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				wait_count--;
-			}
-		}
-	}
-	print_ack ();
-}
-
-// Bulk Stream (BS) (he he, couldn't think of a better name)
-// BS,<count>,<binary_data><CR>
-// This command is extremely similar to the BO command
-// except that instead of ASCII HEX values, it actually 
-// takes raw binary data.
-// So in order for the UBW to know when the end of the stream
-// is, we need to have a <count> of bytes.
-// <count> represents the number of bytes after the second comma
-// that will be the actual binary data to be streamed out port B.
-// Then, <binary_data> must be exactly that length.
-// <count> must be between 1 and 56 (currently - in the future
-// it would be nice to extend the upper limit)
-// The UBW will pull in one byte at a time within the <binary_data>
-// section and output it to PORTB exactly as the BO command does.
-// It will do this for <count> bytes. It will then pull in another
-// byte (which must be a carrige return) and be done.
-// The whole point of this command is to improve data throughput
-// from the PC to the UBW. This form of data is also more efficient
-// for the UBW to process.
-void parse_BS_packet(void)
-{
-	unsigned char BO_data_byte;
-	unsigned char new_port_A_value;
-	unsigned char tmp;
-	unsigned char wait_count = 0;
-	unsigned char byte_count = 0;	
-
-	// Get byte_count
-	byte_count = extract_number (kUCHAR);
-	
-	// Limit check it
-	if (0 == byte_count || byte_count > 56)
-	{
-		bitset (error_byte, kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT);
-		return;
-	}
-
-	// Check for comma where ptr points
-	if (g_RX_buf[g_RX_buf_out] != ',')
-	{
-		printf ((rom char *)"!5 Err: Need comma next, found: '%c'\r\n", g_RX_buf[g_RX_buf_out]);
-		bitset (error_byte, kERROR_BYTE_PRINTED_ERROR);
-		return;
-	}
-
-	// Move to the next character
-	advance_RX_buf_out ();
-
-	// Make sure Port A is correct
-	LATA = g_BO_init;
-	new_port_A_value = ((~LATA & g_BO_strobe_mask)) | (LATA & ~g_BO_strobe_mask);
-	
-	while (byte_count != 0)
-	{
-		// Pull in a single byte from input buffer
-		BO_data_byte = g_RX_buf[g_RX_buf_out];
-		advance_RX_buf_out ();
-
-		// Count this byte
-		byte_count--;
-	
-		// Output the byte on Port B
-		LATB = BO_data_byte;
-		
-		// And strobe the Port A bits that we're supposed to
-		LATA = new_port_A_value;
-		if (g_BO_strobe_delay)
-		{
-			Delay10TCYx (g_BO_strobe_delay);
-		}
-		LATA = g_BO_init;
-
-		if (g_BO_wait_delay)
-		{
-			// Now we spin on the wait bit specified in WaitMask
-			// (Used for Busy Bits) We also have to wait here
-			// for a maximum of g_BO_wait_delay, which is in 10 clock units
-			// First we wait for the wait mask to become asserted
-
-			// Set the wait counter to the number of delays we want
-			wait_count = g_BO_wait_delay;
-			while (
-				((g_BO_init & g_BO_wait_mask) == (PORTA & g_BO_wait_mask))
-				&& 
-				(wait_count != 0)
-			)
-			{
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				wait_count--;
-			}
-
-			// Set the wait counter to the number of delays we want
-			wait_count = g_BO_wait_delay;
-			// Then we wait for the wait mask to become de-asserted
-			while ( 
-				((g_BO_init & g_BO_wait_mask) != (PORTA & g_BO_wait_mask))
-				&&
-				(wait_count != 0)
-			)
-			{
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				Delay1TCY ();
-				wait_count--;
-			}
-		}
-	}
-	print_ack ();
-}
-
-// SS Send SPI
-void parse_SS_packet (void)
-{
-	print_ack ();
-
-}	
-
-// RS Receive SPI
-void parse_RS_packet (void)
-{
-	print_ack ();
-
-}	
-
-// CS Configure SPI
-void parse_CS_packet (void)
-{
-	print_ack ();
-
-}	
-
-// SI Send I2C
-void parse_SI_packet (void)
-{
-	print_ack ();
-
-}	
-
-// RI Receive I2C
-void parse_RI_packet (void)
-{
-	print_ack ();
-
-}	
-
-// CI Configure I2C
-void parse_CI_packet (void)
-{
-	print_ack ();
-
-}	
-
-char finish_tick;
-char active_rollers;
-char refresh_rate = 100;
 
 void start_race (void)
 {
@@ -2087,6 +862,7 @@ void start_race (void)
 
 void parse_GO_packet (void)			// Start a race
 {
+	print_ack();
 	start_race();
 	// Extract values of each argument.
 	finish_tick = extract_number (kUCHAR);
@@ -2102,12 +878,14 @@ void parse_GO_packet (void)			// Start a race
 
 void parse_ST_packet (void)			// Stop the race.
 {
+	print_ack();
 	is_racing = FALSE;			// stop monitoring sensors
 	raceTestMode = FALSE;
 }	
 
 void parse_HW_packet (void)			// Initiate hardware test mode.
 {
+	print_ack();
 	raceTestMode = TRUE;
 	start_race();
 
@@ -2323,18 +1101,18 @@ void print_status(void)
  *****************************************************************************/
 void BlinkUSBStatus(void)
 {
-    static word LEDCount = 0;
+	static word LEDCount = 0;
 	static unsigned char LEDState = 0;
     
-    if (
+    	if (
 		usb_device_state == DETACHED_STATE
        	||
        	1 == UCONbits.SUSPND
-    )
-    {
+    	)
+    	{
 		mLED_1_Off();
-    }
-    else if (
+    	}
+    	else if (
 		usb_device_state == ATTACHED_STATE
 		||
 		usb_device_state == POWERED_STATE		
@@ -2343,11 +1121,11 @@ void BlinkUSBStatus(void)
 		||
 		usb_device_state == ADDRESS_STATE
 	)
-    {
-        mLED_1_On();
-    }
-    else if (usb_device_state == CONFIGURED_STATE)
-    {
+	{
+		mLED_1_On();
+    	}
+	else if (usb_device_state == CONFIGURED_STATE)
+    	{
 		LEDCount--;
 		if (0 == LEDState)
 		{
@@ -2385,7 +1163,7 @@ void BlinkUSBStatus(void)
 				LEDState = 0;
 			}
 		}
-    }
+    	}
 }
 
 BOOL SwitchIsPressed(void)
@@ -2397,68 +1175,6 @@ BOOL SwitchIsPressed(void)
 	else
 	{
 		return (FALSE);			// Was not pressed
-	}
-}
-
-/** Start Luke Orland code **************************************************/
-void SendUpdateToPc (void)
-{
-	printf("%i:\n  last_tick_time: %i:%i.%i%i\n",i,momentRaceTimeMins,momentRaceTimeCentisecs);
-}
-
-void HallEffSensors(void)
-{
-	if (is_racing)
-	{
-		// check the race stopwatch
-		momentRaceTimeMillisecs = raceTimeMillisecs;
-		momentRaceTimeCentisecs = raceTimeCentisecs;
-		momentRaceTimeSecs = raceTimeSecs;
-		momentRaceTimeMins = raceTimeMins;
-
-		if (justBegun)
-		{
-			for (int roller=0;roller<NUM_ROLLERS;roller++)
-			{
-				// initialize the pins
-				bitset (DDRA, roller);  		// (move this to _init part of code?) set Port A Pin i as input
-				// read the pins
-				currentSensorValues = bittst (PORTA, roller);	// read Port A Pin i state
-	
-				justBegun=0;
-			}
-		}
-
-		else
-		{
-			if (raceTestMode)
-			{
-				if (momentRaceTimeCentisecs%TEST_PERIOD==0 && momentRaceTimeCentisecs!=lastSensor0Time)
-				{
-					sensor0Status=1;
-					lastSensor0Time=momentRaceTimeCentisecs;
-				}
-				else
-					sensor0Status=0;
-				if (momentRaceTimeCentisecs%TEST_PERIOD==TEST_PERIOD_HALF && momentRaceTimeCentisecs!=lastSensor1Time)
-				{
-					sensor1Status=1;
-					lastSensor1Time=momentRaceTimeCentisecs;
-				}
-				else
-					sensor1Status=0;
-			}
-
-			else	// not test mode
-			{
-			}
-
-			if(sensor0Status)
-			{
-				// send a string through USB packet stating that sensor 0 switched to high
-				SendUpdateToPc();
-			}
-		}
 	}
 }
 
