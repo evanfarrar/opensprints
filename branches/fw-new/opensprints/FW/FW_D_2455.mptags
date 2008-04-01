@@ -6,11 +6,10 @@
 !_TAG_PROGRAM_VERSION	5.5.4	//
 !_TAG_REVISION_NAME	MCHPTags	//
 !_TAG_REVISION_VERSION	6.0.1	//
-AA	E:\iro_svn\opensprints\FW\user\user.c	1282;"	l	line:1282
 ABDEN	C:\MCC18\h\p18f2455.h	638;"	m	line:638
 ABDOVF	C:\MCC18\h\p18f2455.h	645;"	m	line:645
-ABSTRACT_CONTROL_MODEL::0x02	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	71;"	d	line:71
-ABSTRACT_STATE::0x01	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	85;"	d	line:85
+ABSTRACT_CONTROL_MODEL::0x02	O:\system\usb\class\cdc\cdc.h	71;"	d	line:71
+ABSTRACT_STATE::0x01	O:\system\usb\class\cdc\cdc.h	85;"	d	line:85
 ACCESS::0	C:\MCC18\h\p18f2455.h	1079;"	d	line:1079
 ACKDT	C:\MCC18\h\p18f2455.h	731;"	m	line:731
 ACKEN	C:\MCC18\h\p18f2455.h	730;"	m	line:730
@@ -31,70 +30,63 @@ ADDR3	C:\MCC18\h\p18f2455.h	93;"	m	line:93
 ADDR4	C:\MCC18\h\p18f2455.h	94;"	m	line:94
 ADDR5	C:\MCC18\h\p18f2455.h	95;"	m	line:95
 ADDR6	C:\MCC18\h\p18f2455.h	96;"	m	line:96
-ADDRESS_STATE::5	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	62;"	d	line:62
+ADDRESS_STATE::5	O:\system\usb\usbmmap.h	62;"	d	line:62
 ADEN	C:\MCC18\h\p18f2455.h	536;"	m	line:536
 ADFM	C:\MCC18\h\p18f2455.h	687;"	m	line:687
 ADIE	C:\MCC18\h\p18f2455.h	435;"	m	line:435
 ADIF	C:\MCC18\h\p18f2455.h	445;"	m	line:445
 ADIP	C:\MCC18\h\p18f2455.h	455;"	m	line:455
 ADON	C:\MCC18\h\p18f2455.h	701;"	m	line:701
-ADR	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	123;"	m	line:123	struct:_BDT::<anonymous>
-ADRH	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	117;"	m	line:117	struct:_BDT::<anonymous>
-ADRL	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	116;"	m	line:116	struct:_BDT::<anonymous>
-ADR_PENDING_STATE::4	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	61;"	d	line:61
+ADR	O:\system\usb\usbmmap.h	123;"	m	line:123	struct:_BDT::<anonymous>
+ADRH	O:\system\usb\usbmmap.h	117;"	m	line:117	struct:_BDT::<anonymous>
+ADRL	O:\system\usb\usbmmap.h	116;"	m	line:116	struct:_BDT::<anonymous>
+ADR_PENDING_STATE::4	O:\system\usb\usbmmap.h	61;"	d	line:61
 AN0	C:\MCC18\h\p18f2455.h	249;"	m	line:249
 AN1	C:\MCC18\h\p18f2455.h	250;"	m	line:250
 AN2	C:\MCC18\h\p18f2455.h	251;"	m	line:251
 AN3	C:\MCC18\h\p18f2455.h	252;"	m	line:252
 AN4	C:\MCC18\h\p18f2455.h	254;"	m	line:254
-ATTACHED_STATE::1	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	58;"	d	line:58
-A_cur_channel	E:\iro_svn\opensprints\FW\user\user.c	162;"	v	line:162
-A_tick_counter	E:\iro_svn\opensprints\FW\user\user.c	161;"	v	line:161
-AnalogEnable	E:\iro_svn\opensprints\FW\user\user.c	148;"	v	line:148
+ATTACHED_STATE::1	O:\system\usb\usbmmap.h	58;"	d	line:58
+A_cur_channel	O:\user\user.c	188;"	v	line:188
+A_tick_counter	O:\user\user.c	187;"	v	line:187
+AnalogEnable	O:\user\user.c	174;"	v	line:174
 BANKED::1	C:\MCC18\h\p18f2455.h	1080;"	d	line:1080
-BC8	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	84;"	m	line:84	struct:_BD_STAT::<anonymous>
-BC8	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	94;"	m	line:94	struct:_BD_STAT::<anonymous>
-BC9	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	85;"	m	line:85	struct:_BD_STAT::<anonymous>
-BC9	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	95;"	m	line:95	struct:_BD_STAT::<anonymous>
+BC8	O:\system\usb\usbmmap.h	84;"	m	line:84	struct:_BD_STAT::<anonymous>
+BC8	O:\system\usb\usbmmap.h	94;"	m	line:94	struct:_BD_STAT::<anonymous>
+BC9	O:\system\usb\usbmmap.h	85;"	m	line:85	struct:_BD_STAT::<anonymous>
+BC9	O:\system\usb\usbmmap.h	95;"	m	line:95	struct:_BD_STAT::<anonymous>
 BCLIE	C:\MCC18\h\p18f2455.h	463;"	m	line:463
 BCLIF	C:\MCC18\h\p18f2455.h	480;"	m	line:480
 BCLIP	C:\MCC18\h\p18f2455.h	497;"	m	line:497
-BDT	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	125;"	t	line:125
-BD_STAT	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	108;"	t	line:108
+BDT	O:\system\usb\usbmmap.h	125;"	t	line:125
+BD_STAT	O:\system\usb\usbmmap.h	108;"	t	line:108
 BF	C:\MCC18\h\p18f2455.h	749;"	m	line:749
 BGST	C:\MCC18\h\p18f2455.h	870;"	m	line:870
 BGST	C:\MCC18\h\p18f2455.h	902;"	m	line:902
-BOOL	E:\iro_svn\opensprints\FW\system\typedefs.h	150;"	t	line:150
+BOOL	O:\system\typedefs.h	150;"	t	line:150
 BOR	C:\MCC18\h\p18f2455.h	836;"	m	line:836
-BO_data_byte	E:\iro_svn\opensprints\FW\user\user.c	1967;"	l	line:1967
-BO_data_byte	E:\iro_svn\opensprints\FW\user\user.c	2107;"	l	line:2107
-BO_init	E:\iro_svn\opensprints\FW\user\user.c	1923;"	l	line:1923
-BO_strobe_delay	E:\iro_svn\opensprints\FW\user\user.c	1927;"	l	line:1927
-BO_strobe_mask	E:\iro_svn\opensprints\FW\user\user.c	1924;"	l	line:1924
-BO_wait_delay	E:\iro_svn\opensprints\FW\user\user.c	1926;"	l	line:1926
-BO_wait_mask	E:\iro_svn\opensprints\FW\user\user.c	1925;"	l	line:1925
 BRG16	C:\MCC18\h\p18f2455.h	641;"	m	line:641
 BRGH	C:\MCC18\h\p18f2455.h	543;"	m	line:543
-BSTALL	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	86;"	m	line:86	struct:_BD_STAT::<anonymous>
+BSTALL	O:\system\usb\usbmmap.h	86;"	m	line:86	struct:_BD_STAT::<anonymous>
 BTOEE	C:\MCC18\h\p18f2455.h	64;"	m	line:64
 BTOEF	C:\MCC18\h\p18f2455.h	54;"	m	line:54
 BTSEE	C:\MCC18\h\p18f2455.h	66;"	m	line:66
 BTSEF	C:\MCC18\h\p18f2455.h	56;"	m	line:56
-BYTE	E:\iro_svn\opensprints\FW\system\typedefs.h	58;"	t	line:58
-BlinkUSBStatus	E:\iro_svn\opensprints\FW\user\user.c	224;"	p	line:224	file:	signature:(void)
-BlinkUSBStatus	E:\iro_svn\opensprints\FW\user\user.c	2464;"	f	line:2464	signature:(void)
-Byte0	E:\iro_svn\opensprints\FW\system\typedefs.h	103;"	m	line:103	struct:_DWORD::<anonymous>
-Byte0	E:\iro_svn\opensprints\FW\system\typedefs.h	70;"	m	line:70	struct:_WORD::<anonymous>
-Byte1	E:\iro_svn\opensprints\FW\system\typedefs.h	104;"	m	line:104	struct:_DWORD::<anonymous>
-Byte1	E:\iro_svn\opensprints\FW\system\typedefs.h	71;"	m	line:71	struct:_WORD::<anonymous>
-Byte2	E:\iro_svn\opensprints\FW\system\typedefs.h	105;"	m	line:105	struct:_DWORD::<anonymous>
-Byte3	E:\iro_svn\opensprints\FW\system\typedefs.h	106;"	m	line:106	struct:_DWORD::<anonymous>
+BYTE	O:\system\typedefs.h	58;"	t	line:58
+BlinkUSBStatus	O:\user\user.c	1063;"	f	line:1063	signature:(void)
+BlinkUSBStatus	O:\user\user.c	243;"	p	line:243	file:	signature:(void)
+Byte0	O:\system\typedefs.h	103;"	m	line:103	struct:_DWORD::<anonymous>
+Byte0	O:\system\typedefs.h	70;"	m	line:70	struct:_WORD::<anonymous>
+Byte1	O:\system\typedefs.h	104;"	m	line:104	struct:_DWORD::<anonymous>
+Byte1	O:\system\typedefs.h	71;"	m	line:71	struct:_WORD::<anonymous>
+Byte2	O:\system\typedefs.h	105;"	m	line:105	struct:_DWORD::<anonymous>
+Byte3	O:\system\typedefs.h	106;"	m	line:106	struct:_DWORD::<anonymous>
 C	C:\MCC18\h\p18f2455.h	950;"	m	line:950
 C1INV	C:\MCC18\h\p18f2455.h	583;"	m	line:583
 C1OUT	C:\MCC18\h\p18f2455.h	585;"	m	line:585
 C2INV	C:\MCC18\h\p18f2455.h	584;"	m	line:584
 C2OUT	C:\MCC18\h\p18f2455.h	586;"	m	line:586
-CARRIER_CONTROL	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	300;"	m	line:300	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
+CARRIER_CONTROL	O:\system\usb\class\cdc\cdc.h	300;"	m	line:300	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
 CCP1	C:\MCC18\h\p18f2455.h	308;"	m	line:308
 CCP1IE	C:\MCC18\h\p18f2455.h	431;"	m	line:431
 CCP1IF	C:\MCC18\h\p18f2455.h	441;"	m	line:441
@@ -110,27 +102,27 @@ CCP2M0	C:\MCC18\h\p18f2455.h	656;"	m	line:656
 CCP2M1	C:\MCC18\h\p18f2455.h	657;"	m	line:657
 CCP2M2	C:\MCC18\h\p18f2455.h	658;"	m	line:658
 CCP2M3	C:\MCC18\h\p18f2455.h	659;"	m	line:659
-CDCInitEP	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	169;"	f	line:169	signature:(void)
-CDCInitEP	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	360;"	p	line:360	signature:(void)
-CDCTxService	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	456;"	f	line:456	signature:(void)
-CDCTxService	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	364;"	p	line:364	signature:(void)
-CDC_BULK_BD_IN::ep3Bi	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	77;"	d	line:77
-CDC_BULK_BD_OUT::ep3Bo	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	75;"	d	line:75
-CDC_BULK_IN_EP_SIZE::64	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	78;"	d	line:78
-CDC_BULK_OUT_EP_SIZE::64	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	76;"	d	line:76
-CDC_COMM_INTF_ID::0x00	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	68;"	d	line:68
-CDC_COMM_UEP::UEP2	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	69;"	d	line:69
-CDC_DATA_INTF_ID::0x01	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	73;"	d	line:73
-CDC_DATA_UEP::UEP3	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	74;"	d	line:74
-CDC_DEVICE::0x02	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	65;"	d	line:65
-CDC_H	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	37;"	d	line:37
-CDC_INT_BD_IN::ep2Bi	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	70;"	d	line:70
-CDC_INT_EP_SIZE::8	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	71;"	d	line:71
-CDC_TX_BUSY::1	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	108;"	d	line:108
-CDC_TX_BUSY_ZLP::2	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	109;"	d	line:109
-CDC_TX_COMPLETING::3	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	110;"	d	line:110
-CDC_TX_READY::0	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	107;"	d	line:107
-CFG01::romstruct\	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	54;"	d	line:54
+CDCInitEP	O:\system\usb\class\cdc\cdc.c	169;"	f	line:169	signature:(void)
+CDCInitEP	O:\system\usb\class\cdc\cdc.h	360;"	p	line:360	signature:(void)
+CDCTxService	O:\system\usb\class\cdc\cdc.c	456;"	f	line:456	signature:(void)
+CDCTxService	O:\system\usb\class\cdc\cdc.h	364;"	p	line:364	signature:(void)
+CDC_BULK_BD_IN::ep3Bi	O:\autofiles\usbcfg.h	77;"	d	line:77
+CDC_BULK_BD_OUT::ep3Bo	O:\autofiles\usbcfg.h	75;"	d	line:75
+CDC_BULK_IN_EP_SIZE::64	O:\autofiles\usbcfg.h	78;"	d	line:78
+CDC_BULK_OUT_EP_SIZE::64	O:\autofiles\usbcfg.h	76;"	d	line:76
+CDC_COMM_INTF_ID::0x00	O:\autofiles\usbcfg.h	68;"	d	line:68
+CDC_COMM_UEP::UEP2	O:\autofiles\usbcfg.h	69;"	d	line:69
+CDC_DATA_INTF_ID::0x01	O:\autofiles\usbcfg.h	73;"	d	line:73
+CDC_DATA_UEP::UEP3	O:\autofiles\usbcfg.h	74;"	d	line:74
+CDC_DEVICE::0x02	O:\system\usb\class\cdc\cdc.h	65;"	d	line:65
+CDC_H	O:\system\usb\class\cdc\cdc.h	37;"	d	line:37
+CDC_INT_BD_IN::ep2Bi	O:\autofiles\usbcfg.h	70;"	d	line:70
+CDC_INT_EP_SIZE::8	O:\autofiles\usbcfg.h	71;"	d	line:71
+CDC_TX_BUSY::1	O:\system\usb\class\cdc\cdc.h	108;"	d	line:108
+CDC_TX_BUSY_ZLP::2	O:\system\usb\class\cdc\cdc.h	109;"	d	line:109
+CDC_TX_COMPLETING::3	O:\system\usb\class\cdc\cdc.h	110;"	d	line:110
+CDC_TX_READY::0	O:\system\usb\class\cdc\cdc.h	107;"	d	line:107
+CFG01::romstruct\	O:\autofiles\usbdsc.h	54;"	d	line:54
 CFGS	C:\MCC18\h\p18f2455.h	516;"	m	line:516
 CHS0	C:\MCC18\h\p18f2455.h	703;"	m	line:703
 CHS1	C:\MCC18\h\p18f2455.h	704;"	m	line:704
@@ -140,25 +132,25 @@ CIS	C:\MCC18\h\p18f2455.h	582;"	m	line:582
 CK	C:\MCC18\h\p18f2455.h	318;"	m	line:318
 CKE	C:\MCC18\h\p18f2455.h	755;"	m	line:755
 CKP	C:\MCC18\h\p18f2455.h	741;"	m	line:741
-CLEAR_COMM_FEATURE::0x04	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	49;"	d	line:49
+CLEAR_COMM_FEATURE::0x04	O:\system\usb\class\cdc\cdc.h	49;"	d	line:49
 CM0	C:\MCC18\h\p18f2455.h	579;"	m	line:579
 CM1	C:\MCC18\h\p18f2455.h	580;"	m	line:580
 CM2	C:\MCC18\h\p18f2455.h	581;"	m	line:581
 CMIE	C:\MCC18\h\p18f2455.h	466;"	m	line:466
 CMIF	C:\MCC18\h\p18f2455.h	483;"	m	line:483
 CMIP	C:\MCC18\h\p18f2455.h	500;"	m	line:500
-COMM_INTF::0x02	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	68;"	d	line:68
-CONFIGURED_STATE::6	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	63;"	d	line:63
-CONTROL_SIGNAL_BITMAP	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	302;"	t	line:302
-COUNTRY_SETTING::0x02	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	86;"	d	line:86
+COMM_INTF::0x02	O:\system\usb\class\cdc\cdc.h	68;"	d	line:68
+CONFIGURED_STATE::6	O:\system\usb\usbmmap.h	63;"	d	line:63
+CONTROL_SIGNAL_BITMAP	O:\system\usb\class\cdc\cdc.h	302;"	t	line:302
+COUNTRY_SETTING::0x02	O:\system\usb\class\cdc\cdc.h	86;"	d	line:86
 CRC16EE	C:\MCC18\h\p18f2455.h	62;"	m	line:62
 CRC16EF	C:\MCC18\h\p18f2455.h	52;"	m	line:52
 CRC5EE	C:\MCC18\h\p18f2455.h	61;"	m	line:61
 CRC5EF	C:\MCC18\h\p18f2455.h	51;"	m	line:51
 CREN	C:\MCC18\h\p18f2455.h	529;"	m	line:529
 CSRC	C:\MCC18\h\p18f2455.h	548;"	m	line:548
-CS_ENDPOINT::0x25	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	91;"	d	line:91
-CS_INTERFACE::0x24	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	90;"	d	line:90
+CS_ENDPOINT::0x25	O:\system\usb\class\cdc\cdc.h	91;"	d	line:91
+CS_INTERFACE::0x24	O:\system\usb\class\cdc\cdc.h	90;"	d	line:90
 CVR0	C:\MCC18\h\p18f2455.h	591;"	m	line:591
 CVR1	C:\MCC18\h\p18f2455.h	592;"	m	line:592
 CVR2	C:\MCC18\h\p18f2455.h	593;"	m	line:593
@@ -168,42 +160,42 @@ CVREN	C:\MCC18\h\p18f2455.h	598;"	m	line:598
 CVROE	C:\MCC18\h\p18f2455.h	597;"	m	line:597
 CVRR	C:\MCC18\h\p18f2455.h	596;"	m	line:596
 CVRSS	C:\MCC18\h\p18f2455.h	602;"	m	line:602
-ClassReqHandler	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	263;"	v	line:263
-ClearArray	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	575;"	f	line:575	signature:(byte* startAdr,byte count)
+ClassReqHandler	O:\autofiles\usbdsc.c	263;"	v	line:263
+ClearArray	O:\system\usb\usbdrv\usbdrv.c	575;"	f	line:575	signature:(byte* startAdr,byte count)
 ClrWdt::{_asmclrwdt_endasm}	C:\MCC18\h\p18f2455.h	1086;"	d	line:1086
-Cnt	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	115;"	m	line:115	struct:_BDT::<anonymous>
-CtrlTrfData	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	269;"	v	line:269
+Cnt	O:\system\usb\usbmmap.h	115;"	m	line:115	struct:_BDT::<anonymous>
+CtrlTrfData	O:\system\usb\usbmmap.c	269;"	v	line:269
 D	C:\MCC18\h\p18f2455.h	787;"	m	line:787
 DATA_ADDRESS	C:\MCC18\h\p18f2455.h	781;"	m	line:781
-DATA_INTF::0x0A	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	78;"	d	line:78
+DATA_INTF::0x0A	O:\system\usb\class\cdc\cdc.h	78;"	d	line:78
 DC	C:\MCC18\h\p18f2455.h	951;"	m	line:951
 DC1B0	C:\MCC18\h\p18f2455.h	672;"	m	line:672
 DC1B1	C:\MCC18\h\p18f2455.h	673;"	m	line:673
 DC2B0	C:\MCC18\h\p18f2455.h	660;"	m	line:660
 DC2B1	C:\MCC18\h\p18f2455.h	661;"	m	line:661
-DEFAULT_STATE::3	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	60;"	d	line:60
-DETACHED_STATE::0	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	57;"	d	line:57
+DEFAULT_STATE::3	O:\system\usb\usbmmap.h	60;"	d	line:60
+DETACHED_STATE::0	O:\system\usb\usbmmap.h	57;"	d	line:57
 DFN8EE	C:\MCC18\h\p18f2455.h	63;"	m	line:63
 DFN8EF	C:\MCC18\h\p18f2455.h	53;"	m	line:53
 DIR	C:\MCC18\h\p18f2455.h	72;"	m	line:72
 DONE	C:\MCC18\h\p18f2455.h	710;"	m	line:710
-DSC_FN_ACM::0x02	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	96;"	d	line:96
-DSC_FN_CALL_MGT::0x01	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	95;"	d	line:95
-DSC_FN_COUNTRY_SELECTION::0x07	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	101;"	d	line:101
-DSC_FN_DLM::0x03	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	97;"	d	line:97
-DSC_FN_HEADER::0x00	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	94;"	d	line:94
-DSC_FN_RPT_CAPABILITIES::0x05	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	99;"	d	line:99
-DSC_FN_TELEPHONE_RINGER::0x04	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	98;"	d	line:98
-DSC_FN_TEL_OP_MODES::0x08	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	102;"	d	line:102
-DSC_FN_UNION::0x06	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	100;"	d	line:100
-DSC_FN_USB_TERMINAL::0x09	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	103;"	d	line:103
+DSC_FN_ACM::0x02	O:\system\usb\class\cdc\cdc.h	96;"	d	line:96
+DSC_FN_CALL_MGT::0x01	O:\system\usb\class\cdc\cdc.h	95;"	d	line:95
+DSC_FN_COUNTRY_SELECTION::0x07	O:\system\usb\class\cdc\cdc.h	101;"	d	line:101
+DSC_FN_DLM::0x03	O:\system\usb\class\cdc\cdc.h	97;"	d	line:97
+DSC_FN_HEADER::0x00	O:\system\usb\class\cdc\cdc.h	94;"	d	line:94
+DSC_FN_RPT_CAPABILITIES::0x05	O:\system\usb\class\cdc\cdc.h	99;"	d	line:99
+DSC_FN_TELEPHONE_RINGER::0x04	O:\system\usb\class\cdc\cdc.h	98;"	d	line:98
+DSC_FN_TEL_OP_MODES::0x08	O:\system\usb\class\cdc\cdc.h	102;"	d	line:102
+DSC_FN_UNION::0x06	O:\system\usb\class\cdc\cdc.h	100;"	d	line:100
+DSC_FN_USB_TERMINAL::0x09	O:\system\usb\class\cdc\cdc.h	103;"	d	line:103
 DT	C:\MCC18\h\p18f2455.h	319;"	m	line:319
-DTE_PRESENT	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	299;"	m	line:299	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
-DTS	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	90;"	m	line:90	struct:_BD_STAT::<anonymous>
-DTSEN	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	87;"	m	line:87	struct:_BD_STAT::<anonymous>
-DWORD	E:\iro_svn\opensprints\FW\system\typedefs.h	117;"	t	line:117
+DTE_PRESENT	O:\system\usb\class\cdc\cdc.h	299;"	m	line:299	struct:_CONTROL_SIGNAL_BITMAP::<anonymous>
+DTS	O:\system\usb\usbmmap.h	90;"	m	line:90	struct:_BD_STAT::<anonymous>
+DTSEN	O:\system\usb\usbmmap.h	87;"	m	line:87	struct:_BD_STAT::<anonymous>
+DWORD	O:\system\typedefs.h	117;"	t	line:117
 D_A	C:\MCC18\h\p18f2455.h	754;"	m	line:754
-D_tick_counter	E:\iro_svn\opensprints\FW\user\user.c	160;"	v	line:160
+D_tick_counter	O:\user\user.c	186;"	v	line:186
 ECCPAS0	C:\MCC18\h\p18f2455.h	610;"	m	line:610
 ECCPAS0	C:\MCC18\h\p18f2455.h	620;"	m	line:620
 ECCPAS1	C:\MCC18\h\p18f2455.h	611;"	m	line:611
@@ -220,7 +212,7 @@ ENDP0	C:\MCC18\h\p18f2455.h	73;"	m	line:73
 ENDP1	C:\MCC18\h\p18f2455.h	74;"	m	line:74
 ENDP2	C:\MCC18\h\p18f2455.h	75;"	m	line:75
 ENDP3	C:\MCC18\h\p18f2455.h	76;"	m	line:76
-EP0_BUFF_SIZE::8	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	38;"	d	line:38
+EP0_BUFF_SIZE::8	O:\autofiles\usbcfg.h	38;"	d	line:38
 EPCONDIS	C:\MCC18\h\p18f2455.h	114;"	m	line:114
 EPCONDIS	C:\MCC18\h\p18f2455.h	122;"	m	line:122
 EPCONDIS	C:\MCC18\h\p18f2455.h	130;"	m	line:130
@@ -301,8 +293,8 @@ EPSTALL	C:\MCC18\h\p18f2455.h	207;"	m	line:207
 EPSTALL	C:\MCC18\h\p18f2455.h	215;"	m	line:215
 EPSTALL	C:\MCC18\h\p18f2455.h	223;"	m	line:223
 EPSTALL	C:\MCC18\h\p18f2455.h	231;"	m	line:231
-FAIL::FALSE	E:\iro_svn\opensprints\FW\system\typedefs.h	153;"	d	line:153
-FALSE	E:\iro_svn\opensprints\FW\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+FAIL::FALSE	O:\system\typedefs.h	153;"	d	line:153
+FALSE	O:\system\typedefs.h	150;"	e	line:150	enum:_BOOL
 FERR	C:\MCC18\h\p18f2455.h	527;"	m	line:527
 FLTS	C:\MCC18\h\p18f2455.h	932;"	m	line:932
 FREE	C:\MCC18\h\p18f2455.h	514;"	m	line:514
@@ -319,9 +311,9 @@ FRM8	C:\MCC18\h\p18f2455.h	24;"	m	line:24
 FRM9	C:\MCC18\h\p18f2455.h	25;"	m	line:25
 FSEN	C:\MCC18\h\p18f2455.h	102;"	m	line:102
 GCEN	C:\MCC18\h\p18f2455.h	733;"	m	line:733
-GET_COMM_FEATURE::0x03	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	48;"	d	line:48
-GET_ENCAPSULATED_RESPONSE::0x01	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	46;"	d	line:46
-GET_LINE_CODING::0x21	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	51;"	d	line:51
+GET_COMM_FEATURE::0x03	O:\system\usb\class\cdc\cdc.h	48;"	d	line:48
+GET_ENCAPSULATED_RESPONSE::0x01	O:\system\usb\class\cdc\cdc.h	46;"	d	line:46
+GET_LINE_CODING::0x21	O:\system\usb\class\cdc\cdc.h	51;"	d	line:51
 GIE	C:\MCC18\h\p18f2455.h	1034;"	m	line:1034
 GIEH	C:\MCC18\h\p18f2455.h	1044;"	m	line:1044
 GIEL	C:\MCC18\h\p18f2455.h	1043;"	m	line:1043
@@ -341,9 +333,8 @@ HLVDL2	C:\MCC18\h\p18f2455.h	875;"	m	line:875
 HLVDL2	C:\MCC18\h\p18f2455.h	907;"	m	line:907
 HLVDL3	C:\MCC18\h\p18f2455.h	876;"	m	line:876
 HLVDL3	C:\MCC18\h\p18f2455.h	908;"	m	line:908
-HallEffSensors	E:\iro_svn\opensprints\FW\user\user.c	2561;"	f	line:2561	signature:(void)
-HallEffSensors	E:\iro_svn\opensprints\FW\user\user.h	45;"	p	line:45	signature:(void)
-HighB	E:\iro_svn\opensprints\FW\system\typedefs.h	76;"	m	line:76	struct:_WORD::<anonymous>
+HallEffSensors	O:\user\user.h	45;"	p	line:45	signature:(void)
+HighB	O:\system\typedefs.h	76;"	m	line:76	struct:_WORD::<anonymous>
 I2C_DAT	C:\MCC18\h\p18f2455.h	763;"	m	line:763
 I2C_READ	C:\MCC18\h\p18f2455.h	760;"	m	line:760
 I2C_START	C:\MCC18\h\p18f2455.h	761;"	m	line:761
@@ -351,8 +342,8 @@ I2C_STOP	C:\MCC18\h\p18f2455.h	762;"	m	line:762
 IDLEIE	C:\MCC18\h\p18f2455.h	44;"	m	line:44
 IDLEIF	C:\MCC18\h\p18f2455.h	34;"	m	line:34
 IDLEN	C:\MCC18\h\p18f2455.h	928;"	m	line:928
-INCDIS	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	88;"	m	line:88	struct:_BD_STAT::<anonymous>
-INPUT_PIN::1	E:\iro_svn\opensprints\FW\io_cfg.h	55;"	d	line:55
+INCDIS	O:\system\usb\usbmmap.h	88;"	m	line:88	struct:_BD_STAT::<anonymous>
+INPUT_PIN::1	O:\io_cfg.h	55;"	d	line:55
 INT0	C:\MCC18\h\p18f2455.h	282;"	m	line:282
 INT0E	C:\MCC18\h\p18f2455.h	1041;"	m	line:1041
 INT0F	C:\MCC18\h\p18f2455.h	1038;"	m	line:1038
@@ -378,27 +369,27 @@ INTEDG2	C:\MCC18\h\p18f2455.h	1012;"	m	line:1012
 INTSAVELOCS::TBLPTR,TABLAT,PROD	C:\MCC18\h\p18f2455.h	1100;"	d	line:1100
 INTSRC	C:\MCC18\h\p18f2455.h	425;"	m	line:425
 IOFS	C:\MCC18\h\p18f2455.h	923;"	m	line:923
-IO_CFG_H	E:\iro_svn\opensprints\FW\io_cfg.h	49;"	d	line:49
+IO_CFG_H	O:\io_cfg.h	49;"	d	line:49
 IPEN	C:\MCC18\h\p18f2455.h	842;"	m	line:842
 IRCF0	C:\MCC18\h\p18f2455.h	925;"	m	line:925
 IRCF1	C:\MCC18\h\p18f2455.h	926;"	m	line:926
 IRCF2	C:\MCC18\h\p18f2455.h	927;"	m	line:927
 IRVST	C:\MCC18\h\p18f2455.h	862;"	m	line:862
 IRVST	C:\MCC18\h\p18f2455.h	894;"	m	line:894
-ISR_A_FIFO	E:\iro_svn\opensprints\FW\user\user.c	170;"	v	line:170
-ISR_A_FIFO_in	E:\iro_svn\opensprints\FW\user\user.c	145;"	v	line:145
-ISR_A_FIFO_length	E:\iro_svn\opensprints\FW\user\user.c	147;"	v	line:147
-ISR_A_FIFO_out	E:\iro_svn\opensprints\FW\user\user.c	146;"	v	line:146
-ISR_A_RepeatRate	E:\iro_svn\opensprints\FW\user\user.c	144;"	v	line:144
-ISR_D_FIFO	E:\iro_svn\opensprints\FW\user\user.c	171;"	v	line:171
-ISR_D_FIFO_in	E:\iro_svn\opensprints\FW\user\user.c	140;"	v	line:140
-ISR_D_FIFO_length	E:\iro_svn\opensprints\FW\user\user.c	142;"	v	line:142
-ISR_D_FIFO_out	E:\iro_svn\opensprints\FW\user\user.c	141;"	v	line:141
-ISR_D_RepeatRate	E:\iro_svn\opensprints\FW\user\user.c	139;"	v	line:139
+ISR_A_FIFO	O:\user\user.c	196;"	v	line:196
+ISR_A_FIFO_in	O:\user\user.c	171;"	v	line:171
+ISR_A_FIFO_length	O:\user\user.c	173;"	v	line:173
+ISR_A_FIFO_out	O:\user\user.c	172;"	v	line:172
+ISR_A_RepeatRate	O:\user\user.c	170;"	v	line:170
+ISR_D_FIFO	O:\user\user.c	197;"	v	line:197
+ISR_D_FIFO_in	O:\user\user.c	166;"	v	line:166
+ISR_D_FIFO_length	O:\user\user.c	168;"	v	line:168
+ISR_D_FIFO_out	O:\user\user.c	167;"	v	line:167
+ISR_D_RepeatRate	O:\user\user.c	165;"	v	line:165
 IVRST	C:\MCC18\h\p18f2455.h	883;"	m	line:883
 IVRST	C:\MCC18\h\p18f2455.h	915;"	m	line:915
-InitializeSystem	E:\iro_svn\opensprints\FW\main.c	50;"	p	line:50	file:	signature:(void)
-KEN	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	89;"	m	line:89	struct:_BD_STAT::<anonymous>
+InitializeSystem	O:\main.c	50;"	p	line:50	file:	signature:(void)
+KEN	O:\system\usb\usbmmap.h	89;"	m	line:89	struct:_BD_STAT::<anonymous>
 LATA0	C:\MCC18\h\p18f2455.h	329;"	m	line:329
 LATA1	C:\MCC18\h\p18f2455.h	330;"	m	line:330
 LATA2	C:\MCC18\h\p18f2455.h	331;"	m	line:331
@@ -419,13 +410,13 @@ LATC1	C:\MCC18\h\p18f2455.h	351;"	m	line:351
 LATC2	C:\MCC18\h\p18f2455.h	352;"	m	line:352
 LATC6	C:\MCC18\h\p18f2455.h	354;"	m	line:354
 LATC7	C:\MCC18\h\p18f2455.h	355;"	m	line:355
-LEDCount	E:\iro_svn\opensprints\FW\user\user.c	2466;"	l	line:2466	file:
-LEDState	E:\iro_svn\opensprints\FW\user\user.c	2467;"	l	line:2467	file:
-LINE_CODING	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	282;"	t	line:282
-LINE_CODING_LENGTH::0x07	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	267;"	d	line:267
-LOWER_LSB::(a)((a).v[0])	E:\iro_svn\opensprints\FW\system\typedefs.h	118;"	d	line:118
-LOWER_MSB::(a)((a).v[1])	E:\iro_svn\opensprints\FW\system\typedefs.h	119;"	d	line:119
-LSB::(a)((a).v[0])	E:\iro_svn\opensprints\FW\system\typedefs.h	83;"	d	line:83
+LEDCount	O:\user\user.c	1065;"	l	line:1065	file:
+LEDState	O:\user\user.c	1066;"	l	line:1066	file:
+LINE_CODING	O:\system\usb\class\cdc\cdc.h	282;"	t	line:282
+LINE_CODING_LENGTH::0x07	O:\system\usb\class\cdc\cdc.h	267;"	d	line:267
+LOWER_LSB::(a)((a).v[0])	O:\system\typedefs.h	118;"	d	line:118
+LOWER_MSB::(a)((a).v[1])	O:\system\typedefs.h	119;"	d	line:119
+LSB::(a)((a).v[0])	O:\system\typedefs.h	83;"	d	line:83
 LVDEN	C:\MCC18\h\p18f2455.h	861;"	m	line:861
 LVDEN	C:\MCC18\h\p18f2455.h	893;"	m	line:893
 LVDIE	C:\MCC18\h\p18f2455.h	462;"	m	line:462
@@ -448,18 +439,18 @@ LVV2	C:\MCC18\h\p18f2455.h	867;"	m	line:867
 LVV2	C:\MCC18\h\p18f2455.h	899;"	m	line:899
 LVV3	C:\MCC18\h\p18f2455.h	868;"	m	line:868
 LVV3	C:\MCC18\h\p18f2455.h	900;"	m	line:900
-LowB	E:\iro_svn\opensprints\FW\system\typedefs.h	75;"	m	line:75	struct:_WORD::<anonymous>
-MAX_EP_NUMBER::3	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	80;"	d	line:80
-MAX_NUM_INT::1	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	39;"	d	line:39
-MODE_PP::_PPBM0	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	42;"	d	line:42
-MSB::(a)((a).v[1])	E:\iro_svn\opensprints\FW\system\typedefs.h	84;"	d	line:84
-MUID_CDC::3	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	59;"	d	line:59
-MUID_HID::2	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	58;"	d	line:58
-MUID_MSD::4	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	60;"	d	line:60
-MUID_NULL::0	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	56;"	d	line:56
-MUID_USB9::1	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	57;"	d	line:57
+LowB	O:\system\typedefs.h	75;"	m	line:75	struct:_WORD::<anonymous>
+MAX_EP_NUMBER::3	O:\autofiles\usbcfg.h	80;"	d	line:80
+MAX_NUM_INT::1	O:\autofiles\usbcfg.h	39;"	d	line:39
+MODE_PP::_PPBM0	O:\autofiles\usbcfg.h	42;"	d	line:42
+MSB::(a)((a).v[1])	O:\system\typedefs.h	84;"	d	line:84
+MUID_CDC::3	O:\autofiles\usbcfg.h	59;"	d	line:59
+MUID_HID::2	O:\autofiles\usbcfg.h	58;"	d	line:58
+MUID_MSD::4	O:\autofiles\usbcfg.h	60;"	d	line:60
+MUID_NULL::0	O:\autofiles\usbcfg.h	56;"	d	line:56
+MUID_USB9::1	O:\autofiles\usbcfg.h	57;"	d	line:57
 N	C:\MCC18\h\p18f2455.h	954;"	m	line:954
-NETWORK_CONNECTION::0x00	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	59;"	d	line:59
+NETWORK_CONNECTION::0x00	O:\system\usb\class\cdc\cdc.h	59;"	d	line:59
 NOT_A	C:\MCC18\h\p18f2455.h	769;"	m	line:769
 NOT_ADDRESS	C:\MCC18\h\p18f2455.h	775;"	m	line:775
 NOT_BOR	C:\MCC18\h\p18f2455.h	826;"	m	line:826
@@ -474,50 +465,41 @@ NOT_T3SYNC	C:\MCC18\h\p18f2455.h	572;"	m	line:572
 NOT_TO	C:\MCC18\h\p18f2455.h	829;"	m	line:829
 NOT_W	C:\MCC18\h\p18f2455.h	767;"	m	line:767
 NOT_WRITE	C:\MCC18\h\p18f2455.h	773;"	m	line:773
-NO_PROTOCOL::0x00	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	81;"	d	line:81
+NO_PROTOCOL::0x00	O:\system\usb\class\cdc\cdc.h	81;"	d	line:81
+NUM_ROLLERS::8	O:\user\user.c	259;"	d	line:259	file:
 Nop::{_asmnop_endasm}	C:\MCC18\h\p18f2455.h	1085;"	d	line:1085
 OERR	C:\MCC18\h\p18f2455.h	526;"	m	line:526
-OK::TRUE	E:\iro_svn\opensprints\FW\system\typedefs.h	152;"	d	line:152
+OK::TRUE	O:\system\typedefs.h	152;"	d	line:152
 OSC2	C:\MCC18\h\p18f2455.h	255;"	m	line:255
 OSCFIE	C:\MCC18\h\p18f2455.h	467;"	m	line:467
 OSCFIF	C:\MCC18\h\p18f2455.h	484;"	m	line:484
 OSCFIP	C:\MCC18\h\p18f2455.h	501;"	m	line:501
 OSTS	C:\MCC18\h\p18f2455.h	924;"	m	line:924
-OUTPUT_PIN::0	E:\iro_svn\opensprints\FW\io_cfg.h	56;"	d	line:56
+OUTPUT_PIN::0	O:\io_cfg.h	56;"	d	line:56
 OV	C:\MCC18\h\p18f2455.h	953;"	m	line:953
 P	C:\MCC18\h\p18f2455.h	753;"	m	line:753
 P1A	C:\MCC18\h\p18f2455.h	316;"	m	line:316
-PA	E:\iro_svn\opensprints\FW\user\user.c	1282;"	l	line:1282
-PA	E:\iro_svn\opensprints\FW\user\user.c	1363;"	l	line:1363
-PB	E:\iro_svn\opensprints\FW\user\user.c	1282;"	l	line:1282
-PB	E:\iro_svn\opensprints\FW\user\user.c	1363;"	l	line:1363
-PC	E:\iro_svn\opensprints\FW\user\user.c	1282;"	l	line:1282
-PC	E:\iro_svn\opensprints\FW\user\user.c	1363;"	l	line:1363
 PCFG0	C:\MCC18\h\p18f2455.h	691;"	m	line:691
 PCFG1	C:\MCC18\h\p18f2455.h	692;"	m	line:692
 PCFG2	C:\MCC18\h\p18f2455.h	693;"	m	line:693
 PCFG3	C:\MCC18\h\p18f2455.h	694;"	m	line:694
 PD	C:\MCC18\h\p18f2455.h	838;"	m	line:838
-PD	E:\iro_svn\opensprints\FW\user\user.c	1284;"	l	line:1284
-PD	E:\iro_svn\opensprints\FW\user\user.c	1365;"	l	line:1365
-PE	E:\iro_svn\opensprints\FW\user\user.c	1284;"	l	line:1284
-PE	E:\iro_svn\opensprints\FW\user\user.c	1365;"	l	line:1365
 PEIE	C:\MCC18\h\p18f2455.h	1033;"	m	line:1033
 PEN	C:\MCC18\h\p18f2455.h	728;"	m	line:728
 PGC	C:\MCC18\h\p18f2455.h	289;"	m	line:289
 PGD	C:\MCC18\h\p18f2455.h	290;"	m	line:290
 PGM	C:\MCC18\h\p18f2455.h	288;"	m	line:288
-PID	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	105;"	m	line:105	struct:_BD_STAT::<anonymous>
-PID0	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	96;"	m	line:96	struct:_BD_STAT::<anonymous>
-PID1	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	97;"	m	line:97	struct:_BD_STAT::<anonymous>
-PID2	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	98;"	m	line:98	struct:_BD_STAT::<anonymous>
-PID3	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	99;"	m	line:99	struct:_BD_STAT::<anonymous>
+PID	O:\system\usb\usbmmap.h	105;"	m	line:105	struct:_BD_STAT::<anonymous>
+PID0	O:\system\usb\usbmmap.h	96;"	m	line:96	struct:_BD_STAT::<anonymous>
+PID1	O:\system\usb\usbmmap.h	97;"	m	line:97	struct:_BD_STAT::<anonymous>
+PID2	O:\system\usb\usbmmap.h	98;"	m	line:98	struct:_BD_STAT::<anonymous>
+PID3	O:\system\usb\usbmmap.h	99;"	m	line:99	struct:_BD_STAT::<anonymous>
 PIDEE	C:\MCC18\h\p18f2455.h	60;"	m	line:60
 PIDEF	C:\MCC18\h\p18f2455.h	50;"	m	line:50
 PKTDIS	C:\MCC18\h\p18f2455.h	84;"	m	line:84
-POINTER	E:\iro_svn\opensprints\FW\system\typedefs.h	148;"	t	line:148
+POINTER	O:\system\typedefs.h	148;"	t	line:148
 POR	C:\MCC18\h\p18f2455.h	837;"	m	line:837
-POWERED_STATE::2	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	59;"	d	line:59
+POWERED_STATE::2	O:\system\usb\usbmmap.h	59;"	d	line:59
 PPB0	C:\MCC18\h\p18f2455.h	100;"	m	line:100
 PPB1	C:\MCC18\h\p18f2455.h	101;"	m	line:101
 PPBI	C:\MCC18\h\p18f2455.h	71;"	m	line:71
@@ -529,8 +511,8 @@ PSSAC0	C:\MCC18\h\p18f2455.h	608;"	m	line:608
 PSSAC0	C:\MCC18\h\p18f2455.h	618;"	m	line:618
 PSSAC1	C:\MCC18\h\p18f2455.h	609;"	m	line:609
 PSSAC1	C:\MCC18\h\p18f2455.h	619;"	m	line:619
-ProcessIO	E:\iro_svn\opensprints\FW\user\user.c	656;"	f	line:656	signature:(void)
-ProcessIO	E:\iro_svn\opensprints\FW\user\user.h	42;"	p	line:42	signature:(void)
+ProcessIO	O:\user\user.c	479;"	f	line:479	signature:(void)
+ProcessIO	O:\user\user.h	42;"	p	line:42	signature:(void)
 R	C:\MCC18\h\p18f2455.h	785;"	m	line:785
 RA0	C:\MCC18\h\p18f2455.h	240;"	m	line:240
 RA0	C:\MCC18\h\p18f2455.h	359;"	m	line:359
@@ -589,7 +571,7 @@ RD16	C:\MCC18\h\p18f2455.h	564;"	m	line:564
 RD16	C:\MCC18\h\p18f2455.h	814;"	m	line:814
 RE3	C:\MCC18\h\p18f2455.h	325;"	m	line:325
 READ_WRITE	C:\MCC18\h\p18f2455.h	779;"	m	line:779
-RESPONSE_AVAILABLE::0x01	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	60;"	d	line:60
+RESPONSE_AVAILABLE::0x01	O:\system\usb\class\cdc\cdc.h	60;"	d	line:60
 RESUME	C:\MCC18\h\p18f2455.h	82;"	m	line:82
 RI	C:\MCC18\h\p18f2455.h	840;"	m	line:840
 RSEN	C:\MCC18\h\p18f2455.h	727;"	m	line:727
@@ -598,7 +580,7 @@ RX9	C:\MCC18\h\p18f2455.h	531;"	m	line:531
 RX9D	C:\MCC18\h\p18f2455.h	525;"	m	line:525
 RXDTP	C:\MCC18\h\p18f2455.h	650;"	m	line:650
 R_W	C:\MCC18\h\p18f2455.h	751;"	m	line:751
-RemoteWakeup	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	75;"	m	line:75	struct:_USB_DEVICE_STATUS::<anonymous>
+RemoteWakeup	O:\system\usb\usbmmap.h	75;"	m	line:75	struct:_USB_DEVICE_STATUS::<anonymous>
 Reset::{_asmreset_endasm}	C:\MCC18\h\p18f2455.h	1088;"	d	line:1088
 Rlcf::(f,dest,access){_asmmovlbfrlcf	C:\MCC18\h\p18f2455.h	1090;"	d	line:1090
 Rlncf::(f,dest,access){_asmmovlbfrlnc	C:\MCC18\h\p18f2455.h	1091;"	d	line:1091
@@ -612,12 +594,12 @@ SCS1	C:\MCC18\h\p18f2455.h	922;"	m	line:922
 SE0	C:\MCC18\h\p18f2455.h	85;"	m	line:85
 SEN	C:\MCC18\h\p18f2455.h	726;"	m	line:726
 SENDB	C:\MCC18\h\p18f2455.h	544;"	m	line:544
-SEND_BREAK::0x23	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	53;"	d	line:53
-SEND_ENCAPSULATED_COMMAND::0x00	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	45;"	d	line:45
-SERIAL_STATE::0x20	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	61;"	d	line:61
-SET_COMM_FEATURE::0x02	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	47;"	d	line:47
-SET_CONTROL_LINE_STATE::0x22	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	52;"	d	line:52
-SET_LINE_CODING::0x20	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	50;"	d	line:50
+SEND_BREAK::0x23	O:\system\usb\class\cdc\cdc.h	53;"	d	line:53
+SEND_ENCAPSULATED_COMMAND::0x00	O:\system\usb\class\cdc\cdc.h	45;"	d	line:45
+SERIAL_STATE::0x20	O:\system\usb\class\cdc\cdc.h	61;"	d	line:61
+SET_COMM_FEATURE::0x02	O:\system\usb\class\cdc\cdc.h	47;"	d	line:47
+SET_CONTROL_LINE_STATE::0x22	O:\system\usb\class\cdc\cdc.h	52;"	d	line:52
+SET_LINE_CODING::0x20	O:\system\usb\class\cdc\cdc.h	50;"	d	line:50
 SMP	C:\MCC18\h\p18f2455.h	756;"	m	line:756
 SOFIE	C:\MCC18\h\p18f2455.h	46;"	m	line:46
 SOFIF	C:\MCC18\h\p18f2455.h	36;"	m	line:36
@@ -645,14 +627,13 @@ SUSPND	C:\MCC18\h\p18f2455.h	81;"	m	line:81
 SWDTE	C:\MCC18\h\p18f2455.h	851;"	m	line:851
 SWDTEN	C:\MCC18\h\p18f2455.h	848;"	m	line:848
 SYNC	C:\MCC18\h\p18f2455.h	545;"	m	line:545
-Sensor0PortApin	E:\iro_svn\opensprints\FW\user\user.c	2550;"	v	line:2550
-Sensor1PortApin	E:\iro_svn\opensprints\FW\user\user.c	2551;"	v	line:2551
-SetupPkt	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	268;"	v	line:268
+SendUpdateToPc	O:\user\user.c	279;"	f	line:279	signature:(void)
+SetupPkt	O:\system\usb\usbmmap.c	268;"	v	line:268
 Sleep::{_asmsleep_endasm}	C:\MCC18\h\p18f2455.h	1087;"	d	line:1087
-Stat	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	114;"	m	line:114	struct:_BDT::<anonymous>
+Stat	O:\system\usb\usbmmap.h	114;"	m	line:114	struct:_BDT::<anonymous>
 Swapf::(f,dest,access){_asmmovlbfswap	C:\MCC18\h\p18f2455.h	1094;"	d	line:1094
-SwitchIsPressed	E:\iro_svn\opensprints\FW\user\user.c	225;"	p	line:225	file:	signature:(void)
-SwitchIsPressed	E:\iro_svn\opensprints\FW\user\user.c	2531;"	f	line:2531	signature:(void)
+SwitchIsPressed	O:\user\user.c	1130;"	f	line:1130	signature:(void)
+SwitchIsPressed	O:\user\user.c	244;"	p	line:244	file:	signature:(void)
 T08BIT	C:\MCC18\h\p18f2455.h	943;"	m	line:943
 T0CKI	C:\MCC18\h\p18f2455.h	253;"	m	line:253
 T0CS	C:\MCC18\h\p18f2455.h	942;"	m	line:942
@@ -683,8 +664,6 @@ T3CKPS0	C:\MCC18\h\p18f2455.h	561;"	m	line:561
 T3CKPS1	C:\MCC18\h\p18f2455.h	562;"	m	line:562
 T3NSYNC	C:\MCC18\h\p18f2455.h	568;"	m	line:568
 T3SYNC	C:\MCC18\h\p18f2455.h	559;"	m	line:559
-TEST_PERIOD::20	E:\iro_svn\opensprints\FW\user\user.c	2559;"	d	line:2559	file:
-TEST_PERIOD_HALF::(TEST_PERIOD/2)	E:\iro_svn\opensprints\FW\user\user.c	2560;"	d	line:2560	file:
 TMR0IE	C:\MCC18\h\p18f2455.h	1032;"	m	line:1032
 TMR0IF	C:\MCC18\h\p18f2455.h	1029;"	m	line:1029
 TMR0IP	C:\MCC18\h\p18f2455.h	1010;"	m	line:1010
@@ -727,7 +706,7 @@ TRISC7	C:\MCC18\h\p18f2455.h	415;"	m	line:415
 TRMT	C:\MCC18\h\p18f2455.h	542;"	m	line:542
 TRNIE	C:\MCC18\h\p18f2455.h	43;"	m	line:43
 TRNIF	C:\MCC18\h\p18f2455.h	33;"	m	line:33
-TRUE	E:\iro_svn\opensprints\FW\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+TRUE	O:\system\typedefs.h	150;"	e	line:150	enum:_BOOL
 TUN0	C:\MCC18\h\p18f2455.h	419;"	m	line:419
 TUN1	C:\MCC18\h\p18f2455.h	420;"	m	line:420
 TUN2	C:\MCC18\h\p18f2455.h	421;"	m	line:421
@@ -741,87 +720,87 @@ TXEN	C:\MCC18\h\p18f2455.h	546;"	m	line:546
 TXIE	C:\MCC18\h\p18f2455.h	433;"	m	line:433
 TXIF	C:\MCC18\h\p18f2455.h	443;"	m	line:443
 TXIP	C:\MCC18\h\p18f2455.h	453;"	m	line:453
-TYPEDEFS_H	E:\iro_svn\opensprints\FW\system\typedefs.h	38;"	d	line:38
+TYPEDEFS_H	O:\system\typedefs.h	38;"	d	line:38
 UA	C:\MCC18\h\p18f2455.h	750;"	m	line:750
-UCFG_VAL::_PUEN|_TRINT|_FS|MODE_PP	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	43;"	d	line:43
+UCFG_VAL::_PUEN|_TRINT|_FS|MODE_PP	O:\autofiles\usbcfg.h	43;"	d	line:43
 UERRIE	C:\MCC18\h\p18f2455.h	41;"	m	line:41
 UERRIF	C:\MCC18\h\p18f2455.h	31;"	m	line:31
 UOEMON	C:\MCC18\h\p18f2455.h	106;"	m	line:106
-UOWN	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	101;"	m	line:101	struct:_BD_STAT::<anonymous>
-UOWN	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	91;"	m	line:91	struct:_BD_STAT::<anonymous>
-UPPER_LSB::(a)((a).v[2])	E:\iro_svn\opensprints\FW\system\typedefs.h	120;"	d	line:120
-UPPER_MSB::(a)((a).v[3])	E:\iro_svn\opensprints\FW\system\typedefs.h	121;"	d	line:121
+UOWN	O:\system\usb\usbmmap.h	101;"	m	line:101	struct:_BD_STAT::<anonymous>
+UOWN	O:\system\usb\usbmmap.h	91;"	m	line:91	struct:_BD_STAT::<anonymous>
+UPPER_LSB::(a)((a).v[2])	O:\system\typedefs.h	120;"	d	line:120
+UPPER_MSB::(a)((a).v[3])	O:\system\typedefs.h	121;"	d	line:121
 UPUEN	C:\MCC18\h\p18f2455.h	104;"	m	line:104
 URSTIE	C:\MCC18\h\p18f2455.h	40;"	m	line:40
 URSTIF	C:\MCC18\h\p18f2455.h	30;"	m	line:30
-USBCFG_H	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	35;"	d	line:35
-USBCheckBusStatus	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	76;"	f	line:76	signature:(void)
-USBCheckCDCRequest	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	88;"	f	line:88	signature:(void)
-USBCheckCDCRequest	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	359;"	p	line:359	signature:(void)
-USBCheckStdRequest	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	70;"	f	line:70	signature:(void)
-USBCtrlEPService	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	78;"	f	line:78	signature:(void)
-USBCtrlEPServiceComplete	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	382;"	f	line:382	signature:(void)
-USBCtrlTrfInHandler	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	221;"	f	line:221	signature:(void)
-USBCtrlTrfInHandler	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	54;"	p	line:54	file:	signature:(void)
-USBCtrlTrfOutHandler	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	176;"	f	line:176	signature:(void)
-USBCtrlTrfOutHandler	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	53;"	p	line:53	file:	signature:(void)
-USBCtrlTrfRxService	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	330;"	f	line:330	signature:(void)
-USBCtrlTrfSetupHandler	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	133;"	f	line:133	signature:(void)
-USBCtrlTrfSetupHandler	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	52;"	p	line:52	file:	signature:(void)
-USBCtrlTrfTxService	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	260;"	f	line:260	signature:(void)
-USBDSC_H	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	40;"	d	line:40
-USBDriverService	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	215;"	f	line:215	signature:(void)
+USBCFG_H	O:\autofiles\usbcfg.h	35;"	d	line:35
+USBCheckBusStatus	O:\system\usb\usbdrv\usbdrv.c	76;"	f	line:76	signature:(void)
+USBCheckCDCRequest	O:\system\usb\class\cdc\cdc.c	88;"	f	line:88	signature:(void)
+USBCheckCDCRequest	O:\system\usb\class\cdc\cdc.h	359;"	p	line:359	signature:(void)
+USBCheckStdRequest	O:\system\usb\usb9\usb9.c	70;"	f	line:70	signature:(void)
+USBCtrlEPService	O:\system\usb\usbctrltrf\usbctrltrf.c	78;"	f	line:78	signature:(void)
+USBCtrlEPServiceComplete	O:\system\usb\usbctrltrf\usbctrltrf.c	382;"	f	line:382	signature:(void)
+USBCtrlTrfInHandler	O:\system\usb\usbctrltrf\usbctrltrf.c	221;"	f	line:221	signature:(void)
+USBCtrlTrfInHandler	O:\system\usb\usbctrltrf\usbctrltrf.c	54;"	p	line:54	file:	signature:(void)
+USBCtrlTrfOutHandler	O:\system\usb\usbctrltrf\usbctrltrf.c	176;"	f	line:176	signature:(void)
+USBCtrlTrfOutHandler	O:\system\usb\usbctrltrf\usbctrltrf.c	53;"	p	line:53	file:	signature:(void)
+USBCtrlTrfRxService	O:\system\usb\usbctrltrf\usbctrltrf.c	330;"	f	line:330	signature:(void)
+USBCtrlTrfSetupHandler	O:\system\usb\usbctrltrf\usbctrltrf.c	133;"	f	line:133	signature:(void)
+USBCtrlTrfSetupHandler	O:\system\usb\usbctrltrf\usbctrltrf.c	52;"	p	line:52	file:	signature:(void)
+USBCtrlTrfTxService	O:\system\usb\usbctrltrf\usbctrltrf.c	260;"	f	line:260	signature:(void)
+USBDSC_H	O:\autofiles\usbdsc.h	40;"	d	line:40
+USBDriverService	O:\system\usb\usbdrv\usbdrv.c	215;"	f	line:215	signature:(void)
 USBEN	C:\MCC18\h\p18f2455.h	83;"	m	line:83
-USBErrorHandler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	524;"	f	line:524	signature:(void)
-USBErrorHandler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	56;"	p	line:56	file:	signature:(void)
+USBErrorHandler	O:\system\usb\usbdrv\usbdrv.c	524;"	f	line:524	signature:(void)
+USBErrorHandler	O:\system\usb\usbdrv\usbdrv.c	56;"	p	line:56	file:	signature:(void)
 USBIE	C:\MCC18\h\p18f2455.h	465;"	m	line:465
 USBIF	C:\MCC18\h\p18f2455.h	482;"	m	line:482
 USBIP	C:\MCC18\h\p18f2455.h	499;"	m	line:499
-USBMMAP_H	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	38;"	d	line:38
-USBModuleDisable	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	161;"	f	line:161	signature:(void)
-USBModuleDisable	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	48;"	p	line:48	file:	signature:(void)
-USBModuleEnable	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	135;"	f	line:135	signature:(void)
-USBModuleEnable	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	47;"	p	line:47	file:	signature:(void)
-USBPrepareForNextSetupTrf	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	489;"	f	line:489	signature:(void)
-USBProtocolResetHandler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	53;"	p	line:53	file:	signature:(void)
-USBProtocolResetHandler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	551;"	f	line:551	signature:(void)
-USBRemoteWakeup	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	404;"	f	line:404	signature:(void)
-USBSoftDetach	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	192;"	f	line:192	signature:(void)
-USBStallHandler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	488;"	f	line:488	signature:(void)
-USBStallHandler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	55;"	p	line:55	file:	signature:(void)
-USBStdFeatureReqHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	275;"	f	line:275	signature:(void)
-USBStdFeatureReqHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	50;"	p	line:50	file:	signature:(void)
-USBStdGetDscHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	136;"	f	line:136	signature:(void)
-USBStdGetDscHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	47;"	p	line:47	file:	signature:(void)
-USBStdGetStatusHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	218;"	f	line:218	signature:(void)
-USBStdGetStatusHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	49;"	p	line:49	file:	signature:(void)
-USBStdSetCfgHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	180;"	f	line:180	signature:(void)
-USBStdSetCfgHandler	E:\iro_svn\opensprints\FW\system\usb\usb9\usb9.c	48;"	p	line:48	file:	signature:(void)
-USBSuspend	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	297;"	f	line:297	signature:(void)
-USBSuspend	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	50;"	p	line:50	file:	signature:(void)
-USBTasks	E:\iro_svn\opensprints\FW\main.c	51;"	p	line:51	file:	signature:(void)
-USBWakeFromSuspend	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	355;"	f	line:355	signature:(void)
-USBWakeFromSuspend	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	51;"	p	line:51	file:	signature:(void)
-USB_BUS_ATTACHED::1	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	82;"	d	line:82	file:
-USB_BUS_DETACHED::0	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	83;"	d	line:83	file:
-USB_CDC_ACM_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	323;"	t	line:323
-USB_CDC_CALL_MGT_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	343;"	t	line:343
-USB_CDC_HEADER_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	314;"	t	line:314
-USB_CDC_UNION_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	333;"	t	line:333
-USB_CD_Ptr	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	260;"	v	line:260
-USB_DEVICE_STATUS	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	78;"	t	line:78
-USB_H	E:\iro_svn\opensprints\FW\system\usb\usb.h	37;"	d	line:37
-USB_SD_Ptr	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	261;"	v	line:261
-USB_SOF_Handler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	445;"	f	line:445	signature:(void)
-USB_SOF_Handler	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	54;"	p	line:54	file:	signature:(void)
-USB_USE_CDC	E:\iro_svn\opensprints\FW\autofiles\usbcfg.h	49;"	d	line:49
-USER_H	E:\iro_svn\opensprints\FW\user\user.h	38;"	d	line:38
+USBMMAP_H	O:\system\usb\usbmmap.h	38;"	d	line:38
+USBModuleDisable	O:\system\usb\usbdrv\usbdrv.c	161;"	f	line:161	signature:(void)
+USBModuleDisable	O:\system\usb\usbdrv\usbdrv.c	48;"	p	line:48	file:	signature:(void)
+USBModuleEnable	O:\system\usb\usbdrv\usbdrv.c	135;"	f	line:135	signature:(void)
+USBModuleEnable	O:\system\usb\usbdrv\usbdrv.c	47;"	p	line:47	file:	signature:(void)
+USBPrepareForNextSetupTrf	O:\system\usb\usbctrltrf\usbctrltrf.c	489;"	f	line:489	signature:(void)
+USBProtocolResetHandler	O:\system\usb\usbdrv\usbdrv.c	53;"	p	line:53	file:	signature:(void)
+USBProtocolResetHandler	O:\system\usb\usbdrv\usbdrv.c	551;"	f	line:551	signature:(void)
+USBRemoteWakeup	O:\system\usb\usbdrv\usbdrv.c	404;"	f	line:404	signature:(void)
+USBSoftDetach	O:\system\usb\usbdrv\usbdrv.c	192;"	f	line:192	signature:(void)
+USBStallHandler	O:\system\usb\usbdrv\usbdrv.c	488;"	f	line:488	signature:(void)
+USBStallHandler	O:\system\usb\usbdrv\usbdrv.c	55;"	p	line:55	file:	signature:(void)
+USBStdFeatureReqHandler	O:\system\usb\usb9\usb9.c	275;"	f	line:275	signature:(void)
+USBStdFeatureReqHandler	O:\system\usb\usb9\usb9.c	50;"	p	line:50	file:	signature:(void)
+USBStdGetDscHandler	O:\system\usb\usb9\usb9.c	136;"	f	line:136	signature:(void)
+USBStdGetDscHandler	O:\system\usb\usb9\usb9.c	47;"	p	line:47	file:	signature:(void)
+USBStdGetStatusHandler	O:\system\usb\usb9\usb9.c	218;"	f	line:218	signature:(void)
+USBStdGetStatusHandler	O:\system\usb\usb9\usb9.c	49;"	p	line:49	file:	signature:(void)
+USBStdSetCfgHandler	O:\system\usb\usb9\usb9.c	180;"	f	line:180	signature:(void)
+USBStdSetCfgHandler	O:\system\usb\usb9\usb9.c	48;"	p	line:48	file:	signature:(void)
+USBSuspend	O:\system\usb\usbdrv\usbdrv.c	297;"	f	line:297	signature:(void)
+USBSuspend	O:\system\usb\usbdrv\usbdrv.c	50;"	p	line:50	file:	signature:(void)
+USBTasks	O:\main.c	51;"	p	line:51	file:	signature:(void)
+USBWakeFromSuspend	O:\system\usb\usbdrv\usbdrv.c	355;"	f	line:355	signature:(void)
+USBWakeFromSuspend	O:\system\usb\usbdrv\usbdrv.c	51;"	p	line:51	file:	signature:(void)
+USB_BUS_ATTACHED::1	O:\system\usb\usbdrv\usbdrv.c	82;"	d	line:82	file:
+USB_BUS_DETACHED::0	O:\system\usb\usbdrv\usbdrv.c	83;"	d	line:83	file:
+USB_CDC_ACM_FN_DSC	O:\system\usb\class\cdc\cdc.h	323;"	t	line:323
+USB_CDC_CALL_MGT_FN_DSC	O:\system\usb\class\cdc\cdc.h	343;"	t	line:343
+USB_CDC_HEADER_FN_DSC	O:\system\usb\class\cdc\cdc.h	314;"	t	line:314
+USB_CDC_UNION_FN_DSC	O:\system\usb\class\cdc\cdc.h	333;"	t	line:333
+USB_CD_Ptr	O:\autofiles\usbdsc.c	260;"	v	line:260
+USB_DEVICE_STATUS	O:\system\usb\usbmmap.h	78;"	t	line:78
+USB_H	O:\system\usb\usb.h	37;"	d	line:37
+USB_SD_Ptr	O:\autofiles\usbdsc.c	261;"	v	line:261
+USB_SOF_Handler	O:\system\usb\usbdrv\usbdrv.c	445;"	f	line:445	signature:(void)
+USB_SOF_Handler	O:\system\usb\usbdrv\usbdrv.c	54;"	p	line:54	file:	signature:(void)
+USB_USE_CDC	O:\autofiles\usbcfg.h	49;"	d	line:49
+USER_H	O:\user\user.h	38;"	d	line:38
 UTEYE	C:\MCC18\h\p18f2455.h	107;"	m	line:107
 UTRDIS	C:\MCC18\h\p18f2455.h	103;"	m	line:103
-UserInit	E:\iro_svn\opensprints\FW\user\user.c	508;"	f	line:508	signature:(void)
-UserInit	E:\iro_svn\opensprints\FW\user\user.h	41;"	p	line:41	signature:(void)
-UserSW::PORTCbits.RC2	E:\iro_svn\opensprints\FW\io_cfg.h	81;"	d	line:81
-V25TER::0x01	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	74;"	d	line:74
+UserInit	O:\user\user.c	341;"	f	line:341	signature:(void)
+UserInit	O:\user\user.h	41;"	p	line:41	signature:(void)
+UserSW::PORTCbits.RC2	O:\io_cfg.h	81;"	d	line:81
+V25TER::0x01	O:\system\usb\class\cdc\cdc.h	74;"	d	line:74
 VCFG0	C:\MCC18\h\p18f2455.h	695;"	m	line:695
 VCFG1	C:\MCC18\h\p18f2455.h	696;"	m	line:696
 VDIRMAG	C:\MCC18\h\p18f2455.h	879;"	m	line:879
@@ -829,407 +808,327 @@ VDIRMAG	C:\MCC18\h\p18f2455.h	911;"	m	line:911
 VREFM	C:\MCC18\h\p18f2455.h	259;"	m	line:259
 VREFP	C:\MCC18\h\p18f2455.h	260;"	m	line:260
 WCOL	C:\MCC18\h\p18f2455.h	744;"	m	line:744
-WORD	E:\iro_svn\opensprints\FW\system\typedefs.h	82;"	t	line:82
+WORD	O:\system\typedefs.h	82;"	t	line:82
 WR	C:\MCC18\h\p18f2455.h	511;"	m	line:511
 WREN	C:\MCC18\h\p18f2455.h	512;"	m	line:512
 WRERR	C:\MCC18\h\p18f2455.h	513;"	m	line:513
 WUE	C:\MCC18\h\p18f2455.h	639;"	m	line:639
-Word0	E:\iro_svn\opensprints\FW\system\typedefs.h	110;"	m	line:110	struct:_DWORD::<anonymous>
-Word1	E:\iro_svn\opensprints\FW\system\typedefs.h	111;"	m	line:111	struct:_DWORD::<anonymous>
+Word0	O:\system\typedefs.h	110;"	m	line:110	struct:_DWORD::<anonymous>
+Word1	O:\system\typedefs.h	111;"	m	line:111	struct:_DWORD::<anonymous>
 Z	C:\MCC18\h\p18f2455.h	952;"	m	line:952
-_BDT	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	110;"	u	line:110
-_BD_STAT	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	80;"	u	line:80
-_BOOL	E:\iro_svn\opensprints\FW\system\typedefs.h	150;"	g	line:150
-_BSTALL::0x04	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	46;"	d	line:46
-_BYTE	E:\iro_svn\opensprints\FW\system\typedefs.h	44;"	u	line:44
-_CONTROL_SIGNAL_BITMAP	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	284;"	u	line:284
-_DAT0::0x00	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	50;"	d	line:50
-_DAT1::0x40	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	51;"	d	line:51
-_DTSEN::0x08	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	47;"	d	line:47
-_DTSMASK::0x40	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	52;"	d	line:52
-_DWORD	E:\iro_svn\opensprints\FW\system\typedefs.h	86;"	u	line:86
-_INCDIS::0x10	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	48;"	d	line:48
-_KEN::0x20	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	49;"	d	line:49
-_LINE_CODING	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	269;"	u	line:269
-_POINTER	E:\iro_svn\opensprints\FW\system\typedefs.h	125;"	u	line:125
-_RAM::0	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	66;"	d	line:66
-_ROM::1	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	67;"	d	line:67
-_UCPU::0x00	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	54;"	d	line:54
-_USB_CDC_ACM_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	317;"	s	line:317
-_USB_CDC_CALL_MGT_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	336;"	s	line:336
-_USB_CDC_HEADER_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	308;"	s	line:308
-_USB_CDC_UNION_FN_DSC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	326;"	s	line:326
-_USB_DEVICE_STATUS	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	70;"	u	line:70
-_USIE::0x80	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	53;"	d	line:53
-_WORD	E:\iro_svn\opensprints\FW\system\typedefs.h	60;"	u	line:60
+_BDT	O:\system\usb\usbmmap.h	110;"	u	line:110
+_BD_STAT	O:\system\usb\usbmmap.h	80;"	u	line:80
+_BOOL	O:\system\typedefs.h	150;"	g	line:150
+_BSTALL::0x04	O:\system\usb\usbmmap.h	46;"	d	line:46
+_BYTE	O:\system\typedefs.h	44;"	u	line:44
+_CONTROL_SIGNAL_BITMAP	O:\system\usb\class\cdc\cdc.h	284;"	u	line:284
+_DAT0::0x00	O:\system\usb\usbmmap.h	50;"	d	line:50
+_DAT1::0x40	O:\system\usb\usbmmap.h	51;"	d	line:51
+_DTSEN::0x08	O:\system\usb\usbmmap.h	47;"	d	line:47
+_DTSMASK::0x40	O:\system\usb\usbmmap.h	52;"	d	line:52
+_DWORD	O:\system\typedefs.h	86;"	u	line:86
+_INCDIS::0x10	O:\system\usb\usbmmap.h	48;"	d	line:48
+_KEN::0x20	O:\system\usb\usbmmap.h	49;"	d	line:49
+_LINE_CODING	O:\system\usb\class\cdc\cdc.h	269;"	u	line:269
+_POINTER	O:\system\typedefs.h	125;"	u	line:125
+_RAM::0	O:\system\usb\usbmmap.h	66;"	d	line:66
+_ROM::1	O:\system\usb\usbmmap.h	67;"	d	line:67
+_UCPU::0x00	O:\system\usb\usbmmap.h	54;"	d	line:54
+_USB_CDC_ACM_FN_DSC	O:\system\usb\class\cdc\cdc.h	317;"	s	line:317
+_USB_CDC_CALL_MGT_FN_DSC	O:\system\usb\class\cdc\cdc.h	336;"	s	line:336
+_USB_CDC_HEADER_FN_DSC	O:\system\usb\class\cdc\cdc.h	308;"	s	line:308
+_USB_CDC_UNION_FN_DSC	O:\system\usb\class\cdc\cdc.h	326;"	s	line:326
+_USB_DEVICE_STATUS	O:\system\usb\usbmmap.h	70;"	u	line:70
+_USIE::0x80	O:\system\usb\usbmmap.h	53;"	d	line:53
+_WORD	O:\system\typedefs.h	60;"	u	line:60
 __18F2455_H	C:\MCC18\h\p18f2455.h	8;"	d	line:8
-_byte	E:\iro_svn\opensprints\FW\system\typedefs.h	46;"	m	line:46	union:_BYTE
-_byte	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	273;"	m	line:273	struct:_LINE_CODING::<anonymous>
-_byte	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	286;"	m	line:286	union:_CONTROL_SIGNAL_BITMAP
-_byte	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	72;"	m	line:72	union:_USB_DEVICE_STATUS
-_byte	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	82;"	m	line:82	union:_BD_STAT
-_dword	E:\iro_svn\opensprints\FW\system\typedefs.h	88;"	m	line:88	union:_DWORD
-_user_putc	E:\iro_svn\opensprints\FW\user\user.c	262;"	p	line:262	file:	signature:(char c)
-_user_putc	E:\iro_svn\opensprints\FW\user\user.c	820;"	f	line:820	signature:(char c)
-_word	E:\iro_svn\opensprints\FW\system\typedefs.h	133;"	m	line:133	union:_POINTER
-_word	E:\iro_svn\opensprints\FW\system\typedefs.h	62;"	m	line:62	union:_WORD
-acc	E:\iro_svn\opensprints\FW\user\user.c	2277;"	l	line:2277
-advance_RX_buf_out::\	E:\iro_svn\opensprints\FW\user\user.c	109;"	d	line:109	file:
-b0	E:\iro_svn\opensprints\FW\system\typedefs.h	49;"	m	line:49	struct:_BYTE::<anonymous>
-b1	E:\iro_svn\opensprints\FW\system\typedefs.h	50;"	m	line:50	struct:_BYTE::<anonymous>
-b2	E:\iro_svn\opensprints\FW\system\typedefs.h	51;"	m	line:51	struct:_BYTE::<anonymous>
-b3	E:\iro_svn\opensprints\FW\system\typedefs.h	52;"	m	line:52	struct:_BYTE::<anonymous>
-b4	E:\iro_svn\opensprints\FW\system\typedefs.h	53;"	m	line:53	struct:_BYTE::<anonymous>
-b5	E:\iro_svn\opensprints\FW\system\typedefs.h	54;"	m	line:54	struct:_BYTE::<anonymous>
-b6	E:\iro_svn\opensprints\FW\system\typedefs.h	55;"	m	line:55	struct:_BYTE::<anonymous>
-b7	E:\iro_svn\opensprints\FW\system\typedefs.h	56;"	m	line:56	struct:_BYTE::<anonymous>
-bCharFormat	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	278;"	m	line:278	struct:_LINE_CODING::<anonymous>
-bDataBits	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	280;"	m	line:280	struct:_LINE_CODING::<anonymous>
-bDataInterface	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	342;"	m	line:342	struct:_USB_CDC_CALL_MGT_FN_DSC
-bDscSubType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	312;"	m	line:312	struct:_USB_CDC_HEADER_FN_DSC
-bDscSubType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	321;"	m	line:321	struct:_USB_CDC_ACM_FN_DSC
-bDscSubType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	330;"	m	line:330	struct:_USB_CDC_UNION_FN_DSC
-bDscSubType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	340;"	m	line:340	struct:_USB_CDC_CALL_MGT_FN_DSC
-bDscType	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	247;"	m	line:247	file:
-bDscType	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	250;"	m	line:250	file:
-bDscType	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	255;"	m	line:255	file:
-bDscType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	311;"	m	line:311	struct:_USB_CDC_HEADER_FN_DSC
-bDscType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	320;"	m	line:320	struct:_USB_CDC_ACM_FN_DSC
-bDscType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	329;"	m	line:329	struct:_USB_CDC_UNION_FN_DSC
-bDscType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	339;"	m	line:339	struct:_USB_CDC_CALL_MGT_FN_DSC
-bFNLength	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	310;"	m	line:310	struct:_USB_CDC_HEADER_FN_DSC
-bFNLength	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	319;"	m	line:319	struct:_USB_CDC_ACM_FN_DSC
-bFNLength	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	328;"	m	line:328	struct:_USB_CDC_UNION_FN_DSC
-bFNLength	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	338;"	m	line:338	struct:_USB_CDC_CALL_MGT_FN_DSC
-bHigh	E:\iro_svn\opensprints\FW\system\typedefs.h	130;"	m	line:130	struct:_POINTER::<anonymous>
-bLength	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	247;"	m	line:247	file:
-bLength	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	250;"	m	line:250	file:
-bLength	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	255;"	m	line:255	file:
-bLow	E:\iro_svn\opensprints\FW\system\typedefs.h	129;"	m	line:129	struct:_POINTER::<anonymous>
-bMasterIntf	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	331;"	m	line:331	struct:_USB_CDC_UNION_FN_DSC
-bParityType	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	279;"	m	line:279	struct:_LINE_CODING::<anonymous>
-bRam	E:\iro_svn\opensprints\FW\system\typedefs.h	137;"	m	line:137	union:_POINTER
-bRom	E:\iro_svn\opensprints\FW\system\typedefs.h	142;"	m	line:142	union:_POINTER
-bSaveIntf0	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	332;"	m	line:332	struct:_USB_CDC_UNION_FN_DSC
-bcdCDC	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	313;"	m	line:313	struct:_USB_CDC_HEADER_FN_DSC
-bitclr::(var,bitno)((var)&=~(1<<(bitno	E:\iro_svn\opensprints\FW\user\user.c	76;"	d	line:76	file:
-bitset::(var,bitno)((var)|=(1<<(bitno)	E:\iro_svn\opensprints\FW\user\user.c	75;"	d	line:75	file:
-bittst::(var,bitno)(var&(1<<(bitno)))	E:\iro_svn\opensprints\FW\user\user.c	77;"	d	line:77	file:
-bmCapabilities	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	322;"	m	line:322	struct:_USB_CDC_ACM_FN_DSC
-bmCapabilities	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	341;"	m	line:341	struct:_USB_CDC_CALL_MGT_FN_DSC
-byte	E:\iro_svn\opensprints\FW\system\typedefs.h	40;"	t	line:40
-byte0	E:\iro_svn\opensprints\FW\system\typedefs.h	65;"	m	line:65	struct:_WORD::<anonymous>
-byte0	E:\iro_svn\opensprints\FW\system\typedefs.h	91;"	m	line:91	struct:_DWORD::<anonymous>
-byte1	E:\iro_svn\opensprints\FW\system\typedefs.h	66;"	m	line:66	struct:_WORD::<anonymous>
-byte1	E:\iro_svn\opensprints\FW\system\typedefs.h	92;"	m	line:92	struct:_DWORD::<anonymous>
-byte2	E:\iro_svn\opensprints\FW\system\typedefs.h	93;"	m	line:93	struct:_DWORD::<anonymous>
-byte3	E:\iro_svn\opensprints\FW\system\typedefs.h	94;"	m	line:94	struct:_DWORD::<anonymous>
-byte_count	E:\iro_svn\opensprints\FW\user\user.c	2111;"	l	line:2111
-byte_to_read	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	332;"	l	line:332
-byte_to_send	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	458;"	l	line:458
-byte_to_send	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	262;"	l	line:262
-cd01	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	55;"	v	line:55
-cdc_acm_fn_i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	58;"	v	line:58
-cdc_call_mgt_fn_i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	60;"	v	line:60
-cdc_data_rx	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	279;"	v	line:279
-cdc_data_tx	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	280;"	v	line:280
-cdc_header_fn_i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	57;"	v	line:57
-cdc_mem_type	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	52;"	v	line:52
-cdc_notice	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	278;"	v	line:278
-cdc_rx_len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	46;"	v	line:46
-cdc_trf_state	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	48;"	v	line:48
-cdc_tx_len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	51;"	v	line:51
-cdc_union_fn_i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	59;"	v	line:59
-channel	E:\iro_svn\opensprints\FW\user\user.c	1445;"	l	line:1445
-check_and_send_TX_data	E:\iro_svn\opensprints\FW\user\user.c	260;"	p	line:260	file:	signature:(void)
-check_and_send_TX_data	E:\iro_svn\opensprints\FW\user\user.c	843;"	f	line:843	signature:(void)
-cmd1	E:\iro_svn\opensprints\FW\user\user.c	888;"	l	line:888
-cmd2	E:\iro_svn\opensprints\FW\user\user.c	889;"	l	line:889
-command	E:\iro_svn\opensprints\FW\user\user.c	887;"	l	line:887
-control_signal_bitmap	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	55;"	v	line:55
-ctrl_trf_mem	E:\iro_svn\opensprints\FW\system\usb\usbmmap.h	76;"	m	line:76	struct:_USB_DEVICE_STATUS::<anonymous>
-ctrl_trf_session_owner	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	45;"	v	line:45
-ctrl_trf_state	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	44;"	v	line:44
-currentValueSensor0	E:\iro_svn\opensprints\FW\user\user.c	2548;"	v	line:2548
-currentValueSensor1	E:\iro_svn\opensprints\FW\user\user.c	2549;"	v	line:2549
-delay_count	E:\iro_svn\opensprints\FW\system\usb\usbdrv\usbdrv.c	406;"	l	line:406	file:
-device_dsc	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	180;"	v	line:180
-digit_cnt	E:\iro_svn\opensprints\FW\user\user.c	2416;"	l	line:2416
-direction	E:\iro_svn\opensprints\FW\user\user.c	1530;"	l	line:1530
-dummy_encapsulated_cmd_response	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	64;"	v	line:64
-dummy_length::0x08	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	63;"	d	line:63	file:
-dwDTERate	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	277;"	m	line:277	struct:_LINE_CODING::<anonymous>
-dword	E:\iro_svn\opensprints\FW\system\typedefs.h	42;"	t	line:42
-ep02i_i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	61;"	v	line:61
-ep03i_i02a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	64;"	v	line:64
-ep03o_i02a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	63;"	v	line:63
-ep0Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	175;"	v	line:175
-ep0Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	174;"	v	line:174
-ep10Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	225;"	v	line:225
-ep10Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	224;"	v	line:224
-ep11Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	230;"	v	line:230
-ep11Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	229;"	v	line:229
-ep12Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	235;"	v	line:235
-ep12Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	234;"	v	line:234
-ep13Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	240;"	v	line:240
-ep13Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	239;"	v	line:239
-ep14Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	245;"	v	line:245
-ep14Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	244;"	v	line:244
-ep15Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	250;"	v	line:250
-ep15Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	249;"	v	line:249
-ep1Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	180;"	v	line:180
-ep1Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	179;"	v	line:179
-ep2Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	185;"	v	line:185
-ep2Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	184;"	v	line:184
-ep3Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	190;"	v	line:190
-ep3Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	189;"	v	line:189
-ep4Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	195;"	v	line:195
-ep4Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	194;"	v	line:194
-ep5Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	200;"	v	line:200
-ep5Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	199;"	v	line:199
-ep6Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	205;"	v	line:205
-ep6Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	204;"	v	line:204
-ep7Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	210;"	v	line:210
-ep7Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	209;"	v	line:209
-ep8Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	215;"	v	line:215
-ep8Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	214;"	v	line:214
-ep9Bi	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	220;"	v	line:220
-ep9Bo	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	219;"	v	line:219
-error_byte	E:\iro_svn\opensprints\FW\user\user.c	151;"	v	line:151
-extract_digit	E:\iro_svn\opensprints\FW\user\user.c	228;"	p	line:228	file:	signature:(signed short long * acc, unsigned char digits)
-extract_digit	E:\iro_svn\opensprints\FW\user\user.c	2413;"	f	line:2413	signature:(signed short long * acc, unsigned char digits)
-extract_number	E:\iro_svn\opensprints\FW\user\user.c	2275;"	f	line:2275	signature:(tExtractType type)
-extract_number	E:\iro_svn\opensprints\FW\user\user.c	227;"	p	line:227	file:	signature:(tExtractType type)
-g_BO_init	E:\iro_svn\opensprints\FW\user\user.c	191;"	v	line:191
-g_BO_strobe_delay	E:\iro_svn\opensprints\FW\user\user.c	195;"	v	line:195
-g_BO_strobe_mask	E:\iro_svn\opensprints\FW\user\user.c	192;"	v	line:192
-g_BO_wait_delay	E:\iro_svn\opensprints\FW\user\user.c	194;"	v	line:194
-g_BO_wait_mask	E:\iro_svn\opensprints\FW\user\user.c	193;"	v	line:193
-g_RC_next_ptr	E:\iro_svn\opensprints\FW\user\user.c	156;"	v	line:156
-g_RC_primed_ptr	E:\iro_svn\opensprints\FW\user\user.c	155;"	v	line:155
-g_RC_state	E:\iro_svn\opensprints\FW\user\user.c	172;"	v	line:172
-g_RC_timing_ptr	E:\iro_svn\opensprints\FW\user\user.c	157;"	v	line:157
-g_RC_value	E:\iro_svn\opensprints\FW\user\user.c	173;"	v	line:173
-g_RX_buf	E:\iro_svn\opensprints\FW\user\user.c	179;"	v	line:179
-g_RX_buf_in	E:\iro_svn\opensprints\FW\user\user.c	202;"	v	line:202
-g_RX_buf_out	E:\iro_svn\opensprints\FW\user\user.c	203;"	v	line:203
-g_TX_buf	E:\iro_svn\opensprints\FW\user\user.c	177;"	v	line:177
-g_TX_buf_in	E:\iro_svn\opensprints\FW\user\user.c	198;"	v	line:198
-g_TX_buf_out	E:\iro_svn\opensprints\FW\user\user.c	199;"	v	line:199
-g_USART_RX_buf	E:\iro_svn\opensprints\FW\user\user.c	182;"	v	line:182
-g_USART_RX_buf_in	E:\iro_svn\opensprints\FW\user\user.c	206;"	v	line:206
-g_USART_RX_buf_out	E:\iro_svn\opensprints\FW\user\user.c	207;"	v	line:207
-g_USART_TX_buf	E:\iro_svn\opensprints\FW\user\user.c	185;"	v	line:185
-g_USART_TX_buf_in	E:\iro_svn\opensprints\FW\user\user.c	210;"	v	line:210
-g_USART_TX_buf_out	E:\iro_svn\opensprints\FW\user\user.c	211;"	v	line:211
-g_ack_enable	E:\iro_svn\opensprints\FW\user\user.c	214;"	v	line:214
-getsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	239;"	f	line:239	signature:(unsigned char *buffer, byte len)
-getsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	361;"	p	line:361	signature:(unsigned char *buffer, byte len)
-got_full_packet	E:\iro_svn\opensprints\FW\user\user.c	661;"	l	line:661
-high_ISR	E:\iro_svn\opensprints\FW\user\user.c	504;"	f	line:504	signature:(void)
-high_ISR	E:\iro_svn\opensprints\FW\user\user.h	44;"	p	line:44	signature:(void)
-high_vector	E:\iro_svn\opensprints\FW\main.c	54;"	f	line:54	signature:(void)
-i	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	135;"	l	line:135
-i	E:\iro_svn\opensprints\FW\user\user.c	510;"	l	line:510
-i01a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	56;"	v	line:56
-i02a00	E:\iro_svn\opensprints\FW\autofiles\usbdsc.h	62;"	v	line:62
-in_cr	E:\iro_svn\opensprints\FW\user\user.c	658;"	l	line:658	file:
-is_racing	E:\iro_svn\opensprints\FW\user\user.c	217;"	v	line:217
-j	E:\iro_svn\opensprints\FW\user\user.c	510;"	l	line:510
-justBegun	E:\iro_svn\opensprints\FW\user\user.c	2545;"	v	line:2545
-kASCII_CHAR	E:\iro_svn\opensprints\FW\user\user.c	105;"	e	line:105	file:
-kCHAR	E:\iro_svn\opensprints\FW\user\user.c	101;"	e	line:101	file:
-kCR::0x0D	E:\iro_svn\opensprints\FW\user\user.c	121;"	d	line:121	file:
-kERROR_BYTE_EXTRA_CHARACTERS::7	E:\iro_svn\opensprints\FW\user\user.c	130;"	d	line:130	file:
-kERROR_BYTE_MISSING_PARAMETER::4	E:\iro_svn\opensprints\FW\user\user.c	127;"	d	line:127	file:
-kERROR_BYTE_PARAMATER_OUTSIDE_LIMIT::6	E:\iro_svn\opensprints\FW\user\user.c	129;"	d	line:129	file:
-kERROR_BYTE_PRINTED_ERROR::5	E:\iro_svn\opensprints\FW\user\user.c	128;"	d	line:128	file:
-kERROR_BYTE_RX_BUFFER_OVERRUN::3	E:\iro_svn\opensprints\FW\user\user.c	126;"	d	line:126	file:
-kERROR_BYTE_TX_BUF_OVERRUN::2	E:\iro_svn\opensprints\FW\user\user.c	125;"	d	line:125	file:
-kERROR_BYTE_UNKNOWN_COMMAND::8	E:\iro_svn\opensprints\FW\user\user.c	131;"	d	line:131	file:
-kINT	E:\iro_svn\opensprints\FW\user\user.c	103;"	e	line:103	file:
-kISR_FIFO_A_DEPTH::3	E:\iro_svn\opensprints\FW\user\user.c	118;"	d	line:118	file:
-kISR_FIFO_D_DEPTH::3	E:\iro_svn\opensprints\FW\user\user.c	119;"	d	line:119	file:
-kLF::0x0A	E:\iro_svn\opensprints\FW\user\user.c	122;"	d	line:122	file:
-kOFF	E:\iro_svn\opensprints\FW\user\user.c	85;"	e	line:85	file:
-kPR2_RELOAD::250	E:\iro_svn\opensprints\FW\user\user.c	120;"	d	line:120	file:
-kPRIMED	E:\iro_svn\opensprints\FW\user\user.c	87;"	e	line:87	file:
-kRC_DATA_SIZE::24	E:\iro_svn\opensprints\FW\user\user.c	91;"	d	line:91	file:
-kRX_BUF_SIZE::64	E:\iro_svn\opensprints\FW\user\user.c	94;"	d	line:94	file:
-kTIMING	E:\iro_svn\opensprints\FW\user\user.c	88;"	e	line:88	file:
-kTX_BUF_SIZE::64	E:\iro_svn\opensprints\FW\user\user.c	93;"	d	line:93	file:
-kUCASE_ASCII_CHAR	E:\iro_svn\opensprints\FW\user\user.c	106;"	e	line:106	file:
-kUCHAR	E:\iro_svn\opensprints\FW\user\user.c	102;"	e	line:102	file:
-kUINT	E:\iro_svn\opensprints\FW\user\user.c	104;"	e	line:104	file:
-kUSART_RX_BUF_SIZE::64	E:\iro_svn\opensprints\FW\user\user.c	97;"	d	line:97	file:
-kUSART_TX_BUF_SIZE::64	E:\iro_svn\opensprints\FW\user\user.c	96;"	d	line:96	file:
-kWAITING	E:\iro_svn\opensprints\FW\user\user.c	86;"	e	line:86	file:
-lastRaceTime	E:\iro_svn\opensprints\FW\user\user.c	2554;"	v	line:2554
-lastSensor0Time	E:\iro_svn\opensprints\FW\user\user.c	2555;"	v	line:2555
-lastSensor1Time	E:\iro_svn\opensprints\FW\user\user.c	2556;"	v	line:2556
-last_fifo_size	E:\iro_svn\opensprints\FW\user\user.c	659;"	l	line:659	file:
-len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	298;"	l	line:298
-len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	381;"	l	line:381
-line_coding	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	54;"	v	line:54
-location	E:\iro_svn\opensprints\FW\user\user.c	1469;"	l	line:1469
-location	E:\iro_svn\opensprints\FW\user\user.c	1497;"	l	line:1497
-low_ISR	E:\iro_svn\opensprints\FW\user\user.c	269;"	f	line:269	signature:(void)
-low_ISR	E:\iro_svn\opensprints\FW\user\user.h	43;"	p	line:43	signature:(void)
-mCDCGetRxLength::cdc_rx_len	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	192;"	d	line:192
-mCDCUsartRxIsBusy::CDC_BULK_BD_OUT.Stat.UOWN	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	154;"	d	line:154
-mCDCUsartTxIsBusy::CDC_BULK_BD_IN.Stat.UOWN	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	173;"	d	line:173
-mInitAllLEDs::LATC&=0xFC;TRISC&=0xFC;	E:\iro_svn\opensprints\FW\io_cfg.h	65;"	d	line:65
-mInitSwitch::TRISCbits.TRISC2=1;	E:\iro_svn\opensprints\FW\io_cfg.h	80;"	d	line:80
-mLED_1::LATCbits.LATC0	E:\iro_svn\opensprints\FW\io_cfg.h	67;"	d	line:67
-mLED_1_Off::mLED_1=0;	E:\iro_svn\opensprints\FW\io_cfg.h	73;"	d	line:73
-mLED_1_On::mLED_1=1;	E:\iro_svn\opensprints\FW\io_cfg.h	70;"	d	line:70
-mLED_1_Toggle::mLED_1=!mLED_1;	E:\iro_svn\opensprints\FW\io_cfg.h	76;"	d	line:76
-mLED_2::LATCbits.LATC1	E:\iro_svn\opensprints\FW\io_cfg.h	68;"	d	line:68
-mLED_2_Off::mLED_2=0;	E:\iro_svn\opensprints\FW\io_cfg.h	74;"	d	line:74
-mLED_2_On::mLED_2=1;	E:\iro_svn\opensprints\FW\io_cfg.h	71;"	d	line:71
-mLED_2_Toggle::mLED_2=!mLED_2;	E:\iro_svn\opensprints\FW\io_cfg.h	77;"	d	line:77
-mLED_Both_Off::{mLED_1_Off;mLED_2_Off;}	E:\iro_svn\opensprints\FW\io_cfg.h	83;"	d	line:83
-mLED_Both_On::{mLED_1_On;mLED_2_On;}	E:\iro_svn\opensprints\FW\io_cfg.h	84;"	d	line:84
-mLED_Only_1_On::{mLED_1_On;mLED_2_Off;}	E:\iro_svn\opensprints\FW\io_cfg.h	85;"	d	line:85
-mLED_Only_2_On::{mLED_1_Off;mLED_2_On;}	E:\iro_svn\opensprints\FW\io_cfg.h	86;"	d	line:86
-mUSBUSARTIsDTR::control_signal_bitmap.DTE_PRES	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	115;"	d	line:115
-mUSBUSARTIsRTS::control_signal_bitmap.CARRIER_	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	116;"	d	line:116
-mUSBUSARTIsTxTrfReady::(cdc_trf_state==CDC_TX_READY)	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	135;"	d	line:135
-mUSBUSARTTxRam::(pData,len)\	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	221;"	d	line:221
-mUSBUSARTTxRom::(pData,len)\	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	256;"	d	line:256
-mode	E:\iro_svn\opensprints\FW\user\user.c	1188;"	l	line:1188
-momentRaceTimeCentisecs	E:\iro_svn\opensprints\FW\user\user.c	2557;"	v	line:2557
-momentRaceTimeCentisecs	E:\iro_svn\opensprints\FW\user\user.c	2565;"	l	line:2565
-momentRaceTimeMins	E:\iro_svn\opensprints\FW\user\user.c	2558;"	v	line:2558
-momentRaceTimeMins	E:\iro_svn\opensprints\FW\user\user.c	2566;"	l	line:2566
-neg	E:\iro_svn\opensprints\FW\user\user.c	2278;"	l	line:2278
-new_port_A_value	E:\iro_svn\opensprints\FW\user\user.c	1968;"	l	line:1968
-new_port_A_value	E:\iro_svn\opensprints\FW\user\user.c	2108;"	l	line:2108
-pCDCDst	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	50;"	v	line:50
-pCDCSrc	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	49;"	v	line:49
-pDst	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	48;"	v	line:48
-pFunc	E:\iro_svn\opensprints\FW\system\typedefs.h	123;"	t	line:123
-pSrc	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	47;"	v	line:47
-paramater_value	E:\iro_svn\opensprints\FW\user\user.c	1152;"	l	line:1152
-parameter_number	E:\iro_svn\opensprints\FW\user\user.c	1151;"	l	line:1151
-parse_A_packet	E:\iro_svn\opensprints\FW\user\user.c	1443;"	f	line:1443	signature:(void)
-parse_A_packet	E:\iro_svn\opensprints\FW\user\user.c	235;"	p	line:235	file:	signature:(void)
-parse_BC_packet	E:\iro_svn\opensprints\FW\user\user.c	1921;"	f	line:1921	signature:(void)
-parse_BC_packet	E:\iro_svn\opensprints\FW\user\user.c	246;"	p	line:246	file:	signature:(void)
-parse_BO_packet	E:\iro_svn\opensprints\FW\user\user.c	1965;"	f	line:1965	signature:(void)
-parse_BO_packet	E:\iro_svn\opensprints\FW\user\user.c	245;"	p	line:245	file:	signature:(void)
-parse_BS_packet	E:\iro_svn\opensprints\FW\user\user.c	2105;"	f	line:2105	signature:(void)
-parse_BS_packet	E:\iro_svn\opensprints\FW\user\user.c	247;"	p	line:247	file:	signature:(void)
-parse_CI_packet	E:\iro_svn\opensprints\FW\user\user.c	2238;"	f	line:2238	signature:(void)
-parse_CI_packet	E:\iro_svn\opensprints\FW\user\user.c	254;"	p	line:254	file:	signature:(void)
-parse_CS_packet	E:\iro_svn\opensprints\FW\user\user.c	2217;"	f	line:2217	signature:(void)
-parse_CS_packet	E:\iro_svn\opensprints\FW\user\user.c	251;"	p	line:251	file:	signature:(void)
-parse_CU_packet	E:\iro_svn\opensprints\FW\user\user.c	1149;"	f	line:1149	signature:(void)
-parse_CU_packet	E:\iro_svn\opensprints\FW\user\user.c	248;"	p	line:248	file:	signature:(void)
-parse_CX_packet	E:\iro_svn\opensprints\FW\user\user.c	1833;"	f	line:1833	signature:(void)
-parse_CX_packet	E:\iro_svn\opensprints\FW\user\user.c	231;"	p	line:231	file:	signature:(void)
-parse_C_packet	E:\iro_svn\opensprints\FW\user\user.c	1280;"	f	line:1280	signature:(void)
-parse_C_packet	E:\iro_svn\opensprints\FW\user\user.c	230;"	p	line:230	file:	signature:(void)
-parse_GO_packet	E:\iro_svn\opensprints\FW\user\user.c	2244;"	f	line:2244	signature:(void)
-parse_GO_packet	E:\iro_svn\opensprints\FW\user\user.c	256;"	p	line:256	file:	signature:(void)
-parse_HW_packet	E:\iro_svn\opensprints\FW\user\user.c	2259;"	f	line:2259	signature:(void)
-parse_HW_packet	E:\iro_svn\opensprints\FW\user\user.c	258;"	p	line:258	file:	signature:(void)
-parse_I_packet	E:\iro_svn\opensprints\FW\user\user.c	1404;"	f	line:1404	signature:(void)
-parse_I_packet	E:\iro_svn\opensprints\FW\user\user.c	233;"	p	line:233	file:	signature:(void)
-parse_MR_packet	E:\iro_svn\opensprints\FW\user\user.c	1495;"	f	line:1495	signature:(void)
-parse_MR_packet	E:\iro_svn\opensprints\FW\user\user.c	240;"	p	line:240	file:	signature:(void)
-parse_MW_packet	E:\iro_svn\opensprints\FW\user\user.c	1467;"	f	line:1467	signature:(void)
-parse_MW_packet	E:\iro_svn\opensprints\FW\user\user.c	241;"	p	line:241	file:	signature:(void)
-parse_O_packet	E:\iro_svn\opensprints\FW\user\user.c	1361;"	f	line:1361	signature:(void)
-parse_O_packet	E:\iro_svn\opensprints\FW\user\user.c	232;"	p	line:232	file:	signature:(void)
-parse_PD_packet	E:\iro_svn\opensprints\FW\user\user.c	1526;"	f	line:1526	signature:(void)
-parse_PD_packet	E:\iro_svn\opensprints\FW\user\user.c	239;"	p	line:239	file:	signature:(void)
-parse_PI_packet	E:\iro_svn\opensprints\FW\user\user.c	1626;"	f	line:1626	signature:(void)
-parse_PI_packet	E:\iro_svn\opensprints\FW\user\user.c	237;"	p	line:237	file:	signature:(void)
-parse_PO_packet	E:\iro_svn\opensprints\FW\user\user.c	1689;"	f	line:1689	signature:(void)
-parse_PO_packet	E:\iro_svn\opensprints\FW\user\user.c	238;"	p	line:238	file:	signature:(void)
-parse_RC_packet	E:\iro_svn\opensprints\FW\user\user.c	1852;"	f	line:1852	signature:(void)
-parse_RC_packet	E:\iro_svn\opensprints\FW\user\user.c	244;"	p	line:244	file:	signature:(void)
-parse_RI_packet	E:\iro_svn\opensprints\FW\user\user.c	2231;"	f	line:2231	signature:(void)
-parse_RI_packet	E:\iro_svn\opensprints\FW\user\user.c	253;"	p	line:253	file:	signature:(void)
-parse_RS_packet	E:\iro_svn\opensprints\FW\user\user.c	2210;"	f	line:2210	signature:(void)
-parse_RS_packet	E:\iro_svn\opensprints\FW\user\user.c	250;"	p	line:250	file:	signature:(void)
-parse_RX_packet	E:\iro_svn\opensprints\FW\user\user.c	1826;"	f	line:1826	signature:(void)
-parse_RX_packet	E:\iro_svn\opensprints\FW\user\user.c	243;"	p	line:243	file:	signature:(void)
-parse_R_packet	E:\iro_svn\opensprints\FW\user\user.c	1139;"	f	line:1139	signature:(void)
-parse_R_packet	E:\iro_svn\opensprints\FW\user\user.c	229;"	p	line:229	file:	signature:(void)
-parse_SI_packet	E:\iro_svn\opensprints\FW\user\user.c	2224;"	f	line:2224	signature:(void)
-parse_SI_packet	E:\iro_svn\opensprints\FW\user\user.c	252;"	p	line:252	file:	signature:(void)
-parse_SS_packet	E:\iro_svn\opensprints\FW\user\user.c	2203;"	f	line:2203	signature:(void)
-parse_SS_packet	E:\iro_svn\opensprints\FW\user\user.c	249;"	p	line:249	file:	signature:(void)
-parse_ST_packet	E:\iro_svn\opensprints\FW\user\user.c	2253;"	f	line:2253	signature:(void)
-parse_ST_packet	E:\iro_svn\opensprints\FW\user\user.c	257;"	p	line:257	file:	signature:(void)
-parse_TX_packet	E:\iro_svn\opensprints\FW\user\user.c	1793;"	f	line:1793	signature:(void)
-parse_TX_packet	E:\iro_svn\opensprints\FW\user\user.c	242;"	p	line:242	file:	signature:(void)
-parse_T_packet	E:\iro_svn\opensprints\FW\user\user.c	1185;"	f	line:1185	signature:(void)
-parse_T_packet	E:\iro_svn\opensprints\FW\user\user.c	236;"	p	line:236	file:	signature:(void)
-parse_V_packet	E:\iro_svn\opensprints\FW\user\user.c	1426;"	f	line:1426	signature:(void)
-parse_V_packet	E:\iro_svn\opensprints\FW\user\user.c	234;"	p	line:234	file:	signature:(void)
-parse_packet	E:\iro_svn\opensprints\FW\user\user.c	226;"	p	line:226	file:	signature:(void)
-parse_packet	E:\iro_svn\opensprints\FW\user\user.c	885;"	f	line:885	signature:(void)
-pin	E:\iro_svn\opensprints\FW\user\user.c	1529;"	l	line:1529
-pin	E:\iro_svn\opensprints\FW\user\user.c	1629;"	l	line:1629
-pin	E:\iro_svn\opensprints\FW\user\user.c	1692;"	l	line:1692
-pin	E:\iro_svn\opensprints\FW\user\user.c	1855;"	l	line:1855
-port	E:\iro_svn\opensprints\FW\user\user.c	1528;"	l	line:1528
-port	E:\iro_svn\opensprints\FW\user\user.c	1628;"	l	line:1628
-port	E:\iro_svn\opensprints\FW\user\user.c	1691;"	l	line:1691
-port	E:\iro_svn\opensprints\FW\user\user.c	1854;"	l	line:1854
-prevValueSensor0	E:\iro_svn\opensprints\FW\user\user.c	2546;"	v	line:2546
-prevValueSensor1	E:\iro_svn\opensprints\FW\user\user.c	2547;"	v	line:2547
-print_ack	E:\iro_svn\opensprints\FW\user\user.c	1130;"	f	line:1130	signature:(void)
-print_ack	E:\iro_svn\opensprints\FW\user\user.c	261;"	p	line:261	file:	signature:(void)
-print_status	E:\iro_svn\opensprints\FW\user\user.c	2438;"	f	line:2438	signature:(void)
-putrsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	379;"	f	line:379	signature:(const rom unsigned char *data)
-putrsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	362;"	p	line:362	signature:(unsigned const rom char *data)
-putsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.c	296;"	f	line:296	signature:(unsigned char *data)
-putsUSBUSART	E:\iro_svn\opensprints\FW\system\usb\class\cdc\cdc.h	363;"	p	line:363	signature:(unsigned char *data)
-raceTestMode	E:\iro_svn\opensprints\FW\user\user.c	218;"	v	line:218
-raceTimeCentisecs	E:\iro_svn\opensprints\FW\user\user.c	220;"	v	line:220
-raceTimeMins	E:\iro_svn\opensprints\FW\user\user.c	219;"	v	line:219
-sd000	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	247;"	v	line:247
-sd001	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	250;"	v	line:250
-sd002	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	255;"	v	line:255
-self_power::1	E:\iro_svn\opensprints\FW\io_cfg.h	60;"	d	line:60
-sensor0Status	E:\iro_svn\opensprints\FW\user\user.c	2552;"	v	line:2552
-sensor1Status	E:\iro_svn\opensprints\FW\user\user.c	2553;"	v	line:2553
-st_LFCR	E:\iro_svn\opensprints\FW\user\user.c	166;"	v	line:166
-st_OK	E:\iro_svn\opensprints\FW\user\user.c	165;"	v	line:165
-st_version	E:\iro_svn\opensprints\FW\user\user.c	167;"	v	line:167
-string	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	247;"	m	line:247	file:
-string	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	250;"	m	line:250	file:
-string	E:\iro_svn\opensprints\FW\autofiles\usbdsc.c	255;"	m	line:255	file:
-tExtractType	E:\iro_svn\opensprints\FW\user\user.c	107;"	t	line:107	file:
-tRC_state	E:\iro_svn\opensprints\FW\user\user.c	89;"	t	line:89	file:
-temp	E:\iro_svn\opensprints\FW\user\user.c	845;"	l	line:845
-time_between_updates	E:\iro_svn\opensprints\FW\user\user.c	137;"	v	line:137
-tmp	E:\iro_svn\opensprints\FW\user\user.c	1969;"	l	line:1969
-tmp	E:\iro_svn\opensprints\FW\user\user.c	2109;"	l	line:2109
-tst_char	E:\iro_svn\opensprints\FW\user\user.c	660;"	l	line:660
-usb_active_cfg	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	159;"	v	line:159
-usb_alt_intf	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	160;"	v	line:160
-usb_bus_sense::1	E:\iro_svn\opensprints\FW\io_cfg.h	59;"	d	line:59
-usb_device_state	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	157;"	v	line:157
-usb_stat	E:\iro_svn\opensprints\FW\system\usb\usbmmap.c	158;"	v	line:158
-v	E:\iro_svn\opensprints\FW\system\typedefs.h	115;"	m	line:115	struct:_DWORD::<anonymous>
-v	E:\iro_svn\opensprints\FW\system\typedefs.h	80;"	m	line:80	struct:_WORD::<anonymous>
-val	E:\iro_svn\opensprints\FW\user\user.c	2415;"	l	line:2415
-value	E:\iro_svn\opensprints\FW\user\user.c	1187;"	l	line:1187
-value	E:\iro_svn\opensprints\FW\user\user.c	1470;"	l	line:1470
-value	E:\iro_svn\opensprints\FW\user\user.c	1498;"	l	line:1498
-value	E:\iro_svn\opensprints\FW\user\user.c	1630;"	l	line:1630
-value	E:\iro_svn\opensprints\FW\user\user.c	1693;"	l	line:1693
-value	E:\iro_svn\opensprints\FW\user\user.c	1856;"	l	line:1856
-wCount	E:\iro_svn\opensprints\FW\system\usb\usbctrltrf\usbctrltrf.c	49;"	v	line:49
-wRam	E:\iro_svn\opensprints\FW\system\typedefs.h	139;"	m	line:139	union:_POINTER
-wRom	E:\iro_svn\opensprints\FW\system\typedefs.h	143;"	m	line:143	union:_POINTER
-wait_count	E:\iro_svn\opensprints\FW\user\user.c	1970;"	l	line:1970
-wait_count	E:\iro_svn\opensprints\FW\user\user.c	2110;"	l	line:2110
-word	E:\iro_svn\opensprints\FW\system\typedefs.h	41;"	t	line:41
-word0	E:\iro_svn\opensprints\FW\system\typedefs.h	98;"	m	line:98	struct:_DWORD::<anonymous>
-word1	E:\iro_svn\opensprints\FW\system\typedefs.h	99;"	m	line:99	struct:_DWORD::<anonymous>
+_byte	O:\system\typedefs.h	46;"	m	line:46	union:_BYTE
+_byte	O:\system\usb\class\cdc\cdc.h	273;"	m	line:273	struct:_LINE_CODING::<anonymous>
+_byte	O:\system\usb\class\cdc\cdc.h	286;"	m	line:286	union:_CONTROL_SIGNAL_BITMAP
+_byte	O:\system\usb\usbmmap.h	72;"	m	line:72	union:_USB_DEVICE_STATUS
+_byte	O:\system\usb\usbmmap.h	82;"	m	line:82	union:_BD_STAT
+_dword	O:\system\typedefs.h	88;"	m	line:88	union:_DWORD
+_user_putc	O:\user\user.c	256;"	p	line:256	file:	signature:(char c)
+_user_putc	O:\user\user.c	645;"	f	line:645	signature:(char c)
+_word	O:\system\typedefs.h	133;"	m	line:133	union:_POINTER
+_word	O:\system\typedefs.h	62;"	m	line:62	union:_WORD
+acc	O:\user\user.c	876;"	l	line:876
+activeRollers	O:\user\user.c	261;"	v	line:261
+advance_RX_buf_out::\	O:\user\user.c	135;"	d	line:135	file:
+b0	O:\system\typedefs.h	49;"	m	line:49	struct:_BYTE::<anonymous>
+b1	O:\system\typedefs.h	50;"	m	line:50	struct:_BYTE::<anonymous>
+b2	O:\system\typedefs.h	51;"	m	line:51	struct:_BYTE::<anonymous>
+b3	O:\system\typedefs.h	52;"	m	line:52	struct:_BYTE::<anonymous>
+b4	O:\system\typedefs.h	53;"	m	line:53	struct:_BYTE::<anonymous>
+b5	O:\system\typedefs.h	54;"	m	line:54	struct:_BYTE::<anonymous>
+b6	O:\system\typedefs.h	55;"	m	line:55	struct:_BYTE::<anonymous>
+b7	O:\system\typedefs.h	56;"	m	line:56	struct:_BYTE::<anonymous>
+bCharFormat	O:\system\usb\class\cdc\cdc.h	278;"	m	line:278	struct:_LINE_CODING::<anonymous>
+bDataBits	O:\system\usb\class\cdc\cdc.h	280;"	m	line:280	struct:_LINE_CODING::<anonymous>
+bDataInterface	O:\system\usb\class\cdc\cdc.h	342;"	m	line:342	struct:_USB_CDC_CALL_MGT_FN_DSC
+bDscSubType	O:\system\usb\class\cdc\cdc.h	312;"	m	line:312	struct:_USB_CDC_HEADER_FN_DSC
+bDscSubType	O:\system\usb\class\cdc\cdc.h	321;"	m	line:321	struct:_USB_CDC_ACM_FN_DSC
+bDscSubType	O:\system\usb\class\cdc\cdc.h	330;"	m	line:330	struct:_USB_CDC_UNION_FN_DSC
+bDscSubType	O:\system\usb\class\cdc\cdc.h	340;"	m	line:340	struct:_USB_CDC_CALL_MGT_FN_DSC
+bDscType	O:\autofiles\usbdsc.c	247;"	m	line:247	file:
+bDscType	O:\autofiles\usbdsc.c	250;"	m	line:250	file:
+bDscType	O:\autofiles\usbdsc.c	255;"	m	line:255	file:
+bDscType	O:\system\usb\class\cdc\cdc.h	311;"	m	line:311	struct:_USB_CDC_HEADER_FN_DSC
+bDscType	O:\system\usb\class\cdc\cdc.h	320;"	m	line:320	struct:_USB_CDC_ACM_FN_DSC
+bDscType	O:\system\usb\class\cdc\cdc.h	329;"	m	line:329	struct:_USB_CDC_UNION_FN_DSC
+bDscType	O:\system\usb\class\cdc\cdc.h	339;"	m	line:339	struct:_USB_CDC_CALL_MGT_FN_DSC
+bFNLength	O:\system\usb\class\cdc\cdc.h	310;"	m	line:310	struct:_USB_CDC_HEADER_FN_DSC
+bFNLength	O:\system\usb\class\cdc\cdc.h	319;"	m	line:319	struct:_USB_CDC_ACM_FN_DSC
+bFNLength	O:\system\usb\class\cdc\cdc.h	328;"	m	line:328	struct:_USB_CDC_UNION_FN_DSC
+bFNLength	O:\system\usb\class\cdc\cdc.h	338;"	m	line:338	struct:_USB_CDC_CALL_MGT_FN_DSC
+bHigh	O:\system\typedefs.h	130;"	m	line:130	struct:_POINTER::<anonymous>
+bLength	O:\autofiles\usbdsc.c	247;"	m	line:247	file:
+bLength	O:\autofiles\usbdsc.c	250;"	m	line:250	file:
+bLength	O:\autofiles\usbdsc.c	255;"	m	line:255	file:
+bLow	O:\system\typedefs.h	129;"	m	line:129	struct:_POINTER::<anonymous>
+bMasterIntf	O:\system\usb\class\cdc\cdc.h	331;"	m	line:331	struct:_USB_CDC_UNION_FN_DSC
+bParityType	O:\system\usb\class\cdc\cdc.h	279;"	m	line:279	struct:_LINE_CODING::<anonymous>
+bRam	O:\system\typedefs.h	137;"	m	line:137	union:_POINTER
+bRom	O:\system\typedefs.h	142;"	m	line:142	union:_POINTER
+bSaveIntf0	O:\system\usb\class\cdc\cdc.h	332;"	m	line:332	struct:_USB_CDC_UNION_FN_DSC
+bcdCDC	O:\system\usb\class\cdc\cdc.h	313;"	m	line:313	struct:_USB_CDC_HEADER_FN_DSC
+bitclr::(var,bitno)((var)&=~(1<<(bitno	O:\user\user.c	102;"	d	line:102	file:
+bitset::(var,bitno)((var)|=(1<<(bitno)	O:\user\user.c	101;"	d	line:101	file:
+bittst::(var,bitno)(var&(1<<(bitno)))	O:\user\user.c	103;"	d	line:103	file:
+bmCapabilities	O:\system\usb\class\cdc\cdc.h	322;"	m	line:322	struct:_USB_CDC_ACM_FN_DSC
+bmCapabilities	O:\system\usb\class\cdc\cdc.h	341;"	m	line:341	struct:_USB_CDC_CALL_MGT_FN_DSC
+byte	O:\system\typedefs.h	40;"	t	line:40
+byte0	O:\system\typedefs.h	65;"	m	line:65	struct:_WORD::<anonymous>
+byte0	O:\system\typedefs.h	91;"	m	line:91	struct:_DWORD::<anonymous>
+byte1	O:\system\typedefs.h	66;"	m	line:66	struct:_WORD::<anonymous>
+byte1	O:\system\typedefs.h	92;"	m	line:92	struct:_DWORD::<anonymous>
+byte2	O:\system\typedefs.h	93;"	m	line:93	struct:_DWORD::<anonymous>
+byte3	O:\system\typedefs.h	94;"	m	line:94	struct:_DWORD::<anonymous>
+byte_to_read	O:\system\usb\usbctrltrf\usbctrltrf.c	332;"	l	line:332
+byte_to_send	O:\system\usb\class\cdc\cdc.c	458;"	l	line:458
+byte_to_send	O:\system\usb\usbctrltrf\usbctrltrf.c	262;"	l	line:262
+cd01	O:\autofiles\usbdsc.h	55;"	v	line:55
+cdc_acm_fn_i01a00	O:\autofiles\usbdsc.h	58;"	v	line:58
+cdc_call_mgt_fn_i01a00	O:\autofiles\usbdsc.h	60;"	v	line:60
+cdc_data_rx	O:\system\usb\usbmmap.c	279;"	v	line:279
+cdc_data_tx	O:\system\usb\usbmmap.c	280;"	v	line:280
+cdc_header_fn_i01a00	O:\autofiles\usbdsc.h	57;"	v	line:57
+cdc_mem_type	O:\system\usb\class\cdc\cdc.c	52;"	v	line:52
+cdc_notice	O:\system\usb\usbmmap.c	278;"	v	line:278
+cdc_rx_len	O:\system\usb\class\cdc\cdc.c	46;"	v	line:46
+cdc_trf_state	O:\system\usb\class\cdc\cdc.c	48;"	v	line:48
+cdc_tx_len	O:\system\usb\class\cdc\cdc.c	51;"	v	line:51
+cdc_union_fn_i01a00	O:\autofiles\usbdsc.h	59;"	v	line:59
+check_and_send_TX_data	O:\user\user.c	254;"	p	line:254	file:	signature:(void)
+check_and_send_TX_data	O:\user\user.c	668;"	f	line:668	signature:(void)
+cmd1	O:\user\user.c	713;"	l	line:713
+cmd2	O:\user\user.c	714;"	l	line:714
+command	O:\user\user.c	712;"	l	line:712
+control_signal_bitmap	O:\system\usb\class\cdc\cdc.c	55;"	v	line:55
+ctrl_trf_mem	O:\system\usb\usbmmap.h	76;"	m	line:76	struct:_USB_DEVICE_STATUS::<anonymous>
+ctrl_trf_session_owner	O:\system\usb\usbctrltrf\usbctrltrf.c	45;"	v	line:45
+ctrl_trf_state	O:\system\usb\usbctrltrf\usbctrltrf.c	44;"	v	line:44
+currentSensorStates	O:\user\user.c	265;"	v	line:265
+delay_count	O:\system\usb\usbdrv\usbdrv.c	406;"	l	line:406	file:
+device_dsc	O:\autofiles\usbdsc.c	180;"	v	line:180
+digit_cnt	O:\user\user.c	1015;"	l	line:1015
+dummy_encapsulated_cmd_response	O:\system\usb\class\cdc\cdc.c	64;"	v	line:64
+dummy_length::0x08	O:\system\usb\class\cdc\cdc.c	63;"	d	line:63	file:
+dwDTERate	O:\system\usb\class\cdc\cdc.h	277;"	m	line:277	struct:_LINE_CODING::<anonymous>
+dword	O:\system\typedefs.h	42;"	t	line:42
+ep02i_i01a00	O:\autofiles\usbdsc.h	61;"	v	line:61
+ep03i_i02a00	O:\autofiles\usbdsc.h	64;"	v	line:64
+ep03o_i02a00	O:\autofiles\usbdsc.h	63;"	v	line:63
+ep0Bi	O:\system\usb\usbmmap.c	175;"	v	line:175
+ep0Bo	O:\system\usb\usbmmap.c	174;"	v	line:174
+ep10Bi	O:\system\usb\usbmmap.c	225;"	v	line:225
+ep10Bo	O:\system\usb\usbmmap.c	224;"	v	line:224
+ep11Bi	O:\system\usb\usbmmap.c	230;"	v	line:230
+ep11Bo	O:\system\usb\usbmmap.c	229;"	v	line:229
+ep12Bi	O:\system\usb\usbmmap.c	235;"	v	line:235
+ep12Bo	O:\system\usb\usbmmap.c	234;"	v	line:234
+ep13Bi	O:\system\usb\usbmmap.c	240;"	v	line:240
+ep13Bo	O:\system\usb\usbmmap.c	239;"	v	line:239
+ep14Bi	O:\system\usb\usbmmap.c	245;"	v	line:245
+ep14Bo	O:\system\usb\usbmmap.c	244;"	v	line:244
+ep15Bi	O:\system\usb\usbmmap.c	250;"	v	line:250
+ep15Bo	O:\system\usb\usbmmap.c	249;"	v	line:249
+ep1Bi	O:\system\usb\usbmmap.c	180;"	v	line:180
+ep1Bo	O:\system\usb\usbmmap.c	179;"	v	line:179
+ep2Bi	O:\system\usb\usbmmap.c	185;"	v	line:185
+ep2Bo	O:\system\usb\usbmmap.c	184;"	v	line:184
+ep3Bi	O:\system\usb\usbmmap.c	190;"	v	line:190
+ep3Bo	O:\system\usb\usbmmap.c	189;"	v	line:189
+ep4Bi	O:\system\usb\usbmmap.c	195;"	v	line:195
+ep4Bo	O:\system\usb\usbmmap.c	194;"	v	line:194
+ep5Bi	O:\system\usb\usbmmap.c	200;"	v	line:200
+ep5Bo	O:\system\usb\usbmmap.c	199;"	v	line:199
+ep6Bi	O:\system\usb\usbmmap.c	205;"	v	line:205
+ep6Bo	O:\system\usb\usbmmap.c	204;"	v	line:204
+ep7Bi	O:\system\usb\usbmmap.c	210;"	v	line:210
+ep7Bo	O:\system\usb\usbmmap.c	209;"	v	line:209
+ep8Bi	O:\system\usb\usbmmap.c	215;"	v	line:215
+ep8Bo	O:\system\usb\usbmmap.c	214;"	v	line:214
+ep9Bi	O:\system\usb\usbmmap.c	220;"	v	line:220
+ep9Bo	O:\system\usb\usbmmap.c	219;"	v	line:219
+error_byte	O:\user\user.c	177;"	v	line:177
+extract_digit	O:\user\user.c	1012;"	f	line:1012	signature:(signed short long * acc, unsigned char digits)
+extract_digit	O:\user\user.c	247;"	p	line:247	file:	signature:(signed short long * acc, unsigned char digits)
+extract_number	O:\user\user.c	246;"	p	line:246	file:	signature:(tExtractType type)
+extract_number	O:\user\user.c	874;"	f	line:874	signature:(tExtractType type)
+finishTick	O:\user\user.c	260;"	v	line:260
+g_BO_init	O:\user\user.c	217;"	v	line:217
+g_BO_strobe_delay	O:\user\user.c	221;"	v	line:221
+g_BO_strobe_mask	O:\user\user.c	218;"	v	line:218
+g_BO_wait_delay	O:\user\user.c	220;"	v	line:220
+g_BO_wait_mask	O:\user\user.c	219;"	v	line:219
+g_RC_next_ptr	O:\user\user.c	182;"	v	line:182
+g_RC_primed_ptr	O:\user\user.c	181;"	v	line:181
+g_RC_state	O:\user\user.c	198;"	v	line:198
+g_RC_timing_ptr	O:\user\user.c	183;"	v	line:183
+g_RC_value	O:\user\user.c	199;"	v	line:199
+g_RX_buf	O:\user\user.c	205;"	v	line:205
+g_RX_buf_in	O:\user\user.c	228;"	v	line:228
+g_RX_buf_out	O:\user\user.c	229;"	v	line:229
+g_TX_buf	O:\user\user.c	203;"	v	line:203
+g_TX_buf_in	O:\user\user.c	224;"	v	line:224
+g_TX_buf_out	O:\user\user.c	225;"	v	line:225
+g_USART_RX_buf	O:\user\user.c	208;"	v	line:208
+g_USART_RX_buf_in	O:\user\user.c	232;"	v	line:232
+g_USART_RX_buf_out	O:\user\user.c	233;"	v	line:233
+g_USART_TX_buf	O:\user\user.c	211;"	v	line:211
+g_USART_TX_buf_in	O:\user\user.c	236;"	v	line:236
+g_USART_TX_buf_out	O:\user\user.c	237;"	v	line:237
+g_ack_enable	O:\user\user.c	240;"	v	line:240
+getsUSBUSART	O:\system\usb\class\cdc\cdc.c	239;"	f	line:239	signature:(unsigned char *buffer, byte len)
+getsUSBUSART	O:\system\usb\class\cdc\cdc.h	361;"	p	line:361	signature:(unsigned char *buffer, byte len)
+got_full_packet	O:\user\user.c	484;"	l	line:484
+high_ISR	O:\user\user.c	310;"	f	line:310	signature:(void)
+high_ISR	O:\user\user.h	44;"	p	line:44	signature:(void)
+high_vector	O:\main.c	54;"	f	line:54	signature:(void)
+i	O:\system\usb\usbctrltrf\usbctrltrf.c	135;"	l	line:135
+i	O:\user\user.c	343;"	l	line:343
+i01a00	O:\autofiles\usbdsc.h	56;"	v	line:56
+i02a00	O:\autofiles\usbdsc.h	62;"	v	line:62
+in_cr	O:\user\user.c	481;"	l	line:481	file:
+isRacing	O:\user\user.c	270;"	v	line:270
+j	O:\user\user.c	343;"	l	line:343
+justBegun	O:\user\user.c	273;"	v	line:273
+kASCII_CHAR	O:\user\user.c	131;"	e	line:131	file:
+kCHAR	O:\user\user.c	127;"	e	line:127	file:
+kCR::0x0D	O:\user\user.c	147;"	d	line:147	file:
+kERROR_BYTE_EXTRA_CHARACTERS::7	O:\user\user.c	156;"	d	line:156	file:
+kERROR_BYTE_MISSING_PARAMETER::4	O:\user\user.c	153;"	d	line:153	file:
+kERROR_BYTE_PARAMETER_OUTSIDE_LIMIT::6	O:\user\user.c	155;"	d	line:155	file:
+kERROR_BYTE_PRINTED_ERROR::5	O:\user\user.c	154;"	d	line:154	file:
+kERROR_BYTE_RX_BUFFER_OVERRUN::3	O:\user\user.c	152;"	d	line:152	file:
+kERROR_BYTE_TX_BUF_OVERRUN::2	O:\user\user.c	151;"	d	line:151	file:
+kERROR_BYTE_UNKNOWN_COMMAND::8	O:\user\user.c	157;"	d	line:157	file:
+kINT	O:\user\user.c	129;"	e	line:129	file:
+kISR_FIFO_A_DEPTH::3	O:\user\user.c	144;"	d	line:144	file:
+kISR_FIFO_D_DEPTH::3	O:\user\user.c	145;"	d	line:145	file:
+kLF::0x0A	O:\user\user.c	148;"	d	line:148	file:
+kOFF	O:\user\user.c	111;"	e	line:111	file:
+kPR2_RELOAD::250	O:\user\user.c	146;"	d	line:146	file:
+kPRIMED	O:\user\user.c	113;"	e	line:113	file:
+kRC_DATA_SIZE::24	O:\user\user.c	117;"	d	line:117	file:
+kRX_BUF_SIZE::64	O:\user\user.c	120;"	d	line:120	file:
+kTIMING	O:\user\user.c	114;"	e	line:114	file:
+kTX_BUF_SIZE::64	O:\user\user.c	119;"	d	line:119	file:
+kUCASE_ASCII_CHAR	O:\user\user.c	132;"	e	line:132	file:
+kUCHAR	O:\user\user.c	128;"	e	line:128	file:
+kUINT	O:\user\user.c	130;"	e	line:130	file:
+kUSART_RX_BUF_SIZE::64	O:\user\user.c	123;"	d	line:123	file:
+kUSART_TX_BUF_SIZE::64	O:\user\user.c	122;"	d	line:122	file:
+kWAITING	O:\user\user.c	112;"	e	line:112	file:
+last_fifo_size	O:\user\user.c	482;"	l	line:482	file:
+len	O:\system\usb\class\cdc\cdc.c	298;"	l	line:298
+len	O:\system\usb\class\cdc\cdc.c	381;"	l	line:381
+line_coding	O:\system\usb\class\cdc\cdc.c	54;"	v	line:54
+low_ISR	O:\user\user.c	304;"	f	line:304	signature:(void)
+low_ISR	O:\user\user.h	43;"	p	line:43	signature:(void)
+mCDCGetRxLength::cdc_rx_len	O:\system\usb\class\cdc\cdc.h	192;"	d	line:192
+mCDCUsartRxIsBusy::CDC_BULK_BD_OUT.Stat.UOWN	O:\system\usb\class\cdc\cdc.h	154;"	d	line:154
+mCDCUsartTxIsBusy::CDC_BULK_BD_IN.Stat.UOWN	O:\system\usb\class\cdc\cdc.h	173;"	d	line:173
+mInitAllLEDs::LATC&=0xFC;TRISC&=0xFC;	O:\io_cfg.h	65;"	d	line:65
+mInitSwitch::TRISCbits.TRISC2=1;	O:\io_cfg.h	80;"	d	line:80
+mLED_1::LATCbits.LATC0	O:\io_cfg.h	67;"	d	line:67
+mLED_1_Off::mLED_1=0;	O:\io_cfg.h	73;"	d	line:73
+mLED_1_On::mLED_1=1;	O:\io_cfg.h	70;"	d	line:70
+mLED_1_Toggle::mLED_1=!mLED_1;	O:\io_cfg.h	76;"	d	line:76
+mLED_2::LATCbits.LATC1	O:\io_cfg.h	68;"	d	line:68
+mLED_2_Off::mLED_2=0;	O:\io_cfg.h	74;"	d	line:74
+mLED_2_On::mLED_2=1;	O:\io_cfg.h	71;"	d	line:71
+mLED_2_Toggle::mLED_2=!mLED_2;	O:\io_cfg.h	77;"	d	line:77
+mLED_Both_Off::{mLED_1_Off;mLED_2_Off;}	O:\io_cfg.h	83;"	d	line:83
+mLED_Both_On::{mLED_1_On;mLED_2_On;}	O:\io_cfg.h	84;"	d	line:84
+mLED_Only_1_On::{mLED_1_On;mLED_2_Off;}	O:\io_cfg.h	85;"	d	line:85
+mLED_Only_2_On::{mLED_1_Off;mLED_2_On;}	O:\io_cfg.h	86;"	d	line:86
+mUSBUSARTIsDTR::control_signal_bitmap.DTE_PRES	O:\system\usb\class\cdc\cdc.h	115;"	d	line:115
+mUSBUSARTIsRTS::control_signal_bitmap.CARRIER_	O:\system\usb\class\cdc\cdc.h	116;"	d	line:116
+mUSBUSARTIsTxTrfReady::(cdc_trf_state==CDC_TX_READY)	O:\system\usb\class\cdc\cdc.h	135;"	d	line:135
+mUSBUSARTTxRam::(pData,len)\	O:\system\usb\class\cdc\cdc.h	221;"	d	line:221
+mUSBUSARTTxRom::(pData,len)\	O:\system\usb\class\cdc\cdc.h	256;"	d	line:256
+neg	O:\user\user.c	877;"	l	line:877
+newTick	O:\user\user.c	272;"	v	line:272
+pCDCDst	O:\system\usb\class\cdc\cdc.c	50;"	v	line:50
+pCDCSrc	O:\system\usb\class\cdc\cdc.c	49;"	v	line:49
+pDst	O:\system\usb\usbctrltrf\usbctrltrf.c	48;"	v	line:48
+pFunc	O:\system\typedefs.h	123;"	t	line:123
+pSrc	O:\system\usb\usbctrltrf\usbctrltrf.c	47;"	v	line:47
+parse_GO_packet	O:\user\user.c	250;"	p	line:250	file:	signature:(void)
+parse_GO_packet	O:\user\user.c	824;"	f	line:824	signature:(void)
+parse_HW_packet	O:\user\user.c	252;"	p	line:252	file:	signature:(void)
+parse_HW_packet	O:\user\user.c	847;"	f	line:847	signature:(void)
+parse_ST_packet	O:\user\user.c	251;"	p	line:251	file:	signature:(void)
+parse_ST_packet	O:\user\user.c	840;"	f	line:840	signature:(void)
+parse_V_packet	O:\user\user.c	248;"	p	line:248	file:	signature:(void)
+parse_V_packet	O:\user\user.c	809;"	f	line:809	signature:(void)
+parse_packet	O:\user\user.c	245;"	p	line:245	file:	signature:(void)
+parse_packet	O:\user\user.c	710;"	f	line:710	signature:(void)
+prevSensorStates	O:\user\user.c	264;"	v	line:264
+print_ack	O:\user\user.c	255;"	p	line:255	file:	signature:(void)
+print_ack	O:\user\user.c	800;"	f	line:800	signature:(void)
+print_status	O:\user\user.c	1037;"	f	line:1037	signature:(void)
+putrsUSBUSART	O:\system\usb\class\cdc\cdc.c	379;"	f	line:379	signature:(const rom unsigned char *data)
+putrsUSBUSART	O:\system\usb\class\cdc\cdc.h	362;"	p	line:362	signature:(unsigned const rom char *data)
+putsUSBUSART	O:\system\usb\class\cdc\cdc.c	296;"	f	line:296	signature:(unsigned char *data)
+putsUSBUSART	O:\system\usb\class\cdc\cdc.h	363;"	p	line:363	signature:(unsigned char *data)
+raceTestMode	O:\user\user.c	271;"	v	line:271
+raceTime	O:\user\user.c	266;"	v	line:266
+refreshInterval	O:\user\user.c	262;"	v	line:262
+roller	O:\user\user.c	281;"	l	line:281
+roller	O:\user\user.c	312;"	l	line:312
+rollerMask	O:\user\user.c	327;"	l	line:327
+rollerTickTimes	O:\user\user.c	267;"	v	line:267
+rollerTicks	O:\user\user.c	268;"	v	line:268
+sd000	O:\autofiles\usbdsc.c	247;"	v	line:247
+sd001	O:\autofiles\usbdsc.c	250;"	v	line:250
+sd002	O:\autofiles\usbdsc.c	255;"	v	line:255
+self_power::1	O:\io_cfg.h	60;"	d	line:60
+st_LFCR	O:\user\user.c	192;"	v	line:192
+st_OK	O:\user\user.c	191;"	v	line:191
+st_version	O:\user\user.c	193;"	v	line:193
+startRace	O:\user\user.c	814;"	f	line:814	signature:(void)
+string	O:\autofiles\usbdsc.c	247;"	m	line:247	file:
+string	O:\autofiles\usbdsc.c	250;"	m	line:250	file:
+string	O:\autofiles\usbdsc.c	255;"	m	line:255	file:
+tExtractType	O:\user\user.c	133;"	t	line:133	file:
+tRC_state	O:\user\user.c	115;"	t	line:115	file:
+temp	O:\user\user.c	670;"	l	line:670
+time_between_updates	O:\user\user.c	163;"	v	line:163
+tst_char	O:\user\user.c	483;"	l	line:483
+usb_active_cfg	O:\system\usb\usbmmap.c	159;"	v	line:159
+usb_alt_intf	O:\system\usb\usbmmap.c	160;"	v	line:160
+usb_bus_sense::1	O:\io_cfg.h	59;"	d	line:59
+usb_device_state	O:\system\usb\usbmmap.c	157;"	v	line:157
+usb_stat	O:\system\usb\usbmmap.c	158;"	v	line:158
+v	O:\system\typedefs.h	115;"	m	line:115	struct:_DWORD::<anonymous>
+v	O:\system\typedefs.h	80;"	m	line:80	struct:_WORD::<anonymous>
+val	O:\user\user.c	1014;"	l	line:1014
+wCount	O:\system\usb\usbctrltrf\usbctrltrf.c	49;"	v	line:49
+wRam	O:\system\typedefs.h	139;"	m	line:139	union:_POINTER
+wRom	O:\system\typedefs.h	143;"	m	line:143	union:_POINTER
+word	O:\system\typedefs.h	41;"	t	line:41
+word0	O:\system\typedefs.h	98;"	m	line:98	struct:_DWORD::<anonymous>
+word1	O:\system\typedefs.h	99;"	m	line:99	struct:_DWORD::<anonymous>
