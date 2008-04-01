@@ -276,31 +276,23 @@ BOOL justBegun = TRUE;
 /** Start OpenSprints FW code ************************************************/
 void SendUpdateToPc (void)
 {
-	printf("time: %i:%02i.%02i%01i\n",momentRaceTimeMins,momentRaceTimeSecs,momentRaceTimeCentisecs,momentRaceTime);
-	for(int roller; roller < NUM_ROLLERS; roller++)
+	printf("time: %i\n",raceTime);
+	for(char roller; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
+	// Only print out the tick times and number of ticks for the active rollers
 	{
-		printf("%i:\n  last_tick_time: %i:%02i.%02i%01i\n",i,);
+		if(raceTestMode)
+		{
+			printf("%i:\n  last_tick_time: %i\n",roller,raceTime,raceTime/refreshInterval);
+		}
+		else
+		{
+			printf("%i:\n  last_tick_time: %i\n",roller,rollerTickTimes[roller],rollerTicks[roller]);
+		}
 	}
 	printf("eom.\n");
 }
 
-void HallEffSensors(void)
-{
-	if (is_racing)
-	{
-		// check the race stopwatch
-		momentRaceTimeMins = raceTimeMins;
-		momentRaceTimeSecs = raceTimeSecs;
-		momentRaceTimeCentisecs = raceTimeCentisecs;
-		momentRaceTime = raceTime;
-
-		if (justBegun)
-		{
-			for (int roller=0;roller<NUM_ROLLERS;roller++)
-			{
-				// initialize the pins
-				bitset (DDRA, roller);  		// (move this to _init part of code?) set Port A Pin i as input
-				// read the pins
+			// read the pins
 				currentSensorValues = bittst (PORTA, roller);	// read Port A Pin i state
 	
 				justBegun=0;
@@ -365,7 +357,7 @@ void high_ISR(void)
 			{
 				unsigned char rollerMask;
 				rollerMask = (1<<roller);
-				if(rollerMask & active_rollers & (currentSensorValues^prevSensorValues) & currentSensorValues)
+				if(rollerMask & activeRollers & (currentSensorValues^prevSensorValues) & currentSensorValues)
 				// Check each active roller for a change from 0 to 1
 				{
 					// If so, increase the tick count for that roller and save the time
@@ -850,24 +842,26 @@ void parse_V_packet(void)
 	printf ((rom char *)st_version);
 }
 
-void start_race (void)
-{
-	is_racing = TRUE;			// make it possible to start monitoring sensors
-	raceTimeMillisecs=0;			// restart the stopwatch
+void startRace (void)
+{			
+	DDRB = 0xff;			// initialize the pins
+	
+	isRacing = TRUE;		// make it possible to start monitoring sensors
+	raceTimeMillisecs=0;		// restart the stopwatch
 	raceTimeCentisecs=0;
 	raceTimeMins=0;
-	T2CONbits.TMR2ON=1;			// turn on the timer
-	ISR_D_RepeatRate = 1;			// every 10ms advance the timer
+	T2CONbits.TMR2ON=1;		// turn on the timer
+	ISR_D_RepeatRate = 1;		// every 10ms advance the timer
 }
 
-void parse_GO_packet (void)			// Start a race
+void parse_GO_packet (void)		// Start a race
 {
 	print_ack();
-	start_race();
+	startRace();
 	// Extract values of each argument.
-	finish_tick = extract_number (kUCHAR);
-	active_rollers = extract_number (kUCHAR);
-	refresh_rate = extract_number (kUCHAR);
+	//finish_tick = extract_number (kUCHAR);
+	activeRollers = extract_number (kUCHAR);
+	refreshRate = extract_number (kUCHAR);
 	
 	// Bail if we got a conversion error
 	if (error_byte)
@@ -879,7 +873,7 @@ void parse_GO_packet (void)			// Start a race
 void parse_ST_packet (void)			// Stop the race.
 {
 	print_ack();
-	is_racing = FALSE;			// stop monitoring sensors
+	isRacing = FALSE;			// stop monitoring sensors
 	raceTestMode = FALSE;
 }	
 
@@ -887,12 +881,12 @@ void parse_HW_packet (void)			// Initiate hardware test mode.
 {
 	print_ack();
 	raceTestMode = TRUE;
-	start_race();
+	startRace();
 
 	// Extract values of each argument.
-	finish_tick = extract_number (kUCHAR);
-	active_rollers = extract_number (kUCHAR);
-	refresh_rate = extract_number (kUCHAR);
+	//finish_tick = extract_number (kUCHAR);
+	activeRollers = extract_number (kUCHAR);
+	refreshRate = extract_number (kUCHAR);
 	
 	// Bail if we got a conversion error
 	if (error_byte)
