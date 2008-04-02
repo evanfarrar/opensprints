@@ -260,6 +260,7 @@ int _user_putc (char c);	// Our UBS based stream character printer
 unsigned int finishTick;		// this value determines the length of the race in roller rotations
 unsigned char activeRollers;		// 8 flags: Are the rollers active?
 unsigned int refreshInterval = 66;	// default value is 15 frames per second
+unsigned int refreshIntervalTicker;
 
 unsigned char prevSensorStates;		// 8 flags: Was the hall effect sensor engaged?
 unsigned char currentSensorStates;	// 8 flags: Is the hall effect sensor engaged?
@@ -270,7 +271,8 @@ unsigned int rollerTicks[NUM_ROLLERS];		// number of revolutions of each roller
 BOOL isRacing = FALSE;
 BOOL raceTestMode = FALSE;
 BOOL newTick = FALSE;
-BOOL justBegun = TRUE;
+BOOL readyToSend = FALSE;
+
 
 /** D E C L A R A T I O N S **************************************************/
 
@@ -280,22 +282,22 @@ void SendUpdateToPc (void)
 {
 	char roller;
 
-	printf((rom char *)"time: %i\n",raceTime);
+	printf((rom char *)"time: %i\r\n",raceTime);
 
 	// Only print out the tick times and number of ticks for the active rollers
 	for (roller=0; roller < NUM_ROLLERS && activeRollers&(1<<roller); roller++)
 	{
 		if(raceTestMode)
 		{
-			printf((rom char *)"%i:\n  last_tick_time: %i\n",roller,raceTime,raceTime/refreshInterval);
+			printf((rom char *)"%i:\r\n  last_tick_time: %i\r\n",roller,raceTime,raceTime/refreshInterval);
 		}
 		else
 		{
-			printf((rom char *)"%i:\n  last_tick_time: %i\n",roller,rollerTickTimes[roller],rollerTicks[roller]);
+			printf((rom char *)"%i:\r\n  last_tick_time: %i\r\n",roller,rollerTickTimes[roller],rollerTicks[roller]);
 		}
 	}
-	printf((rom char *)"eom.\n");
-
+	printf((rom char *)"eom.\r\n");
+	readyToSend = FALSE;		// Reset this flag
 }
 
 #pragma code
@@ -303,22 +305,20 @@ void SendUpdateToPc (void)
 #pragma interruptlow low_ISR
 void low_ISR(void)
 {	
-}
-
-
-#pragma interrupt high_ISR
-void high_ISR(void)
-{
 	char roller;
 
 	// Do we have a Timer2 interrupt? (1ms rate)
 	if (PIR1bits.TMR2IF)
 	{
-		// Clear the interrupt 
-		PIR1bits.TMR2IF = 0;
+		PIR1bits.TMR2IF = 0;		// Clear the interrupt
+		raceTime++;			// add another ms to the time counter
+		if(++refreshIntervalTicker == refreshInterval)
+		{
+			refreshIntervalTicker=0;
+			readyToSend = TRUE;		// Reset this flag
+		}
 		if (isRacing)
 		{
-			raceTime++;		// add another ms to the time counter
 			prevSensorStates = currentSensorStates;		// remember previous state of pins
 			currentSensorStates = PORTB;			// read the pins
 
@@ -336,6 +336,12 @@ void high_ISR(void)
 			}
 		}
 	}
+}
+
+
+#pragma interrupt high_ISR
+void high_ISR(void)
+{
 }
 
 void UserInit(void)
@@ -486,7 +492,7 @@ void ProcessIO(void)
 
 	BlinkUSBStatus();
 
-	if(raceTime%refreshInterval == 0)
+	if(readyToSend && (isRacing || raceTestMode))
 	{
 		SendUpdateToPc();
 	}
@@ -813,10 +819,7 @@ void parse_V_packet(void)
 
 void startRace (void)
 {			
-	DDRB = 0xff;			// initialize the pins
-	
-	isRacing = TRUE;		// make it possible to start monitoring sensors
-	raceTime=0;		// restart the stopwatch
+	raceTime=0;			// restart the stopwatch
 	T2CONbits.TMR2ON=1;		// turn on the timer
 	ISR_D_RepeatRate = 1;		// every 10ms advance the timer
 }
@@ -824,7 +827,6 @@ void startRace (void)
 void parse_GO_packet (void)		// Start a race
 {
 	//print_ack();
-	startRace();
 	// Extract values of each argument.
 	//finish_tick = extract_number (kUCHAR);
 	activeRollers = extract_number (kUCHAR);
@@ -833,32 +835,42 @@ void parse_GO_packet (void)		// Start a race
 	// Bail if we got a conversion error
 	if (error_byte)
 	{
+		printf ((rom char *)"! Err: you didn't enter the dollar the right \
+			way. try again.\n");
 		return;
+	}
+	else
+	{
+		isRacing = TRUE;	// make it possible to start monitoring sensors
+		startRace();
 	}
 }	
 
-void parse_ST_packet (void)			// Stop the race.
+void parse_ST_packet (void)		// Stop the race.
 {
 	print_ack();
-	isRacing = FALSE;			// stop monitoring sensors
+	isRacing = FALSE;		// stop monitoring sensors
 	raceTestMode = FALSE;
 }	
 
-void parse_HW_packet (void)			// Initiate hardware test mode.
+void parse_HW_packet (void)		// Initiate hardware test mode.
 {
-	print_ack();
-	raceTestMode = TRUE;
-	startRace();
-
 	// Extract values of each argument.
 	//finish_tick = extract_number (kUCHAR);
 	activeRollers = extract_number (kUCHAR);
 	refreshInterval = extract_number (kUCHAR);
-	
+	printf ((rom char *)"activeRollers=%c,refreshInterval=%i\r\n",activeRollers,refreshInterval);
 	// Bail if we got a conversion error
 	if (error_byte)
 	{
+		printf ((rom char *)"! Err: you didn't enter the dollar the right way. try again.\r\n");
 		return;
+	}
+	else
+	{	
+		print_ack();
+		raceTestMode = TRUE;
+		startRace();
 	}
 }	
 
