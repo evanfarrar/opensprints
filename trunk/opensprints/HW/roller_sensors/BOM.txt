@@ -1,4 +1,4 @@
-Hall Effect sensor
+Hall Effect sensor	digi-key P/N 620-1213-ND
 RJ11 jack
 LED
 resistor
