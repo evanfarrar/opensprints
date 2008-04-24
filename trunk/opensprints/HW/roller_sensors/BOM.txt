@@ -7,5 +7,6 @@ QTY	Description				Vendor		Vendor P/N		MFR P/N		price /unit
 1	Green LED
 1	330 ohm resistor
 1	0.1 uF bypass cap
-1	diode					
-
+1	diode
+	(reverse bias protection)					
+4	rubber feet
