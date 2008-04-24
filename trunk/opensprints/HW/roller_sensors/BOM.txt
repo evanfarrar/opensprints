@@ -1,6 +1,10 @@
-Hall Effect sensor	digi-key P/N 620-1213-ND
-RJ11 jack
-LED
-resistor
-bypass cap
+QTY	Description				Vendor		Vendor P/N		MFR P/N 
+
+1	Hall Effect sensor		digi-key	620-1213-ND		A3245LUA-T
+1	RJ11 jack				digi-key	A31426-ND		5555979-1
+1	Red or Blue LED
+1	Green LED
+1	330 ohm resistor
+1	0.1 uF bypass cap
+1	diode					
 
