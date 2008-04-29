@@ -1,0 +1,6 @@
+Hall Effect sensor
+RJ11 jack
+LED
+resistor
+bypass cap
+
