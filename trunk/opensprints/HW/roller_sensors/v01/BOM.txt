@@ -1,6 +1,8 @@
-Hall Effect sensor
-RJ11 jack
-LED
-resistor
-bypass cap
+Qty	Descr			Mfr P/N		Vendor	Vendor P/N	
+1	Hall Effect sensor
+1	audio jack				digikey	CP1-3523N-ND
+1	Red or Blue LED
+1	Green LED
+1	330 ohm resistor
+1	1 uF bypass cap
 
