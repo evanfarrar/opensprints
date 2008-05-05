@@ -1,0 +1,18 @@
+EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
+
+Electrical Rule Check for /home/orluke/eagle/roller_sensor_v01/roller_sensor.sch at  5/01/2008 00:41:38 
+
+WARNING: Sheet 1/1: pins overlap at (4.1 4.85)
+
+Parts not found in board:
+
+  C1
+  D1
+  LED1
+  R1
+  U$1
+
+ERROR: Board and schematic are not consistent!
+
+    1 errors
+    1 warnings
