@@ -34,7 +34,6 @@ UsedLibrary="/usr/lib/eagle/lbr/c-trimm.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/california-micro-devices.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/capacitor-wima.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/chipcard-siemens.lbr"
-UsedLibrary="/usr/lib/eagle/lbr/con-3m.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/con-amp-champ.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/con-amp-micromatch.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/con-amp-mt.lbr"
@@ -227,15 +226,13 @@ UsedLibrary="/usr/lib/eagle/lbr/wirepad.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/wuerth-elektronik.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/zetex.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/zilog.lbr"
-UsedLibrary="/home/orluke/eagle/roller_sensor_v01/roller_sensor.lbr"
-UsedLibrary="/home/orluke/eagle/SparkFun.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="13 156 1291 867"
-State=1
+Loc="0 25 954 581"
+State=2
 Number=0
 
 [Desktop]
-Screen="1280 768"
+Screen="1280 1024"
 Window="Win_1"
