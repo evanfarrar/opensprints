@@ -226,13 +226,21 @@ UsedLibrary="/usr/lib/eagle/lbr/wirepad.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/wuerth-elektronik.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/zetex.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/zilog.lbr"
+UsedLibrary="/home/orluke/iro_svn/trunk/opensprints/HW/roller_sensors/v02/eagle/roller_sensor.lbr"
+UsedLibrary="roller_sensor.lbr"
 
 [Win_1]
+Loc="320 230 919 629"
+State=1
+Number=2
+
+[Win_2]
 Type="Control Panel"
-Loc="0 25 954 581"
+Loc="0 19 1050 603"
 State=2
 Number=0
 
 [Desktop]
-Screen="1280 1024"
+Screen="1280 768"
 Window="Win_1"
+Window="Win_2"
