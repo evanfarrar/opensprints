@@ -2547,8 +2547,6 @@ unsigned int prevValueSensor0;
 unsigned int prevValueSensor1;
 unsigned int currentValueSensor0;
 unsigned int currentValueSensor1;
-unsigned int Sensor0PortApin=0;
-unsigned int Sensor1PortApin=1;
 unsigned int sensor0Status;
 unsigned int sensor1Status;
 unsigned int lastRaceTime;
@@ -2556,6 +2554,72 @@ unsigned int lastSensor0Time;
 unsigned int lastSensor1Time;
 unsigned int momentRaceTimeCentisecs;
 unsigned int momentRaceTimeMins;
+unsigned long sensor0progress;
+unsigned long sensor1progress;
+
+#define	RACE_DISTANCE_TICKS	512
+
+// PORTA pins
+#define I_SENSOR0	0
+#define I_SENSOR1	1
+#define	I_START_SWITCH		5
+
+// PORTB pins
+#define SENSOR0_LED0_PIN	0
+#define SENSOR0_LED1_PIN	1
+#define SENSOR0_LED2_PIN	2
+#define SENSOR0_LED3_PIN	3
+#define SENSOR1_LED0_PIN	4
+#define SENSOR1_LED1_PIN	5
+#define SENSOR1_LED2_PIN	6
+#define SENSOR1_LED3_PIN	7
+
+void DoRaceCountdown(void)
+{
+	// every second, turn off one of the lit up leds until they are all off.
+		for(int i=0;i<8;i++)
+		{
+			bitclr(PORTB,i);
+		}
+	// if countdown completed
+		is_racing=true;
+}
+
+void CheckStartSwitch(void)
+{
+	if(bittst(PORTA,I_START_SWITCH))
+	{
+		for(int i=0;i<8;i++)	// Turn on all progress LEDs
+		{
+			bitset(PORTB,i);
+		}
+		DoRaceCountdown();
+	}
+}
+
+void ManageSensorProgress(void)
+{
+	// Check if either sensor reached the finish.
+	if(sensor0progress==RACE_DISTANCE_TICKS)
+	{
+		is_racing=false;
+		flashSensor0Leds();
+	}
+	else if(sensor1progress==RACE_DISTANCE_TICKS)
+	{
+		is_racing=false;
+		flashSensor1Leds();
+	}
+	
+
+	if(sensor0progress==RACE_DISTANCE_TICKS/4)
+	{
+		// light up bike0 LED0 
+		bitset(PORTB, SENSOR0_LED0_PIN);
+	}
+
+}
+
 #define TEST_PERIOD 20 		// in centiseconds
 #define TEST_PERIOD_HALF (TEST_PERIOD/2)
 void HallEffSensors(void)
@@ -2571,11 +2635,11 @@ void HallEffSensors(void)
 		if(justBegun)
 		{
 			// initialize the pins
-			bitset (DDRA, Sensor0PortApin);     // set Port A Pin x as input
-			bitset (DDRA, Sensor1PortApin);     // set Port A Pin x as input
+			bitset (DDRA, I_SENSOR0);     // set Port A Pin x as input
+			bitset (DDRA, I_SENSOR1);     // set Port A Pin x as input
 			// read the pins
-			currentValueSensor0 = bittst (PORTA, Sensor0PortApin);  	// read Port A Pin x state
-			currentValueSensor1 = bittst (PORTA, Sensor1PortApin);  	// read Port A Pin x state
+			currentValueSensor0 = bittst (PORTA, I_SENSOR0);  	// read Port A Pin x state
+			currentValueSensor1 = bittst (PORTA, I_SENSOR1);  	// read Port A Pin x state
 	
 			justBegun=0;
 		}
@@ -2607,8 +2671,8 @@ void HallEffSensors(void)
 				prevValueSensor1=currentValueSensor1;
 	
 				// read the pins
-				currentValueSensor0 = bittst(PORTA,Sensor0PortApin);  	// read state of Port A Pin x
-				currentValueSensor1 = bittst(PORTA,Sensor1PortApin);  	// read state of Port A Pin x
+				currentValueSensor0 = bittst(PORTA,I_SENSOR0);  	// read state of Port A Pin x
+				currentValueSensor1 = bittst(PORTA,I_SENSOR1);  	// read state of Port A Pin x
 				
 				sensor0Status=(currentValueSensor0^prevValueSensor0)&~currentValueSensor0;
 				sensor1Status=(currentValueSensor1^prevValueSensor1)&~currentValueSensor1;
@@ -2617,13 +2681,15 @@ void HallEffSensors(void)
 			if(sensor0Status)
 			{
 				// send a string through USB packet stating that sensor 0 switched to high
-				printf("1;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
+			//	printf("1;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
+				sensor0progress++;
 			}
 
 			if(sensor1Status)
 			{
 				// send a string through USB packet stating that sensor 1 switched to high
-				printf("2;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
+			//	printf("2;%i:%i\r\n",momentRaceTimeMins,momentRaceTimeCentisecs);
+				sensor1progress++;
 			}
 		}
 	}
