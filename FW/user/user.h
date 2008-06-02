@@ -42,6 +42,7 @@ void UserInit(void);
 void ProcessIO(void);
 void low_ISR(void);
 void high_ISR(void);
+void InitNoPcRace(void);
 void HallEffSensors(void);
 
 

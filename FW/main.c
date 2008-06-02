@@ -82,9 +82,11 @@ void low_vector (void)
 void main(void)
 {
     InitializeSystem();
+	InitNoPcRace();
+
 	while(1)
     {
-        USBTasks();         // USB Tasks
+        //USBTasks();         // USB Tasks
         ProcessIO();        // See user.c and user.h
     }//end while
 }//end main
@@ -113,7 +115,7 @@ static void InitializeSystem(void)
 {
     ADCON1 |= 0x0F;                 // Default all pins to digital
         
-    mInitializeUSBDriver();         // See usbdrv.h
+    //mInitializeUSBDriver();         // See usbdrv.h
     
     UserInit();                     // See user.c & .h
 
