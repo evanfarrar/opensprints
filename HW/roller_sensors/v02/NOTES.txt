@@ -1,0 +1,4 @@
+Ethernet cable wiring:
+ * http://en.wikipedia.org/wiki/10BASE-T
+ * http://en.wikipedia.org/wiki/8P8C#Applications
+
