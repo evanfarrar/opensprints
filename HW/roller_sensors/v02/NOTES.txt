@@ -1,3 +1,7 @@
+To Do:
+ * update the HE sensor package. Make sure it changes on the brd as well. 
+ * 8 thruholes in a row to have access to all the signals on the ethernet jack.
+
 Ethernet cable wiring:
  * http://en.wikipedia.org/wiki/10BASE-T
  * http://en.wikipedia.org/wiki/8P8C#Applications
