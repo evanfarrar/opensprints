@@ -1,6 +1,11 @@
 To Do:
  * update the HE sensor package. Make sure it changes on the brd as well. 
+   - on .1" centers or not?
+ * .1 uF cap
+   - digi-key P/N 490-3810-ND
+   - on .1" centers
  * 8 thruholes in a row to have access to all the signals on the ethernet jack.
+   - pin 1 demarcated with square pad.
 
 Ethernet cable wiring:
  * http://en.wikipedia.org/wiki/10BASE-T
