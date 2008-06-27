@@ -15,8 +15,8 @@ require base_dir+'lib/racer'
 require base_dir+'lib/units/base'
 require base_dir+'lib/units/standard'
 require base_dir+'lib/secsy_time'
-Kernel::require Dir.pwd+'/lib/serialport.so'
-require base_dir+"lib/sensors/#{options['sensor']['file']}_sensor"
+#Kernel::require Dir.pwd+'/lib/serialport.so'
+require base_dir+"lib/sensors/#{options['sensor']['type']}_sensor"
 SENSOR_LOCATION = options['sensor']['device']
 RACE_DISTANCE = options['race_distance'].meters.to_km
 RED_WHEEL_CIRCUMFERENCE = options['roller_circumference']['red'].mm.to_km
@@ -32,8 +32,8 @@ end
 class Race
   def initialize(shoes_instance, distance, update_area)
     @shoes_instance = shoes_instance
-    blue = @shoes_instance.ask "Who is on the blue bike?"
-    red = @shoes_instance.ask "Who is on the red bike?"
+#    blue = @shoes_instance.ask "Who is on the blue bike?"
+#    red = @shoes_instance.ask "Who is on the red bike?"
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
                      :name => "racer1",
                      :units => UNIT_SYSTEM)
@@ -85,10 +85,10 @@ class Race
         @shoes_instance.rect 60, 340, red_progress, 20 
         if @blue.distance>RACE_DISTANCE and @red.distance>RACE_DISTANCE
           winner = (@red.tick_at(@race_distance)<@blue.tick_at(@race_distance)) ? "RED" : "BLUE"
-          @shoes_instance.title "#{winner} WINS!!!\n", :align => "center", 
-                   :top => 380, :width => 800
+          @shoes_instance.title "#{winner} WINS!!!\n", :align => "center",
+            :top => 380, :width => 800 
           @shoes_instance.title "red: #{@red.tick_at(@race_distance)}, blue: #{@blue.tick_at(@race_distance)}",
-                :align => 'center', :top => 450, :width => 800
+            :align => 'center', :top => 450, :width => 800
           @sensor.stop
           @continue = false
         end
@@ -104,8 +104,9 @@ end
 
 Shoes.app :width => 800, :height => 600 do
   stack{
-    fill black
-    banner TITLE, :align => "center"
+    image "track.jpg", :top => -450
+  #  stroke magenta
+    banner TITLE, :top => 150, :align => "center", :background => magenta
     @update_area = stack {}
   race = lambda do
     @start.hide

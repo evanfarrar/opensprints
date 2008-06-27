@@ -11,14 +11,16 @@ class Sensor
     Thread.abort_on_exception = true 
     @t.kill if @t
     @t = Thread.new do
-      sp = SerialPort.new(@filename, 115200, 8, 1, SerialPort::NONE )
-      sp.putc 'h'
-      sp.putc 'w'
-      sp.putc "\n"
-      sp.close
-      @s = TCPSocket.new('127.0.0.1',5000)
-      loop do
-        @queue << @s.readline.strip
+      @f = File.new(@filename, 'w+')
+      @f.putc 'h'
+      @f.putc 'w'
+      @f.putc "\n"
+      while true do
+        l = @f.readline
+        if l=~/^[12];/
+          @queue << l
+        end
+        puts l
       end
     end
   end
@@ -27,3 +29,4 @@ class Sensor
     @s.close
   end
 end
+
