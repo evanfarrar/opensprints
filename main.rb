@@ -101,36 +101,103 @@ class Race
   end
 end
 
-
+=begin
 Shoes.app :width => 800, :height => 600 do
   stack{
     image "track.jpg", :top => -450
-  #  stroke magenta
     banner TITLE, :top => 150, :align => "center", :background => magenta
     @update_area = stack {}
-  race = lambda do
-    @start.hide
-    r = Race.new(self, RACE_DISTANCE, @update_area)
-    @countdown = 5
-    @start_time = Time.now+5
-    count_box = stack{ @label = banner "#{@countdown}..." }
-    animate(14) do
-      @now = Time.now
-      if @now < @start_time
-        count_box.clear do
-          banner "#{(@start_time-@now).round}..."
+    race = lambda do
+      @start.hide
+      r = Race.new(self, RACE_DISTANCE, @update_area)
+      @countdown = 5
+      @start_time = Time.now+5
+      count_box = stack{ @label = banner "#{@countdown}..." }
+      animate(14) do
+        @now = Time.now
+        if @now < @start_time
+          count_box.clear do
+            banner "#{(@start_time-@now).round}..."
+          end
+        else
+          count_box.remove
+          r.refresh
+          @start.show unless r.continue?
         end
-      else
-        count_box.remove
-        r.refresh
-        @start.show unless r.continue?
       end
     end
-  end
     @start = button("Start Race") {
       race.call
     }
 
     button("Quit") { exit }
   }
+end
+=end
+
+module Interface
+  def equis
+    image(20, 20, {:top => 8, :left => 115}) do
+      fill red
+      rect(:top => 0, :left => 0, :height => 15, :width => 15)
+      line(3,3,13,13)
+      line(13,3,3,13)
+    end
+  end
+  def plus
+    image(20, 20, {:top => 8, :left => 115}) do
+      fill red
+      rect(:top => 0, :left => 0, :height => 15, :width => 15)
+      line(8,3,8,13)
+      line(3,8,13,8)
+      click {
+        add_racer @racer_name.text
+      }
+    end
+  end
+end
+
+Shoes.app :title => TITLE, :width => 800, :height => 600 do
+  def list_racers
+    @racers.each do |racer|
+      flow do 
+        border black
+        para racer.name
+      end
+    end
+  end
+  extend Interface
+  @racers = [
+    Racer.new(:name => 'Evan'),
+    Racer.new(:name => 'Ffonst'),
+    Racer.new(:name => 'Alex'),
+    Racer.new(:name => 'Luke'),
+    Racer.new(:name => 'Oren'),
+    Racer.new(:name => 'Katy'),
+    Racer.new(:name => 'Jonathan')
+  ]
+  background white
+  stack(:width => 380, :margin => 5) do
+    border black
+    title "Racers"
+    @racer_list = stack { list_racers }
+    flow do
+      @racer_name = edit_line "enter name"
+      plus
+    end
+  end
+  stack(:width => 380, :margin => 5) do
+    border black
+    title "Matches"
+  end
+
+  def add_racer(name)
+    duped = @racers.any? do |racer|
+      racer.name == name
+    end
+    if !duped && name!='enter name'
+      @racers << Racer.new(:name => name)
+      @racer_list.clear { list_racers }
+    end
+  end
 end
