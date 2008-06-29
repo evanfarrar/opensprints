@@ -4,6 +4,11 @@ class Racer
   attr :name
   attr :yaml_name
   attr :ticks
+  include Comparable
+  def <=>(other_racer)
+    self.name<=>other_racer.name
+  end
+
   def initialize(attributes = {})
     @distance = 0
     @speed = 0

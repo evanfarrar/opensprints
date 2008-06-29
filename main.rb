@@ -11,7 +11,7 @@ rescue
   alert "You must write a conf.yml. See sample in conf-sample.yml"
 end
 require base_dir+'lib/racer'
-require base_dir+'lib/racer'
+require base_dir+'lib/tournament'
 require base_dir+'lib/units/base'
 require base_dir+'lib/units/standard'
 require base_dir+'lib/secsy_time'
@@ -136,12 +136,16 @@ end
 =end
 
 module Interface
-  def equis
+  def equis(racer)
     image(20, 20, {:top => 8, :left => 115}) do
       fill red
       rect(:top => 0, :left => 0, :height => 15, :width => 15)
       line(3,3,13,13)
       line(13,3,3,13)
+      click {
+        @tournament.racers.delete(racer)
+        @racer_list.clear { list_racers }
+      }
     end
   end
   def plus
@@ -158,24 +162,63 @@ module Interface
 end
 
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
+  @tournament = Tournament.new
   def list_racers
-    @racers.each do |racer|
+    @tournament.racers.each do |racer|
       flow do 
         border black
+        equis racer
         para racer.name
       end
     end
   end
+  def list_matches
+    border black
+    title "Matches"
+    @tournament.matches.each do |match|
+      flow(:margin => 5) do 
+        background lightgrey
+        border black
+        para "#{match[0].name} vs #{match[1].name}"
+        button("race")do
+          window do
+            stack{
+              image "media/track.jpg", :top => -450
+              banner TITLE, :top => 150, :align => "center", :background => magenta
+              @update_area = stack {}
+              race = lambda do
+                @start.hide
+                r = Race.new(self, RACE_DISTANCE, @update_area)
+                @countdown = 5
+                @start_time = Time.now+5
+                count_box = stack{ @label = banner "#{@countdown}..." }
+                animate(14) do
+                  @now = Time.now
+                  if @now < @start_time
+                    count_box.clear do
+                      banner "#{(@start_time-@now).round}..."
+                    end
+                  else
+                    count_box.remove
+                    r.refresh
+                    @start.show unless r.continue?
+                  end
+                end
+              end
+              @start = button("Start Race") {
+                race.call
+              }
+
+              button("Quit") { exit }
+            }
+
+          end
+        end
+      end
+    end      
+  end
   extend Interface
-  @racers = [
-    Racer.new(:name => 'Evan'),
-    Racer.new(:name => 'Ffonst'),
-    Racer.new(:name => 'Alex'),
-    Racer.new(:name => 'Luke'),
-    Racer.new(:name => 'Oren'),
-    Racer.new(:name => 'Katy'),
-    Racer.new(:name => 'Jonathan')
-  ]
+
   background white
   stack(:width => 380, :margin => 5) do
     border black
@@ -186,18 +229,26 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
       plus
     end
   end
-  stack(:width => 380, :margin => 5) do
-    border black
-    title "Matches"
+  @matches = stack(:width => 380, :margin => 5) do
+    list_matches
+  end
+
+  button "autofill matches" do
+    @tournament.autofill_matches
+    @matches.clear do
+      list_matches
+    end
   end
 
   def add_racer(name)
-    duped = @racers.any? do |racer|
+    duped = @tournament.racers.any? do |racer|
       racer.name == name
     end
     if !duped && name!='enter name'
-      @racers << Racer.new(:name => name)
+      @tournament.racers << Racer.new(:name => name)
       @racer_list.clear { list_racers }
     end
   end
 end
+
+
