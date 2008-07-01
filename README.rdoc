@@ -1,6 +1,9 @@
-= About OpenSprints
+== About OpenSprints
 
-A *goldsprint* is a bicycle rollers racing and social event. Riders on stationary bikes compete against each other in front of a crowd of cheering friends.
+OpenSprints is the Open Source (FREE) version of GoldSprints.
+
+== About GoldSprints
+Via Wikipedia: A *goldsprint* is a bicycle rollers racing and social event. Riders on stationary bikes compete against each other in front of a crowd of cheering friends.
 
 
 While roller racing in general can use any type of bicycle and there are variations on the set-up depending on the type of rollers used and whether the front wheel is engaged or fixed, goldsprints generally use one form of setup. As with roller racing in general, the rollers are in turn attached to a device that measures distance and can display the progress of the riders. Goldsprints also feature modern 2D and 3D visualizations.
@@ -9,4 +12,3 @@ While roller racing in general can use any type of bicycle and there are variati
 Roller racing has a long history going back to the beginning of cycling, however Goldsprints are closely related to bicycle messenger culture. It began in Zurich, Switzerland during the 1999 Cycle Messenger World Championships. GoldSprints organizers, Mike Dee and Hodari De Palm debuted their current set up at 2005's Cycle Messenger World Championships in New York City and expanded to six American cities: NYC, Philly, DC, Boston, Baltimore, and Las Vegas. They created the first GoldSprints Series, which was started Halloween 2006 in New York City.
 
 
-OpenSprints is the Open Source (FREE) version of GoldSprints.
