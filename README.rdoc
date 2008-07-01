@@ -1,7 +1,5 @@
 = About OpenSprints
 
-<img src="http://www.opensprints.com/images/stories/goldsprinters.jpg" />
-
 A *goldsprint* is a bicycle rollers racing and social event. Riders on stationary bikes compete against each other in front of a crowd of cheering friends.
 
 
