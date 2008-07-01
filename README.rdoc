@@ -1,8 +1,8 @@
 = About OpenSprints
 
-http://www.opensprints.com/images/stories/goldsprinters.jpg
+<img src="http://www.opensprints.com/images/stories/goldsprinters.jpg" />
 
-A +goldsprint+ is a bicycle rollers racing and social event. Riders on stationary bikes compete against each other in front of a crowd of cheering friends.
+A *goldsprint* is a bicycle rollers racing and social event. Riders on stationary bikes compete against each other in front of a crowd of cheering friends.
 
 
 While roller racing in general can use any type of bicycle and there are variations on the set-up depending on the type of rollers used and whether the front wheel is engaged or fixed, goldsprints generally use one form of setup. As with roller racing in general, the rollers are in turn attached to a device that measures distance and can display the progress of the riders. Goldsprints also feature modern 2D and 3D visualizations.
