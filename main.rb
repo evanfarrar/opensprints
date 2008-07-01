@@ -1,4 +1,5 @@
-base_dir = ENV['BASE_DIR']+'/'
+base_dir = ENV['BASE_DIR']+'/' if ENV['BASE_BIR']
+base_dir ||= `pwd`.sub("\n",'') + '/'
 errors = []
 require 'yaml'
 unless defined? Shoes
