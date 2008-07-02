@@ -1,16 +1,10 @@
 EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
 
-Electrical Rule Check for /home/orluke/eagle/roller-sensors/roller_sensor.sch at  7/01/2008 23:19:12 
+Electrical Rule Check for /home/orluke/eagle/roller_sensor-v02/roller_sensor.sch at  7/02/2008 08:38:31 
 
 WARNING: Sheet 1/1: POWER Pin IC1 VCC connected to VTG
-WARNING: No Pins on net N$8
-WARNING: Sheet 1/1: Junction at (3.3 4.3) appears to connect nets N$8 and VTG
-WARNING: Sheet 1/1: Nets VTG and N$8 too close at (3.3 4.3)
-WARNING: Sheet 1/1: Nets N$8 and VTG too close at (3.3 4.3)
-WARNING: Sheet 1/1, Net N$8: wire overlaps pin at (3.25 4.3)
-WARNING: Sheet 1/1, Net N$8: wire overlaps pin at (3.3 4.3)
 
-No board loaded - consistency has not been checked
+Board and schematic are consistent
 
     0 errors
-    7 warnings
+    1 warnings
