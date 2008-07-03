@@ -231,7 +231,7 @@ UsedLibrary="roller_sensor.lbr"
 [Win_1]
 Type="Control Panel"
 Loc="0 25 1050 804"
-State=2
+State=0
 Number=0
 
 [Desktop]
