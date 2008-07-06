@@ -3,6 +3,7 @@ require 'enumerator'
 class Tournament
   attr_accessor :racers
   attr_accessor :matches
+  attr_accessor :results
 
   def initialize
     @racers = [ 'Evan', 'Ffonst', 'Alex', 'Luke', 'Oren', 'Katy', 'Jonathan' ]
@@ -19,4 +20,6 @@ class Tournament
       @matches << a unless a.length == 1
     }
   end
+
+  
 end

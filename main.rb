@@ -11,19 +11,18 @@ begin
 rescue
   alert "You must write a conf.yml. See sample in conf-sample.yml"
 end
+require base_dir+'lib/units/base'
+require base_dir+'lib/units/standard'
+SENSOR_LOCATION = options['sensor']['device']
+RACE_DISTANCE = options['race_distance'].meters.to_km
+$ROLLER_CIRCUMFERENCE = options['roller_circumference'].mm.to_km
+TITLE = options['title']
 require base_dir+'lib/racer'
 require base_dir+'lib/interface_widgets'
 require base_dir+'lib/tournament'
-require base_dir+'lib/units/base'
-require base_dir+'lib/units/standard'
 require base_dir+'lib/secsy_time'
 #Kernel::require Dir.pwd+'/lib/serialport.so'
 require base_dir+"lib/sensors/#{options['sensor']['type']}_sensor"
-SENSOR_LOCATION = options['sensor']['device']
-RACE_DISTANCE = options['race_distance'].meters.to_km
-RED_WHEEL_CIRCUMFERENCE = options['roller_circumference']['red'].mm.to_km
-BLUE_WHEEL_CIRCUMFERENCE = options['roller_circumference']['blue'].mm.to_km
-TITLE = options['title']
 
 if options['units'] == 'standard'
   UNIT_SYSTEM = :mph
@@ -32,16 +31,13 @@ else
 end
 
 class Race
-  def initialize(shoes_instance, distance, update_area)
+  attr_accessor :winner
+  def initialize(shoes_instance, distance, update_area, blue_racer, red_racer)
     @shoes_instance = shoes_instance
-    @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
-                     :name => "racer1",
-                     :units => UNIT_SYSTEM)
-    @blue = Racer.new(:wheel_circumference => BLUE_WHEEL_CIRCUMFERENCE,
-                      :name => "racer2",
-                      :units => UNIT_SYSTEM)
     @bar_size = 800-2*60
     @race_distance = distance
+    @red = red_racer
+    @blue = blue_racer
     @update_area = update_area
   end
 
@@ -84,10 +80,10 @@ class Race
         @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
         @shoes_instance.rect 60, 340, red_progress, 20 
         if @blue.distance>RACE_DISTANCE and @red.distance>RACE_DISTANCE
-          winner = (@red.tick_at(@race_distance)<@blue.tick_at(@race_distance)) ? "RED" : "BLUE"
-          @shoes_instance.title "#{winner} WINS!!!\n", :align => "center",
+          self.winner = (@red.tick_at(@race_distance)<@blue.tick_at(@race_distance)) ? @red : @blue
+          @shoes_instance.title "#{self.winner.name.upcase} WINS!!!\n", :align => "center",
             :top => 380, :width => 800 
-          @shoes_instance.title "red: #{@red.tick_at(@race_distance)}, blue: #{@blue.tick_at(@race_distance)}",
+          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}, #{@blue.name}: #{@blue.tick_at(@race_distance)}",
             :align => 'center', :top => 450, :width => 800
           @sensor.stop
           @continue = false
@@ -107,6 +103,7 @@ end
 
 
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
+  extend InterfaceWidgets
   @tournament = Tournament.new
 
   def list_racers
@@ -128,14 +125,19 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
         border black
         para "#{match[0].name} vs #{match[1].name}"
         button("race")do
-          window do
+          window :title => TITLE, :width => 800, :height => 600 do
+            background white
+            
             stack do
               image "media/track.jpg", :top => -450
               banner TITLE, :top => 150, :align => "center", :background => magenta
               @update_area = stack {}
               race = lambda do
                 @start.hide
-                r = Race.new(self, RACE_DISTANCE, @update_area)
+                red_racer = Racer.new(:name => "racer1", :units => UNIT_SYSTEM)
+                blue_racer = Racer.new(:name => "racer2", :units => UNIT_SYSTEM)
+                r = Race.new(self, RACE_DISTANCE, @update_area,
+                             match[0], match[1])
                 @countdown = 5
                 @start_time = Time.now+5
                 count_box = stack{ @label = banner "#{@countdown}..." }
@@ -167,7 +169,6 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     end      
   end
 
-  extend InterfaceWidgets
 
   background white
   stack(:width => 380, :margin => 5) do
@@ -196,7 +197,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
       racer.name == name
     end
     if !duped && name!='enter name'
-      @tournament.racers << Racer.new(:name => name)
+      @tournament.racers << Racer.new(:name => name, :units => UNIT_SYSTEM)
       @racer_list.clear { list_racers }
     end
   end

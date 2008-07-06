@@ -12,7 +12,8 @@ class Racer
   def initialize(attributes = {})
     @distance = 0
     @speed = 0
-    @wheel_circumference = attributes[:wheel_circumference]
+    raise unless $ROLLER_CIRCUMFERENCE
+    @wheel_circumference = $ROLLER_CIRCUMFERENCE
     @ticks = []
     @name = attributes[:name]
     @race_distance = attributes[:race_distance]
