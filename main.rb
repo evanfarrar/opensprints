@@ -12,6 +12,7 @@ rescue
   alert "You must write a conf.yml. See sample in conf-sample.yml"
 end
 require base_dir+'lib/racer'
+require base_dir+'lib/interface_widgets'
 require base_dir+'lib/tournament'
 require base_dir+'lib/units/base'
 require base_dir+'lib/units/standard'
@@ -33,8 +34,6 @@ end
 class Race
   def initialize(shoes_instance, distance, update_area)
     @shoes_instance = shoes_instance
-#    blue = @shoes_instance.ask "Who is on the blue bike?"
-#    red = @shoes_instance.ask "Who is on the red bike?"
     @red = Racer.new(:wheel_circumference => RED_WHEEL_CIRCUMFERENCE,
                      :name => "racer1",
                      :units => UNIT_SYSTEM)
@@ -97,73 +96,19 @@ class Race
     end
   end
 
+  def stop
+    @sensor.stop
+  end
+
   def percent_complete(racer)
     [1.0, racer.distance/@race_distance.to_f].min
   end
 end
 
-=begin
-Shoes.app :width => 800, :height => 600 do
-  stack{
-    image "track.jpg", :top => -450
-    banner TITLE, :top => 150, :align => "center", :background => magenta
-    @update_area = stack {}
-    race = lambda do
-      @start.hide
-      r = Race.new(self, RACE_DISTANCE, @update_area)
-      @countdown = 5
-      @start_time = Time.now+5
-      count_box = stack{ @label = banner "#{@countdown}..." }
-      animate(14) do
-        @now = Time.now
-        if @now < @start_time
-          count_box.clear do
-            banner "#{(@start_time-@now).round}..."
-          end
-        else
-          count_box.remove
-          r.refresh
-          @start.show unless r.continue?
-        end
-      end
-    end
-    @start = button("Start Race") {
-      race.call
-    }
-
-    button("Quit") { exit }
-  }
-end
-=end
-
-module Interface
-  def equis(racer)
-    image(20, 20, {:top => 8, :left => 115}) do
-      fill red
-      rect(:top => 0, :left => 0, :height => 15, :width => 15)
-      line(3,3,13,13)
-      line(13,3,3,13)
-      click {
-        @tournament.racers.delete(racer)
-        @racer_list.clear { list_racers }
-      }
-    end
-  end
-  def plus
-    image(20, 20, {:top => 8, :left => 115}) do
-      fill red
-      rect(:top => 0, :left => 0, :height => 15, :width => 15)
-      line(8,3,8,13)
-      line(3,8,13,8)
-      click {
-        add_racer @racer_name.text
-      }
-    end
-  end
-end
 
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
   @tournament = Tournament.new
+
   def list_racers
     @tournament.racers.each do |racer|
       flow do 
@@ -173,6 +118,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
       end
     end
   end
+
   def list_matches
     border black
     title "Matches"
@@ -183,7 +129,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
         para "#{match[0].name} vs #{match[1].name}"
         button("race")do
           window do
-            stack{
+            stack do
               image "media/track.jpg", :top => -450
               banner TITLE, :top => 150, :align => "center", :background => magenta
               @update_area = stack {}
@@ -193,7 +139,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
                 @countdown = 5
                 @start_time = Time.now+5
                 count_box = stack{ @label = banner "#{@countdown}..." }
-                animate(14) do
+                @race_animation = animate(14) do
                   @now = Time.now
                   if @now < @start_time
                     count_box.clear do
@@ -206,19 +152,22 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
                   end
                 end
               end
-              @start = button("Start Race") {
+              @start = button("Start Race") do
                 race.call
-              }
+              end
 
-              button("Quit") { exit }
-            }
-
+              button("Quit") do
+                @race_animation.stop
+                close
+              end
+            end
           end
         end
       end
     end      
   end
-  extend Interface
+
+  extend InterfaceWidgets
 
   background white
   stack(:width => 380, :margin => 5) do
@@ -230,6 +179,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
       plus
     end
   end
+
   @matches = stack(:width => 380, :margin => 5) do
     list_matches
   end
@@ -250,6 +200,5 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
       @racer_list.clear { list_racers }
     end
   end
+
 end
-
-
