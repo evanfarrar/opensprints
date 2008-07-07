@@ -1,12 +1,13 @@
-Qty	Descr					Mfr			Mfr P/N			Vendor		Vendor P/N	
+Qty	Descr							Mfr			Mfr P/N			Vendor		Vendor P/N	
 ---	-------------------		-------		-----------		-------		------------
-1	hall effect switch		Allegro		A3245LUA-T		digikey		620-1213-ND
-1	RJ45 modular jack		tyco		5555164-1		digikey		5555164-1
-														mouser		571-5555164-1
-1	Red or Blue LED
-1	Green LED
-1	330 ohm resistor
-1	1 uF bypass cap
-1	reverse bias pro-					1N4004
-	tection diode
+1		hall effect switch		Allegro		A3245LUA-T		digikey		620-1213-ND
+1		RJ45 modular jack			tyco			5555164-1		digikey		5555164-1
+														mouser							571-5555164-1
+1		6mm Red or Blue LED
+1		3mm Green LED
+1		330 ohm resistor
+1		1000 ohm resistor
+1		1 uF bypass cap
+1		reverse bias pro-							1N4004
+		 tection diode
 
