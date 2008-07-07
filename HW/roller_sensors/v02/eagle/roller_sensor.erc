@@ -1,10 +1,8 @@
 EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
 
-Electrical Rule Check for /home/orluke/eagle/roller_sensor-v02/roller_sensor.sch at  7/02/2008 08:38:31 
-
-WARNING: Sheet 1/1: POWER Pin IC1 VCC connected to VTG
+Electrical Rule Check for /home/orluke/eagle/roller_sensor-v02/roller_sensor.sch at  7/07/2008 09:02:26 
 
 Board and schematic are consistent
 
     0 errors
-    1 warnings
+    0 warnings
