@@ -1,8 +1,28 @@
 EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
 
-Electrical Rule Check for /home/orluke/eagle/roller_sensor-v02/roller_sensor.sch at  7/07/2008 09:02:26 
+Electrical Rule Check for /home/orluke/eagle/roller_sensor-v02/roller_sensor.sch at  7/08/2008 13:13:16 
+
+WARNING: Sheet 1/1: POWER Pin IC1 VCC connected to VTG
+WARNING: Sheet 1/1, Net N$4: missing Junction at (3.1 3.8)
+WARNING: Sheet 1/1, Net N$5: missing Junction at (3.2 3.8)
+WARNING: Sheet 1/1, Net N$6: missing Junction at (3.3 3.8)
+WARNING: Sheet 1/1, Net N$7: missing Junction at (3.4 3.8)
+WARNING: Sheet 1/1: Nets GND and OUT too close at (3.7 3.9)
+WARNING: Sheet 1/1: Nets GND and OUT too close at (3.7 3.9)
+WARNING: Sheet 1/1: Nets GND and N$4 too close at (3.1 3.9)
+WARNING: Sheet 1/1: Nets GND and N$4 too close at (3.1 3.9)
+WARNING: Sheet 1/1: Nets GND and N$5 too close at (3.2 3.9)
+WARNING: Sheet 1/1: Nets GND and N$5 too close at (3.2 3.9)
+WARNING: Sheet 1/1: Nets GND and N$6 too close at (3.3 3.9)
+WARNING: Sheet 1/1: Nets GND and N$6 too close at (3.3 3.9)
+WARNING: Sheet 1/1: Nets GND and N$7 too close at (3.4 3.9)
+WARNING: Sheet 1/1: Nets GND and N$7 too close at (3.4 3.9)
+WARNING: Sheet 1/1: Nets GND and N$8 too close at (3.5 3.9)
+WARNING: Sheet 1/1: Nets GND and N$8 too close at (3.5 3.9)
+WARNING: Sheet 1/1: Nets GND and N$9 too close at (3.6 3.9)
+WARNING: Sheet 1/1: Nets GND and N$9 too close at (3.6 3.9)
 
 Board and schematic are consistent
 
     0 errors
-    0 warnings
+   19 warnings
