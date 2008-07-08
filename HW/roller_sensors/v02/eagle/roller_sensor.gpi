@@ -1,7 +1,7 @@
-Photoplotter Info File: /home/orluke/eagle/roller-sensors/roller_sensor.gpi
+Photoplotter Info File: /home/orluke/eagle/roller_sensor-v02/roller_sensor.gpi
 
- Date              :  7/07/2008 23:22:31 
- Plotfile          : /home/orluke/eagle/roller-sensors/roller_sensor.GBS
+ Date              :  7/08/2008 07:45:06 
+ Plotfile          : /home/orluke/eagle/roller_sensor-v02/roller_sensor.sts
  Apertures         : generated: 
  Device            : Gerber photoplotter with RS-274-X aperture generation
 
@@ -15,7 +15,7 @@ Parameter settings:
  Tolerance Flash + :  0.00 %
  Tolerance Flash - :  0.00 %
  Rotate            : no
- Mirror            : no
+ Mirror            : yes
  Optimize          : yes
  Auto fit          : yes
  OffsetX           : 0inch
