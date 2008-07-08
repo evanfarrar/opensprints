@@ -1,6 +1,6 @@
-Drill Station Info File: /home/orluke/eagle/roller-sensors/roller_sensor.dri
+Drill Station Info File: /home/orluke/eagle/roller_sensor-v02/roller_sensor.dri
 
- Date              :  7/07/2008 23:22:31 
+ Date              :  7/08/2008 14:17:36 
  Drills            : generated
  Device            : Excellon drill station
 
@@ -25,17 +25,16 @@ Drills used:
 
  Code  Size       used
 
- T01   0.0236inch     1
- T02   0.0320inch    10
- T03   0.0350inch    15
- T04   0.0354inch     4
+ T01   0.0320inch    10
+ T02   0.0350inch     8
+ T03   0.0354inch     3
+ T04   0.0400inch     8
  T05   0.0440inch     2
  T06   0.1280inch     2
- T07   0.1440inch     4
- T08   0.2000inch     2
+ T07   0.1300inch     4
 
-Total number of drills: 40
+Total number of drills: 37
 
 Plotfiles:
 
- /home/orluke/eagle/roller-sensors/roller_sensor.TXT
+ /home/orluke/eagle/roller_sensor-v02/roller_sensor.TXT

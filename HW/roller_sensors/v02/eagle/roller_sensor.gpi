@@ -1,7 +1,7 @@
 Photoplotter Info File: /home/orluke/eagle/roller_sensor-v02/roller_sensor.gpi
 
- Date              :  7/08/2008 11:58:43 
- Plotfile          : /home/orluke/eagle/roller_sensor-v02/roller_sensor.sts
+ Date              :  7/08/2008 14:17:36 
+ Plotfile          : /home/orluke/eagle/roller_sensor-v02/roller_sensor.GBS
  Apertures         : generated: 
  Device            : Gerber photoplotter with RS-274-X aperture generation
 
@@ -15,7 +15,7 @@ Parameter settings:
  Tolerance Flash + :  0.00 %
  Tolerance Flash - :  0.00 %
  Rotate            : no
- Mirror            : yes
+ Mirror            : no
  Optimize          : yes
  Auto fit          : yes
  OffsetX           : 0inch
@@ -33,13 +33,12 @@ Apertures used:
 
  Code     Shape     Size                  used
 
- D10      round     0.1520inch               4
- D11      round     0.2080inch               2
- D12      octagon   0.0600inch              10
- D13      round     0.0740inch               2
- D14      round     0.1360inch               2
- D15      round     0.0630inch              15
- D16      square    0.0634inch               1
- D17      octagon   0.0634inch               3
- D18      round     0.0580inch               1
+ D10      octagon   0.0600inch              10
+ D11      round     0.0740inch               2
+ D12      round     0.1360inch               2
+ D13      round     0.0630inch               8
+ D14      octagon   0.0634inch               3
+ D15      square    0.0680inch               1
+ D16      round     0.0680inch               7
+ D17      round     0.1380inch               4
 
