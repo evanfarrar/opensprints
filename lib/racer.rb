@@ -1,5 +1,5 @@
 class Racer
-  attr_accessor :distance
+  attr_accessor :distance, :best_time, :wins, :losses
   attr :wheel_circumference
   attr :name
   attr :yaml_name
@@ -11,6 +11,9 @@ class Racer
 
   def initialize(attributes = {})
     @distance = 0
+    @best_time = 1/0.0
+    @wins = 0
+    @losses = 0
     @speed = 0
     raise unless $ROLLER_CIRCUMFERENCE
     @wheel_circumference = $ROLLER_CIRCUMFERENCE
@@ -44,6 +47,10 @@ class Racer
 
   def tick_at(distance)
     @ticks[distance / @wheel_circumference]
+  end
+
+  def record_time(time)
+    @best_time = [@best_time, time].min
   end
 private
   def rotation_elapsed_to_mph(elapsed)

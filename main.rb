@@ -2,9 +2,7 @@ base_dir = ENV['BASE_DIR']+'/' if ENV['BASE_BIR']
 base_dir ||= `pwd`.sub("\n",'') + '/'
 errors = []
 require 'yaml'
-unless defined? Shoes
-  exit "Install shoes: http://code.whytheluckystiff.net/shoes/"
-end
+
 
 begin
   options = YAML::load(File.read('conf.yml'))
@@ -18,10 +16,10 @@ RACE_DISTANCE = options['race_distance'].meters.to_km
 $ROLLER_CIRCUMFERENCE = options['roller_circumference'].mm.to_km
 TITLE = options['title']
 require base_dir+'lib/racer'
+require base_dir+'lib/race'
 require base_dir+'lib/interface_widgets'
 require base_dir+'lib/tournament'
 require base_dir+'lib/secsy_time'
-#Kernel::require Dir.pwd+'/lib/serialport.so'
 require base_dir+"lib/sensors/#{options['sensor']['type']}_sensor"
 
 if options['units'] == 'standard'
@@ -30,14 +28,15 @@ else
   UNIT_SYSTEM = :kmph
 end
 
-class Race
+class RacePresenter
   attr_accessor :winner
-  def initialize(shoes_instance, distance, update_area, blue_racer, red_racer)
+  def initialize(shoes_instance, distance, update_area, race)
     @shoes_instance = shoes_instance
     @bar_size = 800-2*60
     @race_distance = distance
-    @red = red_racer
-    @blue = blue_racer
+    @race = race
+    @red = @race.red_racer
+    @blue = @race.blue_racer
     @update_area = update_area
   end
 
@@ -80,13 +79,27 @@ class Race
         @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
         @shoes_instance.rect 60, 340, red_progress, 20 
         if @blue.distance>RACE_DISTANCE and @red.distance>RACE_DISTANCE
-          self.winner = (@red.tick_at(@race_distance)<@blue.tick_at(@race_distance)) ? @red : @blue
+          if (@red.tick_at(@race_distance)<@blue.tick_at(@race_distance)) 
+            self.winner = @red
+            @red.wins += 1
+            @blue.losses += 1
+          else
+            self.winner = @blue
+            @red.losses += 1
+            @blue.wins += 1
+          end
+          @red.record_time(@red.tick_at(@race_distance))
+          @blue.record_time(@blue.tick_at(@race_distance))
           @shoes_instance.title "#{self.winner.name.upcase} WINS!!!\n", :align => "center",
             :top => 380, :width => 800 
           @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}, #{@blue.name}: #{@blue.tick_at(@race_distance)}",
             :align => 'center', :top => 450, :width => 800
           @sensor.stop
           @continue = false
+          @race.red_racer = @red
+          @race.blue_racer = @blue
+          @shoes_instance.owner.tournament_record(@race)
+          @shoes_instance.owner.post_race
         end
       end    
     end
@@ -112,8 +125,25 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
         border black
         equis racer
         para racer.name
+        para racer.wins
+        para racer.losses
+        para racer.best_time
       end
     end
+  end
+
+  def post_race
+    @racer_list.clear do
+      list_racers
+    end
+
+    @matches.clear do
+      list_matches
+    end
+  end
+
+  def tournament_record(race)
+    @tournament.record(race)
   end
 
   def list_matches
@@ -127,17 +157,16 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
         button("race")do
           window :title => TITLE, :width => 800, :height => 600 do
             background white
-            
+
             stack do
               image "media/track.jpg", :top => -450
               banner TITLE, :top => 150, :align => "center", :background => magenta
               @update_area = stack {}
               race = lambda do
                 @start.hide
-                red_racer = Racer.new(:name => "racer1", :units => UNIT_SYSTEM)
-                blue_racer = Racer.new(:name => "racer2", :units => UNIT_SYSTEM)
-                r = Race.new(self, RACE_DISTANCE, @update_area,
-                             match[0], match[1])
+                r = RacePresenter.new(self, RACE_DISTANCE, @update_area,
+                             match[2])
+                
                 @countdown = 5
                 @start_time = Time.now+5
                 count_box = stack{ @label = banner "#{@countdown}..." }
@@ -181,7 +210,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     end
   end
 
-  @matches = stack(:width => 380, :margin => 5) do
+  @matches = stack(:width => 290, :margin => 5) do
     list_matches
   end
 
