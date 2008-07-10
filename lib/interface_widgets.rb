@@ -1,6 +1,6 @@
 module InterfaceWidgets
   def equis(racer)
-    image(20, 20, {:top => 8, :left => 115}) do
+    image(20, 20, {:top => 8, :left => 350}) do
       fill red
       rect(:top => 0, :left => 0, :height => 15, :width => 15)
       line(3,3,13,13)

@@ -5,6 +5,7 @@ begin
 rescue
   alert "You must write a conf.yml. See sample in conf-sample.yml"
 end
+Infinity = 1/0.0
 require 'lib/units/base'
 require 'lib/units/standard'
 SENSOR_LOCATION = options['sensor']['device']
@@ -116,14 +117,20 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
   @tournament = Tournament.new
 
   def list_racers
+    flow do 
+      flow(:width => 115) { para 'Name' }
+      flow(:width => 25) { para 'W' }
+      flow(:width => 25) { para 'L' }
+      flow(:width => 25) { para 'Best' }
+    end
     @tournament.racers.each do |racer|
       flow do 
         border black
+        flow(:width => 115) { para racer.name }
+        flow(:width => 25) { para racer.wins }
+        flow(:width => 25) { para racer.losses }
+        flow(:width => 25) { para racer.best_time unless racer.best_time == Infinity }
         equis racer
-        para racer.name
-        para racer.wins
-        para racer.losses
-        para racer.best_time
       end
     end
   end
@@ -215,6 +222,10 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     @matches.clear do
       list_matches
     end
+  end
+
+  button "save results" do
+    File.open(ask_save_file, 'w+') { |f| f << @tournament.to_yaml }
   end
 
   def add_racer(name)

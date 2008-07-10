@@ -1,9 +1,10 @@
+Infinity = 1/0.0
 class Racer
   attr_accessor :distance, :best_time, :wins, :losses
   attr :wheel_circumference
   attr :name
   attr :yaml_name
-  attr :ticks
+  attr_accessor :ticks
   include Comparable
   def <=>(other_racer)
     self.name<=>other_racer.name
@@ -11,7 +12,7 @@ class Racer
 
   def initialize(attributes = {})
     @distance = 0
-    @best_time = 1/0.0
+    @best_time = Infinity
     @wins = 0
     @losses = 0
     @speed = 0
