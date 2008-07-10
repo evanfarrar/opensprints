@@ -137,13 +137,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
   end
 
   def post_race
-    @racer_list.clear do
-      list_racers
-    end
-
-    @matches.clear do
-      list_matches
-    end
+    relist_tournament
   end
 
   def tournament_record(race)
@@ -230,9 +224,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
 
   button "autofill matches" do
     @tournament.autofill_matches
-    @matches.clear do
-      list_matches
-    end
+    relist_tournament
   end
 
   button "save results" do
@@ -241,8 +233,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
 
   button "open results" do
     @tournament = YAML::load(File.open(ask_open_file))
-    @racer_list.clear { list_racers }
-    @matches.clear { list_matches }
+    relist_tournament
   end
 
   def add_racer(name)
@@ -251,8 +242,13 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     end
     if !duped && name!='enter name'
       @tournament.racers << Racer.new(:name => name, :units => UNIT_SYSTEM)
-      @racer_list.clear { list_racers }
+      relist_tournament
     end
+  end
+
+  def relist_tournament
+    @matches.clear {list_matches}
+    @racer_list.clear {list_racers}
   end
 
 end
