@@ -6,7 +6,7 @@ class Tournament
   attr_accessor :results
 
   def initialize
-    @racers = [ 'Evan', 'Ffonst', 'Alex', 'Luke', 'Oren', 'Katy', 'Jonathan' ]
+    @racers = [ ]
     @racers.map!{|name| Racer.new(:name => name)}
     @matches = []
     @results = []
