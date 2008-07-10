@@ -13,12 +13,12 @@ class Tournament
   end
 
   def racers_unmatched
-    @racers - @matches.flatten
+    @racers - @matches.map{|m| m.racers }.flatten
   end
 
   def autofill_matches
     self.racers_unmatched.each_slice(2) { |a|
-      @matches << (a<<Race.new(*a)) unless a.length == 1
+      @matches << (Race.new(*a)) unless a.length == 1
     }
   end
 
@@ -27,8 +27,16 @@ class Tournament
     @racers << race.red_racer
     @racers.delete(race.blue_racer)
     @racers << race.blue_racer
-    matches.reject!{|m| m[2] == race}
+    matches.reject!{|m| m == race}
   end
 
   
+  def add_racer(racer)
+    return if @matches.find{|m| m.racers.include?(racer) } 
+    unless (race=@matches.find{|m| m.racers.length < 2 })
+      race = Race.new(nil,nil)
+      @matches << race
+    end
+    race.add_racer(racer)
+  end
 end

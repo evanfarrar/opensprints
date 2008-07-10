@@ -89,7 +89,7 @@ class RacePresenter
           @blue.record_time(@blue.tick_at(@race_distance))
           @shoes_instance.title "#{self.winner.name.upcase} WINS!!!\n", :align => "center",
             :top => 380, :width => 800 
-          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}, #{@blue.name}: #{@blue.tick_at(@race_distance)}",
+          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}s, #{@blue.name}: #{@blue.tick_at(@race_distance)}s",
             :align => 'center', :top => 450, :width => 800
           @sensor.stop
           @continue = false
@@ -130,7 +130,8 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
         flow(:width => 25) { para racer.wins }
         flow(:width => 25) { para racer.losses }
         flow(:width => 25) { para racer.best_time unless racer.best_time == Infinity }
-        equis racer
+        add_to_race racer
+        delete_racer racer
       end
     end
   end
@@ -156,7 +157,15 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
       flow(:margin => 5) do 
         background lightgrey
         border black
-        para "#{match[0].name} vs #{match[1].name}"
+        flow(:width => 180) do
+          if match.racers.length == 1
+            para match.racers.first.name
+          else
+            para span(match.blue_racer.name, :stroke => blue),
+                 " vs ",
+                 span(match.red_racer.name, :stroke => red)
+          end
+        end
         button("race")do
           window :title => TITLE, :width => 800, :height => 600 do
             background white
@@ -168,7 +177,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
               race = lambda do
                 @start.hide
                 r = RacePresenter.new(self, RACE_DISTANCE, @update_area,
-                             match[2])
+                             match)
                 
                 @countdown = 5
                 @start_time = Time.now+5
@@ -191,12 +200,14 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
               end
 
               button("Quit") do
-                @race_animation.stop
+                @race_animation.stop if @race_animation
                 close
               end
             end
           end
-        end
+        end #end race button
+        redblue(match)
+        delete_race(match)
       end
     end      
   end
@@ -209,7 +220,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     @racer_list = stack { list_racers }
     flow do
       @racer_name = edit_line "enter name"
-      plus
+      create_racer
     end
   end
 
