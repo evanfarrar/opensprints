@@ -1,0 +1,8 @@
+--- !ditz.rubyforge.org,2008-03-06/project 
+name: opensprints
+version: "0.3"
+components: 
+- !ditz.rubyforge.org,2008-03-06/component 
+  name: opensprints
+releases: []
+
