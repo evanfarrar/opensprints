@@ -239,6 +239,12 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     File.open(ask_save_file, 'w+') { |f| f << @tournament.to_yaml }
   end
 
+  button "open results" do
+    @tournament = YAML::load(File.open(ask_open_file))
+    @racer_list.clear { list_racers }
+    @matches.clear { list_matches }
+  end
+
   def add_racer(name)
     duped = @tournament.racers.any? do |racer|
       racer.name == name
