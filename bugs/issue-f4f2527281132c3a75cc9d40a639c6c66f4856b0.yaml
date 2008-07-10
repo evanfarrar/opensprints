@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Racer list should be sortable
+desc: The racer list should be sortable by name, wins, losses, etc.
+type: :feature
+component: opensprints
+release: 
+reporter: Alexander Rakoczy <arakoczy@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-07-10 23:12:18.176212 Z
+references: []
+
+id: f4f2527281132c3a75cc9d40a639c6c66f4856b0
+log_events: 
+- - 2008-07-10 23:12:27.517972 Z
+  - Alexander Rakoczy <arakoczy@gmail.com>
+  - created
+  - ""
