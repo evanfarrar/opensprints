@@ -5,8 +5,8 @@ type: :feature
 component: opensprints
 release: 
 reporter: Alexander Rakoczy <arakoczy@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-07-11 02:15:28.976974 Z
 references: []
 
@@ -16,3 +16,7 @@ log_events:
   - Alexander Rakoczy <arakoczy@gmail.com>
   - created
   - This asks a lot of shit.
+- - 2008-07-11 15:12:26.503862 Z
+  - Alexander Rakoczy <arakoczy@gmail.com>
+  - closed issue with disposition fixed
+  - Evan put names on teh page.  Great
