@@ -73,6 +73,7 @@ class RacePresenter
         partial_log << q
       end
     end
+
     if (partial_log=partial_log.grep(/^[12]/)).any?
       if (blue_log = partial_log.grep(/^2/))
         @blue.update(blue_log)
@@ -80,6 +81,7 @@ class RacePresenter
       if (red_log = partial_log.grep(/^1/))
         @red.update(red_log)
       end
+
       @update_area.clear do
         @shoes_instance.stroke gray 0.5
         @shoes_instance.strokewidth 4
@@ -97,16 +99,7 @@ class RacePresenter
           @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
           @shoes_instance.rect 6, 60, red_progress, 20 
         end
-        if @race.complete?
-          @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
-            :top => 380, :width => 800, :stroke => @shoes_instance.ivory
-          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}s, #{@blue.name}: #{@blue.tick_at(@race_distance)}s", :stroke => @shoes_instance.ivory,
-            :align => 'center', :top => 450, :width => 800
-          @sensor.stop
-          @continue = false
-          @shoes_instance.owner.tournament_record(@race)
-          @shoes_instance.owner.post_race
-        end
+
         @foo.translate(0,-75)
         #@foo.scale(0.75, 1)
         @shoes_instance.subtitle(
@@ -114,7 +107,18 @@ class RacePresenter
           @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
           @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
           {:top => 300, :align => 'center'})
-        
+
+        if @race.complete?
+          @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
+            :top => 380, :width => 800, :stroke => @shoes_instance.ivory
+          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}s, #{@blue.name}: #{@blue.tick_at(@race_distance)}s", :stroke => @shoes_instance.ivory,
+            :align => 'center', :top => 450, :width => 800
+
+          @sensor.stop
+          @continue = false
+          @shoes_instance.owner.tournament_record(@race)
+          @shoes_instance.owner.post_race
+        end
       end    
     end
   end

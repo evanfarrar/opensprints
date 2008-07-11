@@ -1,7 +1,7 @@
 module InterfaceWidgets
   def delete_racer(racer)
     image(20, 20, {:top => 8, :left => 350}) do
-      x
+      delete_button 
       click do
         @tournament.racers.delete(racer)
         @racer_list.clear { list_racers }
@@ -11,7 +11,7 @@ module InterfaceWidgets
 
   def delete_race(race)
     image(20, 20, {:top => 8, :left => 250}) do
-      x
+      delete_button
       click do
         @tournament.matches.delete(race)
         @matches.clear { list_matches }
@@ -21,7 +21,7 @@ module InterfaceWidgets
 
   def create_racer
     image(20, 20, {:top => 8, :left => 115}) do
-      plus
+      add_button
       click do
         add_racer @racer_name.text
       end
@@ -30,7 +30,7 @@ module InterfaceWidgets
 
   def add_to_race(racer)
     image(20, 20, {:top => 8, :left => 325}) do
-      plus
+      add_button
       click do
         @tournament.add_racer(racer)
 
@@ -41,14 +41,14 @@ module InterfaceWidgets
     end
   end
 
-  def x
+  def delete_button
     fill red
     rect(:top => 0, :left => 0, :height => 15, :width => 15)
     line(3,3,13,13)
     line(13,3,3,13)
   end
 
-  def plus
+  def add_button
     fill red
     rect(:top => 0, :left => 0, :height => 15, :width => 15)
     line(8,3,8,13)

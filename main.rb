@@ -20,11 +20,7 @@ require 'lib/secsy_time'
 require "lib/sensors/#{options['sensor']['type']}_sensor"
 require 'lib/race_presenter'
 
-if options['units'] == 'standard'
-  UNIT_SYSTEM = :mph
-else    
-  UNIT_SYSTEM = :kmph
-end
+UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kmph
 
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
   background white
@@ -83,6 +79,20 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     end      
   end
 
+  def add_racer(name)
+    duped = @tournament.racers.any? do |racer|
+      racer.name == name
+    end
+    if !duped && name!='enter name'
+      @tournament.racers << Racer.new(:name => name, :units => UNIT_SYSTEM)
+      relist_tournament
+    end
+  end
+
+  def relist_tournament
+    @matches.clear {list_matches}
+    @racer_list.clear {list_racers}
+  end
 
   stack(:width => 380, :margin => 5) do
     border black
@@ -111,20 +121,4 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     @tournament = YAML::load(File.open(ask_open_file))
     relist_tournament
   end
-
-  def add_racer(name)
-    duped = @tournament.racers.any? do |racer|
-      racer.name == name
-    end
-    if !duped && name!='enter name'
-      @tournament.racers << Racer.new(:name => name, :units => UNIT_SYSTEM)
-      relist_tournament
-    end
-  end
-
-  def relist_tournament
-    @matches.clear {list_matches}
-    @racer_list.clear {list_racers}
-  end
-
 end
