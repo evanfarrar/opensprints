@@ -170,8 +170,8 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
           window :title => TITLE, :width => 800, :height => 600 do
             background white
 
+              background "media/trappedsprints.jpg"
             stack do
-              image "media/track.jpg", :top => -450
               banner TITLE, :top => 150, :align => "center", :background => magenta
               @update_area = stack {}
               race = lambda do

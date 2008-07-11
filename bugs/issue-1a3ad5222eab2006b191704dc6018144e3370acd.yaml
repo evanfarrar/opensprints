@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Make the sensor correctly restart time
+desc: Currently, we have to unplug and replug the sensor between races. If we change the sensor code to reuse the same file handle restarting the race timer will work correctly
+type: :bugfix
+component: opensprints
+release: 
+reporter: Evan Farrar <evanfarrar@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-07-11 00:21:39.218678 Z
+references: []
+
+id: 1a3ad5222eab2006b191704dc6018144e3370acd
+log_events: 
+- - 2008-07-11 00:21:42.378279 Z
+  - Evan Farrar <evanfarrar@gmail.com>
+  - created
+  - ""
