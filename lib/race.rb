@@ -1,10 +1,11 @@
 class Race
-  attr_accessor :winner, :red_racer, :blue_racer
-  def initialize(red_racer, blue_racer)
+  attr_accessor :red_racer, :blue_racer
+  def initialize(red_racer, blue_racer, distance)
     red_racer.ticks.clear if red_racer
     blue_racer.ticks.clear if blue_racer
     @red_racer = red_racer
     @blue_racer = blue_racer
+    @distance = distance
   end
 
   def racers
@@ -18,6 +19,22 @@ class Race
     else
       @red_racer = racer
     end
+  end
+
+  def complete?
+    self.racers.all? { |racer| racer.distance > @distance }
+  end
+
+  def winner
+    standings = self.racers.sort_by { |racer| racer.tick_at(@distance) }
+
+    winner = standings.first
+    standings.reverse.each_with_index do |racer, i|
+      racer.wins += i
+      racer.races += 1
+      racer.record_time(racer.tick_at(@distance))
+    end
+    winner
   end
 
   def flip

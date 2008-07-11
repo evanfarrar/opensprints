@@ -26,27 +26,23 @@ else
   UNIT_SYSTEM = :kmph
 end
 
-
-
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
   extend InterfaceWidgets
   extend RacePresenterMod
-  @tournament = Tournament.new
+  @tournament = Tournament.new(RACE_DISTANCE)
 
   def list_racers
     flow do 
       flow(:width => 115) { para 'Name' }
-      flow(:width => 25) { para 'W' }
-      flow(:width => 25) { para 'L' }
+      flow(:width => 50) { para 'Wins' }
       flow(:width => 25) { para 'Best' }
     end
     @tournament.racers.each do |racer|
       flow do 
         border black
         flow(:width => 115) { para racer.name }
-        flow(:width => 25) { para racer.wins }
-        flow(:width => 25) { para racer.losses }
-        flow(:width => 25) { para racer.best_time unless racer.best_time == Infinity }
+        flow(:width => 50) { para racer.wins, " / ", racer.races }
+        flow(:width => 25) { para racer.best_time, "s" unless racer.best_time == Infinity }
         add_to_race racer
         delete_racer racer
       end

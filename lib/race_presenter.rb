@@ -42,7 +42,6 @@ module RacePresenterMod
 
 end
 class RacePresenter
-  attr_accessor :winner
   def initialize(shoes_instance, distance, update_area, race, sensor_location)
     @shoes_instance = shoes_instance
     @bar_size = 800-2*60
@@ -92,26 +91,13 @@ class RacePresenter
         @shoes_instance.stroke "#F00"
         @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
         @shoes_instance.rect 60, 340, red_progress, 20 
-        if @blue.distance>@race_distance and @red.distance>@race_distance
-          if (@red.tick_at(@race_distance)<@blue.tick_at(@race_distance)) 
-            self.winner = @red
-            @red.wins += 1
-            @blue.losses += 1
-          else
-            self.winner = @blue
-            @red.losses += 1
-            @blue.wins += 1
-          end
-          @red.record_time(@red.tick_at(@race_distance))
-          @blue.record_time(@blue.tick_at(@race_distance))
-          @shoes_instance.title "#{self.winner.name.upcase} WINS!!!\n", :align => "center",
+        if @race.complete?
+          @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
             :top => 380, :width => 800, :stroke => @shoes_instance.white
           @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}s, #{@blue.name}: #{@blue.tick_at(@race_distance)}s", :stroke => @shoes_instance.white,
             :align => 'center', :top => 450, :width => 800
           @sensor.stop
           @continue = false
-          @race.red_racer = @red
-          @race.blue_racer = @blue
           @shoes_instance.owner.tournament_record(@race)
           @shoes_instance.owner.post_race
         end

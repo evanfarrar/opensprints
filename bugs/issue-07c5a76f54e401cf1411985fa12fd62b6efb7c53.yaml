@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Names should be next to the progress bars
+desc: Yep.
+type: :feature
+component: opensprints
+release: 
+reporter: Alexander Rakoczy <arakoczy@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-07-11 02:15:28.976974 Z
+references: []
+
+id: 07c5a76f54e401cf1411985fa12fd62b6efb7c53
+log_events: 
+- - 2008-07-11 02:15:36.793140 Z
+  - Alexander Rakoczy <arakoczy@gmail.com>
+  - created
+  - This asks a lot of shit.

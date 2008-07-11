@@ -1,6 +1,6 @@
 Infinity = 1/0.0
 class Racer
-  attr_accessor :distance, :best_time, :wins, :losses
+  attr_accessor :distance, :best_time, :wins, :losses, :races
   attr :wheel_circumference
   attr :name
   attr :yaml_name
@@ -15,6 +15,7 @@ class Racer
     @best_time = Infinity
     @wins = 0
     @losses = 0
+    @races = 0
     @speed = 0
     raise unless $ROLLER_CIRCUMFERENCE
     @wheel_circumference = $ROLLER_CIRCUMFERENCE
