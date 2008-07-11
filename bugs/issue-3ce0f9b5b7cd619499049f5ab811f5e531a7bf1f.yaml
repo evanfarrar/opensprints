@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: A person should be able to race alone
+desc: Currently, opensprints requires two racers
+type: :feature
+component: opensprints
+release: 
+reporter: Alexander Rakoczy <arakoczy@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-07-11 00:23:59.465638 Z
+references: []
+
+id: 3ce0f9b5b7cd619499049f5ab811f5e531a7bf1f
+log_events: 
+- - 2008-07-11 00:24:01.834362 Z
+  - Alexander Rakoczy <arakoczy@gmail.com>
+  - created
+  - ""
