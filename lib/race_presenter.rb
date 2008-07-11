@@ -7,14 +7,19 @@ module RacePresenterMod
         banner title, :top => 150, :align => "center", :background => magenta,
           :stroke => white
         @update_area = stack {}
-        race = lambda do
+
+        def hide_start
           @start.hide
+        end
+
+        @start = button("Start Race") do
+          hide_start
           r = RacePresenter.new(self, race_distance, @update_area,
                        match, sensor_location)
           
           @countdown = 5
           @start_time = Time.now+5
-          count_box = stack{ @label = banner "#{@countdown}..." }
+          count_box = stack(:top => 300, :left => 100){ @label = banner "#{@countdown}..." }
           @race_animation = animate(14) do
             @now = Time.now
             if @now < @start_time
@@ -27,9 +32,6 @@ module RacePresenterMod
               @start.show unless r.continue?
             end
           end
-        end
-        @start = button("Start Race") do
-          race.call
         end
 
         button("Quit") do
@@ -44,7 +46,7 @@ end
 class RacePresenter
   def initialize(shoes_instance, distance, update_area, race, sensor_location)
     @shoes_instance = shoes_instance
-    @bar_size = 800-2*60
+    @bar_size = 800-2*60-6
     @race_distance = distance
     @race = race
     @red = @race.red_racer
@@ -80,17 +82,20 @@ class RacePresenter
       @update_area.clear do
         @shoes_instance.stroke gray 0.5
         @shoes_instance.strokewidth 4
-        @shoes_instance.line 60-4,280,60-4,380
-        @shoes_instance.line 800-60+4,280,800-60+4,380
-        blue_progress = @bar_size*percent_complete(@blue)
-        @shoes_instance.stroke "#00F"
-        @shoes_instance.fill "#FEE".."#32F", :angle => 90, :radius => 10
-        @shoes_instance.rect 60, 300, blue_progress, 20 
-        
-        red_progress = @bar_size*percent_complete(@red)
-        @shoes_instance.stroke "#F00"
-        @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
-        @shoes_instance.rect 60, 340, red_progress, 20 
+        @foo = @shoes_instance.image(800-60+4, 100, :top => 280, :left => 80) do
+          @shoes_instance.line 2,0,2,100
+          @shoes_instance.line 684,0,684,100
+
+          blue_progress = @bar_size*percent_complete(@blue)
+          @shoes_instance.stroke "#00F"
+          @shoes_instance.fill "#FEE".."#32F", :angle => 90, :radius => 10
+          @shoes_instance.rect 6, 20, blue_progress, 20 
+          
+          red_progress = @bar_size*percent_complete(@red)
+          @shoes_instance.stroke "#F00"
+          @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
+          @shoes_instance.rect 6, 60, red_progress, 20 
+        end
         if @race.complete?
           @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
             :top => 380, :width => 800, :stroke => @shoes_instance.white
@@ -101,6 +106,11 @@ class RacePresenter
           @shoes_instance.owner.tournament_record(@race)
           @shoes_instance.owner.post_race
         end
+        @foo.translate(100,-75)
+        @foo.scale(0.75, 1)
+        @shoes_instance.subtitle(@red.name,{:stroke => "#F00", :top => 260, :left => 50})
+        @shoes_instance.subtitle(@blue.name,{:stroke => "#00F", :top => 220, :left => 50})
+        
       end    
     end
   end
