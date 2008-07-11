@@ -4,7 +4,7 @@ module RacePresenterMod
       background "media/trappedsprints-800.jpg"
 
       stack do
-        banner title, :top => 150, :align => "center", :background => magenta,
+        subtitle title, :top => 150, :align => "center", :background => magenta,
           :stroke => white
         @update_area = stack {}
 
@@ -12,19 +12,20 @@ module RacePresenterMod
           @start.hide
         end
 
-        @start = button("Start Race") do
+        @start = button("Start Race",{:top => 570, :left => 10}) do
           hide_start
           r = RacePresenter.new(self, race_distance, @update_area,
                        match, sensor_location)
           
           @countdown = 5
           @start_time = Time.now+5
-          count_box = stack(:top => 300, :left => 100){ @label = banner "#{@countdown}..." }
+          count_box = stack(:top => 200){   }
           @race_animation = animate(14) do
             @now = Time.now
             if @now < @start_time
               count_box.clear do
-                banner "#{(@start_time-@now).round}...", :stroke => white
+                banner "#{(@start_time-@now).round}...", :stroke => ivory,
+                  :font => "Arial 200px", :align => 'center'
               end
             else
               count_box.remove
@@ -34,7 +35,7 @@ module RacePresenterMod
           end
         end
 
-        button("Quit") do
+        button("Quit", {:top => 570, :left => 135}) do
           @race_animation.stop if @race_animation
           close
         end
@@ -98,18 +99,21 @@ class RacePresenter
         end
         if @race.complete?
           @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
-            :top => 380, :width => 800, :stroke => @shoes_instance.white
-          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}s, #{@blue.name}: #{@blue.tick_at(@race_distance)}s", :stroke => @shoes_instance.white,
+            :top => 380, :width => 800, :stroke => @shoes_instance.ivory
+          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}s, #{@blue.name}: #{@blue.tick_at(@race_distance)}s", :stroke => @shoes_instance.ivory,
             :align => 'center', :top => 450, :width => 800
           @sensor.stop
           @continue = false
           @shoes_instance.owner.tournament_record(@race)
           @shoes_instance.owner.post_race
         end
-        @foo.translate(100,-75)
-        @foo.scale(0.75, 1)
-        @shoes_instance.subtitle(@red.name,{:stroke => "#F00", :top => 260, :left => 50})
-        @shoes_instance.subtitle(@blue.name,{:stroke => "#00F", :top => 220, :left => 50})
+        @foo.translate(0,-75)
+        #@foo.scale(0.75, 1)
+        @shoes_instance.subtitle(
+          @shoes_instance.span(@red.name,{:stroke => "#F00"}), 
+          @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
+          @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
+          {:top => 300, :align => 'center'})
         
       end    
     end

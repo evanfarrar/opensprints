@@ -27,6 +27,7 @@ else
 end
 
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
+  background white
   extend InterfaceWidgets
   extend RacePresenterMod
   @tournament = Tournament.new(RACE_DISTANCE)
@@ -34,15 +35,15 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
   def list_racers
     flow do 
       flow(:width => 115) { para 'Name' }
-      flow(:width => 50) { para 'Wins' }
-      flow(:width => 25) { para 'Best' }
+      flow(:width => 50)  { para 'Wins' }
+      flow(:width => 25)  { para 'Best' }
     end
     @tournament.racers.each do |racer|
       flow do 
         border black
         flow(:width => 115) { para racer.name }
-        flow(:width => 50) { para racer.wins, " / ", racer.races }
-        flow(:width => 25) { para racer.best_time, "s" unless racer.best_time == Infinity }
+        flow(:width => 50)  { para racer.wins, " / ", racer.races }
+        flow(:width => 25)  { para racer.best_time, "s" unless racer.best_time == Infinity }
         add_to_race racer
         delete_racer racer
       end
@@ -83,7 +84,6 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
   end
 
 
-  background white
   stack(:width => 380, :margin => 5) do
     border black
     title "Racers"
@@ -103,11 +103,11 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     relist_tournament
   end
 
-  button "save results" do
+  button "save" do
     File.open(ask_save_file, 'w+') { |f| f << @tournament.to_yaml }
   end
 
-  button "open results" do
+  button "open" do
     @tournament = YAML::load(File.open(ask_open_file))
     relist_tournament
   end
