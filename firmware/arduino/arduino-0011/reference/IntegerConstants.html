@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Arduino - IntegerConstants </title>
+  <link rel='stylesheet' href='arduino.css' type='text/css' />
+</head>
+<body>
+<div id="page">
+<!--PageHeaderFmt-->
+<div id="pageheader">
+  <div class="title"><a href="http://www.arduino.cc"/>Arduino</a></div>
+  <div class="search">
+    <!-- SiteSearch Google -->    <FORM method=GET action="http://www.google.com/search">    <input type=hidden name=ie value=UTF-8>    <input type=hidden name=oe value=UTF-8>    <INPUT TYPE=text name=q size=25 maxlength=255 value="">    <INPUT type=submit name=btnG VALUE="search">    <input type=hidden name=domains value="http://www.arduino.cc/">
+    <input type=hidden name=sitesearch value="http://www.arduino.cc/">
+    </FORM>    <!-- SiteSearch Google -->
+  </div>
+</div>
+<!--/PageHeaderFmt-->
+<!--PageLeftFmt-->
+<div id="pagenav">
+  <p><a class='wikilink' href='Guide_index.html'>Getting Started</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Tutorial/HomePage'>Tutorials</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='index.html'>Reference</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Hardware'>Hardware</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Software'>Software</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/blog/' rel='nofollow'>Blog</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl' rel='nofollow'>Forum</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/playground/' rel='nofollow'>Playground</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/playground/Projects/ArduinoUsers' rel='nofollow'>Exhibition</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Hacking/HomePage'>Hacking</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='FAQ.html'>FAQ</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Buy'>Buy</a>
+</p>
+
+</div>
+<!--/PageLeftFmt-->
+<div id="pagetext">
+<!--PageText-->
+<div id='wikitext'>
+<p><strong>Reference</strong> &nbsp;  <a class='wikilink' href='index.html'>Language</a> (<a class='wikilink' href='Extended.html'>extended</a>) | <a class='wikilink' href='Libraries.html'>Libraries</a> | <a class='wikilink' href='Comparison.html'>Comparison</a>
+</p>
+<p class='vspace'></p><h2>Integer Constants</h2>
+<p>Integer constants are numbers used directly in a sketch, like <code>123</code>.  Normally, these numbers are treated as base 10 (decimal) integers, but special notation (formatters) may be used to enter numbers in other bases.  
+</p>
+<p class='vspace'></p><pre>
+Base               Example    Formatter        Comment
+
+10 (decimal)           123    none
+
+2 (binary)        B1111011    capital 'B'      only works with 8 bit values
+                                               characters 0-1 valid
+
+8 (octal)             0173    leading zero     characters 0-7 valid       
+
+16 (hexadecimal)      0x7B    leading 0x       characters 0-9, A-F, a-f valid    
+
+</pre>
+<p class='vspace'></p><p><strong>Decimal</strong> is base 10, this is the common-sense math with which you are aquainted. 
+</p>
+<p class='vspace'></p><p>Example: <code>101 == 101 decimal    ((1 * 10^2) + (0 * 10^1) + 1)</code>
+</p>
+<p class='vspace'></p><p><br /><strong>Binary</strong> is base two.  Only characters 0 and 1 are valid. 
+</p>
+<p class='vspace'></p><p><code>Example: B101 == 5 decimal   ((1 * 2^2) + (0 * 2^1) + 1)</code>
+</p>
+<p class='vspace'></p><p>The binary formatter only works on bytes (8 bits) between 0 (B0) and 255 (B11111111). If it's convenient to input an int (16 bits) in binary form you can do it a two-step procedure such as this:
+</p>
+<p class='vspace'></p><p><code>myInt = (B11001100 * 256) + B10101010; // B11001100 is the high byte </code>
+<br /><br />
+</p>
+<p class='vspace'></p><p><strong>Octal</strong> is base eight.  Only characters 0 through 7 are valid. 
+</p>
+<p class='vspace'></p><p><code>Example: 0101 == 65 decimal    ((1 * 8^2) + (0 * 8^1) + 1) </code>
+</p><h4>Warning</h4>
+<p>You can generate a hard-to-find bug by (unintentionally) including a leading zero before a constant and having the compiler unintentionally interpret your constant as octal
+<br /><br />
+</p>
+<p class='vspace'></p><p><strong>Hexadecimal (or hex)</strong> is base sixteen. Valid characters are 0 through 9 and letters A through F; <code>A</code> has the value 10, <code>B</code> is 11, up to <code>F</code>, which is 15. 
+</p>
+<p class='vspace'></p><p>Example: <code>0x101 == 257 decimal    ((1 * 16^2) + (0 * 16^1) + 1) </code>
+<br /><br />
+</p><h4>U &amp; L formatters</h4>
+<p>An integer constant may be followed by:
+</p>
+<p class='vspace'></p><ul><li>a 'u' or 'U' to force the constant into an unsigned data format. Example: 33u
+</li><li>a 'l' or 'L' to force the constant into a long data format. Example: 100000L 
+</li><li>a 'ul' or 'UL' to force the constant into an unsigned long constant. Example: 32767ul 
+</li></ul><p><br />
+</p><h4>See also</h4>
+<ul><li><a class='wikilink' href='Constants.html'>constants</a>
+</li><li><a class='wikilink' href='Define.html'>#define</a>
+</li><li><a class='wikilink' href='Byte.html'>byte</a>
+</li><li><a class='wikilink' href='Int.html'>int</a>
+</li><li><a class='wikilink' href='UnsignedInt.html'>unsigned int</a>
+</li><li><a class='wikilink' href='Long.html'>long</a>
+</li><li><a class='wikilink' href='UnsignedLong.html'>unsigned long</a>
+</li></ul><p class='vspace'></p><p><a class='wikilink' href='index.html'>Reference Home</a>
+</p>
+<p class='vspace'></p><p><em>Corrections, suggestions, and new documentation should be posted to the <a class='urllink' href='http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=swbugs' rel='nofollow'>Forum</a>.</em>
+</p>
+<p class='vspace'></p><p>The text of the Arduino reference is licensed under a
+<a class='urllink' href='http://creativecommons.org/licenses/by-sa/3.0/' rel='nofollow'>Creative Commons Attribution-ShareAlike 3.0 License</a>.  Code samples in the reference are released into the public domain.
+</p>
+</div>
+
+</div>
+<!--PageFooterFmt-->
+<div id="pagefooter">
+  <a href='#'>Edit Page</a> | <a href='#'>Page History</a> | <a href='#' target='_blank'>Printable View</a> | <a href='http://www.arduino.cc/en/Site/AllRecentChanges'>All Recent Site Changes</a>
+</div>
+<!--/PageFooterFmt-->
+</div>
+</body>
+</html>

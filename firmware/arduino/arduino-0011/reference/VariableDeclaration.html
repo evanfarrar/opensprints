@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Arduino - VariableDeclaration </title>
+  <link rel='stylesheet' href='arduino.css' type='text/css' />
+</head>
+<body>
+<div id="page">
+<!--PageHeaderFmt-->
+<div id="pageheader">
+  <div class="title"><a href="http://www.arduino.cc"/>Arduino</a></div>
+  <div class="search">
+    <!-- SiteSearch Google -->    <FORM method=GET action="http://www.google.com/search">    <input type=hidden name=ie value=UTF-8>    <input type=hidden name=oe value=UTF-8>    <INPUT TYPE=text name=q size=25 maxlength=255 value="">    <INPUT type=submit name=btnG VALUE="search">    <input type=hidden name=domains value="http://www.arduino.cc/">
+    <input type=hidden name=sitesearch value="http://www.arduino.cc/">
+    </FORM>    <!-- SiteSearch Google -->
+  </div>
+</div>
+<!--/PageHeaderFmt-->
+<!--PageLeftFmt-->
+<div id="pagenav">
+  <p><a class='wikilink' href='Guide_index.html'>Getting Started</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Tutorial/HomePage'>Tutorials</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='index.html'>Reference</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Hardware'>Hardware</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Software'>Software</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/blog/' rel='nofollow'>Blog</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl' rel='nofollow'>Forum</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/playground/' rel='nofollow'>Playground</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/playground/Projects/ArduinoUsers' rel='nofollow'>Exhibition</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Hacking/HomePage'>Hacking</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='FAQ.html'>FAQ</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Buy'>Buy</a>
+</p>
+
+</div>
+<!--/PageLeftFmt-->
+<div id="pagetext">
+<!--PageText-->
+<div id='wikitext'>
+<p><strong>Reference</strong> &nbsp;  <a class='wikilink' href='index.html'>Language</a> (<a class='wikilink' href='Extended.html'>extended</a>) | <a class='wikilink' href='Libraries.html'>Libraries</a> | <a class='wikilink' href='Comparison.html'>Comparison</a>
+</p>
+<p class='vspace'></p><h2>Variables</h2>
+<p>A variable is a way of naming and storing a value for later use by the program, such as data from a analog pin set to input. (See <a class='wikilink' href='PinMode.html'>pinMode</a> for more on setting pins to input or output.)
+</p>
+<p class='vspace'></p><p>You set a variable by making it equal to the value you want to store. The following code declares a variable <strong>inputVariable</strong>, and then sets it equal to the value at analog pin #2:
+</p>
+<p class='vspace'></p><pre>
+int inputVariable = 0;         // declares the variable; this only needs to be done once
+inputVariable = analogRead(2); // set the variable to the input of analog pin #2
+</pre>
+<p class='vspace'></p><p><strong>inputVariable</strong> is the variable itself. The first line declares that it will contain an <a class='wikilink' href='Int.html'>int</a> (short for integer.) The second line sets inputVariable to the value at analog pin #2. This makes the value of pin #2  accessible elsewhere in the code. 
+</p>
+<p class='vspace'></p><p>Once a variable has been set (or re-set), you can test its value to see if it meets certain conditions, or you can use it's value directly. For  instance, the following code tests whether the inputVariable is less than 100, then sets a delay based on inputVariable which is a minimum of 100:
+</p>
+<p class='vspace'></p><pre>
+if (inputVariable &lt; 100)
+{
+  inputVariable = 100;
+}
+
+delay(inputVariable);
+</pre>
+<p class='vspace'></p><p>This example shows all three useful operations with variables. It tests the variable ( <code>if (inputVariable &lt; 100)</code> ), it sets the variable if it passes the test ( <code>inputVariable = 100</code> ), and it uses the value of the variable as an input to the delay() function (<code> delay(inputVariable)</code> )
+</p>
+<p class='vspace'></p><p><strong>Style Note:</strong> You should give your variables descriptive names, so as to make your code more readable. Variable names like <strong>tiltSensor</strong> or <strong>pushButton</strong> help you (and anyone else reading your code) understand what the variable represents. Variable names like <strong>var</strong> or <strong>value</strong>, on the other hand, do little to make your code readable.
+</p>
+<p class='vspace'></p><p>You can name a variable any word that is not already one of the <a class='wikilink' href='Keywords.html'>keywords</a> in Arduino. Avoid beginning variable names with numeral characters.
+</p>
+<p class='vspace'></p><h3>Variable Declaration</h3>
+<p>All variables have to be declared before they are used. Declaring a variable means defining its type, and optionally, setting an initial value (initializing the variable). In the above example, the statement
+</p>
+<p class='vspace'></p><p>
+int inputVariable = 0;
+
+</p>
+<p class='vspace'></p><p>declares that inputVariable is an <a class='wikilink' href='Int.html'>int</a>, and that its initial value is zero.
+</p>
+<p class='vspace'></p><p>Possible types for variables are:
+</p>
+<p class='vspace'></p><ul><li><a class='wikilink' href='Char.html'>char</a>
+</li><li><a class='wikilink' href='Byte.html'>byte</a>
+</li><li><a class='wikilink' href='Int.html'>int</a>
+</li><li><a class='wikilink' href='UnsignedInt.html'>unsigned int</a>
+</li><li><a class='wikilink' href='Long.html'>long</a>
+</li><li><a class='wikilink' href='UnsignedLong.html'>unsigned long</a>
+</li><li><a class='wikilink' href='Float.html'>float</a>
+</li><li><a class='wikilink' href='Double.html'>double</a>
+</li></ul><p><a class='wikilink' href='index.html'>Reference Home</a>
+</p>
+<p class='vspace'></p><p><em>Corrections, suggestions, and new documentation should be posted to the <a class='urllink' href='http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=swbugs' rel='nofollow'>Forum</a>.</em>
+</p>
+<p class='vspace'></p><p>The text of the Arduino reference is licensed under a
+<a class='urllink' href='http://creativecommons.org/licenses/by-sa/3.0/' rel='nofollow'>Creative Commons Attribution-ShareAlike 3.0 License</a>.  Code samples in the reference are released into the public domain.
+</p>
+</div>
+
+</div>
+<!--PageFooterFmt-->
+<div id="pagefooter">
+  <a href='#'>Edit Page</a> | <a href='#'>Page History</a> | <a href='#' target='_blank'>Printable View</a> | <a href='http://www.arduino.cc/en/Site/AllRecentChanges'>All Recent Site Changes</a>
+</div>
+<!--/PageFooterFmt-->
+</div>
+</body>
+</html>

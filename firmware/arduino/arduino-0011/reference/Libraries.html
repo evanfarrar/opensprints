@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Arduino - Libraries </title>
+  <link rel='stylesheet' href='arduino.css' type='text/css' />
+</head>
+<body>
+<div id="page">
+<!--PageHeaderFmt-->
+<div id="pageheader">
+  <div class="title"><a href="http://www.arduino.cc"/>Arduino</a></div>
+  <div class="search">
+    <!-- SiteSearch Google -->    <FORM method=GET action="http://www.google.com/search">    <input type=hidden name=ie value=UTF-8>    <input type=hidden name=oe value=UTF-8>    <INPUT TYPE=text name=q size=25 maxlength=255 value="">    <INPUT type=submit name=btnG VALUE="search">    <input type=hidden name=domains value="http://www.arduino.cc/">
+    <input type=hidden name=sitesearch value="http://www.arduino.cc/">
+    </FORM>    <!-- SiteSearch Google -->
+  </div>
+</div>
+<!--/PageHeaderFmt-->
+<!--PageLeftFmt-->
+<div id="pagenav">
+  <p><a class='wikilink' href='Guide_index.html'>Getting Started</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Tutorial/HomePage'>Tutorials</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='index.html'>Reference</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Hardware'>Hardware</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Software'>Software</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/blog/' rel='nofollow'>Blog</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl' rel='nofollow'>Forum</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/playground/' rel='nofollow'>Playground</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='http://www.arduino.cc/playground/Projects/ArduinoUsers' rel='nofollow'>Exhibition</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Hacking/HomePage'>Hacking</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='FAQ.html'>FAQ</a>
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='http://www.arduino.cc/en/Main/Buy'>Buy</a>
+</p>
+
+</div>
+<!--/PageLeftFmt-->
+<div id="pagetext">
+<!--PageText-->
+<div id='wikitext'>
+<p><strong>Reference</strong> &nbsp;  <a class='wikilink' href='index.html'>Language</a> (<a class='wikilink' href='Extended.html'>extended</a>) | <a class='selflink' href='Libraries.html'>Libraries</a> | <a class='wikilink' href='Comparison.html'>Comparison</a>
+</p>
+<p class='vspace'></p><h2>Libraries</h2>
+<p>To use an existing library in a sketch, go to the Sketch menu, choose "Import Library", and pick from the libraries available. This will insert one or more <strong>#include</strong> statements at the top of the sketch and allow it to use the library.
+</p>
+<p class='vspace'></p><p>Because libraries are uploaded to the board with your sketch, they increase the amount of space it takes up.  If a sketch no longer needs a library, simply delete its <strong>#include</strong> statements from the top of your code.
+</p>
+<p class='vspace'></p><h3>Official Libraries</h3>
+<p><em>These are the "official" libraries that are included in the Arduino distribution.</em>
+</p>
+<p class='vspace'></p><ul><li><a class='wikilink' href='SoftwareSerial.html'>SoftwareSerial</a> - for serial communication on any digital pins
+</li><li><a class='wikilink' href='Stepper.html'>Stepper</a> - for controlling stepper motors
+</li><li><a class='wikilink' href='EEPROM.html'>EEPROM</a> - reading and writing to "permanent" storage
+</li></ul><p class='vspace'></p><p>These libraries are compatible Wiring versions, and the links below point to the (excellent) Wiring documentation.
+</p>
+<p class='vspace'></p><ul><li><a class='urllink' href='http://wiring.org.co/reference/libraries/Matrix/index.html' rel='nofollow'>Matrix</a> - Basic LED Matrix display manipulation library
+</li><li><a class='urllink' href='http://wiring.org.co/reference/libraries/Sprite/index.html' rel='nofollow'>Sprite</a> - Basic image sprite manipulation library for use in animations with an LED matrix
+</li><li><a class='urllink' href='http://wiring.org.co/reference/libraries/Wire/index.html' rel='nofollow'>Wire</a> - Two Wire Interface (<span class='wikiword'>TWI/I2C</span>) for sending and receiving data over a net of devices or sensors.  On the Arduino, SDA is on analog input pin 4, and SCL on analog input pin 5.
+</li></ul><p class='vspace'></p><h3>Unofficial Libraries</h3>
+<p><em>These are not (yet) included with the Arduino distribution and may change.</em>
+</p>
+<p class='vspace'></p><ul><li><a class='urllink' href='http://www.arduino.cc/playground/Code/SimpleMessageSystem' rel='nofollow'>Simple Message System</a> - send messages between Arduino and the computer
+</li><li><a class='urllink' href='http://www.arduino.cc/playground/Learning/OneWire' rel='nofollow'>OneWire</a> - control devices (from Dallas Semiconductor) that use the One Wire protocol.
+</li><li><a class='urllink' href='http://www.arduino.cc/en/Tutorial/LCDLibrary' rel='nofollow'>LCD</a> - control <span class='wikiword'>LCDs</span> (using 8 data lines)
+</li><li><a class='urllink' href='http://www.arduino.cc/playground/Code/LCD4BitLibrary' rel='nofollow'>LCD 4 Bit</a> - control <span class='wikiword'>LCDs</span> (using 4 data lines)
+</li><li><a class='urllink' href='http://www.arduino.cc/playground/Main/LedControl' rel='nofollow'>LedControl</a> - for controlling LED matrices or seven-segment displays with a <span class='wikiword'>MAX7221</span> or <span class='wikiword'>MAX7219</span>.
+</li><li><a class='wikilink' href='http://www.arduino.cc/en/Tutorial/TextString'>TextString</a> - handle strings
+</li><li><a class='urllink' href='http://www.arduino.cc/playground/Code/Metro' rel='nofollow'>Metro</a> - help you time actions at regular intervals
+</li><li><a class='urllink' href='http://www.arduino.cc/playground/ComponentLib/Servo' rel='nofollow'>Servo</a> - provides software support for Servo motors on any pins.
+</li><li><a class='urllink' href='http://www.arduino.cc/playground/ComponentLib/Servotimer1' rel='nofollow'>Servotimer1</a> - provides hardware support for Servo motors on pins 9 and 10
+</li><li><a class='wikilink' href='http://www.arduino.cc/en/Tutorial/X10'>X10</a> - Sending X10 signals over AC power lines
+</li><li><a class='urllink' href='http://www.wayoda.org/arduino/ledcontrol/index.html' rel='nofollow'>LedControl</a> - an alternative to the Matrix library for driving multiple <span class='wikiword'>LEDs</span> with Maxim chips.
+</li></ul><p class='vspace'></p><p>To install, unzip the library to a sub-directory of the <strong>hardware/libraries</strong> sub-directory of the Arduino application directory.  Then launch the Arduino environment; you should see the library in the <strong>Import Library</strong> menu. 
+</p>
+<p class='vspace'></p><p>For a guide to writing your own libraries, see <a class='wikilink' href='http://www.arduino.cc/en/Hacking/LibraryTutorial'>this tutorial</a>.
+</p>
+<p class='vspace'></p><p><a class='wikilink' href='index.html'>Reference Home</a>
+</p>
+<p class='vspace'></p><p><em>Corrections, suggestions, and new documentation should be posted to the <a class='urllink' href='http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=swbugs' rel='nofollow'>Forum</a>.</em>
+</p>
+<p class='vspace'></p><p>The text of the Arduino reference is licensed under a
+<a class='urllink' href='http://creativecommons.org/licenses/by-sa/3.0/' rel='nofollow'>Creative Commons Attribution-ShareAlike 3.0 License</a>.  Code samples in the reference are released into the public domain.
+</p>
+</div>
+
+</div>
+<!--PageFooterFmt-->
+<div id="pagefooter">
+  <a href='#'>Edit Page</a> | <a href='#'>Page History</a> | <a href='#' target='_blank'>Printable View</a> | <a href='http://www.arduino.cc/en/Site/AllRecentChanges'>All Recent Site Changes</a>
+</div>
+<!--/PageFooterFmt-->
+</div>
+</body>
+</html>
