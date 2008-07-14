@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: The ghost lap
+desc: A yellow bar should progress from left to right on the race screen at the average rate of the fastest racer.
+type: :feature
+component: opensprints
+release: 
+reporter: Evan Farrar <evanfarrar@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-07-12 17:17:29.116386 Z
+references: []
+
+id: 97084522f039c956a7348f27986084b9222b8170
+log_events: 
+- - 2008-07-12 17:17:30.701017 Z
+  - Evan Farrar <evanfarrar@gmail.com>
+  - created
+  - ""
