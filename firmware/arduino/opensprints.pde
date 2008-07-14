@@ -12,15 +12,11 @@ int value = LOW;                // previous value of the LED
 long previousMillis = 0;        // will store last time LED was updated
 long interval = 1000;           // interval at which to blink (milliseconds)
 
-void setup()
-{
+void setup() {
   pinMode(ledPin, OUTPUT);      // sets the digital pin as output
 }
 
-void loop()
-{
-  // here is where you'd put code that needs to be running all the time.
-
+void blinkLED() {
   // check to see if it's time to blink the LED; that is, is the difference
   // between the current time and last time we blinked the LED bigger than
   // the interval at which we want to blink the LED.
@@ -35,4 +31,9 @@ void loop()
 
     digitalWrite(ledPin, value);
   }
+
 }
+void loop() {
+  blinkLED();
+}
+
