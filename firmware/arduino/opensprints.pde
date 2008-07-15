@@ -1,39 +1,87 @@
-/* Blink without Delay
- *
- * Turns on and off a light emitting diode(LED) connected to a digital  
- * pin, without using the delay() function.  This means that other code
- * can run at the same time without being interrupted by the LED code.
- *
- * http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
- */
+int statusLEDPin = 13;
+long statusBlinkInterval = 1000;
+int lastStatusLEDValue = LOW;
+long previousStatusBlinkMillis = 0;
 
-int ledPin = 13;                // LED connected to digital pin 13
-int value = LOW;                // previous value of the LED
-long previousMillis = 0;        // will store last time LED was updated
-long interval = 1000;           // interval at which to blink (milliseconds)
+boolean raceStarted = false;
+unsigned long raceStartMillis;
+unsigned long currentTimeMillis;
+
+int sensor1LEDPin = 6;
+int sensor2LEDPin = 7;
+int sensor1Pin = 4;
+int sensor2Pin = 5;
+int previousSensor1Value = HIGH;
+int previousSensor2Value = HIGH;
+int val = 0;
+int val1 = 0;
+int val2 = 0;
+
 
 void setup() {
-  pinMode(ledPin, OUTPUT);      // sets the digital pin as output
+  Serial.begin(9600); 
+  Serial.println("1:");
+  delay(100);
+  pinMode(statusLEDPin, OUTPUT);
+  pinMode(sensor1LEDPin, OUTPUT);
+  pinMode(sensor2LEDPin, OUTPUT);
+  pinMode(sensor1Pin, INPUT);
+  pinMode(sensor2Pin, INPUT);
 }
 
 void blinkLED() {
-  // check to see if it's time to blink the LED; that is, is the difference
-  // between the current time and last time we blinked the LED bigger than
-  // the interval at which we want to blink the LED.
-  if (millis() - previousMillis > interval) {
-    previousMillis = millis();   // remember the last time we blinked the LED
+  if (millis() - previousStatusBlinkMillis > statusBlinkInterval) {
+    previousStatusBlinkMillis = millis();
 
-    // if the LED is off turn it on and vice-versa.
-    if (value == LOW)
-      value = HIGH;
+    if (lastStatusLEDValue == LOW)
+      lastStatusLEDValue = HIGH;
     else
-      value = LOW;
+      lastStatusLEDValue = LOW;
 
-    digitalWrite(ledPin, value);
+    digitalWrite(statusLEDPin, lastStatusLEDValue);
   }
 
 }
-void loop() {
-  blinkLED();
+
+void readSensor(int sensorPin, int sensorLEDPin) {
+  int val = digitalRead(sensorPin);
+  if (val == HIGH) {
+    digitalWrite(sensorLEDPin, LOW);
+  } else {
+    digitalWrite(sensorLEDPin, HIGH);
+  }
+
 }
 
+void loop() {
+  if(Serial.available()) {
+    val = Serial.read();
+    if(val == 'g') {
+      raceStarted = true;
+    }
+    if(val == 's') {
+      raceStarted = false;
+    }
+  }
+
+  if(raceStarted == true) {
+    currentTimeMillis = millis() - raceStartMillis;
+    val1 = digitalRead(sensor1Pin);
+    val2 = digitalRead(sensor2Pin);
+    if(val1 == HIGH && previousSensor1Value == LOW){
+      Serial.print("1: ");
+      Serial.println(currentTimeMillis, DEC);
+    }
+    if(val2 == HIGH && previousSensor2Value == LOW){
+      Serial.print("2: ");
+      Serial.println(currentTimeMillis, DEC);
+    }
+
+    previousSensor1Value = val1;
+    previousSensor2Value = val2;
+  }
+  
+  readSensor(sensor1Pin, sensor1LEDPin);
+  readSensor(sensor2Pin, sensor2LEDPin);
+
+}
