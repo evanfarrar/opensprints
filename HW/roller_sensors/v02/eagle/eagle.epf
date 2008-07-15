@@ -16,7 +16,6 @@ UsedLibrary="/usr/lib/eagle/lbr/74ttl-din.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/74xx-eu.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/74xx-us.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/751xx.lbr"
-UsedLibrary="/usr/lib/eagle/lbr/SparkFun.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/agilent-technologies.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/altera.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/am29-memory.lbr"
@@ -228,14 +227,13 @@ UsedLibrary="/usr/lib/eagle/lbr/wuerth-elektronik.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/zetex.lbr"
 UsedLibrary="/usr/lib/eagle/lbr/zilog.lbr"
 UsedLibrary="roller_sensor.lbr"
-UsedLibrary="/usr/share/eagle/lbr/SparkFun.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="0 25 1050 804"
-State=0
+Loc="0 19 1050 603"
+State=2
 Number=0
 
 [Desktop]
-Screen="1280 1024"
+Screen="1280 768"
 Window="Win_1"
