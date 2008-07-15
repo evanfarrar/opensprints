@@ -54,9 +54,11 @@ void readSensor(int sensorPin, int sensorLEDPin) {
 }
 
 void loop() {
+  blinkLED();
   if(Serial.available()) {
     val = Serial.read();
     if(val == 'g') {
+      raceStartMillis = millis();
       raceStarted = true;
     }
     if(val == 's') {

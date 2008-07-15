@@ -29,7 +29,7 @@ class Racer
   end
 
   def update(new_ticks)
-    @ticks += new_ticks.map{|t| SecsyTime.parse(t.split(/;/)[1]).in_seconds}
+    @ticks += new_ticks.map{|t| t.split(' ').last.to_i / 1000.0 }
     ticks_length = @ticks.length
     @distance = ((ticks_length)*(@wheel_circumference))
   end

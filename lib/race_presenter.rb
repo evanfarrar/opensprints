@@ -69,7 +69,7 @@ class RacePresenter
     partial_log = []
     @queue.length.times do
       q = @queue.pop
-      if q =~ /;/
+      if q =~ /:/
         partial_log << q
       end
     end
