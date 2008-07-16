@@ -7,8 +7,6 @@ boolean raceStarted = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
 
-int sensor1LEDPin = 6;
-int sensor2LEDPin = 7;
 int sensor1Pin = 4;
 int sensor2Pin = 5;
 int previousSensor1Value = HIGH;
@@ -20,11 +18,7 @@ int val2 = 0;
 
 void setup() {
   Serial.begin(9600); 
-  Serial.println("1:");
-  delay(100);
   pinMode(statusLEDPin, OUTPUT);
-  pinMode(sensor1LEDPin, OUTPUT);
-  pinMode(sensor2LEDPin, OUTPUT);
   pinMode(sensor1Pin, INPUT);
   pinMode(sensor2Pin, INPUT);
 }
@@ -43,18 +37,9 @@ void blinkLED() {
 
 }
 
-void readSensor(int sensorPin, int sensorLEDPin) {
-  int val = digitalRead(sensorPin);
-  if (val == HIGH) {
-    digitalWrite(sensorLEDPin, LOW);
-  } else {
-    digitalWrite(sensorLEDPin, HIGH);
-  }
-
-}
-
 void loop() {
   blinkLED();
+
   if(Serial.available()) {
     val = Serial.read();
     if(val == 'g') {
@@ -82,8 +67,4 @@ void loop() {
     previousSensor1Value = val1;
     previousSensor2Value = val2;
   }
-  
-  readSensor(sensor1Pin, sensor1LEDPin);
-  readSensor(sensor2Pin, sensor2LEDPin);
-
 }
