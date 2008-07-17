@@ -230,10 +230,10 @@ UsedLibrary="roller_sensor.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="0 19 1050 603"
+Loc="0 25 1050 804"
 State=2
 Number=0
 
 [Desktop]
-Screen="1280 768"
+Screen="1280 1024"
 Window="Win_1"
