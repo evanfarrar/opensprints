@@ -13,12 +13,12 @@ class Sensor
       else
         t = 0
         f = []
-        8000.times { f << "#{rand(2)+1};0:#{t+=rand(10)}" }
+        8000.times { f << "#{rand(2)+1}: #{t+=rand(10)}" }
       end
       t_start = Time.now.to_f
       while true do
         l = f.shift
-          sleep (SecsyTime.parse(l.split(';')[1]).in_seconds - (Time.now.to_f-t_start)).naturalize
+          sleep (l.split(': ')[1] - (Time.now.to_f-t_start)).naturalize
           @queue << l 
           puts l
       end
