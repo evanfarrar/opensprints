@@ -1,5 +1,5 @@
 module RacePresenterMod
-  def race_window(match, race_distance, sensor_location, title)
+  def race_window(match, race_distance, sensor, title)
     window :title => title, :width => 800, :height => 600 do
       background "media/trappedsprints-800.jpg"
 
@@ -15,7 +15,7 @@ module RacePresenterMod
         @start = button("Start Race",{:top => 570, :left => 10}) do
           hide_start
           r = RacePresenter.new(self, race_distance, @update_area,
-                       match, sensor_location)
+                       match, sensor)
           
           @countdown = 5
           @start_time = Time.now+5
@@ -45,7 +45,7 @@ module RacePresenterMod
 
 end
 class RacePresenter
-  def initialize(shoes_instance, distance, update_area, race, sensor_location)
+  def initialize(shoes_instance, distance, update_area, race, sensor)
     @shoes_instance = shoes_instance
     @bar_size = 800-2*60-6
     @race_distance = distance
@@ -53,16 +53,15 @@ class RacePresenter
     @red = @race.red_racer
     @blue = @race.blue_racer
     @update_area = update_area
-    @sensor_location = sensor_location
+    @sensor = sensor
   end
 
   def continue?; @continue end
 
   def refresh
     unless @started
-      @queue = Queue.new
-      @sensor = Sensor.new(@queue, @sensor_location)
       @sensor.start
+      @queue = @sensor.queue
       @started=true
       @continue = true
     end
@@ -121,10 +120,6 @@ class RacePresenter
         end
       end    
     end
-  end
-
-  def stop
-    @sensor.stop
   end
 
   def percent_complete(racer)

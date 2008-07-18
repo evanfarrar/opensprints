@@ -8,7 +8,8 @@ end
 Infinity = 1/0.0
 require 'lib/units/base'
 require 'lib/units/standard'
-SENSOR_LOCATION = options['sensor']['device']
+
+
 RACE_DISTANCE = options['race_distance'].meters.to_km
 $ROLLER_CIRCUMFERENCE = options['roller_circumference'].mm.to_km
 TITLE = options['title']
@@ -18,6 +19,9 @@ require 'lib/interface_widgets'
 require 'lib/tournament'
 require "lib/sensors/#{options['sensor']['type']}_sensor"
 require 'lib/race_presenter'
+
+queue = Queue.new
+SENSOR = Sensor.new(queue, options['sensor']['device'])
 
 UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kmph
 
@@ -70,7 +74,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
           end
         end
         button("race")do
-          race_window(match, RACE_DISTANCE, SENSOR_LOCATION, TITLE)
+          race_window(match, RACE_DISTANCE, SENSOR, TITLE)
         end
         redblue(match)
         delete_race(match)
