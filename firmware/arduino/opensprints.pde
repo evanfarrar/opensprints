@@ -4,6 +4,7 @@ int lastStatusLEDValue = LOW;
 long previousStatusBlinkMillis = 0;
 
 boolean raceStarted = false;
+boolean mockMode = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
 
@@ -24,10 +25,22 @@ int racer1LEDPins[4] = {4,5,6,7};
 int racer2LEDPins[4] = {8,9,10,11};
 
 int raceLengthTicks = 8;
+int previousFakeTickMillis = 0;
 
+void turnOffLEDs() {
+  digitalWrite(racer1LEDPins[0], LOW);
+  digitalWrite(racer1LEDPins[1], LOW);
+  digitalWrite(racer1LEDPins[2], LOW);
+  digitalWrite(racer1LEDPins[3], LOW);
+  digitalWrite(racer2LEDPins[0], LOW);
+  digitalWrite(racer2LEDPins[1], LOW);
+  digitalWrite(racer2LEDPins[2], LOW);
+  digitalWrite(racer2LEDPins[3], LOW);
+}
 
 void setup() {
-  Serial.begin(9600); 
+  
+  Serial.begin(57600); 
   pinMode(statusLEDPin, OUTPUT);
   pinMode(sensor1Pin, INPUT);
   pinMode(sensor2Pin, INPUT);
@@ -40,6 +53,7 @@ void setup() {
   pinMode(racer2LEDPins[1], OUTPUT);
   pinMode(racer2LEDPins[2], OUTPUT);
   pinMode(racer2LEDPins[3], OUTPUT);
+  turnOffLEDs();
 }
 
 void blinkLED() {
@@ -56,17 +70,56 @@ void blinkLED() {
 
 }
 
+void raceStart() {
+  int racer1ticks = 0;
+  int racer2ticks = 0;
+  raceStartMillis = millis();
+  turnOffLEDs();
+}
+
+void updateProgressLEDs() {
+  if(racer1Ticks >= (raceLengthTicks * 0.25)){
+    digitalWrite(racer1LEDPins[0], HIGH);
+  }
+  if(racer1Ticks >= (raceLengthTicks * 0.5)){
+    digitalWrite(racer1LEDPins[1], HIGH);
+  }
+  if(racer1Ticks >= (raceLengthTicks * 0.75)){
+    digitalWrite(racer1LEDPins[2], HIGH);
+  }
+  if(racer1Ticks >= (raceLengthTicks)){
+    digitalWrite(racer1LEDPins[3], HIGH);
+  }
+  if(racer2Ticks >= (raceLengthTicks * 0.25)){
+    digitalWrite(racer2LEDPins[0], HIGH);
+  }
+  if(racer2Ticks >= (raceLengthTicks * 0.5)){
+    digitalWrite(racer2LEDPins[1], HIGH);
+  }
+  if(racer2Ticks >= (raceLengthTicks * 0.75)){
+    digitalWrite(racer2LEDPins[2], HIGH);
+  }
+  if(racer2Ticks >= (raceLengthTicks)){
+    digitalWrite(racer2LEDPins[3], HIGH);
+  }
+}
+
 void loop() {
   blinkLED();
 
   if(Serial.available()) {
     val = Serial.read();
     if(val == 'g') {
-      raceStartMillis = millis();
+      raceStart();
       raceStarted = true;
+    }
+    if(val == 'm') {
+      raceStart();
+      mockMode = true;
     }
     if(val == 's') {
       raceStarted = false;
+      mockMode = false;
     }
   }
 
@@ -76,24 +129,34 @@ void loop() {
   } 
   lastButtonValue = val;
 
+  if (mockMode) {
+    currentTimeMillis = millis() - raceStartMillis;
+    if (currentTimeMillis - previousFakeTickMillis > 250) {
+      previousFakeTickMillis = currentTimeMillis;
+      
+      Serial.print("1: ");
+      Serial.println(currentTimeMillis, DEC);
+      racer1Ticks++;
+      Serial.print("2: ");
+      Serial.println(currentTimeMillis, DEC);
+      racer2Ticks++;
 
-  if(raceStarted == true) {
+    }
+
+  }
+  if (raceStarted) {
     currentTimeMillis = millis() - raceStartMillis;
 
     val1 = digitalRead(sensor1Pin);
     val2 = digitalRead(sensor2Pin);
     if(val1 == HIGH && previousSensor1Value == LOW){
       racer1Ticks++;
-      val = racer1Ticks / (raceLengthTicks / 4) - 1;
-      digitalWrite(racer1LEDPins[val], HIGH);
 
       Serial.print("1: ");
       Serial.println(currentTimeMillis, DEC);
     }
     if(val2 == HIGH && previousSensor2Value == LOW){
       racer2Ticks++;
-      val = racer2Ticks / (raceLengthTicks / 4) - 1;
-      digitalWrite(racer2LEDPins[val], HIGH);
 
       Serial.print("2: ");
       Serial.println(currentTimeMillis, DEC);
@@ -103,4 +166,6 @@ void loop() {
 
     
   }
+  
+   updateProgressLEDs();
 }

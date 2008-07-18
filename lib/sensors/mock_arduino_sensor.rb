@@ -10,7 +10,7 @@ class Sensor
   def start
     @t.kill if @t
     @t = Thread.new do
-      @f.puts 'g'
+      @f.puts 'm'
       while true do
         l = @f.readline
         if l=~/:/
