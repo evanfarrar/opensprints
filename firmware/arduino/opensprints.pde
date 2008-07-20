@@ -1,9 +1,13 @@
 int statusLEDPin = 13;
-long statusBlinkInterval = 1000;
+long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
 long previousStatusBlinkMillis = 0;
 
+int lastWinnerLEDValue = LOW;
+long previousWinnerBlinkMillis = 0;
+
 boolean raceStarted = false;
+boolean raceStarting = false;
 boolean mockMode = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
@@ -23,19 +27,41 @@ int racer1Ticks = 0;
 int racer2Ticks = 0;
 int racer1LEDPins[4] = {4,5,6,7};
 int racer2LEDPins[4] = {8,9,10,11};
+unsigned long racer1FinishTimeMillis;
+unsigned long racer2FinishTimeMillis;
+
+unsigned long lastCountDownMillis;
+int lastCountDown;
 
 int raceLengthTicks = 8;
 int previousFakeTickMillis = 0;
 
+void racer1LEDs(int height){
+  digitalWrite(racer1LEDPins[0], height);
+  digitalWrite(racer1LEDPins[1], height);
+  digitalWrite(racer1LEDPins[2], height);
+  digitalWrite(racer1LEDPins[3], height);
+}
+
+
+void racer2LEDs(int height){
+  digitalWrite(racer2LEDPins[0], height);
+  digitalWrite(racer2LEDPins[1], height);
+  digitalWrite(racer2LEDPins[2], height);
+  digitalWrite(racer2LEDPins[3], height);
+}
+
+void allLEDs(int height){
+  racer1LEDs(height);
+  racer2LEDs(height);
+}
+
 void turnOffLEDs() {
-  digitalWrite(racer1LEDPins[0], LOW);
-  digitalWrite(racer1LEDPins[1], LOW);
-  digitalWrite(racer1LEDPins[2], LOW);
-  digitalWrite(racer1LEDPins[3], LOW);
-  digitalWrite(racer2LEDPins[0], LOW);
-  digitalWrite(racer2LEDPins[1], LOW);
-  digitalWrite(racer2LEDPins[2], LOW);
-  digitalWrite(racer2LEDPins[3], LOW);
+  allLEDs(LOW);
+}
+
+void turnOnLEDs() {
+  allLEDs(HIGH);
 }
 
 void setup() {
@@ -63,15 +89,36 @@ void blinkLED() {
       lastStatusLEDValue = HIGH;
     else
       lastStatusLEDValue = LOW;
+  
 
     digitalWrite(statusLEDPin, lastStatusLEDValue);
   }
 
 }
 
+void blinkWinner() {
+
+  if (millis() - previousWinnerBlinkMillis > statusBlinkInterval) {
+    previousWinnerBlinkMillis = millis();
+
+    if (lastWinnerLEDValue == LOW)
+      lastWinnerLEDValue = HIGH;
+    else
+      lastWinnerLEDValue = LOW;
+
+    if(racer1FinishTimeMillis < racer2FinishTimeMillis) {
+      racer1LEDs(lastWinnerLEDValue);
+    } else if (racer1FinishTimeMillis > racer2FinishTimeMillis) {
+      racer2LEDs(lastWinnerLEDValue);
+    } else if (racer1FinishTimeMillis == racer2FinishTimeMillis){
+      // We're all winners! Yay!
+      racer1LEDs(lastWinnerLEDValue);
+      racer2LEDs(lastWinnerLEDValue);
+    }
+  }
+}
+
 void raceStart() {
-  racer1Ticks = 0;
-  racer2Ticks = 0;
   raceStartMillis = millis();
   turnOffLEDs();
 }
@@ -109,8 +156,14 @@ void loop() {
   if(Serial.available()) {
     val = Serial.read();
     if(val == 'g') {
-      raceStart();
-      raceStarted = true;
+      racer1Ticks = 0;
+      racer2Ticks = 0;
+      racer1FinishTimeMillis = 0;          
+      racer2FinishTimeMillis = 0;          
+      raceStarting = true;
+      lastCountDown = 4;
+      lastCountDownMillis = millis();
+      turnOnLEDs();
     }
     if(val == 'm') {
       raceStart();
@@ -143,6 +196,19 @@ void loop() {
     }
 
   }
+  if (raceStarting) {
+    if((millis() - lastCountDownMillis) > 1000){
+      lastCountDown -= 1;
+      lastCountDownMillis = millis();
+      digitalWrite(racer1LEDPins[lastCountDown], LOW);
+      digitalWrite(racer2LEDPins[lastCountDown], LOW);
+    }
+    if(lastCountDown == 0) {
+      raceStart();
+      raceStarting = false;
+      raceStarted = true;
+    }
+  }
   if (raceStarted) {
     currentTimeMillis = millis() - raceStartMillis;
 
@@ -150,12 +216,18 @@ void loop() {
     val2 = digitalRead(sensor2Pin);
     if(val1 == HIGH && previousSensor1Value == LOW){
       racer1Ticks++;
+      if(racer1FinishTimeMillis == 0 && racer1Ticks >= raceLengthTicks) {
+        racer1FinishTimeMillis = currentTimeMillis;          
+      }
 
       Serial.print("1: ");
       Serial.println(currentTimeMillis, DEC);
     }
     if(val2 == HIGH && previousSensor2Value == LOW){
       racer2Ticks++;
+      if(racer2FinishTimeMillis == 0 && racer2Ticks >= raceLengthTicks) {
+        racer2FinishTimeMillis = currentTimeMillis;
+      }
 
       Serial.print("2: ");
       Serial.println(currentTimeMillis, DEC);
@@ -166,5 +238,14 @@ void loop() {
     
   }
   
-  updateProgressLEDs();
+
+  if(racer1FinishTimeMillis != 0 && racer2FinishTimeMillis != 0){
+    if(raceStarted) {
+      raceStarted = false;
+      updateProgressLEDs();
+    }
+    blinkWinner();
+  } else {
+    updateProgressLEDs();
+  }
 }
