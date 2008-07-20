@@ -39,8 +39,7 @@ void turnOffLEDs() {
 }
 
 void setup() {
-  
-  Serial.begin(57600); 
+  Serial.begin(115200); 
   pinMode(statusLEDPin, OUTPUT);
   pinMode(sensor1Pin, INPUT);
   pinMode(sensor2Pin, INPUT);
@@ -71,8 +70,8 @@ void blinkLED() {
 }
 
 void raceStart() {
-  int racer1ticks = 0;
-  int racer2ticks = 0;
+  racer1Ticks = 0;
+  racer2Ticks = 0;
   raceStartMillis = millis();
   turnOffLEDs();
 }
@@ -167,5 +166,5 @@ void loop() {
     
   }
   
-   updateProgressLEDs();
+  updateProgressLEDs();
 }
