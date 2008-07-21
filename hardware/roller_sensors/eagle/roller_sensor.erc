@@ -1,24 +1,10 @@
 EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
 
-Electrical Rule Check for /home/orluke/eagle/roller-sensors/roller_sensor.sch at  7/15/2008 00:43:50 
+Electrical Rule Check for /home/orluke/eagle/roller_sensor-v02/roller_sensor.sch at  7/21/2008 14:00:07 
 
-WARNING: Sheet 1/1: POWER Pin IC1 VCC connected to VTG
-WARNING: Only 1 Pin on net GPIO_0
-WARNING: Only 1 Pin on net GPIO_1
-WARNING: Only 1 Pin on net GPIO_2
-WARNING: Only 1 Pin on net GPIO_3
-WARNING: Only 1 Pin on net GPIO_4
-WARNING: Sheet 1/1, Net HE_OUT: missing Junction at (3 4.6)
-WARNING: Sheet 1/1, Net HE_OUT: wire overlaps pin at (3 3.5)
-WARNING: Sheet 1/1, Net GPIO_0: wire overlaps pin at (3 3.4)
-WARNING: Sheet 1/1, Net GPIO_1: wire overlaps pin at (3 3.3)
-WARNING: Sheet 1/1, Net VTG: wire overlaps pin at (3 3.2)
-WARNING: Sheet 1/1, Net GPIO_2: wire overlaps pin at (3 3.1)
-WARNING: Sheet 1/1, Net GPIO_3: wire overlaps pin at (3 3)
-WARNING: Sheet 1/1, Net GND: wire overlaps pin at (3 2.9)
-WARNING: Sheet 1/1, Net GPIO_4: wire overlaps pin at (3 2.8)
+WARNING: Sheet 1/1, Net VOUT: missing Junction at (3 4.6)
 
 Board and schematic are consistent
 
     0 errors
-   15 warnings
+    1 warnings
