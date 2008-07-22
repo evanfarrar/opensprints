@@ -10,7 +10,7 @@ require 'lib/units/base'
 require 'lib/units/standard'
 
 
-RACE_DISTANCE = options['race_distance'].meters.to_km
+RACE_DISTANCE = options['race_distance']
 $ROLLER_CIRCUMFERENCE = options['roller_circumference'].mm.to_km
 TITLE = options['title']
 require 'lib/racer'

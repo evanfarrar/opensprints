@@ -17,12 +17,28 @@ class Sensor
       while true do
         l = @f.readline
         if l=~/:/
-          @queue << l
+          if l =~ /1:/
+            Thread.current["red"] = l.gsub(/1: /,'').to_i
+          end
+          if l =~ /2:/
+            Thread.current["blue"] = l.gsub(/2: /,'').to_i
+          end
+          if l =~ /1f:/
+            Thread.current["red_finish"] = l.gsub(/1f: /,'').to_i
+          end
+          if l =~ /2f:/
+            Thread.current["blue_finish"] = l.gsub(/2f: /,'').to_i
+          end
         end
         puts l
       end
     end
     self
+  end
+
+  def values
+    {:red => @t["red"], :blue => @t["blue"],
+     :red_finish => @t["red_finish"], :blue_finish => @t["blue_finish"]}
   end
 
   def stop

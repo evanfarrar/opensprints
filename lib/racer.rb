@@ -18,36 +18,9 @@ class Racer
     @speed = 0
     raise unless $ROLLER_CIRCUMFERENCE
     @wheel_circumference = $ROLLER_CIRCUMFERENCE
-    @ticks = []
+    @ticks = 0
     @name = attributes[:name]
     @race_distance = attributes[:race_distance]
-    if attributes[:units] == :standard
-      alias :rotation_elapsed_to_speed :rotation_elapsed_to_mph
-    else
-      alias :rotation_elapsed_to_speed :rotation_elapsed_to_kmh
-    end
-  end
-
-  def update(new_ticks)
-    @ticks += new_ticks.map{|t| t.split(' ').last.to_i / 1000.0 }
-    ticks_length = @ticks.length
-    @distance = ((ticks_length)*(@wheel_circumference))
-  end
-
-  def tix
-    @ticks.length
-  end
-
-  def speed
-    unless @speed == 1/0.0
-      @speed
-    else
-      0
-    end
-  end
-
-  def tick_at(distance)
-    @ticks[distance / @wheel_circumference]
   end
 
   def record_time(time)
@@ -58,11 +31,4 @@ class Racer
     @races - @wins 
   end
 
-private
-  def rotation_elapsed_to_mph(elapsed)
-    ((@wheel_circumference/(elapsed))/(1.0.mile))*1.hour.to_seconds
-  end 
-  def rotation_elapsed_to_kmh(elapsed)
-    ((@wheel_circumference/(elapsed))/(1.0.km))*1.hour.to_seconds
-  end 
 end

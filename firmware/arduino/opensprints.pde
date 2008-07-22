@@ -33,8 +33,11 @@ unsigned long racer2FinishTimeMillis;
 unsigned long lastCountDownMillis;
 int lastCountDown;
 
-int raceLengthTicks = 8;
+int raceLengthTicks = 200;
 int previousFakeTickMillis = 0;
+
+int updateInterval = 250;
+unsigned long lastUpdateMillis = 0;
 
 void racer1LEDs(int height){
   digitalWrite(racer1LEDPins[0], height);
@@ -150,9 +153,7 @@ void updateProgressLEDs() {
   }
 }
 
-void loop() {
-  blinkLED();
-
+void checkSerial(){
   if(Serial.available()) {
     val = Serial.read();
     if(val == 'g') {
@@ -174,12 +175,32 @@ void loop() {
       mockMode = false;
     }
   }
+}
 
+void checkButton(){
   val = digitalRead(buttonPin);
   if(lastButtonValue == LOW && val == HIGH) {
     raceStarted = true;
   } 
   lastButtonValue = val;
+}
+
+void printStatusUpdate() {
+  if(currentTimeMillis - lastUpdateMillis > updateInterval) {
+    lastUpdateMillis = currentTimeMillis;
+    Serial.print("1: ");
+    Serial.println(racer1Ticks, DEC);
+    Serial.print("2: ");
+    Serial.println(racer2Ticks, DEC);
+  }
+}
+
+void loop() {
+  blinkLED();
+  
+  checkSerial();
+  checkButton();
+
 
   if (mockMode) {
     currentTimeMillis = millis() - raceStartMillis;
@@ -218,34 +239,33 @@ void loop() {
       racer1Ticks++;
       if(racer1FinishTimeMillis == 0 && racer1Ticks >= raceLengthTicks) {
         racer1FinishTimeMillis = currentTimeMillis;          
+        Serial.print("1f: ");
+        Serial.println(racer1FinishTimeMillis, DEC);
       }
-
-      Serial.print("1: ");
-      Serial.println(currentTimeMillis, DEC);
     }
     if(val2 == HIGH && previousSensor2Value == LOW){
       racer2Ticks++;
       if(racer2FinishTimeMillis == 0 && racer2Ticks >= raceLengthTicks) {
         racer2FinishTimeMillis = currentTimeMillis;
+        Serial.print("2f: ");
+        Serial.println(racer2FinishTimeMillis, DEC);
       }
-
-      Serial.print("2: ");
-      Serial.println(currentTimeMillis, DEC);
     }
     previousSensor1Value = val1;
     previousSensor2Value = val2;
 
-    
   }
   
 
   if(racer1FinishTimeMillis != 0 && racer2FinishTimeMillis != 0){
     if(raceStarted) {
       raceStarted = false;
+      printStatusUpdate();
       updateProgressLEDs();
     }
     blinkWinner();
   } else {
     updateProgressLEDs();
+    printStatusUpdate();
   }
 }

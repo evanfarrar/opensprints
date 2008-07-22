@@ -1,8 +1,8 @@
 class Race
   attr_accessor :red_racer, :blue_racer
   def initialize(red_racer, blue_racer, distance)
-    red_racer.ticks.clear if red_racer
-    blue_racer.ticks.clear if blue_racer
+    red_racer.ticks = 0 if red_racer
+    blue_racer.ticks = 0 if blue_racer
     @red_racer = red_racer
     @blue_racer = blue_racer
     @distance = distance
@@ -22,7 +22,7 @@ class Race
   end
 
   def complete?
-    self.racers.all? { |racer| racer.distance > @distance }
+    self.racers.all? { |racer| racer.ticks >= @distance }
   end
 
   def winner

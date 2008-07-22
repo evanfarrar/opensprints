@@ -61,68 +61,53 @@ class RacePresenter
   def refresh
     unless @started
       @sensor.start
-      @queue = @sensor.queue
       @started=true
       @continue = true
     end
-    partial_log = []
-    @queue.length.times do
-      q = @queue.pop
-      if q =~ /:/
-        partial_log << q
+
+    @blue.ticks = @sensor.values[:blue]
+    @red.ticks = @sensor.values[:red]
+
+    @update_area.clear do
+      @shoes_instance.stroke gray 0.5
+      @shoes_instance.strokewidth 4
+      @foo = @shoes_instance.image(800-60+4, 100, :top => 280, :left => 80) do
+        @shoes_instance.line 2,0,2,100
+        @shoes_instance.line 684,0,684,100
+
+        blue_progress = @bar_size*percent_complete(@blue)
+        @shoes_instance.stroke "#00F"
+        @shoes_instance.fill "#FEE".."#32F", :angle => 90, :radius => 10
+        @shoes_instance.rect 6, 20, blue_progress, 20 
+        
+        red_progress = @bar_size*percent_complete(@red)
+        @shoes_instance.stroke "#F00"
+        @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
+        @shoes_instance.rect 6, 60, red_progress, 20 
       end
-    end
 
-    if (partial_log=partial_log.grep(/^[12]/)).any?
-      if (blue_log = partial_log.grep(/^2/))
-        @blue.update(blue_log)
+      @foo.translate(0,-75)
+      @shoes_instance.subtitle(
+        @shoes_instance.span(@red.name,{:stroke => "#F00"}), 
+        @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
+        @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
+        {:top => 300, :align => 'center'})
+
+      if @race.complete?
+       # @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
+        #  :top => 380, :width => 800, :stroke => @shoes_instance.ivory
+        @shoes_instance.title "#{@red.name}: #{@sensor.values[:red_finish]/1000.0}s, #{@blue.name}: #{@sensor.values[:blue_finish]/1000.0}s", :stroke => @shoes_instance.ivory,
+          :align => 'center', :top => 450, :width => 800
+
+        @sensor.stop
+        @continue = false
+        @shoes_instance.owner.tournament_record(@race)
+        @shoes_instance.owner.post_race
       end
-      if (red_log = partial_log.grep(/^1/))
-        @red.update(red_log)
-      end
-
-      @update_area.clear do
-        @shoes_instance.stroke gray 0.5
-        @shoes_instance.strokewidth 4
-        @foo = @shoes_instance.image(800-60+4, 100, :top => 280, :left => 80) do
-          @shoes_instance.line 2,0,2,100
-          @shoes_instance.line 684,0,684,100
-
-          blue_progress = @bar_size*percent_complete(@blue)
-          @shoes_instance.stroke "#00F"
-          @shoes_instance.fill "#FEE".."#32F", :angle => 90, :radius => 10
-          @shoes_instance.rect 6, 20, blue_progress, 20 
-          
-          red_progress = @bar_size*percent_complete(@red)
-          @shoes_instance.stroke "#F00"
-          @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
-          @shoes_instance.rect 6, 60, red_progress, 20 
-        end
-
-        @foo.translate(0,-75)
-        #@foo.scale(0.75, 1)
-        @shoes_instance.subtitle(
-          @shoes_instance.span(@red.name,{:stroke => "#F00"}), 
-          @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
-          @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
-          {:top => 300, :align => 'center'})
-
-        if @race.complete?
-          @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
-            :top => 380, :width => 800, :stroke => @shoes_instance.ivory
-          @shoes_instance.title "#{@red.name}: #{@red.tick_at(@race_distance)}s, #{@blue.name}: #{@blue.tick_at(@race_distance)}s", :stroke => @shoes_instance.ivory,
-            :align => 'center', :top => 450, :width => 800
-
-          @sensor.stop
-          @continue = false
-          @shoes_instance.owner.tournament_record(@race)
-          @shoes_instance.owner.post_race
-        end
-      end    
     end
   end
 
   def percent_complete(racer)
-    [1.0, racer.distance/@race_distance.to_f].min
+    [1.0, racer.ticks/@race_distance.to_f].min
   end
 end
