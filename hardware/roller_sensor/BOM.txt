@@ -10,4 +10,11 @@ Qty	Descr					Mfr			Mfr P/N			Vendor		Vendor P/N
 	100 ohm resistor									digikey		100EBK-ND
 	(for Blue LED)
 1	1 uF bypass cap										digikey		478-3192-ND
+2
 
+
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=620-1213-ND
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=A31442-ND
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=365-1180-ND
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=100EBK-ND
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=478-3192-ND
