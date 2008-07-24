@@ -12,7 +12,7 @@ boolean mockMode = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
 
-int buttonPin = 11;
+int buttonPin = 12;
 int lastButtonValue = HIGH;
 
 int val = 0;
@@ -73,6 +73,7 @@ void setup() {
   pinMode(sensor0Pin, INPUT);
   pinMode(sensor1Pin, INPUT);
   pinMode(buttonPin, INPUT);
+  digitalWrite(buttonPin, HIGH);
   pinMode(racer0LEDPins[0], OUTPUT);
   pinMode(racer0LEDPins[1], OUTPUT);
   pinMode(racer0LEDPins[2], OUTPUT);
@@ -180,7 +181,14 @@ void checkSerial(){
 void checkButton(){
   val = digitalRead(buttonPin);
   if(lastButtonValue == LOW && val == HIGH) {
-    raceStarted = true;
+      racer0Ticks = 0;
+      racer1Ticks = 0;
+      racer0FinishTimeMillis = 0;          
+      racer1FinishTimeMillis = 0;          
+      raceStarting = true;
+      lastCountDown = 4;
+      lastCountDownMillis = millis();
+      turnOnLEDs();
   } 
   lastButtonValue = val;
 }
