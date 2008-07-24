@@ -17,8 +17,9 @@ module RacePresenterMod
           r = RacePresenter.new(self, race_distance, @update_area,
                        match, sensor)
           
-          @countdown = 5
-          @start_time = Time.now+5
+          sensor.start
+          @countdown = 4
+          @start_time = Time.now+@countdown
           count_box = stack(:top => 200){   }
           @race_animation = animate(14) do
             @now = Time.now
@@ -56,11 +57,11 @@ class RacePresenter
     @sensor = sensor
   end
 
+
   def continue?; @continue end
 
   def refresh
     unless @started
-      @sensor.start
       @started=true
       @continue = true
     end
