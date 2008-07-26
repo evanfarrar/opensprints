@@ -12,3 +12,11 @@ While roller racing in general can use any type of bicycle and there are variati
 Roller racing has a long history going back to the beginning of cycling, however Goldsprints are closely related to bicycle messenger culture. It began in Zurich, Switzerland during the 1999 Cycle Messenger World Championships. GoldSprints organizers, Mike Dee and Hodari De Palm debuted their current set up at 2005's Cycle Messenger World Championships in New York City and expanded to six American cities: NYC, Philly, DC, Boston, Baltimore, and Las Vegas. They created the first GoldSprints Series, which was started Halloween 2006 in New York City.
 
 
+== Installation
+
+Opensprints is not just a piece of software but a whole system consisting of software, electronics, A/V and stock bicycle components. Users are encouraged to read the guides[http://opensprints.com/wiki] in our wiki to learn about how to put together the entire system. But one step is to get the software working:
+
+1. Get shoes[http://code.whytheluckystiff.com/shoes] for your platform.
+1. Get our latest code[http://github.com/evanfarrar/opensprints/tarball/master].
+1. write your configuration file, using config.yml.SAMPLE as a guide. You may use "mock" as your sensor type to run opensprints in demo mode (i.e. without a bike attached).
+1. open "main.rb" with shoes.
