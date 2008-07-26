@@ -94,7 +94,7 @@ class RacePresenter
         @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
         {:top => 300, :align => 'center'})
 
-      if @sensor.values[:red_finish] || @sensor.values[:blue_finish]#@race.complete?
+      if @sensor.values[:red_finish] && @sensor.values[:blue_finish]#@race.complete?
        # @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
         #  :top => 380, :width => 800, :stroke => @shoes_instance.ivory
         @shoes_instance.title "#{@red.name}: #{@sensor.values[:red_finish]/1000.0}s, #{@blue.name}: #{@sensor.values[:blue_finish]/1000.0}s", :stroke => @shoes_instance.ivory,
@@ -109,6 +109,6 @@ class RacePresenter
   end
 
   def percent_complete(racer)
-    [1.0, racer.ticks/@race_distance.to_f].min
+    [1.0, (racer.ticks||0)/@race_distance.to_f].min
   end
 end

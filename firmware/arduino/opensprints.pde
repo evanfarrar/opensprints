@@ -33,7 +33,7 @@ unsigned long racer1FinishTimeMillis;
 unsigned long lastCountDownMillis;
 int lastCountDown;
 
-int raceLengthTicks = 200;
+int raceLengthTicks = 700;
 int previousFakeTickMillis = 0;
 
 int updateInterval = 250;
