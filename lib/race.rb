@@ -22,17 +22,17 @@ class Race
   end
 
   def complete?
-    self.racers.all? { |racer| racer.ticks >= @distance }
+    self.racers.all? { |racer| racer.finish_time }
   end
 
   def winner
-    standings = self.racers.sort_by { |racer| racer.tick_at(@distance) }
+    standings = self.racers.sort_by { |racer| racer.finish_time }
 
     winner = standings.first
     standings.reverse.each_with_index do |racer, i|
       racer.wins += i
       racer.races += 1
-      racer.record_time(racer.tick_at(@distance))
+      racer.record_time(racer.finish_time)
     end
     winner
   end
