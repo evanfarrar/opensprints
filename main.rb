@@ -102,7 +102,7 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     title "Racers"
     @racer_list = stack { list_racers }
     flow do
-      @racer_name = edit_line "enter name"
+      @racer_name = edit_line "enter name", :width => 110
       create_racer
     end
   end
