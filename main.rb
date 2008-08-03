@@ -1,3 +1,4 @@
+#!/usr/bin/env shoes
 require 'yaml'
 
 begin

@@ -94,16 +94,18 @@ class RacePresenter
         @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
         {:top => 300, :align => 'center'})
 
-      if @sensor.values[:red_finish] && @sensor.values[:blue_finish]#@race.complete?
-       @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
+      @red.finish_time = @sensor.values[:red_finish]
+      @blue.finish_time = @sensor.values[:blue_finish]
+
+      if @race.complete?
+        @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
          :top => 380, :width => 800, :stroke => @shoes_instance.ivory
         @shoes_instance.title "#{@red.name}: #{@sensor.values[:red_finish]/1000.0}s, #{@blue.name}: #{@sensor.values[:blue_finish]/1000.0}s", :stroke => @shoes_instance.ivory,
           :align => 'center', :top => 450, :width => 800
 
-        @red.finish_time = @sensor.values[:finish_time]
         @sensor.stop
         @continue = false
-        @shoes_instance.owner.tournament_record(@sensor.values)
+        @shoes_instance.owner.tournament_record(@race)
         @shoes_instance.owner.post_race
       end
     end
