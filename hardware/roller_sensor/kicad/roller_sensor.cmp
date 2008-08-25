@@ -1,0 +1,38 @@
+Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 25/8/2008-15:51:29
+
+BeginCmp
+TimeStamp = 48B2BBD0;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LEDV;
+EndCmp
+
+BeginCmp
+TimeStamp = 48B2BB52;
+Reference = J1;
+ValeurCmp = RJ45;
+IdModule  = RJ45_8;
+EndCmp
+
+BeginCmp
+TimeStamp = 48B2BB82;
+Reference = J2;
+ValeurCmp = RJ45;
+IdModule  = RJ45_8;
+EndCmp
+
+BeginCmp
+TimeStamp = 48B2BBF0;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = 48B2C48B;
+Reference = U1;
+ValeurCmp = SS41A;
+IdModule  = 3PIN_6mm;
+EndCmp
+
+EndListe

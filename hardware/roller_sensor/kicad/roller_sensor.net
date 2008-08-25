@@ -1,0 +1,47 @@
+# EESchema Netlist Version 1.1 created  25/8/2008-15:51:29
+(
+ ( 48B2BBD0 LEDV D1 LED
+  ( 1 N-000001 )
+  ( 2 N-000002 )
+ )
+ ( 48B2BB52 RJ45_8 J1 RJ45
+  ( 1 N-000003 )
+  ( 2 N-000004 )
+  ( 3 N-000002 )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 ? )
+ )
+ ( 48B2BB82 RJ45_8 J2 RJ45
+  ( 1 N-000003 )
+  ( 2 N-000004 )
+  ( 3 N-000002 )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 ? )
+ )
+ ( 48B2BBF0 R1 R1 R
+  ( 1 N-000001 )
+  ( 2 N-000003 )
+ )
+ ( 48B2C48B 3PIN_6mm U1 SS41A
+  ( 1 N-000003 )
+  ( 2 N-000004 )
+  ( 3 N-000002 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R1
+ R?
+ SM0603
+ SM0805
+$endlist
+$endfootprintlist
+}
