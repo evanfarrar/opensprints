@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 25/8/2008-15:51:29
+Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 27/8/2008-03:01:02
 
 BeginCmp
 TimeStamp = 48B2BBD0;
@@ -32,7 +32,7 @@ BeginCmp
 TimeStamp = 48B2C48B;
 Reference = U1;
 ValeurCmp = SS41A;
-IdModule  = 3PIN_6mm;
+IdModule  = S441a;
 EndCmp
 
 EndListe

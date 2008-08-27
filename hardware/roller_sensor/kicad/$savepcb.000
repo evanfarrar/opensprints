@@ -1,0 +1,93 @@
+PCBNEW-BOARD Version 1 date 26/8/2008-13:07:26
+
+$GENERAL
+LayerCount 2
+Ly 1FFF8001
+Links 0
+NoConn 0
+Di -1560 -560 1560 560
+Ndraw 0
+Ntrack 0
+Nzone 0
+Nmodule 1
+Nnets 0
+$EndGENERAL
+
+$SHEETDESCR
+Sheet A4 11700 8267
+Title ""
+Date "26 aug 2008"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndSHEETDESCR
+
+$SETUP
+InternalUnit 0.000100 INCH
+GridSize 500 500
+UserGridSize 0.010000 0.010000 mm
+ZoneGridSize 250
+Layers 2
+TrackWidth 170
+TrackWidthHistory 170
+TrackClearence 60
+ZoneClearence 150
+DrawSegmWidth 150
+EdgeSegmWidth 150
+ViaSize 450
+ViaDrill 250
+ViaSizeHistory 450
+TextPcbWidth 120
+TextPcbSize 600 800
+EdgeModWidth 150
+TextModSize 600 600
+TextModWidth 120
+PadSize 250 550
+PadDrill 200
+AuxiliaryAxisOrg 0 0
+$EndSETUP
+
+$MODULE SIL-3
+Po 0 0 0 15 48B3FB1B 48B3F965 ~~
+Li SIL-3
+Cd Connecteur 3 pins
+Kw CONN DEV
+Sc 48B3F965
+Op 0 0 0
+T0 0 -1000 705 424 0 120 N V 21 "U1"
+T1 0 -1000 600 400 0 120 N I 21 "SS41A"
+DS -1500 500 -1500 -500 120 21
+DS -1500 -500 1500 -500 120 21
+DS 1500 -500 1500 500 120 21
+DS 1500 500 -1500 500 120 21
+DS -500 -500 -500 500 120 21
+$PAD
+Sh "1" R 550 550 0 0 0
+Dr 320 0 0
+At STD N 00E0FFFF
+Ne 3 "N-000005"
+Po -1000 0
+$EndPAD
+$PAD
+Sh "2" C 550 550 0 0 0
+Dr 320 0 0
+At STD N 00E0FFFF
+Ne 4 "N-000006"
+Po 0 0
+$EndPAD
+$PAD
+Sh "3" O 250 550 0 0 0
+Dr 200 0 0
+At STD N 00E0FFFF
+Ne 2 "N-000004"
+Po 1000 0
+$EndPAD
+$EndMODULE  SIL-3
+$TRACK
+$EndTRACK
+$ZONE
+$EndZONE
+$EndBOARD

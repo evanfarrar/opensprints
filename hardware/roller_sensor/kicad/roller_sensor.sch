@@ -5,7 +5,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "25 aug 2008"
+Date "26 aug 2008"
 Rev ""
 Comp ""
 Comment1 ""
@@ -13,6 +13,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 1800 3150
+NoConn ~ 1800 4700
 Connection ~ 5200 2250
 Wire Wire Line
 	5200 2550 5200 2250
