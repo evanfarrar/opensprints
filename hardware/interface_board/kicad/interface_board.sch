@@ -1,5 +1,5 @@
 EESchema Schematic File Version 1
-LIBS:power,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
+LIBS:power,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
 EELAYER 23  0
 EELAYER END
 $Descr A4 11700 8267
@@ -60,7 +60,7 @@ P 1900 4900
 F 0 "J4" H 2100 5400 60  0000 C C
 F 1 "RJ45" H 1750 5400 60  0000 C C
 	1    1900 4900
-	0    -1   -1   0   
+	0    -1   1    0   
 $EndComp
 $Comp
 L RJ45 J3
@@ -69,7 +69,7 @@ P 1900 3750
 F 0 "J3" H 2100 4250 60  0000 C C
 F 1 "RJ45" H 1750 4250 60  0000 C C
 	1    1900 3750
-	0    -1   -1   0   
+	0    -1   1    0   
 $EndComp
 $Comp
 L RJ45 J2
@@ -78,7 +78,7 @@ P 1900 2600
 F 0 "J2" H 2100 3100 60  0000 C C
 F 1 "RJ45" H 1750 3100 60  0000 C C
 	1    1900 2600
-	0    -1   -1   0   
+	0    -1   1    0   
 $EndComp
 $Comp
 L RJ45 J1
@@ -87,7 +87,7 @@ P 1900 1450
 F 0 "J1" H 2100 1950 60  0000 C C
 F 1 "RJ45" H 1750 1950 60  0000 C C
 	1    1900 1450
-	0    -1   -1   0   
+	0    -1   1    0   
 $EndComp
 Connection ~ 9400 5350
 Connection ~ 9400 6100
