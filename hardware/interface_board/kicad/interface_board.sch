@@ -1,0 +1,354 @@
+EESchema Schematic File Version 1
+LIBS:power,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
+EELAYER 23  0
+EELAYER END
+$Descr A4 11700 8267
+Sheet 1 1
+Title ""
+Date "1 sep 2008"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L CONN_8 P4
+U 1 1 48BB6B14
+P 2700 4900
+F 0 "P4" V 2650 4900 60  0000 C C
+F 1 "CONN_8" V 2750 4900 60  0000 C C
+	1    2700 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P3
+U 1 1 48BB6ABC
+P 2700 3750
+F 0 "P3" V 2650 3750 60  0000 C C
+F 1 "CONN_8" V 2750 3750 60  0000 C C
+	1    2700 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P2
+U 1 1 48BB6AB6
+P 2700 2600
+F 0 "P2" V 2650 2600 60  0000 C C
+F 1 "CONN_8" V 2750 2600 60  0000 C C
+	1    2700 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P1
+U 1 1 48BB6AAE
+P 2700 1450
+F 0 "P1" V 2650 1450 60  0000 C C
+F 1 "CONN_8" V 2750 1450 60  0000 C C
+	1    2700 1450
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1550 900 
+NoConn ~ 1550 2050
+NoConn ~ 1550 3200
+NoConn ~ 1550 4350
+$Comp
+L RJ45 J4
+U 1 1 48BB6A75
+P 1900 4900
+F 0 "J4" H 2100 5400 60  0000 C C
+F 1 "RJ45" H 1750 5400 60  0000 C C
+	1    1900 4900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L RJ45 J3
+U 1 1 48BB6A68
+P 1900 3750
+F 0 "J3" H 2100 4250 60  0000 C C
+F 1 "RJ45" H 1750 4250 60  0000 C C
+	1    1900 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L RJ45 J2
+U 1 1 48BB6A50
+P 1900 2600
+F 0 "J2" H 2100 3100 60  0000 C C
+F 1 "RJ45" H 1750 3100 60  0000 C C
+	1    1900 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L RJ45 J1
+U 1 1 48BB6A35
+P 1900 1450
+F 0 "J1" H 2100 1950 60  0000 C C
+F 1 "RJ45" H 1750 1950 60  0000 C C
+	1    1900 1450
+	0    -1   -1   0   
+$EndComp
+Connection ~ 9400 5350
+Connection ~ 9400 6100
+Wire Wire Line
+	9400 5350 9400 6100
+Connection ~ 9300 5150
+Connection ~ 9300 5900
+Wire Wire Line
+	9300 5150 9300 5900
+Connection ~ 9200 4950
+Connection ~ 9200 5700
+Wire Wire Line
+	9200 4950 9200 5700
+Connection ~ 9100 4750
+Connection ~ 9100 5500
+Wire Wire Line
+	9100 4750 9100 5500
+Wire Wire Line
+	9050 6000 9700 6000
+Wire Wire Line
+	9050 5800 9700 5800
+Wire Wire Line
+	9050 5600 9700 5600
+Wire Wire Line
+	9050 5350 9700 5350
+Wire Wire Line
+	9050 5150 9700 5150
+Wire Wire Line
+	9050 4950 9700 4950
+Wire Wire Line
+	9050 4750 9700 4750
+Wire Wire Line
+	9400 4550 9700 4550
+Wire Wire Line
+	9400 4350 9700 4350
+Wire Wire Line
+	9400 4150 9700 4150
+Wire Wire Line
+	9400 3950 9700 3950
+Wire Wire Line
+	9400 3750 9700 3750
+Wire Wire Line
+	9400 3550 9700 3550
+Wire Wire Line
+	9700 3250 9400 3250
+Wire Wire Line
+	9700 3050 9400 3050
+Wire Wire Line
+	9400 2850 9700 2850
+Wire Wire Line
+	9400 2650 9700 2650
+Wire Wire Line
+	9400 2450 9700 2450
+Wire Wire Line
+	9400 2250 9700 2250
+Wire Wire Line
+	9700 1950 9400 1950
+Wire Wire Line
+	9700 1750 9400 1750
+Wire Wire Line
+	9700 1550 9400 1550
+Wire Wire Line
+	9700 1350 9400 1350
+Wire Wire Line
+	9700 1150 9400 1150
+Wire Wire Line
+	9400 950  9700 950 
+Wire Wire Line
+	9400 750  9700 750 
+Wire Wire Line
+	9400 650  9700 650 
+Wire Wire Line
+	9400 850  9700 850 
+Wire Wire Line
+	9400 1050 9700 1050
+Wire Wire Line
+	9400 1250 9700 1250
+Wire Wire Line
+	9400 1450 9700 1450
+Wire Wire Line
+	9400 1650 9700 1650
+Wire Wire Line
+	9400 1850 9700 1850
+Wire Wire Line
+	9400 2050 9700 2050
+Wire Wire Line
+	9700 2150 9400 2150
+Wire Wire Line
+	9700 2350 9400 2350
+Wire Wire Line
+	9700 2550 9400 2550
+Wire Wire Line
+	9700 2750 9400 2750
+Wire Wire Line
+	9400 2950 9700 2950
+Wire Wire Line
+	9400 3150 9700 3150
+Wire Wire Line
+	9400 3350 9700 3350
+Wire Wire Line
+	9400 3650 9700 3650
+Wire Wire Line
+	9700 3850 9400 3850
+Wire Wire Line
+	9700 4050 9400 4050
+Wire Wire Line
+	9700 4250 9400 4250
+Wire Wire Line
+	9700 4450 9400 4450
+Wire Wire Line
+	9700 4650 9400 4650
+Wire Wire Line
+	9050 4850 9700 4850
+Wire Wire Line
+	9050 5050 9700 5050
+Wire Wire Line
+	9050 5250 9700 5250
+Wire Wire Line
+	9050 5500 9700 5500
+Wire Wire Line
+	9050 5700 9700 5700
+Wire Wire Line
+	9050 5900 9700 5900
+Wire Wire Line
+	9050 6100 9700 6100
+Wire Wire Line
+	9150 4850 9150 5600
+Connection ~ 9150 5600
+Connection ~ 9150 4850
+Wire Wire Line
+	9250 5050 9250 5800
+Connection ~ 9250 5800
+Connection ~ 9250 5050
+Wire Wire Line
+	9350 5250 9350 6000
+Connection ~ 9350 6000
+Connection ~ 9350 5250
+$Comp
+L CONN_7 P6
+U 1 1 48BB5EE1
+P 8700 5800
+F 0 "P6" V 8670 5800 60  0000 C C
+F 1 "CONN_7" V 8770 5800 60  0000 C C
+	1    8700 5800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_7 P5
+U 1 1 48BB5EDB
+P 8700 5050
+F 0 "P5" V 8670 5050 60  0000 C C
+F 1 "CONN_7" V 8770 5050 60  0000 C C
+	1    8700 5050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_12 P11
+U 1 1 48BB5ECD
+P 9050 4100
+F 0 "P11" V 9000 4100 60  0000 C C
+F 1 "CONN_12" V 9100 4100 60  0000 C C
+	1    9050 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P10
+U 1 1 48BB5E15
+P 9050 3000
+F 0 "P10" V 9000 3000 60  0000 C C
+F 1 "CONN_8" V 9100 3000 60  0000 C C
+	1    9050 3000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P9
+U 1 1 48BB5E0B
+P 9050 2200
+F 0 "P9" V 9000 2200 60  0000 C C
+F 1 "CONN_8" V 9100 2200 60  0000 C C
+	1    9050 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_6 P8
+U 1 1 48BB5DF9
+P 9050 1500
+F 0 "P8" V 9000 1500 60  0000 C C
+F 1 "CONN_6" V 9100 1500 60  0000 C C
+	1    9050 1500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_6 P7
+U 1 1 48BB5DEA
+P 9050 900
+F 0 "P7" V 9000 900 60  0000 C C
+F 1 "CONN_6" V 9100 900 60  0000 C C
+	1    9050 900 
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_7 P18
+U 1 1 48BB34D4
+P 10050 5800
+F 0 "P18" V 10020 5800 60  0000 C C
+F 1 "CONN_7" V 10120 5800 60  0000 C C
+	1    10050 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_7 P17
+U 1 1 48BB34CB
+P 10050 5050
+F 0 "P17" V 10020 5050 60  0000 C C
+F 1 "CONN_7" V 10120 5050 60  0000 C C
+	1    10050 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_12 P16
+U 1 1 48BB34A7
+P 10050 4100
+F 0 "P16" V 10000 4100 60  0000 C C
+F 1 "CONN_12" V 10100 4100 60  0000 C C
+	1    10050 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P15
+U 1 1 48BB341E
+P 10050 3000
+F 0 "P15" V 10000 3000 60  0000 C C
+F 1 "CONN_8" V 10100 3000 60  0000 C C
+	1    10050 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P14
+U 1 1 48BB340D
+P 10050 2200
+F 0 "P14" V 10000 2200 60  0000 C C
+F 1 "CONN_8" V 10100 2200 60  0000 C C
+	1    10050 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_6 P13
+U 1 1 48BB33DD
+P 10050 1500
+F 0 "P13" V 10000 1500 60  0000 C C
+F 1 "CONN_6" V 10100 1500 60  0000 C C
+	1    10050 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_6 P12
+U 1 1 48BB33C3
+P 10050 900
+F 0 "P12" V 10000 900 60  0000 C C
+F 1 "CONN_6" V 10100 900 60  0000 C C
+	1    10050 900 
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
