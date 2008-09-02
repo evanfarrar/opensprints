@@ -1,0 +1,10 @@
+Qty   Descr                   Mfr         Mfr P/N        Vendor      Vendor P/N	
+---	-------------------		-------     -----------    -------     ------------
+4     RJ45 modular jack       tyco        5555164-1      digikey     5555164-1
+                              mouser      571-5555164-1
+
+x     male breakaway
+      headers
+
+x     male breakaway
+      headers
