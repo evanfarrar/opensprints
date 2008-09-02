@@ -232,7 +232,7 @@ UsedLibrary="/usr/share/eagle/lbr/SparkFun.lbr"
 [Win_1]
 Type="Control Panel"
 Loc="320 307 919 706"
-State=1
+State=0
 Number=0
 
 [Desktop]
