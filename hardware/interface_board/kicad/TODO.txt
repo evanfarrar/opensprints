@@ -1,0 +1,10 @@
+TODO:
+
+* move all tracks to the component side (except for GND)
+* make GND plane on copper side.
+* make sure holes will be cut.
+* make sure drills for vias are valid size.
+
+DONE:
+
+
