@@ -1,4 +1,13 @@
-EESchema-DOCLIB  Version 2.0  26/8/2008-03:51:41
+EESchema-DOCLIB  Version 2.0  8/9/2008-01:49:14
+#
+$CMP C
+D Condensateur non polarise
+$ENDCMP
+#
+$CMP CONN_8
+D Symbole general de connecteur
+K CONN
+$ENDCMP
 #
 $CMP R
 D Resistance

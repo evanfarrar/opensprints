@@ -5,7 +5,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "25 aug 2008"
+Date "8 sep 2008"
 Rev ""
 Comp ""
 Comment1 ""
@@ -13,45 +13,131 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 1800 3150
-NoConn ~ 1800 4700
+Connection ~ 5950 2650
+Wire Wire Line
+	6200 2650 5950 2650
+Wire Wire Line
+	4100 2450 5850 2450
+Wire Wire Line
+	1850 4100 2650 4100
+Wire Wire Line
+	1850 3900 2650 3900
+Wire Wire Line
+	1850 3700 2650 3700
+Wire Wire Line
+	2650 3500 1850 3500
+Wire Wire Line
+	1850 3400 2650 3400
+Wire Wire Line
+	1850 3600 2650 3600
+Wire Wire Line
+	2650 3800 1850 3800
+Wire Wire Line
+	2650 4000 1850 4000
+Wire Wire Line
+	1850 2900 2650 2900
+Wire Wire Line
+	1850 2700 2650 2700
+Wire Wire Line
+	1850 2500 2650 2500
+Wire Wire Line
+	2650 2300 1850 2300
+Wire Wire Line
+	1850 2200 2650 2200
 Connection ~ 5200 2250
 Wire Wire Line
-	5200 2550 5200 2250
+	5200 2250 5200 2550
 Wire Wire Line
 	5200 3050 5200 3550
 Wire Wire Line
-	3050 2450 3050 4000
-Wire Wire Line
-	3050 4000 2600 4000
-Wire Wire Line
-	2600 2350 5950 2350
-Wire Wire Line
-	5950 2350 5950 3350
+	5950 3350 5950 2350
 Wire Wire Line
 	5950 3350 6050 3350
 Wire Wire Line
-	2600 2250 6050 2250
-Wire Wire Line
 	6050 2250 6050 3150
 Wire Wire Line
-	2600 3800 2750 3800
-Wire Wire Line
-	2750 3800 2750 2250
-Connection ~ 2750 2250
-Wire Wire Line
-	2900 2350 2900 3900
-Wire Wire Line
-	2900 3900 2600 3900
-Connection ~ 2900 2350
-Wire Wire Line
-	5850 3550 5850 2450
-Wire Wire Line
-	5850 2450 2600 2450
-Connection ~ 3050 2450
+	5850 2450 5850 3550
 Wire Wire Line
 	5600 3550 6050 3550
 Connection ~ 5850 3550
+Wire Wire Line
+	1850 2400 2650 2400
+Wire Wire Line
+	2650 2600 1850 2600
+Wire Wire Line
+	2650 2800 1850 2800
+Wire Wire Line
+	5950 2350 4100 2350
+Wire Wire Line
+	6200 2250 4100 2250
+Connection ~ 6050 2250
+$Comp
+L C C1
+U 1 1 48C48447
+P 6200 2450
+F 0 "C1" H 6250 2550 50  0000 L C
+F 1 "C" H 6250 2350 50  0000 L C
+	1    6200 2450
+	1    0    0    -1  
+$EndComp
+Text Label 4150 2450 0    60   ~
+O_HE_SENSOR
+Text Label 4150 2350 0    60   ~
+GND
+Text Label 4150 2250 0    60   ~
+VCC
+Text Label 1900 4100 0    60   ~
+AUXIO_4
+Text Label 1900 4000 0    60   ~
+AUXIO_3
+Text Label 1900 3900 0    60   ~
+AUXIO_2
+Text Label 1900 3800 0    60   ~
+AUXIO_1
+Text Label 1900 3700 0    60   ~
+AUXIO_0
+Text Label 1900 3600 0    60   ~
+O_HE_SENSOR
+Text Label 1900 3500 0    60   ~
+GND
+Text Label 1900 3400 0    60   ~
+VCC
+NoConn ~ 1050 3100
+Text Label 1900 2900 0    60   ~
+AUXIO_4
+Text Label 1900 2800 0    60   ~
+AUXIO_3
+Text Label 1900 2700 0    60   ~
+AUXIO_2
+Text Label 1900 2600 0    60   ~
+AUXIO_1
+Text Label 1900 2500 0    60   ~
+AUXIO_0
+Text Label 1900 2400 0    60   ~
+O_HE_SENSOR
+Text Label 1900 2300 0    60   ~
+GND
+Text Label 1900 2200 0    60   ~
+VCC
+$Comp
+L CONN_8 P2
+U 1 1 48C478D7
+P 3000 3750
+F 0 "P2" V 2950 3750 60  0000 C C
+F 1 "CONN_8" V 3050 3750 60  0000 C C
+	1    3000 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P1
+U 1 1 48C478CE
+P 3000 2550
+F 0 "P1" V 2950 2550 60  0000 C C
+F 1 "CONN_8" V 3050 2550 60  0000 C C
+	1    3000 2550
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1050 4300
 $Comp
 L SS41A U1
 U 1 1 48B2C48B
@@ -82,19 +168,19 @@ $EndComp
 $Comp
 L RJ45 J2
 U 1 1 48B2BB82
-P 2150 4150
-F 0 "J2" H 2350 4650 60  0000 C C
-F 1 "RJ45" H 2000 4650 60  0000 C C
-	1    2150 4150
+P 1400 3750
+F 0 "J2" H 1600 4250 60  0000 C C
+F 1 "RJ45" H 1250 4250 60  0000 C C
+	1    1400 3750
 	0    -1   1    0   
 $EndComp
 $Comp
 L RJ45 J1
 U 1 1 48B2BB52
-P 2150 2600
-F 0 "J1" H 2350 3100 60  0000 C C
-F 1 "RJ45" H 2000 3100 60  0000 C C
-	1    2150 2600
+P 1400 2550
+F 0 "J1" H 1600 3050 60  0000 C C
+F 1 "RJ45" H 1250 3050 60  0000 C C
+	1    1400 2550
 	0    -1   1    0   
 $EndComp
 $EndSCHEMATC

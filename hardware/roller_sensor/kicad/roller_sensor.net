@@ -1,43 +1,72 @@
-# EESchema Netlist Version 1.1 created  27/8/2008-03:01:02
+# EESchema Netlist Version 1.1 created  8/9/2008-01:51:26
 (
+ ( 48C48447 C1 C1 0.1_uH
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+ )
  ( 48B2BBD0 LEDV D1 LED
-  ( 1 N-000003 )
-  ( 2 N-000004 )
+  ( 1 N-000001 )
+  ( 2 O_HE_SENSOR_1 )
  )
  ( 48B2BB52 RJ45_8 J1 RJ45
-  ( 1 N-000005 )
-  ( 2 N-000006 )
-  ( 3 N-000004 )
-  ( 4 ? )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
-  ( 8 ? )
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 O_HE_SENSOR_1 )
+  ( 4 AUXIO_0_1 )
+  ( 5 AUXIO_1_1 )
+  ( 6 AUXIO_2_1 )
+  ( 7 AUXIO_3_1 )
+  ( 8 AUXIO_4_1 )
   ( 9 ? )
  )
  ( 48B2BB82 RJ45_8 J2 RJ45
-  ( 1 N-000005 )
-  ( 2 N-000006 )
-  ( 3 N-000004 )
-  ( 4 ? )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
-  ( 8 ? )
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 O_HE_SENSOR_1 )
+  ( 4 AUXIO_0_1 )
+  ( 5 AUXIO_1_1 )
+  ( 6 AUXIO_2_1 )
+  ( 7 AUXIO_3_1 )
+  ( 8 AUXIO_4_1 )
   ( 9 ? )
  )
+ ( 48C478CE SIL-8 P1 CONN_8
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 O_HE_SENSOR_1 )
+  ( 4 AUXIO_0_1 )
+  ( 5 AUXIO_1_1 )
+  ( 6 AUXIO_2_1 )
+  ( 7 AUXIO_3_1 )
+  ( 8 AUXIO_4_1 )
+ )
+ ( 48C478D7 SIL-8 P2 CONN_8
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 O_HE_SENSOR_1 )
+  ( 4 AUXIO_0_1 )
+  ( 5 AUXIO_1_1 )
+  ( 6 AUXIO_2_1 )
+  ( 7 AUXIO_3_1 )
+  ( 8 AUXIO_4_1 )
+ )
  ( 48B2BBF0 R1 R1 R
-  ( 1 N-000003 )
-  ( 2 N-000005 )
+  ( 1 N-000001 )
+  ( 2 VCC_1 )
  )
  ( 48B2C48B S441a U1 SS41A
-  ( 1 N-000005 )
-  ( 2 N-000006 )
-  ( 3 N-000004 )
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 O_HE_SENSOR_1 )
  )
 )
 *
 { Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
 $component R1
  R?
  SM0603

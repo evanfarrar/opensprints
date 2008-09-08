@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 27/8/2008-03:01:02
+Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 8/9/2008-01:51:26
+
+BeginCmp
+TimeStamp = 48C48447;
+Reference = C1;
+ValeurCmp = 0.1_uH;
+IdModule  = C1;
+EndCmp
 
 BeginCmp
 TimeStamp = 48B2BBD0;
@@ -19,6 +26,20 @@ TimeStamp = 48B2BB82;
 Reference = J2;
 ValeurCmp = RJ45;
 IdModule  = RJ45_8;
+EndCmp
+
+BeginCmp
+TimeStamp = 48C478CE;
+Reference = P1;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = 48C478D7;
+Reference = P2;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
 EndCmp
 
 BeginCmp
