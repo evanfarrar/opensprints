@@ -1,3 +1,18 @@
+#include "WProgram.h"
+void racer0LEDs(int height);
+void racer1LEDs(int height);
+void allLEDs(int height);
+void turnOffLEDs();
+void turnOnLEDs();
+void setup();
+void blinkLED();
+void blinkWinner();
+void raceStart();
+void updateProgressLEDs();
+void checkSerial();
+void checkButton();
+void printStatusUpdate();
+void loop();
 int statusLEDPin = 13;
 long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
@@ -33,7 +48,7 @@ unsigned long racer1FinishTimeMillis;
 unsigned long lastCountDownMillis;
 int lastCountDown;
 
-int raceLengthTicks = 700;
+int raceLengthTicks = 1400;
 int previousFakeTickMillis = 0;
 
 int updateInterval = 250;
@@ -175,6 +190,11 @@ void checkSerial(){
       raceStarted = false;
       mockMode = false;
     }
+    if(val == 'v') {
+      Serial.println("OpenSprints FW for Arduino version XXX ");
+      Serial.print("raceLengthTicks = ");
+      Serial.println(raceLengthTicks, DEC);
+    }
   }
 }
 
@@ -276,5 +296,18 @@ void loop() {
     updateProgressLEDs();
     printStatusUpdate();
   }
+}
+
+
+int main(void)
+{
+	init();
+
+	setup();
+    
+	for (;;)
+		loop();
+        
+	return 0;
 }
 
