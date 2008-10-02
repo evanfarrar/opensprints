@@ -182,15 +182,15 @@ void checkSerial(){
       lastCountDownMillis = millis();
       turnOnLEDs();
     }
-    if(val == 'm') {
-      raceStart();
-      mockMode = true;
-    }
-    if(val == 's') {
+    else if(val == 's') {
       raceStarted = false;
       mockMode = false;
     }
-    if(val == 'v') {
+    else if(val == 'm') {
+      raceStart();
+      mockMode = true;
+    }
+    else if(val == 'v') {
       Serial.println("OpenSprints FW for Arduino version XXX ");
       Serial.print("raceLengthTicks = ");
       Serial.println(raceLengthTicks, DEC);
