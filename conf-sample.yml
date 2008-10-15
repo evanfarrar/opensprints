@@ -1,16 +1,15 @@
 # choose a sensor
-sensor:
 # which sensor type you will be using
-# hall_effect - for racing
-# mock_hall_effect - for debugging without hall effect boards
+# arduino - the main sensor type for racing
+# mock_arduino - for debugging without hall effect boards
 # mock - for debugging without a sensor
-# serial - a lowspeed reed switch based sensor
-  type: hall_effect
+sensor:
+  type: arduino
 # Device is where the UBW is located in your system, usually:
 #   Mac OS X: /dev/tty.usbmodem0000103D1
 #   Linux: /dev/ttyACM0
 #   Windows: com6
-  device: /dev/ttyACM0
+  device: /dev/ttyUSB0
 
 # how long the race should be, in meters
 race_distance: 200
