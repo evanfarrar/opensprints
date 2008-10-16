@@ -1,6 +1,7 @@
+
 #Arduino: a sensor written for the arduino open source hardware.
 class Sensor
-  attr_accessor :queue
+  attr_accessor :queue, :r
   def initialize(queue, filename=nil)
     @queue = queue
     raise 'File Not Writable!' unless File.writable?(filename)
@@ -10,25 +11,21 @@ class Sensor
   end
 
   def start
+    @r = RaceData.new()
     @t.kill if @t
     @t = Thread.new do
       @f.putc 'g'
       @f.flush
       while true do
         l = @f.readline
-        if l=~/:/
-          if l =~ /1:/
-            Thread.current["red"] = l.gsub(/1: /,'').to_i
-          end
-          if l =~ /2:/
-            Thread.current["blue"] = l.gsub(/2: /,'').to_i
-          end
-          if l =~ /1f:/
-            Thread.current["red_finish"] = l.gsub(/1f: /,'').to_i
-          end
-          if l =~ /2f:/
-            Thread.current["blue_finish"] = l.gsub(/2f: /,'').to_i
-          end
+        if l=~/!.*/
+          @r.parseStringToRaceData(l)
+            Thread.current["red"] = @r.redTickData            
+            Thread.current["blue"] = @r.blueTickData
+            Thread.current["green"] = @r.greenTickData            
+            Thread.current["yellow"] = @r.yellowTickData
+            #Thread.current["red_finish"] = l.gsub(/1f: /,'').to_i
+            #Thread.current["blue_finish"] = l.gsub(/2f: /,'').to_i          
         end
         puts l
       end
@@ -37,8 +34,8 @@ class Sensor
   end
 
   def values
-    {:red => @t["red"], :blue => @t["blue"],
-     :red_finish => @t["red_finish"], :blue_finish => @t["blue_finish"]}
+    {:red => @t["red"], :blue => @t["blue"], :green => @t["green"], :yellow => @t["yellow"],
+     :red_finish => @t["red_finish"], :blue_finish => @t["blue_finish"], :green_finish => @t["green_finish"], :yellow_finish => @t["yellow_finish"]}
   end
 
   def stop

@@ -1,5 +1,6 @@
 #!/usr/bin/env shoes
 require 'yaml'
+require 'RaceData'
 
 begin
   options = YAML::load(File.read('conf.yml'))
@@ -12,7 +13,7 @@ require 'lib/units/standard'
 
 
 RACE_DISTANCE = options['race_distance']
-$ROLLER_CIRCUMFERENCE = options['roller_circumference'].mm.to_km
+$ROLLER_CIRCUMFERENCE = options['roller_circumference']  # in METERS DAMNIT!
 TITLE = options['title']
 require 'lib/racer'
 require 'lib/race'

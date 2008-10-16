@@ -66,8 +66,8 @@ class RacePresenter
       @continue = true
     end
 
-    @blue.ticks = @sensor.values[:blue]
-    @red.ticks = @sensor.values[:red]
+    @blue.ticks = @sensor.values[:blue].size
+    @red.ticks = @sensor.values[:red].size
 
     @update_area.clear do
       @shoes_instance.stroke gray 0.5
@@ -93,14 +93,14 @@ class RacePresenter
         @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
         @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
         {:top => 300, :align => 'center'})
-
-      @red.finish_time = @sensor.values[:red_finish]
-      @blue.finish_time = @sensor.values[:blue_finish]
+      
+      @red.finish_time = @sensor.values[:red][ticksInRace]
+      @blue.finish_time = @sensor.values[:blue][ticksInRace]
 
       if @race.complete?
         @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
          :top => 380, :width => 800, :stroke => @shoes_instance.ivory
-        @shoes_instance.title "#{@red.name}: #{@sensor.values[:red_finish]/1000.0}s, #{@blue.name}: #{@sensor.values[:blue_finish]/1000.0}s", :stroke => @shoes_instance.ivory,
+        @shoes_instance.title "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s", :stroke => @shoes_instance.ivory,
           :align => 'center', :top => 450, :width => 800
 
         @sensor.stop
@@ -112,6 +112,11 @@ class RacePresenter
   end
 
   def percent_complete(racer)
-    [1.0, (racer.ticks||0)/@race_distance.to_f].min
+    [1.0, ((racer.ticks * racer.roller_circumference) || 0)/@race_distance.to_f].min
   end
+  
+  def ticksInRace
+    (@race_distance/@red.roller_circumference)
+  end
+
 end
