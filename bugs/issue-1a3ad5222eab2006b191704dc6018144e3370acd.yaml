@@ -5,8 +5,8 @@ type: :bugfix
 component: opensprints
 release: 
 reporter: Evan Farrar <evanfarrar@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-07-11 00:21:39.218678 Z
 references: []
 
@@ -15,4 +15,8 @@ log_events:
 - - 2008-07-11 00:21:42.378279 Z
   - Evan Farrar <evanfarrar@gmail.com>
   - created
+  - ""
+- - 2008-10-16 17:47:48.724041 Z
+  - evan <evanfarrar@gmail.com>
+  - closed with disposition fixed
   - ""
