@@ -1,7 +1,6 @@
 module RacePresenterMod
   def race_window(match, race_distance, sensor, title)
-    window :title => title, :width => 800, :height => 600 do
-      background "media/trappedsprints-800.jpg"
+      background black
 
       stack do
         subtitle title, :top => 150, :align => "center", :background => magenta,
@@ -41,7 +40,6 @@ module RacePresenterMod
           close
         end
       end
-    end
   end
 
 end
@@ -98,15 +96,11 @@ class RacePresenter
       @blue.finish_time = @sensor.values[:blue][ticksInRace]
 
       if @race.complete?
-        @shoes_instance.title "#{@race.winner.name.upcase} WINS!!!\n", :align => "center",
-         :top => 380, :width => 800, :stroke => @shoes_instance.ivory
-        @shoes_instance.title "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s", :stroke => @shoes_instance.ivory,
-          :align => 'center', :top => 450, :width => 800
+        @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
+        quit
 
         @sensor.stop
         @continue = false
-        @shoes_instance.owner.tournament_record(@race)
-        @shoes_instance.owner.post_race
       end
     end
   end
