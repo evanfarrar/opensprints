@@ -1,6 +1,6 @@
 #!/usr/bin/env shoes
 require 'yaml'
-require 'RaceData'
+require 'lib/race_data'
 
 begin
   options = YAML::load(File.read('conf.yml'))
