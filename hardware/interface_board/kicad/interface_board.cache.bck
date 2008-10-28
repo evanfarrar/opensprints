@@ -1,17 +1,7 @@
-EESchema-DOCLIB  Version 2.0  1/9/2008-07:35:34
-#
-$CMP CONN_12
-D Symbole general de connecteur
-K CONN
-$ENDCMP
+EESchema-DOCLIB  Version 2.0  28/10/2008-04:37:39
 #
 $CMP CONN_6
 D ymbole general de connecteur
-K CONN
-$ENDCMP
-#
-$CMP CONN_7
-D Symbole general pour connexions
 K CONN
 $ENDCMP
 #
