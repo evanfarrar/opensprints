@@ -1,10 +1,13 @@
-Qty   Descr                   Mfr         Mfr P/N        Vendor      Vendor P/N	
----	-------------------		-------     -----------    -------     ------------
-4     RJ45 modular jack       tyco        5555164-1      digikey     5555164-1
-                              mouser      571-5555164-1
+Qty   Descr                   Mfr         Mfr P/N         Supplier    Supplier P/N	
+---   ------------------      -------     -------------   ---------   ------------
+1     plastic box             Serpac      A31             Digi-Key    SRA31G-ND
+4     RJ45 modular jack       tyco        5555164-1       Digi-Key    5555164-1
+                                                          Mouser      571-5555164-1
 
-x     male breakaway
-      headers
+2     male breakaway
+      headers 8 pos
 
-x     male breakaway
-      headers
+2     male breakaway
+      headers 6 pos
+
+x     hook-up wire
