@@ -1,11 +1,11 @@
 EESchema Schematic File Version 1
-LIBS:power,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
+LIBS:power,./ARDUINO_USB_MODULE,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
 EELAYER 23  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "1 sep 2008"
+Date "6 nov 2008"
 Rev ""
 Comp ""
 Comment1 ""
@@ -13,15 +13,51 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Wire Line
-	4700 900  4700 850 
-Wire Wire Line
-	4700 850  4550 850 
-Wire Wire Line
-	4550 850  4550 1500
-Connection ~ 4450 1300
-Wire Wire Line
-	4450 1300 4450 900 
+$Comp
+L CONN_6 P6
+U 1 1 49125B30
+P 4050 2050
+F 0 "P6" V 4000 2050 60  0000 C C
+F 1 "CONN_6" V 4100 2050 60  0000 C C
+	1    4050 2050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_6 P5
+U 1 1 49125B21
+P 4050 1450
+F 0 "P5" V 4000 1450 60  0000 C C
+F 1 "CONN_6" V 4100 1450 60  0000 C C
+	1    4050 1450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P8
+U 1 1 49125B05
+P 4050 3550
+F 0 "P8" V 4000 3550 60  0000 C C
+F 1 "CONN_8" V 4100 3550 60  0000 C C
+	1    4050 3550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P7
+U 1 1 49125ABF
+P 4050 2750
+F 0 "P7" V 4000 2750 60  0000 C C
+F 1 "CONN_8" V 4100 2750 60  0000 C C
+	1    4050 2750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L ARDUINO_USB_MODULE U1
+U 1 1 49125A3B
+P 5950 2550
+F 0 "U1" H 5950 2450 50  0000 C C
+F 1 "ARDUINO_USB_MODULE" H 5950 2650 50  0000 C C
+	1    5950 2550
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	2400 5400 2400 4650
 Wire Wire Line
@@ -35,62 +71,6 @@ Wire Wire Line
 Wire Wire Line
 	2350 1100 2350 950 
 Wire Wire Line
-	4400 3800 4700 3800
-Wire Wire Line
-	4400 3600 4700 3600
-Wire Wire Line
-	4400 3400 4700 3400
-Wire Wire Line
-	4700 3200 4400 3200
-Wire Wire Line
-	4700 3000 4400 3000
-Wire Wire Line
-	4700 2800 4400 2800
-Wire Wire Line
-	4700 2600 4400 2600
-Wire Wire Line
-	4400 2500 4700 2500
-Wire Wire Line
-	4400 2300 4700 2300
-Wire Wire Line
-	4400 2100 4700 2100
-Wire Wire Line
-	4400 1900 4700 1900
-Wire Wire Line
-	4400 1700 4700 1700
-Wire Wire Line
-	4400 1500 4700 1500
-Wire Wire Line
-	4400 1300 4700 1300
-Wire Wire Line
-	4400 1100 4700 1100
-Wire Wire Line
-	4400 1200 4700 1200
-Wire Wire Line
-	4400 1400 4700 1400
-Wire Wire Line
-	4700 1600 4400 1600
-Wire Wire Line
-	4700 1800 4400 1800
-Wire Wire Line
-	4700 2000 4400 2000
-Wire Wire Line
-	4700 2200 4400 2200
-Wire Wire Line
-	4700 2400 4400 2400
-Wire Wire Line
-	4400 2700 4700 2700
-Wire Wire Line
-	4400 2900 4700 2900
-Wire Wire Line
-	4400 3100 4700 3100
-Wire Wire Line
-	4400 3300 4700 3300
-Wire Wire Line
-	4700 3500 4400 3500
-Wire Wire Line
-	4700 3700 4400 3700
-Wire Wire Line
 	2350 2150 2350 2250
 Wire Wire Line
 	2350 4450 2350 4550
@@ -102,94 +82,74 @@ Wire Wire Line
 	2350 3500 2400 3500
 Wire Wire Line
 	2400 3500 2400 4200
-Connection ~ 4550 1500
-Connection ~ 4550 1400
 $Comp
-L GND #PWR?
-U 1 1 48BB990B
-P 4700 900
-F 0 "#PWR?" H 4700 900 30  0001 C C
-F 1 "GND" H 4700 830 30  0001 C C
-	1    4700 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR?
-U 1 1 48BB9905
-P 4450 900
-F 0 "#PWR?" H 4450 1000 30  0001 C C
-F 1 "VCC" H 4450 1000 30  0000 C C
-	1    4450 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
+L GND #PWR5
 U 1 1 48BB9775
 P 2400 1850
-F 0 "#PWR?" H 2400 1850 30  0001 C C
+F 0 "#PWR5" H 2400 1850 30  0001 C C
 F 1 "GND" H 2400 1780 30  0001 C C
 	1    2400 1850
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR6
 U 1 1 48BB976E
 P 2400 3050
-F 0 "#PWR?" H 2400 3050 30  0001 C C
+F 0 "#PWR6" H 2400 3050 30  0001 C C
 F 1 "GND" H 2400 2980 30  0001 C C
 	1    2400 3050
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR7
 U 1 1 48BB9767
 P 2400 4200
-F 0 "#PWR?" H 2400 4200 30  0001 C C
+F 0 "#PWR7" H 2400 4200 30  0001 C C
 F 1 "GND" H 2400 4130 30  0001 C C
 	1    2400 4200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR8
 U 1 1 48BB9759
 P 2400 5400
-F 0 "#PWR?" H 2400 5400 30  0001 C C
+F 0 "#PWR8" H 2400 5400 30  0001 C C
 F 1 "GND" H 2400 5330 30  0001 C C
 	1    2400 5400
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR?
+L VCC #PWR4
 U 1 1 48BB971A
 P 2350 4450
-F 0 "#PWR?" H 2350 4550 30  0001 C C
+F 0 "#PWR4" H 2350 4550 30  0001 C C
 F 1 "VCC" H 2350 4550 30  0000 C C
 	1    2350 4450
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR?
+L VCC #PWR3
 U 1 1 48BB9715
 P 2350 3300
-F 0 "#PWR?" H 2350 3400 30  0001 C C
+F 0 "#PWR3" H 2350 3400 30  0001 C C
 F 1 "VCC" H 2350 3400 30  0000 C C
 	1    2350 3300
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR?
+L VCC #PWR2
 U 1 1 48BB970C
 P 2350 2150
-F 0 "#PWR?" H 2350 2250 30  0001 C C
+F 0 "#PWR2" H 2350 2250 30  0001 C C
 F 1 "VCC" H 2350 2250 30  0000 C C
 	1    2350 2150
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR?
+L VCC #PWR1
 U 1 1 48BB9706
 P 2350 950
-F 0 "#PWR?" H 2350 1050 30  0001 C C
+F 0 "#PWR1" H 2350 1050 30  0001 C C
 F 1 "VCC" H 2350 1050 30  0000 C C
 	1    2350 950 
 	1    0    0    -1  
@@ -269,77 +229,5 @@ F 0 "J1" H 2100 1950 60  0000 C C
 F 1 "RJ45" H 1750 1950 60  0000 C C
 	1    1900 1450
 	0    -1   1    0   
-$EndComp
-$Comp
-L CONN_8 P10
-U 1 1 48BB5E15
-P 4050 3450
-F 0 "P10" V 4000 3450 60  0000 C C
-F 1 "CONN_8" V 4100 3450 60  0000 C C
-	1    4050 3450
-	-1   0    0    -1  
-$EndComp
-$Comp
-L CONN_8 P9
-U 1 1 48BB5E0B
-P 4050 2650
-F 0 "P9" V 4000 2650 60  0000 C C
-F 1 "CONN_8" V 4100 2650 60  0000 C C
-	1    4050 2650
-	-1   0    0    -1  
-$EndComp
-$Comp
-L CONN_6 P8
-U 1 1 48BB5DF9
-P 4050 1950
-F 0 "P8" V 4000 1950 60  0000 C C
-F 1 "CONN_6" V 4100 1950 60  0000 C C
-	1    4050 1950
-	-1   0    0    -1  
-$EndComp
-$Comp
-L CONN_6 P7
-U 1 1 48BB5DEA
-P 4050 1350
-F 0 "P7" V 4000 1350 60  0000 C C
-F 1 "CONN_6" V 4100 1350 60  0000 C C
-	1    4050 1350
-	-1   0    0    -1  
-$EndComp
-$Comp
-L CONN_8 P15
-U 1 1 48BB341E
-P 5050 3450
-F 0 "P15" V 5000 3450 60  0000 C C
-F 1 "CONN_8" V 5100 3450 60  0000 C C
-	1    5050 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_8 P14
-U 1 1 48BB340D
-P 5050 2650
-F 0 "P14" V 5000 2650 60  0000 C C
-F 1 "CONN_8" V 5100 2650 60  0000 C C
-	1    5050 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_6 P13
-U 1 1 48BB33DD
-P 5050 1950
-F 0 "P13" V 5000 1950 60  0000 C C
-F 1 "CONN_6" V 5100 1950 60  0000 C C
-	1    5050 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_6 P12
-U 1 1 48BB33C3
-P 5050 1350
-F 0 "P12" V 5000 1350 60  0000 C C
-F 1 "CONN_6" V 5100 1350 60  0000 C C
-	1    5050 1350
-	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
