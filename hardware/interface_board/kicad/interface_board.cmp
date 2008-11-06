@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 6/11/2008-19:43:12
+Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 6/11/2008-21:25:17
 
 BeginCmp
 TimeStamp = 48BB6A35;
@@ -32,56 +32,56 @@ BeginCmp
 TimeStamp = 48BB6AAE;
 Reference = P1;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
 TimeStamp = 48BB6AB6;
 Reference = P2;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
 TimeStamp = 48BB6ABC;
 Reference = P3;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
 TimeStamp = 48BB6B14;
 Reference = P4;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
 TimeStamp = 49125B21;
 Reference = P5;
 ValeurCmp = CONN_6;
-IdModule  = PIN_ARRAY-6X1;
+IdModule  = HEADER_100mil_6x1;
 EndCmp
 
 BeginCmp
 TimeStamp = 49125B30;
 Reference = P6;
 ValeurCmp = CONN_6;
-IdModule  = PIN_ARRAY-6X1;
+IdModule  = HEADER_100mil_6x1;
 EndCmp
 
 BeginCmp
 TimeStamp = 49125ABF;
 Reference = P7;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
 TimeStamp = 49125B05;
 Reference = P8;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp

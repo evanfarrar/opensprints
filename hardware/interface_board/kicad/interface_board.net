@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  6/11/2008-19:43:12
+# EESchema Netlist Version 1.1 created  6/11/2008-21:25:17
 (
  ( 48BB6A35 RJ45_8 J1 RJ45
   ( 1 VCC )
@@ -44,7 +44,7 @@
   ( 8 N-000031 )
   ( 9 ? )
  )
- ( 48BB6AAE SIL-8 P1 CONN_8
+ ( 48BB6AAE HEADER_100mil_8x1 P1 CONN_8
   ( 1 VCC )
   ( 2 GND )
   ( 3 N-000005 )
@@ -54,7 +54,7 @@
   ( 7 N-000047 )
   ( 8 N-000046 )
  )
- ( 48BB6AB6 SIL-8 P2 CONN_8
+ ( 48BB6AB6 HEADER_100mil_8x1 P2 CONN_8
   ( 1 VCC )
   ( 2 GND )
   ( 3 N-000002 )
@@ -64,7 +64,7 @@
   ( 7 N-000042 )
   ( 8 N-000041 )
  )
- ( 48BB6ABC SIL-8 P3 CONN_8
+ ( 48BB6ABC HEADER_100mil_8x1 P3 CONN_8
   ( 1 VCC )
   ( 2 GND )
   ( 3 N-000006 )
@@ -74,7 +74,7 @@
   ( 7 N-000037 )
   ( 8 N-000036 )
  )
- ( 48BB6B14 SIL-8 P4 CONN_8
+ ( 48BB6B14 HEADER_100mil_8x1 P4 CONN_8
   ( 1 VCC )
   ( 2 GND )
   ( 3 N-000001 )
@@ -84,7 +84,7 @@
   ( 7 N-000032 )
   ( 8 N-000031 )
  )
- ( 49125B21 PIN_ARRAY-6X1 P5 CONN_6
+ ( 49125B21 HEADER_100mil_6x1 P5 CONN_6
   ( 1 N-000018 )
   ( 2 N-000017 )
   ( 3 N-000016 )
@@ -92,7 +92,7 @@
   ( 5 N-000014 )
   ( 6 N-000013 )
  )
- ( 49125B30 PIN_ARRAY-6X1 P6 CONN_6
+ ( 49125B30 HEADER_100mil_6x1 P6 CONN_6
   ( 1 N-000012 )
   ( 2 N-000011 )
   ( 3 N-000010 )
@@ -100,7 +100,7 @@
   ( 5 N-000008 )
   ( 6 N-000007 )
  )
- ( 49125ABF SIL-8 P7 CONN_8
+ ( 49125ABF HEADER_100mil_8x1 P7 CONN_8
   ( 1 N-000030 )
   ( 2 N-000029 )
   ( 3 N-000005 )
@@ -110,7 +110,7 @@
   ( 7 N-000028 )
   ( 8 N-000027 )
  )
- ( 49125B05 SIL-8 P8 CONN_8
+ ( 49125B05 HEADER_100mil_8x1 P8 CONN_8
   ( 1 N-000026 )
   ( 2 N-000025 )
   ( 3 N-000024 )

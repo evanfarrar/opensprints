@@ -1,0 +1,50 @@
+PCBNEW-LibDoc----V1  6/11/2008-21:22:13
+#
+$MODULE RJ45_8
+Li RJ45_8
+Kw RJ45
+$EndMODULE
+#
+$MODULE SIL-12
+Li SIL-12
+Cd Connecteur 12 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-6
+Li SIL-6
+Cd Connecteur 6 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-7
+Li SIL-7
+Cd Connecteur 7 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-8
+Li SIL-8
+Cd Connecteur 8 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE pin_array_8x2
+Li pin_array_8x2
+Cd Double rangee de contacts 2 x 8 pins
+Kw CONN
+$EndMODULE
+#
+$MODULE 1pin
+Li 1pin
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+$EndMODULE
+#
+$MODULE HEADER_100mil_8x1
+Li HEADER_100mil_8x1
+Cd Double rangee de contacts 2 x 8 pins
+Kw CONN
+$EndMODULE
+#
+$EndLIBDOC

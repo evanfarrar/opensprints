@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date 4/11/2008-04:41:29
+PCBNEW-BOARD Version 1 date 6/11/2008-21:21:28
 
 $GENERAL
 LayerCount 2
@@ -14,9 +14,9 @@ Nnets 68
 $EndGENERAL
 
 $SHEETDESCR
-Sheet User 17000 11000
+Sheet User 11000 8500
 Title "IFPCB"
-Date "4 nov 2008"
+Date "6 nov 2008"
 Rev "2008.11.02"
 Comp "OpenSprints"
 Comment1 ""
