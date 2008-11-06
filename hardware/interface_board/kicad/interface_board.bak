@@ -1,5 +1,5 @@
 EESchema Schematic File Version 1
-LIBS:power,./ARDUINO_USB_MODULE,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
+LIBS:power,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
 EELAYER 23  0
 EELAYER END
 $Descr A4 11700 8267
@@ -13,6 +13,54 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	2350 4750 3800 4750
+Wire Wire Line
+	3800 4750 3800 2900
+Wire Wire Line
+	3800 2900 4400 2900
+Wire Wire Line
+	2350 2450 3700 2450
+Wire Wire Line
+	3700 2450 3700 2700
+Wire Wire Line
+	3700 2700 4400 2700
+Wire Wire Line
+	2400 5400 2400 4650
+Wire Wire Line
+	2400 4650 2350 4650
+Wire Wire Line
+	2400 1850 2400 1200
+Wire Wire Line
+	2400 1200 2350 1200
+Wire Wire Line
+	2350 3300 2350 3400
+Wire Wire Line
+	2350 1100 2350 950 
+Wire Wire Line
+	2350 2150 2350 2250
+Wire Wire Line
+	2350 4450 2350 4550
+Wire Wire Line
+	2350 2350 2400 2350
+Wire Wire Line
+	2400 2350 2400 3050
+Wire Wire Line
+	2350 3500 2400 3500
+Wire Wire Line
+	2400 3500 2400 4200
+Wire Wire Line
+	4400 2600 3800 2600
+Wire Wire Line
+	3800 2600 3800 1300
+Wire Wire Line
+	3800 1300 2350 1300
+Wire Wire Line
+	4400 2800 3700 2800
+Wire Wire Line
+	3700 2800 3700 3600
+Wire Wire Line
+	3700 3600 2350 3600
 $Comp
 L CONN_6 P6
 U 1 1 49125B30
@@ -58,30 +106,6 @@ F 1 "ARDUINO_USB_MODULE" H 5950 2650 50  0000 C C
 	1    5950 2550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 5400 2400 4650
-Wire Wire Line
-	2400 4650 2350 4650
-Wire Wire Line
-	2400 1850 2400 1200
-Wire Wire Line
-	2400 1200 2350 1200
-Wire Wire Line
-	2350 3300 2350 3400
-Wire Wire Line
-	2350 1100 2350 950 
-Wire Wire Line
-	2350 2150 2350 2250
-Wire Wire Line
-	2350 4450 2350 4550
-Wire Wire Line
-	2350 2350 2400 2350
-Wire Wire Line
-	2400 2350 2400 3050
-Wire Wire Line
-	2350 3500 2400 3500
-Wire Wire Line
-	2400 3500 2400 4200
 $Comp
 L GND #PWR5
 U 1 1 48BB9775

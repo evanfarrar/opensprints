@@ -1,5 +1,5 @@
 EESchema Schematic File Version 1
-LIBS:power,./ARDUINO_USB_MODULE,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
+LIBS:power,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
 EELAYER 23  0
 EELAYER END
 $Descr A4 11700 8267
@@ -13,6 +13,54 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	2350 4750 3800 4750
+Wire Wire Line
+	3800 4750 3800 2900
+Wire Wire Line
+	3800 2900 4400 2900
+Wire Wire Line
+	2350 2450 3700 2450
+Wire Wire Line
+	3700 2450 3700 2700
+Wire Wire Line
+	3700 2700 4400 2700
+Wire Wire Line
+	2400 5400 2400 4650
+Wire Wire Line
+	2400 4650 2350 4650
+Wire Wire Line
+	2400 1850 2400 1200
+Wire Wire Line
+	2400 1200 2350 1200
+Wire Wire Line
+	2350 3300 2350 3400
+Wire Wire Line
+	2350 1100 2350 950 
+Wire Wire Line
+	2350 2150 2350 2250
+Wire Wire Line
+	2350 4450 2350 4550
+Wire Wire Line
+	2350 2350 2400 2350
+Wire Wire Line
+	2400 2350 2400 3050
+Wire Wire Line
+	2350 3500 2400 3500
+Wire Wire Line
+	2400 3500 2400 4200
+Wire Wire Line
+	4400 2600 3800 2600
+Wire Wire Line
+	3800 2600 3800 1300
+Wire Wire Line
+	3800 1300 2350 1300
+Wire Wire Line
+	4400 2800 3700 2800
+Wire Wire Line
+	3700 2800 3700 3600
+Wire Wire Line
+	3700 3600 2350 3600
 $Comp
 L CONN_6 P6
 U 1 1 49125B30
@@ -58,98 +106,74 @@ F 1 "ARDUINO_USB_MODULE" H 5950 2650 50  0000 C C
 	1    5950 2550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 5400 2400 4650
-Wire Wire Line
-	2400 4650 2350 4650
-Wire Wire Line
-	2400 1850 2400 1200
-Wire Wire Line
-	2400 1200 2350 1200
-Wire Wire Line
-	2350 3300 2350 3400
-Wire Wire Line
-	2350 1100 2350 950 
-Wire Wire Line
-	2350 2150 2350 2250
-Wire Wire Line
-	2350 4450 2350 4550
-Wire Wire Line
-	2350 2350 2400 2350
-Wire Wire Line
-	2400 2350 2400 3050
-Wire Wire Line
-	2350 3500 2400 3500
-Wire Wire Line
-	2400 3500 2400 4200
 $Comp
-L GND #PWR5
+L GND #PWR01
 U 1 1 48BB9775
 P 2400 1850
-F 0 "#PWR5" H 2400 1850 30  0001 C C
+F 0 "#PWR01" H 2400 1850 30  0001 C C
 F 1 "GND" H 2400 1780 30  0001 C C
 	1    2400 1850
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR6
+L GND #PWR02
 U 1 1 48BB976E
 P 2400 3050
-F 0 "#PWR6" H 2400 3050 30  0001 C C
+F 0 "#PWR02" H 2400 3050 30  0001 C C
 F 1 "GND" H 2400 2980 30  0001 C C
 	1    2400 3050
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR7
+L GND #PWR03
 U 1 1 48BB9767
 P 2400 4200
-F 0 "#PWR7" H 2400 4200 30  0001 C C
+F 0 "#PWR03" H 2400 4200 30  0001 C C
 F 1 "GND" H 2400 4130 30  0001 C C
 	1    2400 4200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR8
+L GND #PWR04
 U 1 1 48BB9759
 P 2400 5400
-F 0 "#PWR8" H 2400 5400 30  0001 C C
+F 0 "#PWR04" H 2400 5400 30  0001 C C
 F 1 "GND" H 2400 5330 30  0001 C C
 	1    2400 5400
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR4
+L VCC #PWR05
 U 1 1 48BB971A
 P 2350 4450
-F 0 "#PWR4" H 2350 4550 30  0001 C C
+F 0 "#PWR05" H 2350 4550 30  0001 C C
 F 1 "VCC" H 2350 4550 30  0000 C C
 	1    2350 4450
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR3
+L VCC #PWR06
 U 1 1 48BB9715
 P 2350 3300
-F 0 "#PWR3" H 2350 3400 30  0001 C C
+F 0 "#PWR06" H 2350 3400 30  0001 C C
 F 1 "VCC" H 2350 3400 30  0000 C C
 	1    2350 3300
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR2
+L VCC #PWR07
 U 1 1 48BB970C
 P 2350 2150
-F 0 "#PWR2" H 2350 2250 30  0001 C C
+F 0 "#PWR07" H 2350 2250 30  0001 C C
 F 1 "VCC" H 2350 2250 30  0000 C C
 	1    2350 2150
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR1
+L VCC #PWR08
 U 1 1 48BB9706
 P 2350 950
-F 0 "#PWR1" H 2350 1050 30  0001 C C
+F 0 "#PWR08" H 2350 1050 30  0001 C C
 F 1 "VCC" H 2350 1050 30  0000 C C
 	1    2350 950 
 	1    0    0    -1  
