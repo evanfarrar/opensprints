@@ -1,63 +1,15 @@
-PCBNEW-BOARD Version 1 date 8/11/2008-02:13:12
-
-$GENERAL
-LayerCount 2
-Ly 1FFF8001
-Links 0
-NoConn 0
-Di -575 -16075 19575 575
-Ndraw 0
-Ntrack 0
-Nzone 0
-Nmodule 1
-Nnets 0
-$EndGENERAL
-
-$SHEETDESCR
-Sheet A4 11700 8267
-Title ""
-Date "8 nov 2008"
-Rev ""
-Comp ""
-Comment1 ""
-Comment2 ""
-Comment3 ""
-Comment4 ""
-$EndSHEETDESCR
-
-$SETUP
-InternalUnit 0.000100 INCH
-GridSize 500 500
-UserGridSize 0.010000 0.010000 mm
-ZoneGridSize 50
-Layers 2
-TrackWidth 170
-TrackWidthHistory 170
-TrackClearence 60
-ZoneClearence 300
-DrawSegmWidth 150
-EdgeSegmWidth 150
-ViaSize 450
-ViaDrill 250
-ViaSizeHistory 450
-TextPcbWidth 120
-TextPcbSize 600 800
-EdgeModWidth 150
-TextModSize 600 600
-TextModWidth 120
-PadSize 800 800
-PadDrill 400
-AuxiliaryAxisOrg 0 0
-$EndSETUP
-
-$MODULE HEADER_100mil_8x
-Po 0 0 0 15 4914F5B5 4914F450 ~~
-Li HEADER_100mil_8x
+PCBNEW-LibModule-V1  8/11/2008-02:13:48
+$INDEX
+ARDUINO_USB_MODULE
+$EndINDEX
+$MODULE ARDUINO_USB_MODULE
+Po 0 0 0 15 4914F5D2 4914F450 ~~
+Li ARDUINO_USB_MODULE
 Cd Double rangee de contacts 2 x 8 pins
 Kw CONN
 Sc 4914F450
 Op 0 0 0
-T0 9500 -1000 400 400 0 80 N V 21 "ARDUINO_USB_MODU"
+T0 9250 -1000 400 400 0 80 N V 21 "ARDUINO_USB_MODU"
 T1 6500 0 400 400 0 80 N V 21 "Val**"
 DS 18500 -10300 18700 -10500 150 21
 DS 18700 -10500 18500 -10700 150 21
@@ -437,9 +389,5 @@ Sc 1.000000 1.000000 1.000000
 Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
-$EndMODULE  HEADER_100mil_8x
-$TRACK
-$EndTRACK
-$ZONE
-$EndZONE
-$EndBOARD
+$EndMODULE  ARDUINO_USB_MODULE
+$EndLIBRARY

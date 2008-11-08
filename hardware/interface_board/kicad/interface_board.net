@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  6/11/2008-21:25:17
+# EESchema Netlist Version 1.1 created  8/11/2008-02:23:17
 (
  ( 48BB6A35 RJ45_8 J1 RJ45
   ( 1 VCC )
@@ -120,7 +120,7 @@
   ( 7 N-000020 )
   ( 8 N-000019 )
  )
- ( 49125A3B $noname$ U1 ARDUINO_USB_MODULE
+ ( 49125A3B ARDUINO_USB_MODULE U1 ARDUINO_USB_MODULE
   ( 1 N-000018 )
   ( 2 N-000017 )
   ( 3 N-000016 )

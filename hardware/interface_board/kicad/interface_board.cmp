@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 6/11/2008-21:25:17
+Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 8/11/2008-02:23:17
 
 BeginCmp
 TimeStamp = 48BB6A35;
@@ -88,7 +88,7 @@ BeginCmp
 TimeStamp = 49125A3B;
 Reference = U1;
 ValeurCmp = ARDUINO_USB_MODULE;
-IdModule  = ;
+IdModule  = ARDUINO_USB_MODULE;
 EndCmp
 
 EndListe
