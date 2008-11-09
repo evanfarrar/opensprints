@@ -5,7 +5,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "6 nov 2008"
+Date "9 nov 2008"
 Rev ""
 Comp ""
 Comment1 ""
@@ -13,6 +13,42 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L RJ45_8 J4
+U 1 1 491645A1
+P 1900 4900
+F 0 "J4" H 2100 5400 60  0000 C C
+F 1 "RJ45_8" H 1750 5400 60  0000 C C
+	1    1900 4900
+	0    -1   1    0   
+$EndComp
+$Comp
+L RJ45_8 J3
+U 1 1 49164598
+P 1900 3750
+F 0 "J3" H 2100 4250 60  0000 C C
+F 1 "RJ45_8" H 1750 4250 60  0000 C C
+	1    1900 3750
+	0    -1   1    0   
+$EndComp
+$Comp
+L RJ45_8 J2
+U 1 1 49164590
+P 1900 2600
+F 0 "J2" H 2100 3100 60  0000 C C
+F 1 "RJ45_8" H 1750 3100 60  0000 C C
+	1    1900 2600
+	0    -1   1    0   
+$EndComp
+$Comp
+L RJ45_8 J1
+U 1 1 4916454A
+P 1900 1450
+F 0 "J1" H 2100 1950 60  0000 C C
+F 1 "RJ45_8" H 1750 1950 60  0000 C C
+	1    1900 1450
+	0    -1   1    0   
+$EndComp
 Wire Wire Line
 	2350 4750 3800 4750
 Wire Wire Line

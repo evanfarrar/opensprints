@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  8/11/2008-02:21:00
+PCBNEW-LibDoc----V1  9/11/2008-02:20:29
 #
 $MODULE RJ45_8
 Li RJ45_8
@@ -41,6 +41,12 @@ Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 $EndMODULE
 #
+$MODULE ARDUINO_USB_MODULE
+Li ARDUINO_USB_MODULE
+Cd Double rangee de contacts 2 x 8 pins
+Kw CONN
+$EndMODULE
+#
 $MODULE HEADER_100mil_8x1
 Li HEADER_100mil_8x1
 Cd Double rangee de contacts 2 x 8 pins
@@ -49,12 +55,6 @@ $EndMODULE
 #
 $MODULE HEADER_100mil_6x1
 Li HEADER_100mil_6x1
-Cd Double rangee de contacts 2 x 8 pins
-Kw CONN
-$EndMODULE
-#
-$MODULE ARDUINO_USB_MODULE
-Li ARDUINO_USB_MODULE
 Cd Double rangee de contacts 2 x 8 pins
 Kw CONN
 $EndMODULE
