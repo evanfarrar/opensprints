@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  9/11/2008-02:20:29
+PCBNEW-LibDoc----V1  9/11/2008-16:22:33
 #
 $MODULE RJ45_8
 Li RJ45_8
@@ -47,14 +47,14 @@ Cd Double rangee de contacts 2 x 8 pins
 Kw CONN
 $EndMODULE
 #
-$MODULE HEADER_100mil_8x1
-Li HEADER_100mil_8x1
+$MODULE HEADER_100mil_6x1
+Li HEADER_100mil_6x1
 Cd Double rangee de contacts 2 x 8 pins
 Kw CONN
 $EndMODULE
 #
-$MODULE HEADER_100mil_6x1
-Li HEADER_100mil_6x1
+$MODULE HEADER_100mil_8x1
+Li HEADER_100mil_8x1
 Cd Double rangee de contacts 2 x 8 pins
 Kw CONN
 $EndMODULE
