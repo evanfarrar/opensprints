@@ -75,5 +75,6 @@ Shoes.app do
     File.open('conf.yml', 'w+') do |f|
       f << @prefs.to_yaml
     end
+    alert('Preferences saved!')
   end
 end

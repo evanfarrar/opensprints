@@ -23,3 +23,12 @@ title: OpenSprints
 #the measurement system displayed: standard or metric
 units: standard
 #units: metric
+
+
+# The list of racers' colors. Supports from 1-4 racers.
+# Provide as many colors as you want racers.
+# Can be in any format shoes understands:
+# e.g.: "red" or "#FF0000" or "rgb(255,0,0)"
+racers:
+- red
+- blue
