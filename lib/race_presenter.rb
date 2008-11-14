@@ -96,11 +96,11 @@ class RacePresenter
       @blue.finish_time = @sensor.values[:blue][ticksInRace]
 
       if @race.complete?
-        @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
-        quit
 
         @sensor.stop
         @continue = false
+        @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
+        @shoes_instance.close
       end
     end
   end

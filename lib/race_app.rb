@@ -25,7 +25,6 @@ UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kmph
 
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
   extend RacePresenterMod
-  @tournament = Tournament.new(RACE_DISTANCE)
 
   match = Race.new(Racer.new(:name => ask("red?"), :units => UNIT_SYSTEM),
     Racer.new(:name => ask("blue?"), :units => UNIT_SYSTEM), RACE_DISTANCE)
