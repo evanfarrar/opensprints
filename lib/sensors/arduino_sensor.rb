@@ -1,4 +1,3 @@
-
 #Arduino: a sensor written for the arduino open source hardware.
 class Sensor
   attr_accessor :queue, :r
