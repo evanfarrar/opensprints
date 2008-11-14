@@ -1,0 +1,14 @@
+gEDA/gattrib version 1.4.0.20080127
+gEDA/gattrib comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/etc/gEDA/system-gafrc]
+Did not find optional ~/.gEDA/gafrc file [/home/orluke/.gEDA/gafrc]
+Read local gafrc file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gafrc]
+Read system-gattribrc file [/etc/gEDA/system-gattribrc]
+Did not find optional ~/.gEDA/gattribrc file [/home/orluke/.gEDA/gattribrc]
+Did not find optional local gattribrc file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gattribrc]
+Loading file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/temp-ARD_USB_MODULE-maker.sch]
+RC file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gafrc] already read in.
+Saved [/home/orluke/workspace/opensprints/hardware/interface_board/geda/temp-ARD_USB_MODULE-maker.sch]

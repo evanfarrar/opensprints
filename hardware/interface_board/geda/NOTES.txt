@@ -1,0 +1,3 @@
+pads:
+hole width = 
+copper width = 
