@@ -74,7 +74,7 @@ footprint=CONNECTOR 8 1
 C 1000 500 1 0 0 arduino_usb_expansion.sym
 {
 T 1100 4500 5 10 0 0 0 0 1
-footprint=DIP28N
+footprint=ARDUINO_USB_EXPANSION
 T 3500 4300 5 10 1 1 0 6 1
 refdes=U1
 T 1100 5300 5 10 0 0 0 0 1

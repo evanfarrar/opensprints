@@ -1,20 +1,5 @@
-# release: pcb 1.6.3
-PCB("" 6000 5000)
-Grid(10 0 0)
-Cursor(0 0 3)
-Flags(0x000000d0)
-Groups("1,2,3,s:4,5,6,c:7:8:")
-Styles("Signal,10,40,20:Power,25,60,35:Fat,40,60,35:Skinny,8,36,20")
 
-	
-
-	
-
-	
-
-	
-
-Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 10000 55000 11000 -5000 3 100 ""]
+Element["" "Jumper, i.e. single row headers" "" "JUMPER6" 10000 55000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "1" "1" "square"]
 	Pin[0 10000 6000 3000 6600 3800 "2" "2" ""]
@@ -31,7 +16,7 @@ Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 10000 55000 11000 -5000 3 100 
 
 	)
 
-Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 10000 50000 11000 -5000 3 100 ""]
+Element["" "Jumper, i.e. single row headers" "" "JUMPER6" 10000 125000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "7" "1" ""]
 	Pin[0 10000 6000 3000 6600 3800 "8" "2" ""]
@@ -48,7 +33,7 @@ Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 10000 50000 11000 -5000 3 100 
 
 	)
 
-Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 50000 50000 11000 -5000 3 100 ""]
+Element["" "Jumper, i.e. single row headers" "" "JUMPER8" 200000 105000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "20" "1" ""]
 	Pin[0 10000 6000 3000 6600 3800 "19" "2" ""]
@@ -67,7 +52,7 @@ Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 50000 50000 11000 -5000 3 100 
 
 	)
 
-Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 50000 20000 11000 -5000 3 100 ""]
+Element["" "Jumper, i.e. single row headers" "" "JUMPER8" 200000 20000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "28" "1" ""]
 	Pin[0 10000 6000 3000 6600 3800 "27" "2" ""]
@@ -85,27 +70,3 @@ Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 50000 20000 11000 -5000 3 100 
 	ElementLine [5000 5000 5000 -5000 1000]
 
 	)
-Layer(1 "solder")
-(
-)
-Layer(2 "GND-sldr")
-(
-)
-Layer(3 "Vcc-sldr")
-(
-)
-Layer(4 "component")
-(
-)
-Layer(5 "GND-comp")
-(
-)
-Layer(6 "Vcc-comp")
-(
-)
-Layer(7 "unused")
-(
-)
-Layer(8 "unused")
-(
-)
