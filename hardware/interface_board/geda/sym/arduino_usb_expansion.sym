@@ -12,7 +12,7 @@ documentation=http://rocky.digikey.com/WebLib/Atmel/Web Data/ATmeg8(L) Prelimina
 T 100 4000 8 10 0 0 0 0 1
 footprint=DIP28N
 T 2500 3800 8 10 1 1 0 6 1
-refdes=U?
+refdes=U1
 T 1900 3800 8 10 0 1 0 6 1
 numslots=0
 P 0 3500 300 3500 1 0 0
