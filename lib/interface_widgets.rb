@@ -1,5 +1,5 @@
-module InterfaceWidgets
-  def delete_racer(racer)
+class Shoes::DeleteRacer < Shoes::Widget
+  def initialize(racer)
     image(20, 20, {:top => 8, :left => 350}) do
       delete_button 
       click do
@@ -8,8 +8,10 @@ module InterfaceWidgets
       end
     end
   end
+end
 
-  def delete_race(race)
+class Shoes::DeleteRace < Shoes::Widget
+  def initialize(race)
     image(20, 20, {:top => 8, :left => 250}) do
       delete_button
       click do
@@ -18,8 +20,21 @@ module InterfaceWidgets
       end
     end
   end
+end
 
-  def create_racer
+
+class Shoes::DeleteButton < Shoes::Widget
+  def initialize
+    fill red
+    rect(:top => 0, :left => 0, :height => 15, :width => 15)
+    line(3,3,13,13)
+    line(13,3,3,13)
+  end
+end
+
+
+class Shoes::CreateRacer < Shoes::Widget
+  def initialize
     image(20, 20, {:top => 8, :left => 115}) do
       add_button
       click do
@@ -27,8 +42,10 @@ module InterfaceWidgets
       end
     end
   end
+end
 
-  def add_to_race(racer)
+class Shoes::AddToRace < Shoes::Widget
+  def initialize(racer)
     image(20, 20, {:top => 8, :left => 325}) do
       add_button
       click do
@@ -40,22 +57,20 @@ module InterfaceWidgets
       end
     end
   end
+end
 
-  def delete_button
-    fill red
-    rect(:top => 0, :left => 0, :height => 15, :width => 15)
-    line(3,3,13,13)
-    line(13,3,3,13)
-  end
 
-  def add_button
+class Shoes::AddButton < Shoes::Widget
+  def initialize
     fill red
     rect(:top => 0, :left => 0, :height => 15, :width => 15)
     line(8,3,8,13)
     line(3,8,13,8)
   end
+end
 
-  def redblue(race)
+class Shoes::Redblue < Shoes::Widget
+  def initialize(race)
     image(20, 20, {:top => 8, :left => 150}) do
       fill red
       rect(:top => 0, :left => 0, :height => 15, :width => 7)
