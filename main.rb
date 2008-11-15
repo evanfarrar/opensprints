@@ -1,6 +1,3 @@
-
-
-
 Shoes.app do
   stack do
     button "configuration" do
@@ -18,5 +15,6 @@ Shoes.app do
     button "Just Race!" do
       load 'lib/race_app.rb'
     end
+    
   end
 end
