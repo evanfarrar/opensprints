@@ -2,4 +2,8 @@ pads:
 hole width = 
 copper width = 
 
+TODO:
+ * tracks from arduino to RJ45 headers
+ * headers connected to the outside of the arduino connectors
+ * grid of pads
 
