@@ -1,5 +1,5 @@
 # release: pcb 20080202
-# date:    Sun Nov 16 14:52:54 2008
+# date:    Sun Nov 16 18:43:10 2008
 # user:    orluke (Luke Orland,,,)
 # host:    orluke-ub84
 
@@ -989,6 +989,34 @@ Element["" "RJ45" "J1" "unknown" 50000 440000 -15000 -20000 0 100 ""]
 	ElementLine [-14500 -15000 49500 -15000 1000]
 	ElementLine [49500 -15000 49500 56000 1000]
 	ElementLine [-14500 47000 49300 47000 1000]
+
+	)
+
+Element["" "A31_screwhole" "H1" "unknown" 400000 320000 -1103 -2000 0 100 ""]
+(
+	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	ElementArc [0 0 12000 12000 0 360 1000]
+
+	)
+
+Element["" "A31_screwhole" "H2" "unknown" 400000 280000 -1103 -2000 0 100 ""]
+(
+	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	ElementArc [0 0 12000 12000 0 360 1000]
+
+	)
+
+Element["" "A31_screwhole" "H3" "unknown" 400000 240000 -2103 -3000 0 100 ""]
+(
+	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	ElementArc [0 0 12000 12000 0 360 1000]
+
+	)
+
+Element["" "A31_screwhole" "H4" "unknown" 400000 200000 -1103 -3000 0 100 ""]
+(
+	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 Rat[50000 420000 0 130000 400000 1  ""]

@@ -217,3 +217,41 @@ footprint=RJ45
 T 11300 7600 5 10 1 1 0 6 1
 refdes=J4
 }
+C 8500 1600 1 0 0 hole-1.sym
+{
+T 8500 1600 5 10 0 1 0 0 1
+device=HOLE
+T 8700 2200 5 10 1 1 0 4 1
+refdes=H1
+T 8500 1600 5 10 1 1 0 0 1
+footprint=A31_screwhole
+}
+C 9000 1600 1 0 0 hole-1.sym
+{
+T 9000 1600 5 10 0 1 0 0 1
+device=HOLE
+T 9200 2200 5 10 1 1 0 4 1
+refdes=H2
+T 9000 1600 5 10 1 1 0 0 1
+footprint=A31_screwhole
+}
+C 9500 1600 1 0 0 hole-1.sym
+{
+T 9500 1600 5 10 0 1 0 0 1
+device=HOLE
+T 9700 2200 5 10 1 1 0 4 1
+refdes=H3
+T 9500 1600 5 10 1 1 0 0 1
+footprint=A31_screwhole
+}
+C 10000 1600 1 0 0 hole-1.sym
+{
+T 10000 1600 5 10 0 1 0 0 1
+device=HOLE
+T 10200 2200 5 10 1 1 0 4 1
+refdes=H4
+T 10000 1600 5 10 1 1 0 0 1
+footprint=A31_screwhole
+}
+T 8500 2500 9 10 1 0 0 0 1
+screw holes:

@@ -30,6 +30,9 @@ ChangePinName(CONN2, 6, 6)
 ChangePinName(CONN2, 4, 4)
 ChangePinName(CONN2, 2, 2)
 
+# Start of element H4
+ChangePinName(H4, 1, 1)
+
 # Start of element CONN1
 ChangePinName(CONN1, 7, 7)
 ChangePinName(CONN1, 5, 5)
@@ -39,6 +42,15 @@ ChangePinName(CONN1, 8, 8)
 ChangePinName(CONN1, 6, 6)
 ChangePinName(CONN1, 4, 4)
 ChangePinName(CONN1, 2, 2)
+
+# Start of element H3
+ChangePinName(H3, 1, 1)
+
+# Start of element H2
+ChangePinName(H2, 1, 1)
+
+# Start of element H1
+ChangePinName(H1, 1, 1)
 
 # Start of element J4
 ChangePinName(J4, 8, I7)
