@@ -277,11 +277,11 @@ N 6900 1200 4500 1200 4
 C 300 1000 1 0 0 connector6.sym
 {
 T 400 3200 5 10 0 0 0 0 1
-device=CONNECTOR_8
+device=CONNECTOR_6
 T 400 2500 5 10 1 1 0 0 1
 refdes=CONN6
 T 300 1000 5 10 0 0 0 0 1
-footprint=connector6
+footprint=CONNECTOR 6 1
 }
 N 1500 2200 1700 2200 4
 N 1700 2000 1500 2000 4
@@ -305,9 +305,9 @@ N 1500 3900 1700 3900 4
 C 300 3300 1 0 0 connector6.sym
 {
 T 400 5500 5 10 0 0 0 0 1
-device=CONNECTOR_8
+device=CONNECTOR_6
 T 400 4800 5 10 1 1 0 0 1
 refdes=CONN5
 T 300 3300 5 10 0 0 0 0 1
-footprint=connector6
+footprint=CONNECTOR 6 1
 }
