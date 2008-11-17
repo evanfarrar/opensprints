@@ -35,15 +35,6 @@ refdes=CONN4
 T 8800 5900 5 10 0 1 0 0 1
 footprint=CONNECTOR 8 1
 }
-C 1700 1000 1 0 0 arduino_usb_expansion.sym
-{
-T 1800 5000 5 10 0 0 0 0 1
-footprint=ARDUINO_USB_EXPANSION
-T 4200 4800 5 10 1 1 0 6 1
-refdes=U1
-T 1800 5800 5 10 0 0 0 0 1
-device=ARDUINO_USB_EXPANSION
-}
 T 4600 700 9 10 1 0 0 0 1
 OpenSprints Interface Board
 T 4600 100 9 10 1 0 0 0 1
@@ -310,4 +301,13 @@ T 400 4800 5 10 1 1 0 0 1
 refdes=CONN5
 T 300 3300 5 10 0 0 0 0 1
 footprint=CONNECTOR 6 1
+}
+C 1700 1000 1 0 0 arduino_usb_expansion.sym
+{
+T 1800 5000 5 10 0 0 0 0 1
+footprint=ARDUINO_USB_EXPANSION
+T 4200 4800 5 10 1 1 0 6 1
+refdes=U1
+T 1800 5800 5 10 0 0 0 0 1
+device=Arduino USB
 }

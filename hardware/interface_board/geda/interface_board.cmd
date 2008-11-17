@@ -110,24 +110,6 @@ ChangePinName(J2, 3, I2)
 ChangePinName(J2, 2, I1)
 ChangePinName(J2, 1, I0)
 
-# Start of element CONN5
-ChangePinName(CONN5, 5, 5)
-ChangePinName(CONN5, 3, 3)
-ChangePinName(CONN5, 1, 1)
-ChangePinName(CONN5, 6, 6)
-ChangePinName(CONN5, 4, 4)
-ChangePinName(CONN5, 2, 2)
-
-# Start of element J1
-ChangePinName(J1, 8, I7)
-ChangePinName(J1, 7, I6)
-ChangePinName(J1, 6, I5)
-ChangePinName(J1, 5, I4)
-ChangePinName(J1, 4, I3)
-ChangePinName(J1, 3, I2)
-ChangePinName(J1, 2, I1)
-ChangePinName(J1, 1, I0)
-
 # Start of element U1
 ChangePinName(U1, 20, DIGIO7)
 ChangePinName(U1, 19, DIGIO6)
@@ -157,3 +139,21 @@ ChangePinName(U1, 4, GND)
 ChangePinName(U1, 3, 5V)
 ChangePinName(U1, 2, 3V3)
 ChangePinName(U1, 1, RESET)
+
+# Start of element CONN5
+ChangePinName(CONN5, 5, 5)
+ChangePinName(CONN5, 3, 3)
+ChangePinName(CONN5, 1, 1)
+ChangePinName(CONN5, 6, 6)
+ChangePinName(CONN5, 4, 4)
+ChangePinName(CONN5, 2, 2)
+
+# Start of element J1
+ChangePinName(J1, 8, I7)
+ChangePinName(J1, 7, I6)
+ChangePinName(J1, 6, I5)
+ChangePinName(J1, 5, I4)
+ChangePinName(J1, 4, I3)
+ChangePinName(J1, 3, I2)
+ChangePinName(J1, 2, I1)
+ChangePinName(J1, 1, I0)
