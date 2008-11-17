@@ -36,8 +36,8 @@
 #
 # $Id$
 
-TARGET = opensprints
-INSTALL_DIR = ./arduino-0011
+TARGET = basic_msg
+INSTALL_DIR = ../arduino-0011
 PORT = /dev/ttyUSB0
 UPLOAD_RATE = 19200
 AVRDUDE_PROGRAMMER = stk500v1
