@@ -1,7 +1,7 @@
 # release: pcb 20080202
-# date:    Tue Nov 18 00:08:35 2008
-# user:    orluke (Luke Orland,,,)
-# host:    orluke-ub84
+# date:    Tue Nov 18 17:07:30 2008
+# user:    orluke (Luke Orland,,,,)
+# host:    ghostface
 
 # To read pcb files, the pcb version (or the cvs source date) must be >= the file version
 FileVersion[20070407]
