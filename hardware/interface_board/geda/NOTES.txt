@@ -3,8 +3,9 @@ hole width =
 copper width = 
 
 TODO:
- * is 4.72" ok for board length?
+ * need to mirror L to R the arduino footprint.
+   - (1300, 2250) for bottom left pad center
  * tracks from arduino to RJ45 headers
- * headers connected to the outside of the arduino connectors
+ * headers connected to the outside (and inside?)of the arduino connectors
  * grid of pads
 
