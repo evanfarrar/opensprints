@@ -1,5 +1,5 @@
 # release: pcb 20080202
-# date:    Mon Nov 17 23:34:08 2008
+# date:    Tue Nov 18 00:08:35 2008
 # user:    orluke (Luke Orland,,,)
 # host:    orluke-ub84
 
@@ -1097,14 +1097,12 @@ Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 130000 330000 185000 10000 0 1
 Rat[55000 520000 0 140000 505000 1  ""]
 Rat[155000 520000 0 240000 505000 1  ""]
 Rat[255000 520000 0 340000 505000 1  ""]
-Rat[340000 505000 1 330000 290000 1  ""]
-Rat[330000 290000 1 320000 290000 1  ""]
-Rat[320000 290000 1 320000 240000 1  ""]
+Rat[340000 505000 1 330000 250000 1  ""]
+Rat[330000 250000 1 320000 250000 1  ""]
+Rat[320000 250000 1 320000 240000 1  ""]
 Rat[320000 240000 1 330000 240000 1  ""]
-Rat[320000 240000 1 130000 235000 1  ""]
-Rat[130000 235000 1 120000 235000 1  ""]
-Rat[120000 235000 1 120000 185000 1  ""]
-Rat[120000 185000 1 130000 185000 1  ""]
+Rat[320000 240000 1 130000 185000 1  ""]
+Rat[130000 185000 1 120000 185000 1  ""]
 Rat[50000 505000 1 120000 310000 1  ""]
 Rat[120000 310000 1 130000 310000 1  ""]
 Rat[150000 505000 1 130000 300000 1  ""]
@@ -1119,19 +1117,20 @@ Rat[120000 245000 1 130000 245000 1  ""]
 Rat[120000 175000 1 130000 175000 1  ""]
 Rat[120000 195000 1 130000 195000 1  ""]
 Rat[120000 215000 1 130000 215000 1  ""]
+Rat[120000 235000 1 130000 235000 1  ""]
 Rat[120000 270000 1 130000 270000 1  ""]
 Rat[120000 330000 1 130000 330000 1  ""]
 Rat[120000 260000 1 130000 260000 1  ""]
 Rat[120000 320000 1 130000 320000 1  ""]
+Rat[330000 290000 1 320000 290000 1  ""]
 Rat[330000 310000 1 320000 310000 1  ""]
 Rat[330000 330000 1 320000 330000 1  ""]
+Rat[330000 280000 1 320000 280000 1  ""]
 Rat[330000 300000 1 320000 300000 1  ""]
 Rat[330000 320000 1 320000 320000 1  ""]
 Rat[330000 220000 1 320000 220000 1  ""]
 Rat[330000 260000 1 320000 260000 1  ""]
 Rat[330000 210000 1 320000 210000 1  ""]
-Rat[330000 250000 1 320000 250000 1  ""]
-Rat[330000 280000 1 320000 280000 1  ""]
 Layer(1 "outline")
 (
 	Line[0 106000 438000 106000 1000 2000 "clearline"]
@@ -1272,16 +1271,14 @@ NetList()
 		Connect("CONN3-2")
 		Connect("CONN4-2")
 		Connect("CONN5-4")
-		Connect("CONN6-2")
+		Connect("CONN5-5")
 		Connect("CONN8-2")
-		Connect("CONN8-7")
 		Connect("J1-2")
 		Connect("J2-2")
 		Connect("J3-2")
 		Connect("J4-2")
 		Connect("U1-4")
-		Connect("U1-8")
-		Connect("U1-22")
+		Connect("U1-5")
 		Connect("U1-27")
 	)
 	Net("SENSOR_I_1" "(unknown)")
@@ -1444,67 +1441,72 @@ NetList()
 	)
 	Net("unnamed_net27" "(unknown)")
 	(
+		Connect("CONN8-7")
+		Connect("U1-22")
+	)
+	Net("unnamed_net28" "(unknown)")
+	(
 		Connect("CONN7-2")
 		Connect("U1-19")
 	)
-	Net("unnamed_net28" "(unknown)")
+	Net("unnamed_net29" "(unknown)")
 	(
 		Connect("CONN7-8")
 		Connect("U1-13")
 	)
-	Net("unnamed_net29" "(unknown)")
+	Net("unnamed_net30" "(unknown)")
 	(
 		Connect("CONN7-1")
 		Connect("U1-20")
 	)
-	Net("unnamed_net30" "(unknown)")
+	Net("unnamed_net31" "(unknown)")
 	(
 		Connect("CONN7-7")
 		Connect("U1-14")
 	)
-	Net("unnamed_net31" "(unknown)")
+	Net("unnamed_net32" "(unknown)")
+	(
+		Connect("CONN6-2")
+		Connect("U1-8")
+	)
+	Net("unnamed_net33" "(unknown)")
 	(
 		Connect("CONN6-4")
 		Connect("U1-10")
 	)
-	Net("unnamed_net32" "(unknown)")
+	Net("unnamed_net34" "(unknown)")
 	(
 		Connect("CONN6-6")
 		Connect("U1-12")
 	)
-	Net("unnamed_net33" "(unknown)")
+	Net("unnamed_net35" "(unknown)")
+	(
+		Connect("CONN6-1")
+		Connect("U1-7")
+	)
+	Net("unnamed_net36" "(unknown)")
 	(
 		Connect("CONN6-3")
 		Connect("U1-9")
 	)
-	Net("unnamed_net34" "(unknown)")
+	Net("unnamed_net37" "(unknown)")
 	(
 		Connect("CONN6-5")
 		Connect("U1-11")
 	)
-	Net("unnamed_net35" "(unknown)")
+	Net("unnamed_net38" "(unknown)")
 	(
 		Connect("CONN5-2")
 		Connect("U1-2")
 	)
-	Net("unnamed_net36" "(unknown)")
+	Net("unnamed_net39" "(unknown)")
 	(
 		Connect("CONN5-6")
 		Connect("U1-6")
 	)
-	Net("unnamed_net37" "(unknown)")
+	Net("unnamed_net40" "(unknown)")
 	(
 		Connect("CONN5-1")
 		Connect("U1-1")
-	)
-	Net("unnamed_net38" "(unknown)")
-	(
-		Connect("CONN5-5")
-		Connect("U1-5")
-	)
-	Net("Vcc" "(unknown)")
-	(
-		Connect("CONN6-1")
-		Connect("U1-7")
 	)
 )

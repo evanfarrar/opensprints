@@ -1,20 +1,12 @@
 v 20080127 1
-T 100 4600 8 10 0 0 0 0 1
-Copyright Mark Salyzyn
 T 1700 1600 9 10 1 1 0 6 3
 Arduino
 Expansion
 Module
-T 100 4200 8 10 0 0 0 0 1
-description=Low-power AVR 8-bit Microcontroller
-T 100 4400 8 10 0 0 0 0 1
-documentation=http://rocky.digikey.com/WebLib/Atmel/Web Data/ATmeg8(L) Preliminary Complete.pdf
 T 100 4000 8 10 0 0 0 0 1
-footprint=DIP28N
+footprint=ARDUINO_USB_EXPANSION
 T 2500 3800 8 10 1 1 0 6 1
-refdes=U1
-T 1900 3800 8 10 0 1 0 6 1
-numslots=0
+refdes=U?
 P 0 3500 300 3500 1 0 0
 {
 T 200 3550 5 8 1 1 0 6 1
@@ -70,10 +62,8 @@ pinlabel=GND
 T 350 2700 5 8 0 1 0 2 1
 pintype=out
 }
-T 1900 3150 5 10 0 1 0 6 1
-net=Vcc:7
-T 2200 2950 5 10 0 1 0 6 1
-net=GND:8,22
+T 900 3750 5 10 0 1 0 6 1
+net=GND:4,5,27
 P 2800 3100 2500 3100 1 0 0
 {
 T 2595 3145 5 8 1 1 0 0 1
@@ -251,8 +241,8 @@ T 2450 2100 5 8 0 1 0 8 1
 pintype=io
 }
 B 300 0 2200 3700 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
-T 100 4800 8 10 0 0 0 0 1
-device=ATmega8
+T 100 4200 8 10 0 0 0 0 1
+device=Arduino USB Expansion
 P 2500 400 2800 400 1 0 1
 {
 T 2600 450 5 8 1 1 0 0 1
