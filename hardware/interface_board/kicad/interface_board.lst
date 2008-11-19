@@ -1,0 +1,35 @@
+EESchema (2007-11-29-a)  >> Creation date: 19/11/2008-08:35:02
+
+#Cmp ( order = Reference )
+| J1         RJ45_8      
+| J2         RJ45_8      
+| J3         RJ45_8      
+| J4         RJ45_8      
+| P1         CONN_8      
+| P2         CONN_8      
+| P3         CONN_8      
+| P4         CONN_8      
+| P5         CONN_6      
+| P6         CONN_6      
+| P7         CONN_8      
+| P8         CONN_8      
+| U1         ARDUINO_USB_MODULE
+#End Cmp
+
+#Cmp ( order = Value )
+| ARDUINO_USB_MODULE U1        
+| CONN_6       P5        
+| CONN_6       P6        
+| CONN_8       P1        
+| CONN_8       P2        
+| CONN_8       P3        
+| CONN_8       P4        
+| CONN_8       P7        
+| CONN_8       P8        
+| RJ45_8       J1        
+| RJ45_8       J2        
+| RJ45_8       J3        
+| RJ45_8       J4        
+#End Cmp
+
+#End List
