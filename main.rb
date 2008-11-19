@@ -9,7 +9,7 @@ Shoes.app do
     end
 
     button "race a tournament" do
-      alert('not implemented!')
+      load 'lib/tournament_app.rb'
     end
 
     button "Just Race!" do
