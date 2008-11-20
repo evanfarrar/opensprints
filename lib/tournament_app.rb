@@ -1,5 +1,8 @@
 require 'lib/setup.rb'
+
 Shoes.app(:title => TITLE, :width => 800, :height => 600) do
+  extend RaceWindow
+
   def delete_racer(racer)
     image(20, 20, {:top => 8, :left => 350}) do
       delete_button 
@@ -95,7 +98,9 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   end
  
   def tournament_record(race)
+    race.winner
     @tournament.record(race)
+    relist_tournament
   end
  
   def list_matches
@@ -115,7 +120,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
           end
         end
         button("race")do
-          race_window(match, RACE_DISTANCE, SENSOR, Shoes::TITLE)
+          race_window match
         end
         redblue(match)
         delete_race(match)

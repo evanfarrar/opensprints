@@ -23,6 +23,11 @@ class Racer
     @race_distance = attributes[:race_distance]
   end
 
+  def finish_time=(finish_time)
+    record_time(finish_time/1000.0) if finish_time
+    @finish_time = finish_time
+  end
+
   def record_time(time)
     @best_time = [@best_time, time].min
   end

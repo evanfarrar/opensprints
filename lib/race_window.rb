@@ -49,13 +49,16 @@ class RacePresenter
         @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
         {:top => 300, :align => 'center'})
       
-      @red.finish_time = @sensor.values[:red][ticksInRace]
-      @blue.finish_time = @sensor.values[:blue][ticksInRace]
+      @red.finish_time = @sensor.values[:red][ticks_in_race]
+      @blue.finish_time = @sensor.values[:blue][ticks_in_race]
 
       if @race.complete?
 
         @sensor.stop
         @continue = false
+        if @shoes_instance.owner.respond_to?(:tournament_record)
+          @shoes_instance.owner.tournament_record(@race)
+        end
         @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
         @shoes_instance.close
       end
@@ -66,53 +69,59 @@ class RacePresenter
     [1.0, ((racer.ticks * racer.roller_circumference) || 0)/@race_distance.to_f].min
   end
   
-  def ticksInRace
+  def ticks_in_race
     (@race_distance/@red.roller_circumference)
   end
 
 end
-Shoes.app :title => TITLE, :width => 800, :height => 600 do
-  match = Race.new(Racer.new(:name => "red", :units => UNIT_SYSTEM),
-    Racer.new(:name => "blue", :units => UNIT_SYSTEM), RACE_DISTANCE)
-  race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
-  background black
 
-  stack do
-    subtitle title, :top => 150, :align => "center", :background => magenta,
-      :stroke => white
-    @update_area = stack {}
+module RaceWindow
+  def race_window(match)
+    window :title => TITLE, :width => 800, :height => 600 do
+      race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
+      background black
 
-    def hide_start
-      @start.hide
-    end
+      stack do
+        subtitle title, :top => 150, :align => "center", :background => magenta,
+          :stroke => white
+        @update_area = stack {}
 
-    @start = button("Start Race",{:top => 570, :left => 10}) do
-      hide_start
-      r = RacePresenter.new(self, race_distance, @update_area,
-                   match, sensor)
-      
-      sensor.start
-      @countdown = 4
-      @start_time = Time.now+@countdown
-      count_box = stack(:top => 200){   }
-      @race_animation = animate(14) do
-        @now = Time.now
-        if @now < @start_time
-          count_box.clear do
-            banner "#{(@start_time-@now).round}...", :stroke => ivory,
-              :font => "Arial 200px", :align => 'center'
+        def hide_start
+          @start.hide
+        end
+
+        @start = button("Start Race",{:top => 570, :left => 10}) do
+          hide_start
+          r = RacePresenter.new(self, race_distance, @update_area,
+                       match, sensor)
+          
+          sensor.start
+          @countdown = 4
+          @start_time = Time.now+@countdown
+          @update_area.clear {
+            @count_box = stack(:top => 200){   }
+          }
+          
+          @race_animation = animate(14) do
+            @now = Time.now
+            if @now < @start_time
+              @count_box.clear do
+                banner "#{(@start_time-@now).round}...", :stroke => ivory,
+                  :font => "Arial 200px", :align => 'center'
+              end
+            else
+              @count_box.remove
+              r.refresh
+              @start.show unless r.continue?
+            end
           end
-        else
-          count_box.remove
-          r.refresh
-          @start.show unless r.continue?
+        end
+
+        button("Quit", {:top => 570, :left => 135}) do
+          @race_animation.stop if @race_animation
+          close
         end
       end
-    end
-
-    button("Quit", {:top => 570, :left => 135}) do
-      @race_animation.stop if @race_animation
-      close
     end
   end
 end
