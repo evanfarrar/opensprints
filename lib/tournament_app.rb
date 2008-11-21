@@ -1,4 +1,12 @@
 require 'lib/setup.rb'
+class Shoes::ColoredProgressBar < Shoes::Widget
+  def initialize(percent,height,stroke_color,fill_color)
+    stroke stroke_color
+    fill fill_color[0],fill_color[1]
+    rect 6, height, percent, 20
+  end
+end
+
 
 Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   extend RaceWindow

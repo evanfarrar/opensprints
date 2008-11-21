@@ -1,5 +1,13 @@
 require 'lib/setup.rb'
 
+class Shoes::ColoredProgressBar < Shoes::Widget
+  def initialize(percent,height,stroke_color,fill_color)
+    stroke stroke_color
+    fill fill_color[0],fill_color[1]
+    rect 6, height, percent, 20
+  end
+end
+
 class RacePresenter
   def initialize(shoes_instance, distance, update_area, race, sensor)
     @shoes_instance = shoes_instance
@@ -11,7 +19,6 @@ class RacePresenter
     @update_area = update_area
     @sensor = sensor
   end
-
 
   def continue?; @continue end
 
@@ -27,22 +34,16 @@ class RacePresenter
     @update_area.clear do
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
-      @foo = @shoes_instance.image(800-60+4, 100, :top => 280, :left => 80) do
+
         @shoes_instance.line 2,0,2,100
         @shoes_instance.line 684,0,684,100
 
-        blue_progress = @bar_size*percent_complete(@blue)
-        @shoes_instance.stroke "#00F"
-        @shoes_instance.fill "#FEE".."#32F", :angle => 90, :radius => 10
-        @shoes_instance.rect 6, 20, blue_progress, 20 
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@blue), 20, "#00F",
+          ["#FEE".."#32F", {:angle => 90, :radius => 10}])
         
-        red_progress = @bar_size*percent_complete(@red)
-        @shoes_instance.stroke "#F00"
-        @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
-        @shoes_instance.rect 6, 60, red_progress, 20 
-      end
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@red), 60, "#F00",
+          ["#FEE".."#F23", {:angle => 90, :radius => 10}])
 
-      @foo.translate(0,-75)
       @shoes_instance.subtitle(
         @shoes_instance.span(@red.name,{:stroke => "#F00"}), 
         @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
@@ -53,13 +54,12 @@ class RacePresenter
       @blue.finish_time = @sensor.values[:blue][ticks_in_race]
 
       if @race.complete?
-
         @sensor.stop
         @continue = false
+        @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
         if @shoes_instance.owner.respond_to?(:tournament_record)
           @shoes_instance.owner.tournament_record(@race)
         end
-        @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
         @shoes_instance.close
       end
     end
@@ -76,7 +76,7 @@ class RacePresenter
 end
 
 module RaceWindow
-  def race_window(match)
+  def race_window(match,tournament=nil)
     window :title => TITLE, :width => 800, :height => 600 do
       race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
       background black

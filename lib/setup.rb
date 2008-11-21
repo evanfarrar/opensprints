@@ -14,7 +14,6 @@ require 'lib/racer'
 require 'lib/race'
 require 'lib/interface_widgets'
 require 'lib/tournament'
-require 'lib/shoe_locker'
 require "lib/sensors/#{options['sensor']['type']}_sensor"
 
 SENSOR = Sensor.new(options['sensor']['device'])
