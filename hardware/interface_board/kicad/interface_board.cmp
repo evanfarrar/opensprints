@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 9/11/2008-15:53:35
+Cmp-Mod V01 Created by Cvpcb (2007-11-29-a) date = 19/11/2008-08:37:46
 
 BeginCmp
 TimeStamp = 4916454A;
@@ -8,21 +8,21 @@ IdModule  = RJ45_8;
 EndCmp
 
 BeginCmp
-TimeStamp = 49164590;
+TimeStamp = 4923C7DB;
 Reference = J2;
 ValeurCmp = RJ45_8;
 IdModule  = RJ45_8;
 EndCmp
 
 BeginCmp
-TimeStamp = 49164598;
+TimeStamp = 4923C82C;
 Reference = J3;
 ValeurCmp = RJ45_8;
 IdModule  = RJ45_8;
 EndCmp
 
 BeginCmp
-TimeStamp = 491645A1;
+TimeStamp = 4923C833;
 Reference = J4;
 ValeurCmp = RJ45_8;
 IdModule  = RJ45_8;
@@ -36,21 +36,21 @@ IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
-TimeStamp = 48BB6AB6;
+TimeStamp = 4923C7DA;
 Reference = P2;
 ValeurCmp = CONN_8;
 IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
-TimeStamp = 48BB6ABC;
+TimeStamp = 4923C82B;
 Reference = P3;
 ValeurCmp = CONN_8;
 IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
-TimeStamp = 48BB6B14;
+TimeStamp = 4923C832;
 Reference = P4;
 ValeurCmp = CONN_8;
 IdModule  = HEADER_100mil_8x1;
@@ -85,7 +85,7 @@ IdModule  = HEADER_100mil_8x1;
 EndCmp
 
 BeginCmp
-TimeStamp = 49125A3B;
+TimeStamp = 4923CFD1;
 Reference = U1;
 ValeurCmp = ARDUINO_USB_MODULE;
 IdModule  = ARDUINO_USB_MODULE;

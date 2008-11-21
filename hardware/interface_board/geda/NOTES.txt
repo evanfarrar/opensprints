@@ -1,3 +1,32 @@
-pads:
-hole width = 
-copper width = 
+
+DONE:
+1. pads: hole / copper size
+   * decision: using 36mil holes, 72 mil copper.
+
+kicad too small: drill = 0.0320", copper = 0.0550"
+kicad bigger: drill = 0.040", copper = 0.060" (copper is too small)
+kicad tracks = 0.017"
+
+eagle tracks, fat = 0.032", skinny = 0.016"
+eagle pads, drill = 0.8mm / copper = 1.31mm,  drill = 0.9mm / copper = 1.41mm
+
+SFE
+0.020” vias are allowed. 15mil is minimum
+Use 10mil traces on designs where possible. 8mil is acceptable. 7mil is minimum.
+Use thicker traces for power lines where applicable. 12mil=100mA max, 16mil=500mA, and so
+on.
+Spacing is 8mil between traces and space.
+Use a 12mil isolation setting on any ground pour. This will help prevent pours from shorting to
+traces.
+● 12mil Pad restrings = annular rings (?)
+● 10mil Via restrings (vias tented)
+● 10mil Copper/Dimension size
+● 8mil trace/space
+
+
+3. interface board - route traces
+3.0 headers connected to the outside (and inside?)of the arduino connectors
+3.1 grid of pads
+4. do sensor board (eagle?)
+
+

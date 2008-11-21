@@ -1,0 +1,46 @@
+unnamed_net40	U1-1 CONN5-1 
+unnamed_net39	U1-6 CONN5-6 
+unnamed_net38	U1-2 CONN5-2 
+unnamed_net37	U1-11 CONN6-5 
+unnamed_net36	U1-9 CONN6-3 
+unnamed_net35	U1-7 CONN6-1 
+unnamed_net34	U1-12 CONN6-6 
+unnamed_net33	U1-10 CONN6-4 
+unnamed_net32	U1-8 CONN6-2 
+unnamed_net31	U1-14 CONN7-7 
+unnamed_net30	U1-20 CONN7-1 
+unnamed_net29	U1-13 CONN7-8 
+unnamed_net28	U1-19 CONN7-2 
+unnamed_net27	U1-22 CONN8-7 
+unnamed_net26	U1-24 CONN8-5 
+unnamed_net25	U1-26 CONN8-3 
+unnamed_net24	U1-28 CONN8-1 
+unnamed_net23	U1-21 CONN8-8 
+unnamed_net22	U1-23 CONN8-6 
+unnamed_net21	U1-25 CONN8-4 
+unnamed_net20	J4-7 CONN4-7 
+unnamed_net19	J4-5 CONN4-5 
+SENSOR_I_4	J4-3 U1-18 CONN7-3 CONN4-3 
+unnamed_net18	J4-8 CONN4-8 
+unnamed_net17	J4-6 CONN4-6 
+unnamed_net16	J4-4 CONN4-4 
+unnamed_net15	J3-7 CONN3-7 
+unnamed_net14	J3-5 CONN3-5 
+SENSOR_I_3	J3-3 U1-17 CONN7-4 CONN3-3 
+unnamed_net13	J3-8 CONN3-8 
+unnamed_net12	J3-6 CONN3-6 
+unnamed_net11	J3-4 CONN3-4 
+unnamed_net10	J2-7 CONN2-7 
+unnamed_net9	J2-5 CONN2-5 
+SENSOR_I_2	J2-3 U1-16 CONN7-5 CONN2-3 
+unnamed_net8	J2-8 CONN2-8 
+unnamed_net7	J2-6 CONN2-6 
+unnamed_net6	J2-4 CONN2-4 
+unnamed_net5	J1-7 CONN1-7 
+unnamed_net4	J1-5 CONN1-5 
+SENSOR_I_1	J1-3 U1-15 CONN7-6 CONN1-3 
++5V	U1-3 CONN5-3 J4-1 CONN4-1 J3-1 CONN3-1 J2-1 CONN2-1 J1-1 CONN1-1 
+unnamed_net3	J1-8 CONN1-8 
+unnamed_net2	J1-6 CONN1-6 
+unnamed_net1	J1-4 CONN1-4 
+GND	U1-5 CONN5-5 U1-4 CONN5-4 U1-27 CONN8-2 J4-2 CONN4-2 J3-2 CONN3-2 J2-2 CONN2-2 J1-2 CONN1-2 
