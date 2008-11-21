@@ -2,16 +2,18 @@
 class Sensor
   attr_accessor :queue, :r
   def initialize(queue, filename=nil)
+    @fast,@slow,@random = [[]]*3
   end
 
   def start
-    @start = Time.now
+    @start = Time.now+4.0
+    @last_fast,@last_slow,@last_random = [Time.now+4.0]*3
     @t = Thread.new do
       loop do
-        fake = sixty_times_a_sec
+        fake = fast
         Thread.current["vals"] = {
                                    :red => fake, 
-                                   :blue => fake,
+                                   :blue => slow,
                                    :green => fake,
                                    :yellow => fake
                                  }
@@ -23,8 +25,28 @@ class Sensor
     @t["vals"]
   end
 
-  def sixty_times_a_sec
-    [(Time.now - @start)*1000] * (Time.now - @start)*60
+  def fast
+    if Time.now-@last_fast>0.25
+      @last_fast = Time.now
+      @fast += [(@last_fast - @start)*1000] * 20
+    end
+    @fast
+  end
+
+  def slow
+    if Time.now-@last_slow>0.25
+      @last_slow = Time.now
+      @slow += [(Time.now - @start)*1000] * 18
+    end
+    @slow
+  end
+
+  def random
+    if Time.now-@last_random>0.25
+      @last_random = Time.now
+      @random += [(Time.now - @start)*1000] * random(20)
+    end
+    @random
   end
 
   def stop

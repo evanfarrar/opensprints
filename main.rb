@@ -1,18 +1,25 @@
-Shoes.app do
+require 'lib/setup.rb'
+require 'lib/race_window.rb'
+
+Shoes.app(:height => 180, :width => 200,
+          :resizable => false, :title => "OpenSprints") do
+  extend RaceWindow
+  subtitle "OpenSprints"
   stack do
-    button "configuration" do
+    button("Configuration", :width => 200) do
       load 'lib/config_app.rb'
     end
 
-    button "race with names" do
-      alert('not implemented!')
+    button("Race with Names", :width => 200) do
+      race_window(Race.new(Racer.new(:name => ask("red?"), :units => UNIT_SYSTEM),
+        Racer.new(:name => ask("blue?"), :units => UNIT_SYSTEM), RACE_DISTANCE))
     end
 
-    button "race a tournament" do
-      alert('not implemented!')
+    button("Race a Tournament", :width => 200) do
+      load 'lib/tournament_app.rb'
     end
 
-    button "Just Race!" do
+    button("Just Race!", :width => 200) do
       load 'lib/race_app.rb'
     end
     

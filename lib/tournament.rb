@@ -39,4 +39,8 @@ class Tournament
     end
     race.add_racer(racer)
   end
+
+  def best_time
+    racers.map(&:best_time).max
+  end
 end
