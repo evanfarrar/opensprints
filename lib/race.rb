@@ -1,4 +1,8 @@
 class Race
+  def ==(other)
+    racers==other.racers
+  end
+
   attr_accessor :red_racer, :blue_racer
   def initialize(red_racer, blue_racer, distance)
     red_racer.ticks = 0 if red_racer
@@ -13,7 +17,7 @@ class Race
   end
   
   def add_racer(racer)
-    racer.ticks.clear
+    racer.ticks = 0
     if red_racer
       @blue_racer = racer
     else

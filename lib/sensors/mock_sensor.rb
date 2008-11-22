@@ -2,10 +2,11 @@
 class Sensor
   attr_accessor :queue, :r
   def initialize(queue, filename=nil)
-    @fast,@slow,@random = [[]]*3
   end
 
   def start
+    @fast,@slow,@random = [[]]*3
+
     @start = Time.now+4.0
     @last_fast,@last_slow,@last_random = [Time.now+4.0]*3
     @t = Thread.new do

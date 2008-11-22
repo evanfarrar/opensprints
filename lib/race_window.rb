@@ -18,16 +18,12 @@ class RacePresenter
     @blue = @race.blue_racer
     @update_area = update_area
     @sensor = sensor
+    @continue = true
   end
 
   def continue?; @continue end
 
   def refresh
-    unless @started
-      @started=true
-      @continue = true
-    end
-
     @blue.ticks = @sensor.values[:blue].size
     @red.ticks = @sensor.values[:red].size
 
@@ -55,12 +51,11 @@ class RacePresenter
 
       if @race.complete?
         @sensor.stop
-        @continue = false
         @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
+        @continue = false
         if @shoes_instance.owner.respond_to?(:tournament_record)
           @shoes_instance.owner.tournament_record(@race)
         end
-        @shoes_instance.close
       end
     end
   end
@@ -76,7 +71,7 @@ class RacePresenter
 end
 
 module RaceWindow
-  def race_window(match,tournament=nil)
+  def race_window(match, tournament=nil)
     window :title => TITLE, :width => 800, :height => 600 do
       race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
       background black
@@ -111,8 +106,11 @@ module RaceWindow
               end
             else
               @count_box.remove
-              r.refresh
-              @start.show unless r.continue?
+              if r.continue?
+                r.refresh
+              else
+                @start.show
+              end
             end
           end
         end
@@ -120,6 +118,14 @@ module RaceWindow
         button("Quit", {:top => 570, :left => 135}) do
           @race_animation.stop if @race_animation
           close
+        end
+        
+        if tournament.matches.length > 1
+          subtitle "On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white
+          button("Next Race",{:top => 570, :left => 300}) do
+            close
+            owner.race_window(tournament.next_after(match),tournament)
+          end
         end
       end
     end

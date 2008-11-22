@@ -8,7 +8,6 @@ class Tournament
   def initialize(distance)
     @distance = distance
     @racers = [ ]
-    @racers.map!{|name| Racer.new(:name => name)}
     @matches = []
     @results = []
   end
@@ -24,6 +23,7 @@ class Tournament
   end
 
   def record(race)
+    #FIXME this method is too hilarious.
     @racers.delete(race.red_racer)
     @racers << race.red_racer
     @racers.delete(race.blue_racer)
@@ -43,4 +43,9 @@ class Tournament
   def best_time
     racers.map(&:best_time).max
   end
+
+  def next_after(race)
+    (matches-[race]).first
+  end
+
 end

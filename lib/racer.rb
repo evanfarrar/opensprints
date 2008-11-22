@@ -5,6 +5,8 @@ class Racer
   attr :name
   attr :yaml_name
   attr_accessor :ticks
+  alias :to_s :name
+
   include Comparable
   def <=>(other_racer)
     self.name<=>other_racer.name

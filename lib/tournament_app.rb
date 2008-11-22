@@ -128,7 +128,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
           end
         end
         button("race")do
-          race_window match
+          race_window match, @tournament
         end
         redblue(match)
         delete_race(match)
