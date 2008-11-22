@@ -61,9 +61,9 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
 
   def redblue(race)
     image(20, 20, {:top => 8, :left => 150}) do
-      fill red
+      fill eval(BIKES[0])
       rect(:top => 0, :left => 0, :height => 15, :width => 7)
-      fill blue
+      fill eval(BIKES[1])
       rect(:top => 0, :left => 7, :height => 15, :width => 7)
       click do
         race.flip
@@ -114,9 +114,9 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
           if match.racers.length == 1
             para match.racers.first.name
           else
-            para span(match.blue_racer.name, :stroke => blue),
+            para span(match.blue_racer.name, :stroke => eval(BIKES[0])),
                  " vs ",
-                 span(match.red_racer.name, :stroke => red)
+                 span(match.red_racer.name, :stroke => eval(BIKES[1]))
           end
         end
         button("race")do

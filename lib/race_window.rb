@@ -2,6 +2,7 @@ require 'lib/setup.rb'
 
 class Shoes::ColoredProgressBar < Shoes::Widget
   def initialize(percent,top,color)
+    stroke color
     fill color
     rect 6, top, percent, 20
   end
@@ -39,9 +40,9 @@ class RacePresenter
         @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@red), 60, @bikes[1])
 
       @shoes_instance.subtitle(
-        @shoes_instance.span(@red.name,{:stroke => "#F00"}), 
+        @shoes_instance.span(@red.name,{:stroke => @bikes[0]}), 
         @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
-        @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
+        @shoes_instance.span(@blue.name,{:stroke => @bikes[0]}),
         {:top => 300, :align => 'center'})
       
       @red.finish_time = @sensor.values[:red][ticks_in_race]
