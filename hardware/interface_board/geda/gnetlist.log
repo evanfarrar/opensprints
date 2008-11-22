@@ -9,11 +9,11 @@ and seeing the contents of the file drc_output.txt.
 
 Read system-gafrc file [/etc/gEDA/system-gafrc]
 Did not find optional ~/.gEDA/gafrc file [/home/orluke/.gEDA/gafrc]
-Read local gafrc file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gafrc]
+Read local gafrc file [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/gafrc]
 Read system-gnetlistrc file [/etc/gEDA/system-gnetlistrc]
 Did not find optional ~/.gEDA/gnetlistrc file [/home/orluke/.gEDA/gnetlistrc]
-Did not find optional local gnetlistrc file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gnetlistrc]
-RC file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gafrc] already read in.
+Did not find optional local gnetlistrc file [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/gnetlistrc]
+RC file [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/gafrc] already read in.
 More than one component found with name [title-A4.sym]
 Read init scm file [/usr/share/gEDA/scheme/gnetlist.scm]
 Read gsch2pcb scm file [/usr/share/gEDA/scheme/gnet-gsch2pcb.scm]

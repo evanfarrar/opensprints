@@ -1,7 +1,7 @@
 # release: pcb 20080202
-# date:    Fri Nov 21 13:42:28 2008
-# user:    orluke (Luke Orland,,,,)
-# host:    ghostface
+# date:    Mon Nov 17 23:34:08 2008
+# user:    orluke (Luke Orland,,,)
+# host:    orluke-ub84
 
 # To read pcb files, the pcb version (or the cvs source date) must be >= the file version
 FileVersion[20070407]
@@ -13,7 +13,7 @@ Cursor[0 0 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[1000 1000 1000 1000 1500 1000]
-Flags("showdrc,clearnew,snappin,locknames")
+Flags("shownumber,showdrc,nameonpcb,clearnew,snappin,locknames")
 Groups("1,2,c:3,4,s:5,6,7,8,9")
 Styles["Signal,1000,3600,2000,1000:Power,2500,6000,3500,1000:Fat,4000,6000,3500,1000:Skinny,600,2402,1181,600"]
 
@@ -798,35 +798,35 @@ Symbol('~' 12)
 	SymbolLine(20 35 25 30 8)
 )
 
-Element["" "A31_screwhole" "H4" "unknown" 12000 478000 -1103 -3000 0 0 ""]
+Element["" "A31_screwhole" "H4" "unknown" 12000 478000 -1103 -3000 0 100 ""]
 (
 	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 
-Element["" "A31_screwhole" "H2" "unknown" 426000 206000 -1103 -2000 0 0 ""]
+Element["" "A31_screwhole" "H2" "unknown" 426000 206000 -1103 -2000 0 100 ""]
 (
 	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 
-Element["" "A31_screwhole" "H3" "unknown" 426000 478000 -2103 -3000 0 0 ""]
+Element["" "A31_screwhole" "H3" "unknown" 426000 478000 -2103 -3000 0 100 ""]
 (
 	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 
-Element["" "A31_screwhole" "H1" "unknown" 12000 206000 -1103 -2000 0 0 ""]
+Element["" "A31_screwhole" "H1" "unknown" 12000 206000 -1103 -2000 0 100 ""]
 (
 	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 
-Element["" "RJ45" "J1" "unknown" 50000 545000 -15000 -20000 0 0 ""]
+Element["" "RJ45" "J1" "unknown" 50000 545000 -15000 -20000 0 100 ""]
 (
 	Pin[35000 -10000 7000 2000 7000 3500 "" "8" ""]
 	Pin[30000 0 7000 2000 7000 3500 "" "7" ""]
@@ -846,7 +846,7 @@ Element["" "RJ45" "J1" "unknown" 50000 545000 -15000 -20000 0 0 ""]
 
 	)
 
-Element["" "CONNECTOR-8-1" "CONN7" "unknown" 120000 260000 11000 -5000 3 0 ""]
+Element["" "CONNECTOR-8-1" "CONN7" "unknown" 120000 260000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "1" "1" "square"]
 	Pin[0 10000 6000 3000 6600 3800 "2" "2" ""]
@@ -865,7 +865,7 @@ Element["" "CONNECTOR-8-1" "CONN7" "unknown" 120000 260000 11000 -5000 3 0 ""]
 
 	)
 
-Element["" "CONNECTOR-8-1" "CONN8" "unknown" 120000 175000 11000 -5000 3 0 ""]
+Element["" "CONNECTOR-8-1" "CONN8" "unknown" 120000 175000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "1" "1" "square"]
 	Pin[0 10000 6000 3000 6600 3800 "2" "2" ""]
@@ -884,7 +884,7 @@ Element["" "CONNECTOR-8-1" "CONN8" "unknown" 120000 175000 11000 -5000 3 0 ""]
 
 	)
 
-Element["" "CONNECTOR-6-1" "CONN5" "unknown" 330000 210000 11000 -5000 3 0 ""]
+Element["" "CONNECTOR-6-1" "CONN5" "unknown" 330000 210000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "1" "1" "square"]
 	Pin[0 10000 6000 3000 6600 3800 "2" "2" ""]
@@ -901,7 +901,7 @@ Element["" "CONNECTOR-6-1" "CONN5" "unknown" 330000 210000 11000 -5000 3 0 ""]
 
 	)
 
-Element["" "CONNECTOR-6-1" "CONN6" "unknown" 330000 280000 11000 -5000 3 0 ""]
+Element["" "CONNECTOR-6-1" "CONN6" "unknown" 330000 280000 11000 -5000 3 100 ""]
 (
 	Pin[0 0 6000 3000 6600 3800 "1" "1" "square"]
 	Pin[0 10000 6000 3000 6600 3800 "2" "2" ""]
@@ -918,7 +918,7 @@ Element["" "CONNECTOR-6-1" "CONN6" "unknown" 330000 280000 11000 -5000 3 0 ""]
 
 	)
 
-Element["" "CONNECTOR-8-1" "CONN2" "unknown" 130000 505000 -5000 -11000 0 0 ""]
+Element["" "CONNECTOR-8-1" "CONN2" "unknown" 130000 505000 -5000 -11000 0 100 ""]
 (
 	Pin[0 0 7000 3000 7600 3800 "1" "1" "square,edge2"]
 	Pin[10000 0 7000 3000 7600 3800 "2" "2" "edge2"]
@@ -937,7 +937,7 @@ Element["" "CONNECTOR-8-1" "CONN2" "unknown" 130000 505000 -5000 -11000 0 0 ""]
 
 	)
 
-Element["" "CONNECTOR-8-1" "CONN4" "unknown" 330000 505000 -5000 -11000 0 0 ""]
+Element["" "CONNECTOR-8-1" "CONN4" "unknown" 330000 505000 -5000 -11000 0 100 ""]
 (
 	Pin[0 0 7000 3000 7600 3800 "1" "1" "square,edge2"]
 	Pin[10000 0 7000 3000 7600 3800 "2" "2" "edge2"]
@@ -956,7 +956,7 @@ Element["" "CONNECTOR-8-1" "CONN4" "unknown" 330000 505000 -5000 -11000 0 0 ""]
 
 	)
 
-Element["" "CONNECTOR-8-1" "CONN3" "unknown" 230000 505000 -5000 -11000 0 0 ""]
+Element["" "CONNECTOR-8-1" "CONN3" "unknown" 230000 505000 -5000 -11000 0 100 ""]
 (
 	Pin[0 0 7000 3000 7600 3800 "1" "1" "square,edge2"]
 	Pin[10000 0 7000 3000 7600 3800 "2" "2" "edge2"]
@@ -975,7 +975,7 @@ Element["" "CONNECTOR-8-1" "CONN3" "unknown" 230000 505000 -5000 -11000 0 0 ""]
 
 	)
 
-Element["" "RJ45" "J2" "unknown" 150000 545000 -15000 -20000 0 0 ""]
+Element["" "RJ45" "J2" "unknown" 150000 545000 -15000 -20000 0 100 ""]
 (
 	Pin[35000 -10000 7000 2000 7000 3500 "" "8" ""]
 	Pin[30000 0 7000 2000 7000 3500 "" "7" ""]
@@ -995,7 +995,7 @@ Element["" "RJ45" "J2" "unknown" 150000 545000 -15000 -20000 0 0 ""]
 
 	)
 
-Element["" "RJ45" "J3" "unknown" 250000 545000 -15000 -20000 0 0 ""]
+Element["" "RJ45" "J3" "unknown" 250000 545000 -15000 -20000 0 100 ""]
 (
 	Pin[35000 -10000 7000 2000 7000 3500 "" "8" ""]
 	Pin[30000 0 7000 2000 7000 3500 "" "7" ""]
@@ -1015,7 +1015,7 @@ Element["" "RJ45" "J3" "unknown" 250000 545000 -15000 -20000 0 0 ""]
 
 	)
 
-Element["" "RJ45" "J4" "unknown" 350000 545000 -15000 -20000 0 0 ""]
+Element["" "RJ45" "J4" "unknown" 350000 545000 -15000 -20000 0 100 ""]
 (
 	Pin[35000 -10000 7000 2000 7000 3500 "" "8" ""]
 	Pin[30000 0 7000 2000 7000 3500 "" "7" ""]
@@ -1035,7 +1035,7 @@ Element["" "RJ45" "J4" "unknown" 350000 545000 -15000 -20000 0 0 ""]
 
 	)
 
-Element["" "CONNECTOR-8-1" "CONN1" "unknown" 30000 505000 -5000 -11000 0 0 ""]
+Element["" "CONNECTOR-8-1" "CONN1" "unknown" 30000 505000 -5000 -11000 0 100 ""]
 (
 	Pin[0 0 7000 3000 7600 3800 "1" "1" "square,edge2"]
 	Pin[10000 0 7000 3000 7600 3800 "2" "2" "edge2"]
@@ -1054,36 +1054,36 @@ Element["" "CONNECTOR-8-1" "CONN1" "unknown" 30000 505000 -5000 -11000 0 0 ""]
 
 	)
 
-Element["selected" "ARDUINO_USB_EXPANSION.fp" "U1" "unknown" 130000 330000 185000 10000 0 0 "selected"]
+Element["" "ARDUINO_USB_EXPANSION" "U1" "unknown" 130000 330000 185000 10000 0 100 ""]
 (
-	Pin[0 -155000 8000 2000 7000 3500 "" "28" "selected"]
-	Pin[0 -145000 8000 2000 7000 3500 "" "27" "selected"]
-	Pin[0 -135000 8000 2000 7000 3500 "" "26" "selected"]
-	Pin[0 -125000 8000 2000 7000 3500 "" "25" "selected"]
-	Pin[0 -115000 8000 2000 7000 3500 "" "24" "selected"]
-	Pin[0 -105000 8000 2000 7000 3500 "" "23" "selected"]
-	Pin[0 -95000 8000 2000 7000 3500 "" "22" "selected"]
-	Pin[0 -85000 8000 2000 7000 3500 "" "21" "selected"]
-	Pin[0 -70000 8000 2000 7000 3500 "" "20" "selected"]
-	Pin[0 -60000 8000 2000 7000 3500 "" "19" "selected"]
-	Pin[0 -50000 8000 2000 7000 3500 "" "18" "selected"]
-	Pin[0 -20000 8000 2000 7000 3500 "" "15" "selected"]
-	Pin[0 -30000 8000 2000 7000 3500 "" "16" "selected"]
-	Pin[0 -40000 8000 2000 7000 3500 "" "17" "selected"]
-	Pin[0 -10000 8000 2000 7000 3500 "" "14" "selected"]
-	Pin[0 0 8000 2000 7000 3500 "" "13" "selected"]
-	Pin[190000 0 8000 2000 7000 3500 "" "12" "selected"]
-	Pin[190000 -10000 8000 2000 7000 3500 "" "11" "selected"]
-	Pin[190000 -20000 8000 2000 7000 3500 "" "10" "selected"]
-	Pin[190000 -30000 8000 2000 7000 3500 "" "9" "selected"]
-	Pin[190000 -40000 8000 2000 7000 3500 "" "8" "selected"]
-	Pin[190000 -50000 8000 2000 7000 3500 "" "7" "selected"]
-	Pin[190000 -70000 8000 2000 7000 3500 "" "6" "selected"]
-	Pin[190000 -80000 8000 2000 7000 3500 "" "5" "selected"]
-	Pin[190000 -90000 8000 2000 7000 3500 "" "4" "selected"]
-	Pin[190000 -100000 8000 2000 7000 3500 "" "3" "selected"]
-	Pin[190000 -110000 8000 2000 7000 3500 "" "2" "selected"]
-	Pin[190000 -120000 8000 2000 7000 3500 "" "1" "selected"]
+	Pin[0 -155000 8000 2000 8600 4000 "" "28" ""]
+	Pin[0 -145000 8000 2000 8600 4000 "" "27" ""]
+	Pin[0 -135000 8000 2000 8600 4000 "" "26" ""]
+	Pin[0 -125000 8000 2000 8600 4000 "" "25" ""]
+	Pin[0 -115000 8000 2000 8600 4000 "" "24" ""]
+	Pin[0 -105000 8000 2000 8600 4000 "" "23" ""]
+	Pin[0 -95000 8000 2000 8600 4000 "" "22" ""]
+	Pin[0 -85000 8000 2000 8600 4000 "" "21" ""]
+	Pin[0 -70000 8000 2000 8600 4000 "" "20" ""]
+	Pin[0 -60000 8000 2000 8600 4000 "" "19" ""]
+	Pin[0 -50000 8000 2000 8600 4000 "" "18" ""]
+	Pin[0 -20000 8000 2000 8600 4000 "" "15" ""]
+	Pin[0 -30000 8000 2000 8600 4000 "" "16" ""]
+	Pin[0 -40000 8000 2000 8600 4000 "" "17" ""]
+	Pin[0 -10000 8000 2000 8600 4000 "" "14" ""]
+	Pin[0 0 8000 2000 8600 4000 "" "13" ""]
+	Pin[190000 0 8000 2000 8600 4000 "" "12" ""]
+	Pin[190000 -10000 8000 2000 8600 4000 "" "11" ""]
+	Pin[190000 -20000 8000 2000 8600 4000 "" "10" ""]
+	Pin[190000 -30000 8000 2000 8600 4000 "" "9" ""]
+	Pin[190000 -40000 8000 2000 8600 4000 "" "8" ""]
+	Pin[190000 -50000 8000 2000 8600 4000 "" "7" ""]
+	Pin[190000 -70000 8000 2000 8600 4000 "" "6" ""]
+	Pin[190000 -80000 8000 2000 8600 4000 "" "5" ""]
+	Pin[190000 -90000 8000 2000 8600 4000 "" "4" ""]
+	Pin[190000 -100000 8000 2000 8600 4000 "" "3" ""]
+	Pin[190000 -110000 8000 2000 8600 4000 "" "2" ""]
+	Pin[190000 -120000 8000 2000 8600 4000 "" "1" ""]
 	ElementLine [-5000 5000 35000 5000 1000]
 	ElementLine [185000 5000 195000 5000 1000]
 	ElementLine [185000 5000 175000 15000 1000]
@@ -1097,12 +1097,14 @@ Element["selected" "ARDUINO_USB_EXPANSION.fp" "U1" "unknown" 130000 330000 18500
 Rat[55000 520000 0 140000 505000 1  ""]
 Rat[155000 520000 0 240000 505000 1  ""]
 Rat[255000 520000 0 340000 505000 1  ""]
-Rat[340000 505000 1 330000 250000 1  ""]
-Rat[330000 250000 1 320000 250000 1  ""]
-Rat[320000 250000 1 320000 240000 1  ""]
+Rat[340000 505000 1 330000 290000 1  ""]
+Rat[330000 290000 1 320000 290000 1  ""]
+Rat[320000 290000 1 320000 240000 1  ""]
 Rat[320000 240000 1 330000 240000 1  ""]
-Rat[320000 240000 1 130000 185000 1  ""]
-Rat[130000 185000 1 120000 185000 1  ""]
+Rat[320000 240000 1 130000 235000 1  ""]
+Rat[130000 235000 1 120000 235000 1  ""]
+Rat[120000 235000 1 120000 185000 1  ""]
+Rat[120000 185000 1 130000 185000 1  ""]
 Rat[50000 505000 1 120000 310000 1  ""]
 Rat[120000 310000 1 130000 310000 1  ""]
 Rat[150000 505000 1 130000 300000 1  ""]
@@ -1117,20 +1119,19 @@ Rat[120000 245000 1 130000 245000 1  ""]
 Rat[120000 175000 1 130000 175000 1  ""]
 Rat[120000 195000 1 130000 195000 1  ""]
 Rat[120000 215000 1 130000 215000 1  ""]
-Rat[120000 235000 1 130000 235000 1  ""]
 Rat[120000 270000 1 130000 270000 1  ""]
 Rat[120000 330000 1 130000 330000 1  ""]
 Rat[120000 260000 1 130000 260000 1  ""]
 Rat[120000 320000 1 130000 320000 1  ""]
-Rat[330000 290000 1 320000 290000 1  ""]
 Rat[330000 310000 1 320000 310000 1  ""]
 Rat[330000 330000 1 320000 330000 1  ""]
-Rat[330000 280000 1 320000 280000 1  ""]
 Rat[330000 300000 1 320000 300000 1  ""]
 Rat[330000 320000 1 320000 320000 1  ""]
 Rat[330000 220000 1 320000 220000 1  ""]
 Rat[330000 260000 1 320000 260000 1  ""]
 Rat[330000 210000 1 320000 210000 1  ""]
+Rat[330000 250000 1 320000 250000 1  ""]
+Rat[330000 280000 1 320000 280000 1  ""]
 Layer(1 "outline")
 (
 	Line[0 106000 438000 106000 1000 2000 "clearline"]
@@ -1271,14 +1272,16 @@ NetList()
 		Connect("CONN3-2")
 		Connect("CONN4-2")
 		Connect("CONN5-4")
-		Connect("CONN5-5")
+		Connect("CONN6-2")
 		Connect("CONN8-2")
+		Connect("CONN8-7")
 		Connect("J1-2")
 		Connect("J2-2")
 		Connect("J3-2")
 		Connect("J4-2")
 		Connect("U1-4")
-		Connect("U1-5")
+		Connect("U1-8")
+		Connect("U1-22")
 		Connect("U1-27")
 	)
 	Net("SENSOR_I_1" "(unknown)")
@@ -1441,72 +1444,67 @@ NetList()
 	)
 	Net("unnamed_net27" "(unknown)")
 	(
-		Connect("CONN8-7")
-		Connect("U1-22")
-	)
-	Net("unnamed_net28" "(unknown)")
-	(
 		Connect("CONN7-2")
 		Connect("U1-19")
 	)
-	Net("unnamed_net29" "(unknown)")
+	Net("unnamed_net28" "(unknown)")
 	(
 		Connect("CONN7-8")
 		Connect("U1-13")
 	)
-	Net("unnamed_net30" "(unknown)")
+	Net("unnamed_net29" "(unknown)")
 	(
 		Connect("CONN7-1")
 		Connect("U1-20")
 	)
-	Net("unnamed_net31" "(unknown)")
+	Net("unnamed_net30" "(unknown)")
 	(
 		Connect("CONN7-7")
 		Connect("U1-14")
 	)
-	Net("unnamed_net32" "(unknown)")
-	(
-		Connect("CONN6-2")
-		Connect("U1-8")
-	)
-	Net("unnamed_net33" "(unknown)")
+	Net("unnamed_net31" "(unknown)")
 	(
 		Connect("CONN6-4")
 		Connect("U1-10")
 	)
-	Net("unnamed_net34" "(unknown)")
+	Net("unnamed_net32" "(unknown)")
 	(
 		Connect("CONN6-6")
 		Connect("U1-12")
 	)
-	Net("unnamed_net35" "(unknown)")
-	(
-		Connect("CONN6-1")
-		Connect("U1-7")
-	)
-	Net("unnamed_net36" "(unknown)")
+	Net("unnamed_net33" "(unknown)")
 	(
 		Connect("CONN6-3")
 		Connect("U1-9")
 	)
-	Net("unnamed_net37" "(unknown)")
+	Net("unnamed_net34" "(unknown)")
 	(
 		Connect("CONN6-5")
 		Connect("U1-11")
 	)
-	Net("unnamed_net38" "(unknown)")
+	Net("unnamed_net35" "(unknown)")
 	(
 		Connect("CONN5-2")
 		Connect("U1-2")
 	)
-	Net("unnamed_net39" "(unknown)")
+	Net("unnamed_net36" "(unknown)")
 	(
 		Connect("CONN5-6")
 		Connect("U1-6")
 	)
-	Net("unnamed_net40" "(unknown)")
+	Net("unnamed_net37" "(unknown)")
 	(
 		Connect("CONN5-1")
 		Connect("U1-1")
+	)
+	Net("unnamed_net38" "(unknown)")
+	(
+		Connect("CONN5-5")
+		Connect("U1-5")
+	)
+	Net("Vcc" "(unknown)")
+	(
+		Connect("CONN6-1")
+		Connect("U1-7")
 	)
 )

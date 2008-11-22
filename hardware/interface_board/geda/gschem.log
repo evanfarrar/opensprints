@@ -5,12 +5,12 @@ conditions; please see the COPYING file for more details.
 
 Read system-gafrc file [/etc/gEDA/system-gafrc]
 Did not find optional ~/.gEDA/gafrc file [/home/orluke/.gEDA/gafrc]
-Read local gafrc file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gafrc]
+Read local gafrc file [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/gafrc]
 Read system-gschemrc file [/etc/gEDA/system-gschemrc]
 Did not find optional ~/.gEDA/gschemrc file [/home/orluke/.gEDA/gschemrc]
-Read local gschemrc file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gschemrc]
+Read local gschemrc file [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/gschemrc]
 Read init scm file [/usr/share/gEDA/scheme/gschem.scm]
-Loading schematic [/home/orluke/workspace/opensprints/hardware/interface_board/geda/interface_board.sch]
-RC file [/home/orluke/workspace/opensprints/hardware/interface_board/geda/gafrc] already read in.
+Loading schematic [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/interface_board.sch]
+RC file [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/gafrc] already read in.
 More than one component found with name [title-A4.sym]
-Hidden text is now visible
+Saved [/home/orluke/personal-projects/opensprints/hardware/interface_board/geda/interface_board.sch]
