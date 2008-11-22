@@ -14,8 +14,6 @@ class RacePresenter
     @bar_size = 800-2*60-6
     @race_distance = distance
     @race = race
-    @red = @race.red_racer
-    @blue = @race.blue_racer
     @update_area = update_area
     @sensor = sensor
     @continue = true
@@ -25,8 +23,8 @@ class RacePresenter
   def continue?; @continue end
 
   def refresh
-    @blue.ticks = @sensor.values[:blue].size
-    @red.ticks = @sensor.values[:red].size
+    @race.racers[0].ticks = @sensor.values[:blue].size
+    @race.racers[1].ticks = @sensor.values[:red].size
 
     @update_area.clear do
       @shoes_instance.stroke gray 0.5
@@ -35,22 +33,22 @@ class RacePresenter
         @shoes_instance.line 2,0,2,100
         @shoes_instance.line 684,0,684,100
 
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@blue), 20, @bikes[0])
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[0]), 20, @bikes[0])
         
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@red), 60, @bikes[1])
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[1]), 60, @bikes[1])
 
       @shoes_instance.subtitle(
-        @shoes_instance.span(@red.name,{:stroke => @bikes[0]}), 
+        @shoes_instance.span(@race.racers[1].name,{:stroke => @bikes[0]}), 
         @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
-        @shoes_instance.span(@blue.name,{:stroke => @bikes[0]}),
+        @shoes_instance.span(@race.racers[1].name,{:stroke => @bikes[1]}),
         {:top => 300, :align => 'center'})
       
-      @red.finish_time = @sensor.values[:red][ticks_in_race]
-      @blue.finish_time = @sensor.values[:blue][ticks_in_race]
+      @race.racers[1].finish_time = @sensor.values[:red][ticks_in_race]
+      @race.racers[0].finish_time = @sensor.values[:blue][ticks_in_race]
 
       if @race.complete?
         @sensor.stop
-        @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
+        @shoes_instance.alert "#{@race.racers[1].name}: #{@race.racers[1].finish_time/1000.0}s, #{@race.racers[0].name}: #{@race.racers[0].finish_time/1000.0}s"
         @continue = false
         if @shoes_instance.owner.respond_to?(:tournament_record)
           @shoes_instance.owner.tournament_record(@race)
@@ -64,7 +62,7 @@ class RacePresenter
   end
   
   def ticks_in_race
-    (@race_distance/@red.roller_circumference)
+    (@race_distance/@race.racers[1].roller_circumference)
   end
 
 end

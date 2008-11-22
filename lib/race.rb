@@ -13,7 +13,7 @@ class Race
   end
 
   def racers
-    [@red_racer,@blue_racer].compact
+    [@blue_racer,@red_racer].compact
   end
   
   def add_racer(racer)
