@@ -49,19 +49,19 @@ Shoes.app do
       end
     end
 
-    para 'Racers:'
-    @prefs['racers']||=[]
+    para 'Bikes:'
+    @prefs['bikes']||=[]
     @r = 4.times do |i|
       flow do
-        para "Racer #{i+1} Color:"
-        color_edit = edit_line(@prefs['racers'][i]) do |edit|
-          @prefs['racers'][i] = edit.text
+        para "Bike #{i+1} Color:"
+        color_edit = edit_line(@prefs['bikes'][i]) do |edit|
+          @prefs['bikes'][i] = edit.text
         end
         button "pick color" do
           color_edit.text = ask_color('pick...')
-          @prefs['racers'][i] = color_edit.text
+          @prefs['bikes'][i] = color_edit.text
         end
-        button "no racer" do
+        button "no bike" do
           color_edit.text = ''
         end
       end

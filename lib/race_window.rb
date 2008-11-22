@@ -1,15 +1,14 @@
 require 'lib/setup.rb'
 
 class Shoes::ColoredProgressBar < Shoes::Widget
-  def initialize(percent,height,stroke_color,fill_color)
-    stroke stroke_color
-    fill fill_color[0],fill_color[1]
-    rect 6, height, percent, 20
+  def initialize(percent,top,color)
+    fill color
+    rect 6, top, percent, 20
   end
 end
 
 class RacePresenter
-  def initialize(shoes_instance, distance, update_area, race, sensor)
+  def initialize(shoes_instance, distance, update_area, race, sensor, bikes)
     @shoes_instance = shoes_instance
     @bar_size = 800-2*60-6
     @race_distance = distance
@@ -19,6 +18,7 @@ class RacePresenter
     @update_area = update_area
     @sensor = sensor
     @continue = true
+    @bikes = bikes
   end
 
   def continue?; @continue end
@@ -34,11 +34,9 @@ class RacePresenter
         @shoes_instance.line 2,0,2,100
         @shoes_instance.line 684,0,684,100
 
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@blue), 20, "#00F",
-          ["#FEE".."#32F", {:angle => 90, :radius => 10}])
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@blue), 20, @bikes[0])
         
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@red), 60, "#F00",
-          ["#FEE".."#F23", {:angle => 90, :radius => 10}])
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@red), 60, @bikes[1])
 
       @shoes_instance.subtitle(
         @shoes_instance.span(@red.name,{:stroke => "#F00"}), 
@@ -75,6 +73,7 @@ module RaceWindow
     window :title => TITLE, :width => 800, :height => 600 do
       race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
       background black
+      bikes = BIKES.map{|b| eval b}
 
       stack do
         subtitle title, :top => 150, :align => "center", :background => magenta,
@@ -88,7 +87,7 @@ module RaceWindow
         @start = button("Start Race",{:top => 570, :left => 10}) do
           hide_start
           r = RacePresenter.new(self, race_distance, @update_area,
-                       match, sensor)
+                       match, sensor, bikes)
           
           sensor.start
           @countdown = 4
