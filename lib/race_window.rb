@@ -30,12 +30,12 @@ class RacePresenter
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
 
-        @shoes_instance.line 2,0,2,100
-        @shoes_instance.line 684,0,684,100
+      @shoes_instance.line 2,0,2,100
+      @shoes_instance.line 684,0,684,100
 
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[0]), 20, @bikes[0])
-        
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[1]), 60, @bikes[1])
+      @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[0]), 20, @bikes[0])
+      
+      @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[1]), 60, @bikes[1])
 
       @shoes_instance.subtitle(
         @shoes_instance.span(@race.racers[0].name,{:stroke => @bikes[0]}), 
