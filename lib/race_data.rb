@@ -65,16 +65,16 @@ class RaceData
       time = $1.to_i
       @rawdata = $2.unpack('C*')
       @rawdata.each_index{|x| 
-          if (@rawdata[x] - 'a'[0])[0] == 1 
+          if (@rawdata[x] - ?a)[0] == 1 
             @redTickData.push(time+(x*MILLIS_PER_FRAME))
             end
-          if (@rawdata[x] - 'a'[0])[1] == 1 
+          if (@rawdata[x] - ?a)[1] == 1 
             @blueTickData.push(time+x*MILLIS_PER_FRAME)
             end
-          if (@rawdata[x] - 'a'[0])[2] == 1 
+          if (@rawdata[x] - ?a)[2] == 1 
             @greenTickData.push(time+x*MILLIS_PER_FRAME)
             end
-          if (@rawdata[x] - 'a'[0])[3] == 1 
+          if (@rawdata[x] - ?a)[3] == 1 
             @yellowTickData.push(time+x*MILLIS_PER_FRAME)
         end
         }
