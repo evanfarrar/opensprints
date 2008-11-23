@@ -23,8 +23,9 @@ class RacePresenter
   def continue?; @continue end
 
   def refresh
-    @race.racers[0].ticks = @sensor.racers[0].size
-    @race.racers[1].ticks = @sensor.racers[1].size
+    @bikes.size.times do |i|
+      @race.racers[i].ticks = @sensor.racers[i].size
+    end
 
     @update_area.clear do
       @shoes_instance.stroke gray 0.5
@@ -33,22 +34,27 @@ class RacePresenter
       @shoes_instance.line 2,0,2,100
       @shoes_instance.line 684,0,684,100
 
-      @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[0]), 20, @bikes[0])
-      
-      @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[1]), 60, @bikes[1])
+      @bikes.size.times do |i|
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[i]), 20+i*40, @bikes[i])
+      end
 
+      #FIXME this is hard to genericize...even by the power of splat
       @shoes_instance.subtitle(
-        @shoes_instance.span(@race.racers[0].name,{:stroke => @bikes[0]}), 
-        @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
+        @shoes_instance.span(@race.racers[0].name+' ',{:stroke => @bikes[0]}), 
         @shoes_instance.span(@race.racers[1].name,{:stroke => @bikes[1]}),
         {:top => 300, :align => 'center'})
       
-      @race.racers[0].finish_time = @sensor.racers[0][ticks_in_race]
-      @race.racers[1].finish_time = @sensor.racers[1][ticks_in_race]
+      @bikes.length.times do |i|
+        @race.racers[i].finish_time = @sensor.racers[i][ticks_in_race]
+      end
 
       if @race.complete?
         @sensor.stop
-        @shoes_instance.alert "#{@race.racers[1].name}: #{@race.racers[1].finish_time/1000.0}s, #{@race.racers[0].name}: #{@race.racers[0].finish_time/1000.0}s"
+        results = []
+        @bikes.length.times do |i|
+          results << "#{@race.racers[i].name}: #{@race.racers[i].finish_time/1000.0}s"
+        end
+        @shoes_instance.alert results.join(', ')
         @continue = false
         if @shoes_instance.owner.respond_to?(:tournament_record)
           @shoes_instance.owner.tournament_record(@race)
