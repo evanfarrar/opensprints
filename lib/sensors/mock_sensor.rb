@@ -12,18 +12,13 @@ class Sensor
     @t = Thread.new do
       loop do
         fake = fast
-        Thread.current["vals"] = {
-                                   :red => fake, 
-                                   :blue => slow,
-                                   :green => fake,
-                                   :yellow => fake
-                                 }
+        Thread.current["racers"] = [fake, slow, fake, fake]
       end
     end
   end
 
-  def values
-    @t["vals"]
+  def racers
+    @t["racers"]
   end
 
   def fast

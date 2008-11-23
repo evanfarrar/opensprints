@@ -23,8 +23,8 @@ class RacePresenter
   def continue?; @continue end
 
   def refresh
-    @race.racers[0].ticks = @sensor.values[:blue].size
-    @race.racers[1].ticks = @sensor.values[:red].size
+    @race.racers[0].ticks = @sensor.racers[0].size
+    @race.racers[1].ticks = @sensor.racers[1].size
 
     @update_area.clear do
       @shoes_instance.stroke gray 0.5
@@ -38,13 +38,13 @@ class RacePresenter
         @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[1]), 60, @bikes[1])
 
       @shoes_instance.subtitle(
-        @shoes_instance.span(@race.racers[1].name,{:stroke => @bikes[0]}), 
+        @shoes_instance.span(@race.racers[0].name,{:stroke => @bikes[0]}), 
         @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
         @shoes_instance.span(@race.racers[1].name,{:stroke => @bikes[1]}),
         {:top => 300, :align => 'center'})
       
-      @race.racers[1].finish_time = @sensor.values[:red][ticks_in_race]
-      @race.racers[0].finish_time = @sensor.values[:blue][ticks_in_race]
+      @race.racers[0].finish_time = @sensor.racers[0][ticks_in_race]
+      @race.racers[1].finish_time = @sensor.racers[1][ticks_in_race]
 
       if @race.complete?
         @sensor.stop

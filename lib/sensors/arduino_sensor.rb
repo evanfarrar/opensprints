@@ -19,12 +19,7 @@ class Sensor
         l = @f.readline
         if l=~/!.*/
           @r.parseStringToRaceData(l)
-          Thread.current["red"] = @r.redTickData            
-          Thread.current["blue"] = @r.blueTickData
-          Thread.current["green"] = @r.greenTickData            
-          Thread.current["yellow"] = @r.yellowTickData
-          #Thread.current["red_finish"] = l.gsub(/1f: /,'').to_i
-          #Thread.current["blue_finish"] = l.gsub(/2f: /,'').to_i          
+          Thread.current["racers"] = @r.racers
         end
         puts l
       end
@@ -32,9 +27,8 @@ class Sensor
     self
   end
 
-  def values
-    {:red => @t["red"], :blue => @t["blue"], :green => @t["green"], :yellow => @t["yellow"],
-     :red_finish => @t["red_finish"], :blue_finish => @t["blue_finish"], :green_finish => @t["green_finish"], :yellow_finish => @t["yellow_finish"]}
+  def racers
+    @t["racers"]
   end
 
   def stop

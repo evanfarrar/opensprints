@@ -29,54 +29,44 @@ MILLIS_PER_FRAME = 2.0
 
 class RaceData
   
-  attr_accessor :redTickData, :blueTickData, :yellowTickData, :greenTickData
+  attr_accessor :racers
   
   def initialize()
     @data = [128,129,128,128,129,130,128,135,143,143,'#'.to_i]
     @rawdata = []
     @testinput = "!0@" + @data.pack('c*')
-    @redTickData = []
-    @blueTickData = []
-    @greenTickData = []
-    @yellowTickData = []
+    @racers = [[],[],[],[]]
     @test = false
   end
   
   def printRaceData()
-    print("Red: \n")
-    @redTickData.each{|x| print(x, " ")}
-    print("\n")
-    print("Blue: \n")
-    @blueTickData.each{|x| print x, " " }
-    print("\n")
-    print("Green: \n")
-    @greenTickData.each{|x| print x, " " }
-    print("\n")
-    print("Yellow: \n")
-    @yellowTickData.each{|x| print x, " " }  
-    print("\n")
+    puts "Red:",@racers[0].join(' ')
+    puts "Blue:",@racers[1].join(' ')
+    puts "Green:",@racers[2].join(' ')
+    puts "Yellow:",@racers[3].join(' ')
   end
   
   def parseStringToRaceData(aString)
-    if @test == true
-      aString = @testinput
-    end
+    aString = @testinput if @test == true
     if aString =~ /!(\d+)@([a-q]*)#/ # returns the time in $1, and the data in $2
       time = $1.to_i
       @rawdata = $2.unpack('C*')
-      @rawdata.each_index{|x| 
-          if (@rawdata[x] - ?a)[0] == 1 
-            @redTickData.push(time+(x*MILLIS_PER_FRAME))
-            end
-          if (@rawdata[x] - ?a)[1] == 1 
-            @blueTickData.push(time+x*MILLIS_PER_FRAME)
-            end
-          if (@rawdata[x] - ?a)[2] == 1 
-            @greenTickData.push(time+x*MILLIS_PER_FRAME)
-            end
-          if (@rawdata[x] - ?a)[3] == 1 
-            @yellowTickData.push(time+x*MILLIS_PER_FRAME)
-        end
+      @rawdata.each_with_index{|data,x| 
+          if (data - ?a)[0] == 1 
+            @racers[0].push(time+(x*MILLIS_PER_FRAME))
+          end
+          
+          if (data - ?a)[1] == 1 
+            @racers[1].push(time+x*MILLIS_PER_FRAME)
+          end
+          
+          if (data - ?a)[2] == 1 
+            @racers[2].push(time+x*MILLIS_PER_FRAME)
+          end
+         
+          if (data - ?a)[3] == 1 
+            @racers[3].push(time+x*MILLIS_PER_FRAME)
+          end
         }
       #print(@rawdata, "\n")
       #printRaceData()
