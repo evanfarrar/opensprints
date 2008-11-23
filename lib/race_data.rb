@@ -63,8 +63,6 @@ class RaceData
     end
     if aString =~ /!(\d+)@([a-q]*)#/ # returns the time in $1, and the data in $2
       time = $1.to_i
-  #    print(time, "\n")
-  #    print($2, "\n")
       @rawdata = $2.unpack('C*')
       @rawdata.each_index{|x| 
           if (@rawdata[x] - 'a'[0])[0] == 1 
@@ -80,7 +78,7 @@ class RaceData
             @yellowTickData.push(time+x*MILLIS_PER_FRAME)
         end
         }
-   #   print(@rawdata, "\n")
+      #print(@rawdata, "\n")
       #printRaceData()
       #debug("test")
     end

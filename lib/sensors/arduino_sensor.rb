@@ -19,12 +19,12 @@ class Sensor
         l = @f.readline
         if l=~/!.*/
           @r.parseStringToRaceData(l)
-            Thread.current["red"] = @r.redTickData            
-            Thread.current["blue"] = @r.blueTickData
-            Thread.current["green"] = @r.greenTickData            
-            Thread.current["yellow"] = @r.yellowTickData
-            #Thread.current["red_finish"] = l.gsub(/1f: /,'').to_i
-            #Thread.current["blue_finish"] = l.gsub(/2f: /,'').to_i          
+          Thread.current["red"] = @r.redTickData            
+          Thread.current["blue"] = @r.blueTickData
+          Thread.current["green"] = @r.greenTickData            
+          Thread.current["yellow"] = @r.yellowTickData
+          #Thread.current["red_finish"] = l.gsub(/1f: /,'').to_i
+          #Thread.current["blue_finish"] = l.gsub(/2f: /,'').to_i          
         end
         puts l
       end
