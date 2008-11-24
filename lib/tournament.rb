@@ -7,7 +7,7 @@ class Tournament
 
   def initialize(distance)
     @distance = distance
-    @racers = [ ]
+    @racers = []
     @matches = []
     @results = []
   end
@@ -17,8 +17,8 @@ class Tournament
   end
 
   def autofill_matches
-    self.racers_unmatched.each_slice(2) { |a|
-      @matches << (Race.new(a.first, a.last, @distance)) unless a.length == 1
+    self.racers_unmatched.each_slice(BIKES.length) { |a|
+      @matches << (Race.new(a, @distance)) unless a.length == 1
     }
   end
 
@@ -33,8 +33,8 @@ class Tournament
 
   def add_racer(racer)
     return if @matches.find{|m| m.racers.include?(racer) } 
-    unless (race=@matches.find{|m| m.racers.length < 2 })
-      race = Race.new(nil,nil, @distance)
+    unless (race=@matches.find{|m| m.racers.length < BIKES.length })
+      race = Race.new([], @distance)
       @matches << race
     end
     race.add_racer(racer)

@@ -81,7 +81,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
       flow(:width => 50) { para 'Wins' }
       flow(:width => 25) { para 'Best' }
     end
-    @tournament.racers.each do |racer|
+    @tournament.racers.compact.each do |racer|
       flow do
         border black
         flow(:width => 115) { para racer.name }
@@ -111,13 +111,11 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
         background lightgrey
         border black
         flow(:width => 180) do
-          if match.racers.length == 1
-            para match.racers.first.name
-          else
-            para span(match.blue_racer.name, :stroke => eval(BIKES[0])),
-                 " vs ",
-                 span(match.red_racer.name, :stroke => eval(BIKES[1]))
-          end
+          # FIXME THIS IS HORRENDOUS
+          para((span(match.racers[0].name+" ", :stroke => eval(BIKES[0])) if match.racers[0]),
+               (span(match.racers[1].name+" ", :stroke => eval(BIKES[1])) if match.racers[1]),
+               (span(match.racers[2].name+" ", :stroke => eval(BIKES[2])) if match.racers[2]),
+               (span(match.racers[3].name+" ", :stroke => eval(BIKES[3])) if match.racers[3]))
         end
         button("race")do
           race_window match, @tournament
@@ -129,7 +127,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   end
  
   def add_racer(name)
-    duped = @tournament.racers.any? do |racer|
+    duped = @tournament.racers.compact.any? do |racer|
       racer.name == name
     end
     if !duped && name!='enter name'

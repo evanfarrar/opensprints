@@ -1,28 +1,19 @@
 class Race
+  attr_accessor :racers
   def ==(other)
     racers==other.racers
   end
 
   attr_accessor :red_racer, :blue_racer
-  def initialize(red_racer, blue_racer, distance)
-    red_racer.ticks = 0 if red_racer
-    blue_racer.ticks = 0 if blue_racer
-    @red_racer = red_racer
-    @blue_racer = blue_racer
+  def initialize(racers, distance)
+    racers.compact.map{|r| r.ticks = 0}
+    @racers = racers
     @distance = distance
   end
 
-  def racers
-    [@blue_racer,@red_racer].compact
-  end
-  
   def add_racer(racer)
     racer.ticks = 0
-    if red_racer
-      @blue_racer = racer
-    else
-      @red_racer = racer
-    end
+    @racers << racer
   end
 
   def complete?
@@ -42,6 +33,6 @@ class Race
   end
 
   def flip
-    @red_racer, @blue_racer = @blue_racer, @red_racer
+    @racers.shuffle!
   end
 end
