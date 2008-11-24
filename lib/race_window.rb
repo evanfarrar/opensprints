@@ -73,7 +73,7 @@ class RacePresenter
   end
   
   def ticks_in_race
-    (@race_distance/@race.racers[1].roller_circumference)
+    (@race_distance/@race.racers[0].roller_circumference)
   end
 
 end
