@@ -20,27 +20,22 @@ class RacePresenter
     end
 
     @update_area.clear do
-      @shoes_instance.app do
-        stroke gray 0.5
-        strokewidth 4
+      fudge_right = (@shoes_instance.width-@bar_size)/2
+      fudge_down = 220
+      @shoes_instance.stroke gray 0.5
+      @shoes_instance.strokewidth 4
 
-        line 2,0,2,100
-        line 684,0,684,100
-      end
+      @shoes_instance.line fudge_right+2,fudge_down,fudge_right+2,fudge_down+20+@race.racers.length*40
+      @shoes_instance.line fudge_right+684,fudge_down,fudge_right+684,fudge_down+20+@race.racers.length*40
+
 
       @race.racers.size.times do |i|
         @shoes_instance.stroke @bikes[i]
         @shoes_instance.fill @bikes[i]
-        @shoes_instance.rect 6, 20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
+        @shoes_instance.rect fudge_right+6, fudge_down+20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
       end
 
       #FIXME this is hard to genericize...even by the power of splat
-      @shoes_instance.subtitle(
-        (@shoes_instance.span(@race.racers[0].name+' ',{:stroke => @bikes[0]}) if @race.racers[0]), 
-        (@shoes_instance.span(@race.racers[1].name+' ',{:stroke => @bikes[1]}) if @race.racers[1]), 
-        (@shoes_instance.span(@race.racers[2].name+' ',{:stroke => @bikes[2]}) if @race.racers[2]), 
-        (@shoes_instance.span(@race.racers[3].name,{:stroke => @bikes[3]}) if @race.racers[3]), 
-        {:top => 300, :align => 'center'})
       
       @race.racers.length.times do |i|
         @race.racers[i].finish_time = @sensor.racers[i][ticks_in_race]
@@ -79,8 +74,14 @@ module RaceWindow
       bikes = BIKES.map{|b| eval b}
 
       stack do
-        subtitle title, :top => 150, :align => "center", :background => magenta,
+        subtitle title, :top => 60, :align => "center", :background => magenta,
           :stroke => white
+      subtitle(
+        (span(match.racers[0].name+' ',{:stroke => bikes[0]}) if match.racers[0]), 
+        (span(match.racers[1].name+' ',{:stroke => bikes[1]}) if match.racers[1]), 
+        (span(match.racers[2].name+' ',{:stroke => bikes[2]}) if match.racers[2]), 
+        (span(match.racers[3].name,{:stroke => bikes[3]}) if match.racers[3]), 
+        {:top => 110, :align => 'center'})
         @update_area = stack {}
 
         def hide_start
