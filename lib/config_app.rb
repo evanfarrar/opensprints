@@ -77,5 +77,6 @@ Shoes.app do
     end
     load "lib/setup.rb"
     alert('Preferences saved!')
+    close
   end
 end

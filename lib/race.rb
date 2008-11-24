@@ -4,7 +4,6 @@ class Race
     racers==other.racers
   end
 
-  attr_accessor :red_racer, :blue_racer
   def initialize(racers, distance)
     racers.compact.map{|r| r.ticks = 0}
     @racers = racers

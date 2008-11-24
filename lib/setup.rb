@@ -34,3 +34,11 @@ module Enumerable
     self[3]
   end
 end
+
+class Shoes::ColoredProgressBar < Shoes::Widget
+  def initialize(percent,top,color)
+    stroke color
+    fill color
+    rect 6, top, percent, 20
+  end
+end

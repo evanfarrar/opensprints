@@ -1,62 +1,65 @@
 require 'lib/setup.rb'
 
+class Shoes::ColoredProgressBar < Shoes::Widget
+  def initialize(percent,top,color)
+    stroke color
+    fill color
+    rect 6, top, percent, 20
+  end
+end
+
+
 class RacePresenter
-  def initialize(shoes_instance, distance, update_area, race, sensor)
+  def initialize(shoes_instance, distance, update_area, race, sensor, bikes)
     @shoes_instance = shoes_instance
     @bar_size = 800-2*60-6
     @race_distance = distance
     @race = race
-    @red = @race.red_racer
-    @blue = @race.blue_racer
     @update_area = update_area
     @sensor = sensor
+    @continue = true
+    @bikes = bikes
   end
-
 
   def continue?; @continue end
 
   def refresh
-    unless @started
-      @started=true
-      @continue = true
+    @bikes.size.times do |i|
+      @race.racers[i].ticks = @sensor.racers[i].size
     end
-
-    @blue.ticks = @sensor.values[:blue].size
-    @red.ticks = @sensor.values[:red].size
 
     @update_area.clear do
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
-      @foo = @shoes_instance.image(800-60+4, 100, :top => 280, :left => 80) do
-        @shoes_instance.line 2,0,2,100
-        @shoes_instance.line 684,0,684,100
 
-        blue_progress = @bar_size*percent_complete(@blue)
-        @shoes_instance.stroke "#00F"
-        @shoes_instance.fill "#FEE".."#32F", :angle => 90, :radius => 10
-        @shoes_instance.rect 6, 20, blue_progress, 20 
-        
-        red_progress = @bar_size*percent_complete(@red)
-        @shoes_instance.stroke "#F00"
-        @shoes_instance.fill "#FEE".."#F23", :angle => 90, :radius => 10
-        @shoes_instance.rect 6, 60, red_progress, 20 
+      @shoes_instance.line 2,0,2,100
+      @shoes_instance.line 684,0,684,100
+
+      @bikes.size.times do |i|
+        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[i]), 20+i*40, @bikes[i])
       end
 
-      @foo.translate(0,-75)
+      #FIXME this is hard to genericize...even by the power of splat
       @shoes_instance.subtitle(
-        @shoes_instance.span(@red.name,{:stroke => "#F00"}), 
-        @shoes_instance.span(" vs ",{:stroke => @shoes_instance.ivory}),
-        @shoes_instance.span(@blue.name,{:stroke => "#00F"}),
+        (@shoes_instance.span(@race.racers[0].name+' ',{:stroke => @bikes[0]}) if @race.racers[0]), 
+        (@shoes_instance.span(@race.racers[1].name+' ',{:stroke => @bikes[1]}) if @race.racers[1]), 
+        (@shoes_instance.span(@race.racers[2].name+' ',{:stroke => @bikes[2]}) if @race.racers[2]), 
+        (@shoes_instance.span(@race.racers[3].name,{:stroke => @bikes[3]}) if @race.racers[3]), 
         {:top => 300, :align => 'center'})
       
-      @red.finish_time = @sensor.values[:red][ticksInRace]
-      @blue.finish_time = @sensor.values[:blue][ticksInRace]
+      @bikes.length.times do |i|
+        @race.racers[i].finish_time = @sensor.racers[i][ticks_in_race]
+      end
 
       if @race.complete?
-
         @sensor.stop
+        results = []
+        @bikes.length.times do |i|
+          results << "#{@race.racers[i].name}: #{@race.racers[i].finish_time/1000.0}s"
+        end
+        @shoes_instance.alert results.join(', ')
         @continue = false
-        @shoes_instance.alert "#{@red.name}: #{@red.finish_time/1000.0}s, #{@blue.name}: #{@blue.finish_time/1000.0}s"
+
         @shoes_instance.close
       end
     end
@@ -66,14 +69,15 @@ class RacePresenter
     [1.0, ((racer.ticks * racer.roller_circumference) || 0)/@race_distance.to_f].min
   end
   
-  def ticksInRace
-    (@race_distance/@red.roller_circumference)
+  def ticks_in_race
+    (@race_distance/$ROLLER_CIRCUMFERENCE)
   end
 
 end
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
-  match = Race.new(Racer.new(:name => "red", :units => UNIT_SYSTEM),
-    Racer.new(:name => "blue", :units => UNIT_SYSTEM), RACE_DISTANCE)
+  racers = BIKES.map{|b| Racer.new(:name => b, :units => UNIT_SYSTEM)}
+  match = Race.new(racers, RACE_DISTANCE)
+  bikes = BIKES.map{|b| eval b}
   race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
   background black
 
@@ -89,23 +93,29 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
     @start = button("Start Race",{:top => 570, :left => 10}) do
       hide_start
       r = RacePresenter.new(self, race_distance, @update_area,
-                   match, sensor)
+                   match, sensor, bikes)
       
       sensor.start
       @countdown = 4
       @start_time = Time.now+@countdown
-      count_box = stack(:top => 200){   }
+      @update_area.clear {
+        @count_box = stack(:top => 200){   }
+      }
+
       @race_animation = animate(14) do
         @now = Time.now
         if @now < @start_time
-          count_box.clear do
+          @count_box.clear do
             banner "#{(@start_time-@now).round}...", :stroke => ivory,
               :font => "Arial 200px", :align => 'center'
           end
         else
-          count_box.remove
-          r.refresh
-          @start.show unless r.continue?
+          @count_box.remove
+          if r.continue?
+            r.refresh
+          else
+            @start.show
+          end
         end
       end
     end

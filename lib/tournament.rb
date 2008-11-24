@@ -23,11 +23,6 @@ class Tournament
   end
 
   def record(race)
-    #FIXME this method is too hilarious.
-    @racers.delete(race.red_racer)
-    @racers << race.red_racer
-    @racers.delete(race.blue_racer)
-    @racers << race.blue_racer
     matches.reject!{|m| m == race}
   end
 

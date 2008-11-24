@@ -1,13 +1,5 @@
 require 'lib/setup.rb'
 
-class Shoes::ColoredProgressBar < Shoes::Widget
-  def initialize(percent,top,color)
-    stroke color
-    fill color
-    rect 6, top, percent, 20
-  end
-end
-
 class RacePresenter
   def initialize(shoes_instance, distance, update_area, race, sensor, bikes)
     @shoes_instance = shoes_instance
@@ -40,8 +32,10 @@ class RacePresenter
 
       #FIXME this is hard to genericize...even by the power of splat
       @shoes_instance.subtitle(
-        @shoes_instance.span(@race.racers[0].name+' ',{:stroke => @bikes[0]}), 
-        @shoes_instance.span(@race.racers[1].name,{:stroke => @bikes[1]}),
+        (@shoes_instance.span(@race.racers[0].name+' ',{:stroke => @bikes[0]}) if @race.racers[0]), 
+        (@shoes_instance.span(@race.racers[1].name+' ',{:stroke => @bikes[1]}) if @race.racers[1]), 
+        (@shoes_instance.span(@race.racers[2].name+' ',{:stroke => @bikes[2]}) if @race.racers[2]), 
+        (@shoes_instance.span(@race.racers[3].name,{:stroke => @bikes[3]}) if @race.racers[3]), 
         {:top => 300, :align => 'center'})
       
       @bikes.length.times do |i|
@@ -124,7 +118,7 @@ module RaceWindow
           close
         end
         
-        if tournament.matches.length > 1
+        if tournament && tournament.matches.length > 1
           subtitle "On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white
           button("Next Race",{:top => 570, :left => 300}) do
             close
