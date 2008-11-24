@@ -36,7 +36,7 @@ class Tournament
   end
 
   def best_time
-    racers.map(&:best_time).max
+    racers.map(&:best_time).compact.min
   end
 
   def next_after(race)

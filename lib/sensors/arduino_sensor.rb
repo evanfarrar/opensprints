@@ -20,6 +20,7 @@ class Sensor
         if l=~/!.*/
           @r.parseStringToRaceData(l)
           Thread.current["racers"] = @r.racers
+          Thread.current["time"] = @r.time
         end
         puts l
       end
@@ -29,6 +30,10 @@ class Sensor
 
   def racers
     @t["racers"]
+  end
+
+  def time
+    @t["time"]
   end
 
   def stop

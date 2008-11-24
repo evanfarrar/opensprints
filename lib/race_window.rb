@@ -1,7 +1,7 @@
 require 'lib/setup.rb'
 
 class RacePresenter
-  def initialize(shoes_instance, distance, update_area, race, sensor, bikes)
+  def initialize(shoes_instance, distance, update_area, race, sensor, bikes, best_time)
     @shoes_instance = shoes_instance
     @bar_size = 800-2*60-6
     @race_distance = distance
@@ -10,6 +10,7 @@ class RacePresenter
     @sensor = sensor
     @continue = true
     @bikes = bikes
+    @best_time = best_time
   end
 
   def continue?; @continue end
@@ -22,6 +23,17 @@ class RacePresenter
     @update_area.clear do
       fudge_right = (@shoes_instance.width-@bar_size)/2
       fudge_down = 220
+    
+      #ghost lap
+      
+      if @best_time
+        @shoes_instance.stroke gray 0.3
+        @shoes_instance.fill gray 0.3
+        
+        @shoes_instance.rect fudge_right+6, fudge_down+5, @bar_size*([1.0,(@sensor.time / 1000.0) / @best_time].min), 5+@race.racers.length*40
+      end
+      
+
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
 
@@ -91,7 +103,7 @@ module RaceWindow
         @start = button("Start Race",{:top => 570, :left => 10}) do
           hide_start
           r = RacePresenter.new(self, race_distance, @update_area,
-                       match, sensor, bikes)
+                       match, sensor, bikes, (tournament.best_time if tournament))
           
           sensor.start
           @countdown = 4

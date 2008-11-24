@@ -29,7 +29,7 @@ MILLIS_PER_FRAME = 2.0
 
 class RaceData
   
-  attr_accessor :racers
+  attr_accessor :racers, :time
   
   def initialize()
     @data = [128,129,128,128,129,130,128,135,143,143,'#'.to_i]
@@ -37,6 +37,7 @@ class RaceData
     @testinput = "!0@" + @data.pack('c*')
     @racers = [[],[],[],[]]
     @test = false
+    @time = 0
   end
   
   def printRaceData()
@@ -52,21 +53,23 @@ class RaceData
       time = $1.to_i
       @rawdata = $2.unpack('C*')
       @rawdata.each_with_index{|data,x| 
+        current_time = time+(x*MILLIS_PER_FRAME)
         if (data - ?a)[0] == 1 
-          @racers[0].push(time+(x*MILLIS_PER_FRAME))
+          @racers[0].push(current_time)
         end
         
         if (data - ?a)[1] == 1 
-          @racers[1].push(time+x*MILLIS_PER_FRAME)
+          @racers[1].push(current_time)
         end
         
         if (data - ?a)[2] == 1 
-          @racers[2].push(time+x*MILLIS_PER_FRAME)
+          @racers[2].push(current_time)
         end
        
         if (data - ?a)[3] == 1 
-          @racers[3].push(time+x*MILLIS_PER_FRAME)
+          @racers[3].push(current_time)
         end
+        @time = current_time
       }
       #print(@rawdata, "\n")
       #printRaceData()

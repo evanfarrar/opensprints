@@ -13,12 +13,17 @@ class Sensor
       loop do
         fake = fast
         Thread.current["racers"] = [fake, slow, fake, d_n_f]
+        Thread.current["time"] = (Time.now - @start)*1000
       end
     end
   end
 
   def racers
     @t["racers"]
+  end
+
+  def time
+    @t["time"]
   end
 
   def fast
