@@ -1,14 +1,5 @@
 require 'lib/setup.rb'
 
-class Shoes::ColoredProgressBar < Shoes::Widget
-  def initialize(percent,top,color)
-    stroke color
-    fill color
-    rect 6, top, percent, 20
-  end
-end
-
-
 class RacePresenter
   def initialize(shoes_instance, distance, update_area, race, sensor, bikes)
     @shoes_instance = shoes_instance
