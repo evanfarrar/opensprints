@@ -15,19 +15,23 @@ class RacePresenter
   def continue?; @continue end
 
   def refresh
-    @bikes.size.times do |i|
+    @race.racers.size.times do |i|
       @race.racers[i].ticks = @sensor.racers[i].size
     end
 
     @update_area.clear do
-      @shoes_instance.stroke gray 0.5
-      @shoes_instance.strokewidth 4
+      @shoes_instance.app do
+        stroke gray 0.5
+        strokewidth 4
 
-      @shoes_instance.line 2,0,2,100
-      @shoes_instance.line 684,0,684,100
+        line 2,0,2,100
+        line 684,0,684,100
+      end
 
-      @bikes.size.times do |i|
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[i]), 20+i*40, @bikes[i])
+      @race.racers.size.times do |i|
+        @shoes_instance.stroke @bikes[i]
+        @shoes_instance.fill @bikes[i]
+        @shoes_instance.rect 6, 20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
       end
 
       #FIXME this is hard to genericize...even by the power of splat
@@ -38,14 +42,14 @@ class RacePresenter
         (@shoes_instance.span(@race.racers[3].name,{:stroke => @bikes[3]}) if @race.racers[3]), 
         {:top => 300, :align => 'center'})
       
-      @bikes.length.times do |i|
+      @race.racers.length.times do |i|
         @race.racers[i].finish_time = @sensor.racers[i][ticks_in_race]
       end
 
       if @race.complete?
         @sensor.stop
         results = []
-        @bikes.length.times do |i|
+        @race.racers.length.times do |i|
           results << "#{@race.racers[i].name}: #{@race.racers[i].finish_time/1000.0}s"
         end
         @shoes_instance.alert results.join(', ')
@@ -118,9 +122,23 @@ module RaceWindow
           close
         end
         
+        button("Call it", {:top => 570, :left => 205}) do
+          sensor.stop
+          results = []
+          bikes.length.times do |i|
+            results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
+          end
+          alert results.join(', ')
+          @continue = false
+          if owner.respond_to?(:tournament_record)
+            owner.tournament_record(match)
+          end
+        end
+
         if tournament && tournament.matches.length > 1
-          subtitle "On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white
-          button("Next Race",{:top => 570, :left => 300}) do
+          subtitle("On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white,
+                   :top => 520)
+          button("Next Race",{:top => 570, :left => 305}) do
             close
             owner.race_window(tournament.next_after(match),tournament)
           end

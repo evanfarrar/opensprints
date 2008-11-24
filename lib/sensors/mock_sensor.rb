@@ -12,7 +12,7 @@ class Sensor
     @t = Thread.new do
       loop do
         fake = fast
-        Thread.current["racers"] = [fake, slow, fake, fake]
+        Thread.current["racers"] = [fake, slow, fake, d_n_f]
       end
     end
   end
@@ -40,7 +40,15 @@ class Sensor
   def random
     if Time.now-@last_random>0.25
       @last_random = Time.now
-      @random += [(Time.now - @start)*1000] * random(20)
+      @random += [(Time.now - @start)*1000] * random(20)+1
+    end
+    @random
+  end
+
+  def d_n_f
+    if Time.now-@last_random>0.25 && Time.now-@start < 2.0
+      @last_random = Time.now
+      @random += [(Time.now - @start)*1000] * 20
     end
     @random
   end

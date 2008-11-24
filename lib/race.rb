@@ -20,13 +20,13 @@ class Race
   end
 
   def winner
-    standings = self.racers.sort_by { |racer| racer.finish_time }
+    standings = self.racers.sort_by { |racer| racer.finish_time||Infinity }
 
     winner = standings.first
     standings.reverse.each_with_index do |racer, i|
-      racer.wins += i
+      racer.wins += i if racer.finish_time
       racer.races += 1
-      racer.record_time(racer.finish_time)
+      racer.record_time(racer.finish_time) if racer.finish_time
     end
     winner
   end
