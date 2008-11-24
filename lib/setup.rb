@@ -10,7 +10,9 @@ end
 RACE_DISTANCE = options['race_distance']
 $ROLLER_CIRCUMFERENCE = options['roller_circumference']  # in METERS DAMNIT!
 TITLE = options['title']
-BIKES = options['bikes']
+bikes = options['bikes']
+bikes.delete('')
+BIKES = bikes
 require 'lib/racer'
 require 'lib/race'
 require 'lib/interface_widgets'

@@ -117,7 +117,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
                (span(match.racers[1].name+" ", :stroke => eval(BIKES[1])) if match.racers[1]),
                (span(match.racers[2].name+" ", :stroke => eval(BIKES[2])) if match.racers[2]),
                (span(match.racers[3].name+" ", :stroke => eval(BIKES[3])) if match.racers[3]),
-               :weight => "bold")
+               :weight => "ultrabold")
         end
         button("race")do
           race_window match, @tournament
