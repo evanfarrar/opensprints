@@ -52,22 +52,22 @@ class RaceData
       time = $1.to_i
       @rawdata = $2.unpack('C*')
       @rawdata.each_with_index{|data,x| 
-          if (data - ?a)[0] == 1 
-            @racers[0].push(time+(x*MILLIS_PER_FRAME))
-          end
-          
-          if (data - ?a)[1] == 1 
-            @racers[1].push(time+x*MILLIS_PER_FRAME)
-          end
-          
-          if (data - ?a)[2] == 1 
-            @racers[2].push(time+x*MILLIS_PER_FRAME)
-          end
-         
-          if (data - ?a)[3] == 1 
-            @racers[3].push(time+x*MILLIS_PER_FRAME)
-          end
-        }
+        if (data - ?a)[0] == 1 
+          @racers[0].push(time+(x*MILLIS_PER_FRAME))
+        end
+        
+        if (data - ?a)[1] == 1 
+          @racers[1].push(time+x*MILLIS_PER_FRAME)
+        end
+        
+        if (data - ?a)[2] == 1 
+          @racers[2].push(time+x*MILLIS_PER_FRAME)
+        end
+       
+        if (data - ?a)[3] == 1 
+          @racers[3].push(time+x*MILLIS_PER_FRAME)
+        end
+      }
       #print(@rawdata, "\n")
       #printRaceData()
       #debug("test")
