@@ -29,6 +29,6 @@ units: standard
 # Provide as many colors as you want racers.
 # Can be in any format shoes understands:
 # e.g.: "red" or "#FF0000" or "rgb(255,0,0)"
-racers:
+bikes:
 - red
 - blue
