@@ -1,7 +1,7 @@
 #Arduino: a sensor written for the arduino open source hardware.
 class Sensor
-  attr_accessor :queue, :r
-  def initialize(queue, filename=nil)
+  attr_accessor :r
+  def initialize(filename=nil)
   end
 
   def start

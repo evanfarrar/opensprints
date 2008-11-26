@@ -4,7 +4,8 @@ require 'lib/race_data'
 begin
   options = YAML::load(File.read('conf.yml'))
 rescue
-  alert "You must write a conf.yml. See sample in conf-sample.yml"
+  `cp conf-sample.yml conf.yml`
+  options = YAML::load(File.read('conf.yml'))
 end
 
 RACE_DISTANCE = options['race_distance']

@@ -1,9 +1,8 @@
 #Arduino: a sensor written for the arduino open source hardware.
 class Sensor
-  attr_accessor :queue, :r
-  def initialize(queue, filename=nil)
-    @queue = queue
-    raise 'File Not Writable!' unless File.writable?(filename)
+  attr_accessor :r
+  def initialize(filename=nil)
+    raise "Can't access the arduino! Ensure that it is plugged in and that the proper device is specified in your config." unless File.writable?(filename)
     #HACK oogity boogity magic happens here:
     `stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
     @f = File.open(filename, 'w+')
