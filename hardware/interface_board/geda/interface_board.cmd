@@ -52,6 +52,8 @@ ChangePinName(H2, 1, 1)
 # Start of element H1
 ChangePinName(H1, 1, 1)
 
+# Start of element generic_pin
+
 # Start of element CONN8
 ChangePinName(CONN8, 7, 7)
 ChangePinName(CONN8, 5, 5)
