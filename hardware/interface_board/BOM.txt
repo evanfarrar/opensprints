@@ -10,6 +10,11 @@ Qty   Descr                   Mfr         Mfr P/N         Supplier    Supplier P
 2     male breakaway
       headers 6 pos
 
-10    100k resistor
-
 x     hook-up wire
+
+(Optional:)
+
+2     screw terminal
+      blocks
+
+
