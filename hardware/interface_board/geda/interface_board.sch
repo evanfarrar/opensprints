@@ -311,10 +311,3 @@ refdes=U1
 T 1800 5200 5 10 0 0 0 0 1
 device=Arduino USB Expansion
 }
-C 9500 2300 1 0 0 input-output.sym
-{
-T 9500 2300 5 10 0 0 0 0 1
-footprint=pin.fp
-T 9500 2800 5 10 1 1 0 0 1
-refdes=generic_pin
-}
