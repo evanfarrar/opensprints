@@ -49,6 +49,28 @@ Shoes.app do
       end
     end
 
+    flow do
+      para 'Sensor type:'
+      sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s| 
+        s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
+      end
+      list_box(:items => sensors,
+        :choose => @prefs['sensor']['type']) do |changed|
+          @prefs['sensor']['type'] = changed.text
+
+      end
+    end
+    flow do
+      para 'Sensor location:' 
+      edit_line(@prefs['sensor']['device']) do |edit|
+        @prefs['sensor']['device'] = edit.text
+      end
+    end
+
+    para "e.g. Mac OS X: /dev/tty.usbmodem0000103D1"
+    para "e.g. Linux: /dev/ttyUSB0"
+    para "e.g. Windows: com6"
+
     para 'Bikes:'
     @prefs['bikes']||=[]
     @r = 4.times do |i|
