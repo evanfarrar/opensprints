@@ -1,5 +1,5 @@
 # release: pcb 20080202
-# date:    Thu Nov 27 17:13:36 2008
+# date:    Thu Nov 27 21:44:38 2008
 # user:    orluke (Luke Orland,,,)
 # host:    orluke-ub84
 
@@ -8,7 +8,7 @@ FileVersion[20070407]
 
 PCB["que linda" 450000 650000]
 
-Grid[1000.000000 0 0 1]
+Grid[2500.000000 0 0 1]
 Cursor[0 0 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
@@ -800,28 +800,28 @@ Symbol('~' 12)
 
 Element["hidename" "A31_screwhole" "H4" "unknown" 12000 478000 -1103 -3000 0 100 ""]
 (
-	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	Pin[0 0 12800 12800 12800 12800 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 
 Element["hidename" "A31_screwhole" "H2" "unknown" 426000 206000 -1103 -2000 0 100 ""]
 (
-	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	Pin[0 0 12800 12800 12800 12800 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 
 Element["hidename" "A31_screwhole" "H3" "unknown" 426000 478000 -2103 -3000 0 100 ""]
 (
-	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	Pin[0 0 12800 12800 12800 12800 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
 
 Element["hidename" "A31_screwhole" "H1" "unknown" 12000 206000 -1103 -2000 0 100 ""]
 (
-	Pin[0 0 12500 12500 12500 12500 "term-pcbmount" "2" ""]
+	Pin[0 0 12800 12800 12800 12800 "term-pcbmount" "2" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
@@ -6220,7 +6220,7 @@ Element["hidename" "CONNECTOR-8-1" "CONN8" "unknown" 120000 170000 11000 -5000 3
 	)
 Layer(1 "outline")
 (
-	Line[0 106000 438000 106000 1000 2000 "clearline,selected"]
+	Line[0 106000 438000 106000 1000 2000 "clearline"]
 	Line[0 590000 0 106000 1000 2000 "clearline"]
 	Line[438000 106000 438000 590000 1000 2000 "clearline"]
 	Line[438000 590000 0 590000 1000 2000 "clearline"]
@@ -6365,11 +6365,13 @@ Layer(2 "component")
 	Line[320000 240000 400000 240000 2500 2000 "clearline"]
 	Line[400000 240000 400000 250000 2500 2000 "clearline"]
 	Line[320000 250000 400000 250000 2500 2000 "clearline"]
+	Line[130000 185000 125000 185000 2500 2000 "clearline"]
+	Line[125000 185000 120000 180000 2500 2000 "clearline"]
 	Text[331000 148000 0 251 "OpenSprints" ""]
-	Text[330000 180000 0 152 "LJO 2008.11.27" ""]
-	Text[330000 170000 0 152 "interface board v2" ""]
 	Text[413000 344000 1 100 "5V" ""]
 	Text[391000 345000 1 100 "GND" ""]
+	Text[330000 177500 0 152 "LJO 2008.11.27" ""]
+	Text[330000 167500 0 152 "interface board v2" ""]
 )
 Layer(3 "solder")
 (
@@ -6387,6 +6389,22 @@ Layer(4 "GND")
 	Polygon("clearpoly")
 	(
 		[415000 107000] [437000 107000] [437000 219000] [415000 219000] 
+	)
+	Polygon("clearpoly")
+	(
+		[1000 345000] [415000 345000] [415000 335000] [1000 335000] 
+	)
+	Polygon("clearpoly")
+	(
+		[1000 107000] [25000 107000] [25000 485000] [1000 485000] 
+	)
+	Polygon("clearpoly")
+	(
+		[205000 485000] [225000 485000] [225000 345000] [205000 345000] 
+	)
+	Polygon("clearpoly")
+	(
+		[125000 335000] [325000 335000] [325000 107000] [125000 107000] 
 	)
 )
 Layer(5 "power")
@@ -6414,6 +6432,22 @@ Layer(11 "silk")
 	Text[135000 520000 0 144 "RACER 2" ""]
 	Text[235000 520000 0 144 "RACER 3" ""]
 	Text[335000 520000 0 144 "RACER 4" ""]
+	Text[27500 497500 1 100 "5V" ""]
+	Text[37500 497500 1 100 "GND" ""]
+	Text[47500 497500 1 100 "IP_0" ""]
+	Text[127500 497500 1 100 "5V" ""]
+	Text[137500 497500 1 100 "GND" ""]
+	Text[147500 497500 1 100 "IP_1" ""]
+	Text[227500 497500 1 100 "5V" ""]
+	Text[237500 497500 1 100 "GND" ""]
+	Text[247500 497500 1 100 "IP_2" ""]
+	Text[327500 497500 1 100 "5V" ""]
+	Text[337500 497500 1 100 "GND" ""]
+	Text[347500 497500 1 100 "IP_3" ""]
+	Text[135000 307500 0 100 "IP_0" ""]
+	Text[135000 297500 0 100 "IP_1" ""]
+	Text[135000 287500 0 100 "IP_2" ""]
+	Text[135000 277500 0 100 "IP_3" ""]
 )
 NetList()
 (
