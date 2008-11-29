@@ -1,17 +1,27 @@
 TODO: for v2:
  * schematic:
-   - make grid of through-hole pads. qty = 7 * 14 - 12
+   - 
  * board:
-   - new screwhole footprint
- * source repository: get rid of .cam file not being used.
+   - silk screen labels 
+ * source repository: 
+   - get rid of .cam file not being used.
+   - create Makefile
+     -- make schem-print
+     -- make schem-pdf
+     -- make board-print
+     -- make board-pdf
+     -- make gerb (moves created files to gerber/ dir) 
+     -- make archive
 
 DONE:
  * now has 2 LEDs
    - one 5 mm LED for signaling when the HE sensor is triggered.
    - one 3 mm LED for power indicator.
+   - make grid of through-hole pads. qty = 7 * 14 - 12
  * board:
    - resistors should lie down instead of standing up, per the request of Jonathan Morrison.
    - new board dimensions 1.4" x 2.0"
+   - make grid of through-hole pads. qty = 7 * 14 - 12
  * only 1 screw hole
 
 misc notes:
