@@ -1,7 +1,9 @@
+TODO:
+ * text skinnier
 
 DONE:
 1. pads: hole / copper size
-   * decision: using 36mil holes, 72 mil copper.
+   * decision: using 35mil holes, 70 mil copper.
 
 kicad too small: drill = 0.0320", copper = 0.0550"
 kicad bigger: drill = 0.040", copper = 0.060" (copper is too small)
@@ -29,4 +31,9 @@ traces.
 3.1 grid of pads
 4. do sensor board (eagle?)
 
-
+arduino locations (ref to Analog In 5):
+ * reset button: up (towards USB jack side) 325 mil, over 975 mil.
+ * smt LEDs:
+   - up 1400, over 1300
+   - up 1400, over 1400
+   - up 1400, over 1550
