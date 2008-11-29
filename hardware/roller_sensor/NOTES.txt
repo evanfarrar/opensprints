@@ -1,15 +1,17 @@
-To Do for v2:
+TODO: for v2:
  * schematic:
-   - make 3 optional placements for HE sensor.
+   - make grid of through-hole pads. qty = 7 * 14 - 12
  * board:
    - new screwhole footprint
-   - new board dimensions
-   - place 3 HE sensors.
-   - resistors should lie down instead of standing up, per the request of Jonathan Morrison.
  * source repository: get rid of .cam file not being used.
 
 DONE:
  * now has 2 LEDs
+   - one 5 mm LED for signaling when the HE sensor is triggered.
+   - one 3 mm LED for power indicator.
+ * board:
+   - resistors should lie down instead of standing up, per the request of Jonathan Morrison.
+   - new board dimensions 1.4" x 2.0"
  * only 1 screw hole
 
 misc notes:
