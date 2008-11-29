@@ -1,13 +1,19 @@
-To Do:
- * update the HE sensor package. Make sure it changes on the brd as well. 
-   - on .1" centers or not?
- * .1 uF cap
-   - digi-key P/N 490-3810-ND
-   - on .1" centers
- * 8 thruholes in a row to have access to all the signals on the ethernet jack.
-   - pin 1 demarcated with square pad.
+To Do for v2:
+ * schematic:
+   - make 3 optional placements for HE sensor.
+ * board:
+   - new screwhole footprint
+   - new board dimensions
+   - place 3 HE sensors.
+   - resistors should lie down instead of standing up, per the request of Jonathan Morrison.
+ * source repository: get rid of .cam file not being used.
 
-Ethernet cable wiring:
- * http://en.wikipedia.org/wiki/10BASE-T
- * http://en.wikipedia.org/wiki/8P8C#Applications
+DONE:
+ * now has 2 LEDs
+ * only 1 screw hole
+
+misc notes:
+ * Ethernet cable wiring:
+   - http://en.wikipedia.org/wiki/10BASE-T
+   - http://en.wikipedia.org/wiki/8P8C#Applications
 
