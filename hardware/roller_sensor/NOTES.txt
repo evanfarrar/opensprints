@@ -1,3 +1,6 @@
+NOTES:
+ * board dimensions: 1.4" x 2"
+
 TODO: for v2:
  * schematic:
    - 

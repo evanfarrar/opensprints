@@ -1,4 +1,9 @@
+NOTES:
+ * board dimensions:
+
 TODO:
+ * remove GND plane
+ * through-hole pads under the arduino
  * text skinnier
 
 DONE:
