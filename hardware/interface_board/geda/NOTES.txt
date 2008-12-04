@@ -1,5 +1,5 @@
 NOTES:
- * board dimensions:
+ * board dimensions: 4.38" x 4.84"
 
 TODO:
  * remove GND plane
