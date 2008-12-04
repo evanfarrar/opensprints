@@ -22,6 +22,9 @@
 #
 #
 
+# The following comes from
+# http://logonex.eu/cgi-bin/viewvc/viewvc.cgi/pskel/
+
 #include ../globals
 PCB=pcb
 #FILEBASE=${BASE}
@@ -45,6 +48,10 @@ pdf: ps
 
 output: gerber
 	tar -jcvf ${FILEBASE}_output.tar.bz2 *.gbr *.cnc
+
+output_zip_clean: gerber
+	zip -r ${FILEBASE}_output.zip *.gbr *.cnc
+	rm *.gbr *.cnc
 
 clean:
 	rm -f *.gbr *.bom *.cnc *.ps *.eps *.pdf ${FILEBASE}_output.tar.bz2 ${BOMFILE} ${XYFILE}
