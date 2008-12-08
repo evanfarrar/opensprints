@@ -7,12 +7,10 @@ Desktop="Desktop"
 
 [Globals]
 AutoSaveProject=1
-UsedLibrary="/opt/eagle-5.3.0/lbr/ground-junctions.lbr"
-UsedLibrary="/home/orluke/workspace/opensprints/hardware/roller_sensor/eagle/roller_sensor.lbr"
 
 [Win_1]
 Type="Schematic Editor"
-Loc="0 18 599 317"
+Loc="0 24 599 423"
 State=1
 Number=2
 File="/home/orluke/workspace/opensprints/hardware/roller_sensor/eagle/roller_sensor.sch"
@@ -53,7 +51,7 @@ Sheet=1
 
 [Win_2]
 Type="Board Editor"
-Loc="320 230 919 530"
+Loc="320 307 919 707"
 State=1
 Number=1
 File="/home/orluke/workspace/opensprints/hardware/roller_sensor/eagle/roller_sensor.brd"
@@ -92,12 +90,12 @@ Layer=16
 
 [Win_3]
 Type="Control Panel"
-Loc="320 230 919 530"
+Loc="320 307 919 707"
 State=1
 Number=0
 
 [Desktop]
-Screen="1280 768"
+Screen="1280 1024"
 Window="Win_1"
 Window="Win_2"
 Window="Win_3"
