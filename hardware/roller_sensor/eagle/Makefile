@@ -26,9 +26,9 @@
 # http://logonex.eu/cgi-bin/viewvc/viewvc.cgi/pskel/
 
 #include ../globals
-PCB=pcb
+EAGLE=eagle
 #FILEBASE=${BASE}
-FILEBASE=interface_board
+FILEBASE=roller_sensor
 BOMFILE=${FILEBASE}.bom.txt
 XYFILE=${FILEBASE}.xy.txt
 
@@ -36,6 +36,18 @@ default: gerber bom pdf
 
 gerber:
 	${PCB} -x gerber --gerberfile ${FILEBASE} ${FILEBASE}.pcb
+	#create our gerber files! this comes from http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1191638084
+	echo "Creating Gerber Files..."
+	${EAGLE} -X -N -d GERBER_RS274X -o "$TO_DIR/gerber/ComponentTraces.pho" $BOARD/*.brd Top Pads Vias
+	${EAGLE} -X -N -d GERBER_RS274X -o "$TO_DIR/gerber/CopperTraces.pho" $BOARD/*.brd Bottom Pads Vias
+	${EAGLE} -X -N -d GERBER_RS274X -o "$TO_DIR/gerber/SolderMaskComponent.pho" $BOARD/*.brd tStop
+	${EAGLE} -X -N -d GERBER_RS274X -o "$TO_DIR/gerber/SolderMaskCopper.pho" $BOARD/*.brd bStop
+	${EAGLE} -X -N -d GERBER_RS274X -o "$TO_DIR/gerber/SilkScreen.pho" $BOARD/*.brd Dimension tPlace tDocu
+
+# Drill data for NC drill st.
+# warning : eagle takes path of -R option from input file directory.
+	${EAGLE} -X -N -d EXCELLON -E -0.02 -E 0.1 -R ${BOARD}.drl -o $TO_DIR/gerber/${BOARD}.drd ${BOARD}/*.brd Drills Holes
+	cp $BOARD/*.drl $TO_DIR/gerber 
 
 bom:
 	${PCB} -x bom --bomfile ${BOMFILE} --xyfile ${XYFILE} ${FILEBASE}.pcb
@@ -54,5 +66,5 @@ output_zip_clean: gerber
 	rm *.gbr *.cnc
 
 clean:
-	rm -f *.G?? *.dri *.gpi *.gbr *.bom *.cnc *.ps *.eps *.pdf ${FILEBASE}_gerb.zip ${BOMFILE} ${XYFILE}
+	rm -rf gerber *.l#? *.b#? *.s#? *.pho *.G?? *.dri *.gpi *.gbr *.bom *.cnc *.ps *.eps *.pdf ${FILEBASE}_gerb.zip ${BOMFILE} ${XYFILE}
 
