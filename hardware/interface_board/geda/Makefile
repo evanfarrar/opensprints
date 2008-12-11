@@ -53,6 +53,10 @@ output_zip_clean: gerber
 	zip -r ${FILEBASE}_output.zip *.gbr *.cnc
 	rm *.gbr *.cnc
 
+output_barebones: gerber
+	zip -r ${FILEBASE}_barebones_output.zip interface_board.front.gbr interface_board.back.gbr interface_board.plated-drill.cnc interface_board.unplated-drill.cnc
+	rm *.gbr *.cnc
+
 clean:
 	rm -f *.gbr *.bom *.cnc *.ps *.eps *.pdf ${FILEBASE}_output.tar.bz2 ${BOMFILE} ${XYFILE}
 	rm -f index.html

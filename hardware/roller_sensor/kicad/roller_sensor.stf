@@ -1,5 +1,0 @@
-comp = "D1" module = "LEDV"
-comp = "J1" module = "RJ45_8"
-comp = "J2" module = "RJ45_8"
-comp = "R1" module = "R1"
-comp = "U1" module = "3PIN_6mm"

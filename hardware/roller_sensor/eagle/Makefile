@@ -4,6 +4,7 @@
 EAGLE=eagle
 FILEBASE=roller_sensor
 
+
 all: clean default
 
 default: gerber pdf output
@@ -23,6 +24,7 @@ gerber:
 	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/SolderMaskComponent.pho" *.brd tStop
 	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/SolderMaskCopper.pho" *.brd bStop
 	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/SilkScreen.pho" *.brd Dimension tPlace tDocu
+	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/Dimensions.pho" *.brd Dimension
 
 # Drill data for NC drill st.
 # warning : eagle takes path of -R option from input file directory.
@@ -38,13 +40,13 @@ pdf:
 	${EAGLE} -X -N -d PS -o "CopperSilkscreen.ps" ${FILEBASE}.brd Pad Via Dimension bPlace bNames
 
 #convert to pdf...
-echo "Converting to PDF..."
-for PS in *.ps
-do
-	TO_FILE=`basename $PS .ps`.pdf
-		ps2pdf $PS $TO_DIR/pdf/$TO_FILE
-		done
-		rm $TO_DIR/pdf/*.ps
+#	echo "Converting to PDF..."
+#	for PS in *.ps
+#	do
+#		TO_FILE=`basename $PS .ps`.pdf
+#			ps2pdf $PS $TO_DIR/pdf/$TO_FILE
+#			done
+#			rm $TO_DIR/pdf/*.ps
 
 # this doesn't work:
 pdf:
@@ -54,6 +56,9 @@ pdf:
 output: gerber
 	zip -r ${FILEBASE}_gerber.zip gerber/*
 
+output_barebones: gerber
+	zip -r ${FILEBASE}_barebones_gerber.zip gerber/ComponentTraces.pho gerber/CopperTraces.pho gerber/roller_sensor.drd gerber/Dimensions.pho
+	
 clean:
 	rm -rf gerber *.l#? *.b#? *.s#? *.pho *.G?? *.dri *.gpi *.gbr *.bom *.cnc *.ps *.eps *.pdf ${FILEBASE}_gerber.zip ${BOMFILE} ${XYFILE}
 

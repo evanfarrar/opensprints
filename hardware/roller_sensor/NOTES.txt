@@ -32,3 +32,19 @@ misc notes:
    - http://en.wikipedia.org/wiki/10BASE-T
    - http://en.wikipedia.org/wiki/8P8C#Applications
 
+Barebonespcb.com
+#  2-layer, FR-4, 0.062" thick
+# All-holes-plated
+# 6-mil line/gap minimum
+# Tin finish over 1-oz Copper
+# No internal routing or scoring
+(including mouse bites)
+# Cut to rectangle shape only
+# No mask
+# No legend
+# Min size 1.25" X 1.25"
+# Max size 12" X 16" or 192 sq. in.
+# Gerber 274X preferred
+# Excellon drill (English Units)
+# Minimum hole size 0.015
+
