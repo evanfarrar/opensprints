@@ -12,6 +12,7 @@ class Race
 
   def add_racer(racer)
     racer.ticks = 0
+    racer.finish_time = nil
     @racers << racer
   end
 

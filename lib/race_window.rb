@@ -101,6 +101,8 @@ module RaceWindow
 
         @start = button("Start Race",{:top => 570, :left => 10}) do
           hide_start
+          match.racers.each{|racer| racer.ticks = 0 }
+          match.racers.each{|racer| racer.finish_time = nil }
           r = RacePresenter.new(self, race_distance, @update_area,
                        match, sensor, bikes, (tournament.best_time if tournament))
           
