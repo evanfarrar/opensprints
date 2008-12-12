@@ -67,9 +67,9 @@ class RacePresenter
 end
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
   racers = BIKES.map{|b| Racer.new(:name => b, :units => UNIT_SYSTEM)}
-  match = Race.new(racers, RACE_DISTANCE)
+  match = Race.new(racers, $RACE_DISTANCE)
   bikes = BIKES.map{|b| eval b}
-  race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
+  race_distance, sensor, title = $RACE_DISTANCE, SENSOR, TITLE
   background black
 
   stack do

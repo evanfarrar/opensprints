@@ -27,6 +27,12 @@ class Sensor
     self
   end
 
+  # I don't like this but it's just legacy until 
+  # I truly deprecate the basic_msg
+  def finish_times
+    @t["racers"].map{|r| r[$RACE_DISTANCE / $ROLLER_CIRCUMFERENCE] }
+  end
+
   def racers
     @t["racers"]
   end

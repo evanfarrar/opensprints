@@ -48,9 +48,8 @@ class RacePresenter
       end
 
       #FIXME this is hard to genericize...even by the power of splat
-      
-      @race.racers.length.times do |i|
-        @race.racers[i].finish_time = @sensor.racers[i][ticks_in_race]
+      @race.racers.each_with_index do |e,i|
+        e.finish_time = @sensor.finish_times[i]
       end
 
       if @race.complete?
@@ -81,7 +80,7 @@ end
 module RaceWindow
   def race_window(match, tournament=nil)
     window :title => TITLE, :width => 800, :height => 600 do
-      race_distance, sensor, title = RACE_DISTANCE, SENSOR, TITLE
+      race_distance, sensor, title = $RACE_DISTANCE, SENSOR, TITLE
       background black
       bikes = BIKES.map{|b| eval b}
 

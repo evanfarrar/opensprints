@@ -73,7 +73,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   end
 
   background black
-  @tournament = Tournament.new(RACE_DISTANCE)
+  @tournament = Tournament.new($RACE_DISTANCE)
  
   def list_racers
     flow do

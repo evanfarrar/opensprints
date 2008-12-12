@@ -20,7 +20,7 @@ Shoes.app(:height => 210, :width => 200,
 
     button("Race with Names", :width => 200) do
       racers = BIKES.map{|b| Racer.new(:name => ask(b), :units => UNIT_SYSTEM)}
-      race_window(Race.new(racers, RACE_DISTANCE))
+      race_window(Race.new(racers, $RACE_DISTANCE))
     end
 
     button("Just Race!", :width => 200) do
