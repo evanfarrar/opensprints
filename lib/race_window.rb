@@ -82,6 +82,7 @@ module RaceWindow
     window :title => TITLE, :width => 800, :height => 600 do
       race_distance, sensor, title = $RACE_DISTANCE, SENSOR, TITLE
       background black
+      puts BIKES
       bikes = BIKES.map{|b| eval b}
 
       stack do

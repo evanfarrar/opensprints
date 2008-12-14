@@ -23,15 +23,6 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
     end
   end
 
-  def create_racer
-    image(20, 20, {:top => 8, :left => 115}) do
-      add_button
-      click do
-        add_racer @racer_name.text
-      end
-    end
-  end
-
   def add_to_race(racer)
     image(20, 20, {:top => 8, :left => 325}) do
       add_button
@@ -150,7 +141,9 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
     @racer_list = stack { list_racers }
     flow(:margin => 8) do
       @racer_name = edit_line "enter name", :width => 110
-      create_racer
+      button "+" do
+        add_racer @racer_name.text
+      end
     end
   end
  
