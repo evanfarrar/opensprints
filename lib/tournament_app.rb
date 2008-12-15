@@ -155,6 +155,8 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
       @racer_name = edit_line "enter name", :width => 110
       button "+" do
         add_racer @racer_name.text
+        @racer_name.text = ''
+        @racer_name.focus
       end
     end
   end
