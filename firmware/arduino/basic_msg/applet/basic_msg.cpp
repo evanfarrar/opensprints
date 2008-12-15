@@ -4,17 +4,11 @@ long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
 long previousStatusBlinkMillis = 0;
 
-int lastWinnerLEDValue = LOW;
-long previousWinnerBlinkMillis = 0;
-
 boolean raceStarted = false;
 boolean raceStarting = false;
 boolean mockMode = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
-
-int buttonPin = 12;
-int lastButtonValue = HIGH;
 
 int val = 0;
 
@@ -53,10 +47,12 @@ void setup() {
   pinMode(statusLEDPin, OUTPUT);
   pinMode(sensor0Pin, INPUT);
   pinMode(sensor1Pin, INPUT);
-  pinMode(buttonPin, INPUT);
-  digitalWrite(buttonPin, HIGH);
+  pinMode(sensor2Pin, INPUT);
+  pinMode(sensor3Pin, INPUT);
   digitalWrite(sensor0Pin, HIGH);
   digitalWrite(sensor1Pin, HIGH);
+  digitalWrite(sensor2Pin, HIGH);
+  digitalWrite(sensor3Pin, HIGH);
 }
 
 void blinkLED() {
@@ -113,6 +109,10 @@ void printStatusUpdate() {
     Serial.println(racer0Ticks, DEC);
     Serial.print("2: ");
     Serial.println(racer1Ticks, DEC);
+    Serial.print("3: ");
+    Serial.println(racer2Ticks, DEC);
+    Serial.print("4: ");
+    Serial.println(racer3Ticks, DEC);
     Serial.print("t: ");
     Serial.println(currentTimeMillis, DEC);
   }
@@ -140,8 +140,8 @@ void loop() {
 
     val0 = digitalRead(sensor0Pin);
     val1 = digitalRead(sensor1Pin);
-    val2 = digitalRead(sensor1Pin);
-    val3 = digitalRead(sensor1Pin);
+    val2 = digitalRead(sensor2Pin);
+    val3 = digitalRead(sensor3Pin);
     if(val0 == HIGH && previoussensor0Value == LOW){
       racer0Ticks++;
       if(racer0FinishTimeMillis == 0 && racer0Ticks >= raceLengthTicks) {

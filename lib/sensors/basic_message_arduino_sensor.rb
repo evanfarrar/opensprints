@@ -12,8 +12,8 @@ class Sensor
     @t.kill if @t
     @t = Thread.new do
       @f.putc 'g'
-      Thread.current["racers"] = [[],[]]
-      Thread.current["finish_times"] = [[],[]]
+      Thread.current["racers"] = [[],[],[],[]]
+      Thread.current["finish_times"] = []
       @f.flush
       while true do
         l = @f.readline
@@ -47,7 +47,7 @@ class Sensor
   end
 
   def finish_times
-    @t['finish_times']
+    @t['finish_times'] || []
   end
 
   def values
@@ -56,7 +56,7 @@ class Sensor
   end
 
   def racers
-    @t['racers'] || [[],[]]
+    @t['racers'] || [[],[],[],[]]
   end
 
   def time
