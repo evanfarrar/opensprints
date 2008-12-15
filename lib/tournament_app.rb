@@ -91,6 +91,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
         delete_racer racer
       end
     end
+    save_racers
   end
  
   def post_race
@@ -142,6 +143,11 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
     @matches.clear {list_matches}
     @racer_list.clear {list_racers}
   end
+
+  def save_racers(filename = nil)
+    filename ||= "#{Time.now.strftime('%Y%m%d_%H%M%S')}-racers.yml"
+    File.open(filename, 'w+') { |f| f << @tournament.to_yaml }
+  end
  
   stack(:width => 380, :margin => 5, :curve => 14) do
     background gray(0.15), :curve => 14
@@ -164,7 +170,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   end
  
   button "save" do
-    File.open(ask_save_file, 'w+') { |f| f << @tournament.to_yaml }
+    save_racers(ask_open_file)
   end
  
   button "open" do
