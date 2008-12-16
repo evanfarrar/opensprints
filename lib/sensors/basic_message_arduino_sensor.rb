@@ -19,10 +19,16 @@ class Sensor
         l = @f.readline
         if l=~/:/
           if l =~ /1:/
-            Thread.current["racers"][0] =  [Thread.current["blue_finish"]||1] * l.gsub(/1: /,'').to_i
+            Thread.current["racers"][0] =  [1] * l.gsub(/1: /,'').to_i
           end
           if l =~ /2:/
-            Thread.current["racers"][1] =  [Thread.current["red_finish"]||2] * l.gsub(/2: /,'').to_i
+            Thread.current["racers"][1] =  [2] * l.gsub(/2: /,'').to_i
+          end
+          if l =~ /3:/
+            Thread.current["racers"][2] =  [3] * l.gsub(/3: /,'').to_i
+          end
+          if l =~ /4:/
+            Thread.current["racers"][3] =  [4] * l.gsub(/4: /,'').to_i
           end
           if l =~ /1f:/
             Thread.current["finish_times"][0] = l.gsub(/1f: /,'').to_i

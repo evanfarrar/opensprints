@@ -52,7 +52,6 @@ class RacePresenter
         e.finish_time = @sensor.finish_times[i]
       end
 
-    error @race.racers.size
       if @race.complete?
         @sensor.stop
         results = []
