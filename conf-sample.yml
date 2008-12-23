@@ -15,7 +15,7 @@ sensor:
 race_distance: 200
 
 # the size of each roller, in meters
-roller_circumference: 0.5
+roller_circumference: 1.0
 
 #the title displayed
 title: OpenSprints
