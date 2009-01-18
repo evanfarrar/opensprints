@@ -1,64 +1,59 @@
-# The following comes from
-# http://logonex.eu/cgi-bin/viewvc/viewvc.cgi/pskel/
-
 EAGLE=eagle
-FILEBASE=roller_sensor
-
+PROJECT=roller_sensor
+LAYERS=2
+GERB_DIR=gerber
+DRAWINGS_DIR=drawings
 
 all: clean default
 
-default: gerber pdf output
-
-# TODO: automate the generation of a drill file. the command from within the PCB editor is run drillcfg.
-# should I choose mm or in?
-
-# TODO: be able to handle multiple schematic sheets.
+default: gerber drawings output
 
 gerber:
-	mkdir gerber
-	${PCB} -x gerber --gerberfile ${FILEBASE} ${FILEBASE}.pcb
-	#create our gerber files! this comes from http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1191638084
-	echo "Creating Gerber Files..."
-	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/ComponentTraces.pho" *.brd Top Pads Vias
-	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/CopperTraces.pho" *.brd Bottom Pads Vias
-	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/SolderMaskComponent.pho" *.brd tStop
-	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/SolderMaskCopper.pho" *.brd bStop
-	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/SilkScreen.pho" *.brd Dimension tPlace tDocu
-	${EAGLE} -X -N -d GERBER_RS274X -o "gerber/Dimensions.pho" *.brd Dimension
+	mkdir ${GERB_DIR}
+	# Create the gerber files. This comes from http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1191638084
+	${EAGLE} -X -N -d GERBER_RS274X -o "${GERB_DIR}/TopCopper.pho" *.brd Top Pads Vias
+	${EAGLE} -X -N -d GERBER_RS274X -o "${GERB_DIR}/BottomCopper.pho" *.brd Bottom Pads Vias
+	${EAGLE} -X -N -d GERBER_RS274X -o "${GERB_DIR}/TopSolderMask.pho" *.brd tStop
+	${EAGLE} -X -N -d GERBER_RS274X -o "${GERB_DIR}/BottomSolderMask.pho" *.brd bStop
+	${EAGLE} -X -N -d GERBER_RS274X -o "${GERB_DIR}/TopSilkScreen.pho" *.brd Dimension tPlace tDocu
+	${EAGLE} -X -N -d GERBER_RS274X -o "${GERB_DIR}/BottomSilkScreen.pho" *.brd Dimension bPlace bDocu
+	${EAGLE} -X -N -d GERBER_RS274X -o "${GERB_DIR}/Dimensions.pho" *.brd Dimension
+	# TODO: Loop through the following lines to produce the gerber files for the inner layers:
+	# @@@
+# Drill data for NC drill file.
+# TODO: automate the generation of a drill file. 
+# Before using this script, The following command must be run from within the 
+# PCB editor. Save the output as ${PROJECT}.drl
+#		run drillcfg
+	${EAGLE} -X -N -d EXCELLON -E -0.02 -E 0.1 -R ${PROJECT}.drl -o ${GERB_DIR}/${PROJECT}.drd *.brd Drills Holes
+	# Clean out info files:
+	rm ${GERB_DIR}/*.dri ${GERB_DIR}/*.gpi
 
-# Drill data for NC drill st.
-# warning : eagle takes path of -R option from input file directory.
-	${EAGLE} -X -N -d EXCELLON -E -0.02 -E 0.1 -R ${FILEBASE}.drl -o gerber/${FILEBASE}.drd *.brd Drills Holes
 
-# finish this:
-pdf:
-	echo "Creating PS Files..."
-	${EAGLE} -X -N -d PS -o "Schematic.ps" ${FILEBASE}.sch Nets Busses Symbols Names Values
-	${EAGLE} -X -N -d PS -o "ComponentTraces.ps" ${FILEBASE}.brd Top Pad Via Dimension
-	${EAGLE} -X -N -d PS -o "ComponentSilkscreen.ps" ${FILEBASE}.brd Pad Via Dimension tPlace tNames tValues
-	${EAGLE} -X -N -d PS -o "CopperTraces.ps" ${FILEBASE}.brd Bottom Pad Via Dimension 
-	${EAGLE} -X -N -d PS -o "CopperSilkscreen.ps" ${FILEBASE}.brd Pad Via Dimension bPlace bNames
+drawings_ps:
+	mkdir ${DRAWINGS_DIR}
+	${EAGLE} -X -N -d PS -o "${DRAWINGS_DIR}/${PROJECT}_schem.ps" ${PROJECT}.sch Nets Busses Symbols Names Values
+	${EAGLE} -X -N -d PS -o "${DRAWINGS_DIR}/${PROJECT}_pcb_top.ps" ${PROJECT}.brd Top Pad Via Dimension tPlace tNames tValues
+	${EAGLE} -X -N -d PS -o "${DRAWINGS_DIR}/${PROJECT}_pcb_bottom.ps" ${PROJECT}.brd Bottom Pad Via Dimension bPlace bNames bValues
+	# TODO: Loop through the following lines to produce the pdf files for the inner layers:
+	# @@@
 
-#convert to pdf...
-#	echo "Converting to PDF..."
-#	for PS in *.ps
-#	do
-#		TO_FILE=`basename $PS .ps`.pdf
-#			ps2pdf $PS $TO_DIR/pdf/$TO_FILE
-#			done
-#			rm $TO_DIR/pdf/*.ps
+drawings: drawings_ps
+	# TODO: convert each *.ps in in the drawings dir to pdf then delete the .ps files.
 
-# this doesn't work:
-pdf:
-	${EAGLE} -C"print file ${FILEBASE}_brd.pdf;quit;" ${FILEBASE}.brd
-	${EAGLE} -C"print rotate file ${FILEBASE}_sch.pdf;quit;" ${FILEBASE}.sch
-	
 output: gerber
-	zip -r ${FILEBASE}_gerber.zip gerber/*
+	zip -r ${PROJECT}_gerber_complete.zip ${GERB_DIR}/*
 
 output_barebones: gerber
-	zip -r ${FILEBASE}_barebones_gerber.zip gerber/ComponentTraces.pho gerber/CopperTraces.pho gerber/roller_sensor.drd gerber/Dimensions.pho
+	zip -r ${PROJECT}_gerber_barebones.zip \
+	${GERB_DIR}/TopCopper.pho \
+	${GERB_DIR}/BottomCopper.pho \
+	${GERB_DIR}/Dimensions.pho \
+	${GERB_DIR}/${PROJECT}.drd
 	
 clean:
-	rm -rf gerber *.l#? *.b#? *.s#? *.pho *.G?? *.dri *.gpi *.gbr *.bom *.cnc *.ps *.eps *.pdf ${FILEBASE}_gerber.zip ${BOMFILE} ${XYFILE}
+	rm -rf *.l#? *.b#? *.s#? \
+		${GERB_DIR} ${DRAWINGS_DIR} \
+		${PROJECT}_gerber_complete.zip \
+		${PROJECT}_gerber_barebones.zip \
 
