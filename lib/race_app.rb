@@ -115,5 +115,17 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
       @race_animation.stop if @race_animation
       close
     end
+
+    button("Call it", {:top => 570, :left => 205}) do
+      sensor.stop
+      results = []
+      bikes.length.times do |i|
+        results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
+      end
+      alert results.join(', ')
+      @continue = false
+    end
+
+
   end
 end
