@@ -20,16 +20,23 @@ class RacePresenter
     end
 
     @update_area.clear do
+      fudge_right = (@shoes_instance.width-@bar_size)/2
+      fudge_down = 220
+
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
 
-      @shoes_instance.line 2,0,2,100
-      @shoes_instance.line 684,0,684,100
+      @shoes_instance.line fudge_right+2,fudge_down,fudge_right+2,fudge_down+20+@race.racers.length*40
+      @shoes_instance.line fudge_right+684,fudge_down,fudge_right+684,fudge_down+20+@race.racers.length*40
 
-      @bikes.size.times do |i|
-        @shoes_instance.colored_progress_bar(@bar_size*percent_complete(@race.racers[i]), 20+i*40, @bikes[i])
+
+      @race.racers.size.times do |i|
+        @shoes_instance.stroke @bikes[i]
+        @shoes_instance.fill @bikes[i]
+        @shoes_instance.rect fudge_right+6, fudge_down+20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
       end
 
+=begin
       #FIXME this is hard to genericize...even by the power of splat
       @shoes_instance.subtitle(
         (@shoes_instance.span(@race.racers[0].name+' ',{:stroke => @bikes[0]}) if @race.racers[0]), 
@@ -38,6 +45,7 @@ class RacePresenter
         (@shoes_instance.span(@race.racers[3].name,{:stroke => @bikes[3]}) if @race.racers[3]), 
         {:top => 300, :align => 'center'})
       
+=end
       @bikes.length.times do |i|
         @race.racers[i].finish_time = @sensor.racers[i][ticks_in_race]
       end
