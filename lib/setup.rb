@@ -1,4 +1,5 @@
 require 'yaml'
+require 'socket'
 require 'lib/race_data'
 
 begin
