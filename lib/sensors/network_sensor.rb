@@ -16,13 +16,8 @@ class Sensor
       while true do
         l = c = ''
         until c == "\000"
-          begin
-            c = @f.read_nonblock(1)
-            print c
-            l << c
-          rescue
-            puts "waiting..."
-          end
+          c = @f.read(1)
+          l << c
         end
         l.gsub!(/\000/,'')
         if l=~/:/
