@@ -12,6 +12,18 @@
 #define RACE_PACKET_SIZE 55  // buffer allocation for the race packet
 #define RACE_PACKET_UTIL_SIZE 54 // buffer utilization for the race packet (keep this as low as possible to reduce overrun risk)
 
+void handleInputChange();
+void SetupPinChangeInterrupts();
+void blinkLED();
+void checkSerial();
+void checkButton();
+void clearTXRacePacket();
+void clearRacePacket();
+void initRacePacket();
+void SetupTimer2For2Milli();
+void SetupPinChangeLogic();
+void setup();
+void loop(void);
 int statusLEDPin = 13;
 long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
@@ -44,6 +56,12 @@ boolean raceStarting = false;
 boolean mockMode = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
+
+
+long time = 0;
+char strTime[10];
+
+
 ////////////////////////////////////////////////////////
 
 
@@ -113,10 +131,26 @@ void checkSerial(){
   if(Serial.available()) {
     val = Serial.read();
     if(val == 'g') {
-      Serial.println("gACK\n");
+
+      //cancel any outgoing packet if we happen to magically catch that flag
+      sendRacePacketNow = false;
+
+      //reset time to zero
       cli();
       raceStartMillis = millis();
       sei();
+
+      //clear packets now
+      clearRacePacket();
+      clearTXRacePacket();
+
+      //and add the time to the packet
+      initRacePacket();
+
+      // the following two lines insert a flag character, *, into the packet to indicate the race start
+      //char n = '*';
+      //strcat(p_RacePacket, &n);     // add it to the buffer
+
       racer1Ticks = 0;
       racer2Ticks = 0;
     }
@@ -159,6 +193,15 @@ void clearRacePacket(){
     strRacePacket[i] = 0;
   }
 }
+
+void initRacePacket(){
+     cli();
+     time = millis() - raceStartMillis; // NOTE SPRINTF %u and %i escapes FUCK UP THE TIME -- 16 bit instead of 32 bit
+     sei();
+     ltoa(time, strTime, 10);
+     sprintf(p_RacePacket, "!%s@", strTime);  // then put the time in milliseconds into first position plus the flag character @
+}
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // MORGAN's new version using CTC -- magic numbers from the datasheet, sorry.
@@ -220,12 +263,6 @@ void setup() {
 
 // STATUS:  data is now sent raw low nibble but is suffixed with '#'
 
-
-
-long time = 0;
-char strTime[10];
-
-
 void loop(void) {
   blinkLED();
   //digitalWrite(TOGGLE_IO,!digitalRead(TOGGLE_IO));
@@ -239,11 +276,7 @@ void loop(void) {
      clearTXRacePacket();
      strcpy(p_TXRacePacket, p_RacePacket);  // copy it to the TX buffer
      clearRacePacket(); // and zero the packet
-     cli();
-     time = millis() - raceStartMillis; // NOTE SPRINTF %u and %i escapes FUCK UP THE TIME -- 16 bit instead of 32 bit
-     sei();
-     ltoa(time, strTime, 10);
-     sprintf(p_RacePacket, "!%s@", strTime);  // then put the time in milliseconds into first position plus the flag character @
+     initRacePacket(); // and put the new time in the packet
 //     Serial.println("this is a longer string which has more letters");  // now send the buffered copy
      Serial.println(p_TXRacePacket);  // now send the buffered copy
       //Serial.println(strTime);
@@ -266,10 +299,10 @@ ISR(TIMER2_COMPA_vect) {
     // NOTE on interrupt disable -- if the GPIO interrupt sets a flag between saving the tickNow
     // states in "m", it could be incorrectly cleared by the following section.
     // disable interrupts for this brief period to make sure this does not happen
-    // note that we do NOT disable interrupts while performing the potentially 
+    // note that we do NOT disable interrupts while performing the potentially
     // time-consuming sprintf, strcat, and strlen calls
     // The GPIO interrupts should still generally take precedence.
-    sei();  
+    sei();
     m |= racer1TickNow;
     m |= racer2TickNow << 1;
     m |= racer3TickNow << 2;
@@ -283,7 +316,7 @@ ISR(TIMER2_COMPA_vect) {
 
 
     cli();
-    
+
     char n = 0;
     sprintf(&n,"%c", m);        // print the nibble into HEX 0123456789ABCDEF
     strcat(p_RacePacket, &n);     // add it to the buffer -- just send it raw instead?...
@@ -314,7 +347,7 @@ ISR(PCINT2_vect) {
   // We need to disable interrupts here to ensure that subsequent ticks are processed after this round
   // Cannot allow a change in state to screw up the process of checking versus previous states.
     cli();
-    
+
     // Read each of the pins
     // This should really be done in a faster way by reading the port once to minimize ISR execution time
     // but for whatever reason, the last attempt at doing that didn't work.
@@ -343,12 +376,13 @@ ISR(PCINT2_vect) {
     lastSensor2Value = val2;
     lastSensor3Value = val3;
     lastButtonValue = buttonPinVal;
-    
+
     inputChange = true;
-    
+
     // Reenable interrupts
     sei();
 }
+
 int main(void)
 {
 	init();
