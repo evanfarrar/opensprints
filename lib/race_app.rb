@@ -78,7 +78,11 @@ Shoes.app :title => TITLE, :width => 800, :height => 600 do
   match = Race.new(racers, $RACE_DISTANCE)
   bikes = BIKES.map{|b| eval b}
   race_distance, sensor, title = $RACE_DISTANCE, SENSOR, TITLE
-  background black
+  if File.readable?('background.jpg')
+    background 'background.jpg'
+  else
+    background black
+  end
 
   stack do
     subtitle title, :top => 150, :align => "center", :background => magenta,

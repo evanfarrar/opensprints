@@ -81,7 +81,12 @@ module RaceWindow
   def race_window(match, tournament=nil)
     window :title => TITLE, :width => 800, :height => 600 do
       race_distance, sensor, title = $RACE_DISTANCE, SENSOR, TITLE
-      background black
+      if File.readable?('background.jpg')
+        background 'background.jpg'
+      else
+        background black
+      end
+
       puts BIKES
       bikes = BIKES.map{|b| eval b}
 
