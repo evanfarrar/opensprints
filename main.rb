@@ -10,10 +10,6 @@ Shoes.app(:height => 210, :width => 200,
       load 'lib/config_app.rb'
     end
 
-    button("Stats", :width => 200) do
-      load 'lib/stats_app.rb'
-    end
-
     button("Race a Tournament", :width => 200) do
       load 'lib/tournament_app.rb'
     end
