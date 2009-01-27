@@ -47,7 +47,6 @@ class RacePresenter
         @shoes_instance.rect fudge_right+6, fudge_down+20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
       end
 
-      #FIXME this is hard to genericize...even by the power of splat
       @race.racers.each_with_index do |e,i|
         e.finish_time = @sensor.finish_times[i]
       end
