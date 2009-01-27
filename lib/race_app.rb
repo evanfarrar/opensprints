@@ -36,24 +36,15 @@ class RacePresenter
         @shoes_instance.rect fudge_right+6, fudge_down+20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
       end
 
-=begin
-      #FIXME this is hard to genericize...even by the power of splat
-      @shoes_instance.subtitle(
-        (@shoes_instance.span(@race.racers[0].name+' ',{:stroke => @bikes[0]}) if @race.racers[0]), 
-        (@shoes_instance.span(@race.racers[1].name+' ',{:stroke => @bikes[1]}) if @race.racers[1]), 
-        (@shoes_instance.span(@race.racers[2].name+' ',{:stroke => @bikes[2]}) if @race.racers[2]), 
-        (@shoes_instance.span(@race.racers[3].name,{:stroke => @bikes[3]}) if @race.racers[3]), 
-        {:top => 300, :align => 'center'})
-      
-=end
-      @bikes.length.times do |i|
-        @race.racers[i].finish_time = @sensor.racers[i][ticks_in_race]
+      @race.racers.each_with_index do |e,i|
+        e.finish_time = @sensor.finish_times[i]
       end
+
 
       if @race.complete?
         @sensor.stop
         results = []
-        @bikes.length.times do |i|
+        @race.racers.length.times do |i|
           results << "#{@race.racers[i].name}: #{@race.racers[i].finish_time/1000.0}s"
         end
         @shoes_instance.alert results.join(', ')
