@@ -56,11 +56,6 @@ class Sensor
     @t['finish_times'] || []
   end
 
-  def values
-    {:red => @t["red"], :blue => @t["blue"],
-     :red_finish => @t["red_finish"], :blue_finish => @t["blue_finish"]}
-  end
-
   def racers
     @t['racers'] || [[],[],[],[]]
   end
