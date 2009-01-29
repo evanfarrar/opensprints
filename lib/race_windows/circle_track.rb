@@ -68,8 +68,11 @@ module RaceWindow
 
       @start = button("Start Race") do
         @start.hide
-        @race.racers.each{|racer| racer.ticks = 0 }
-        @race.racers.each{|racer| racer.finish_time = nil }
+        @race.racers.each do |racer| 
+          racer.ticks = 0 
+          racer.finish_time = nil
+        end
+
         @sensor.start
 
         @race_animation = animate(14) do
