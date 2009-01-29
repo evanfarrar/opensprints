@@ -61,8 +61,7 @@ output_barebones: plate_all_holes gerber
 	zip -r ${FILEBASE}_barebones_output.zip \
 			${GERB_DIR}/${FILEBASE}.front.gbr \
 			${GERB_DIR}/${FILEBASE}.back.gbr \
-			${GERB_DIR}/${FILEBASE}.plated-drill.cnc  \
-			${GERB_DIR}/${FILEBASE}.unplated-drill.cnc
+			${GERB_DIR}/${FILEBASE}.plated-drill.cnc
 
 clean:
 	rm -rf *.gbr *.bom *.cnc *.ps *.eps *.pdf ${GERB_DIR} ${FILEBASE}_output.tar.bz2 ${FILEBASE}.pcb- ${FILEBASE}_output.zip ${FILEBASE}_barebones_output.zip ${BOMFILE} ${XYFILE}
