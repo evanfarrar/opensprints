@@ -1,6 +1,6 @@
 Infinity = 1/0.0
 class Racer
-  attr_accessor :distance, :best_time, :wins, :races, :finish_time
+  attr_accessor :distance, :best_time, :wins, :races, :finish_time, :speed, :text
   attr :roller_circumference
   attr :name
   attr :yaml_name

@@ -80,6 +80,9 @@ module RaceWindow
           if @race.complete?
             @race_animation.stop
             @sensor.stop
+            if owner.respond_to?(:tournament_record)
+              owner.tournament_record(@race)
+            end
           end
         end
       end
