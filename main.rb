@@ -1,5 +1,4 @@
 require 'lib/setup.rb'
-require 'lib/race_window.rb'
 
 Shoes.app(:height => 210, :width => 200,
           :resizable => false, :title => "OpenSprints") do
