@@ -83,7 +83,7 @@ module RaceWindow
       end
 
       puts BIKES
-      bikes = BIKES.map{|b| eval b}
+      bikes = BIKES.map{|b| eval b.downcase }
 
       stack do
         subtitle window_title, :top => 60, :align => "center", :background => magenta,

@@ -67,7 +67,7 @@ end
 Shoes.app :title => TITLE, :width => 800, :height => 600 do
   racers = BIKES.map{|b| Racer.new(:name => b, :units => UNIT_SYSTEM)}
   match = Race.new(racers, $RACE_DISTANCE)
-  bikes = BIKES.map{|b| eval b}
+  bikes = BIKES.map{|b| eval b.downcase }
   race_distance, sensor, title = $RACE_DISTANCE, SENSOR, TITLE
   if File.readable?('background.jpg')
     background 'background.jpg'
