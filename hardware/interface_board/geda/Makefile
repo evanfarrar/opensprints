@@ -29,36 +29,42 @@
 PCB=pcb
 #FILEBASE=${BASE}
 FILEBASE=interface_board
+GERB_DIR=gerber
 BOMFILE=${FILEBASE}.bom.txt
 XYFILE=${FILEBASE}.xy.txt
 
 default: gerber bom pdf
 
 gerber:
-	${PCB} -x gerber --gerberfile ${FILEBASE} ${FILEBASE}.pcb
+	mkdir ${GERB_DIR}
+	${PCB} -x gerber --gerberfile ${GERB_DIR}/${FILEBASE} ${FILEBASE}.pcb
 
 bom:
 	${PCB} -x bom --bomfile ${BOMFILE} --xyfile ${XYFILE} ${FILEBASE}.pcb
 
 ps:
-	${PCB} -x ps --psfile ${FILEBASE}.ps ${FILEBASE}.pcb
+	${PCB} -x ps --psfile ${FILEBASE}.pcb.ps ${FILEBASE}.pcb
 
 pdf: ps
 	${PS2PDF} ${FILEBASE}.ps
 
-output: gerber
-	tar -jcvf ${FILEBASE}_output.tar.bz2 *.gbr *.cnc
+output_tar: gerber
+	tar -jcvf ${FILEBASE}_output.tar.bz2 ${GERB_DIR}/*.gbr ${GERB_DIR}/*.cnc
 
-output_zip_clean: gerber
-	zip -r ${FILEBASE}_output.zip *.gbr *.cnc
-	rm *.gbr *.cnc
+output_zip: gerber
+	zip -r ${FILEBASE}_output.zip ${GERB_DIR}/*.gbr ${GERB_DIR}/*.cnc
 
-output_barebones: gerber
-	zip -r ${FILEBASE}_barebones_output.zip interface_board.front.gbr interface_board.back.gbr interface_board.plated-drill.cnc interface_board.unplated-drill.cnc
-	rm *.gbr *.cnc
+plate_all_holes:
+	perl -p -i -e 's/\"hole\"/\"\"/' ${FILEBASE}.pcb
+
+output_barebones: plate_all_holes gerber
+	zip -r ${FILEBASE}_barebones_output.zip \
+			${GERB_DIR}/${FILEBASE}.front.gbr \
+			${GERB_DIR}/${FILEBASE}.back.gbr \
+			${GERB_DIR}/${FILEBASE}.plated-drill.cnc
 
 clean:
-	rm -f *.gbr *.bom *.cnc *.ps *.eps *.pdf ${FILEBASE}_output.tar.bz2 ${BOMFILE} ${XYFILE}
+	rm -rf *.gbr *.bom *.cnc *.pcb.ps *.eps *.pdf ${GERB_DIR} ${FILEBASE}_output.tar.bz2 ${FILEBASE}.pcb- ${FILEBASE}_output.zip ${FILEBASE}_barebones_output.zip ${BOMFILE} ${XYFILE}
 	rm -f index.html
 
 html: gerber ps pdf 

@@ -5,8 +5,8 @@ type: :feature
 component: opensprints
 release: 
 reporter: Evan Farrar <evanfarrar@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-07-12 17:17:29.116386 Z
 references: []
 
@@ -15,4 +15,8 @@ log_events:
 - - 2008-07-12 17:17:30.701017 Z
   - Evan Farrar <evanfarrar@gmail.com>
   - created
+  - ""
+- - 2009-01-31 22:42:59.394296 Z
+  - evan <evanfarrar@gmail.com>
+  - closed with disposition fixed
   - ""
