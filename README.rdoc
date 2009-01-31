@@ -16,7 +16,7 @@ Roller racing has a long history going back to the beginning of cycling, however
 
 Opensprints is not just a piece of software but a whole system consisting of software, electronics, A/V and stock bicycle components. Users are encouraged to read the guides[http://wiki.opensprints.org] in our wiki to learn about how to put together the entire system. But one step is to get the software working:
 
-1. Get shoes[http://code.whytheluckystiff.com/shoes] for your platform.
+1. Get shoes[http://shoooes.net/] for your platform.
 1. Get our latest code[http://github.com/evanfarrar/opensprints/tarball/master].
 1. write your configuration file, using config-sample.yml as a guide. You may use "mock" as your sensor type to run opensprints in demo mode (i.e. without a bike attached).
 1. open "main.rb" with shoes.
@@ -24,5 +24,5 @@ Opensprints is not just a piece of software but a whole system consisting of sof
 == Going Further
 
 * read our wiki[http://wiki.opensprints.org].
-* follow our blog[http://opensprints.org/blog] for news about kits and events in your area.
+* follow our blog[http://opensprints.org/news] for news about kits and events in your area.
 * sign up for our forum[http://opensprints.org/forum] to share tips on running events.
