@@ -20,6 +20,7 @@ require 'lib/race'
 require 'lib/interface_widgets'
 require 'lib/tournament'
 require "lib/sensors/#{options['sensor']['type']}_sensor"
+require "lib/race_windows/#{options['track']}"
 
 SENSOR = Sensor.new(options['sensor']['device'])
 

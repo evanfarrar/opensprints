@@ -16,48 +16,43 @@ class RacePresenter
   def continue?; @continue end
 
   def refresh
-    @race.racers.size.times do |i|
-      @race.racers[i].ticks = @sensor.racers[i].size
+    @race.racers.each_with_index do |racer, i|
+      racer.ticks = @sensor.racers[i].size
+      racer.text.replace(racer.name, ': ', racer.ticks)
     end
 
     @update_area.clear do
       fudge_right = (@shoes_instance.width-@bar_size)/2
-      fudge_down = 220
     
       #ghost lap
-      
       if @best_time
         @shoes_instance.stroke gray 0.3
         @shoes_instance.fill gray 0.3
         
-        @shoes_instance.rect fudge_right+6, fudge_down+5, @bar_size*([1.0,(@sensor.time / 1000.0) / @best_time].min), 5+@race.racers.length*40
+        @shoes_instance.rect fudge_right+6, 5, @bar_size*([1.0,(@sensor.time / 1000.0) / @best_time].min), 5+@race.racers.length*40
       end
       
 
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
 
-      @shoes_instance.line fudge_right+2,fudge_down,fudge_right+2,fudge_down+20+@race.racers.length*40
-      @shoes_instance.line fudge_right+684,fudge_down,fudge_right+684,fudge_down+20+@race.racers.length*40
+      @shoes_instance.line fudge_right+2, 0,fudge_right+2,20+@race.racers.length*40
+      @shoes_instance.line fudge_right+684, 0,fudge_right+684,20+@race.racers.length*40
 
 
       @race.racers.size.times do |i|
         @shoes_instance.stroke @bikes[i]
         @shoes_instance.fill @bikes[i]
-        @shoes_instance.rect fudge_right+6, fudge_down+20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
+        @shoes_instance.rect fudge_right+6, 20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
       end
 
-      @race.racers.each_with_index do |e,i|
-        e.finish_time = @sensor.finish_times[i]
+      @race.racers.each_with_index do |racer,i|
+        racer.finish_time = @sensor.finish_times[i]
+        racer.text.replace("#{racer.name}: #{racer.finish_time/1000.0}s")
       end
 
       if @race.complete?
         @sensor.stop
-        results = []
-        @race.racers.length.times do |i|
-          results << "#{@race.racers[i].name}: #{@race.racers[i].finish_time/1000.0}s"
-        end
-        @shoes_instance.alert results.join(', ')
         @continue = false
         if @shoes_instance.owner.respond_to?(:tournament_record)
           @shoes_instance.owner.tournament_record(@race)
@@ -79,7 +74,7 @@ end
 module RaceWindow
   def race_window(match, tournament=nil)
     window :title => TITLE, :width => 800, :height => 600 do
-      race_distance, sensor, title = $RACE_DISTANCE, SENSOR, TITLE
+      race_distance, sensor, window_title = $RACE_DISTANCE, SENSOR, TITLE
       if File.readable?('background.jpg')
         background 'background.jpg'
       else
@@ -90,22 +85,25 @@ module RaceWindow
       bikes = BIKES.map{|b| eval b.downcase }
 
       stack do
-        subtitle title, :top => 60, :align => "center", :background => magenta,
+        subtitle window_title, :top => 60, :align => "center", :background => magenta,
           :stroke => white
-      subtitle(
-        (span(match.racers[0].name+' ',{:stroke => bikes[0]}) if match.racers[0]), 
-        (span(match.racers[1].name+' ',{:stroke => bikes[1]}) if match.racers[1]), 
-        (span(match.racers[2].name+' ',{:stroke => bikes[2]}) if match.racers[2]), 
-        (span(match.racers[3].name,{:stroke => bikes[3]}) if match.racers[3]), 
-        {:top => 110, :align => 'center'})
-        @update_area = stack {}
 
-        def hide_start
-          @start.hide
+        @update_area = stack(:top => 200, :attach => Window)
+
+        flow(:attach => Window, :top => 40*match.racers.size+240, :margin => [80,0,0,0]) do
+          match.racers.each_with_index do |racer, index|
+            stack(:width => 300, :margin => [20, 10, 20, 0], :curve => 10) do
+              background white, :curve => 12
+              lighter = rgb(bikes[index].red,bikes[index].green,bikes[index].blue, 0.7)
+              background lighter, :curve => 12
+              border bikes[index], :curve => 8, :strokewidth => 4
+              racer.text = caption(racer.name, ': ', racer.speed)
+            end
+          end
         end
 
         @start = button("Start Race",{:top => 570, :left => 10}) do
-          hide_start
+          @start.hide
           match.racers.each{|racer| racer.ticks = 0 }
           match.racers.each{|racer| racer.finish_time = nil }
           r = RacePresenter.new(self, race_distance, @update_area,
@@ -114,9 +112,7 @@ module RaceWindow
           sensor.start
           @countdown = 4
           @start_time = Time.now+@countdown
-          @update_area.clear {
-            @count_box = stack(:top => 200){   }
-          }
+          @update_area.clear { @count_box = stack }
           
           @race_animation = animate(14) do
             @now = Time.now
@@ -147,7 +143,6 @@ module RaceWindow
           bikes.length.times do |i|
             results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
           end
-          alert results.join(', ')
           @continue = false
           if owner.respond_to?(:tournament_record)
             owner.tournament_record(match)

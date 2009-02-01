@@ -11,6 +11,12 @@ sensor:
 #   Windows: com6
   device: /dev/ttyUSB0
 
+# == Choose a Track
+# What display would you like?
+#   progress_bars - the classic race window
+#   circle_track - the *actual* classic race window (experimental)
+track: progress_bars
+
 # how long the race should be, in meters
 race_distance: 200
 
