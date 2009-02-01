@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: If a conf.yml is not present, "cp" is used. Not WIN32 compatible.
+desc: ""
+type: :bugfix
+component: opensprints
+release: 
+reporter: evan <evanfarrar@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-02-01 01:41:02.407049 Z
+references: []
+
+id: 94e876f498fe2540d97e3b025cd4b6cb3f015509
+log_events: 
+- - 2009-02-01 01:41:03.992701 Z
+  - evan <evanfarrar@gmail.com>
+  - created
+  - ""
