@@ -19,7 +19,9 @@ Shoes.app(:height => 210, :width => 200,
     end
 
     button("Just Race!", :width => 200) do
-      load 'lib/race_app.rb'
+      load 'lib/race_windows/progress_bars.rb'
+      racers = BIKES.map{|b| Racer.new(:name => b, :units => UNIT_SYSTEM)}
+      race_window(Race.new(racers, $RACE_DISTANCE))
     end
     
   end
