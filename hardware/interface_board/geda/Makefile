@@ -64,7 +64,7 @@ output_barebones: plate_all_holes gerber
 			${GERB_DIR}/${FILEBASE}.plated-drill.cnc
 
 clean:
-	rm -rf *.gbr *.bom *.cnc *.pcb.ps *.eps *.pdf ${GERB_DIR} ${FILEBASE}_output.tar.bz2 ${FILEBASE}.pcb- ${FILEBASE}_output.zip ${FILEBASE}_barebones_output.zip ${BOMFILE} ${XYFILE}
+	rm -rf *~ symbols/*~ *.sch\# *.gbr *.bom *.cnc *.pcb.ps *.eps *.pdf ${GERB_DIR} ${FILEBASE}_output.tar.bz2 ${FILEBASE}.pcb- ${FILEBASE}_output.zip ${FILEBASE}_barebones_output.zip ${BOMFILE} ${XYFILE}
 	rm -f index.html
 
 html: gerber ps pdf 
