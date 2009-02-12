@@ -142,7 +142,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   end
 
   def save_racers(filename = nil)
-    filename ||= "#{Time.now.strftime('%Y%m%d_%H%M%S')}-racers.yml"
+    filename ||= "log/#{Time.now.strftime('%Y%m%d_%H%M%S')}-racers.yml"
     File.open(filename, 'w+') { |f| f << @tournament.to_yaml }
   end
  

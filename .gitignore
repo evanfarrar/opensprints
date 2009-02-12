@@ -1,3 +1,4 @@
 conf.yml
 .ditz-config
 *.swp
+log/*.yml
