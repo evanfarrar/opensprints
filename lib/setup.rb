@@ -40,6 +40,27 @@ module Enumerable
   end
 end
 
+module Subclasses
+  # return a list of the subclasses of a class
+  def subclasses(direct = false)
+    classes = []
+    if direct
+      ObjectSpace.each_object(Class) do |c|
+        next unless c.superclass == self
+        classes << c
+      end
+    else
+      ObjectSpace.each_object(Class) do |c|
+        next unless c.ancestors.include?(self) and (c != self)
+        classes << c
+      end
+    end
+    classes
+  end
+end
+  
+Object.send(:include, Subclasses)
+
 class Shoes::ColoredProgressBar < Shoes::Widget
   def initialize(percent,top,color)
     stroke color
