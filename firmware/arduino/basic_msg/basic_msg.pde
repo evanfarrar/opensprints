@@ -20,7 +20,7 @@ unsigned long racerFinishTimeMillis[4];
 unsigned long lastCountDownMillis;
 int lastCountDown;
 
-int raceLengthTicks = 1400;
+int raceLengthTicks = 16;
 int previousFakeTickMillis = 0;
 
 int updateInterval = 250;
@@ -121,7 +121,7 @@ void loop() {
       values[i] = digitalRead(sensorPins[i]);
       if(values[i] == HIGH && previoussensorValues[i] == LOW){
         racerTicks[i]++;
-        if(racerFinishTimeMillis[i] == 0 && racerTicks[0] >= raceLengthTicks) {
+        if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
           racerFinishTimeMillis[i] = currentTimeMillis;          
           Serial.print(i);
           Serial.print("f: ");
