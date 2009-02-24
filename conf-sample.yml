@@ -4,7 +4,7 @@
 # advanced_message_arduino - for debugging without hall effect boards
 # mock - for debugging without a sensor
 sensor:
-  type: advanced_message_arduino
+  type: basic_message_arduino
 # Device is where the UBW is located in your system, usually:
 #   Mac OS X: /dev/tty.usbmodem0000103D1
 #   Linux: /dev/ttyUSB0
