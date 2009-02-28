@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: MPH added to game interface
+desc: ""
+type: :feature
+component: opensprints
+release: 
+reporter: evan <evanfarrar@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-02-27 00:25:51.551511 Z
+references: []
+
+id: ecc537fbf41921429ea644b2710cca0265f5ee31
+log_events: 
+- - 2009-02-27 00:25:55.711630 Z
+  - evan <evanfarrar@gmail.com>
+  - created
+  - ""

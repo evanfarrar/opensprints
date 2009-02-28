@@ -16,22 +16,23 @@ class RacePresenter
   def continue?; @continue end
 
   def refresh
+    current_time = @sensor.time
     @race.racers.each_with_index do |racer, i|
-      racer.ticks = @sensor.racers[i].size
-      racer.text.replace(racer.name, ': ', racer.ticks)
+      racer.ticks = @sensor.racers[i].size unless racer.finish_time
+      racer.text.replace(racer.name, ': ', racer.speed(current_time), "mph")
     end
 
     @update_area.clear do
       fudge_right = (@shoes_instance.width-@bar_size)/2
-    
+
       #ghost lap
       if @best_time
         @shoes_instance.stroke gray 0.3
         @shoes_instance.fill gray 0.3
-        
+
         @shoes_instance.rect fudge_right+6, 5, @bar_size*([1.0,(@sensor.time / 1000.0) / @best_time].min), 5+@race.racers.length*40
       end
-      
+
 
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
@@ -48,7 +49,7 @@ class RacePresenter
 
       @race.racers.each_with_index do |racer,i|
         racer.finish_time = @sensor.finish_times[i]
-        racer.text.replace("#{racer.name}: #{racer.finish_time/1000.0}s")
+        racer.text.replace("#{racer.name}: #{racer.speed(racer.finish_time)}mph #{racer.finish_time/1000.0}s") if racer.finish_time
       end
 
       if @race.complete?
@@ -64,7 +65,7 @@ class RacePresenter
   def percent_complete(racer)
     [1.0, ((racer.ticks * racer.roller_circumference) || 0)/@race_distance.to_f].min
   end
-  
+
   def ticks_in_race
     (@race_distance/@race.racers[0].roller_circumference)
   end
@@ -97,7 +98,7 @@ module RaceWindow
               lighter = rgb(bikes[index].red,bikes[index].green,bikes[index].blue, 0.7)
               background lighter, :curve => 12
               border bikes[index], :curve => 8, :strokewidth => 4
-              racer.text = caption(racer.name, ': ', racer.speed)
+              racer.text = caption(racer.name, ': ', racer.speed(0), "mph")
             end
           end
         end
@@ -108,12 +109,12 @@ module RaceWindow
           match.racers.each{|racer| racer.finish_time = nil }
           r = RacePresenter.new(self, race_distance, @update_area,
                        match, sensor, bikes, (tournament.best_time if tournament))
-          
+
           sensor.start
           @countdown = 4
           @start_time = Time.now+@countdown
           @update_area.clear { @count_box = stack }
-          
+
           @race_animation = animate(14) do
             @now = Time.now
             if @now < @start_time
@@ -136,7 +137,7 @@ module RaceWindow
           @race_animation.stop if @race_animation
           close
         end
-        
+
         button("Call it", {:top => 570, :left => 205}) do
           sensor.stop
           results = []

@@ -1,6 +1,6 @@
 Infinity = 1/0.0
 class Racer
-  attr_accessor :distance, :best_time, :wins, :races, :finish_time, :speed, :text
+  attr_accessor :distance, :best_time, :wins, :races, :finish_time, :text
   attr :roller_circumference
   attr :name
   attr :yaml_name
@@ -25,6 +25,18 @@ class Racer
     @race_distance = attributes[:race_distance]
   end
 
+  def distance
+    self.ticks * @roller_circumference
+  end
+
+  def speed(time)
+    if time == 0
+      0
+    else
+      (((self.distance*1000.0) / ((time / 1000.0) * 60.0 * 60.0)) * 0.621371192237334).to_i
+    end
+  end
+
   def finish_time=(finish_time)
     record_time(finish_time/1000.0) if finish_time
     @finish_time = finish_time
@@ -35,7 +47,7 @@ class Racer
   end
 
   def losses
-    @races - @wins 
+    @races - @wins
   end
 
 end
