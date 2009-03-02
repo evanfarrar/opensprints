@@ -1,3 +1,18 @@
+/*
+ * Arduino wiring:
+ * 
+ * Digital pin  Connected to
+ * -----------  ------------
+ * 2            Sensor 0
+ * 3            Sensor 1
+ * 4            Sensor 2
+ * 5            Sensor 3
+ * 
+ * 11           Start LED
+ * 12           Stop LED
+ * 
+ */
+
 int statusLEDPin = 13;
 long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
@@ -11,6 +26,8 @@ unsigned long currentTimeMillis;
 
 int val = 0;
 
+int startPin = 11;
+int stopPin = 12;
 int sensorPins[4] = {2,3,4,5};
 int previoussensorValues[4] = {HIGH,HIGH,HIGH,HIGH};
 int values[4] = {0,0,0,0};
@@ -29,6 +46,10 @@ unsigned long lastUpdateMillis = 0;
 void setup() {
   Serial.begin(115200); 
   pinMode(statusLEDPin, OUTPUT);
+  pinMode(startPin, OUTPUT);
+  pinMode(stopPin, OUTPUT);
+  digitalWrite(startPin, LOW);
+  digitalWrite(stopPin, LOW);
   for(int i=0; i<=3; i++)
   {
     pinMode(sensorPins[i], INPUT);
@@ -41,11 +62,7 @@ void blinkLED() {
   if (millis() - previousStatusBlinkMillis > statusBlinkInterval) {
     previousStatusBlinkMillis = millis();
 
-    if (lastStatusLEDValue == LOW)
-      lastStatusLEDValue = HIGH;
-    else
-      lastStatusLEDValue = LOW;
-  
+    lastStatusLEDValue = !lastStatusLEDValue;
 
     digitalWrite(statusLEDPin, lastStatusLEDValue);
   }
@@ -74,10 +91,14 @@ void checkSerial(){
     if(val == 'm') {
       raceStart();
       mockMode = true;
+
     }
     if(val == 's') {
       raceStarted = false;
       mockMode = false;
+
+      digitalWrite(startPin,LOW);
+      digitalWrite(stopPin,HIGH);
     }
   }
 }
@@ -103,7 +124,11 @@ void loop() {
 
 
   if (raceStarting) {
+    if((millis() - lastCountDownMillis) > 500){
+      digitalWrite(stopPin,LOW);
+    }
     if((millis() - lastCountDownMillis) > 1000){
+      digitalWrite(stopPin,HIGH);
       lastCountDown -= 1;
       lastCountDownMillis = millis();
     }
@@ -111,6 +136,10 @@ void loop() {
       raceStart();
       raceStarting = false;
       raceStarted = true;
+
+      digitalWrite(startPin,HIGH);
+      digitalWrite(stopPin,LOW);
+
     }
   }
   if (raceStarted) {
