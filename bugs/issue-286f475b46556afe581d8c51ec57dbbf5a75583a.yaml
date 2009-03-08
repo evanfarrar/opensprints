@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Shuffle racers does not work on OSX
+desc: The Array#shuffle! is not available in OSX.
+type: :bugfix
+component: opensprints
+release: 
+reporter: evan <evanfarrar@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-03-08 17:30:18.363250 Z
+references: []
+
+id: 286f475b46556afe581d8c51ec57dbbf5a75583a
+log_events: 
+- - 2009-03-08 17:30:20.359884 Z
+  - evan <evanfarrar@gmail.com>
+  - created
+  - ""
