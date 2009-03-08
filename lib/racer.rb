@@ -33,7 +33,7 @@ class Racer
     if time == 0
       0
     else
-      (((self.distance*1000.0) / ((time / 1000.0) * 60.0 * 60.0)) * 0.621371192237334).to_i
+      ((self.distance / (time / 1000.0)) * 2.23693629).to_i
     end
   end
 
