@@ -37,6 +37,10 @@ unsigned long racerFinishTimeMillis[4];
 unsigned long lastCountDownMillis;
 int lastCountDown;
 
+int charBuff[8];
+int charBuffLen = 0;
+boolean isReceivingRaceLength = false;
+
 int raceLengthTicks = 16;
 int previousFakeTickMillis = 0;
 
@@ -77,28 +81,53 @@ void raceStart() {
 void checkSerial(){
   if(Serial.available()) {
     val = Serial.read();
-    if(val == 'g') {
-      for(int i=0; i<=3; i++)
-      {
-        racerTicks[i] = 0;
-        racerFinishTimeMillis[i] = 0;          
+    if(isReceivingRaceLength) {
+      if(val != '\r') {
+        charBuff[charBuffLen] = val;
+        charBuffLen++;
       }
-
-      raceStarting = true;
-      lastCountDown = 4;
-      lastCountDownMillis = millis();
+      else if(charBuffLen==2) {
+        // received all the parts of the distance. time to process the value we received.
+        // The maximum for 2 chars would be 65 535 ticks.
+        // For a 0.25m circumference roller, that would be 16384 meters = 10.1805456 miles.
+        raceLengthTicks = charBuff[1] * 256 + charBuff[0];
+        isReceivingRaceLength = false;
+        Serial.print("OK ");
+        Serial.println(raceLengthTicks,DEC);
+      }
+      else {
+        Serial.println("ERROR receiving tick lengths");
+      }
     }
-    if(val == 'm') {
-      raceStart();
-      mockMode = true;
+    else {
+      if(val == 'l') {
+          charBuffLen = 0;
+          isReceivingRaceLength = true;
+      }
+      if(val == 'g') {
+        for(int i=0; i<=3; i++)
+        {
+          racerTicks[i] = 0;
+          racerFinishTimeMillis[i] = 256*0;          
+        }
 
-    }
-    if(val == 's') {
-      raceStarted = false;
-      mockMode = false;
+        raceStarting = true;
+        lastCountDown = 4;
+        lastCountDownMillis = millis();
+      }
+          
+      else if(val == 'm') {
+        raceStart();
+        mockMode = true;
 
-      digitalWrite(startPin,LOW);
-      digitalWrite(stopPin,HIGH);
+      }
+      if(val == 's') {
+        raceStarted = false;
+        mockMode = false;
+
+        digitalWrite(startPin,LOW);
+        digitalWrite(stopPin,HIGH);
+      }
     }
   }
 }
