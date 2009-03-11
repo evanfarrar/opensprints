@@ -42,18 +42,23 @@ drawings: drawings_ps
 	# TODO: convert each *.ps in in the drawings dir to pdf then delete the .ps files.
 
 output: gerber
-	zip -r ${PROJECT}_gerber_complete.zip ${GERB_DIR}/*
+	zip -r ${PROJECT}_gerber_complete_output.zip ${GERB_DIR}/*
 
 output_barebones: gerber
-	zip -r ${PROJECT}_gerber_barebones.zip \
+	zip -r ${PROJECT}_gerber_barebones_output.zip \
 	${GERB_DIR}/TopCopper.pho \
 	${GERB_DIR}/BottomCopper.pho \
 	${GERB_DIR}/Dimensions.pho \
 	${GERB_DIR}/${PROJECT}.drd
 	
+output_batchpcb: output
+	cp ${GERB_DIR}/* .
+	zip ${PROJECT}_gerber_batchpcb_output.zip *.pho *.drd
+	rm *.pho *.drd
+
 clean:
 	rm -rf *.l#? *.b#? *.s#? \
 		${GERB_DIR} ${DRAWINGS_DIR} \
-		${PROJECT}_gerber_complete.zip \
-		${PROJECT}_gerber_barebones.zip \
+		${PROJECT}_gerber_complete_output.zip \
+		${PROJECT}_gerber_barebones_output.zip \
 
