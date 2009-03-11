@@ -59,6 +59,5 @@ output_batchpcb: output
 clean:
 	rm -rf *.l#? *.b#? *.s#? \
 		${GERB_DIR} ${DRAWINGS_DIR} \
-		${PROJECT}_gerber_complete_output.zip \
-		${PROJECT}_gerber_barebones_output.zip \
+		*_output.zip
 
