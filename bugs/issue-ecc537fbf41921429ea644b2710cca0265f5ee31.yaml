@@ -5,8 +5,8 @@ type: :feature
 component: opensprints
 release: 
 reporter: evan <evanfarrar@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2009-02-27 00:25:51.551511 Z
 references: []
 
@@ -16,3 +16,7 @@ log_events:
   - evan <evanfarrar@gmail.com>
   - created
   - ""
+- - 2009-03-08 17:19:39.351895 Z
+  - evan <evanfarrar@gmail.com>
+  - closed with disposition fixed
+  - Racer class has speed now.

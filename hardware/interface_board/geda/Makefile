@@ -1,27 +1,3 @@
-#PROJNAME = interface_board
-#SHEETS = sheet1.sch sheet2.sch sheet3.sch sheet4.sch
-#
-#open: $(SHEETS)
-#	gschem $(SHEETS)
-#
-#printpdf: $(PROJNAME).ps
-#	ps2pdf -dOptimize=true -dUseFlateCompression=true -sPAPERSIZE=a4 $<
-#$(PROJNAME).pdf
-#
-#$(PROJNAME).ps : printps
-#
-#printps: $(SHEETS)
-#    rm -f ONEPAGE.ps
-#    rm -f $(PROJNAME).ps
-#    for S in $(SHEETS); \
-#    do \
-#    gschem -q -p -o ONEPAGE.ps -s$(HOME)/geda/share/gEDA/scheme/print.scm 
-#$$S; \
-#    cat ONEPAGE.ps; done > $(PROJNAME).ps
-#    rm -f ONEPAGE.ps
-#
-#
-
 # The following comes from
 # http://logonex.eu/cgi-bin/viewvc/viewvc.cgi/pskel/
 
@@ -63,9 +39,35 @@ output_barebones: plate_all_holes gerber
 			${GERB_DIR}/${FILEBASE}.back.gbr \
 			${GERB_DIR}/${FILEBASE}.plated-drill.cnc
 
+output_batchpcb: plate_all_holes gerber
+	cp \
+			${GERB_DIR}/${FILEBASE}.front.gbr \
+			${GERB_DIR}/${FILEBASE}.frontmask.gbr \
+			${GERB_DIR}/${FILEBASE}.frontsilk.gbr \
+			${GERB_DIR}/${FILEBASE}.back.gbr \
+			${GERB_DIR}/${FILEBASE}.backmask.gbr \
+			${GERB_DIR}/${FILEBASE}.plated-drill.cnc .
+	zip ${FILEBASE}_batchpcb_output.zip *.gbr *.cnc
+	rm *.gbr *.cnc
+
 clean:
-	rm -rf *~ symbols/*~ *.sch\# *.gbr *.bom *.cnc *.pcb.ps *.eps *.pdf ${GERB_DIR} ${FILEBASE}_output.tar.bz2 ${FILEBASE}.pcb- ${FILEBASE}_output.zip ${FILEBASE}_barebones_output.zip ${BOMFILE} ${XYFILE}
-	rm -f index.html
+	rm -rf *~ symbols/*~ \
+	*.gbr \
+	*.bom \
+	*.cnc \
+	*.pcb.ps \
+	*.eps \
+	*.pdf \
+	${GERB_DIR} \
+	${FILEBASE}_output.tar.bz2 \
+	${FILEBASE}.pcb- \
+	${FILEBASE}_output.zip \
+	${FILEBASE}_barebones_output.zip \
+	${FILEBASE}_batchpcb_output.zip \
+	${BOMFILE} \
+	${XYFILE} \
+	index.html
+	*.sch\#
 
 html: gerber ps pdf 
 	echo -e "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html" >index.html
