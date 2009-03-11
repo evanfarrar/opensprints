@@ -5,7 +5,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
 
   def delete_racer(racer)
     image(20, 20, {:top => 8, :left => 350}) do
-      delete_button 
+      delete_button
       click do
         @tournament.racers.delete(racer)
         @racer_list.clear { list_racers }
@@ -60,12 +60,17 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
         race.flip
         @matches.clear { list_matches }
       end
-    end 
+    end
   end
 
   background black
-  @tournament = Tournament.new($RACE_DISTANCE)
- 
+  file = Dir.glob("log/*").map{|file| [file, Time.parse(file.gsub(/.*(.{8}_.{6}).*/,'\1'))]}.sort_by{|e|e[1]}.last
+  if file[1] > 1.day.ago
+    @tournament = YAML::load_file(file[0])
+  end
+
+  @tournament ||= Tournament.new($RACE_DISTANCE)
+
   def list_racers
     flow do
       flow(:width => 115) { para 'Name', :stroke => ivory }
@@ -80,7 +85,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
     end
     @tournament.racers.compact.each do |racer|
       flow do
-        border gray(0.65) 
+        border gray(0.65)
         flow(:width => 115) { para racer.name, :stroke => ivory }
         flow(:width => 50) { para racer.wins, " / ", racer.races, :stroke => ivory }
         flow(:width => 25) { para racer.best_time, "s", :stroke => ivory unless racer.best_time == Infinity }
@@ -90,17 +95,17 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
     end
     save_racers
   end
- 
+
   def post_race
     relist_tournament
   end
- 
+
   def tournament_record(race)
     race.winner
     @tournament.record(race)
     relist_tournament
   end
- 
+
   def list_matches
     background gray(0.10), :curve => 14
     border gray(0.65), :curve => 14, :strokewidth => 3
@@ -125,7 +130,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
       end
     end
   end
- 
+
   def add_racer(name)
     duped = @tournament.racers.compact.any? do |racer|
       racer.name == name
@@ -135,7 +140,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
       relist_tournament
     end
   end
- 
+
   def relist_tournament
     @matches.clear {list_matches}
     @racer_list.clear {list_racers}
@@ -145,7 +150,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
     filename ||= "log/#{Time.now.strftime('%Y%m%d_%H%M%S')}-racers.yml"
     File.open(filename, 'w+') { |f| f << @tournament.to_yaml }
   end
- 
+
   stack(:width => 380, :margin => 5, :curve => 14) do
     background gray(0.15), :curve => 14
     border gray(0.65), :curve => 14, :strokewidth => 3
@@ -160,20 +165,20 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
       end
     end
   end
- 
+
   @matches = stack(:width => 800 - gutter() - 380, :margin => 5, :curve => 14) do
     list_matches
   end
- 
+
   button "autofill matches" do
     @tournament.autofill_matches
     relist_tournament
   end
- 
+
   button "save" do
     save_racers(ask_open_file)
   end
- 
+
   button "open" do
     @tournament = YAML::load(File.open(ask_open_file))
     relist_tournament

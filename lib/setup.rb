@@ -1,5 +1,6 @@
 require 'yaml'
 require 'socket'
+require 'time'
 require 'lib/race_data'
 
 begin
@@ -58,7 +59,7 @@ module Subclasses
     classes
   end
 end
-  
+
 Object.send(:include, Subclasses)
 
 class Shoes::ColoredProgressBar < Shoes::Widget
@@ -68,3 +69,8 @@ class Shoes::ColoredProgressBar < Shoes::Widget
     rect 6, top, percent, 20
   end
 end
+
+Shoes.setup do
+  gem "activesupport"
+end
+require 'activesupport'
