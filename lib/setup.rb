@@ -6,7 +6,7 @@ require 'lib/race_data'
 begin
   options = YAML::load(File.read('conf.yml'))
 rescue
-  `cp conf-sample.yml conf.yml`
+  FileUtils.cp 'conf-sample.yml', 'conf.yml'
   options = YAML::load(File.read('conf.yml'))
 end
 
