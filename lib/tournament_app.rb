@@ -73,16 +73,29 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
 
   def list_racers
     flow do
-      flow(:width => 115) { para 'Name', :stroke => ivory }
-      flow(:width => 50) { para 'Wins', :stroke => ivory }
+      flow(:width => 115) do
+        para 'Name', :stroke => ivory
+        click {
+          @tournament.racers = @tournament.racers.sort_by { |racer| racer.name }
+          relist_tournament
+        }
+      end
+      flow(:width => 50) do
+        para 'Wins', :stroke => ivory
+        click {
+          @tournament.racers = @tournament.racers.sort_by { |racer| -racer.wins }
+          relist_tournament
+        }
+      end
       flow(:width => 25) do
         para 'Best', :stroke => ivory
-        click do
-          @tournament.racers = @tournament.racers.sort_by { |i| i.best_time }
+        click {
+          @tournament.racers = @tournament.racers.sort_by { |racer| racer.best_time }
           relist_tournament
-        end
+        }
       end
     end
+
     @tournament.racers.compact.each do |racer|
       flow do
         border gray(0.65)
