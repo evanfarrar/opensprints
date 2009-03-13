@@ -72,27 +72,22 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   @tournament ||= Tournament.new($RACE_DISTANCE)
 
   def list_racers
+    resort_racers = lambda do |attribute| 
+      @tournament.racers = @tournament.racers.sort_by {|r| attribute == :wins ? -r.send(attribute) : r.send(attribute)}
+      relist_tournament
+    end
     flow do
       flow(:width => 115) do
         para 'Name', :stroke => ivory
-        click {
-          @tournament.racers = @tournament.racers.sort_by { |racer| racer.name }
-          relist_tournament
-        }
+        click { resort_racers.call(:name) }
       end
       flow(:width => 50) do
         para 'Wins', :stroke => ivory
-        click {
-          @tournament.racers = @tournament.racers.sort_by { |racer| -racer.wins }
-          relist_tournament
-        }
+        click { resort_racers.call(:wins) }
       end
       flow(:width => 25) do
         para 'Best', :stroke => ivory
-        click {
-          @tournament.racers = @tournament.racers.sort_by { |racer| racer.best_time }
-          relist_tournament
-        }
+        click { resort_racers.call(:best_time) }
       end
     end
 
