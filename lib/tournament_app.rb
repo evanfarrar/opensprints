@@ -65,7 +65,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
 
   background black
   file = Dir.glob("log/*").map{|file| [file, Time.parse(file.gsub(/.*(.{8}_.{6}).*/,'\1'))]}.sort_by{|e|e[1]}.last
-  if file[1] > 1.day.ago
+  if file && file[1] > 1.day.ago
     @tournament = YAML::load_file(file[0])
   end
 
