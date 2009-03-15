@@ -35,4 +35,8 @@ class Race
   def flip
     @racers.shuffle!
   end
+
+  def percent_complete(racer)
+    [1.0, ((racer.distance) || 0)/@distance.to_f].min
+  end
 end
