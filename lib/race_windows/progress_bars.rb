@@ -72,9 +72,23 @@ class RacePresenter
 
 end
 
+include Sorty
 module RaceWindow
   def race_window(match, tournament=nil)
     window :title => TITLE, :width => 800, :height => 600 do
+      def list_racers(match, bikes)
+        flow(:attach => Window, :top => 40*match.racers.size+240, :margin => [80,0,0,0]) do
+          match.racers.each_with_index do |racer, index|
+            stack(:width => 300, :margin => [20, 10, 20, 0], :curve => 10) do
+              background white, :curve => 12
+              lighter = rgb(bikes[index].red,bikes[index].green,bikes[index].blue, 0.7)
+              background lighter, :curve => 12
+              border bikes[index], :curve => 8, :strokewidth => 4
+              racer.text = caption(racer.name, ': ', racer.speed(0), "mph")
+            end
+          end
+        end
+      end
       race_distance, sensor, window_title = $RACE_DISTANCE, SENSOR, TITLE
       if File.readable?('background.jpg')
         background 'background.jpg'
@@ -91,17 +105,7 @@ module RaceWindow
 
         @update_area = stack(:top => 200, :attach => Window)
 
-        flow(:attach => Window, :top => 40*match.racers.size+240, :margin => [80,0,0,0]) do
-          match.racers.each_with_index do |racer, index|
-            stack(:width => 300, :margin => [20, 10, 20, 0], :curve => 10) do
-              background white, :curve => 12
-              lighter = rgb(bikes[index].red,bikes[index].green,bikes[index].blue, 0.7)
-              background lighter, :curve => 12
-              border bikes[index], :curve => 8, :strokewidth => 4
-              racer.text = caption(racer.name, ': ', racer.speed(0), "mph")
-            end
-          end
-        end
+        list_racers(match, bikes)
 
         @start = button("Start Race",{:top => 570, :left => 10}) do
           @start.hide
@@ -149,11 +153,14 @@ module RaceWindow
             owner.tournament_record(match)
           end
         end
-
+        button("change bikes", {:top => 570, :left => 300}) do
+          sort_names(match, bikes) { list_racers(match, bikes); owner.relist_tournament }
+        end
+        
         if tournament && tournament.matches.length > 1
           subtitle("On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white,
                    :top => 520)
-          button("Next Race",{:top => 570, :left => 305}) do
+          button("Next Race",{:top => 570, :left => 430}) do
             close
             owner.race_window(tournament.next_after(match),tournament)
           end
