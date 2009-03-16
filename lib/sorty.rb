@@ -25,8 +25,8 @@ module Sorty
           background black
           names_n_colors = colors.zip(people).map do |color, person|
             flow(:height => 70, :width => 200) do
-              border color
-              my_label = subtitle person, :stroke => color
+              border color, :strokewidth => 4
+              my_label = subtitle person, :stroke => white
               fill @previous_color.next
               rotate(90)
               a = arrow(104, 5, 30)
