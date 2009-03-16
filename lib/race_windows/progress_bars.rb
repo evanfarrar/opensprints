@@ -77,7 +77,7 @@ module RaceWindow
   def race_window(match, tournament=nil)
     window :title => TITLE, :width => 800, :height => 600 do
       def list_racers(match, bikes)
-        flow(:attach => Window, :top => 40*match.racers.size+240, :margin => [80,0,0,0]) do
+        flow(:attach => Window, :top => 420, :margin => [80,0,0,0]) do
           match.racers.each_with_index do |racer, index|
             stack(:width => 300, :margin => [20, 10, 20, 0], :curve => 10) do
               background white, :curve => 12
