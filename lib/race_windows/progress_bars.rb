@@ -131,6 +131,12 @@ module RaceWindow
               if r.continue?
                 r.refresh
               else
+                flow(:align => 'center', :top => 100, :attach => Window) do
+                  background rgb(255,255,255,0.60)
+                  banner "#{match.winner} wins!", :stroke => black,
+                    :font => "Arial 200px", :align => 'center'
+                end
+                @race_animation.stop
                 @start.show
               end
             end
@@ -148,6 +154,12 @@ module RaceWindow
           bikes.length.times do |i|
             results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
           end
+          flow(:align => 'center', :top => 100, :attach => Window) do
+            background rgb(255,255,255,0.60)
+            banner "#{match.winner} wins!", :stroke => black,
+              :font => "Arial 200px", :align => 'center'
+          end
+          @race_animation.stop
           @continue = false
           if owner.respond_to?(:tournament_record)
             owner.tournament_record(match)
