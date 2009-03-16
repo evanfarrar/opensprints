@@ -166,7 +166,14 @@ module RaceWindow
           end
         end
         button("change bikes", {:top => 570, :left => 300}) do
-          sort_names(match, bikes) { list_racers(match, bikes); owner.relist_tournament }
+          case match.racers.length
+          when 1: nil
+          when 2: 
+            match.racers[0], match.racers[1] = match.racers[1], match.racers[0]
+            list_racers(match, bikes); owner.relist_tournament
+          else
+            sort_names(match, bikes) { list_racers(match, bikes); owner.relist_tournament }
+          end
         end
         
         if tournament && tournament.matches.length > 1

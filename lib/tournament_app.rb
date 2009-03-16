@@ -58,7 +58,14 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
       fill eval(BIKES[1])
       rect(:top => 0, :left => 7, :height => 15, :width => 7)
       click do
-        sort_names(race, BIKES.map{|b| eval b}) { @matches.clear { list_matches }}
+        case race.racers.length
+        when 1: nil
+        when 2:
+          race.racers[0], race.racers[1] = race.racers[1], race.racers[0]
+          @matches.clear {list_matches }
+        else
+          sort_names(race, BIKES.map{|b| eval b}) { @matches.clear { list_matches }}
+        end
       end
     end
   end
