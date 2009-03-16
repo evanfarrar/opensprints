@@ -190,12 +190,21 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
     relist_tournament
   end
 
-  button "save" do
-    save_racers(ask_open_file)
-  end
-
   button "open" do
-    @tournament = YAML::load(File.open(ask_open_file))
+    @tournament = YAML::load(File.open(@save_file = ask_open_file))
     relist_tournament
   end
+
+  button "save" do
+    save_racers(@save_file  = ask_open_file)
+  end
+
+  button "quicksave" do
+    if @save_file
+      save_racers(@save_file)
+    else
+      alert("No save location chosen yet.")
+    end
+  end
+  
 end
