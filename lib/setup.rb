@@ -2,6 +2,7 @@ require 'yaml'
 require 'socket'
 require 'time'
 require 'lib/race_data'
+require 'lib/sorty'
 
 begin
   options = YAML::load(File.read('conf.yml'))

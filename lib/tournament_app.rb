@@ -2,6 +2,7 @@ require 'lib/setup.rb'
 
 Shoes.app(:title => TITLE, :width => 800, :height => 600) do
   extend RaceWindow
+  extend Sorty
 
   def delete_racer(racer)
     image(20, 20, {:top => 8, :left => 350}) do
@@ -57,8 +58,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
       fill eval(BIKES[1])
       rect(:top => 0, :left => 7, :height => 15, :width => 7)
       click do
-        race.flip
-        @matches.clear { list_matches }
+        sort_names(race, BIKES.map{|b| eval b}) { @matches.clear { list_matches }}
       end
     end
   end
