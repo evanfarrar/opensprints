@@ -6,6 +6,11 @@ class Sensor
     #HACK oogity boogity magic happens here:
     `stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
     @f = File.open(filename, 'w+')
+    ticks = ($RACE_DISTANCE / $ROLLER_CIRCUMFERENCE).floor
+    @f.putc ?l
+    @f.putc (ticks % 256)
+    @f.putc (ticks / 256)
+    @f.putc ?\r
   end
 
   def start

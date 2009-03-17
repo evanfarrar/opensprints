@@ -154,10 +154,12 @@ module RaceWindow
           bikes.length.times do |i|
             results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
           end
-          flow(:align => 'center', :top => 100, :attach => Window) do
-            background rgb(255,255,255,0.60)
-            banner "#{match.winner} wins!", :stroke => black,
-              :font => "Arial 200px", :align => 'center'
+          if match.racers.any? {|racer| racer.finish_time}
+            flow(:align => 'center', :top => 100, :attach => Window) do
+              background rgb(255,255,255,0.60)
+              banner "#{match.winner} wins!", :stroke => black,
+                :font => "Arial 200px", :align => 'center'
+            end
           end
           @race_animation.stop
           @continue = false
@@ -168,14 +170,14 @@ module RaceWindow
         button("change bikes", {:top => 570, :left => 300}) do
           case match.racers.length
           when 1: nil
-          when 2: 
+          when 2:
             match.racers[0], match.racers[1] = match.racers[1], match.racers[0]
             list_racers(match, bikes); owner.relist_tournament
           else
             sort_names(match, bikes) { list_racers(match, bikes); owner.relist_tournament }
           end
         end
-        
+
         if tournament && tournament.matches.length > 1
           subtitle("On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white,
                    :top => 520)
