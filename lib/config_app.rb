@@ -83,9 +83,21 @@ Shoes.app do
           color_edit.text = ask_color('pick...')
           @prefs['bikes'][i] = color_edit.text
         end
-        button "no bike" do
-          color_edit.text = ''
+        box = check { |change|
+          if change.checked?
+            color_edit.state = nil
+          else
+            color_edit.state = "disabled"
+            @prefs['bikes'][i] = nil
+          end
+        }
+        if @prefs['bikes'][i] && color_edit.text != "" 
+          box.checked = true
+          color_edit.state = nil
+        else
+          color_edit.state = "disabled"
         end
+        para "active?"
       end
     end
     
@@ -94,6 +106,7 @@ Shoes.app do
   
 
   button "Save!" do
+    @prefs['bikes'].compact!
     File.open('conf.yml', 'w+') do |f|
       f << @prefs.to_yaml
     end
