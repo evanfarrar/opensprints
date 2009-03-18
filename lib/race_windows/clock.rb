@@ -1,4 +1,5 @@
 require 'lib/setup.rb'
+font('lib/LCD-N___.TTF')
 
 module RaceWindow
   def race_window(match, tournament=nil)
@@ -14,7 +15,8 @@ module RaceWindow
       bikes = BIKES.map{|b| eval b.downcase }
 
       stack do
-        subtitle window_title, :top => 5, :stroke => white
+        subtitle window_title, :top => 5, :stroke => white,
+          :family => "LCD"
 
         @count_box = stack(:top => 200)
         nofill
@@ -44,6 +46,23 @@ module RaceWindow
         line @clock_center, top_edge, @clock_center, top_edge+30
         line @clock_center, bottom_edge, @clock_center, bottom_edge-30
         cap :square
+        
+        stack(:top => 10, :attach => Window) {
+          match.racers.each_with_index do |r,i|
+            r.text = stack{
+              subtitle r.name+"  ", :family => 'LCD', :stroke => bikes[i],
+                :align => 'right'
+              flow {
+                para strong("mph"), :stroke => white, :align => 'right'
+                tagline 0, :family => 'LCD', :stroke => bikes[i], :align => 'right'
+              }
+              flow {
+                para strong("final"), :stroke => white, :align => 'right'
+                tagline '', :family => 'LCD', :stroke => bikes[i], :align => 'right'
+              }
+            }
+          end
+        }
 
 
         @start = button("Start Race",{:top => 570, :left => 10}) do
@@ -68,7 +87,13 @@ module RaceWindow
               if match.complete?
                 @start.show
                 @race_animation.stop
-                @sensor.stop
+                sensor.stop
+                flow(:align => 'center', :top => 100, :attach => Window) do
+                  background rgb(255,255,255,0.60)
+                  banner "#{match.winner} wins!", :stroke => black,
+                    :font => "LCD 200px", :align => 'center'
+                end
+
                 if owner.respond_to?(:tournament_record)
                   owner.tournament_record(@race)
                 end
@@ -76,7 +101,20 @@ module RaceWindow
                 @update_area.clear do
                   match.racers.each_with_index do |racer,i|
                     racer.ticks = sensor.racers[i].size
+                    racer.finish_time = sensor.finish_times[i]
                     clock_hand(bikes[i], match.percent_complete(racer)*100)
+                    racer.text.clear {
+                      subtitle racer.name+"  ", :family => 'LCD', :stroke => bikes[i],
+                        :align => 'right'
+                      flow {
+                        para strong("mph"), :stroke => white, :align => 'right'
+                        tagline racer.speed(racer.finish_time||sensor.time), :family => 'LCD', :stroke => bikes[i], :align => 'right'
+                      }
+                      flow {
+                        para strong("final"), :stroke => white, :align => 'right'
+                        tagline racer.finish_time ? (racer.finish_time / 1000.0) : '', :family => 'LCD', :stroke => bikes[i], :align => 'right'
+                      }
+                    }
                   end
                 end
               end
