@@ -134,6 +134,13 @@ module RaceWindow
             results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
           end
           @continue = false
+          if match.racers.any? {|racer| racer.finish_time}
+            flow(:align => 'center', :top => 100, :attach => Window) do
+              background rgb(255,255,255,0.60)
+              banner "#{match.winner} wins!", :stroke => black,
+                :font => "LCD 200px", :align => 'center'
+            end
+          end
           if owner.respond_to?(:tournament_record)
             owner.tournament_record(match)
           end
