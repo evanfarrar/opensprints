@@ -50,6 +50,17 @@ Shoes.app do
     end
 
     flow do
+      para 'Track Skin:'
+      sensors = Dir.glob('lib/race_windows/*.rb').map do |s| 
+        s.gsub(/lib\/race_windows\/(.*)\.rb/, '\1')
+      end
+      list_box(:items => sensors,
+        :choose => @prefs['track']) do |changed|
+          @prefs['track'] = changed.text
+
+      end
+    end
+    flow do
       para 'Sensor type:'
       sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s| 
         s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
