@@ -63,7 +63,11 @@ class RacePresenter
   end
 
   def percent_complete(racer)
-    [1.0, ((racer.ticks * racer.roller_circumference) || 0)/@race_distance.to_f].min
+    if racer.finish_time
+      1.0
+    else
+      [1.0, ((racer.ticks * racer.roller_circumference) || 0)/@race_distance.to_f].min
+    end
   end
 
   def ticks_in_race
