@@ -5,11 +5,7 @@ module RaceWindow
   def race_window(match, tournament=nil)
     window :fullscreen => true, :title => TITLE, :width => 800, :height => 600 do
       race_distance, sensor, window_title = $RACE_DISTANCE, SENSOR, TITLE
-      if File.readable?('background.jpg')
-        background 'background.jpg'
-      else
-        background black
-      end
+      background BACKGROUND
 
       puts BIKES
       bikes = BIKES.map{|b| eval b.downcase }
@@ -46,7 +42,7 @@ module RaceWindow
         line @clock_center, top_edge, @clock_center, top_edge+30
         line @clock_center, bottom_edge, @clock_center, bottom_edge-30
         cap :square
-        
+
         stack(:top => 10, :attach => Window) {
           match.racers.each_with_index do |r,i|
             r.text = stack{
