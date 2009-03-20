@@ -25,6 +25,12 @@ require "lib/sensors/#{options['sensor']['type']}_sensor"
 require "lib/race_windows/#{options['track']}"
 
 SENSOR = Sensor.new(options['sensor']['device'])
+if File.readable?(options['background'])
+  BACKGROUND = options['background']
+else
+  BACKGROUND = black
+end
+
 
 UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kmph
 

@@ -51,7 +51,7 @@ Shoes.app do
 
     flow do
       para 'Track Skin:'
-      sensors = Dir.glob('lib/race_windows/*.rb').map do |s| 
+      sensors = Dir.glob('lib/race_windows/*.rb').map do |s|
         s.gsub(/lib\/race_windows\/(.*)\.rb/, '\1')
       end
       list_box(:items => sensors,
@@ -61,8 +61,23 @@ Shoes.app do
       end
     end
     flow do
+      para 'Background (color or image):'
+      color_edit = edit_line(@prefs['background']) do |edit|
+        @prefs['background'] = edit.text
+      end
+      button "pick color" do
+        color_edit.text = ask_color('pick...')
+        @prefs['background'] = color_edit.text
+      end
+      button "pick file" do
+        color_edit.text = ask_open_file('open an image file')
+        @prefs['background'] = color_edit.text
+        @prefs['bikes'][i] = color_edit.text
+      end
+    end
+    flow do
       para 'Sensor type:'
-      sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s| 
+      sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s|
         s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
       end
       list_box(:items => sensors,
@@ -72,7 +87,7 @@ Shoes.app do
       end
     end
     flow do
-      para 'Sensor location:' 
+      para 'Sensor location:'
       edit_line(@prefs['sensor']['device']) do |edit|
         @prefs['sensor']['device'] = edit.text
       end
@@ -102,7 +117,7 @@ Shoes.app do
             @prefs['bikes'][i] = nil
           end
         }
-        if @prefs['bikes'][i] && color_edit.text != "" 
+        if @prefs['bikes'][i] && color_edit.text != ""
           box.checked = true
           color_edit.state = nil
         else
@@ -111,10 +126,10 @@ Shoes.app do
         para "active?"
       end
     end
-    
-    
+
+
   end
-  
+
 
   button "Save!" do
     @prefs['bikes'].compact!

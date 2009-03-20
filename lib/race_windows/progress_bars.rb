@@ -90,12 +90,7 @@ module RaceWindow
         end
       end
       race_distance, sensor, window_title = $RACE_DISTANCE, SENSOR, TITLE
-      if File.readable?('background.jpg')
-        background 'background.jpg'
-      else
-        background black
-      end
-
+      background BACKGROUND
       puts BIKES
       bikes = BIKES.map{|b| eval b.downcase }
 

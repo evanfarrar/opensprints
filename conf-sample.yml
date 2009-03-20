@@ -38,3 +38,6 @@ units: standard
 bikes:
 - red
 - blue
+
+#the background the race window should use.
+background: media/background.jpg
