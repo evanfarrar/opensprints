@@ -25,10 +25,14 @@ require "lib/sensors/#{options['sensor']['type']}_sensor"
 require "lib/race_windows/#{options['track']}"
 
 SENSOR = Sensor.new(options['sensor']['device'])
-if File.readable?(options['background'])
-  BACKGROUND = options['background']
+if options['background']
+  if File.readable?(options['background'])
+    BACKGROUND = options['background']
+  else
+    BACKGROUND = Shoes.instance_eval(options['background'])
+  end
 else
-  BACKGROUND = black
+  BACKGROUND = Shoes::COLORS[:black]
 end
 
 

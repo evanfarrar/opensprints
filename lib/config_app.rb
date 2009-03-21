@@ -70,7 +70,7 @@ Shoes.app do
         @prefs['background'] = color_edit.text
       end
       button "pick file" do
-        color_edit.text = ask_open_file('open an image file')
+        color_edit.text = ask_open_file
         @prefs['background'] = color_edit.text
         @prefs['bikes'][i] = color_edit.text
       end
