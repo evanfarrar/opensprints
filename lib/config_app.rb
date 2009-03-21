@@ -1,5 +1,5 @@
 require 'yaml'
-Shoes.app do
+Shoes.app(:title => "Opensprints Configuration") do
   if File.exists?('conf.yml')
     @prefs = YAML::load_file('conf.yml')
   else

@@ -21,10 +21,19 @@ require 'lib/racer'
 require 'lib/race'
 require 'lib/interface_widgets'
 require 'lib/tournament'
-require "lib/sensors/#{options['sensor']['type']}_sensor"
+load "lib/sensors/#{options['sensor']['type']}_sensor.rb"
 require "lib/race_windows/#{options['track']}"
+class MissingArduinoError < RuntimeError; end
 
-SENSOR = Sensor.new(options['sensor']['device'])
+begin
+  SENSOR = Sensor.new(options['sensor']['device'])
+rescue MissingArduinoError
+  alert "The arduino could not be found at the configured address! Check your configuration."
+  load "lib/sensors/mock_sensor.rb"
+  load "lib/config_app.rb"
+end
+
+
 if options['background']
   if File.readable?(options['background'])
     BACKGROUND = options['background']

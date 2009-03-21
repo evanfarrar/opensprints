@@ -95,7 +95,6 @@ module RaceWindow
       end
       race_distance, sensor, window_title = $RACE_DISTANCE, SENSOR, TITLE
       background BACKGROUND
-      puts BIKES
       bikes = BIKES.map{|b| eval b.downcase }
 
       stack do
