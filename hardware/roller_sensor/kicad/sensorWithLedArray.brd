@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Mon 16 Mar 2009 09:46:16 PM CDT
+PCBNEW-BOARD Version 1 date 24/3/2009-20:17:31
 
 $GENERAL
 LayerCount 2
@@ -16,9 +16,9 @@ $EndGENERAL
 $SHEETDESCR
 Sheet A4 11700 8267
 Title ""
-Date ""
+Date "24 mar 2009"
 Rev ""
-Comp ""
+Comp "OpenSprints"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -27,10 +27,10 @@ $EndSHEETDESCR
 
 $SETUP
 InternalUnit 0.000100 INCH
+GridSize 100 100
+UserGridSize 0.010000 0.010000 mm
 ZoneGridSize 250
 Layers 2
-Layer[0] Copper signal
-Layer[15] Component signal
 TrackWidth 170
 TrackWidthHistory 170
 TrackClearence 60
@@ -39,11 +39,7 @@ DrawSegmWidth 150
 EdgeSegmWidth 150
 ViaSize 450
 ViaDrill 250
-ViaAltDrill 250
 ViaSizeHistory 450
-MicroViaSize 200
-MicroViaDrill 80
-MicroViasAllowed 0
 TextPcbWidth 120
 TextPcbSize 600 800
 EdgeModWidth 150

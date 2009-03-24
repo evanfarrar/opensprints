@@ -3,4 +3,5 @@ clean:
 		*.bak \
 		*.cache.dcm \
 		*.cache.lib \
-		*.bck
+		*.bck \
+		*.0??
