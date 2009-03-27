@@ -14,9 +14,9 @@ class Racer
 
   def initialize(attributes = {})
     @distance = 0
-	@distance_old = 0
-	@time = 0
-	@time_old = 0
+    @distance_old = 0
+    @time = 0
+    @time_old = 0
     @best_time = Infinity
     @wins = 0
     @races = 0
@@ -29,28 +29,28 @@ class Racer
   end
 
   def distance
-	self.ticks * @roller_circumference
+    self.ticks * @roller_circumference
   end
 
   def speed(time)
-	@distance = self.distance
-	@time = time
-	if(@time_old > @time)
-		@time_old = time
-	end
+    @distance = self.distance
+    @time = time
+    if(@time_old > @time)
+      @time_old = time
+    end
     if time == 0
       0
     else
-		if(@time-@time_old > 999)
-			if(@distance_old > 0)
-				@speed = "%.2f" % (((@distance - @distance_old) / (@time - @time_old)) * 2236.93629).to_f
-			else 
-				@speed = 0
-			end
-			@distance_old = @distance
-			@time_old = @time
-		end
-	  @speed
+      if(@time-@time_old > 999)
+        if(@distance_old > 0)
+          @speed = "%.2f" % (((@distance - @distance_old) / (@time - @time_old)) * 2236.93629).to_f
+        else
+          @speed = 0
+        end
+        @distance_old = @distance
+        @time_old = @time
+      end
+      @speed
     end
   end
 
