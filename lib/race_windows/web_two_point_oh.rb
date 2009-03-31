@@ -18,7 +18,7 @@ class RacePresenter
   def refresh
     @race.racers.each_with_index do |racer, i|
       racer.ticks = @sensor.racers[i].size
-      racer.text.replace(racer.name, ': ', racer.ticks)
+      racer.text.replace(strong(racer.speed(@sensor.time)))
     end
 
     @update_area.clear do
@@ -48,7 +48,7 @@ class RacePresenter
 
       @race.racers.each_with_index do |racer,i|
         racer.finish_time = @sensor.finish_times[i]
-        racer.text.replace("#{racer.name}: #{racer.finish_time/1000.0}s")
+        racer.text.replace(strong("%.2fs" % (racer.finish_time/1000.0)))
       end
 
       if @race.complete?
@@ -75,12 +75,9 @@ module RaceWindow
   def race_window(match, tournament=nil)
     font("lib/DINMittelschriftStd.otf")
     window :title => TITLE, :width => 800, :height => 600 do
-      style(Shoes::TextBlock, :family => 'DIN 1451 Std')
-#      Shoes::TextBlock.subclasses.each do |textblock_class|
-#       alert textblock_class
-      #  style(Shoes::Para, :family => 'DIN 1451 Std')
-      #  style(textblock_class, :family => 'DIN 1451 Std')
-#      end
+      style(Shoes::Title, :family => 'DIN 1451 Std')
+      style(Shoes::Caption, :family => 'DIN 1451 Std')
+      style(Shoes::Para, :family => 'DIN 1451 Std')
 
       race_distance, sensor, window_title = $RACE_DISTANCE, SENSOR, TITLE
       background gradient("#3c3334","#8c7877")
@@ -89,19 +86,51 @@ module RaceWindow
 
       stack :margin_left => 20 do
         title window_title, :family => 'DIN 1451 Std', :top => 40, :stroke => yellow
-        stroke white
-        line 0,90,width()-20,90
+        stroke "#cbc3c0"
+        line 0,90,760,90
+
+        flow(:width => 20,
+                          :height => 200,
+                          :top => 100,
+                          :left => 10 ) do
+          background "#cbc3c0"
+          transform(:center)
+          rotate 90
+          para "START", :top => 170, :left => 0
+
+        end
+        flow(:width => 20,
+                          :height => 200,
+                          :top => 100,
+                          :left => 730 ) do
+          background "#cbc3c0"
+          transform(:center)
+          rotate 90
+          para "FINISH", :top => 170, :left => 0
+
+        end
+        line 10,100,740,100
+        line 10,115,740,115
+        line 10,130,740,130
+        line 10,145,740,145
+        line 10,299,740,299
 
         @update_area = stack(:top => 200, :attach => Window)
 
-        flow(:attach => Window, :top => 40*match.racers.size+240, :margin => [80,0,0,0]) do
+        flow(:attach => Window, :top => 40*match.racers.size+240, :margin => [0,0,0,0]) do
           match.racers.each_with_index do |racer, index|
-            stack(:width => 300, :margin => [20, 10, 20, 0], :curve => 10) do
-              background white, :curve => 12
+            stack(:width => 250, :margin => [20, 10, 20, 0]) do
               lighter = rgb(bikes[index].red,bikes[index].green,bikes[index].blue, 0.7)
-              background lighter, :curve => 12
-              border bikes[index], :curve => 8, :strokewidth => 4
-              racer.text = caption(racer.name, ': ', racer.speed(0))
+              background "#3c3334"
+              background lighter
+              flow do
+                background bikes[index]
+                fill("#3c3334")
+                para racer.name
+              end
+              stroke bikes[index]
+              fill bikes[index]
+              racer.text = banner(strong(racer.speed(0)), :stroke => bikes[index])
             end
           end
         end
