@@ -5,41 +5,40 @@ Shoes.app(:title => "Opensprints Configuration") do
   else
     @prefs = YAML::load_file('conf-sample.yml')
   end
+  background white
   stack do
-    flow do
+    stack(:margin => 20) do
       para 'title (e.g. RockySprints):'
       edit_line(@prefs['title']) do |edit|
         @prefs['title'] = edit.text
       end
     end
 
-    flow do
+    stack(:margin => 20) do
       para 'Race distance (METERS):'
       edit_line(@prefs['race_distance']) do |edit|
         @prefs['race_distance'] = edit.text.to_f
       end
-      para '(METERS)'
     end
 
-    flow do
-      para 'Roller circumference:'
+    stack(:margin => 20) do
+      para 'Roller circumference (METERS):'
       edit_line(@prefs['roller_circumference']) do |edit|
         @prefs['roller_circumference'] = edit.text.to_f
       end
-      para '(METERS)'
     end
 
-    flow do
-      para "Display speed in:"
-      stack do
+    stack(:margin => 20, :padding => 0) do
+      stack(:margin => 0) do
+        para "Display speed in:", :margin => 0
         metric = nil; standard = nil;
-        flow do
+        flow(:margin => 0) do
           standard = radio(:units){ @prefs['units'] = 'standard'}
-          para 'standard'
+          para 'standard', :margin => 2
         end
-        flow do
+        flow(:margin => 0) do
           metric = radio(:units){ @prefs['units'] = 'metric'}
-          para 'metric'
+          para 'metric', :margin => 2
         end
         if @prefs['units'] == 'metric'
           metric.checked = true
@@ -49,7 +48,7 @@ Shoes.app(:title => "Opensprints Configuration") do
       end
     end
 
-    flow do
+    stack(:margin => 20) do
       para 'Track Skin:'
       sensors = Dir.glob('lib/race_windows/*.rb').map do |s|
         s.gsub(/lib\/race_windows\/(.*)\.rb/, '\1')
@@ -60,22 +59,24 @@ Shoes.app(:title => "Opensprints Configuration") do
 
       end
     end
-    flow do
+    stack(:margin => 20) do
       para 'Background (color or image):'
-      color_edit = edit_line(@prefs['background']) do |edit|
-        @prefs['background'] = edit.text
-      end
-      button "pick color" do
-        color_edit.text = ask_color('pick...')
-        @prefs['background'] = color_edit.text
-      end
-      button "pick file" do
-        color_edit.text = ask_open_file
-        @prefs['background'] = color_edit.text
-        @prefs['bikes'][i] = color_edit.text
+      flow do
+        color_edit = edit_line(@prefs['background']) do |edit|
+          @prefs['background'] = edit.text
+        end
+        button "pick color" do
+          color_edit.text = ask_color('pick...')
+          @prefs['background'] = color_edit.text
+        end
+        button "pick file" do
+          color_edit.text = ask_open_file
+          @prefs['background'] = color_edit.text
+          @prefs['bikes'][i] = color_edit.text
+        end
       end
     end
-    flow do
+    stack(:margin => 20) do
       para 'Sensor type:'
       sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s|
         s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
@@ -86,44 +87,46 @@ Shoes.app(:title => "Opensprints Configuration") do
 
       end
     end
-    flow do
+    stack(:margin => 20) do
       para 'Sensor location:'
       edit_line(@prefs['sensor']['device']) do |edit|
         @prefs['sensor']['device'] = edit.text
       end
+      para "e.g. Mac OS X: /dev/tty.usbmodem0000103D1"
+      para "e.g. Linux: /dev/ttyUSB0"
+      para "e.g. Windows: com6"
     end
 
-    para "e.g. Mac OS X: /dev/tty.usbmodem0000103D1"
-    para "e.g. Linux: /dev/ttyUSB0"
-    para "e.g. Windows: com6"
 
-    para 'Bikes:'
-    @prefs['bikes']||=[]
-    @r = 4.times do |i|
-      flow do
-        para "Bike #{i+1} Color:"
-        color_edit = edit_line(@prefs['bikes'][i]) do |edit|
-          @prefs['bikes'][i] = edit.text
-        end
-        button "pick color" do
-          color_edit.text = ask_color('pick...')
-          @prefs['bikes'][i] = color_edit.text
-        end
-        box = check { |change|
-          if change.checked?
+    stack(:margin => 20) do
+      para 'Bikes:'
+      @prefs['bikes']||=[]
+      @r = 4.times do |i|
+        flow do
+          para "Bike #{i+1} Color:"
+          color_edit = edit_line(@prefs['bikes'][i]) do |edit|
+            @prefs['bikes'][i] = edit.text
+          end
+          button "pick color" do
+            color_edit.text = ask_color('pick...')
+            @prefs['bikes'][i] = color_edit.text
+          end
+          box = check { |change|
+            if change.checked?
+              color_edit.state = nil
+            else
+              color_edit.state = "disabled"
+              @prefs['bikes'][i] = nil
+            end
+          }
+          if @prefs['bikes'][i] && color_edit.text != ""
+            box.checked = true
             color_edit.state = nil
           else
             color_edit.state = "disabled"
-            @prefs['bikes'][i] = nil
           end
-        }
-        if @prefs['bikes'][i] && color_edit.text != ""
-          box.checked = true
-          color_edit.state = nil
-        else
-          color_edit.state = "disabled"
+          para "active?"
         end
-        para "active?"
       end
     end
 
