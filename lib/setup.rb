@@ -61,6 +61,12 @@ module Enumerable
   end
 end
 
+class Numeric
+  def to_minutes_seconds_string
+    [self/60 % 60, self % 60].map{|t| t.to_s.rjust(2,'0')}.join(':')
+  end
+end
+
 module Subclasses
   # return a list of the subclasses of a class
   def subclasses(direct = false)

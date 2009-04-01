@@ -1,12 +1,13 @@
 require 'lib/setup.rb'
 
 class RacePresenter
-  def initialize(shoes_instance, distance, update_area, race, sensor, bikes, best_time)
+  def initialize(shoes_instance, distance, update_area, running_clock, race, sensor, bikes, best_time)
     @shoes_instance = shoes_instance
-    @bar_size = 800-2*60-6
+    @bar_size = @shoes_instance.app.width()-2*48-6
     @race_distance = distance
     @race = race
     @update_area = update_area
+    @running_clock = running_clock
     @sensor = sensor
     @continue = true
     @bikes = bikes[0..1]
@@ -18,7 +19,10 @@ class RacePresenter
   def refresh
     @race.racers.each_with_index do |racer, i|
       racer.ticks = @sensor.racers[i].size
-      racer.text.replace(strong(racer.speed(@sensor.time)))
+      racer.text.replace(@shoes_instance.strong(racer.speed(@sensor.time)))
+    end
+    @running_clock.clear do
+      @shoes_instance.banner((@sensor.time/1000).round.to_minutes_seconds_string, :stroke => @shoes_instance.white)
     end
 
     @update_area.clear do
@@ -35,20 +39,17 @@ class RacePresenter
 
       @shoes_instance.stroke gray 0.5
       @shoes_instance.strokewidth 4
-
-      @shoes_instance.line fudge_right+2, 0,fudge_right+2,20+@race.racers.length*40
-      @shoes_instance.line fudge_right+684, 0,fudge_right+684,20+@race.racers.length*40
-
-
       @race.racers.size.times do |i|
         @shoes_instance.stroke @bikes[i]
         @shoes_instance.fill @bikes[i]
-        @shoes_instance.rect fudge_right+6, 20+i*40, @bar_size*percent_complete(@race.racers[i]), 20
+        @shoes_instance.rect fudge_right, 3+i*15, @bar_size*percent_complete(@race.racers[i]), 10
       end
 
       @race.racers.each_with_index do |racer,i|
-        racer.finish_time = @sensor.finish_times[i]
-        racer.text.replace(strong("%.2fs" % (racer.finish_time/1000.0)))
+        if @sensor.finish_times[i]
+          racer.finish_time = @sensor.finish_times[i]
+          racer.text.replace(@shoes_instance.strong("%.2fs" % (racer.finish_time/1000.0)))
+        end
       end
 
       if @race.complete?
@@ -115,7 +116,7 @@ module RaceWindow
         line 10,145,740,145
         line 10,299,740,299
 
-        @update_area = stack(:top => 200, :attach => Window)
+        @update_area = stack(:top => 100, :attach => Window)
 
         flow(:attach => Window, :top => 40*match.racers.size+240, :margin => [0,0,0,0]) do
           match.racers.each_with_index do |racer, index|
@@ -133,13 +134,16 @@ module RaceWindow
               racer.text = banner(strong(racer.speed(0)), :stroke => bikes[index])
             end
           end
+          @running_clock = stack(:width => 250, :margin => [20, 10, 20, 0]) do
+            title(0.to_minutes_seconds_string, :stroke => white)
+          end
         end
 
         @start = button("Start Race",{:top => 570, :left => 10}) do
           @start.hide
           match.racers.each{|racer| racer.ticks = 0 }
           match.racers.each{|racer| racer.finish_time = nil }
-          r = RacePresenter.new(self, race_distance, @update_area,
+          r = RacePresenter.new(self, race_distance, @update_area, @running_clock,
                        match, sensor, bikes, (tournament.best_time if tournament))
 
           sensor.start
