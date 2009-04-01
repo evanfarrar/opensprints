@@ -3,7 +3,7 @@ font('lib/LCD-N___.TTF')
 
 module RaceWindow
   def race_window(match, tournament=nil)
-    window :fullscreen => true, :title => TITLE, :width => 800, :height => 600 do
+    window :fullscreen => true, :title => TITLE, :width => WIDTH, :height => HEIGHT do
       race_distance, sensor, window_title = $RACE_DISTANCE, SENSOR, TITLE
       background BACKGROUND
 

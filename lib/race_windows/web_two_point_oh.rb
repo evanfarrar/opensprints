@@ -75,7 +75,7 @@ end
 module RaceWindow
   def race_window(match, tournament=nil)
     font("lib/DINMittelschriftStd.otf")
-    window :title => TITLE, :width => 800, :height => 600 do
+    window :title => TITLE, :width => WIDTH, :height => HEIGHT, :fullscreen => true do
       style(Shoes::Title, :family => 'DIN 1451 Std')
       style(Shoes::Caption, :family => 'DIN 1451 Std')
       style(Shoes::Para, :family => 'DIN 1451 Std')
@@ -98,23 +98,21 @@ module RaceWindow
           transform(:center)
           rotate 90
           para "START", :top => 170, :left => 0
-
         end
         flow(:width => 20,
                           :height => 200,
                           :top => 100,
-                          :left => 730 ) do
+                          :left => app.width() - 70 ) do
           background "#cbc3c0"
           transform(:center)
           rotate 90
           para "FINISH", :top => 170, :left => 0
-
         end
-        line 10,100,740,100
-        line 10,115,740,115
-        line 10,130,740,130
-        line 10,145,740,145
-        line 10,299,740,299
+        line 10,100,app.width()-60,100
+        line 10,115,app.width()-60,115
+        line 10,130,app.width()-60,130
+        line 10,145,app.width()-60,145
+        line 10,299,app.width()-60,299
 
         @update_area = stack(:top => 100, :attach => Window)
 
@@ -138,60 +136,61 @@ module RaceWindow
             title(0.to_minutes_seconds_string, :stroke => white)
           end
         end
+        flow(:top => app.height()-30, :attach => Window, :align => 'center') do
+          @start = button("Start Race",{:left => 10}) do
+            @start.hide
+            match.racers.each{|racer| racer.ticks = 0 }
+            match.racers.each{|racer| racer.finish_time = nil }
+            r = RacePresenter.new(self, race_distance, @update_area, @running_clock,
+                         match, sensor, bikes, (tournament.best_time if tournament))
 
-        @start = button("Start Race",{:top => 570, :left => 10}) do
-          @start.hide
-          match.racers.each{|racer| racer.ticks = 0 }
-          match.racers.each{|racer| racer.finish_time = nil }
-          r = RacePresenter.new(self, race_distance, @update_area, @running_clock,
-                       match, sensor, bikes, (tournament.best_time if tournament))
+            sensor.start
+            @countdown = 4
+            @start_time = Time.now+@countdown
+            @update_area.clear { @count_box = stack }
 
-          sensor.start
-          @countdown = 4
-          @start_time = Time.now+@countdown
-          @update_area.clear { @count_box = stack }
-
-          @race_animation = animate(14) do
-            @now = Time.now
-            if @now < @start_time
-              @count_box.clear do
-                banner "#{(@start_time-@now).round}...", :stroke => ivory,
-                  :font => "Arial 200px", :align => 'center'
-              end
-            else
-              @count_box.remove
-              if r.continue?
-                r.refresh
+            @race_animation = animate(14) do
+              @now = Time.now
+              if @now < @start_time
+                @count_box.clear do
+                  banner "#{(@start_time-@now).round}...", :stroke => ivory,
+                    :font => "Arial 200px", :align => 'center'
+                end
               else
-                @start.show
+                @count_box.remove
+                if r.continue?
+                  r.refresh
+                else
+                  @start.show
+                end
               end
             end
           end
-        end
 
-        button("Quit", {:top => 570, :left => 135}) do
-          @race_animation.stop if @race_animation
-          close
-        end
-
-        button("Call it", {:top => 570, :left => 205}) do
-          sensor.stop
-          results = []
-          bikes.length.times do |i|
-            results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
-          end
-          @continue = false
-          if owner.respond_to?(:tournament_record)
-            owner.tournament_record(match)
-          end
-        end
-
-        if tournament && tournament.matches.length > 1
-          subtitle("On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white,
-                   :top => 520)
-          button("Next Race",{:top => 570, :left => 305}) do
+          button("Quit", {:left => 135}) do
+            @race_animation.stop if @race_animation
             close
-            owner.race_window(tournament.next_after(match),tournament)
+          end
+
+          button("Call it", {:left => 205}) do
+            sensor.stop
+            results = []
+            bikes.length.times do |i|
+              results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
+            end
+            @continue = false
+            if owner.respond_to?(:tournament_record)
+              owner.tournament_record(match)
+            end
+          end
+
+          if tournament && tournament.matches.length > 1
+            subtitle("On deck: ",tournament.next_after(match).racers.join(', '),:stroke => white,
+                     :top => 520)
+            button("Next Race",{:left => 305}) do
+              close
+              owner.race_window(tournament.next_after(match),tournament)
+            end
           end
         end
       end

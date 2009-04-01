@@ -33,6 +33,9 @@ rescue MissingArduinoError
   load "lib/config_app.rb"
 end
 
+HEIGHT = options['window_height']||600
+WIDTH = options['window_width']||800
+
 
 if options['background']
   if File.readable?(options['background'])

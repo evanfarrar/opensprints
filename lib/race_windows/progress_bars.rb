@@ -79,7 +79,7 @@ end
 include Sorty
 module RaceWindow
   def race_window(match, tournament=nil)
-    window :fullscreen => true, :title => TITLE, :width => 800, :height => 600 do
+    window :fullscreen => true, :title => TITLE, :width => WIDTH, :height => HEIGHT do
       def list_racers(match, bikes)
         flow(:attach => Window, :top => 420, :margin => [80,0,0,0]) do
           match.racers.each_with_index do |racer, index|
