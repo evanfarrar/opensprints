@@ -8,8 +8,10 @@
  * 4            Sensor 2
  * 5            Sensor 3
  * 
- * 11           Start LED
- * 12           Stop LED
+ * 9            Racer0 Start LED anode, Stop LED cathode
+ * 10           Racer1 Start LED anode, Stop LED cathode
+ * 11           Racer2 Start LED anode, Stop LED cathode
+ * 12           Racer3 Start LED anode, Stop LED cathode
  * 
  */
 
@@ -26,8 +28,11 @@ unsigned long currentTimeMillis;
 
 int val = 0;
 
-int startPin = 11;
-int stopPin = 12;
+int racer0GoLedPin = 9;
+int racer1GoLedPin = 10;
+int racer2GoLedPin = 11;
+int racer3GoLedPin = 12;
+
 int sensorPins[4] = {2,3,4,5};
 int previoussensorValues[4] = {HIGH,HIGH,HIGH,HIGH};
 int values[4] = {0,0,0,0};
@@ -41,7 +46,7 @@ unsigned int charBuff[8];
 unsigned int charBuffLen = 0;
 boolean isReceivingRaceLength = false;
 
-int raceLengthTicks = 16;
+int raceLengthTicks = 20;
 int previousFakeTickMillis = 0;
 
 int updateInterval = 250;
@@ -50,10 +55,14 @@ unsigned long lastUpdateMillis = 0;
 void setup() {
   Serial.begin(115200); 
   pinMode(statusLEDPin, OUTPUT);
-  pinMode(startPin, OUTPUT);
-  pinMode(stopPin, OUTPUT);
-  digitalWrite(startPin, LOW);
-  digitalWrite(stopPin, LOW);
+  pinMode(racer0GoLedPin, OUTPUT);
+  pinMode(racer1GoLedPin, OUTPUT);
+  pinMode(racer2GoLedPin, OUTPUT);
+  pinMode(racer3GoLedPin, OUTPUT);
+  digitalWrite(racer0GoLedPin, LOW);
+  digitalWrite(racer1GoLedPin, LOW);
+  digitalWrite(racer2GoLedPin, LOW);
+  digitalWrite(racer3GoLedPin, LOW);
   for(int i=0; i<=3; i++)
   {
     pinMode(sensorPins[i], INPUT);
@@ -126,8 +135,10 @@ void checkSerial(){
         raceStarted = false;
         mockMode = false;
 
-        digitalWrite(startPin,LOW);
-        digitalWrite(stopPin,HIGH);
+        digitalWrite(racer0GoLedPin,LOW);
+        digitalWrite(racer1GoLedPin,LOW);
+        digitalWrite(racer2GoLedPin,LOW);
+        digitalWrite(racer3GoLedPin,LOW);
       }
     }
   }
@@ -154,11 +165,7 @@ void loop() {
 
 
   if (raceStarting) {
-    if((millis() - lastCountDownMillis) > 500){
-      digitalWrite(stopPin,LOW);
-    }
     if((millis() - lastCountDownMillis) > 1000){
-      digitalWrite(stopPin,HIGH);
       lastCountDown -= 1;
       lastCountDownMillis = millis();
     }
@@ -167,9 +174,10 @@ void loop() {
       raceStarting = false;
       raceStarted = true;
 
-      digitalWrite(startPin,HIGH);
-      digitalWrite(stopPin,LOW);
-
+      digitalWrite(racer0GoLedPin,HIGH);
+      digitalWrite(racer1GoLedPin,HIGH);
+      digitalWrite(racer2GoLedPin,HIGH);
+      digitalWrite(racer3GoLedPin,HIGH);
     }
   }
   if (raceStarted) {
@@ -186,6 +194,7 @@ void loop() {
             Serial.print(i);
             Serial.print("f: ");
             Serial.println(racerFinishTimeMillis[i], DEC);
+            digitalWrite(racer0GoLedPin+i,LOW);
           }
         }
         previoussensorValues[i] = values[i];
@@ -198,6 +207,7 @@ void loop() {
             Serial.print(i);
             Serial.print("f: ");
             Serial.println(racerFinishTimeMillis[i], DEC);
+            digitalWrite(racer0GoLedPin+i,LOW);
           }
         }
       }
