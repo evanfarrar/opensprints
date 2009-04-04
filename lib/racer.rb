@@ -1,6 +1,6 @@
 Infinity = 1/0.0
 class Racer
-  attr_accessor :distance, :best_time, :wins, :races, :finish_time, :text
+  attr_accessor :distance, :best_time, :wins, :races, :finish_time, :text, :color
   attr :roller_circumference
   attr :name
   attr :yaml_name
@@ -25,6 +25,7 @@ class Racer
     @roller_circumference = $ROLLER_CIRCUMFERENCE
     @ticks = 0
     @name = attributes[:name]
+    @color = attributes[:color]
     @race_distance = attributes[:race_distance]
   end
 
