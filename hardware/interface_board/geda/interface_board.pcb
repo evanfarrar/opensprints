@@ -1,12 +1,12 @@
 # release: pcb 1.99y
-# date:    Thu Apr  9 23:12:41 2009
+# date:    Fri Apr 10 09:17:44 2009
 # user:    orluke (Luke Orland,,,)
 # host:    orluke-ub84
 
 # To read pcb files, the pcb version (or the cvs source date) must be >= the file version
 FileVersion[20070407]
 
-PCB["305 style" 450000 650000]
+PCB["Malort" 450000 650000]
 
 Grid[2500.000000 0 0 1]
 Cursor[0 0 0.000000]
@@ -8031,7 +8031,7 @@ Layer(2 "component")
 	Line[315000 355000 315000 357500 600 1200 "clearline"]
 	Line[125000 275000 125000 270000 600 1200 "clearline"]
 	Line[125000 272500 135000 272500 600 1200 "clearline"]
-	Line[125000 190000 125000 187500 600 1200 "clearline,selected"]
+	Line[125000 190000 125000 187500 600 1200 "clearline"]
 	Text[382500 355000 0 144 "GND" ""]
 	Text[415000 355000 0 144 "5V" ""]
 	Text[10000 465000 1 180 "LJO 2009.04.09" ""]
