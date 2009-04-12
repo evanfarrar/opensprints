@@ -3,3 +3,4 @@
 *.cache.lib
 *.bck
 *.0??
+$savepcb.brd

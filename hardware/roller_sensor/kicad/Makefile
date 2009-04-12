@@ -4,4 +4,5 @@ clean:
 		*.cache.dcm \
 		*.cache.lib \
 		*.bck \
-		*.0??
+		*.0?? \
+		?savepcb.brd
