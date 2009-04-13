@@ -129,7 +129,7 @@ ShowRat=0
 ShowMRa=1
 [pcbnew/libraries]
 LibDir=
-LibName1=/home/orluke/workspace/opensprints/hardware/roller_sensor/kicad/footprints/custom_footprints
+LibName1=./footprints/custom_footprints
 LibName2=supports
 LibName3=connect
 LibName4=discret

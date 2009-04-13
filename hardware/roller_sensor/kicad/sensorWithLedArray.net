@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  13/4/2009-18:58:12
+# EESchema Netlist Version 1.1 created  13/4/2009-19:25:24
 (
  ( 49E17373 C1 C1 0.1uF
   ( 1 VCC_1 )
@@ -73,31 +73,31 @@
   ( G START/STOP_1 )
   ( S GND_1 )
  )
- ( 49DF8D68 R3 R1 10k
+ ( 49DF8D68 R1 R1 10k
   ( 1 VCC_1 )
   ( 2 START/STOP_1 )
  )
- ( 49DF8AA5 R3 R2 150
+ ( 49DF8AA5 R1 R2 150
   ( 1 VCC_1 )
   ( 2 N-000008 )
  )
- ( 49DF899F R3 R3 68
+ ( 49DF899F R1 R3 68
   ( 1 VCC_1 )
   ( 2 N-000014 )
  )
- ( 49C83C21 R3 R4 100
+ ( 49C83C21 R1 R4 100
   ( 1 N-000011 )
   ( 2 LED0_1 )
  )
- ( 49DF8ED4 R3 R5 100
+ ( 49DF8ED4 R1 R5 100
   ( 1 N-000012 )
   ( 2 LED1_1 )
  )
- ( 49DF8EDA R3 R6 100
+ ( 49DF8EDA R1 R6 100
   ( 1 N-000010 )
   ( 2 LED2_1 )
  )
- ( 49DF8EDE R3 R7 100
+ ( 49DF8EDE R1 R7 100
   ( 1 N-000013 )
   ( 2 LED3_1 )
  )
