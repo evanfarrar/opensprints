@@ -1,117 +1,133 @@
-# EESchema Netlist Version 1.1 created  Sun 12 Apr 2009 08:31:23 AM CDT
+# EESchema Netlist Version 1.1 created  13/4/2009-18:58:12
 (
- ( /49E17373 C1 C1 0.1uF
-  ( 1 /VCC )
-  ( 2 /GND )
+ ( 49E17373 C1 C1 0.1uF
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
  )
- ( /49C835C2 LEDV D1 RED_LED
-  ( 1 N-000010 )
-  ( 2 /START/STOP )
+ ( 49C835C2 LEDV D1 RED_LED
+  ( 1 N-000008 )
+  ( 2 START/STOP_1 )
  )
- ( /49C834FE LEDV D2 GRN_LED
-  ( 1 N-000016 )
+ ( 49C834FE LEDV D2 GRN_LED
+  ( 1 N-000014 )
+  ( 2 N-000009 )
+ )
+ ( 49C834E9 LEDV D3 LED
+  ( 1 VCC_1 )
   ( 2 N-000011 )
  )
- ( /49C834E9 LEDV D3 LED
-  ( 1 /VCC )
-  ( 2 N-000013 )
- )
- ( /49C834EA LEDV D4 LED
-  ( 1 /VCC )
-  ( 2 N-000014 )
- )
- ( /49C597A9 LEDV D5 LED
-  ( 1 /VCC )
+ ( 49C834EA LEDV D4 LED
+  ( 1 VCC_1 )
   ( 2 N-000012 )
  )
- ( /49C83284 LEDV D6 LED
-  ( 1 /VCC )
-  ( 2 N-000015 )
- )
- ( /49E1EA07 screw_hole_serpac_c-6 H1 SCREW_HOLE
- )
- ( /49C834DF RJ45_8 J1 RJ45
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
-  ( 4 /START/STOP )
-  ( 5 /LED0 )
-  ( 6 /LED1 )
-  ( 7 /LED2 )
-  ( 8 /LED3 )
- )
- ( /49DF9008 RJ45_8 J2 RJ45
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
-  ( 4 /START/STOP )
-  ( 5 /LED0 )
-  ( 6 /LED1 )
-  ( 7 /LED2 )
-  ( 8 /LED3 )
- )
- ( /49E1EB87 SIL-8 P1 CONN_8
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
-  ( 4 /START/STOP )
-  ( 5 /LED0 )
-  ( 6 /LED1 )
-  ( 7 /LED2 )
-  ( 8 /LED3 )
- )
- ( /49DF8829 2N7000 Q1 MOSFET_N
-  ( D N-000011 )
-  ( G /START/STOP )
-  ( S /GND )
- )
- ( /49DF8D68 R3 R1 10k
-  ( 1 /VCC )
-  ( 2 /START/STOP )
- )
- ( /49DF8AA5 R3 R2 150
-  ( 1 /VCC )
+ ( 49C597A9 LEDV D5 LED
+  ( 1 VCC_1 )
   ( 2 N-000010 )
  )
- ( /49DF899F R3 R3 68
-  ( 1 /VCC )
-  ( 2 N-000016 )
+ ( 49C83284 LEDV D6 LED
+  ( 1 VCC_1 )
+  ( 2 N-000013 )
  )
- ( /49C83C21 R3 R4 100
-  ( 1 N-000013 )
-  ( 2 /LED0 )
- )
- ( /49DF8ED4 R3 R5 100
-  ( 1 N-000014 )
-  ( 2 /LED1 )
- )
- ( /49DF8EDA R3 R6 100
-  ( 1 N-000012 )
-  ( 2 /LED2 )
- )
- ( /49DF8EDE R3 R7 100
+ ( 49E3884B LEDV D7 WHT_LED
   ( 1 N-000015 )
-  ( 2 /LED3 )
+  ( 2 VOUT_1 )
  )
- ( /49C59A51 TO92 U1 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( 49E3884C LEDV D8 RED_LED
+  ( 1 N-000017 )
+  ( 2 GND_1 )
  )
- ( /49C83B66 TO92 U2 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( 49E1EA07 screw_hole_serpac_c-6 H1 SCREW_HOLE
  )
- ( /49DFC7F9 TO92 U3 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( 49C834DF RJ45_8 J1 RJ45
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 VOUT_1 )
+  ( 4 START/STOP_1 )
+  ( 5 LED0_1 )
+  ( 6 LED1_1 )
+  ( 7 LED2_1 )
+  ( 8 LED3_1 )
  )
- ( /49C83B82 TO92 U4 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( 49DF9008 RJ45_8 J2 RJ45
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 VOUT_1 )
+  ( 4 START/STOP_1 )
+  ( 5 LED0_1 )
+  ( 6 LED1_1 )
+  ( 7 LED2_1 )
+  ( 8 LED3_1 )
+ )
+ ( 49E1EB87 SIL-8 P1 CONN_8
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 VOUT_1 )
+  ( 4 START/STOP_1 )
+  ( 5 LED0_1 )
+  ( 6 LED1_1 )
+  ( 7 LED2_1 )
+  ( 8 LED3_1 )
+ )
+ ( 49DF8829 2N7000 Q1 MOSFET_N
+  ( D N-000009 )
+  ( G START/STOP_1 )
+  ( S GND_1 )
+ )
+ ( 49DF8D68 R3 R1 10k
+  ( 1 VCC_1 )
+  ( 2 START/STOP_1 )
+ )
+ ( 49DF8AA5 R3 R2 150
+  ( 1 VCC_1 )
+  ( 2 N-000008 )
+ )
+ ( 49DF899F R3 R3 68
+  ( 1 VCC_1 )
+  ( 2 N-000014 )
+ )
+ ( 49C83C21 R3 R4 100
+  ( 1 N-000011 )
+  ( 2 LED0_1 )
+ )
+ ( 49DF8ED4 R3 R5 100
+  ( 1 N-000012 )
+  ( 2 LED1_1 )
+ )
+ ( 49DF8EDA R3 R6 100
+  ( 1 N-000010 )
+  ( 2 LED2_1 )
+ )
+ ( 49DF8EDE R3 R7 100
+  ( 1 N-000013 )
+  ( 2 LED3_1 )
+ )
+ ( 49E3884E R3 R8 68
+  ( 1 VCC_1 )
+  ( 2 N-000015 )
+ )
+ ( 49E3884D R3 R9 330
+  ( 1 VCC_1 )
+  ( 2 N-000017 )
+ )
+ ( 49C59A51 TO92 U1 SS441A
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 VOUT_1 )
+ )
+ ( 49C83B66 TO92 U2 SS441A
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 VOUT_1 )
+ )
+ ( 49DFC7F9 TO92 U3 SS441A
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 VOUT_1 )
+ )
+ ( 49C83B82 TO92 U4 SS441A
+  ( 1 VCC_1 )
+  ( 2 GND_1 )
+  ( 3 VOUT_1 )
  )
 )
 *
@@ -120,54 +136,6 @@ $component C1
  SM*
  C?
  C1-1
-$endlist
-$component D1
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
-$endlist
-$component D2
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
-$endlist
-$component D3
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
-$endlist
-$component D4
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
-$endlist
-$component D5
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
-$endlist
-$component D6
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
 $endlist
 $component H1
  screw_hole*
@@ -203,6 +171,16 @@ $component R6
  SM0805
 $endlist
 $component R7
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R9
  R?
  SM0603
  SM0805
