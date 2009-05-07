@@ -1,0 +1,9 @@
+PCBNEW-LibDoc----V1  Sun 12 Apr 2009 09:56:19 AM CDT
+#
+$MODULE 2N7000
+Li 2N7000
+Cd Transistor TO92 brochage type BC237
+Kw TR TO92
+$EndMODULE
+#
+$EndLIBDOC
