@@ -1,2 +1,3 @@
 *.o
 applet/*
+arduino_install_dir

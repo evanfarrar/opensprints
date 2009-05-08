@@ -7,38 +7,37 @@
 # Detailed instructions for using the makefile:
 #
 #  1. Copy this file into the folder with your sketch. There should be a
-#     file with the extension .pde (e.g. foo.pde)
+#     file with the same name as the folder and with the extension .pde
+#     (e.g. foo.pde in the foo/ folder).
 #
-#  2. Below, modify the line containing "TARGET" to refer to the name of
-#     of your program's file without an extension (e.g. TARGET = foo).
-#
-#  3. Modify the line containg "INSTALL_DIR" to point to the directory that
+#  2. Modify the line containg "INSTALL_DIR" to point to the directory that
 #     contains the Arduino installation (for example, under Mac OS X, this
-#     might be /Applications/arduino-0011).
+#     might be /Applications/arduino-0012).
 #
-#  4. Modify the line containing "PORT" to refer to the filename
+#  3. Modify the line containing "PORT" to refer to the filename
 #     representing the USB or serial connection to your Arduino board
 #     (e.g. PORT = /dev/tty.USB0).  If the exact name of this file
-#     changes, you can use * as a wildcard (e.g. PORT = /dev/tty.USB*).
+#     changes, you can use * as a wildcard (e.g. PORT = /dev/tty.usb*).
 #
-#  5. Set the line containing "MCU" to match your board's processor. 
+#  4. Set the line containing "MCU" to match your board's processor. 
 #     Older one's are atmega8 based, newer ones like Arduino Mini, Bluetooth
 #     or Diecimila have the atmega168.  If you're using a LilyPad Arduino,
 #     change F_CPU to 8000000.
 #
-#  6. At the command line, change to the directory containing your
+#  5. At the command line, change to the directory containing your
 #     program's file and the makefile.
 #
-#  7. Type "make" and press enter to compile/verify your program.
+#  6. Type "make" and press enter to compile/verify your program.
 #
-#  8. Type "make upload", reset your Arduino board, and press enter to
+#  7. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
 # $Id$
 
-TARGET = basic_msg
-INSTALL_DIR = ../arduino-0011
-PORT = /dev/ttyUSB0
+TARGET = $(notdir $(CURDIR))
+# This should be a symbolic link to the arduino IDE directory:
+INSTALL_DIR = ../arduino_install_dir
+PORT = /dev/ttyUSB*
 UPLOAD_RATE = 19200
 AVRDUDE_PROGRAMMER = stk500v1
 MCU = atmega168
@@ -53,7 +52,8 @@ SRC =  $(ARDUINO)/pins_arduino.c $(ARDUINO)/wiring.c \
 $(ARDUINO)/wiring_analog.c $(ARDUINO)/wiring_digital.c \
 $(ARDUINO)/wiring_pulse.c $(ARDUINO)/wiring_serial.c \
 $(ARDUINO)/wiring_shift.c $(ARDUINO)/WInterrupts.c
-CXXSRC = $(ARDUINO)/HardwareSerial.cpp $(ARDUINO)/WMath.cpp
+CXXSRC = $(ARDUINO)/HardwareSerial.cpp $(ARDUINO)/WMath.cpp \
+$(ARDUINO)/Print.cpp
 FORMAT = ihex
 
 
@@ -95,7 +95,7 @@ LDFLAGS = -lm
 # Programming support using avrdude. Settings and variables.
 AVRDUDE_PORT = $(PORT)
 AVRDUDE_WRITE_FLASH = -U flash:w:applet/$(TARGET).hex
-AVRDUDE_FLAGS = -V -F -C /etc/avrdude.conf \
+AVRDUDE_FLAGS = -V -F -C $(INSTALL_DIR)/hardware/tools/avr/etc/avrdude.conf \
 -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) \
 -b $(UPLOAD_RATE)
 
@@ -227,7 +227,7 @@ applet/core.a: $(OBJ)
 
 # Target: clean project.
 clean:
-	$(REMOVE) applet/$(TARGET).hex applet/$(TARGET).eep applet/$(TARGET).cof applet/$(TARGET).elf  applet/$(TARGET).cpp \
+	$(REMOVE) applet/$(TARGET).hex applet/$(TARGET).eep applet/$(TARGET).cof applet/$(TARGET).elf \
 	applet/$(TARGET).map applet/$(TARGET).sym applet/$(TARGET).lss applet/core.a \
 	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
 
