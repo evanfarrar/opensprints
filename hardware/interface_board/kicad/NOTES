@@ -1,0 +1,15 @@
+printing:
+To print a drawing of the layout, print to pdf with X and Y scaling 1.0. Then print the generated PDF at 1.077 scale.
+
+To make the TO-92 footprint module compatible with the MOSFET_N symbol, I created a custom module version of the TO-92 footprint and renamed the pads 1,2,3 to D,G,S.
+
+The mounting hole is a single pad with diameter 0.26" with a pad diameter 0.26".
+
+PCB variations:
+1 - RJ45 jacks are side-by-side on a narrow side of the PCB.
+2 - RJ45 are across from each other on opposite narrow ends of the PCB.
+
+TO DO:
+ * add stuff option markings in schematic
+ * change pad sizes to hole diameter = 0.035" and pad diameter = 0.070"
+ * draw all the tracks
