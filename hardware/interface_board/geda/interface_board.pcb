@@ -1,12 +1,12 @@
 # release: pcb 1.99y
-# date:    Fri Apr 10 09:17:44 2009
+# date:    Sun May 10 22:10:07 2009
 # user:    orluke (Luke Orland,,,)
 # host:    orluke-ub84
 
 # To read pcb files, the pcb version (or the cvs source date) must be >= the file version
 FileVersion[20070407]
 
-PCB["Malort" 450000 650000]
+PCB["The Hard Sell" 450000 650000]
 
 Grid[2500.000000 0 0 1]
 Cursor[0 0 0.000000]
@@ -821,7 +821,7 @@ Element["" "pin.fp" "" "unknown" 330000 410000 5000 5000 0 100 ""]
 
 	)
 
-Element["hidename" "A31_screwhole" "H1" "unknown" 12000 206000 -1103 -2000 0 100 ""]
+Element["hidename" "A31_screwhole" "H1" "unknown" 12000 211000 -1103 -2000 0 100 ""]
 (
 	Pin[0 0 12800 12800 12800 12800 "" "1" ""]
 	ElementArc [0 0 12000 12000 0 360 1000]
@@ -7282,7 +7282,7 @@ Element["" "pin.fp" "" "unknown" 140000 380000 5000 5000 0 100 ""]
 
 Element["hidename" "A31_screwhole" "H4" "unknown" 12000 483000 -1103 -3000 0 100 ""]
 (
-	Pin[0 0 12800 12800 12800 12800 "" "1" ""]
+	Pin[0 0 12800 12800 12800 12800 "" "1" "selected"]
 	ElementArc [0 0 12000 12000 0 360 1000]
 
 	)
@@ -7836,10 +7836,10 @@ Element["" "pin.fp" "" "unknown" 300000 380000 5000 5000 0 100 ""]
 	)
 Layer(1 "outline")
 (
-	Line[438000 595000 0 595000 1000 2000 "clearline"]
-	Line[0 595000 0 111000 1000 2000 "clearline"]
-	Line[438000 111000 438000 595000 1000 2000 "clearline"]
 	Line[0 111000 438000 111000 1000 2000 "clearline"]
+	Line[0 590000 0 111000 1000 2000 "clearline"]
+	Line[438000 111000 438000 590000 1000 2000 "clearline"]
+	Line[438000 590000 0 590000 1000 2000 "clearline"]
 )
 Layer(2 "component")
 (
@@ -8034,14 +8034,14 @@ Layer(2 "component")
 	Line[125000 190000 125000 187500 600 1200 "clearline"]
 	Text[382500 355000 0 144 "GND" ""]
 	Text[415000 355000 0 144 "5V" ""]
-	Text[10000 465000 1 180 "LJO 2009.04.09" ""]
+	Text[10000 465000 1 180 "LJO 2009.05.10" ""]
 	Text[420000 465000 1 180 "top surface" ""]
-	Text[10000 377500 1 180 "interface board v2.2" ""]
-	Text[127500 580000 0 232 "2" ""]
-	Text[27500 580000 0 232 "1" ""]
-	Text[327500 580000 0 232 "4" ""]
-	Text[227500 580000 0 232 "3" ""]
+	Text[10000 377500 1 180 "interface board v2.2.1" ""]
 	Text[415000 345000 1 251 "opensprints.org" ""]
+	Text[127500 570000 0 232 "2" ""]
+	Text[27500 570000 0 232 "1" ""]
+	Text[327500 570000 0 232 "4" ""]
+	Text[227500 570000 0 232 "3" ""]
 )
 Layer(3 "solder")
 (
