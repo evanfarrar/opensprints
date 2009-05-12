@@ -95,7 +95,7 @@ LDFLAGS = -lm
 # Programming support using avrdude. Settings and variables.
 AVRDUDE_PORT = $(PORT)
 AVRDUDE_WRITE_FLASH = -U flash:w:applet/$(TARGET).hex
-AVRDUDE_FLAGS = -V -F -C $(INSTALL_DIR)/hardware/tools/avr/etc/avrdude.conf \
+AVRDUDE_FLAGS = -V -F -C $(INSTALL_DIR)/hardware/tools/avrdude.conf \
 -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) \
 -b $(UPLOAD_RATE)
 
