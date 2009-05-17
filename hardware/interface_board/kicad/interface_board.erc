@@ -1,5 +1,7 @@
-ERC control (13/4/2009-18:56:23)
+ERC control (Sat 16 May 2009 11:38:43 PM CDT)
 
-***** Sheet 1 (Root)
+***** Sheet / (Root) 
+ERC: Warning Pin passive not driven (Net 18) (X= 8.450 inches, Y= 5.100 inches
+ERC: Warning Pin passive not driven (Net 2) (X= 2.350 inches, Y= 4.000 inches
 
- >> Errors ERC: 0
+ >> Errors ERC: 2
