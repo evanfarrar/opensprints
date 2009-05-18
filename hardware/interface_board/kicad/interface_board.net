@@ -1,189 +1,137 @@
-# EESchema Netlist Version 1.1 created  13/4/2009-19:25:24
+# EESchema Netlist Version 1.1 created  Sun 17 May 2009 09:58:38 PM CDT
 (
- ( 49E17373 C1 C1 0.1uF
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
+ ( /49FC8389 SCREW_HOLE_SERPAC-A-31 H1 SCREW_HOLE
  )
- ( 49C835C2 LEDV D1 RED_LED
-  ( 1 N-000008 )
-  ( 2 START/STOP_1 )
+ ( /49FC8388 SCREW_HOLE_SERPAC-A-31 H2 SCREW_HOLE
  )
- ( 49C834FE LEDV D2 GRN_LED
-  ( 1 N-000014 )
-  ( 2 N-000009 )
+ ( /49FC8383 SCREW_HOLE_SERPAC-A-31 H3 SCREW_HOLE
  )
- ( 49C834E9 LEDV D3 LED
-  ( 1 VCC_1 )
-  ( 2 N-000011 )
+ ( /49E1EA07 SCREW_HOLE_SERPAC-A-31 H4 SCREW_HOLE
  )
- ( 49C834EA LEDV D4 LED
-  ( 1 VCC_1 )
-  ( 2 N-000012 )
+ ( /49C834DF RJ45_8-LJO J1 RJ45
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_0_SENSOR )
+  ( 4 /RACER_01 )
+  ( 5 /RACER_0_LED0 )
+  ( 6 /RACER_0_LED1 )
+  ( 7 /RACER_0_LED2 )
+  ( 8 /RACER_0_LED3 )
  )
- ( 49C597A9 LEDV D5 LED
-  ( 1 VCC_1 )
-  ( 2 N-000010 )
+ ( /4A0F8810 RJ45_8-LJO J2 RJ45
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_1_SENSOR )
+  ( 4 /RACER_12 )
+  ( 5 /RACER_1_LED0 )
+  ( 6 /RACER_1_LED1 )
+  ( 7 /RACER_1_LED2 )
+  ( 8 /RACER_1_LED3 )
  )
- ( 49C83284 LEDV D6 LED
-  ( 1 VCC_1 )
-  ( 2 N-000013 )
+ ( /4A0F4381 RJ45_8-LJO J3 RJ45
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_2_SENSOR )
+  ( 4 /RACER_23 )
+  ( 5 /RACER_2_LED0 )
+  ( 6 /RACER_2_LED1 )
+  ( 7 /RACER_2_LED2 )
+  ( 8 /RACER_2_LED3 )
  )
- ( 49E3884B LEDV D7 WHT_LED
-  ( 1 N-000015 )
-  ( 2 VOUT_1 )
+ ( /4A0F882B RJ45_8-LJO J4 RJ45
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_3_SENSOR )
+  ( 4 /RACER_34 )
+  ( 5 /RACER_3_LED0 )
+  ( 6 /RACER_3_LED1 )
+  ( 7 /RACER_3_LED2 )
+  ( 8 /RACER_3_LED3 )
  )
- ( 49E3884C LEDV D8 RED_LED
-  ( 1 N-000017 )
-  ( 2 GND_1 )
+ ( /49E1EB87 SIL-8 P1 CONN_8
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_0_SENSOR )
+  ( 4 /RACER_01 )
+  ( 5 /RACER_0_LED0 )
+  ( 6 /RACER_0_LED1 )
+  ( 7 /RACER_0_LED2 )
+  ( 8 /RACER_0_LED3 )
  )
- ( 49E1EA07 screw_hole_serpac_c-6 H1 SCREW_HOLE
+ ( /4A0F8811 SIL-8 P2 CONN_8
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_1_SENSOR )
+  ( 4 /RACER_12 )
+  ( 5 /RACER_1_LED0 )
+  ( 6 /RACER_1_LED1 )
+  ( 7 /RACER_1_LED2 )
+  ( 8 /RACER_1_LED3 )
  )
- ( 49C834DF RJ45_8 J1 RJ45
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
-  ( 4 START/STOP_1 )
-  ( 5 LED0_1 )
-  ( 6 LED1_1 )
-  ( 7 LED2_1 )
-  ( 8 LED3_1 )
+ ( /4A0F87C1 SIL-8 P3 CONN_8
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_2_SENSOR )
+  ( 4 /RACER_23 )
+  ( 5 /RACER_2_LED0 )
+  ( 6 /RACER_2_LED1 )
+  ( 7 /RACER_2_LED2 )
+  ( 8 /RACER_2_LED3 )
  )
- ( 49DF9008 RJ45_8 J2 RJ45
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
-  ( 4 START/STOP_1 )
-  ( 5 LED0_1 )
-  ( 6 LED1_1 )
-  ( 7 LED2_1 )
-  ( 8 LED3_1 )
+ ( /4A0F882C SIL-8 P4 CONN_8
+  ( 1 /5V )
+  ( 2 /GND )
+  ( 3 /RACER_3_SENSOR )
+  ( 4 /RACER_34 )
+  ( 5 /RACER_3_LED0 )
+  ( 6 /RACER_3_LED1 )
+  ( 7 /RACER_3_LED2 )
+  ( 8 /RACER_3_LED3 )
  )
- ( 49E1EB87 SIL-8 P1 CONN_8
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
-  ( 4 START/STOP_1 )
-  ( 5 LED0_1 )
-  ( 6 LED1_1 )
-  ( 7 LED2_1 )
-  ( 8 LED3_1 )
- )
- ( 49DF8829 2N7000 Q1 MOSFET_N
-  ( D N-000009 )
-  ( G START/STOP_1 )
-  ( S GND_1 )
- )
- ( 49DF8D68 R1 R1 10k
-  ( 1 VCC_1 )
-  ( 2 START/STOP_1 )
- )
- ( 49DF8AA5 R1 R2 150
-  ( 1 VCC_1 )
-  ( 2 N-000008 )
- )
- ( 49DF899F R1 R3 68
-  ( 1 VCC_1 )
-  ( 2 N-000014 )
- )
- ( 49C83C21 R1 R4 100
-  ( 1 N-000011 )
-  ( 2 LED0_1 )
- )
- ( 49DF8ED4 R1 R5 100
-  ( 1 N-000012 )
-  ( 2 LED1_1 )
- )
- ( 49DF8EDA R1 R6 100
-  ( 1 N-000010 )
-  ( 2 LED2_1 )
- )
- ( 49DF8EDE R1 R7 100
-  ( 1 N-000013 )
-  ( 2 LED3_1 )
- )
- ( 49E3884E R3 R8 68
-  ( 1 VCC_1 )
-  ( 2 N-000015 )
- )
- ( 49E3884D R3 R9 330
-  ( 1 VCC_1 )
-  ( 2 N-000017 )
- )
- ( 49C59A51 TO92 U1 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
- )
- ( 49C83B66 TO92 U2 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
- )
- ( 49DFC7F9 TO92 U3 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
- )
- ( 49C83B82 TO92 U4 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
+ ( /4A0F4298 ARDUINO_USB U1 ARDUINO_USB
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 /RACER_34 )
+  ( 5 /RACER_23 )
+  ( 6 /RACER_12 )
+  ( 7 /RACER_01 )
+  ( 8 ? )
+  ( 9 ? )
+  ( 10 ? )
+  ( 11 /RACER_3_SENSOR )
+  ( 12 /RACER_2_SENSOR )
+  ( 13 /RACER_1_SENSOR )
+  ( 14 /RACER_0_SENSOR )
+  ( 15 ? )
+  ( 16 ? )
+  ( 17 ? )
+  ( 18 ? )
+  ( 19 ? )
+  ( 20 ? )
+  ( 21 ? )
+  ( 22 ? )
+  ( 23 ? )
+  ( 24 ? )
+  ( 25 /GND )
+  ( 26 /5V )
+  ( 27 ? )
+  ( 28 ? )
  )
 )
 *
 { Allowed footprints by component:
-$component C1
- SM*
- C?
- C1-1
-$endlist
 $component H1
  screw_hole*
 $endlist
-$component R1
- R?
- SM0603
- SM0805
+$component H2
+ screw_hole*
 $endlist
-$component R2
- R?
- SM0603
- SM0805
+$component H3
+ screw_hole*
 $endlist
-$component R3
- R?
- SM0603
- SM0805
-$endlist
-$component R4
- R?
- SM0603
- SM0805
-$endlist
-$component R5
- R?
- SM0603
- SM0805
-$endlist
-$component R6
- R?
- SM0603
- SM0805
-$endlist
-$component R7
- R?
- SM0603
- SM0805
-$endlist
-$component R8
- R?
- SM0603
- SM0805
-$endlist
-$component R9
- R?
- SM0603
- SM0805
+$component H4
+ screw_hole*
 $endlist
 $endfootprintlist
 }
