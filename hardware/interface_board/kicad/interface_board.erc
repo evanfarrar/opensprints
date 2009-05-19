@@ -1,5 +1,23 @@
-ERC control (13/4/2009-18:56:23)
+ERC control (Sun 17 May 2009 02:00:32 PM CDT)
 
-***** Sheet 1 (Root)
+***** Sheet / (Root) 
+ERC: Warning Pin power_in Unconnected (X= 3.900 inches, Y= 4.000 inches
+ERC: Warning Pin power_out Unconnected (X= 3.900 inches, Y= 4.150 inches
+ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 4.300 inches
+ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 5.050 inches
+ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 5.200 inches
+ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 5.350 inches
+ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 6.100 inches
+ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 6.250 inches
+ERC: Warning Pin input Unconnected (X= 6.800 inches, Y= 4.600 inches
+ERC: Warning Pin power_out Unconnected (X= 6.800 inches, Y= 4.750 inches
+ERC: Warning Pin power_out Unconnected (X= 6.800 inches, Y= 5.200 inches
+ERC: Warning Pin power_in Unconnected (X= 6.800 inches, Y= 5.350 inches
+ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.500 inches
+ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.650 inches
+ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.800 inches
+ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.950 inches
+ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 6.100 inches
+ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 6.250 inches
 
- >> Errors ERC: 0
+ >> Errors ERC: 18

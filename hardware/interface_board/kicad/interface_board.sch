@@ -1,747 +1,422 @@
-EESchema Schematic File Version 2  date Sat 02 May 2009 12:32:44 PM CDT
-LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
+EESchema Schematic File Version 2  date Sun 17 May 2009 02:25:04 PM CDT
+LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
 EELAYER 23  0
 EELAYER END
 $Descr User 11000 8500
 Sheet 1 1
-Title "roller sensor progress indicator"
-Date "13 apr 2009"
-Rev "3.0"
+Title "Interface board"
+Date "17 may 2009"
+Rev "2.3.0"
 Comp "www.opensprints.org"
 Comment1 "OpenSprints"
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L SCREW_HOLE H?
-U 1 1 49FC8389
-P 1100 7400
-F 0 "H?" H 1100 7500 60  0001 C CNN
-F 1 "SCREW_HOLE" H 1100 7300 60  0000 C CNN
-	1    1100 7400
-	1    0    0    -1  
-$EndComp
-$Comp
-L SCREW_HOLE H?
-U 1 1 49FC8388
-P 1100 7050
-F 0 "H?" H 1100 7150 60  0001 C CNN
-F 1 "SCREW_HOLE" H 1100 6950 60  0000 C CNN
-	1    1100 7050
-	1    0    0    -1  
-$EndComp
-$Comp
-L SCREW_HOLE H?
-U 1 1 49FC8383
-P 1100 6700
-F 0 "H?" H 1100 6800 60  0001 C CNN
-F 1 "SCREW_HOLE" H 1100 6600 60  0000 C CNN
-	1    1100 6700
-	1    0    0    -1  
-$EndComp
-Wire Notes Line
-	6200 900  6350 900 
-Wire Notes Line
-	6150 5500 6300 5500
-Wire Notes Line
-	7700 900  7850 900 
-Wire Notes Line
-	7950 900  8100 900 
-Wire Notes Line
-	8250 900  8400 900 
-Wire Notes Line
-	8550 900  8700 900 
-Wire Notes Line
-	6500 900  6650 900 
-Wire Notes Line
-	6800 900  6950 900 
-Wire Notes Line
-	7100 900  7250 900 
-Wire Notes Line
-	7400 900  7550 900 
-Wire Notes Line
-	8850 900  9000 900 
-Wire Notes Line
-	9150 900  9300 900 
-Wire Notes Line
-	9450 900  9600 900 
-Wire Notes Line
-	9750 900  9900 900 
-Wire Notes Line
-	10050 900  10200 900 
-Wire Notes Line
-	7650 5500 7800 5500
-Wire Notes Line
-	7950 5500 8100 5500
-Wire Notes Line
-	8250 5500 8400 5500
-Wire Notes Line
-	8550 5500 8700 5500
-Wire Notes Line
-	6450 5500 6600 5500
-Wire Notes Line
-	6750 5500 6900 5500
-Wire Notes Line
-	7050 5500 7200 5500
-Wire Notes Line
-	7350 5500 7500 5500
-Wire Notes Line
-	8850 5500 9000 5500
-Wire Notes Line
-	9150 5500 9300 5500
-Wire Notes Line
-	9450 5500 9600 5500
-Wire Notes Line
-	9750 5500 9900 5500
-Wire Notes Line
-	6050 4900 6050 5050
-Wire Notes Line
-	6050 4600 6050 4750
-Wire Notes Line
-	6050 4300 6050 4450
-Wire Notes Line
-	6050 4000 6050 4150
-Wire Notes Line
-	6050 3700 6050 3850
-Wire Notes Line
-	6050 3400 6050 3550
-Wire Notes Line
-	6050 3100 6050 3250
-Wire Notes Line
-	6050 2800 6050 2950
-Wire Notes Line
-	6050 2500 6050 2650
-Wire Notes Line
-	6050 2200 6050 2350
-Wire Notes Line
-	6050 1900 6050 2050
-Wire Notes Line
-	6050 1600 6050 1750
-Wire Notes Line
-	6050 1300 6050 1450
-Wire Notes Line
-	6050 1000 6050 1150
-Wire Notes Line
-	6050 5250 6050 5400
 Wire Wire Line
-	8300 2550 8300 3200
+	6800 4900 7050 4900
 Wire Wire Line
-	8300 2150 8300 1900
-Connection ~ 7850 3200
+	2700 5800 3900 5800
 Wire Wire Line
-	7850 2900 7850 3200
-Connection ~ 7850 1900
+	3900 5500 2700 5500
 Wire Wire Line
-	8300 1900 6600 1900
-Wire Notes Line
-	8700 1050 10150 1050
-Wire Notes Line
-	8700 1050 8700 4700
-Wire Notes Line
-	8700 4700 10150 4700
-Wire Notes Line
-	3300 4900 3300 5050
-Wire Notes Line
-	3300 4600 3300 4750
-Wire Notes Line
-	3300 4300 3300 4450
-Wire Notes Line
-	3300 4000 3300 4150
-Wire Notes Line
-	3300 3700 3300 3850
-Wire Notes Line
-	3300 3400 3300 3550
-Wire Notes Line
-	3300 3100 3300 3250
-Wire Notes Line
-	3300 2800 3300 2950
-Wire Notes Line
-	3300 2500 3300 2650
-Wire Notes Line
-	3300 2200 3300 2350
-Wire Notes Line
-	3300 1900 3300 2050
-Wire Notes Line
-	3300 1600 3300 1750
-Wire Notes Line
-	3300 1300 3300 1450
-Wire Notes Line
-	3300 1000 3300 1150
+	2700 4750 3900 4750
 Wire Wire Line
-	2150 2900 1800 2900
+	2700 4450 3900 4450
 Wire Wire Line
-	2150 2700 1800 2700
+	1800 1300 2150 1300
 Wire Wire Line
-	2150 2500 1800 2500
+	9050 3250 8700 3250
 Wire Wire Line
-	2150 2300 1800 2300
+	9050 3050 8700 3050
 Wire Wire Line
-	2150 2400 1800 2400
+	9050 2850 8700 2850
 Wire Wire Line
-	2150 2600 1800 2600
+	9050 2650 8700 2650
 Wire Wire Line
-	2150 2800 1800 2800
+	9050 2550 8700 2550
 Wire Wire Line
-	2150 3000 1800 3000
+	9050 2750 8700 2750
 Wire Wire Line
-	8900 1450 9300 1450
+	9050 2950 8700 2950
 Wire Wire Line
-	4750 1700 4750 1750
+	9050 3150 8700 3150
 Wire Wire Line
-	5250 2200 5250 2150
+	6600 2650 6950 2650
 Wire Wire Line
-	4000 3900 3550 3900
+	6950 3250 6600 3250
 Wire Wire Line
-	4000 3200 3550 3200
+	6950 3050 6600 3050
 Wire Wire Line
-	4500 3900 4650 3900
+	6950 2850 6600 2850
 Wire Wire Line
-	4500 3200 4650 3200
-Connection ~ 4300 1150
+	6950 2750 6600 2750
 Wire Wire Line
-	4300 1150 4300 1200
+	6950 2950 6600 2950
 Wire Wire Line
-	5200 3100 5100 3100
-Connection ~ 5100 3550
+	6950 3150 6600 3150
 Wire Wire Line
-	5100 3550 5050 3550
+	6600 2550 6950 2550
 Wire Wire Line
-	5100 3100 5100 4250
+	9050 1900 8700 1900
 Wire Wire Line
-	5100 4250 5050 4250
+	9050 1700 8700 1700
 Wire Wire Line
-	2350 1200 1800 1200
+	9050 1500 8700 1500
 Wire Wire Line
-	8900 3300 9300 3300
-Wire Notes Line
-	10150 4700 10150 1050
+	9050 1300 8700 1300
 Wire Wire Line
-	8900 4000 9300 4000
+	9050 1200 8700 1200
 Wire Wire Line
-	5250 2600 5250 2750
+	9050 1400 8700 1400
 Wire Wire Line
-	2150 1800 1800 1800
+	9050 1600 8700 1600
 Wire Wire Line
-	2150 1600 1800 1600
+	9050 1800 8700 1800
 Wire Wire Line
-	2150 1400 1800 1400
+	6600 1300 6950 1300
 Wire Wire Line
-	3550 2400 4950 2400
+	6950 1900 6600 1900
 Wire Wire Line
-	2150 1500 1800 1500
+	6950 1700 6600 1700
 Wire Wire Line
-	2150 1700 1800 1700
+	6950 1500 6600 1500
+Wire Wire Line
+	6950 1400 6600 1400
+Wire Wire Line
+	6950 1600 6600 1600
+Wire Wire Line
+	6950 1800 6600 1800
+Wire Wire Line
+	6600 1200 6950 1200
+Wire Wire Line
+	4250 3250 3900 3250
+Wire Wire Line
+	4250 3050 3900 3050
+Wire Wire Line
+	4250 2850 3900 2850
+Wire Wire Line
+	4250 2650 3900 2650
+Wire Wire Line
+	4250 2550 3900 2550
+Wire Wire Line
+	4250 2750 3900 2750
+Wire Wire Line
+	4250 2950 3900 2950
+Wire Wire Line
+	4250 3150 3900 3150
+Wire Wire Line
+	1800 2650 2150 2650
 Wire Wire Line
 	2150 1900 1800 1900
 Wire Wire Line
-	8900 1750 9300 1750
+	2150 1700 1800 1700
 Wire Wire Line
-	9300 2450 8900 2450
+	2150 1500 1800 1500
 Wire Wire Line
-	9300 2300 8900 2300
+	2150 1400 1800 1400
 Wire Wire Line
-	8900 2600 9300 2600
+	2150 1600 1800 1600
 Wire Wire Line
-	8900 4300 9300 4300
-Connection ~ 4750 2400
+	2150 1800 1800 1800
 Wire Wire Line
-	5250 2750 3550 2750
+	4250 1900 3900 1900
 Wire Wire Line
-	4300 1700 4300 2400
-Connection ~ 4300 2400
+	4250 1700 3900 1700
 Wire Wire Line
-	2150 3900 1800 3900
+	4250 1500 3900 1500
 Wire Wire Line
-	2150 3700 1800 3700
+	4250 1300 3900 1300
 Wire Wire Line
-	2150 3500 1800 3500
+	4250 1200 3900 1200
 Wire Wire Line
-	2150 3300 1800 3300
+	4250 1400 3900 1400
 Wire Wire Line
-	2150 3400 1800 3400
+	4250 1600 3900 1600
 Wire Wire Line
-	2150 3600 1800 3600
+	4250 1800 3900 1800
 Wire Wire Line
-	2150 3800 1800 3800
+	2150 3250 1800 3250
 Wire Wire Line
-	2150 4000 1800 4000
+	2150 3050 1800 3050
 Wire Wire Line
-	9300 4150 8900 4150
+	2150 2850 1800 2850
 Wire Wire Line
-	8900 3150 9300 3150
+	2150 2750 1800 2750
 Wire Wire Line
-	8900 3450 9300 3450
+	2150 2950 1800 2950
 Wire Wire Line
-	2600 1300 1800 1300
+	2150 3150 1800 3150
 Wire Wire Line
-	5050 3200 5100 3200
-Connection ~ 5100 3200
+	1800 2550 2150 2550
 Wire Wire Line
-	5050 3900 5100 3900
-Connection ~ 5100 3900
+	1800 1200 2150 1200
 Wire Wire Line
-	5250 1200 5250 1150
+	3900 4600 2700 4600
 Wire Wire Line
-	5250 1150 4000 1150
+	3900 4900 2700 4900
 Wire Wire Line
-	4750 1150 4750 1200
-Connection ~ 4750 1150
+	3900 5650 2700 5650
 Wire Wire Line
-	4500 3550 4650 3550
+	3900 5950 2700 5950
 Wire Wire Line
-	4500 4250 4650 4250
-Wire Wire Line
-	4000 3550 3550 3550
-Wire Wire Line
-	4000 4250 3550 4250
-Wire Wire Line
-	4750 2150 4750 2400
-Wire Wire Line
-	5250 1700 5250 1750
-Wire Wire Line
-	8900 1600 9300 1600
-Wire Notes Line
-	3400 900  3550 900 
-Wire Notes Line
-	3700 900  3850 900 
-Wire Notes Line
-	4000 900  4150 900 
-Wire Notes Line
-	4300 900  4450 900 
-Wire Notes Line
-	4600 900  4750 900 
-Wire Notes Line
-	4900 900  5050 900 
-Wire Notes Line
-	5200 900  5350 900 
-Wire Notes Line
-	5500 900  5650 900 
-Wire Notes Line
-	5750 4900 5750 5050
-Wire Notes Line
-	5750 4600 5750 4750
-Wire Notes Line
-	5750 4300 5750 4450
-Wire Notes Line
-	5750 4000 5750 4150
-Wire Notes Line
-	5750 3700 5750 3850
-Wire Notes Line
-	5750 3400 5750 3550
-Wire Notes Line
-	5750 3100 5750 3250
-Wire Notes Line
-	5750 2800 5750 2950
-Wire Notes Line
-	5750 2500 5750 2650
-Wire Notes Line
-	5750 2200 5750 2350
-Wire Notes Line
-	5750 1900 5750 2050
-Wire Notes Line
-	5750 1600 5750 1750
-Wire Notes Line
-	5750 1300 5750 1450
-Wire Notes Line
-	5750 1000 5750 1150
-Wire Notes Line
-	3300 5250 3300 5400
-Wire Notes Line
-	3400 5500 3550 5500
-Wire Notes Line
-	3700 5500 3850 5500
-Wire Notes Line
-	4000 5500 4150 5500
-Wire Notes Line
-	4300 5500 4450 5500
-Wire Notes Line
-	4600 5500 4750 5500
-Wire Notes Line
-	4900 5500 5050 5500
-Wire Notes Line
-	5200 5500 5350 5500
-Wire Notes Line
-	5500 5500 5650 5500
-Wire Notes Line
-	5750 5250 5750 5400
-Wire Notes Line
-	10300 4900 10300 5050
-Wire Notes Line
-	10300 4600 10300 4750
-Wire Notes Line
-	10300 4300 10300 4450
-Wire Notes Line
-	10300 4000 10300 4150
-Wire Notes Line
-	10300 3700 10300 3850
-Wire Notes Line
-	10300 3400 10300 3550
-Wire Notes Line
-	10300 3100 10300 3250
-Wire Notes Line
-	10300 2800 10300 2950
-Wire Notes Line
-	10300 2500 10300 2650
-Wire Notes Line
-	10300 2200 10300 2350
-Wire Notes Line
-	10300 1900 10300 2050
-Wire Notes Line
-	10300 1600 10300 1750
-Wire Notes Line
-	10300 1300 10300 1450
-Wire Notes Line
-	10300 1000 10300 1150
-Wire Notes Line
-	10050 5500 10200 5500
-Wire Notes Line
-	10300 5250 10300 5400
-Wire Wire Line
-	7350 2450 7350 2500
-Wire Wire Line
-	7850 1900 7850 1950
-Wire Wire Line
-	7350 1900 7350 1950
-Connection ~ 7350 1900
-Wire Wire Line
-	7850 2450 7850 2500
-Wire Wire Line
-	8300 3200 6600 3200
-Wire Wire Line
-	7350 2900 6600 2900
-Text Notes 6350 800  0    60   ~ 0
-ROLLER SENSOR
-Text Notes 6350 650  0    60   ~ 0
-STUFF OPTION:
-Text Label 6600 3200 0    60   ~ 0
+	6800 5050 7050 5050
+Text Label 2700 4450 0    60   ~ 0
+RACER_3_START/STOP
+Text Label 2700 4600 0    60   ~ 0
+RACER_2_START/STOP
+Text Label 2700 4750 0    60   ~ 0
+RACER_1_START/STOP
+Text Label 2700 4900 0    60   ~ 0
+RACER_0_START/STOP
+Text Label 9050 3250 0    60   ~ 0
+RACER_3_LED3
+Text Label 9050 3150 0    60   ~ 0
+RACER_3_LED2
+Text Label 9050 3050 0    60   ~ 0
+RACER_3_LED1
+Text Label 9050 2950 0    60   ~ 0
+RACER_3_LED0
+Text Label 9050 2850 0    60   ~ 0
+RACER_3_START/STOP
+Text Label 9050 2750 0    60   ~ 0
+RACER_3_SENSOR
+Text Label 9050 2650 0    60   ~ 0
 GND
-Text Label 6600 2900 0    60   ~ 0
-VOUT
-Text Label 6600 1900 0    60   ~ 0
-VCC
+Text Label 9050 2550 0    60   ~ 0
+5V
 $Comp
-L R R8
-U 1 1 49E3884E
-P 7350 2200
-F 0 "R8" V 7430 2200 50  0000 C CNN
-F 1 "68" V 7350 2200 50  0000 C CNN
-	1    7350 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R9
-U 1 1 49E3884D
-P 7850 2200
-F 0 "R9" V 7930 2200 50  0000 C CNN
-F 1 "330" V 7850 2200 50  0000 C CNN
-	1    7850 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L LED D8
-U 1 1 49E3884C
-P 7850 2700
-F 0 "D8" H 7850 2800 50  0000 C CNN
-F 1 "RED LED" H 7850 2600 50  0000 C CNN
-	1    7850 2700
-	0    1    1    0   
-$EndComp
-$Comp
-L LED D7
-U 1 1 49E3884B
-P 7350 2700
-F 0 "D7" H 7350 2800 50  0000 C CNN
-F 1 "WHT LED" H 7350 2600 50  0000 C CNN
-	1    7350 2700
-	0    1    1    0   
-$EndComp
-Text Notes 8700 5000 0    60   ~ 0
-hall effect sensor.
-Text Notes 3300 800  0    60   ~ 0
-PROGRESS INDICATOR
-Text Notes 3300 650  0    60   ~ 0
-STUFF OPTION:
-Text Label 2150 3000 0    60   ~ 0
-LED3
-Text Label 2150 2900 0    60   ~ 0
-LED2
-Text Label 2150 2800 0    60   ~ 0
-LED1
-Text Label 2150 2700 0    60   ~ 0
-LED0
-Text Label 2150 2600 0    60   ~ 0
-START/STOP
-Text Label 2150 2500 0    60   ~ 0
-VOUT
-Text Label 2150 2400 0    60   ~ 0
-GND
-Text Label 2150 2300 0    60   ~ 0
-VCC
-$Comp
-L CONN_8 P1
-U 1 1 49E1EB87
-P 1450 2650
-F 0 "P1" V 1400 2650 60  0000 C CNN
-F 1 "CONN_8" V 1500 2650 60  0000 C CNN
-	1    1450 2650
+L CONN_8 P4
+U 1 1 4A0F882C
+P 8350 2900
+F 0 "P4" V 8300 2900 60  0000 C CNN
+F 1 "CONN_8" V 8400 2900 60  0000 C CNN
+	1    8350 2900
 	-1   0    0    -1  
 $EndComp
-$Comp
-L SCREW_HOLE H1
-U 1 1 49E1EA07
-P 1100 6350
-F 0 "H1" H 1100 6450 60  0001 C CNN
-F 1 "SCREW_HOLE" H 1100 6250 60  0000 C CNN
-	1    1100 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C1
-U 1 1 49E17373
-P 8300 2350
-F 0 "C1" H 8350 2450 50  0000 L CNN
-F 1 "0.1uF" H 8000 2250 50  0000 L CNN
-	1    8300 2350
-	1    0    0    -1  
-$EndComp
-Text Label 4000 1150 0    60   ~ 0
-VCC
-Text Label 5200 3100 0    60   ~ 0
-VCC
-$Comp
-L PWR_FLAG #FLG01
-U 1 1 49E13269
-P 2350 1200
-F 0 "#FLG01" H 2350 1470 30  0001 C CNN
-F 1 "PWR_FLAG" H 2350 1430 30  0000 C CNN
-	1    2350 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L PWR_FLAG #FLG02
-U 1 1 49E13266
-P 2600 1300
-F 0 "#FLG02" H 2600 1570 30  0001 C CNN
-F 1 "PWR_FLAG" H 2600 1530 30  0000 C CNN
-	1    2600 1300
-	1    0    0    -1  
-$EndComp
-Text Notes 8700 4850 0    60   ~ 0
-Install only one
-Text Label 8900 3450 0    60   ~ 0
-VOUT
-Text Label 8900 3300 0    60   ~ 0
+Text Label 6950 3250 0    60   ~ 0
+RACER_3_LED3
+Text Label 6950 3150 0    60   ~ 0
+RACER_3_LED2
+Text Label 6950 3050 0    60   ~ 0
+RACER_3_LED1
+Text Label 6950 2950 0    60   ~ 0
+RACER_3_LED0
+Text Label 6950 2850 0    60   ~ 0
+RACER_3_START/STOP
+Text Label 6950 2750 0    60   ~ 0
+RACER_3_SENSOR
+Text Label 6950 2650 0    60   ~ 0
 GND
-Text Label 8900 3150 0    60   ~ 0
-VCC
+Text Label 6950 2550 0    60   ~ 0
+5V
 $Comp
-L SS441A U3
-U 1 1 49DFC7F9
-P 9500 2900
-F 0 "U3" H 9500 2900 60  0000 C CNN
-F 1 "SS441A" H 9650 2800 60  0000 C CNN
-	1    9500 2900
-	1    0    0    -1  
+L RJ45 J4
+U 1 1 4A0F882B
+P 6150 2900
+F 0 "J4" H 6350 3400 60  0000 C CNN
+F 1 "RJ45" H 6000 3400 60  0000 C CNN
+	1    6150 2900
+	0    -1   1    0   
 $EndComp
-Text Label 2150 4000 0    60   ~ 0
-LED3
-Text Label 2150 3900 0    60   ~ 0
-LED2
-Text Label 2150 3800 0    60   ~ 0
-LED1
-Text Label 2150 3700 0    60   ~ 0
-LED0
-Text Label 2150 3600 0    60   ~ 0
-START/STOP
-Text Label 2150 3500 0    60   ~ 0
-VOUT
-Text Label 2150 3400 0    60   ~ 0
+Text Label 9050 1900 0    60   ~ 0
+RACER_1_LED3
+Text Label 9050 1800 0    60   ~ 0
+RACER_1_LED2
+Text Label 9050 1700 0    60   ~ 0
+RACER_1_LED1
+Text Label 9050 1600 0    60   ~ 0
+RACER_1_LED0
+Text Label 9050 1500 0    60   ~ 0
+RACER_1_START/STOP
+Text Label 9050 1400 0    60   ~ 0
+RACER_1_SENSOR
+Text Label 9050 1300 0    60   ~ 0
 GND
-Text Label 2150 3300 0    60   ~ 0
-VCC
+Text Label 9050 1200 0    60   ~ 0
+5V
+$Comp
+L CONN_8 P2
+U 1 1 4A0F8811
+P 8350 1550
+F 0 "P2" V 8300 1550 60  0000 C CNN
+F 1 "CONN_8" V 8400 1550 60  0000 C CNN
+	1    8350 1550
+	-1   0    0    -1  
+$EndComp
+Text Label 6950 1900 0    60   ~ 0
+RACER_1_LED3
+Text Label 6950 1800 0    60   ~ 0
+RACER_1_LED2
+Text Label 6950 1700 0    60   ~ 0
+RACER_1_LED1
+Text Label 6950 1600 0    60   ~ 0
+RACER_1_LED0
+Text Label 6950 1500 0    60   ~ 0
+RACER_1_START/STOP
+Text Label 6950 1400 0    60   ~ 0
+RACER_1_SENSOR
+Text Label 6950 1300 0    60   ~ 0
+GND
+Text Label 6950 1200 0    60   ~ 0
+5V
 $Comp
 L RJ45 J2
-U 1 1 49DF9008
-P 1350 3650
-F 0 "J2" H 1550 4150 60  0000 C CNN
-F 1 "RJ45" H 1200 4150 60  0000 C CNN
-	1    1350 3650
+U 1 1 4A0F8810
+P 6150 1550
+F 0 "J2" H 6350 2050 60  0000 C CNN
+F 1 "RJ45" H 6000 2050 60  0000 C CNN
+	1    6150 1550
+	0    -1   1    0   
+$EndComp
+Text Label 4250 3250 0    60   ~ 0
+RACER_2_LED3
+Text Label 4250 3150 0    60   ~ 0
+RACER_2_LED2
+Text Label 4250 3050 0    60   ~ 0
+RACER_2_LED1
+Text Label 4250 2950 0    60   ~ 0
+RACER_2_LED0
+Text Label 4250 2850 0    60   ~ 0
+RACER_2_START/STOP
+Text Label 4250 2750 0    60   ~ 0
+RACER_2_SENSOR
+Text Label 4250 2650 0    60   ~ 0
+GND
+Text Label 4250 2550 0    60   ~ 0
+5V
+$Comp
+L CONN_8 P3
+U 1 1 4A0F87C1
+P 3550 2900
+F 0 "P3" V 3500 2900 60  0000 C CNN
+F 1 "CONN_8" V 3600 2900 60  0000 C CNN
+	1    3550 2900
+	-1   0    0    -1  
+$EndComp
+Text Label 2700 5500 0    60   ~ 0
+RACER_3_SENSOR
+Text Label 2700 5650 0    60   ~ 0
+RACER_2_SENSOR
+Text Label 2700 5800 0    60   ~ 0
+RACER_1_SENSOR
+Text Label 2700 5950 0    60   ~ 0
+RACER_0_SENSOR
+Text Label 7050 5050 0    60   ~ 0
+GND
+Text Label 7050 4900 0    60   ~ 0
+5V
+Text Label 2150 3250 0    60   ~ 0
+RACER_2_LED3
+Text Label 2150 3150 0    60   ~ 0
+RACER_2_LED2
+Text Label 2150 3050 0    60   ~ 0
+RACER_2_LED1
+Text Label 2150 2950 0    60   ~ 0
+RACER_2_LED0
+Text Label 2150 2850 0    60   ~ 0
+RACER_2_START/STOP
+Text Label 2150 2750 0    60   ~ 0
+RACER_2_SENSOR
+Text Label 2150 2650 0    60   ~ 0
+GND
+Text Label 2150 2550 0    60   ~ 0
+5V
+$Comp
+L RJ45 J3
+U 1 1 4A0F4381
+P 1350 2900
+F 0 "J3" H 1550 3400 60  0000 C CNN
+F 1 "RJ45" H 1200 3400 60  0000 C CNN
+	1    1350 2900
 	0    -1   1    0   
 $EndComp
 $Comp
-L R R7
-U 1 1 49DF8EDE
-P 4250 4250
-F 0 "R7" V 4330 4250 50  0000 C CNN
-F 1 "100" V 4250 4250 50  0000 C CNN
-	1    4250 4250
-	0    1    1    0   
-$EndComp
-$Comp
-L R R6
-U 1 1 49DF8EDA
-P 4250 3900
-F 0 "R6" V 4330 3900 50  0000 C CNN
-F 1 "100" V 4250 3900 50  0000 C CNN
-	1    4250 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L R R5
-U 1 1 49DF8ED4
-P 4250 3550
-F 0 "R5" V 4330 3550 50  0000 C CNN
-F 1 "100" V 4250 3550 50  0000 C CNN
-	1    4250 3550
-	0    1    1    0   
-$EndComp
-$Comp
-L R R1
-U 1 1 49DF8D68
-P 4300 1450
-F 0 "R1" V 4380 1450 50  0000 C CNN
-F 1 "10k" V 4300 1450 50  0000 C CNN
-	1    4300 1450
+L ARDUINO_USB U1
+U 1 1 4A0F4298
+P 4200 3900
+F 0 "U1" H 4300 3950 60  0000 C CNN
+F 1 "ARDUINO_USB" H 5400 3800 60  0000 C CNN
+	1    4200 3900
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R2
-U 1 1 49DF8AA5
-P 4750 1450
-F 0 "R2" V 4830 1450 50  0000 C CNN
-F 1 "150" V 4750 1450 50  0000 C CNN
-	1    4750 1450
+L SCREW_HOLE H1
+U 1 1 49FC8389
+P 1050 7400
+F 0 "H1" H 1050 7500 60  0001 C CNN
+F 1 "SCREW_HOLE" H 1050 7300 60  0000 C CNN
+	1    1050 7400
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R3
-U 1 1 49DF899F
-P 5250 1450
-F 0 "R3" V 5330 1450 50  0000 C CNN
-F 1 "68" V 5250 1450 50  0000 C CNN
-	1    5250 1450
+L SCREW_HOLE H2
+U 1 1 49FC8388
+P 2050 7400
+F 0 "H2" H 2050 7500 60  0001 C CNN
+F 1 "SCREW_HOLE" H 2050 7300 60  0000 C CNN
+	1    2050 7400
 	1    0    0    -1  
 $EndComp
 $Comp
-L MOSFET_N Q1
-U 1 1 49DF8829
-P 5150 2400
-F 0 "Q1" H 5160 2570 60  0000 R CNN
-F 1 "MOSFET_N" H 5160 2250 60  0000 R CNN
-F 4 "2N7000" H 4850 2150 60  0000 C CNN "Field1"
-	1    5150 2400
+L SCREW_HOLE H3
+U 1 1 49FC8383
+P 3050 7400
+F 0 "H3" H 3050 7500 60  0001 C CNN
+F 1 "SCREW_HOLE" H 3050 7300 60  0000 C CNN
+	1    3050 7400
 	1    0    0    -1  
 $EndComp
-Text Label 3550 2750 0    60   ~ 0
+Text Label 4250 1900 0    60   ~ 0
+RACER_0_LED3
+Text Label 4250 1800 0    60   ~ 0
+RACER_0_LED2
+Text Label 4250 1700 0    60   ~ 0
+RACER_0_LED1
+Text Label 4250 1600 0    60   ~ 0
+RACER_0_LED0
+Text Label 4250 1500 0    60   ~ 0
+RACER_0_START/STOP
+Text Label 4250 1400 0    60   ~ 0
+RACER_0_SENSOR
+Text Label 4250 1300 0    60   ~ 0
 GND
+Text Label 4250 1200 0    60   ~ 0
+5V
 $Comp
-L R R4
-U 1 1 49C83C21
-P 4250 3200
-F 0 "R4" V 4330 3200 50  0000 C CNN
-F 1 "100" V 4250 3200 50  0000 C CNN
-	1    4250 3200
-	0    1    1    0   
+L CONN_8 P1
+U 1 1 49E1EB87
+P 3550 1550
+F 0 "P1" V 3500 1550 60  0000 C CNN
+F 1 "CONN_8" V 3600 1550 60  0000 C CNN
+	1    3550 1550
+	-1   0    0    -1  
 $EndComp
-Text Label 8900 4300 0    60   ~ 0
-VOUT
-Text Label 8900 4150 0    60   ~ 0
-GND
-Text Label 8900 4000 0    60   ~ 0
-VCC
 $Comp
-L SS441A U4
-U 1 1 49C83B82
-P 9500 3750
-F 0 "U4" H 9500 3750 60  0000 C CNN
-F 1 "SS441A" H 9650 3650 60  0000 C CNN
-	1    9500 3750
+L SCREW_HOLE H4
+U 1 1 49E1EA07
+P 4050 7400
+F 0 "H4" H 4050 7500 60  0001 C CNN
+F 1 "SCREW_HOLE" H 4050 7300 60  0000 C CNN
+	1    4050 7400
 	1    0    0    -1  
-$EndComp
-Text Label 8900 2600 0    60   ~ 0
-VOUT
-Text Label 8900 2450 0    60   ~ 0
-GND
-Text Label 8900 2300 0    60   ~ 0
-VCC
-$Comp
-L SS441A U2
-U 1 1 49C83B66
-P 9500 2050
-F 0 "U2" H 9500 2050 60  0000 C CNN
-F 1 "SS441A" H 9650 1950 60  0000 C CNN
-	1    9500 2050
-	1    0    0    -1  
-$EndComp
-Text Label 8900 1750 0    60   ~ 0
-VOUT
-Text Label 8900 1600 0    60   ~ 0
-GND
-Text Label 8900 1450 0    60   ~ 0
-VCC
-Text Label 3550 4250 0    60   ~ 0
-LED3
-Text Label 3550 3900 0    60   ~ 0
-LED2
-Text Label 3550 3550 0    60   ~ 0
-LED1
-Text Label 3550 3200 0    60   ~ 0
-LED0
-Text Label 3550 2400 0    60   ~ 0
-START/STOP
-$Comp
-L LED D1
-U 1 1 49C835C2
-P 4750 1950
-F 0 "D1" H 4750 2050 50  0000 C CNN
-F 1 "RED LED" H 4750 1850 50  0000 C CNN
-	1    4750 1950
-	0    1    1    0   
-$EndComp
-$Comp
-L LED D2
-U 1 1 49C834FE
-P 5250 1950
-F 0 "D2" H 5250 2050 50  0000 C CNN
-F 1 "GRN LED" H 5250 1850 50  0000 C CNN
-	1    5250 1950
-	0    1    1    0   
-$EndComp
-$Comp
-L LED D4
-U 1 1 49C834EA
-P 4850 3550
-F 0 "D4" H 4850 3650 50  0000 C CNN
-F 1 "LED" H 4850 3450 50  0000 C CNN
-	1    4850 3550
-	-1   0    0    1   
-$EndComp
-$Comp
-L LED D3
-U 1 1 49C834E9
-P 4850 3200
-F 0 "D3" H 4850 3300 50  0000 C CNN
-F 1 "LED" H 4850 3100 50  0000 C CNN
-	1    4850 3200
-	-1   0    0    1   
 $EndComp
 Text Label 2150 1900 0    60   ~ 0
-LED3
+RACER_0_LED3
 Text Label 2150 1800 0    60   ~ 0
-LED2
+RACER_0_LED2
 Text Label 2150 1700 0    60   ~ 0
-LED1
+RACER_0_LED1
 Text Label 2150 1600 0    60   ~ 0
-LED0
+RACER_0_LED0
 Text Label 2150 1500 0    60   ~ 0
-START/STOP
+RACER_0_START/STOP
 Text Label 2150 1400 0    60   ~ 0
-VOUT
+RACER_0_SENSOR
 Text Label 2150 1300 0    60   ~ 0
 GND
 Text Label 2150 1200 0    60   ~ 0
-VCC
+5V
 $Comp
 L RJ45 J1
 U 1 1 49C834DF
@@ -750,32 +425,5 @@ F 0 "J1" H 1550 2050 60  0000 C CNN
 F 1 "RJ45" H 1200 2050 60  0000 C CNN
 	1    1350 1550
 	0    -1   1    0   
-$EndComp
-$Comp
-L LED D6
-U 1 1 49C83284
-P 4850 4250
-F 0 "D6" H 4850 4350 50  0000 C CNN
-F 1 "LED" H 4850 4150 50  0000 C CNN
-	1    4850 4250
-	-1   0    0    1   
-$EndComp
-$Comp
-L SS441A U1
-U 1 1 49C59A51
-P 9500 1200
-F 0 "U1" H 9500 1200 60  0000 C CNN
-F 1 "SS441A" H 9650 1100 60  0000 C CNN
-	1    9500 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L LED D5
-U 1 1 49C597A9
-P 4850 3900
-F 0 "D5" H 4850 4000 50  0000 C CNN
-F 1 "LED" H 4850 3800 50  0000 C CNN
-	1    4850 3900
-	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
