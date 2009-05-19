@@ -19,6 +19,8 @@ int statusLEDPin = 13;
 long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
 long previousStatusBlinkMillis = 0;
+int winner = -1;
+
 
 boolean raceStarted = false;
 boolean raceStarting = false;
@@ -46,7 +48,7 @@ unsigned int charBuff[8];
 unsigned int charBuffLen = 0;
 boolean isReceivingRaceLength = false;
 
-int raceLengthTicks = 20;
+int raceLengthTicks = 1400;
 int previousFakeTickMillis = 0;
 
 int updateInterval = 250;
@@ -78,6 +80,13 @@ void blinkLED() {
     lastStatusLEDValue = !lastStatusLEDValue;
 
     digitalWrite(statusLEDPin, lastStatusLEDValue);
+    
+    if (winner == 0) {
+      digitalWrite(racer0GoLedPin, lastStatusLEDValue);
+    }
+    if (winner == 1) {
+      digitalWrite(racer1GoLedPin, lastStatusLEDValue);
+    }
   }
 
 }
@@ -195,6 +204,13 @@ void loop() {
             Serial.print("f: ");
             Serial.println(racerFinishTimeMillis[i], DEC);
             digitalWrite(racer0GoLedPin+i,LOW);
+          }
+          if(winner == -1 && racerFinishTimeMillis[0] != 0 && racerFinishTimeMillis[1] != 0) {
+            if(racerFinishTimeMillis[0] > racerFinishTimeMillis[1]) {
+              winner = 1;
+            } else {
+              winner = 0;
+            }
           }
         }
         previoussensorValues[i] = values[i];
