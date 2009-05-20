@@ -1,32 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Sun 17 May 2009 09:58:38 PM CDT
-
-BeginCmp
-TimeStamp = /49FC8389;
-Reference = H1;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
-
-BeginCmp
-TimeStamp = /49FC8388;
-Reference = H2;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
-
-BeginCmp
-TimeStamp = /49FC8383;
-Reference = H3;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
-
-BeginCmp
-TimeStamp = /49E1EA07;
-Reference = H4;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
+Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Tue 19 May 2009 11:58:53 PM CDT
 
 BeginCmp
 TimeStamp = /49C834DF;
@@ -89,6 +61,13 @@ TimeStamp = /4A0F4298;
 Reference = U1;
 ValeurCmp = ARDUINO_USB;
 IdModule  = ARDUINO_USB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A138D38;
+Reference = U2;
+ValeurCmp = A-31-CB;
+IdModule  = A-31-CB;
 EndCmp
 
 EndListe

@@ -1,13 +1,5 @@
-# EESchema Netlist Version 1.1 created  Sun 17 May 2009 09:58:38 PM CDT
+# EESchema Netlist Version 1.1 created  Tue 19 May 2009 11:58:53 PM CDT
 (
- ( /49FC8389 SCREW_HOLE_SERPAC-A-31 H1 SCREW_HOLE
- )
- ( /49FC8388 SCREW_HOLE_SERPAC-A-31 H2 SCREW_HOLE
- )
- ( /49FC8383 SCREW_HOLE_SERPAC-A-31 H3 SCREW_HOLE
- )
- ( /49E1EA07 SCREW_HOLE_SERPAC-A-31 H4 SCREW_HOLE
- )
  ( /49C834DF RJ45_8-LJO J1 RJ45
   ( 1 /5V )
   ( 2 /GND )
@@ -118,20 +110,7 @@
   ( 27 ? )
   ( 28 ? )
  )
+ ( /4A138D38 A-31-CB U2 A-31-CB
+ )
 )
 *
-{ Allowed footprints by component:
-$component H1
- screw_hole*
-$endlist
-$component H2
- screw_hole*
-$endlist
-$component H3
- screw_hole*
-$endlist
-$component H4
- screw_hole*
-$endlist
-$endfootprintlist
-}

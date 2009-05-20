@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date Sun 17 May 2009 02:25:04 PM CDT
+EESchema Schematic File Version 2  date Tue 19 May 2009 11:58:59 PM CDT
 LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./interface_board.cache
 EELAYER 23  0
 EELAYER END
 $Descr User 11000 8500
 Sheet 1 1
 Title "Interface board"
-Date "17 may 2009"
+Date "20 may 2009"
 Rev "2.3.0"
 Comp "www.opensprints.org"
 Comment1 "OpenSprints"
@@ -13,6 +13,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L A-31-CB U2
+U 1 1 4A138D38
+P 5050 7400
+F 0 "U2" H 4900 7650 60  0000 C CNN
+F 1 "A-31-CB" H 5050 7500 60  0000 C CNN
+	1    5050 7400
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	6800 4900 7050 4900
 Wire Wire Line
@@ -340,33 +349,6 @@ F 1 "ARDUINO_USB" H 5400 3800 60  0000 C CNN
 	1    4200 3900
 	1    0    0    -1  
 $EndComp
-$Comp
-L SCREW_HOLE H1
-U 1 1 49FC8389
-P 1050 7400
-F 0 "H1" H 1050 7500 60  0001 C CNN
-F 1 "SCREW_HOLE" H 1050 7300 60  0000 C CNN
-	1    1050 7400
-	1    0    0    -1  
-$EndComp
-$Comp
-L SCREW_HOLE H2
-U 1 1 49FC8388
-P 2050 7400
-F 0 "H2" H 2050 7500 60  0001 C CNN
-F 1 "SCREW_HOLE" H 2050 7300 60  0000 C CNN
-	1    2050 7400
-	1    0    0    -1  
-$EndComp
-$Comp
-L SCREW_HOLE H3
-U 1 1 49FC8383
-P 3050 7400
-F 0 "H3" H 3050 7500 60  0001 C CNN
-F 1 "SCREW_HOLE" H 3050 7300 60  0000 C CNN
-	1    3050 7400
-	1    0    0    -1  
-$EndComp
 Text Label 4250 1900 0    60   ~ 0
 RACER_0_LED3
 Text Label 4250 1800 0    60   ~ 0
@@ -391,15 +373,6 @@ F 0 "P1" V 3500 1550 60  0000 C CNN
 F 1 "CONN_8" V 3600 1550 60  0000 C CNN
 	1    3550 1550
 	-1   0    0    -1  
-$EndComp
-$Comp
-L SCREW_HOLE H4
-U 1 1 49E1EA07
-P 4050 7400
-F 0 "H4" H 4050 7500 60  0001 C CNN
-F 1 "SCREW_HOLE" H 4050 7300 60  0000 C CNN
-	1    4050 7400
-	1    0    0    -1  
 $EndComp
 Text Label 2150 1900 0    60   ~ 0
 RACER_0_LED3
