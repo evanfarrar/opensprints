@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  Wed 20 May 2009 12:02:01 AM CDT
+PCBNEW-LibDoc----V1  Wed 20 May 2009 11:11:58 PM CDT
 #
 $MODULE 2N7000
 Li 2N7000
@@ -9,6 +9,18 @@ $EndMODULE
 $MODULE RJ45_8-LJO
 Li RJ45_8-LJO
 Kw RJ45
+$EndMODULE
+#
+$MODULE SIL-8_LJO
+Li SIL-8_LJO
+Cd Connecteur 8 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE 1pin_LJO
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
 $EndMODULE
 #
 $EndLIBDOC
