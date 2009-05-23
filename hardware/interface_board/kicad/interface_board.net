@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Wed 20 May 2009 09:50:48 PM CDT
+# EESchema Netlist Version 1.1 created  Sat 23 May 2009 04:19:01 PM CDT
 (
  ( /49C834DF RJ45_8-LJO J1 RJ45
   ( 1 /5V )
@@ -40,7 +40,7 @@
   ( 7 /RACER_3_LED2 )
   ( 8 /RACER_3_LED3 )
  )
- ( /49E1EB87 SIL-8_LJO P1 CONN_8
+ ( /49E1EB87 SIL-8_opsns-IB P1 CONN_8
   ( 1 /5V )
   ( 2 /GND )
   ( 3 /RACER_0_SENSOR )
@@ -50,7 +50,7 @@
   ( 7 /RACER_0_LED2 )
   ( 8 /RACER_0_LED3 )
  )
- ( /4A0F8811 SIL-8_LJO P2 CONN_8
+ ( /4A0F8811 SIL-8_opsns-IB P2 CONN_8
   ( 1 /5V )
   ( 2 /GND )
   ( 3 /RACER_1_SENSOR )
@@ -60,7 +60,7 @@
   ( 7 /RACER_1_LED2 )
   ( 8 /RACER_1_LED3 )
  )
- ( /4A0F87C1 SIL-8_LJO P3 CONN_8
+ ( /4A0F87C1 SIL-8_opsns-IB P3 CONN_8
   ( 1 /5V )
   ( 2 /GND )
   ( 3 /RACER_2_SENSOR )
@@ -70,7 +70,7 @@
   ( 7 /RACER_2_LED2 )
   ( 8 /RACER_2_LED3 )
  )
- ( /4A0F882C SIL-8_LJO P4 CONN_8
+ ( /4A0F882C SIL-8_opsns-IB P4 CONN_8
   ( 1 /5V )
   ( 2 /GND )
   ( 3 /RACER_3_SENSOR )

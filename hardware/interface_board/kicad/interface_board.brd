@@ -1,22 +1,22 @@
-PCBNEW-BOARD Version 1 date Thu 21 May 2009 12:29:27 AM CDT
+PCBNEW-BOARD Version 1 date Sat 23 May 2009 04:37:52 PM CDT
 
 $GENERAL
 LayerCount 2
 Ly 1FFF8001
-Links 48
-NoConn 8
-Di 8525 -5075 52475 65625
-Ndraw 7
-Ntrack 233
+Links 136
+NoConn 64
+Di -500 -5075 52475 65625
+Ndraw 15
+Ntrack 214
 Nzone 0
-Nmodule 1260
+Nmodule 1275
 Nnets 27
 $EndGENERAL
 
 $SHEETDESCR
 Sheet User 11000 8500
 Title "Interface board"
-Date "21 may 2009"
+Date "23 may 2009"
 Rev "2.3.0"
 Comp "opensprints.org"
 Comment1 ""
@@ -31,8 +31,8 @@ ZoneGridSize 250
 Layers 2
 Layer[0] Copper signal
 Layer[15] Component signal
-TrackWidth 100
-TrackWidthHistory 100
+TrackWidth 250
+TrackWidthHistory 250
 TrackClearence 60
 ZoneClearence 200
 DrawSegmWidth 150
@@ -59,19 +59,19 @@ Na 0 ""
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 1 "/RACER_34"
+Na 1 "/RACER_12"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 2 "/RACER_12"
+Na 2 "/RACER_01"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 3 "/RACER_23"
+Na 3 "/RACER_34"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 4 "/RACER_01"
+Na 4 "/RACER_23"
 St ~
 $EndEQUIPOT
 $EQUIPOT
@@ -83,19 +83,19 @@ Na 6 "/RACER_0_SENSOR"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 7 "/RACER_2_SENSOR"
+Na 7 "/RACER_3_SENSOR"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 8 "/RACER_3_SENSOR"
+Na 8 "/RACER_2_SENSOR"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 9 "/5V"
+Na 9 "/GND"
 St ~
 $EndEQUIPOT
 $EQUIPOT
-Na 10 "/GND"
+Na 10 "/5V"
 St ~
 $EndEQUIPOT
 $EQUIPOT
@@ -163,11 +163,11 @@ Na 26 "/RACER_3_LED3"
 St ~
 $EndEQUIPOT
 $MODULE 1pin_LJO
-Po 49000 41000 0 15 4A14D487 4A14E60E ~~
+Po 21000 42000 0 15 4A14D487 4A185550 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
-Sc 4A14E60E
+Sc 4A185550
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -181,7 +181,3409 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 46000 41000 0 15 4A14D487 4A14E60C ~~
+Po 21000 44000 0 15 4A14D487 4A18554E ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18554E
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 43000 0 15 4A14D487 4A18554C ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18554C
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 49000 0 15 4A14D487 4A18554A ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18554A
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 48000 0 15 4A14D487 4A185548 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185548
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 46000 0 15 4A14D487 4A185546 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185546
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 47000 0 15 4A14D487 4A185544 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185544
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 45000 0 15 4A14D487 4A185542 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185542
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 50000 0 15 4A14D487 4A185540 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185540
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 52000 0 15 4A14D487 4A18553E ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18553E
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 51000 0 15 4A14D487 4A18553C ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18553C
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 53000 0 15 4A14D487 4A18553A ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18553A
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 21000 54000 0 15 4A14D487 4A185538 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185538
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 42000 0 15 4A14D487 4A185511 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185511
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 44000 0 15 4A14D487 4A18550F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18550F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 43000 0 15 4A14D487 4A18550D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18550D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 54000 0 15 4A14D487 4A18511F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18511F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 53000 0 15 4A14D487 4A18511D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18511D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 51000 0 15 4A14D487 4A18511B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18511B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 52000 0 15 4A14D487 4A185119 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185119
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 50000 0 15 4A14D487 4A185117 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185117
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 45000 0 15 4A14D487 4A185115 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185115
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 47000 0 15 4A14D487 4A185113 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185113
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 46000 0 15 4A14D487 4A185111 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185111
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 48000 0 15 4A14D487 4A18510F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18510F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 20000 49000 0 15 4A14D487 4A18510D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18510D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 49000 0 15 4A14D487 4A18510B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18510B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 48000 0 15 4A14D487 4A185109 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185109
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 46000 0 15 4A14D487 4A185107 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185107
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 47000 0 15 4A14D487 4A185105 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185105
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 43000 0 15 4A14D487 4A185103 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185103
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 44000 0 15 4A14D487 4A185101 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A185101
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 45000 0 15 4A14D487 4A1850FF ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1850FF
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 50000 0 15 4A14D487 4A1850FD ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1850FD
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 52000 0 15 4A14D487 4A1850FB ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1850FB
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 51000 0 15 4A14D487 4A1850F9 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1850F9
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 53000 0 15 4A14D487 4A1850F7 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1850F7
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 54000 0 15 4A14D487 4A1850F5 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1850F5
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 17000 29000 0 15 4A1848D9 4A184AA2 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184AA2
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 1 "/RACER_12"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 17000 30000 0 15 4A1848B1 4A184AA0 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184AA0
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 2 "/RACER_01"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 17000 27000 0 15 4A184910 4A184A9E ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184A9E
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 3 "/RACER_34"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 17000 28000 0 15 4A1848F5 4A184A9C ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184A9C
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 4 "/RACER_23"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 18000 28000 0 15 4A1848F5 4A184A9A ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184A9A
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 4 "/RACER_23"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 18000 27000 0 15 4A184910 4A184A98 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184A98
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 3 "/RACER_34"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 18000 30000 0 15 4A1848B1 4A184A96 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184A96
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 2 "/RACER_01"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 18000 29000 0 15 4A1848D9 4A184A94 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184A94
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 1 "/RACER_12"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 28000 0 15 4A1848F5 4A184938 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184938
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 4 "/RACER_23"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 27000 0 15 4A184910 4A184936 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184936
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 3 "/RACER_34"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 30000 0 15 4A1848B1 4A184934 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184934
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 2 "/RACER_01"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 29000 0 15 4A1848D9 4A184932 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184932
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 1 "/RACER_12"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 29000 0 15 4A1848D9 4A18488A ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18488A
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 1 "/RACER_12"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 30000 0 15 4A1848B1 4A184888 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184888
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 2 "/RACER_01"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 27000 0 15 4A184910 4A184886 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184886
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 3 "/RACER_34"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 28000 0 15 4A1848F5 4A184884 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184884
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 4 "/RACER_23"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 40000 0 15 4A14D487 4A184839 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184839
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 39000 0 15 4A14D487 4A184837 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184837
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 37000 0 15 4A1781B2 4A184835 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184835
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 5 "/RACER_1_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 38000 0 15 4A1783C4 4A184833 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184833
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 6 "/RACER_0_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 34000 0 15 4A14D487 4A184831 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184831
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 33000 0 15 4A14D487 4A18482F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18482F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 35000 0 15 4A1784FD 4A18482D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18482D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 7 "/RACER_3_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 36000 0 15 4A1784EF 4A18482B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18482B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 8 "/RACER_2_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 25000 0 15 4A14D487 4A184825 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184825
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 26000 0 15 4A14D487 4A184823 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184823
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 31000 0 15 4A14D487 4A18481D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18481D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 16000 32000 0 15 4A14D487 4A18481B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18481B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 19000 24000 0 15 4A14D487 4A184819 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184819
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 24000 0 15 4A14D487 4A184817 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184817
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 32000 0 15 4A14D487 4A184815 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184815
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 31000 0 15 4A14D487 4A184813 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184813
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 26000 0 15 4A14D487 4A18480D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18480D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 25000 0 15 4A14D487 4A18480B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A18480B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 36000 0 15 4A1784EF 4A184805 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184805
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 8 "/RACER_2_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 35000 0 15 4A1784FD 4A184803 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184803
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 7 "/RACER_3_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 33000 0 15 4A14D487 4A184801 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A184801
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 34000 0 15 4A14D487 4A1847FF ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1847FF
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 38000 0 15 4A1783C4 4A1847FD ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1847FD
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 6 "/RACER_0_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 37000 0 15 4A1781B2 4A1847FB ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1847FB
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 5 "/RACER_1_SENSOR"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 39000 0 15 4A14D487 4A1847F9 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1847F9
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 23000 40000 0 15 4A14D487 4A1847F7 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1847F7
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 14000 32000 0 15 4A14D487 4A177B2B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177B2B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 15000 32000 0 15 4A14D487 4A177B29 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177B29
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 13000 32000 0 15 4A14D487 4A177B27 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177B27
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 12000 32000 0 15 4A14D487 4A177B25 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177B25
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 51000 0 15 4A177235 4A1772D4 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772D4
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 51000 0 15 4A1771B4 4A1772D2 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772D2
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 54000 0 15 4A1771B4 4A1772D0 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772D0
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 54000 0 15 4A177235 4A1772CE ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772CE
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 53000 0 15 4A177235 4A1772CC ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772CC
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 53000 0 15 4A1771B4 4A1772CA ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772CA
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 52000 0 15 4A1771B4 4A1772C8 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772C8
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 52000 0 15 4A177235 4A1772C6 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772C6
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 42000 0 15 4A1771B4 4A1772C4 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772C4
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 42000 0 15 4A177235 4A1772C2 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772C2
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 43000 0 15 4A177235 4A1772C0 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772C0
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 43000 0 15 4A1771B4 4A1772BE ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772BE
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 46000 0 15 4A1771B4 4A1772BC ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772BC
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 46000 0 15 4A177235 4A1772BA ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772BA
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 45000 0 15 4A177235 4A1772B8 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772B8
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 45000 0 15 4A1771B4 4A1772B6 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772B6
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 44000 0 15 4A1771B4 4A1772B4 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772B4
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 44000 0 15 4A177235 4A1772B2 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772B2
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 48000 0 15 4A177235 4A1772B0 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772B0
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 48000 0 15 4A1771B4 4A1772AE ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772AE
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 49000 0 15 4A1771B4 4A1772AC ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772AC
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 49000 0 15 4A177235 4A1772AA ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772AA
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 50000 0 15 4A177235 4A1772A8 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772A8
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 50000 0 15 4A1771B4 4A1772A6 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772A6
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 47000 0 15 4A1771B4 4A1772A4 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772A4
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 47000 0 15 4A177235 4A1772A2 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1772A2
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 37000 0 15 4A177235 4A177299 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177299
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 37000 0 15 4A1771B4 4A177297 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177297
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 40000 0 15 4A1771B4 4A177295 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177295
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 40000 0 15 4A177235 4A177293 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177293
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 39000 0 15 4A177235 4A177291 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177291
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 39000 0 15 4A1771B4 4A17728F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17728F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 38000 0 15 4A1771B4 4A17728D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17728D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 38000 0 15 4A177235 4A17728B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17728B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 34000 0 15 4A177235 4A177289 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177289
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 34000 0 15 4A1771B4 4A177287 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177287
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 35000 0 15 4A1771B4 4A177285 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177285
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 35000 0 15 4A177235 4A177283 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177283
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 36000 0 15 4A177235 4A177281 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177281
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 36000 0 15 4A1771B4 4A17727F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17727F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 33000 0 15 4A1771B4 4A177278 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177278
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 33000 0 15 4A177235 4A177276 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177276
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 32000 0 15 4A177235 4A17726E ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17726E
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 32000 0 15 4A1771B4 4A17726C ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17726C
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 31000 0 15 4A1771B4 4A177263 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177263
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 31000 0 15 4A177235 4A17725A ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17725A
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 48000 30000 0 15 4A1771B4 4A177258 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177258
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 49000 30000 0 15 4A1771B4 4A177256 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177256
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 47000 30000 0 15 4A1771B4 4A177254 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177254
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 46000 30000 0 15 4A1771B4 4A177252 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177252
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 47000 31000 0 15 4A177235 4A177250 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177250
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 46000 31000 0 15 4A177235 4A17724E ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17724E
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 44000 31000 0 15 4A177235 4A177248 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177248
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 45000 31000 0 15 4A177235 4A177246 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177246
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 43000 31000 0 15 4A177235 4A17723E ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17723E
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 44000 30000 0 15 4A1771B4 4A177200 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177200
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 45000 30000 0 15 4A1771B4 4A1771FE ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1771FE
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 43000 30000 0 15 4A1771B4 4A1771F4 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1771F4
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 54000 0 15 4A14D487 4A175FBF ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FBF
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 53000 0 15 4A14D487 4A175FBD ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FBD
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 51000 0 15 4A14D487 4A175FBB ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FBB
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 52000 0 15 4A14D487 4A175FB9 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FB9
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 50000 0 15 4A14D487 4A175FB7 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FB7
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 50000 0 15 4A14D487 4A175FB5 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FB5
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 52000 0 15 4A14D487 4A175FB3 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FB3
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 51000 0 15 4A14D487 4A175FB1 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FB1
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 53000 0 15 4A14D487 4A175FAF ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FAF
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 54000 0 15 4A14D487 4A175FAD ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FAD
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 50000 0 15 4A14D487 4A175FAB ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FAB
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 52000 0 15 4A14D487 4A175FA9 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FA9
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 51000 0 15 4A14D487 4A175FA7 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FA7
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 53000 0 15 4A14D487 4A175FA5 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FA5
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 54000 0 15 4A14D487 4A175FA3 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FA3
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 49000 0 15 4A14D487 4A175FA1 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175FA1
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 48000 0 15 4A14D487 4A175F9F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F9F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 46000 0 15 4A14D487 4A175F9D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F9D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 47000 0 15 4A14D487 4A175F9B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F9B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 43000 0 15 4A14D487 4A175F99 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F99
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 44000 0 15 4A14D487 4A175F97 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F97
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 26000 45000 0 15 4A14D487 4A175F95 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F95
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 49000 0 15 4A14D487 4A175F93 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F93
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 48000 0 15 4A14D487 4A175F91 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F91
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 46000 0 15 4A14D487 4A175F8F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F8F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 47000 0 15 4A14D487 4A175F8D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F8D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 43000 0 15 4A14D487 4A175F8B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F8B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 44000 0 15 4A14D487 4A175F89 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F89
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 45000 0 15 4A14D487 4A175F87 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F87
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 45000 0 15 4A14D487 4A175F85 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F85
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 44000 0 15 4A14D487 4A175F83 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F83
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 43000 0 15 4A14D487 4A175F81 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F81
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 47000 0 15 4A14D487 4A175F7F ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F7F
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 46000 0 15 4A14D487 4A175F7D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F7D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 48000 0 15 4A14D487 4A175F7B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F7B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 24000 49000 0 15 4A14D487 4A175F79 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A175F79
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 42000 32000 0 15 4A14D487 4A1613E5 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1613E5
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 43000 32000 0 15 4A14D487 4A1613DF ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1613DF
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 45000 32000 0 15 4A14D487 4A1613DD ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1613DD
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 44000 32000 0 15 4A14D487 4A1613D7 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1613D7
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 47000 32000 0 15 4A14D487 4A1613D5 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1613D5
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 46000 32000 0 15 4A14D487 4A1613CF ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1613CF
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 36000 0 15 4A14D487 4A16104D ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A16104D
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 35000 0 15 4A14D487 4A16104B ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A16104B
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 38000 0 15 4A14D487 4A161049 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A161049
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 37000 0 15 4A14D487 4A161047 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A161047
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 39000 0 15 4A14D487 4A161045 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A161045
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 25000 40000 0 15 4A14D487 4A161043 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A161043
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 46000 42000 0 15 4A14D487 4A14E60C ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -199,7 +3601,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 47000 41000 0 15 4A14D487 4A14E60A ~~
+Po 47000 42000 0 15 4A14D487 4A14E60A ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -217,25 +3619,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 48000 41000 0 15 4A14D487 4A14E608 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E608
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 45000 41000 0 15 4A14D487 4A14E606 ~~
+Po 45000 42000 0 15 4A14D487 4A14E606 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -253,7 +3637,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 42000 41000 0 15 4A14D487 4A14E604 ~~
+Po 42000 42000 0 15 4A14D487 4A14E604 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -271,7 +3655,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 44000 41000 0 15 4A14D487 4A14E602 ~~
+Po 44000 42000 0 15 4A14D487 4A14E602 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -289,227 +3673,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 43000 41000 0 15 4A14D487 4A14E600 ~~
+Po 43000 42000 0 15 4A14D487 4A14E600 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14E600
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 50000 0 15 4A14D487 4A14E5EE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5EE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 52000 0 15 4A14D487 4A14E5EC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5EC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 51000 0 15 4A14D487 4A14E5EA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5EA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 53000 0 15 4A14D487 4A14E5E8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5E8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 49000 0 15 4A14D487 4A14E5E6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5E6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 48000 0 15 4A14D487 4A14E5E4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5E4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 46000 0 15 4A14D487 4A14E5E2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5E2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 47000 0 15 4A14D487 4A14E5E0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5E0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 43000 0 15 4A14D487 4A14E5DE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5DE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 44000 0 15 4A14D487 4A14E5DC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5DC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 45000 0 15 4A14D487 4A14E5DA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5DA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 54000 0 15 4A14D487 4A14E5D8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5D8
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -942,222 +4110,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14E5A8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 45000 0 15 4A14D487 4A14E5A6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5A6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 44000 0 15 4A14D487 4A14E5A4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5A4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 43000 0 15 4A14D487 4A14E5A2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5A2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 47000 0 15 4A14D487 4A14E5A0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E5A0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 46000 0 15 4A14D487 4A14E59E ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E59E
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 48000 0 15 4A14D487 4A14E59C ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E59C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 49000 0 15 4A14D487 4A14E59A ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E59A
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 54000 0 15 4A14D487 4A14E598 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E598
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 53000 0 15 4A14D487 4A14E596 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E596
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 51000 0 15 4A14D487 4A14E594 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E594
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 52000 0 15 4A14D487 4A14E592 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E592
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 50000 0 15 4A14D487 4A14E590 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E590
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -6049,96 +9001,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 16000 32000 0 15 4A14D487 4A14E1B9 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E1B9
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 14000 32000 0 15 4A14D487 4A14E1B7 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E1B7
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 15000 32000 0 15 4A14D487 4A14E1B5 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E1B5
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 13000 32000 0 15 4A14D487 4A14E1B3 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E1B3
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 12000 32000 0 15 4A14D487 4A14E1B1 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E1B1
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 27000 49000 0 15 4A14D487 4A14E19B ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -8947,1176 +11809,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 24000 50000 0 15 4A14D487 4A14E049 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E049
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 52000 0 15 4A14D487 4A14E047 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E047
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 51000 0 15 4A14D487 4A14E045 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E045
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 53000 0 15 4A14D487 4A14E043 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E043
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 49000 0 15 4A14D487 4A14E041 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E041
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 48000 0 15 4A14D487 4A14E03F ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E03F
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 46000 0 15 4A14D487 4A14E03D ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E03D
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 47000 0 15 4A14D487 4A14E03B ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E03B
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 43000 0 15 4A14D487 4A14E039 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E039
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 42000 0 15 4A14D487 4A14E037 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E037
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 44000 0 15 4A14D487 4A14E035 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E035
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 45000 0 15 4A14D487 4A14E033 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E033
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 24000 54000 0 15 4A14D487 4A14E031 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E031
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 54000 0 15 4A14D487 4A14E02E ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E02E
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 53000 0 15 4A14D487 4A14E02C ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E02C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 51000 0 15 4A14D487 4A14E02A ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E02A
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 52000 0 15 4A14D487 4A14E028 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E028
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 50000 0 15 4A14D487 4A14E026 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E026
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 50000 0 15 4A14D487 4A14E024 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E024
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 52000 0 15 4A14D487 4A14E022 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E022
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 51000 0 15 4A14D487 4A14E020 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E020
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 53000 0 15 4A14D487 4A14E01E ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E01E
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 54000 0 15 4A14D487 4A14E01C ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E01C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 49000 0 15 4A14D487 4A14E01A ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E01A
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 48000 0 15 4A14D487 4A14E018 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E018
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 46000 0 15 4A14D487 4A14E016 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E016
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 47000 0 15 4A14D487 4A14E014 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E014
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 43000 0 15 4A14D487 4A14E012 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E012
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 42000 0 15 4A14D487 4A14E010 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E010
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 44000 0 15 4A14D487 4A14E00E ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E00E
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 21000 45000 0 15 4A14D487 4A14E00C ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E00C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 45000 0 15 4A14D487 4A14E00A ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E00A
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 44000 0 15 4A14D487 4A14E008 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E008
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 42000 0 15 4A14D487 4A14E006 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E006
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 43000 0 15 4A14D487 4A14E004 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E004
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 47000 0 15 4A14D487 4A14E002 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E002
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 46000 0 15 4A14D487 4A14E000 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14E000
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 48000 0 15 4A14D487 4A14DFFE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFFE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 22000 49000 0 15 4A14D487 4A14DFFC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFFC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 45000 0 15 4A14D487 4A14DFFA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFFA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 44000 0 15 4A14D487 4A14DFF8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFF8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 42000 0 15 4A14D487 4A14DFF6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFF6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 43000 0 15 4A14D487 4A14DFF4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFF4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 47000 0 15 4A14D487 4A14DFF2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFF2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 46000 0 15 4A14D487 4A14DFF0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFF0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 48000 0 15 4A14D487 4A14DFEE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFEE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 49000 0 15 4A14D487 4A14DFEC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFEC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 54000 0 15 4A14D487 4A14DFEA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFEA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 53000 0 15 4A14D487 4A14DFE8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFE8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 51000 0 15 4A14D487 4A14DFE6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFE6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 52000 0 15 4A14D487 4A14DFE4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFE4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 50000 0 15 4A14D487 4A14DFE2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DFE2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 50000 0 15 4A14D487 4A14DEE4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEE4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 52000 0 15 4A14D487 4A14DEE2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEE2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 51000 0 15 4A14D487 4A14DEE0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEE0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 53000 0 15 4A14D487 4A14DEDE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEDE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 54000 0 15 4A14D487 4A14DEDC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEDC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 49000 0 15 4A14D487 4A14DEDA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEDA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 48000 0 15 4A14D487 4A14DED8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DED8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 46000 0 15 4A14D487 4A14DED6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DED6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 47000 0 15 4A14D487 4A14DED4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DED4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 43000 0 15 4A14D487 4A14DED2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DED2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 42000 0 15 4A14D487 4A14DED0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DED0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 44000 0 15 4A14D487 4A14DECE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DECE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 20000 45000 0 15 4A14D487 4A14DECC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DECC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 16000 49000 0 15 4A14D487 4A14DEBA ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -10207,24 +11899,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 16000 42000 0 15 4A14D487 4A14DEB0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEB0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 16000 44000 0 15 4A14D487 4A14DEAE ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -10261,7 +11935,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 16000 41000 0 15 4A14D487 4A14DEAA ~~
+Po 16000 42000 0 15 4A14D487 4A14DEAA ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -10279,7 +11953,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 17000 41000 0 15 4A14D487 4A14DEA8 ~~
+Po 17000 42000 0 15 4A14D487 4A14DEA8 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -10320,24 +11994,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14DEA4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 17000 42000 0 15 4A14D487 4A14DEA2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DEA2
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -10513,7 +12169,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 19000 43000 0 15 4A14D487 4A14DE8E ~~
+Po 20000 43000 0 15 4A14D487 4A14DE8E ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -10531,25 +12187,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 19000 42000 0 15 4A14D487 4A14DE8C ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DE8C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 44000 0 15 4A14D487 4A14DE8A ~~
+Po 20000 44000 0 15 4A14D487 4A14DE8A ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -10585,7 +12223,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 19000 41000 0 15 4A14D487 4A14DE86 ~~
+Po 20000 42000 0 15 4A14D487 4A14DE86 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -10603,7 +12241,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 18000 41000 0 15 4A14D487 4A14DE84 ~~
+Po 18000 42000 0 15 4A14D487 4A14DE84 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -10644,24 +12282,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14DE80
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 18000 42000 0 15 4A14D487 4A14DE7E ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DE7E
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -11575,24 +13195,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 14000 42000 0 15 4A14D487 4A14DE18 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DE18
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 14000 44000 0 15 4A14D487 4A14DE16 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -11629,7 +13231,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 14000 41000 0 15 4A14D487 4A14DE12 ~~
+Po 14000 42000 0 15 4A14D487 4A14DE12 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -11647,7 +13249,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 15000 41000 0 15 4A14D487 4A14DE10 ~~
+Po 15000 42000 0 15 4A14D487 4A14DE10 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -11688,24 +13290,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14DE0C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 15000 42000 0 15 4A14D487 4A14DE0A ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DE0A
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -11899,24 +13483,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 13000 42000 0 15 4A14D487 4A14DDF4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DDF4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 13000 44000 0 15 4A14D487 4A14DDF2 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -11953,7 +13519,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 13000 41000 0 15 4A14D487 4A14DDEE ~~
+Po 13000 42000 0 15 4A14D487 4A14DDEE ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -11971,7 +13537,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 12000 41000 0 15 4A14D487 4A14DDEC ~~
+Po 12000 42000 0 15 4A14D487 4A14DDEC ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -12012,24 +13578,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14DDE8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 12000 42000 0 15 4A14D487 4A14DDE6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DDE6
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -13915,7 +15463,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 25000 40000 0 15 4A14D487 4A14DC0D ~~
+Po 26000 40000 0 15 4A14D487 4A14DC0D ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -13933,7 +15481,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 25000 39000 0 15 4A14D487 4A14DC0B ~~
+Po 26000 39000 0 15 4A14D487 4A14DC0B ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -13951,7 +15499,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 25000 37000 0 15 4A14D487 4A14DC09 ~~
+Po 26000 37000 0 15 4A14D487 4A14DC09 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -13969,7 +15517,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 25000 38000 0 15 4A14D487 4A14DC07 ~~
+Po 26000 38000 0 15 4A14D487 4A14DC07 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -14023,7 +15571,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 25000 35000 0 15 4A14D487 4A14DC01 ~~
+Po 26000 35000 0 15 4A14D487 4A14DC01 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -14041,7 +15589,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 25000 36000 0 15 4A14D487 4A14DBFF ~~
+Po 26000 36000 0 15 4A14D487 4A14DBFF ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -14743,7 +16291,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 24000 37000 0 15 4A14D487 4A14DBA5 ~~
+Po 24000 37000 0 15 4A1781B2 4A14DBA5 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -14756,12 +16304,12 @@ $PAD
 Sh "" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 5 "/RACER_1_SENSOR"
 Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 24000 38000 0 15 4A14D487 4A14DBA3 ~~
+Po 24000 38000 0 15 4A1783C4 4A14DBA3 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -14774,7 +16322,7 @@ $PAD
 Sh "" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 6 "/RACER_0_SENSOR"
 Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
@@ -14815,7 +16363,7 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 24000 35000 0 15 4A14D487 4A14DB9D ~~
+Po 24000 35000 0 15 4A1784FD 4A14DB9D ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -14828,12 +16376,12 @@ $PAD
 Sh "" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 7 "/RACER_3_SENSOR"
 Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 24000 36000 0 15 4A14D487 4A14DB9B ~~
+Po 24000 36000 0 15 4A1784EF 4A14DB9B ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
@@ -14846,7 +16394,7 @@ $PAD
 Sh "" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 0 ""
+Ne 8 "/RACER_2_SENSOR"
 Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
@@ -15157,24 +16705,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 23000 24000 0 15 4A14D487 4A14DB77 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB77
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 23000 23000 0 15 4A14D487 4A14DB75 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -15306,294 +16836,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14DB67
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 32000 0 15 4A14D487 4A14DB65 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB65
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 31000 0 15 4A14D487 4A14DB63 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB63
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 29000 0 15 4A14D487 4A14DB61 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB61
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 30000 0 15 4A14D487 4A14DB5F ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB5F
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 26000 0 15 4A14D487 4A14DB5D ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB5D
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 25000 0 15 4A14D487 4A14DB5B ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB5B
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 27000 0 15 4A14D487 4A14DB59 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB59
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 28000 0 15 4A14D487 4A14DB57 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB57
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 36000 0 15 4A14D487 4A14DB55 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB55
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 35000 0 15 4A14D487 4A14DB53 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB53
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 33000 0 15 4A14D487 4A14DB51 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB51
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 34000 0 15 4A14D487 4A14DB4F ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB4F
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 38000 0 15 4A14D487 4A14DB4D ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB4D
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 37000 0 15 4A14D487 4A14DB4B ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB4B
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 39000 0 15 4A14D487 4A14DB49 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB49
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 23000 40000 0 15 4A14D487 4A14DB47 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DB47
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -17479,42 +18721,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 18000 28000 0 15 4A14D487 4A14DA24 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DA24
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 18000 27000 0 15 4A14D487 4A14DA22 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DA22
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 18000 25000 0 15 4A14D487 4A14DA20 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -17538,42 +18744,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14DA1E
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 18000 30000 0 15 4A14D487 4A14DA1C ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DA1C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 18000 29000 0 15 4A14D487 4A14DA1A ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DA1A
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -17767,24 +18937,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 19000 24000 0 15 4A14D487 4A14DA02 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14DA02
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 19000 23000 0 15 4A14D487 4A14DA00 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -17916,276 +19068,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D9F2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 31000 0 15 4A14D487 4A14D9EE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9EE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 29000 0 15 4A14D487 4A14D9EC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9EC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 30000 0 15 4A14D487 4A14D9EA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9EA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 26000 0 15 4A14D487 4A14D9E8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9E8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 25000 0 15 4A14D487 4A14D9E6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9E6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 27000 0 15 4A14D487 4A14D9E4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9E4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 28000 0 15 4A14D487 4A14D9E2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9E2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 36000 0 15 4A14D487 4A14D9E0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9E0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 35000 0 15 4A14D487 4A14D9DE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9DE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 33000 0 15 4A14D487 4A14D9DC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9DC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 34000 0 15 4A14D487 4A14D9DA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9DA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 38000 0 15 4A14D487 4A14D9D8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9D8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 37000 0 15 4A14D487 4A14D9D6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9D6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 39000 0 15 4A14D487 4A14D9D4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9D4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 19000 40000 0 15 4A14D487 4A14D9D2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9D2
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -18343,42 +19225,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 17000 28000 0 15 4A14D487 4A14D9C0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9C0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 17000 27000 0 15 4A14D487 4A14D9BE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9BE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 17000 25000 0 15 4A14D487 4A14D9BC ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -18402,42 +19248,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D9BA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 17000 30000 0 15 4A14D487 4A14D9B8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9B8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 17000 29000 0 15 4A14D487 4A14D9B6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D9B6
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -19279,65 +20089,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 46000 30000 0 15 4A14D487 4A14D954 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D954
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 46000 29000 0 15 4A14D487 4A14D952 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D952
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 46000 31000 0 15 4A14D487 4A14D950 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D950
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 46000 32000 0 15 4A14D487 4A14D94E ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D94E
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -19675,65 +20431,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 47000 32000 0 15 4A14D487 4A14D928 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D928
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 47000 31000 0 15 4A14D487 4A14D926 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D926
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 47000 29000 0 15 4A14D487 4A14D924 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D924
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 47000 30000 0 15 4A14D487 4A14D922 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D922
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -19963,150 +20665,6 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 49000 40000 0 15 4A14D487 4A14D908 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D908
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 39000 0 15 4A14D487 4A14D906 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D906
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 37000 0 15 4A14D487 4A14D904 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D904
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 38000 0 15 4A14D487 4A14D902 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D902
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 34000 0 15 4A14D487 4A14D900 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D900
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 33000 0 15 4A14D487 4A14D8FE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8FE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 35000 0 15 4A14D487 4A14D8FC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8FC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 36000 0 15 4A14D487 4A14D8FA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8FA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 49000 28000 0 15 4A14D487 4A14D8F8 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
@@ -20179,65 +20737,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 49000 30000 0 15 4A14D487 4A14D8F0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8F0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 49000 29000 0 15 4A14D487 4A14D8EE ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D8EE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 31000 0 15 4A14D487 4A14D8EC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8EC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 49000 32000 0 15 4A14D487 4A14D8EA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8EA
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -20575,65 +21079,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 48000 32000 0 15 4A14D487 4A14D8C4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8C4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 31000 0 15 4A14D487 4A14D8C2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8C2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 48000 29000 0 15 4A14D487 4A14D8C0 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D8C0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 30000 0 15 4A14D487 4A14D8BE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8BE
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -20706,150 +21156,6 @@ Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D8B6
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 36000 0 15 4A14D487 4A14D8B4 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8B4
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 35000 0 15 4A14D487 4A14D8B2 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8B2
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 33000 0 15 4A14D487 4A14D8B0 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8B0
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 34000 0 15 4A14D487 4A14D8AE ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8AE
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 38000 0 15 4A14D487 4A14D8AC ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8AC
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 37000 0 15 4A14D487 4A14D8AA ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8AA
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 39000 0 15 4A14D487 4A14D8A8 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8A8
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 48000 40000 0 15 4A14D487 4A14D8A6 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D8A6
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -21079,65 +21385,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 44000 30000 0 15 4A14D487 4A14D88C ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D88C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 44000 29000 0 15 4A14D487 4A14D88A ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D88A
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 44000 31000 0 15 4A14D487 4A14D888 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D888
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 44000 32000 0 15 4A14D487 4A14D886 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D886
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -21475,65 +21727,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 45000 32000 0 15 4A14D487 4A14D860 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D860
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 45000 31000 0 15 4A14D487 4A14D85E ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D85E
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 45000 29000 0 15 4A14D487 4A14D85C ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D85C
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 45000 30000 0 15 4A14D487 4A14D85A ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D85A
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -21979,65 +22177,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 43000 30000 0 15 4A14D487 4A14D828 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D828
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 43000 29000 0 15 4A14D487 4A14D826 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D826
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 43000 31000 0 15 4A14D487 4A14D824 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D824
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 43000 32000 0 15 4A14D487 4A14D822 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D822
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -22375,65 +22519,11 @@ Po 0 0
 $EndPAD
 $EndMODULE  1pin_LJO
 $MODULE 1pin_LJO
-Po 42000 32000 0 15 4A14D487 4A14D7EB ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D7EB
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 42000 31000 0 15 4A14D487 4A14D7E9 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D7E9
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
 Po 42000 29000 0 15 4A14D487 4A14D7E7 ~~
 Li 1pin_LJO
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 Sc 4A14D7E7
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
-$MODULE 1pin_LJO
-Po 42000 30000 0 15 4A14D487 4A14D7E5 ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D7E5
 AR 
 Op 0 0 0
 T0 0 0 400 400 0 100 N I 21 N""
@@ -22686,21 +22776,21 @@ $PAD
 Sh "4" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 1 "/RACER_34"
+Ne 3 "/RACER_34"
 Po 12400 0
 $EndPAD
 $PAD
 Sh "6" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 2 "/RACER_12"
+Ne 1 "/RACER_12"
 Po 14400 0
 $EndPAD
 $PAD
 Sh "5" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 3 "/RACER_23"
+Ne 4 "/RACER_23"
 Po 13400 0
 $EndPAD
 $PAD
@@ -22714,7 +22804,7 @@ $PAD
 Sh "7" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 4 "/RACER_01"
+Ne 2 "/RACER_01"
 Po 15400 0
 $EndPAD
 $PAD
@@ -22777,14 +22867,14 @@ $PAD
 Sh "12" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 7 "/RACER_2_SENSOR"
+Ne 8 "/RACER_2_SENSOR"
 Po 21000 0
 $EndPAD
 $PAD
 Sh "11" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 8 "/RACER_3_SENSOR"
+Ne 7 "/RACER_3_SENSOR"
 Po 20000 0
 $EndPAD
 $PAD
@@ -22847,14 +22937,14 @@ $PAD
 Sh "26" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 15000 -19000
 $EndPAD
 $PAD
 Sh "25" C 700 700 0 0 2700
 Dr 350 0 0
 At STD N 0000FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 16000 -19000
 $EndPAD
 $PAD
@@ -22910,14 +23000,14 @@ $PAD
 Sh "1" R 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 500 -1000
 $EndPAD
 $PAD
@@ -22931,7 +23021,7 @@ $PAD
 Sh "4" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 4 "/RACER_01"
+Ne 2 "/RACER_01"
 Po 1500 -1000
 $EndPAD
 $PAD
@@ -22965,7 +23055,7 @@ $EndPAD
 $SHAPE3D
 Na "connectors/RJ45_8.wrl"
 Sc 0.400000 0.400000 0.400000
-Of 0.000000 0.000000 0.000000
+Of 0.175000 -0.250000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  RJ45_8-LJO
@@ -23000,14 +23090,14 @@ $PAD
 Sh "1" R 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 500 -1000
 $EndPAD
 $PAD
@@ -23021,7 +23111,7 @@ $PAD
 Sh "4" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 2 "/RACER_12"
+Ne 1 "/RACER_12"
 Po 1500 -1000
 $EndPAD
 $PAD
@@ -23055,7 +23145,7 @@ $EndPAD
 $SHAPE3D
 Na "connectors/RJ45_8.wrl"
 Sc 0.400000 0.400000 0.400000
-Of 0.000000 0.000000 0.000000
+Of 0.175000 -0.250000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  RJ45_8-LJO
@@ -23090,28 +23180,28 @@ $PAD
 Sh "1" R 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 500 -1000
 $EndPAD
 $PAD
 Sh "3" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 7 "/RACER_2_SENSOR"
+Ne 8 "/RACER_2_SENSOR"
 Po 1000 0
 $EndPAD
 $PAD
 Sh "4" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 3 "/RACER_23"
+Ne 4 "/RACER_23"
 Po 1500 -1000
 $EndPAD
 $PAD
@@ -23145,7 +23235,7 @@ $EndPAD
 $SHAPE3D
 Na "connectors/RJ45_8.wrl"
 Sc 0.400000 0.400000 0.400000
-Of 0.000000 0.000000 0.000000
+Of 0.175000 -0.250000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  RJ45_8-LJO
@@ -23180,28 +23270,28 @@ $PAD
 Sh "1" R 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 500 -1000
 $EndPAD
 $PAD
 Sh "3" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 8 "/RACER_3_SENSOR"
+Ne 7 "/RACER_3_SENSOR"
 Po 1000 0
 $EndPAD
 $PAD
 Sh "4" C 591 591 0 0 0
 Dr 354 0 0
 At STD N 00E0FFFF
-Ne 1 "/RACER_34"
+Ne 3 "/RACER_34"
 Po 1500 -1000
 $EndPAD
 $PAD
@@ -23235,12 +23325,12 @@ $EndPAD
 $SHAPE3D
 Na "connectors/RJ45_8.wrl"
 Sc 0.400000 0.400000 0.400000
-Of 0.000000 0.000000 0.000000
+Of 0.175000 -0.250000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  RJ45_8-LJO
 $MODULE A-31-CB
-Po 30500 39500 0 15 4A14B72C 4A138D38 ~~
+Po 30500 39500 0 15 4A14B72C 4A138D38 F~
 Li A-31-CB
 Sc 4A138D38
 AR /4A138D38
@@ -23280,16 +23370,218 @@ Ne 0 ""
 Po -20700 13600
 $EndPAD
 $EndMODULE  A-31-CB
-$MODULE SIL-8_LJO
-Po 12000 56000 0 15 4A14B963 49E1EB87 ~~
-Li SIL-8_LJO
-Cd Connecteur 8 pins
+$MODULE 1pin_LJO
+Po 42000 40000 0 15 4A14D487 4A14D7CD ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A14D7CD
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 42000 30000 0 15 4A1771B4 4A17719A ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17719A
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 10 "/5V"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 42000 31000 0 15 4A177235 4A177206 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A177206
+AR 
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N""
+T1 0 0 400 400 0 100 N I 21 N""
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 9 "/GND"
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A1769EA ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1769EA
+AR /4A1769EA
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P12"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A1769E9 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1769E9
+AR /4A1769E9
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P11"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A1769E8 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1769E8
+AR /4A1769E8
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P10"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A1769E7 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1769E7
+AR /4A1769E7
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P9"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A1769E3 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1769E3
+AR /4A1769E3
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P8"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A1769E2 ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1769E2
+AR /4A1769E2
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P7"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A1769DB ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A1769DB
+AR /4A1769DB
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P6"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE 1pin_LJO
+Po 0 0 0 15 4A14D487 4A17694E ~~
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+Sc 4A17694E
+AR /4A17694E
+Op 0 0 0
+T0 0 0 400 400 0 100 N I 21 N"P5"
+T1 0 0 400 400 0 100 N I 21 N"PIN"
+$PAD
+Sh "" C 700 700 0 0 0
+Dr 350 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE  1pin_LJO
+$MODULE SIL-8_opsns-IB
+Po 12000 56000 0 15 4A186708 49E1EB87 ~~
+Li SIL-8_opsns-IB
+Cd connector 8 pins 100 mil offset
 Kw CONN DEV
 Sc 49E1EB87
 AR /49E1EB87
 Op 0 0 0
-T0 -2500 -1000 681 428 0 107 N I 21 N"P1"
+T0 5900 -1100 681 428 0 107 N I 21 N"P1"
 T1 2000 -1000 600 400 0 100 N I 21 N"CONN_8"
+T2 2000 -1300 400 300 900 60 N V 21 N"Sns"
+T2 3000 -1300 400 300 900 60 N V 21 N"LED"
+T2 1000 -1300 400 300 900 60 N V 21 N"GND"
+T2 0 -1100 400 300 900 60 N V 21 N"5V"
 DS -500 -500 7500 -500 120 21
 DS 7500 -500 7500 500 120 21
 DS 7500 500 -500 500 120 21
@@ -23299,14 +23591,14 @@ $PAD
 Sh "1" R 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 1000 0
 $EndPAD
 $PAD
@@ -23320,7 +23612,7 @@ $PAD
 Sh "4" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 4 "/RACER_01"
+Ne 2 "/RACER_01"
 Po 3000 0
 $EndPAD
 $PAD
@@ -23351,17 +23643,21 @@ At STD N 00E0FFFF
 Ne 14 "/RACER_0_LED3"
 Po 7000 0
 $EndPAD
-$EndMODULE  SIL-8_LJO
-$MODULE SIL-8_LJO
-Po 22000 56000 0 15 4A14B963 4A0F8811 ~~
-Li SIL-8_LJO
-Cd Connecteur 8 pins
+$EndMODULE  SIL-8_opsns-IB
+$MODULE SIL-8_opsns-IB
+Po 22000 56000 0 15 4A186708 4A0F8811 ~~
+Li SIL-8_opsns-IB
+Cd connector 8 pins 100 mil offset
 Kw CONN DEV
 Sc 4A0F8811
 AR /4A0F8811
 Op 0 0 0
-T0 -2500 -1000 681 428 0 107 N I 21 N"P2"
+T0 5900 -1100 681 428 0 107 N I 21 N"P2"
 T1 2000 -1000 600 400 0 100 N I 21 N"CONN_8"
+T2 2000 -1300 400 300 900 60 N V 21 N"Sns"
+T2 3000 -1300 400 300 900 60 N V 21 N"LED"
+T2 1000 -1300 400 300 900 60 N V 21 N"GND"
+T2 0 -1100 400 300 900 60 N V 21 N"5V"
 DS -500 -500 7500 -500 120 21
 DS 7500 -500 7500 500 120 21
 DS 7500 500 -500 500 120 21
@@ -23371,14 +23667,14 @@ $PAD
 Sh "1" R 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 1000 0
 $EndPAD
 $PAD
@@ -23392,7 +23688,7 @@ $PAD
 Sh "4" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 2 "/RACER_12"
+Ne 1 "/RACER_12"
 Po 3000 0
 $EndPAD
 $PAD
@@ -23423,17 +23719,21 @@ At STD N 00E0FFFF
 Ne 18 "/RACER_1_LED3"
 Po 7000 0
 $EndPAD
-$EndMODULE  SIL-8_LJO
-$MODULE SIL-8_LJO
-Po 32000 56000 0 15 4A14B963 4A0F87C1 ~~
-Li SIL-8_LJO
-Cd Connecteur 8 pins
+$EndMODULE  SIL-8_opsns-IB
+$MODULE SIL-8_opsns-IB
+Po 32000 56000 0 15 4A186708 4A0F87C1 ~~
+Li SIL-8_opsns-IB
+Cd connector 8 pins 100 mil offset
 Kw CONN DEV
 Sc 4A0F87C1
 AR /4A0F87C1
 Op 0 0 0
-T0 -2500 -1000 681 428 0 107 N I 21 N"P3"
+T0 5900 -1100 681 428 0 107 N I 21 N"P3"
 T1 2000 -1000 600 400 0 100 N I 21 N"CONN_8"
+T2 2000 -1300 400 300 900 60 N V 21 N"Sns"
+T2 3000 -1300 400 300 900 60 N V 21 N"LED"
+T2 1000 -1300 400 300 900 60 N V 21 N"GND"
+T2 0 -1100 400 300 900 60 N V 21 N"5V"
 DS -500 -500 7500 -500 120 21
 DS 7500 -500 7500 500 120 21
 DS 7500 500 -500 500 120 21
@@ -23443,28 +23743,28 @@ $PAD
 Sh "1" R 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 1000 0
 $EndPAD
 $PAD
 Sh "3" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 7 "/RACER_2_SENSOR"
+Ne 8 "/RACER_2_SENSOR"
 Po 2000 0
 $EndPAD
 $PAD
 Sh "4" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 3 "/RACER_23"
+Ne 4 "/RACER_23"
 Po 3000 0
 $EndPAD
 $PAD
@@ -23495,17 +23795,21 @@ At STD N 00E0FFFF
 Ne 22 "/RACER_2_LED3"
 Po 7000 0
 $EndPAD
-$EndMODULE  SIL-8_LJO
-$MODULE SIL-8_LJO
-Po 42000 56000 0 15 4A14B963 4A0F882C ~~
-Li SIL-8_LJO
-Cd Connecteur 8 pins
+$EndMODULE  SIL-8_opsns-IB
+$MODULE SIL-8_opsns-IB
+Po 42000 56000 0 15 4A186708 4A0F882C ~~
+Li SIL-8_opsns-IB
+Cd connector 8 pins 100 mil offset
 Kw CONN DEV
 Sc 4A0F882C
 AR /4A0F882C
 Op 0 0 0
-T0 -2500 -1000 681 428 0 107 N I 21 N"P4"
+T0 5900 -1100 681 428 0 107 N I 21 N"P4"
 T1 2000 -1000 600 400 0 100 N I 21 N"CONN_8"
+T2 2000 -1300 400 300 900 60 N V 21 N"Sns"
+T2 3000 -1300 400 300 900 60 N V 21 N"LED"
+T2 1000 -1300 400 300 900 60 N V 21 N"GND"
+T2 0 -1100 400 300 900 60 N V 21 N"5V"
 DS -500 -500 7500 -500 120 21
 DS 7500 -500 7500 500 120 21
 DS 7500 500 -500 500 120 21
@@ -23515,28 +23819,28 @@ $PAD
 Sh "1" R 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 9 "/5V"
+Ne 10 "/5V"
 Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 10 "/GND"
+Ne 9 "/GND"
 Po 1000 0
 $EndPAD
 $PAD
 Sh "3" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 8 "/RACER_3_SENSOR"
+Ne 7 "/RACER_3_SENSOR"
 Po 2000 0
 $EndPAD
 $PAD
 Sh "4" C 700 700 0 0 0
 Dr 350 0 0
 At STD N 00E0FFFF
-Ne 1 "/RACER_34"
+Ne 3 "/RACER_34"
 Po 3000 0
 $EndPAD
 $PAD
@@ -23567,43 +23871,65 @@ At STD N 00E0FFFF
 Ne 26 "/RACER_3_LED3"
 Po 7000 0
 $EndPAD
-$EndMODULE  SIL-8_LJO
-$MODULE 1pin_LJO
-Po 42000 40000 0 15 4A14D487 4A14D7CD ~~
-Li 1pin_LJO
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4A14D7CD
-AR 
-Op 0 0 0
-T0 0 0 400 400 0 100 N I 21 N""
-T1 0 0 400 400 0 100 N I 21 N""
-$PAD
-Sh "" C 700 700 0 0 0
-Dr 350 0 0
-At STD N 00E0FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$EndMODULE  1pin_LJO
+$EndMODULE  SIL-8_opsns-IB
+$TEXTPCB
+Te "3"
+Po 42000 62000 600 800 120 0
+De 15 1 0 Normal
+$EndTEXTPCB
+$TEXTPCB
+Te "1"
+Po 22000 62000 600 800 120 0
+De 15 1 0 Normal
+$EndTEXTPCB
+$TEXTPCB
+Te "2"
+Po 32000 62000 600 800 120 0
+De 15 1 0 Normal
+$EndTEXTPCB
+$TEXTPCB
+Te "0"
+Po 12000 62000 600 800 120 0
+De 15 1 0 Normal
+$EndTEXTPCB
+$TEXTPCB
+Te "RACER_3"
+Po 45500 57750 600 800 120 0
+De 21 1 0 Normal
+$EndTEXTPCB
+$TEXTPCB
+Te "RACER_2"
+Po 35500 57750 600 800 120 0
+De 21 1 0 Normal
+$EndTEXTPCB
+$TEXTPCB
+Te "RACER_0"
+Po 15500 57750 600 800 120 0
+De 21 1 0 Normal
+$EndTEXTPCB
+$TEXTPCB
+Te "RACER_1"
+Po 25500 57750 600 800 120 0
+De 21 1 0 Normal
+$EndTEXTPCB
 $TEXTPCB
 Te "GND"
-Po 46750 42000 600 800 120 0
+Po 46750 41000 600 800 120 0
 De 15 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "5V"
-Po 50000 42000 600 800 120 0
+Po 50000 41000 600 800 120 0
 De 15 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "interface board v2.3.0"
-Po 10000 32500 300 400 60 900
+Po 10000 33500 450 600 90 900
 De 15 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "LJO 2009.05.20"
-Po 10000 45000 300 400 60 900
+Po 10000 47500 450 600 90 900
 De 15 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
@@ -23622,407 +23948,369 @@ Po 51000 34000 600 800 120 900
 De 15 1 0 Normal
 $EndTEXTPCB
 $TRACK
-Po 0 23000 28000 25000 28000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 29000 25000 29000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 31000 25000 31000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 30000 25000 30000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 26000 25000 26000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 27000 25000 27000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 25000 25000 25000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 24000 25000 24000 100 -1
-De 15 0 0 0 C00
-Po 0 20400 31400 20000 31000 100 -1
-De 15 0 0 0 0
-Po 0 20000 31000 19000 31000 100 -1
-De 15 0 0 0 400
-Po 0 20400 30400 20000 30000 100 -1
-De 15 0 0 0 0
-Po 0 20000 30000 19000 30000 100 -1
-De 15 0 0 0 400
-Po 0 20400 29400 20000 29000 100 -1
-De 15 0 0 0 0
-Po 0 20000 29000 19000 29000 100 -1
-De 15 0 0 0 400
-Po 0 20400 28400 20000 28000 100 -1
-De 15 0 0 0 0
-Po 0 20000 28000 19000 28000 100 -1
-De 15 0 0 0 400
-Po 0 17000 28000 19000 28000 100 -1
-De 15 0 0 0 C00
+Po 0 24250 55250 22250 55250 100 -1
+De 0 0 1 0 0
+Po 0 20200 32000 20000 32200 100 -1
+De 0 0 1 0 0
+Po 0 22000 41200 22000 54400 100 -1
+De 0 0 1 0 0
+Po 0 21800 41000 22000 41200 100 -1
+De 0 0 1 0 0
+Po 0 20200 41000 21800 41000 100 -1
+De 0 0 1 0 0
+Po 0 20000 40800 20200 41000 100 -1
+De 0 0 1 0 0
+Po 0 20000 32200 20000 40800 100 -1
+De 0 0 1 0 0
+Po 0 24250 55250 25000 56000 100 -1
+De 0 0 1 0 400
+Po 0 22000 55000 22000 54400 100 -1
+De 0 0 1 0 0
+Po 0 22250 55250 22000 55000 100 -1
+De 0 0 1 0 0
+Po 0 21650 29400 21750 29500 100 -1
+De 0 0 1 0 0
+Po 0 21650 29400 21000 29400 100 -1
+De 0 0 1 0 400
+Po 0 21500 32000 20200 32000 100 -1
+De 0 0 1 0 0
+Po 0 21750 31750 21500 32000 100 -1
+De 0 0 1 0 0
+Po 0 21750 29500 21750 31750 100 -1
+De 0 0 1 0 0
+Po 0 20200 32000 20250 32000 100 -1
+De 0 0 1 0 0
 Po 0 17000 29000 19000 29000 100 -1
-De 15 0 0 0 C00
-Po 0 20000 29000 19000 29000 100 -1
-De 15 0 0 0 400
-Po 0 20400 29400 20000 29000 100 -1
-De 15 0 0 0 0
-Po 0 20000 30000 19000 30000 100 -1
-De 15 0 0 0 400
-Po 0 20400 30400 20000 30000 100 -1
-De 15 0 0 0 0
-Po 0 20400 31400 20000 31000 100 -1
-De 15 0 0 0 0
-Po 0 20000 31000 19000 31000 100 -1
-De 15 0 0 0 400
-Po 0 17000 31000 19000 31000 100 -1
-De 15 0 0 0 C00
-Po 0 17000 30000 19000 30000 100 -1
-De 15 0 0 0 C00
-Po 0 20000 30000 19000 30000 100 -1
-De 15 0 0 0 400
-Po 0 20400 30400 20000 30000 100 -1
-De 15 0 0 0 0
-Po 0 20000 31000 19000 31000 100 -1
-De 15 0 0 0 400
-Po 0 20400 31400 20000 31000 100 -1
-De 15 0 0 0 0
-Po 0 20400 28400 20000 28000 100 -1
-De 15 0 0 0 0
-Po 0 20000 28000 19000 28000 100 -1
-De 15 0 0 0 400
-Po 0 20400 27400 20000 27000 100 -1
-De 15 0 0 0 0
-Po 0 20000 27000 19000 27000 100 -1
-De 15 0 0 0 400
-Po 0 20400 26400 20000 26000 100 -1
-De 15 0 0 0 0
-Po 0 20000 26000 19000 26000 100 -1
-De 15 0 0 0 400
-Po 0 17000 26000 19000 26000 100 -1
-De 15 0 0 0 C00
-Po 0 17000 27000 19000 27000 100 -1
-De 15 0 0 0 C00
-Po 0 20000 27000 19000 27000 100 -1
-De 15 0 0 0 400
-Po 0 20400 27400 20000 27000 100 -1
-De 15 0 0 0 0
-Po 0 20000 28000 19000 28000 100 -1
-De 15 0 0 0 400
-Po 0 20400 28400 20000 28000 100 -1
-De 15 0 0 0 0
-Po 0 20400 26400 20000 26000 100 -1
-De 15 0 0 0 0
-Po 0 20000 26000 19000 26000 100 -1
-De 15 0 0 0 400
-Po 0 20400 25400 20000 25000 100 -1
-De 15 0 0 0 0
-Po 0 20000 25000 19000 25000 100 -1
-De 15 0 0 0 400
-Po 0 17000 25000 19000 25000 100 -1
-De 15 0 0 0 C00
-Po 0 17000 24000 19000 24000 100 -1
-De 15 0 0 0 C00
-Po 0 21000 24400 21600 24400 100 -1
-De 15 0 0 0 800
-Po 0 22000 24000 23000 24000 100 -1
-De 15 0 0 0 400
-Po 0 21600 24400 22000 24000 100 -1
-De 15 0 0 0 0
-Po 0 21000 25400 21600 25400 100 -1
-De 15 0 0 0 800
-Po 0 22000 25000 23000 25000 100 -1
-De 15 0 0 0 400
-Po 0 21600 25400 22000 25000 100 -1
-De 15 0 0 0 0
-Po 0 21000 26400 21600 26400 100 -1
-De 15 0 0 0 800
-Po 0 22000 26000 23000 26000 100 -1
-De 15 0 0 0 400
-Po 0 21600 26400 22000 26000 100 -1
-De 15 0 0 0 0
-Po 0 21000 24400 20400 24400 100 -1
-De 15 0 0 0 800
-Po 0 20000 24000 19000 24000 100 -1
-De 15 0 0 0 400
-Po 0 20400 24400 20000 24000 100 -1
-De 15 0 0 0 0
-Po 0 21000 25400 20400 25400 100 -1
-De 15 0 0 0 800
-Po 0 20000 25000 19000 25000 100 -1
-De 15 0 0 0 400
-Po 0 20400 25400 20000 25000 100 -1
-De 15 0 0 0 0
-Po 0 21000 26400 20400 26400 100 -1
-De 15 0 0 0 800
-Po 0 20000 26000 19000 26000 100 -1
-De 15 0 0 0 400
-Po 0 20400 26400 20000 26000 100 -1
-De 15 0 0 0 0
-Po 0 21000 31400 21600 31400 100 -1
-De 15 0 0 0 800
-Po 0 22000 31000 23000 31000 100 -1
-De 15 0 0 0 400
-Po 0 21600 31400 22000 31000 100 -1
-De 15 0 0 0 0
-Po 0 21000 31400 20400 31400 100 -1
-De 15 0 0 0 800
-Po 0 20000 31000 19000 31000 100 -1
-De 15 0 0 0 400
-Po 0 20400 31400 20000 31000 100 -1
-De 15 0 0 0 0
-Po 0 25000 33000 17000 33000 100 -1
-De 15 0 0 0 C00
-Po 0 17000 34000 25000 34000 100 -1
-De 15 0 0 0 C00
-Po 0 23000 38000 25000 38000 100 -1
-De 15 0 0 0 C00
-Po 0 21000 37000 17000 37000 100 -1
-De 15 0 0 0 C00
-Po 0 21000 37000 25000 37000 100 -1
-De 15 0 0 0 C00
-Po 0 21000 38000 23000 38000 100 -1
-De 0 0 0 0 C00
-Po 0 21000 38000 17000 38000 100 -1
-De 15 0 0 0 C00
-Po 0 21000 36000 25000 36000 100 -1
-De 15 0 0 0 C00
-Po 0 21000 35000 25000 35000 100 -1
-De 15 0 0 0 C00
-Po 0 40000 30000 49000 30000 100 -1
-De 15 0 0 0 C00
-Po 0 49000 30000 49000 54000 100 -1
-De 15 0 0 0 C00
-Po 0 40000 31000 48000 31000 100 -1
-De 15 0 0 0 C00
-Po 0 48000 31000 48000 54000 100 -1
-De 15 0 0 0 C00
-Po 0 21000 27400 21600 27400 100 -1
+De 15 0 1 0 C00
+Po 0 23000 29000 21400 29000 100 -1
 De 15 0 1 0 800
-Po 0 22000 27000 23000 27000 100 -1
+Po 0 21400 29000 21000 29400 100 -1
 De 15 0 1 0 400
-Po 0 21600 27400 22000 27000 100 -1
-De 15 0 1 0 0
-Po 0 21000 27400 20400 27400 100 -1
+Po 0 19000 29000 20600 29000 100 -1
 De 15 0 1 0 800
-Po 0 20000 27000 19000 27000 100 -1
+Po 0 20600 29000 21000 29400 100 -1
 De 15 0 1 0 400
-Po 0 20400 27400 20000 27000 100 -1
-De 15 0 1 0 0
-Po 0 45250 59000 45250 56250 100 -1
-De 15 0 1 0 800
-Po 0 45250 56250 45000 56000 100 -1
-De 15 0 1 0 400
-Po 0 21000 29400 21600 29400 100 -1
-De 15 0 2 0 800
-Po 0 22000 29000 23000 29000 100 -1
-De 15 0 2 0 400
-Po 0 21600 29400 22000 29000 100 -1
-De 15 0 2 0 0
-Po 0 21000 29400 20400 29400 100 -1
-De 15 0 2 0 800
-Po 0 20000 29000 19000 29000 100 -1
-De 15 0 2 0 400
-Po 0 20400 29400 20000 29000 100 -1
-De 15 0 2 0 0
 Po 0 25250 59000 25250 56250 100 -1
-De 15 0 2 0 800
+De 15 0 1 0 800
 Po 0 25250 56250 25000 56000 100 -1
+De 15 0 1 0 400
+Po 0 15750 55250 21500 55250 100 -1
+De 0 0 2 0 0
+Po 0 15000 56000 15750 55250 100 -1
+De 0 0 2 0 800
+Po 0 19800 31600 19800 41000 100 -1
+De 0 0 2 0 0
+Po 0 19800 41000 20000 41200 100 -1
+De 0 0 2 0 0
+Po 0 20000 41200 21600 41200 100 -1
+De 0 0 2 0 0
+Po 0 21600 41200 21800 41400 100 -1
+De 0 0 2 0 0
+Po 0 21800 41400 21800 42600 100 -1
+De 0 0 2 0 0
+Po 0 21800 42600 21800 54000 100 -1
+De 0 0 2 0 0
+Po 0 19800 31600 21000 30400 100 -1
+De 0 0 2 0 400
+Po 0 21800 54950 21800 54000 100 -1
+De 0 0 2 0 0
+Po 0 21500 55250 21800 54950 100 -1
+De 0 0 2 0 0
+Po 0 17000 30000 19000 30000 100 -1
+De 15 0 2 0 C00
+Po 0 23000 30000 21400 30000 100 -1
+De 15 0 2 0 800
+Po 0 21400 30000 21000 30400 100 -1
 De 15 0 2 0 400
-Po 0 21000 28400 21600 28400 100 -1
-De 15 0 3 0 800
-Po 0 22000 28000 23000 28000 100 -1
-De 15 0 3 0 400
-Po 0 21600 28400 22000 28000 100 -1
-De 15 0 3 0 0
-Po 0 21000 28400 20400 28400 100 -1
-De 15 0 3 0 800
-Po 0 20000 28000 19000 28000 100 -1
-De 15 0 3 0 400
-Po 0 20400 28400 20000 28000 100 -1
-De 15 0 3 0 0
-Po 0 35250 59000 35250 56250 100 -1
-De 15 0 3 0 800
-Po 0 35250 56250 35000 56000 100 -1
-De 15 0 3 0 400
-Po 0 21000 30400 21600 30400 100 -1
-De 15 0 4 0 800
-Po 0 22000 30000 23000 30000 100 -1
-De 15 0 4 0 400
-Po 0 21600 30400 22000 30000 100 -1
-De 15 0 4 0 0
-Po 0 21000 30400 20400 30400 100 -1
-De 15 0 4 0 800
-Po 0 20000 30000 19000 30000 100 -1
-De 15 0 4 0 400
-Po 0 20400 30400 20000 30000 100 -1
-De 15 0 4 0 0
+Po 0 19000 30000 20600 30000 100 -1
+De 15 0 2 0 800
+Po 0 20600 30000 21000 30400 100 -1
+De 15 0 2 0 400
 Po 0 15250 59000 15250 56250 100 -1
-De 15 0 4 0 800
+De 15 0 2 0 800
 Po 0 15250 56250 15000 56000 100 -1
+De 15 0 2 0 400
+Po 0 45000 56000 43750 54750 100 -1
+De 0 0 3 0 800
+Po 0 20700 32500 20400 32800 100 -1
+De 0 0 3 0 0
+Po 0 20400 32800 20400 40400 100 -1
+De 0 0 3 0 0
+Po 0 20400 40400 20600 40600 100 -1
+De 0 0 3 0 0
+Po 0 20600 40600 22200 40600 100 -1
+De 0 0 3 0 0
+Po 0 22200 40600 22400 40800 100 -1
+De 0 0 3 0 0
+Po 0 22400 40800 22400 54000 100 -1
+De 0 0 3 0 0
+Po 0 20700 32500 20800 32500 100 -1
+De 0 0 3 0 0
+Po 0 22400 54400 22400 54000 100 -1
+De 0 0 3 0 0
+Po 0 22750 54750 22400 54400 100 -1
+De 0 0 3 0 0
+Po 0 43750 54750 22750 54750 100 -1
+De 0 0 3 0 0
+Po 0 22150 27400 22250 27500 100 -1
+De 0 0 3 0 0
+Po 0 22150 27400 21000 27400 100 -1
+De 0 0 3 0 400
+Po 0 22000 32500 20800 32500 100 -1
+De 0 0 3 0 0
+Po 0 22250 32250 22000 32500 100 -1
+De 0 0 3 0 0
+Po 0 22250 27500 22250 32250 100 -1
+De 0 0 3 0 0
+Po 0 20800 32500 20750 32500 100 -1
+De 0 0 3 0 0
+Po 0 17000 27000 19000 27000 100 -1
+De 15 0 3 0 C00
+Po 0 23000 27000 21400 27000 100 -1
+De 15 0 3 0 800
+Po 0 21400 27000 21000 27400 100 -1
+De 15 0 3 0 400
+Po 0 19000 27000 20600 27000 100 -1
+De 15 0 3 0 800
+Po 0 20600 27000 21000 27400 100 -1
+De 15 0 3 0 400
+Po 0 45250 59000 45250 56250 100 -1
+De 15 0 3 0 800
+Po 0 45250 56250 45000 56000 100 -1
+De 15 0 3 0 400
+Po 0 34000 55000 22500 55000 100 -1
+De 0 0 4 0 0
+Po 0 35000 56000 34000 55000 100 -1
+De 0 0 4 0 800
+Po 0 20550 32250 20600 32250 100 -1
+De 0 0 4 0 0
+Po 0 22200 54400 22200 41000 100 -1
+De 0 0 4 0 0
+Po 0 22000 40800 22200 41000 100 -1
+De 0 0 4 0 0
+Po 0 20400 40800 22000 40800 100 -1
+De 0 0 4 0 0
+Po 0 20200 32600 20200 40600 100 -1
+De 0 0 4 0 0
+Po 0 20550 32250 20200 32600 100 -1
+De 0 0 4 0 0
+Po 0 20400 40800 20200 40600 100 -1
+De 0 0 4 0 0
+Po 0 22200 54700 22200 54400 100 -1
+De 0 0 4 0 0
+Po 0 22500 55000 22200 54700 100 -1
+De 0 0 4 0 0
+Po 0 21900 28400 21000 28400 100 -1
+De 0 0 4 0 400
+Po 0 21900 28400 22000 28500 100 -1
+De 0 0 4 0 0
+Po 0 22000 28500 22000 32000 100 -1
+De 0 0 4 0 0
+Po 0 22000 32000 21750 32250 100 -1
+De 0 0 4 0 0
+Po 0 21750 32250 20600 32250 100 -1
+De 0 0 4 0 0
+Po 0 20600 32250 20500 32250 100 -1
+De 0 0 4 0 0
+Po 0 17000 28000 19000 28000 100 -1
+De 15 0 4 0 C00
+Po 0 23000 28000 21400 28000 100 -1
+De 15 0 4 0 800
+Po 0 21400 28000 21000 28400 100 -1
 De 15 0 4 0 400
-Po 0 24000 56000 24000 55750 100 -1
+Po 0 19000 28000 20600 28000 100 -1
+De 15 0 4 0 800
+Po 0 20600 28000 21000 28400 100 -1
+De 15 0 4 0 400
+Po 0 35250 59000 35250 56250 100 -1
+De 15 0 4 0 800
+Po 0 35250 56250 35000 56000 100 -1
+De 15 0 4 0 400
+Po 0 24000 56000 23250 55250 100 -1
 De 15 0 5 0 800
+Po 0 22000 38000 22000 54400 100 -1
+De 15 0 5 0 0
 Po 0 22000 38000 21000 37000 100 -1
 De 15 0 5 0 400
-Po 0 22000 40250 22000 38000 100 -1
+Po 0 22000 55000 22000 54400 100 -1
 De 15 0 5 0 0
-Po 0 22500 40750 22000 40250 100 -1
+Po 0 22250 55250 22000 55000 100 -1
 De 15 0 5 0 0
-Po 0 24750 40750 22500 40750 100 -1
+Po 0 23250 55250 22250 55250 100 -1
 De 15 0 5 0 0
-Po 0 25250 41250 24750 40750 100 -1
-De 15 0 5 0 0
-Po 0 25250 54500 25250 41250 100 -1
-De 15 0 5 0 0
-Po 0 24000 55750 25250 54500 100 -1
-De 15 0 5 0 0
+Po 0 21000 37000 24000 37000 100 -1
+De 0 0 5 0 C00
+Po 0 19000 37000 21000 37000 100 -1
+De 15 0 5 0 C00
 Po 0 24750 60000 24750 56750 100 -1
 De 15 0 5 0 800
 Po 0 24750 56750 24000 56000 100 -1
 De 15 0 5 0 400
-Po 0 21000 38000 20000 39000 100 -1
+Po 0 14750 55250 21500 55250 100 -1
+De 15 0 6 0 0
+Po 0 14000 56000 14750 55250 100 -1
 De 15 0 6 0 800
-Po 0 14750 55250 14000 56000 100 -1
+Po 0 21800 38800 21800 54000 100 -1
+De 15 0 6 0 0
+Po 0 21800 38800 21000 38000 100 -1
 De 15 0 6 0 400
-Po 0 23750 55250 14750 55250 100 -1
+Po 0 21800 54950 21800 54000 100 -1
 De 15 0 6 0 0
-Po 0 24750 54250 23750 55250 100 -1
+Po 0 21500 55250 21800 54950 100 -1
 De 15 0 6 0 0
-Po 0 24750 41500 24750 54250 100 -1
-De 15 0 6 0 0
-Po 0 24500 41250 24750 41500 100 -1
-De 15 0 6 0 0
-Po 0 20750 41250 24500 41250 100 -1
-De 15 0 6 0 0
-Po 0 20000 40500 20750 41250 100 -1
-De 15 0 6 0 0
-Po 0 20000 39000 20000 40500 100 -1
-De 15 0 6 0 0
+Po 0 21000 38000 24000 38000 100 -1
+De 0 0 6 0 C00
+Po 0 19000 38000 21000 38000 100 -1
+De 15 0 6 0 C00
 Po 0 14750 60000 14750 56750 100 -1
 De 15 0 6 0 800
 Po 0 14750 56750 14000 56000 100 -1
 De 15 0 6 0 400
-Po 0 17000 36000 21000 36000 100 -1
+Po 0 44000 56000 42750 54750 100 -1
+De 15 0 7 0 800
+Po 0 22400 36400 21000 35000 100 -1
+De 15 0 7 0 400
+Po 0 22400 53800 22400 36400 100 -1
+De 15 0 7 0 0
+Po 0 22400 54000 22400 53800 100 -1
+De 15 0 7 0 0
+Po 0 22400 54400 22400 54000 100 -1
+De 15 0 7 0 0
+Po 0 22750 54750 22400 54400 100 -1
+De 15 0 7 0 0
+Po 0 42750 54750 22750 54750 100 -1
+De 15 0 7 0 0
+Po 0 21000 35000 24000 35000 100 -1
+De 0 0 7 0 C00
+Po 0 21000 35000 19000 35000 100 -1
 De 15 0 7 0 C00
-Po 0 25000 36000 25750 36750 100 -1
-De 15 0 7 0 800
-Po 0 25750 36750 25750 54500 100 -1
-De 15 0 7 0 0
-Po 0 25750 54500 26250 55000 100 -1
-De 15 0 7 0 0
-Po 0 26250 55000 33000 55000 100 -1
-De 15 0 7 0 0
-Po 0 33000 55000 34000 56000 100 -1
-De 15 0 7 0 400
-Po 0 34750 60000 34750 56750 100 -1
-De 15 0 7 0 800
-Po 0 34750 56750 34000 56000 100 -1
-De 15 0 7 0 400
-Po 0 17000 35000 21000 35000 100 -1
-De 15 0 8 0 C00
-Po 0 25000 35000 26250 36250 100 -1
-De 15 0 8 0 800
-Po 0 26250 36250 26250 54250 100 -1
-De 15 0 8 0 0
-Po 0 26250 54250 26500 54500 100 -1
-De 15 0 8 0 0
-Po 0 26500 54500 42500 54500 100 -1
-De 15 0 8 0 0
-Po 0 42500 54500 44000 56000 100 -1
-De 15 0 8 0 400
 Po 0 44750 60000 44750 56750 100 -1
-De 15 0 8 0 800
+De 15 0 7 0 800
 Po 0 44750 56750 44000 56000 100 -1
+De 15 0 7 0 400
+Po 0 34000 56000 33000 55000 100 -1
+De 15 0 8 0 800
+Po 0 22200 37200 21000 36000 100 -1
 De 15 0 8 0 400
-Po 0 23750 60000 23750 60250 100 -1
+Po 0 22200 37200 22200 54400 100 -1
+De 15 0 8 0 0
+Po 0 22200 54700 22200 54400 100 -1
+De 15 0 8 0 0
+Po 0 22500 55000 22200 54700 100 -1
+De 15 0 8 0 0
+Po 0 33000 55000 22500 55000 100 -1
+De 15 0 8 0 0
+Po 0 21000 36000 24000 36000 100 -1
+De 0 0 8 0 C00
+Po 0 19000 36000 21000 36000 100 -1
+De 15 0 8 0 C00
+Po 0 34750 60000 34750 56750 100 -1
+De 15 0 8 0 800
+Po 0 34750 56750 34000 56000 100 -1
+De 15 0 8 0 400
+Po 0 40000 31000 48000 31000 250 -1
+De 15 0 9 0 C00
+Po 0 48000 31000 48000 54000 250 -1
+De 15 0 9 0 C00
+Po 0 49000 55000 49500 55000 250 -1
+De 15 0 9 0 0
+Po 0 48000 54000 49000 55000 250 -1
 De 15 0 9 0 800
-Po 0 14750 61000 13750 60000 100 -1
-De 15 0 9 0 400
-Po 0 23000 61000 14750 61000 100 -1
-De 15 0 9 0 0
-Po 0 23750 60250 23000 61000 100 -1
-De 15 0 9 0 0
-Po 0 33750 60000 33750 60250 100 -1
-De 15 0 9 0 800
-Po 0 24750 61000 23750 60000 100 -1
-De 15 0 9 0 400
-Po 0 33000 61000 24750 61000 100 -1
-De 15 0 9 0 0
-Po 0 33750 60250 33000 61000 100 -1
-De 15 0 9 0 0
-Po 0 43750 60000 43750 60250 100 -1
-De 15 0 9 0 800
-Po 0 34750 61000 33750 60000 100 -1
-De 15 0 9 0 400
-Po 0 43000 61000 34750 61000 100 -1
-De 15 0 9 0 0
-Po 0 43750 60250 43000 61000 100 -1
-De 15 0 9 0 0
-Po 0 49000 54000 50000 54000 100 -1
-De 15 0 9 0 800
-Po 0 50000 54000 51000 55000 100 -1
-De 15 0 9 0 0
-Po 0 51000 55000 51000 60000 100 -1
-De 15 0 9 0 0
-Po 0 51000 60000 50000 61000 100 -1
-De 15 0 9 0 0
-Po 0 50000 61000 44750 61000 100 -1
-De 15 0 9 0 0
-Po 0 44750 61000 43750 60000 100 -1
-De 15 0 9 0 400
-Po 0 43750 60000 43750 57750 100 -1
-De 15 0 9 0 800
-Po 0 43750 57750 42000 56000 100 -1
-De 15 0 9 0 400
-Po 0 33750 60000 33750 57750 100 -1
-De 15 0 9 0 800
-Po 0 33750 57750 32000 56000 100 -1
-De 15 0 9 0 400
-Po 0 23750 60000 23750 57750 100 -1
-De 15 0 9 0 800
-Po 0 23750 57750 22000 56000 100 -1
-De 15 0 9 0 400
-Po 0 13750 60000 13750 57750 100 -1
-De 15 0 9 0 800
-Po 0 13750 57750 12000 56000 100 -1
-De 15 0 9 0 400
-Po 0 24250 57250 14250 57250 100 -1
-De 0 0 10 0 0
-Po 3 14250 57250 14250 57250 450 -1
-De 15 1 10 0 0
-Po 0 34250 57250 24250 57250 100 -1
-De 0 0 10 0 0
-Po 3 24250 57250 24250 57250 450 -1
-De 15 1 10 0 0
-Po 0 44250 57250 34250 57250 100 -1
-De 0 0 10 0 0
-Po 3 34250 57250 34250 57250 450 -1
-De 15 1 10 0 0
-Po 0 48000 54000 49000 55000 100 -1
-De 15 0 10 0 800
-Po 3 44250 57250 44250 57250 450 -1
-De 15 1 10 0 0
-Po 0 50000 57250 44250 57250 100 -1
-De 0 0 10 0 0
+Po 0 50000 57250 44250 57250 250 -1
+De 0 0 9 0 0
 Po 3 50000 57250 50000 57250 450 -1
-De 15 1 10 0 0
-Po 0 50000 55500 50000 57250 100 -1
+De 15 1 9 0 0
+Po 0 50000 55500 50000 57250 250 -1
+De 15 0 9 0 0
+Po 0 49500 55000 50000 55500 250 -1
+De 15 0 9 0 0
+Po 0 24250 57250 14250 57250 250 -1
+De 0 0 9 0 0
+Po 3 14250 57250 14250 57250 450 -1
+De 15 1 9 0 0
+Po 0 34250 57250 24250 57250 250 -1
+De 0 0 9 0 0
+Po 3 24250 57250 24250 57250 450 -1
+De 15 1 9 0 0
+Po 0 44250 57250 34250 57250 250 -1
+De 0 0 9 0 0
+Po 3 34250 57250 34250 57250 450 -1
+De 15 1 9 0 0
+Po 3 44250 57250 44250 57250 450 -1
+De 15 1 9 0 0
+Po 0 44250 59000 44250 57250 250 -1
+De 15 0 9 0 800
+Po 0 44250 57250 43000 56000 250 -1
+De 15 0 9 0 400
+Po 0 34250 59000 34250 57250 250 -1
+De 15 0 9 0 800
+Po 0 34250 57250 33000 56000 250 -1
+De 15 0 9 0 400
+Po 0 24250 59000 24250 57250 250 -1
+De 15 0 9 0 800
+Po 0 24250 57250 23000 56000 250 -1
+De 15 0 9 0 400
+Po 0 14250 59000 14250 57250 250 -1
+De 15 0 9 0 800
+Po 0 14250 57250 13000 56000 250 -1
+De 15 0 9 0 400
+Po 0 40000 30000 49000 30000 250 -1
+De 15 0 10 0 C00
+Po 0 49000 30000 49000 54000 250 -1
+De 15 0 10 0 C00
+Po 0 50500 55000 50500 60500 250 -1
 De 15 0 10 0 0
-Po 0 49500 55000 50000 55500 100 -1
+Po 0 44750 61000 43750 60000 250 -1
+De 15 0 10 0 400
+Po 0 50000 61000 44750 61000 250 -1
 De 15 0 10 0 0
-Po 0 49000 55000 49500 55000 100 -1
+Po 0 50500 60500 50000 61000 250 -1
 De 15 0 10 0 0
-Po 0 44250 59000 44250 57250 100 -1
+Po 0 49000 54000 49500 54500 250 -1
 De 15 0 10 0 800
-Po 0 44250 57250 43000 56000 100 -1
+Po 0 49500 54500 50000 54500 250 -1
+De 15 0 10 0 0
+Po 0 50000 54500 50500 55000 250 -1
+De 15 0 10 0 0
+Po 0 23750 60000 23750 60000 100 -1
+De 15 0 10 0 C00
+Po 0 14750 61000 13750 60000 250 -1
 De 15 0 10 0 400
-Po 0 34250 59000 34250 57250 100 -1
+Po 0 23750 60000 22750 61000 250 -1
 De 15 0 10 0 800
-Po 0 34250 57250 33000 56000 100 -1
+Po 0 22750 61000 14750 61000 250 -1
+De 15 0 10 0 0
+Po 0 33750 60000 33750 60000 100 -1
+De 15 0 10 0 C00
+Po 0 24750 61000 23750 60000 250 -1
 De 15 0 10 0 400
-Po 0 24250 59000 24250 57250 100 -1
+Po 0 32750 61000 24750 61000 250 -1
+De 15 0 10 0 0
+Po 0 33750 60000 32750 61000 250 -1
 De 15 0 10 0 800
-Po 0 24250 57250 23000 56000 100 -1
+Po 0 43750 60000 43750 60000 100 -1
+De 15 0 10 0 C00
+Po 0 34750 61000 33750 60000 250 -1
 De 15 0 10 0 400
-Po 0 14250 59000 14250 57250 100 -1
+Po 0 43750 60000 42750 61000 250 -1
 De 15 0 10 0 800
-Po 0 14250 57250 13000 56000 100 -1
+Po 0 42750 61000 34750 61000 250 -1
+De 15 0 10 0 0
+Po 0 43750 60000 43750 57750 250 -1
+De 15 0 10 0 800
+Po 0 43750 57750 42000 56000 250 -1
+De 15 0 10 0 400
+Po 0 33750 60000 33750 57750 250 -1
+De 15 0 10 0 800
+Po 0 33750 57750 32000 56000 250 -1
+De 15 0 10 0 400
+Po 0 23750 60000 23750 57750 250 -1
+De 15 0 10 0 800
+Po 0 23750 57750 22000 56000 250 -1
+De 15 0 10 0 400
+Po 0 13750 60000 13750 57750 250 -1
+De 15 0 10 0 800
+Po 0 13750 57750 12000 56000 250 -1
 De 15 0 10 0 400
 Po 0 15750 60000 15750 56250 100 -1
 De 15 0 11 0 800

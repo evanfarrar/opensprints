@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Wed 20 May 2009 09:50:48 PM CDT
+Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Sat 23 May 2009 04:19:01 PM CDT
 
 BeginCmp
 TimeStamp = /49C834DF;
@@ -32,28 +32,28 @@ BeginCmp
 TimeStamp = /49E1EB87;
 Reference = P1;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8_LJO;
+IdModule  = SIL-8_opsns-IB;
 EndCmp
 
 BeginCmp
 TimeStamp = /4A0F8811;
 Reference = P2;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8_LJO;
+IdModule  = SIL-8_opsns-IB;
 EndCmp
 
 BeginCmp
 TimeStamp = /4A0F87C1;
 Reference = P3;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8_LJO;
+IdModule  = SIL-8_opsns-IB;
 EndCmp
 
 BeginCmp
 TimeStamp = /4A0F882C;
 Reference = P4;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8_LJO;
+IdModule  = SIL-8_opsns-IB;
 EndCmp
 
 BeginCmp
