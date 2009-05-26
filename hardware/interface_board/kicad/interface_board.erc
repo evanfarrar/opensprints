@@ -1,23 +1,38 @@
-ERC control (Sun 17 May 2009 02:00:32 PM CDT)
+ERC control (Mon 25 May 2009 05:22:16 PM CDT)
 
 ***** Sheet / (Root) 
-ERC: Warning Pin power_in Unconnected (X= 3.900 inches, Y= 4.000 inches
-ERC: Warning Pin power_out Unconnected (X= 3.900 inches, Y= 4.150 inches
-ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 4.300 inches
-ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 5.050 inches
-ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 5.200 inches
-ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 5.350 inches
-ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 6.100 inches
-ERC: Warning Pin 3state Unconnected (X= 3.900 inches, Y= 6.250 inches
-ERC: Warning Pin input Unconnected (X= 6.800 inches, Y= 4.600 inches
-ERC: Warning Pin power_out Unconnected (X= 6.800 inches, Y= 4.750 inches
-ERC: Warning Pin power_out Unconnected (X= 6.800 inches, Y= 5.200 inches
-ERC: Warning Pin power_in Unconnected (X= 6.800 inches, Y= 5.350 inches
-ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.500 inches
-ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.650 inches
-ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.800 inches
-ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 5.950 inches
-ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 6.100 inches
-ERC: Warning Pin 3state Unconnected (X= 6.800 inches, Y= 6.250 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 42) (X= 2.700 inches, Y= 5.950 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 41) (X= 2.700 inches, Y= 4.900 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 40) (X= 2.700 inches, Y= 4.750 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 39) (X= 2.700 inches, Y= 4.600 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 38) (X= 2.700 inches, Y= 4.450 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 37) (X= 2.700 inches, Y= 4.300 inches
+ERC: Warning Pin unspc not driven (Net 36) (X= 2.700 inches, Y= 4.000 inches
+ERC: Warning: Pin unspc connected to Pin power_in (net 36) (X= 2.700 inches, Y= 4.000 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 35) (X= 2.700 inches, Y= 5.050 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 34) (X= 2.700 inches, Y= 5.350 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 33) (X= 2.700 inches, Y= 5.200 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 32) (X= 2.700 inches, Y= 6.250 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 31) (X= 2.700 inches, Y= 6.100 inches
+ERC: Warning: Pin unspc connected to Pin input (net 30) (X= 7.650 inches, Y= 4.600 inches
+ERC: Warning: Pin unspc connected to Pin power_out (net 29) (X= 7.650 inches, Y= 4.750 inches
+ERC: Warning: Pin unspc connected to Pin passive (net 28) (X= 3.950 inches, Y= 4.150 inches
+ERC: Warning: Pin power_out connected to Pin unspc (net 28) (X= 6.850 inches, Y= 5.050 inches
+ERC: Warning: Pin unspc connected to Pin power_out (net 28) (X= 6.850 inches, Y= 5.200 inches
+ERC: Warning: Pin unspc connected to Pin unspc (net 28) (X= 2.700 inches, Y= 4.150 inches
+ERC: Warning: Pin unspc connected to Pin unspc (net 28) (X= 7.650 inches, Y= 5.200 inches
+ERC: Warning: Pin unspc connected to Pin unspc (net 28) (X= 7.650 inches, Y= 5.050 inches
+ERC: Warning Pin unspc not driven (Net 27) (X= 7.650 inches, Y= 5.350 inches
+ERC: Warning: Pin unspc connected to Pin power_in (net 27) (X= 7.650 inches, Y= 5.350 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 26) (X= 7.650 inches, Y= 5.500 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 25) (X= 7.650 inches, Y= 5.650 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 24) (X= 7.650 inches, Y= 5.800 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 23) (X= 7.650 inches, Y= 6.100 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 22) (X= 7.650 inches, Y= 6.250 inches
+ERC: Warning: Pin unspc connected to Pin power_out (net 19) (X= 7.650 inches, Y= 4.900 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 18) (X= 2.700 inches, Y= 5.500 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 13) (X= 2.700 inches, Y= 5.800 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 8) (X= 2.700 inches, Y= 5.650 inches
+ERC: Warning: Pin unspc connected to Pin 3state (net 1) (X= 7.650 inches, Y= 5.950 inches
 
- >> Errors ERC: 18
+ >> Errors ERC: 33

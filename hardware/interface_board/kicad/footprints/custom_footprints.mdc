@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  Sun 17 May 2009 09:58:10 PM CDT
+PCBNEW-LibDoc----V1  Mon 25 May 2009 10:45:34 PM CDT
 #
 $MODULE 2N7000
 Li 2N7000
@@ -9,6 +9,60 @@ $EndMODULE
 $MODULE RJ45_8-LJO
 Li RJ45_8-LJO
 Kw RJ45
+$EndMODULE
+#
+$MODULE SIL-8_LJO
+Li SIL-8_LJO
+Cd Connecteur 8 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE 1pin_LJO
+Li 1pin_LJO
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+$EndMODULE
+#
+$MODULE SIL-12_opsns-IB
+Li SIL-12_opsns-IB
+Cd connector 8 pins 100 mil offset
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-6_opsns-IB
+Li SIL-6_opsns-IB
+Cd connector 8 pins 100 mil offset
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-5_opsns-IB
+Li SIL-5_opsns-IB
+Cd connector 8 pins 100 mil offset
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-4_opsns-IB
+Li SIL-4_opsns-IB
+Cd connector 8 pins 100 mil offset
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-3_opsns-IB
+Li SIL-3_opsns-IB
+Cd connector 8 pins 100 mil offset
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-8_opsns-IB-RJ45-brkt
+Li SIL-8_opsns-IB-RJ45-brkt
+Cd connector 8 pins 100 mil offset
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE SIL-8_opsns-IB
+Li SIL-8_opsns-IB
+Cd connector 8 pins 100 mil offset
+Kw CONN DEV
 $EndMODULE
 #
 $EndLIBDOC

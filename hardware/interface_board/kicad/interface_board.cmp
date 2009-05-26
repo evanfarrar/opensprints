@@ -1,32 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Sun 17 May 2009 09:58:38 PM CDT
-
-BeginCmp
-TimeStamp = /49FC8389;
-Reference = H1;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
-
-BeginCmp
-TimeStamp = /49FC8388;
-Reference = H2;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
-
-BeginCmp
-TimeStamp = /49FC8383;
-Reference = H3;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
-
-BeginCmp
-TimeStamp = /49E1EA07;
-Reference = H4;
-ValeurCmp = SCREW_HOLE;
-IdModule  = SCREW_HOLE_SERPAC-A-31;
-EndCmp
+Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Mon 25 May 2009 10:48:25 PM CDT
 
 BeginCmp
 TimeStamp = /49C834DF;
@@ -57,31 +29,227 @@ IdModule  = RJ45_8-LJO;
 EndCmp
 
 BeginCmp
+TimeStamp = /4A1B2633/4A1B53E7;
+Reference = K1;
+ValeurCmp = CONN_3;
+IdModule  = SIL-3_opsns-IB;
+EndCmp
+
+BeginCmp
 TimeStamp = /49E1EB87;
 Reference = P1;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = SIL-8_opsns-IB-RJ45-brkt;
 EndCmp
 
 BeginCmp
 TimeStamp = /4A0F8811;
 Reference = P2;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = SIL-8_opsns-IB-RJ45-brkt;
 EndCmp
 
 BeginCmp
 TimeStamp = /4A0F87C1;
 Reference = P3;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = SIL-8_opsns-IB-RJ45-brkt;
 EndCmp
 
 BeginCmp
 TimeStamp = /4A0F882C;
 Reference = P4;
 ValeurCmp = CONN_8;
-IdModule  = SIL-8;
+IdModule  = SIL-8_opsns-IB-RJ45-brkt;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B36A4;
+Reference = P15;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B362D;
+Reference = P16;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B36A3;
+Reference = P17;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B35DC;
+Reference = P18;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B36A5;
+Reference = P19;
+ValeurCmp = CONN_6;
+IdModule  = SIL-6_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B3647;
+Reference = P20;
+ValeurCmp = CONN_6;
+IdModule  = SIL-6_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B36A6;
+Reference = P21;
+ValeurCmp = CONN_6;
+IdModule  = SIL-6_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B3668;
+Reference = P22;
+ValeurCmp = CONN_6;
+IdModule  = SIL-6_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B4EC3;
+Reference = P23;
+ValeurCmp = PROTO_7X8;
+IdModule  = PROTO_7x8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B4EC6;
+Reference = P24;
+ValeurCmp = PROTO_7X8;
+IdModule  = PROTO_7x8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B4EBD;
+Reference = P25;
+ValeurCmp = PROTO_7X8;
+IdModule  = PROTO_7x8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B554C;
+Reference = P26;
+ValeurCmp = PROTO_12X1;
+IdModule  = PROTO_12x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B551D;
+Reference = P27;
+ValeurCmp = PROTO_12X1;
+IdModule  = PROTO_12x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B5530;
+Reference = P28;
+ValeurCmp = PROTO_12X8;
+IdModule  = PROTO_12x8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B62F8;
+Reference = P29;
+ValeurCmp = PROTO_13X25;
+IdModule  = PROTO_13x25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B55CC;
+Reference = P30;
+ValeurCmp = PROTO_12X25;
+IdModule  = PROTO_12x25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B5600;
+Reference = P31;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B5609;
+Reference = P32;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B5E67;
+Reference = P33;
+ValeurCmp = PROTO_12X8;
+IdModule  = PROTO_12x8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B52E1;
+Reference = P34;
+ValeurCmp = CONN_4;
+IdModule  = SIL-4_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B51CF;
+Reference = P35;
+ValeurCmp = CONN_6;
+IdModule  = SIL-6_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B52F8;
+Reference = P36;
+ValeurCmp = CONN_6;
+IdModule  = SIL-6_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B534F;
+Reference = P38;
+ValeurCmp = CONN_6;
+IdModule  = SIL-6_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B5445;
+Reference = P39;
+ValeurCmp = CONN_5;
+IdModule  = SIL-5_opsns-IB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B6217;
+Reference = P40;
+ValeurCmp = PROTO_6X5;
+IdModule  = PROTO_6x5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B6024;
+Reference = P41;
+ValeurCmp = PROTO_2X7;
+IdModule  = PROTO_2x7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A1B2633/4A1B65A9;
+Reference = P42;
+ValeurCmp = PROTO_2X5;
+IdModule  = PROTO_2x5;
 EndCmp
 
 BeginCmp
@@ -89,6 +257,13 @@ TimeStamp = /4A0F4298;
 Reference = U1;
 ValeurCmp = ARDUINO_USB;
 IdModule  = ARDUINO_USB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A138D38;
+Reference = U2;
+ValeurCmp = A-31-CB;
+IdModule  = A-31-CB;
 EndCmp
 
 EndListe

@@ -1,137 +1,529 @@
-# EESchema Netlist Version 1.1 created  Sun 17 May 2009 09:58:38 PM CDT
+# EESchema Netlist Version 1.1 created  Mon 25 May 2009 11:37:49 PM CDT
 (
- ( /49FC8389 SCREW_HOLE_SERPAC-A-31 H1 SCREW_HOLE
+ ( /4A0F4298 $noname  U1 ARDUINO_USB {Lib=ARDUINO_USB}
+  (    1 N-000027 )
+  (    2 N-000006 )
+  (    3 N-000028 )
+  (    4 N-000003 )
+  (    5 N-000007 )
+  (    6 N-000001 )
+  (    7 N-000009 )
+  (    8 N-000026 )
+  (    9 N-000025 )
+  (   10 N-000024 )
+  (   11 N-000004 )
+  (   12 N-000008 )
+  (   13 N-000002 )
+  (   14 N-000010 )
+  (   15 N-000023 )
+  (   16 N-000022 )
+  (   17 N-000015 )
+  (   18 N-000016 )
+  (   19 N-000013 )
+  (   20 N-000014 )
+  (   21 N-000018 )
+  (   22 N-000019 )
+  (   23 N-000017 )
+  (   24 N-000006 )
+  (   25 N-000006 )
+  (   26 N-000005 )
+  (   27 N-000020 )
+  (   28 N-000021 )
  )
- ( /49FC8388 SCREW_HOLE_SERPAC-A-31 H2 SCREW_HOLE
+ ( /4A138D38 $noname  U2 A-31-CB {Lib=A-31-CB}
  )
- ( /49FC8383 SCREW_HOLE_SERPAC-A-31 H3 SCREW_HOLE
+ ( /4A0F882C $noname  P4 CONN_8 {Lib=CONN_8}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000004 )
+  (    4 N-000003 )
+  (    5 /RACER_3_LED0 )
+  (    6 /RACER_3_LED1 )
+  (    7 /RACER_3_LED2 )
+  (    8 /RACER_3_LED3 )
  )
- ( /49E1EA07 SCREW_HOLE_SERPAC-A-31 H4 SCREW_HOLE
+ ( /4A0F882B $noname  J4 RJ45 {Lib=RJ45}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000004 )
+  (    4 N-000003 )
+  (    5 /RACER_3_LED0 )
+  (    6 /RACER_3_LED1 )
+  (    7 /RACER_3_LED2 )
+  (    8 /RACER_3_LED3 )
  )
- ( /49C834DF RJ45_8-LJO J1 RJ45
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_0_SENSOR )
-  ( 4 /RACER_01 )
-  ( 5 /RACER_0_LED0 )
-  ( 6 /RACER_0_LED1 )
-  ( 7 /RACER_0_LED2 )
-  ( 8 /RACER_0_LED3 )
+ ( /4A0F8811 $noname  P2 CONN_8 {Lib=CONN_8}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000002 )
+  (    4 N-000001 )
+  (    5 /RACER_1_LED0 )
+  (    6 /RACER_1_LED1 )
+  (    7 /RACER_1_LED2 )
+  (    8 /RACER_1_LED3 )
  )
- ( /4A0F8810 RJ45_8-LJO J2 RJ45
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_1_SENSOR )
-  ( 4 /RACER_12 )
-  ( 5 /RACER_1_LED0 )
-  ( 6 /RACER_1_LED1 )
-  ( 7 /RACER_1_LED2 )
-  ( 8 /RACER_1_LED3 )
+ ( /4A0F8810 $noname  J2 RJ45 {Lib=RJ45}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000002 )
+  (    4 N-000001 )
+  (    5 /RACER_1_LED0 )
+  (    6 /RACER_1_LED1 )
+  (    7 /RACER_1_LED2 )
+  (    8 /RACER_1_LED3 )
  )
- ( /4A0F4381 RJ45_8-LJO J3 RJ45
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_2_SENSOR )
-  ( 4 /RACER_23 )
-  ( 5 /RACER_2_LED0 )
-  ( 6 /RACER_2_LED1 )
-  ( 7 /RACER_2_LED2 )
-  ( 8 /RACER_2_LED3 )
+ ( /4A0F87C1 $noname  P3 CONN_8 {Lib=CONN_8}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000008 )
+  (    4 N-000007 )
+  (    5 /RACER_2_LED0 )
+  (    6 /RACER_2_LED1 )
+  (    7 /RACER_2_LED2 )
+  (    8 /RACER_2_LED3 )
  )
- ( /4A0F882B RJ45_8-LJO J4 RJ45
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_3_SENSOR )
-  ( 4 /RACER_34 )
-  ( 5 /RACER_3_LED0 )
-  ( 6 /RACER_3_LED1 )
-  ( 7 /RACER_3_LED2 )
-  ( 8 /RACER_3_LED3 )
+ ( /4A0F4381 $noname  J3 RJ45 {Lib=RJ45}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000008 )
+  (    4 N-000007 )
+  (    5 /RACER_2_LED0 )
+  (    6 /RACER_2_LED1 )
+  (    7 /RACER_2_LED2 )
+  (    8 /RACER_2_LED3 )
  )
- ( /49E1EB87 SIL-8 P1 CONN_8
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_0_SENSOR )
-  ( 4 /RACER_01 )
-  ( 5 /RACER_0_LED0 )
-  ( 6 /RACER_0_LED1 )
-  ( 7 /RACER_0_LED2 )
-  ( 8 /RACER_0_LED3 )
+ ( /49E1EB87 $noname  P1 CONN_8 {Lib=CONN_8}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000010 )
+  (    4 N-000009 )
+  (    5 /RACER_0_LED0 )
+  (    6 /RACER_0_LED1 )
+  (    7 /RACER_0_LED2 )
+  (    8 /RACER_0_LED3 )
  )
- ( /4A0F8811 SIL-8 P2 CONN_8
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_1_SENSOR )
-  ( 4 /RACER_12 )
-  ( 5 /RACER_1_LED0 )
-  ( 6 /RACER_1_LED1 )
-  ( 7 /RACER_1_LED2 )
-  ( 8 /RACER_1_LED3 )
+ ( /49C834DF $noname  J1 RJ45 {Lib=RJ45}
+  (    1 N-000005 )
+  (    2 N-000006 )
+  (    3 N-000010 )
+  (    4 N-000009 )
+  (    5 /RACER_0_LED0 )
+  (    6 /RACER_0_LED1 )
+  (    7 /RACER_0_LED2 )
+  (    8 /RACER_0_LED3 )
  )
- ( /4A0F87C1 SIL-8 P3 CONN_8
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_2_SENSOR )
-  ( 4 /RACER_23 )
-  ( 5 /RACER_2_LED0 )
-  ( 6 /RACER_2_LED1 )
-  ( 7 /RACER_2_LED2 )
-  ( 8 /RACER_2_LED3 )
+ ( /4A1B2633/4A1B65A9 $noname  P42 PROTO_2X5 {Lib=PROTO_2X5}
  )
- ( /4A0F882C SIL-8 P4 CONN_8
-  ( 1 /5V )
-  ( 2 /GND )
-  ( 3 /RACER_3_SENSOR )
-  ( 4 /RACER_34 )
-  ( 5 /RACER_3_LED0 )
-  ( 6 /RACER_3_LED1 )
-  ( 7 /RACER_3_LED2 )
-  ( 8 /RACER_3_LED3 )
+ ( /4A1B2633/4A1B62F8 $noname  P29 PROTO_13X25 {Lib=PROTO_13X25}
  )
- ( /4A0F4298 ARDUINO_USB U1 ARDUINO_USB
-  ( 1 ? )
-  ( 2 ? )
-  ( 3 ? )
-  ( 4 /RACER_34 )
-  ( 5 /RACER_23 )
-  ( 6 /RACER_12 )
-  ( 7 /RACER_01 )
-  ( 8 ? )
-  ( 9 ? )
-  ( 10 ? )
-  ( 11 /RACER_3_SENSOR )
-  ( 12 /RACER_2_SENSOR )
-  ( 13 /RACER_1_SENSOR )
-  ( 14 /RACER_0_SENSOR )
-  ( 15 ? )
-  ( 16 ? )
-  ( 17 ? )
-  ( 18 ? )
-  ( 19 ? )
-  ( 20 ? )
-  ( 21 ? )
-  ( 22 ? )
-  ( 23 ? )
-  ( 24 ? )
-  ( 25 /GND )
-  ( 26 /5V )
-  ( 27 ? )
-  ( 28 ? )
+ ( /4A1B2633/4A1B6217 $noname  P40 PROTO_6X5 {Lib=PROTO_6X5}
+ )
+ ( /4A1B2633/4A1B6024 $noname  P41 PROTO_2X7 {Lib=PROTO_2X7}
+ )
+ ( /4A1B2633/4A1B5E67 $noname  P33 PROTO_12X8 {Lib=PROTO_12X8}
+ )
+ ( /4A1B2633/4A1B5609 $noname  P32 CONN_12 {Lib=CONN_12}
+  (    1 N-000006 )
+  (    2 N-000006 )
+  (    3 N-000006 )
+  (    4 N-000006 )
+  (    5 N-000006 )
+  (    6 N-000006 )
+  (    7 N-000006 )
+  (    8 N-000006 )
+  (    9 N-000006 )
+  (   10 N-000006 )
+  (   11 N-000006 )
+  (   12 N-000006 )
+ )
+ ( /4A1B2633/4A1B5600 $noname  P31 CONN_12 {Lib=CONN_12}
+  (    1 N-000005 )
+  (    2 N-000005 )
+  (    3 N-000005 )
+  (    4 N-000005 )
+  (    5 N-000005 )
+  (    6 N-000005 )
+  (    7 N-000005 )
+  (    8 N-000005 )
+  (    9 N-000005 )
+  (   10 N-000005 )
+  (   11 N-000005 )
+  (   12 N-000005 )
+ )
+ ( /4A1B2633/4A1B55CC $noname  P30 PROTO_12X25 {Lib=PROTO_12X25}
+ )
+ ( /4A1B2633/4A1B554C $noname  P26 PROTO_12X1 {Lib=PROTO_12X1}
+ )
+ ( /4A1B2633/4A1B5530 $noname  P28 PROTO_12X8 {Lib=PROTO_12X8}
+ )
+ ( /4A1B2633/4A1B551D $noname  P27 PROTO_12X1 {Lib=PROTO_12X1}
+ )
+ ( /4A1B2633/4A1B5445 $noname  P39 CONN_5 {Lib=CONN_5}
+  (    1 N-000006 )
+  (    2 N-000006 )
+  (    3 N-000006 )
+  (    4 N-000006 )
+  (    5 N-000006 )
+ )
+ ( /4A1B2633/4A1B53E7 $noname  K1 CONN_3 {Lib=CONN_3}
+  (    1 N-000006 )
+  (    2 N-000006 )
+  (    3 N-000006 )
+ )
+ ( /4A1B2633/4A1B534F $noname  P38 CONN_6 {Lib=CONN_6}
+  (    1 N-000006 )
+  (    2 N-000006 )
+  (    3 N-000006 )
+  (    4 N-000006 )
+  (    5 N-000006 )
+  (    6 N-000006 )
+ )
+ ( /4A1B2633/4A1B52F8 $noname  P36 CONN_6 {Lib=CONN_6}
+  (    1 N-000005 )
+  (    2 N-000005 )
+  (    3 N-000005 )
+  (    4 N-000005 )
+  (    5 N-000005 )
+  (    6 N-000005 )
+ )
+ ( /4A1B2633/4A1B52E1 $noname  P34 CONN_4 {Lib=CONN_4}
+  (    1 N-000005 )
+  (    2 N-000005 )
+  (    3 N-000005 )
+  (    4 N-000005 )
+ )
+ ( /4A1B2633/4A1B51CF $noname  P35 CONN_6 {Lib=CONN_6}
+  (    1 N-000005 )
+  (    2 N-000005 )
+  (    3 N-000005 )
+  (    4 N-000005 )
+  (    5 N-000005 )
+  (    6 N-000005 )
+ )
+ ( /4A1B2633/4A1B4EC6 $noname  P24 PROTO_7X8 {Lib=PROTO_7X8}
+ )
+ ( /4A1B2633/4A1B4EC3 $noname  P23 PROTO_7X8 {Lib=PROTO_7X8}
+ )
+ ( /4A1B2633/4A1B4EBD $noname  P25 PROTO_7X8 {Lib=PROTO_7X8}
+ )
+ ( /4A1B2633/4A1B36A6 $noname  P21 CONN_6 {Lib=CONN_6}
+  (    1 N-000019 )
+  (    2 N-000018 )
+  (    3 N-000014 )
+  (    4 N-000013 )
+  (    5 N-000016 )
+  (    6 N-000015 )
+ )
+ ( /4A1B2633/4A1B36A5 $noname  P19 CONN_6 {Lib=CONN_6}
+  (    1 N-000021 )
+  (    2 N-000020 )
+  (    3 N-000005 )
+  (    4 N-000006 )
+  (    5 N-000006 )
+  (    6 N-000017 )
+ )
+ ( /4A1B2633/4A1B36A4 $noname  P15 CONN_8 {Lib=CONN_8}
+  (    1 N-000027 )
+  (    2 N-000006 )
+  (    3 N-000028 )
+  (    4 N-000003 )
+  (    5 N-000007 )
+  (    6 N-000001 )
+  (    7 N-000009 )
+  (    8 N-000026 )
+ )
+ ( /4A1B2633/4A1B36A3 $noname  P17 CONN_8 {Lib=CONN_8}
+  (    1 N-000025 )
+  (    2 N-000024 )
+  (    3 N-000004 )
+  (    4 N-000008 )
+  (    5 N-000002 )
+  (    6 N-000010 )
+  (    7 N-000023 )
+  (    8 N-000022 )
+ )
+ ( /4A1B2633/4A1B3668 $noname  P22 CONN_6 {Lib=CONN_6}
+  (    1 N-000019 )
+  (    2 N-000018 )
+  (    3 N-000014 )
+  (    4 N-000013 )
+  (    5 N-000016 )
+  (    6 N-000015 )
+ )
+ ( /4A1B2633/4A1B3647 $noname  P20 CONN_6 {Lib=CONN_6}
+  (    1 N-000021 )
+  (    2 N-000020 )
+  (    3 N-000005 )
+  (    4 N-000006 )
+  (    5 N-000006 )
+  (    6 N-000017 )
+ )
+ ( /4A1B2633/4A1B362D $noname  P16 CONN_8 {Lib=CONN_8}
+  (    1 N-000027 )
+  (    2 N-000006 )
+  (    3 N-000028 )
+  (    4 N-000003 )
+  (    5 N-000007 )
+  (    6 N-000001 )
+  (    7 N-000009 )
+  (    8 N-000026 )
+ )
+ ( /4A1B2633/4A1B35DC $noname  P18 CONN_8 {Lib=CONN_8}
+  (    1 N-000025 )
+  (    2 N-000024 )
+  (    3 N-000004 )
+  (    4 N-000008 )
+  (    5 N-000002 )
+  (    6 N-000010 )
+  (    7 N-000023 )
+  (    8 N-000022 )
  )
 )
 *
-{ Allowed footprints by component:
-$component H1
- screw_hole*
-$endlist
-$component H2
- screw_hole*
-$endlist
-$component H3
- screw_hole*
-$endlist
-$component H4
- screw_hole*
-$endlist
-$endfootprintlist
+{ Pin List by Nets
+Net 1 "" ""
+ U1 6
+ P2 4
+ J2 4
+ P15 6
+ P16 6
+Net 2 "" ""
+ U1 13
+ P2 3
+ J2 3
+ P17 5
+ P18 5
+Net 3 "" ""
+ U1 4
+ P4 4
+ J4 4
+ P15 4
+ P16 4
+Net 4 "" ""
+ U1 11
+ P4 3
+ J4 3
+ P17 3
+ P18 3
+Net 5 "" ""
+ U1 26
+ P4 1
+ J4 1
+ P2 1
+ J2 1
+ P3 1
+ J3 1
+ P1 1
+ J1 1
+ P31 12
+ P31 11
+ P31 10
+ P31 9
+ P31 8
+ P31 7
+ P31 6
+ P31 5
+ P31 4
+ P31 3
+ P31 2
+ P31 1
+ P36 6
+ P36 5
+ P36 4
+ P36 3
+ P36 2
+ P36 1
+ P34 4
+ P34 3
+ P34 2
+ P34 1
+ P35 6
+ P35 5
+ P35 4
+ P35 3
+ P35 2
+ P35 1
+ P19 3
+ P20 3
+Net 6 "" ""
+ U1 24
+ U1 25
+ U1 2
+ P4 2
+ J4 2
+ P2 2
+ J2 2
+ P3 2
+ J3 2
+ P1 2
+ J1 2
+ P32 12
+ P32 11
+ P32 10
+ P32 9
+ P32 8
+ P32 7
+ P32 6
+ P32 5
+ P32 4
+ P32 3
+ P32 2
+ P32 1
+ P39 5
+ P39 4
+ P39 3
+ P39 2
+ P39 1
+ K1 3
+ K1 2
+ K1 1
+ P38 6
+ P38 5
+ P38 4
+ P38 3
+ P38 2
+ P38 1
+ P19 5
+ P19 4
+ P15 2
+ P20 5
+ P20 4
+ P16 2
+Net 7 "" ""
+ U1 5
+ P3 4
+ J3 4
+ P15 5
+ P16 5
+Net 8 "" ""
+ U1 12
+ P3 3
+ J3 3
+ P17 4
+ P18 4
+Net 9 "" ""
+ U1 7
+ P1 4
+ J1 4
+ P15 7
+ P16 7
+Net 10 "" ""
+ U1 14
+ P1 3
+ J1 3
+ P17 6
+ P18 6
+Net 11 "/RACER_0_LED3" "RACER_0_LED3"
+ P1 8
+ J1 8
+Net 12 "/RACER_0_LED1" "RACER_0_LED1"
+ P1 6
+ J1 6
+Net 13 "" ""
+ U1 19
+ P21 4
+ P22 4
+Net 14 "" ""
+ U1 20
+ P21 3
+ P22 3
+Net 15 "" ""
+ U1 17
+ P21 6
+ P22 6
+Net 16 "" ""
+ U1 18
+ P21 5
+ P22 5
+Net 17 "" ""
+ U1 23
+ P19 6
+ P20 6
+Net 18 "" ""
+ U1 21
+ P21 2
+ P22 2
+Net 19 "" ""
+ U1 22
+ P21 1
+ P22 1
+Net 20 "" ""
+ U1 27
+ P19 2
+ P20 2
+Net 21 "" ""
+ U1 28
+ P19 1
+ P20 1
+Net 22 "" ""
+ U1 16
+ P17 8
+ P18 8
+Net 23 "" ""
+ U1 15
+ P17 7
+ P18 7
+Net 24 "" ""
+ U1 10
+ P17 2
+ P18 2
+Net 25 "" ""
+ U1 9
+ P17 1
+ P18 1
+Net 26 "" ""
+ U1 8
+ P15 8
+ P16 8
+Net 27 "" ""
+ U1 1
+ P15 1
+ P16 1
+Net 28 "" ""
+ U1 3
+ P15 3
+ P16 3
+Net 29 "/RACER_3_LED3" "RACER_3_LED3"
+ P4 8
+ J4 8
+Net 30 "/RACER_3_LED1" "RACER_3_LED1"
+ P4 6
+ J4 6
+Net 31 "/RACER_3_LED0" "RACER_3_LED0"
+ P4 5
+ J4 5
+Net 32 "/RACER_3_LED2" "RACER_3_LED2"
+ P4 7
+ J4 7
+Net 33 "/RACER_1_LED3" "RACER_1_LED3"
+ P2 8
+ J2 8
+Net 34 "/RACER_1_LED1" "RACER_1_LED1"
+ P2 6
+ J2 6
+Net 35 "/RACER_1_LED0" "RACER_1_LED0"
+ P2 5
+ J2 5
+Net 36 "/RACER_1_LED2" "RACER_1_LED2"
+ P2 7
+ J2 7
+Net 37 "/RACER_2_LED3" "RACER_2_LED3"
+ P3 8
+ J3 8
+Net 38 "/RACER_2_LED1" "RACER_2_LED1"
+ P3 6
+ J3 6
+Net 39 "/RACER_2_LED0" "RACER_2_LED0"
+ P3 5
+ J3 5
+Net 40 "/RACER_2_LED2" "RACER_2_LED2"
+ P3 7
+ J3 7
+Net 41 "/RACER_0_LED0" "RACER_0_LED0"
+ P1 5
+ J1 5
+Net 42 "/RACER_0_LED2" "RACER_0_LED2"
+ P1 7
+ J1 7
 }
+#End

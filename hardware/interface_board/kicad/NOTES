@@ -13,3 +13,33 @@ TO DO:
  * add stuff option markings in schematic
  * change pad sizes to hole diameter = 0.035" and pad diameter = 0.070"
  * draw all the tracks
+
+ARRANGEMENT OF PROTOTYPING PADS:
+top left
+3	8 x 7
+1	8 x 1
+
+top right
+1	12x8
+1	2x7
+2	6x1 5V
+1	4x1 5V
+1	5x1 GND
+1	3x1 GND
+1	2x5
+1	6x1 5V
+1	6x1 GND
+1	6 x5
+
+top center
+1	12x25
+
+lower left
+2	12x1
+1	12x8
+
+lower right
+1	12x25
+1	12x1 5V
+1	12x1 GND
+
