@@ -2,7 +2,7 @@ update=13/4/2009-18:59:44
 last_client=pcbnew
 [general]
 version=1
-RootSch=sensor_sensorWithLedArray_sh1.sch
+RootSch=sensor_sensorWithLedArray.sch
 BoardNm=sensor_sensorWithLedArray.brd
 [cvpcb]
 version=1

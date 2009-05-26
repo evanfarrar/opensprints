@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Mon 25 May 2009 11:20:38 PM CDT
+PCBNEW-BOARD Version 1 date Mon 25 May 2009 11:38:27 PM CDT
 
 $GENERAL
 LayerCount 2
@@ -35,7 +35,7 @@ TrackWidth 100
 TrackWidthHistory 100
 TrackWidthHistory 150
 TrackWidthHistory 250
-TrackClearence 100
+TrackClearence 60
 ZoneClearence 200
 DrawSegmWidth 150
 EdgeSegmWidth 150
