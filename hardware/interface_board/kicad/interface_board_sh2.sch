@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 25 May 2009 11:38:33 PM CDT
+EESchema Schematic File Version 2  date Tue 26 May 2009 01:19:22 PM CDT
 LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
 EELAYER 23  0
 EELAYER END
@@ -23,11 +23,11 @@ F 1 "PROTO_2X5" H 9550 1450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PROTO_13X25 P29
+L PROTO_15X25 P29
 U 1 1 4A1B62F8
 P 7350 1050
 F 0 "P29" H 7350 1050 60  0000 C CNN
-F 1 "PROTO_13X25" H 7350 1150 60  0000 C CNN
+F 1 "PROTO_15X25" H 7350 1150 60  0000 C CNN
 	1    7350 1050
 	1    0    0    -1  
 $EndComp
