@@ -48,7 +48,7 @@ module RaceWindow
               subtitle r.name+"  ", :family => 'LCD', :stroke => bikes[i],
                 :align => 'right'
               flow {
-                para strong("mph"), :stroke => white, :align => 'right'
+                para strong(UNIT_SYSTEM.to_s), :stroke => white, :align => 'right'
                 tagline 0, :family => 'LCD', :stroke => bikes[i], :align => 'right'
               }
               flow {
@@ -102,7 +102,7 @@ module RaceWindow
                       subtitle racer.name+"  ", :family => 'LCD', :stroke => bikes[i],
                         :align => 'right'
                       flow {
-                        para strong("mph"), :stroke => white, :align => 'right'
+                        para strong(UNIT_SYSTEM.to_s), :stroke => white, :align => 'right'
                         tagline racer.speed(racer.finish_time||sensor.time), :family => 'LCD', :stroke => bikes[i], :align => 'right'
                       }
                       flow {

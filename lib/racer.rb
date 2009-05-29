@@ -1,5 +1,8 @@
 Infinity = 1/0.0
 class Racer
+  METERS_PER_MILLISECOND_TO_MILES_PER_HOUR = 2236.93629
+  METERS_PER_MILLISECOND_TO_KILOMETERS_PER_HOUR = 3600.0
+
   attr_accessor :distance, :best_time, :wins, :races, :finish_time, :text, :color
   attr :roller_circumference
   attr :name
@@ -27,6 +30,12 @@ class Racer
     @name = attributes[:name]
     @color = attributes[:color]
     @race_distance = attributes[:race_distance]
+    case UNIT_SYSTEM
+      when :mph
+        @unit_conversion = METERS_PER_MILLISECOND_TO_MILES_PER_HOUR
+      when :kph
+        @unit_conversion = METERS_PER_MILLISECOND_TO_KILOMETERS_PER_HOUR
+    end
   end
 
   def distance
@@ -44,7 +53,7 @@ class Racer
     else
       if(@time-@time_old > 999)
         if(@distance_old > 0)
-          @speed = "%.2f" % (((@distance - @distance_old) / (@time - @time_old)) * 2236.93629).to_f
+          @speed = "%.2f" % (((@distance - @distance_old) / (@time - @time_old)) * @unit_conversion).to_f
         else
           @speed = 0
         end
