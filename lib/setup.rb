@@ -48,7 +48,7 @@ else
 end
 
 
-UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kmph
+UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kph
 
 module Enumerable
   def second

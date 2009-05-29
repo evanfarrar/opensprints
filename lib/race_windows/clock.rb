@@ -48,7 +48,7 @@ module RaceWindow
               subtitle r.name+"  ", :family => 'LCD', :stroke => bikes[i],
                 :align => 'right'
               flow {
-                para strong("mph"), :stroke => white, :align => 'right'
+                para strong(UNIT_SYSTEM.to_s), :stroke => white, :align => 'right'
                 tagline 0, :family => 'LCD', :stroke => bikes[i], :align => 'right'
               }
               flow {
@@ -102,7 +102,7 @@ module RaceWindow
                       subtitle racer.name+"  ", :family => 'LCD', :stroke => bikes[i],
                         :align => 'right'
                       flow {
-                        para strong("mph"), :stroke => white, :align => 'right'
+                        para strong(UNIT_SYSTEM.to_s), :stroke => white, :align => 'right'
                         tagline racer.speed(racer.finish_time||sensor.time), :family => 'LCD', :stroke => bikes[i], :align => 'right'
                       }
                       flow {
@@ -124,10 +124,6 @@ module RaceWindow
 
         button("Call it", {:top => 570, :left => 205}) do
           sensor.stop
-          results = []
-          bikes.length.times do |i|
-            results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
-          end
           @continue = false
           if match.racers.any? {|racer| racer.finish_time}
             flow(:align => 'center', :top => 100, :attach => Window) do
