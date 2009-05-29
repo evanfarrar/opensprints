@@ -1,0 +1,35 @@
+** Drc report for /media/mas/workspace/opensprints/hardware/roller_sensor/kicad/sensorWithLedArray.brd **
+** Created on 2009-05-28 23:45:55 **
+
+** Found 0 DRC errors **
+
+** Found 9 unconnected pads **
+ErrType(2): Unconnected pads
+    @ (2.9500 ",4.1707 "): Pad "3" (all copper layers) of U4
+    @ (3.4500 ",3.8500 "): Pad "2" (all copper layers) of D7
+ErrType(2): Unconnected pads
+    @ (2.9000 ",4.7750 "): Pad "1" (all copper layers) of D2
+    @ (2.9000 ",4.5500 "): Pad "2" (all copper layers) of R3
+ErrType(2): Unconnected pads
+    @ (3.0000 ",4.7750 "): Pad "2" (all copper layers) of D2
+    @ (2.8500 ",5.0500 "): Pad "2" (all copper layers) of U2
+ErrType(2): Unconnected pads
+    @ (2.8793 ",4.1000 "): Pad "2" (all copper layers) of U4
+    @ (3.0000 ",4.7750 "): Pad "2" (all copper layers) of D2
+ErrType(2): Unconnected pads
+    @ (2.8750 ",3.4250 "): Pad "1" (all copper layers) of D1
+    @ (2.8750 ",3.6250 "): Pad "2" (all copper layers) of R2
+ErrType(2): Unconnected pads
+    @ (3.0000 ",4.5500 "): Pad "1" (all copper layers) of R3
+    @ (3.8250 ",4.6000 "): Pad "4" (all copper layers) of J1
+ErrType(2): Unconnected pads
+    @ (2.9750 ",3.4250 "): Pad "2" (all copper layers) of D1
+    @ (3.8750 ",3.6000 "): Pad "4" (all copper layers) of J2
+ErrType(2): Unconnected pads
+    @ (2.9750 ",3.6250 "): Pad "1" (all copper layers) of R2
+    @ (2.9500 ",4.0293 "): Pad "1" (all copper layers) of U4
+ErrType(2): Unconnected pads
+    @ (2.9500 ",3.1500 "): Pad "1" (all copper layers) of U1
+    @ (2.9750 ",3.6250 "): Pad "1" (all copper layers) of R2
+
+** End of Report **

@@ -1,149 +1,107 @@
-# EESchema Netlist Version 1.1 created  13/4/2009-19:25:24
+# EESchema Netlist Version 1.1 created  Thu 28 May 2009 11:38:03 PM CDT
 (
- ( 49E17373 C1 C1 0.1uF
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
+ ( /4A1F5D68 C-6_CIRCUIT_BOARD CB1 C-6_CIRCUIT_BOARD
  )
- ( 49C835C2 LEDV D1 RED_LED
-  ( 1 N-000008 )
-  ( 2 START/STOP_1 )
+ ( /49C835C2 LEDV D1 RED_LED
+  ( 1 N-000011 )
+  ( 2 /START/STOP )
  )
- ( 49C834FE LEDV D2 GRN_LED
-  ( 1 N-000014 )
-  ( 2 N-000009 )
+ ( /49C834FE LEDV D2 GRN_LED
+  ( 1 N-000012 )
+  ( 2 /GND )
  )
- ( 49C834E9 LEDV D3 LED
-  ( 1 VCC_1 )
+ ( /49E3884B LEDV D7 WHT_LED
+  ( 1 N-000010 )
+  ( 2 /VOUT )
+ )
+ ( /49C834DF RJ45_8 J1 RJ45
+  ( 1 /VCC )
+  ( 2 /GND )
+  ( 3 /VOUT )
+  ( 4 /START/STOP )
+  ( 5 /LED0 )
+  ( 6 /LED1 )
+  ( 7 /LED2 )
+  ( 8 /LED3 )
+ )
+ ( /49DF9008 RJ45_8 J2 RJ45
+  ( 1 /VCC )
+  ( 2 /GND )
+  ( 3 /VOUT )
+  ( 4 /START/STOP )
+  ( 5 /LED0 )
+  ( 6 /LED1 )
+  ( 7 /LED2 )
+  ( 8 /LED3 )
+ )
+ ( /49E1EB87 SIL-8 P1 CONN_8
+  ( 1 /VCC )
+  ( 2 /GND )
+  ( 3 /VOUT )
+  ( 4 /START/STOP )
+  ( 5 /LED0 )
+  ( 6 /LED1 )
+  ( 7 /LED2 )
+  ( 8 /LED3 )
+ )
+ ( /49DF8AA5 R1 R2 150
+  ( 1 /VCC )
   ( 2 N-000011 )
  )
- ( 49C834EA LEDV D4 LED
-  ( 1 VCC_1 )
+ ( /49DF899F R1 R3 68
+  ( 1 /START/STOP )
   ( 2 N-000012 )
  )
- ( 49C597A9 LEDV D5 LED
-  ( 1 VCC_1 )
+ ( /49E3884E R1 R8 68
+  ( 1 /VCC )
   ( 2 N-000010 )
  )
- ( 49C83284 LEDV D6 LED
-  ( 1 VCC_1 )
-  ( 2 N-000013 )
+ ( /49C59A51 TO92 U1 SS441A
+  ( 1 /VCC )
+  ( 2 /GND )
+  ( 3 /VOUT )
  )
- ( 49E3884B LEDV D7 WHT_LED
-  ( 1 N-000015 )
-  ( 2 VOUT_1 )
+ ( /49C83B66 TO92 U2 SS441A
+  ( 1 /VCC )
+  ( 2 /GND )
+  ( 3 /VOUT )
  )
- ( 49E3884C LEDV D8 RED_LED
-  ( 1 N-000017 )
-  ( 2 GND_1 )
+ ( /49DFC7F9 TO92 U3 SS441A
+  ( 1 /VCC )
+  ( 2 /GND )
+  ( 3 /VOUT )
  )
- ( 49E1EA07 screw_hole_serpac_c-6 H1 SCREW_HOLE
- )
- ( 49C834DF RJ45_8 J1 RJ45
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
-  ( 4 START/STOP_1 )
-  ( 5 LED0_1 )
-  ( 6 LED1_1 )
-  ( 7 LED2_1 )
-  ( 8 LED3_1 )
- )
- ( 49DF9008 RJ45_8 J2 RJ45
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
-  ( 4 START/STOP_1 )
-  ( 5 LED0_1 )
-  ( 6 LED1_1 )
-  ( 7 LED2_1 )
-  ( 8 LED3_1 )
- )
- ( 49E1EB87 SIL-8 P1 CONN_8
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
-  ( 4 START/STOP_1 )
-  ( 5 LED0_1 )
-  ( 6 LED1_1 )
-  ( 7 LED2_1 )
-  ( 8 LED3_1 )
- )
- ( 49DF8829 2N7000 Q1 MOSFET_N
-  ( D N-000009 )
-  ( G START/STOP_1 )
-  ( S GND_1 )
- )
- ( 49DF8D68 R1 R1 10k
-  ( 1 VCC_1 )
-  ( 2 START/STOP_1 )
- )
- ( 49DF8AA5 R1 R2 150
-  ( 1 VCC_1 )
-  ( 2 N-000008 )
- )
- ( 49DF899F R1 R3 68
-  ( 1 VCC_1 )
-  ( 2 N-000014 )
- )
- ( 49C83C21 R1 R4 100
-  ( 1 N-000011 )
-  ( 2 LED0_1 )
- )
- ( 49DF8ED4 R1 R5 100
-  ( 1 N-000012 )
-  ( 2 LED1_1 )
- )
- ( 49DF8EDA R1 R6 100
-  ( 1 N-000010 )
-  ( 2 LED2_1 )
- )
- ( 49DF8EDE R1 R7 100
-  ( 1 N-000013 )
-  ( 2 LED3_1 )
- )
- ( 49E3884E R3 R8 68
-  ( 1 VCC_1 )
-  ( 2 N-000015 )
- )
- ( 49E3884D R3 R9 330
-  ( 1 VCC_1 )
-  ( 2 N-000017 )
- )
- ( 49C59A51 TO92 U1 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
- )
- ( 49C83B66 TO92 U2 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
- )
- ( 49DFC7F9 TO92 U3 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
- )
- ( 49C83B82 TO92 U4 SS441A
-  ( 1 VCC_1 )
-  ( 2 GND_1 )
-  ( 3 VOUT_1 )
+ ( /49C83B82 TO92 U4 SS441A
+  ( 1 /VCC )
+  ( 2 /GND )
+  ( 3 /VOUT )
  )
 )
 *
 { Allowed footprints by component:
-$component C1
- SM*
- C?
- C1-1
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
 $endlist
-$component H1
- screw_hole*
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
 $endlist
-$component R1
- R?
- SM0603
- SM0805
+$component D7
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
 $endlist
 $component R2
  R?
@@ -155,32 +113,7 @@ $component R3
  SM0603
  SM0805
 $endlist
-$component R4
- R?
- SM0603
- SM0805
-$endlist
-$component R5
- R?
- SM0603
- SM0805
-$endlist
-$component R6
- R?
- SM0603
- SM0805
-$endlist
-$component R7
- R?
- SM0603
- SM0805
-$endlist
 $component R8
- R?
- SM0603
- SM0805
-$endlist
-$component R9
  R?
  SM0603
  SM0805
