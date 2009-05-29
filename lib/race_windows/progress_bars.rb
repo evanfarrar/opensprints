@@ -149,10 +149,6 @@ module RaceWindow
 
         button("Call it", {:top => 570, :left => 205}) do
           sensor.stop
-          results = []
-          bikes.length.times do |i|
-            results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
-          end
           if match.racers.any? {|racer| racer.finish_time}
             flow(:align => 'center', :top => 100, :attach => Window) do
               background rgb(255,255,255,0.60)

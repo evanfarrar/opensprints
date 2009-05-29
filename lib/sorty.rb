@@ -10,15 +10,16 @@ module Sorty
       (colors.length - 1).times { @previous_color.next }
 
 
-      def swap_previous(array, item)
+      def swappy(array,item)
         idx = array.index(item)
-        array[(idx-1) % array.length],array[idx] = array[idx],array[(idx-1) % array.length]
+        array[(yield(idx)) % array.length],array[idx] = array[idx],array[(idx-1) % array.length]
         array
       end
+      def swap_previous(array, item)
+        swappy{|idx| idx-1}
+      end
       def swap_next(array, item)
-        idx = array.index(item)
-        array[(idx+1) % array.length],array[idx] = array[idx],array[(idx+1) % array.length]
-        array
+        swappy{|idx| idx+1}
       end
       def names_n_colors(people, colors, race, &after)
         clear do

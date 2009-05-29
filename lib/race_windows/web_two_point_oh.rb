@@ -174,10 +174,6 @@ module RaceWindow
 
           button("Call it", {:left => 205}) do
             sensor.stop
-            results = []
-            bikes.length.times do |i|
-              results << "#{match.racers[i].name}: #{match.racers[i].finish_time/1000.0}s" if match.racers[i].finish_time
-            end
             @continue = false
             if owner.respond_to?(:tournament_record)
               owner.tournament_record(match)
