@@ -1,14 +1,9 @@
-PCBNEW-LibDoc----V1  Tue 26 May 2009 12:57:38 PM CDT
+PCBNEW-LibDoc----V1  Mon 01 Jun 2009 12:04:48 PM CDT
 #
 $MODULE 2N7000
 Li 2N7000
 Cd Transistor TO92 brochage type BC237
 Kw TR TO92
-$EndMODULE
-#
-$MODULE RJ45_8-LJO
-Li RJ45_8-LJO
-Kw RJ45
 $EndMODULE
 #
 $MODULE SIL-8_LJO
@@ -63,6 +58,11 @@ $MODULE SIL-8_opsns-IB
 Li SIL-8_opsns-IB
 Cd connector 8 pins 100 mil offset
 Kw CONN DEV
+$EndMODULE
+#
+$MODULE RJ45_8-LJO
+Li RJ45_8-LJO
+Kw RJ45
 $EndMODULE
 #
 $EndLIBDOC

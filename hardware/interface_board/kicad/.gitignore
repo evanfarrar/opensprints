@@ -4,3 +4,7 @@
 *.bck
 *.0??
 $savepcb.brd
+*.pho
+*-drl.rpt
+*output.zip
+*_output_barebones.zip
