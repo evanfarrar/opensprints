@@ -1,0 +1,21 @@
+I'm using QCAD to generate these drawings. The steps I took under Linux:
+
+# download the .dwg drawing from SERPAC. It's located in the current directory, named a-31.dwg.
+
+# Convert that file to a form recognizable to QCAD.
+   ## download EveryDWG.zip from http://opendesign.com/guestfiles and uzip
+   ## run EveryDWG.exe under wine
+   ## convert from .DWG to output type R9 ASCII DXF. The file that gets output should be compatible with QCAD.
+
+dimensions - Ardunino panel
+
+pin 28 is located 0.9500" to the east of the the center of the board if looking at it in kicad/pcbnew.
+
+the center of the USB jack is 1.400" to the west of pin 28.
+the center of the power jack is (0.384+.030)/2=0.207 to the west of pin 28.
+
+measured width of the Arduino USB jack is 0.477". add 0.015" for tolerance. = 0.492"
+measured width of the Arduino power jack is 0.348". add 0.015" for tolerance. = 0.363"
+measured height of both Arduino jacks is 0.425". add 0.015" for tolerance. = 0.440"
+
+distance from the bottom of each jack to the channel for the faceplate is 0.200".
