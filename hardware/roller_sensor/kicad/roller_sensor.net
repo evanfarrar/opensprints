@@ -1,5 +1,9 @@
-# EESchema Netlist Version 1.1 created  Wed 03 Jun 2009 12:12:30 AM CDT
+# EESchema Netlist Version 1.1 created  Wed 03 Jun 2009 09:53:52 PM CDT
 (
+ ( /4A273637 C1 C1 C
+  ( 1 /VCC )
+  ( 2 /GND )
+ )
  ( /4A1F5D68 C-6_CIRCUIT_BOARD CB1 C-6_CIRCUIT_BOARD
  )
  ( /49C835C2 LEDV D1 RED_LED
@@ -87,6 +91,11 @@
 )
 *
 { Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
 $component D1
  LED-3MM
  LED-5MM
@@ -94,6 +103,7 @@ $component D1
  LED-0603
  LED-0805
  LED-1206
+ LEDV
 $endlist
 $component D2
  LED-3MM
@@ -102,6 +112,7 @@ $component D2
  LED-0603
  LED-0805
  LED-1206
+ LEDV
 $endlist
 $component D7
  LED-3MM
@@ -110,6 +121,7 @@ $component D7
  LED-0603
  LED-0805
  LED-1206
+ LEDV
 $endlist
 $component R2
  R?

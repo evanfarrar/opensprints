@@ -1,35 +1,83 @@
-** Drc report for /media/mas/workspace/opensprints/hardware/roller_sensor/kicad/roller_sensor.brd **
-** Created on 2009-05-28 23:45:55 **
+** Drc report for /home/orluke/personal-projects/opensprints/hardware/roller_sensor/kicad/roller_sensor.brd **
+** Created on 2009-06-03 17:33:40 **
 
-** Found 0 DRC errors **
+** Found 1 DRC errors **
+ErrType(19): Pad near pad
+    @ (3.0500 ",3.8000 "): Pad "2" (all copper layers) of D2
+    @ (3.0750 ",3.8000 "): Pad "2" (all copper layers) of R3
 
-** Found 9 unconnected pads **
+** Found 24 unconnected pads **
 ErrType(2): Unconnected pads
+    @ (3.5500 ",3.6500 "): Pad "1" (all copper layers) of D7
+    @ (3.5500 ",3.5000 "): Pad "2" (all copper layers) of R8
+ErrType(2): Unconnected pads
+    @ (3.4500 ",3.6500 "): Pad "2" (all copper layers) of D7
+    @ (3.4293 ",3.2250 "): Pad "3" (all copper layers) of U3
+ErrType(2): Unconnected pads
+    @ (3.3500 ",4.3000 "): Pad "3" (all copper layers) of P1
     @ (2.9500 ",4.1707 "): Pad "3" (all copper layers) of U4
-    @ (3.4500 ",3.8500 "): Pad "2" (all copper layers) of D7
 ErrType(2): Unconnected pads
-    @ (2.9000 ",4.7750 "): Pad "1" (all copper layers) of D2
-    @ (2.9000 ",4.5500 "): Pad "2" (all copper layers) of R3
+    @ (2.8500 ",3.2500 "): Pad "3" (all copper layers) of U1
+    @ (3.4293 ",3.2250 "): Pad "3" (all copper layers) of U3
 ErrType(2): Unconnected pads
-    @ (3.0000 ",4.7750 "): Pad "2" (all copper layers) of D2
-    @ (2.8500 ",5.0500 "): Pad "2" (all copper layers) of U2
+    @ (4.0500 ",3.1500 "): Pad "3" (all copper layers) of U2
+    @ (3.4293 ",3.2250 "): Pad "3" (all copper layers) of U3
+ErrType(2): Unconnected pads
+    @ (3.4500 ",3.6500 "): Pad "2" (all copper layers) of D7
+    @ (3.3500 ",4.3000 "): Pad "3" (all copper layers) of P1
+ErrType(2): Unconnected pads
+    @ (3.0500 ",3.7000 "): Pad "1" (all copper layers) of D2
+    @ (3.0750 ",3.8000 "): Pad "2" (all copper layers) of R3
+ErrType(2): Unconnected pads
+    @ (3.2500 ",4.3000 "): Pad "2" (all copper layers) of P1
+    @ (3.2250 ",4.0500 "): Pad "2" (all copper layers) of R10
 ErrType(2): Unconnected pads
     @ (2.8793 ",4.1000 "): Pad "2" (all copper layers) of U4
-    @ (3.0000 ",4.7750 "): Pad "2" (all copper layers) of D2
+    @ (3.2250 ",4.0500 "): Pad "2" (all copper layers) of R10
 ErrType(2): Unconnected pads
-    @ (2.8750 ",3.4250 "): Pad "1" (all copper layers) of D1
-    @ (2.8750 ",3.6250 "): Pad "2" (all copper layers) of R2
+    @ (3.0500 ",3.8000 "): Pad "2" (all copper layers) of D2
+    @ (3.2250 ",4.0500 "): Pad "2" (all copper layers) of R10
 ErrType(2): Unconnected pads
-    @ (3.0000 ",4.5500 "): Pad "1" (all copper layers) of R3
-    @ (3.8250 ",4.6000 "): Pad "4" (all copper layers) of J1
+    @ (3.5000 ",3.1543 "): Pad "2" (all copper layers) of U3
+    @ (4.1500 ",3.1500 "): Pad "2" (all copper layers) of U2
 ErrType(2): Unconnected pads
-    @ (2.9750 ",3.4250 "): Pad "2" (all copper layers) of D1
-    @ (3.8750 ",3.6000 "): Pad "4" (all copper layers) of J2
+    @ (2.8500 ",3.1500 "): Pad "2" (all copper layers) of U1
+    @ (3.5000 ",3.1543 "): Pad "2" (all copper layers) of U3
 ErrType(2): Unconnected pads
-    @ (2.9750 ",3.6250 "): Pad "1" (all copper layers) of R2
-    @ (2.9500 ",4.0293 "): Pad "1" (all copper layers) of U4
+    @ (3.0500 ",3.8000 "): Pad "2" (all copper layers) of D2
+    @ (2.8500 ",3.1500 "): Pad "2" (all copper layers) of U1
+ErrType(2): Unconnected pads
+    @ (3.0500 ",3.3000 "): Pad "1" (all copper layers) of D1
+    @ (3.2500 ",3.4000 "): Pad "2" (all copper layers) of R2
+ErrType(2): Unconnected pads
+    @ (3.2250 ",3.9500 "): Pad "1" (all copper layers) of R10
+    @ (3.2000 ",3.8000 "): Pad "1" (all copper layers) of R9
+ErrType(2): Unconnected pads
+    @ (3.0750 ",3.9000 "): Pad "1" (all copper layers) of R3
+    @ (3.2250 ",3.9500 "): Pad "1" (all copper layers) of R10
+ErrType(2): Unconnected pads
+    @ (3.0500 ",3.4000 "): Pad "2" (all copper layers) of D1
+    @ (3.0750 ",3.9000 "): Pad "1" (all copper layers) of R3
+ErrType(2): Unconnected pads
+    @ (3.5500 ",3.4000 "): Pad "1" (all copper layers) of R8
+    @ (3.5707 ",3.2250 "): Pad "1" (all copper layers) of U3
+ErrType(2): Unconnected pads
+    @ (3.2500 ",3.3000 "): Pad "1" (all copper layers) of R2
+    @ (3.5707 ",3.2250 "): Pad "1" (all copper layers) of U3
 ErrType(2): Unconnected pads
     @ (2.9500 ",3.1500 "): Pad "1" (all copper layers) of U1
-    @ (2.9750 ",3.6250 "): Pad "1" (all copper layers) of R2
+    @ (3.2500 ",3.3000 "): Pad "1" (all copper layers) of R2
+ErrType(2): Unconnected pads
+    @ (3.1500 ",4.3000 "): Pad "1" (all copper layers) of P1
+    @ (2.9500 ",4.0293 "): Pad "1" (all copper layers) of U4
+ErrType(2): Unconnected pads
+    @ (4.1500 ",3.2500 "): Pad "1" (all copper layers) of U2
+    @ (3.5707 ",3.2250 "): Pad "1" (all copper layers) of U3
+ErrType(2): Unconnected pads
+    @ (2.9500 ",3.1500 "): Pad "1" (all copper layers) of U1
+    @ (2.9500 ",4.0293 "): Pad "1" (all copper layers) of U4
+ErrType(2): Unconnected pads
+    @ (3.4500 ",4.3000 "): Pad "4" (all copper layers) of P1
+    @ (3.3000 ",3.8000 "): Pad "2" (all copper layers) of R9
 
 ** End of Report **

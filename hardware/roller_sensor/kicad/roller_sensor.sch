@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date Wed 03 Jun 2009 12:10:05 AM CDT
+EESchema Schematic File Version 2  date Wed 03 Jun 2009 09:53:56 PM CDT
 LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
 EELAYER 23  0
 EELAYER END
 $Descr User 11000 8500
 Sheet 1 1
 Title "roller sensor progress indicator"
-Date "3 jun 2009"
+Date "4 jun 2009"
 Rev "3.0"
 Comp "www.opensprints.org"
 Comment1 "OpenSprints"
@@ -13,6 +13,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 2550 1200
+Connection ~ 3050 1600
+Wire Wire Line
+	3350 1600 2900 1600
+Wire Wire Line
+	2900 1600 2900 1300
 Wire Notes Line
 	4650 2300 4650 2100
 Wire Notes Line
@@ -56,8 +62,6 @@ Wire Wire Line
 	2150 3000 1800 3000
 Wire Wire Line
 	6900 1450 7300 1450
-Wire Wire Line
-	2350 1200 1800 1200
 Wire Wire Line
 	6900 3300 7300 3300
 Wire Notes Line
@@ -111,8 +115,6 @@ Wire Wire Line
 Wire Wire Line
 	6900 3450 7300 3450
 Wire Wire Line
-	2600 1300 1800 1300
-Wire Wire Line
 	5400 2400 5400 2150
 Wire Wire Line
 	6900 1600 7300 1600
@@ -142,6 +144,19 @@ Wire Notes Line
 	3600 2000 5050 2000
 Wire Notes Line
 	4650 2700 4800 2700
+Wire Wire Line
+	3350 1200 1800 1200
+Wire Wire Line
+	2900 1300 1800 1300
+$Comp
+L C C1
+U 1 1 4A273637
+P 3350 1400
+F 0 "C1" H 3400 1500 50  0000 L CNN
+F 1 "C" H 3400 1300 50  0000 L CNN
+	1    3350 1400
+	1    0    0    -1  
+$EndComp
 Text Notes 3150 2950 0    60   ~ 0
  D2 as GO indicator.
 Text Notes 3200 2850 0    60   ~ 0
@@ -233,19 +248,19 @@ VCC
 $Comp
 L PWR_FLAG #FLG01
 U 1 1 49E13269
-P 2350 1200
-F 0 "#FLG01" H 2350 1470 30  0001 C CNN
-F 1 "PWR_FLAG" H 2350 1430 30  0000 C CNN
-	1    2350 1200
+P 2550 1200
+F 0 "#FLG01" H 2550 1470 30  0001 C CNN
+F 1 "PWR_FLAG" H 2550 1430 30  0000 C CNN
+	1    2550 1200
 	1    0    0    -1  
 $EndComp
 $Comp
 L PWR_FLAG #FLG02
 U 1 1 49E13266
-P 2600 1300
-F 0 "#FLG02" H 2600 1570 30  0001 C CNN
-F 1 "PWR_FLAG" H 2600 1530 30  0000 C CNN
-	1    2600 1300
+P 3050 1600
+F 0 "#FLG02" H 3050 1870 30  0001 C CNN
+F 1 "PWR_FLAG" H 3050 1830 30  0000 C CNN
+	1    3050 1600
 	1    0    0    -1  
 $EndComp
 Text Notes 6700 4850 0    60   ~ 0

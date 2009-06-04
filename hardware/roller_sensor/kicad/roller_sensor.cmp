@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Wed 03 Jun 2009 12:12:30 AM CDT
+Cmp-Mod V01 Created by CVpcb (20090216-final) date = Wed 03 Jun 2009 09:53:52 PM CDT
+
+BeginCmp
+TimeStamp = /4A273637;
+Reference = C1;
+ValeurCmp = C;
+IdModule  = C1;
+EndCmp
 
 BeginCmp
 TimeStamp = /4A1F5D68;
