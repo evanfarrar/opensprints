@@ -1,5 +1,5 @@
-EESchema Schematic File Version 2  date Wed 03 Jun 2009 09:53:56 PM CDT
-LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
+EESchema Schematic File Version 2  date Thu 04 Jun 2009 09:30:19 PM CDT
+LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./roller_sensor.cache
 EELAYER 23  0
 EELAYER END
 $Descr User 11000 8500
@@ -13,37 +13,42 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Notes Line
+	6100 2150 5100 2150
+Wire Notes Line
+	5800 2600 5800 2750
+Wire Notes Line
+	5100 2150 5100 2000
+Wire Notes Line
+	6350 3300 6400 3300
+Wire Notes Line
+	6400 3300 6400 3250
+Wire Notes Line
+	6400 2950 6400 3050
+Wire Notes Line
+	6400 2650 6400 2750
+Wire Notes Line
+	6400 2350 6400 2450
+Wire Notes Line
+	6150 2150 6250 2150
 Connection ~ 2550 1200
 Connection ~ 3050 1600
 Wire Wire Line
 	3350 1600 2900 1600
 Wire Wire Line
 	2900 1600 2900 1300
-Wire Notes Line
-	4650 2300 4650 2100
-Wire Notes Line
-	3150 2650 4650 2650
-Wire Notes Line
-	3150 2650 3150 3000
-Wire Notes Line
-	3150 3000 4650 3000
-Wire Notes Line
-	4650 3000 4650 2650
-Connection ~ 4900 2400
 Wire Wire Line
-	3700 2400 4400 2400
+	4950 2400 6150 2400
 Wire Wire Line
-	4900 2400 5400 2400
+	6800 2150 6800 3700
 Wire Wire Line
-	6050 2150 6050 3700
-Wire Wire Line
-	6050 3700 4200 3700
+	6800 3700 4950 3700
 Wire Notes Line
-	6700 1050 8150 1050
+	7450 1050 8900 1050
 Wire Notes Line
-	6700 1050 6700 4700
+	7450 1050 7450 4700
 Wire Notes Line
-	6700 4700 8150 4700
+	7450 4700 8900 4700
 Wire Wire Line
 	2150 2900 1800 2900
 Wire Wire Line
@@ -61,13 +66,13 @@ Wire Wire Line
 Wire Wire Line
 	2150 3000 1800 3000
 Wire Wire Line
-	6900 1450 7300 1450
+	7650 1450 8050 1450
 Wire Wire Line
-	6900 3300 7300 3300
+	7650 3300 8050 3300
 Wire Notes Line
-	8150 4700 8150 1050
+	8900 4700 8900 1050
 Wire Wire Line
-	6900 4000 7300 4000
+	7650 4000 8050 4000
 Wire Wire Line
 	2150 1800 1800 1800
 Wire Wire Line
@@ -81,17 +86,17 @@ Wire Wire Line
 Wire Wire Line
 	2150 1900 1800 1900
 Wire Wire Line
-	6900 1750 7300 1750
+	7650 1750 8050 1750
 Wire Wire Line
-	7300 2450 6900 2450
+	8050 2450 7650 2450
 Wire Wire Line
-	7300 2300 6900 2300
+	8050 2300 7650 2300
 Wire Wire Line
-	6900 2600 7300 2600
+	7650 2600 8050 2600
 Wire Wire Line
-	6900 4300 7300 4300
+	7650 4300 8050 4300
 Wire Wire Line
-	4200 3300 5400 3300
+	4950 3300 6150 3300
 Wire Wire Line
 	2150 4000 1800 4000
 Wire Wire Line
@@ -109,45 +114,49 @@ Wire Wire Line
 Wire Wire Line
 	2150 4100 1800 4100
 Wire Wire Line
-	7300 4150 6900 4150
+	8050 4150 7650 4150
 Wire Wire Line
-	6900 3150 7300 3150
+	7650 3150 8050 3150
 Wire Wire Line
-	6900 3450 7300 3450
+	7650 3450 8050 3450
 Wire Wire Line
-	5400 2400 5400 2150
+	6150 2400 6150 2150
 Wire Wire Line
-	6900 1600 7300 1600
-Connection ~ 5400 2400
-Connection ~ 5400 2150
-Connection ~ 5400 1750
-Connection ~ 5400 1250
-Connection ~ 5400 2900
-Connection ~ 5400 3300
-Connection ~ 6050 1750
+	7650 1600 8050 1600
+Connection ~ 6150 2400
+Connection ~ 6150 1250
 Wire Wire Line
-	6050 1250 4200 1250
-Wire Wire Line
-	4900 2900 4900 3300
-Connection ~ 4900 3300
+	6800 1250 4950 1250
 Wire Notes Line
-	4650 2100 4500 2100
-Wire Notes Line
-	4500 2100 4500 2000
-Wire Notes Line
-	5050 1650 5050 2000
-Wire Notes Line
-	5050 1650 3600 1650
-Wire Notes Line
-	3600 1650 3600 2000
-Wire Notes Line
-	3600 2000 5050 2000
-Wire Notes Line
-	4650 2700 4800 2700
+	5800 1650 5800 2000
 Wire Wire Line
 	3350 1200 1800 1200
 Wire Wire Line
 	2900 1300 1800 1300
+Wire Notes Line
+	6300 2150 6400 2150
+Wire Notes Line
+	6400 2200 6400 2300
+Wire Notes Line
+	6400 2500 6400 2600
+Wire Notes Line
+	6400 2800 6400 2900
+Wire Notes Line
+	6400 3100 6400 3200
+Wire Notes Line
+	6300 3300 6200 3300
+Wire Notes Line
+	5800 1650 3850 1650
+Wire Notes Line
+	5800 2000 3850 2000
+Wire Notes Line
+	5800 2600 3850 2600
+Wire Notes Line
+	5800 2750 3850 2750
+Wire Notes Line
+	3850 2750 3850 1650
+Text Notes 3900 2700 0    60   ~ 0
+and don't place D2 and R2.
 $Comp
 L C C1
 U 1 1 4A273637
@@ -157,66 +166,42 @@ F 1 "C" H 3400 1300 50  0000 L CNN
 	1    3350 1400
 	1    0    0    -1  
 $EndComp
-Text Notes 3150 2950 0    60   ~ 0
- D2 as GO indicator.
-Text Notes 3200 2850 0    60   ~ 0
-STOP indicator and
-Text Notes 3200 2750 0    60   ~ 0
-Remove to use D1 as
-Text Notes 3650 1950 0    60   ~ 0
-and to disable D2.
-Text Notes 3650 1850 0    60   ~ 0
-solid power indicator
-Text Notes 3650 1750 0    60   ~ 0
-Remove to use D1 as
-$Comp
-L R R10
-U 1 1 4A26021A
-P 4900 2650
-F 0 "R10" V 4980 2650 50  0000 C CNN
-F 1 "0" V 4900 2650 50  0000 C CNN
-	1    4900 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R9
-U 1 1 4A2601FE
-P 4650 2400
-F 0 "R9" V 4730 2400 50  0000 C CNN
-F 1 "0" V 4650 2400 50  0000 C CNN
-	1    4650 2400
-	0    1    1    0   
-$EndComp
+Text Notes 3900 1950 0    60   ~ 0
+GND instead of this pad
+Text Notes 3900 1850 0    60   ~ 0
+connect this lead to
+Text Notes 3900 1750 0    60   ~ 0
+To use D1 as power indicator,
 $Comp
 L C-6_CIRCUIT_BOARD CB1
 U 1 1 4A1F5D68
-P 4850 4700
-F 0 "CB1" H 4850 4700 60  0000 C CNN
-F 1 "C-6_CIRCUIT_BOARD" H 4850 4800 60  0000 C CNN
-	1    4850 4700
+P 5600 4700
+F 0 "CB1" H 5600 4700 60  0000 C CNN
+F 1 "C-6_CIRCUIT_BOARD" H 5600 4800 60  0000 C CNN
+	1    5600 4700
 	1    0    0    -1  
 $EndComp
-Text Label 4200 3700 0    60   ~ 0
+Text Label 4950 3700 0    60   ~ 0
 VOUT
 $Comp
-L R R8
+L R R3
 U 1 1 49E3884E
-P 6050 1500
-F 0 "R8" V 6130 1500 50  0000 C CNN
-F 1 "68" V 6050 1500 50  0000 C CNN
-	1    6050 1500
+P 6800 1900
+F 0 "R3" V 6880 1900 50  0000 C CNN
+F 1 "68" V 6800 1900 50  0000 C CNN
+	1    6800 1900
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D7
+L LED D3
 U 1 1 49E3884B
-P 6050 1950
-F 0 "D7" H 6050 2050 50  0000 C CNN
-F 1 "WHT LED" H 6050 1850 50  0000 C CNN
-	1    6050 1950
+P 6800 1450
+F 0 "D3" H 6800 1550 50  0000 C CNN
+F 1 "WHT LED" H 6800 1350 50  0000 C CNN
+	1    6800 1450
 	0    1    1    0   
 $EndComp
-Text Notes 6700 5000 0    60   ~ 0
+Text Notes 7450 5000 0    60   ~ 0
 hall effect sensor.
 Text Label 2150 3000 0    60   ~ 0
 LED3
@@ -243,7 +228,7 @@ F 1 "CONN_8" V 1500 2650 60  0000 C CNN
 	1    1450 2650
 	-1   0    0    -1  
 $EndComp
-Text Label 4200 1250 0    60   ~ 0
+Text Label 4950 1250 0    60   ~ 0
 VCC
 $Comp
 L PWR_FLAG #FLG01
@@ -263,21 +248,21 @@ F 1 "PWR_FLAG" H 3050 1830 30  0000 C CNN
 	1    3050 1600
 	1    0    0    -1  
 $EndComp
-Text Notes 6700 4850 0    60   ~ 0
+Text Notes 7450 4850 0    60   ~ 0
 Install only one
-Text Label 6900 3450 0    60   ~ 0
+Text Label 7650 3450 0    60   ~ 0
 VOUT
-Text Label 6900 3300 0    60   ~ 0
+Text Label 7650 3300 0    60   ~ 0
 GND
-Text Label 6900 3150 0    60   ~ 0
+Text Label 7650 3150 0    60   ~ 0
 VCC
 $Comp
 L SS441A U3
 U 1 1 49DFC7F9
-P 7500 2900
-F 0 "U3" H 7500 2900 60  0000 C CNN
-F 1 "SS441A" H 7650 2800 60  0000 C CNN
-	1    7500 2900
+P 8250 2900
+F 0 "U3" H 8250 2900 60  0000 C CNN
+F 1 "SS441A" H 8400 2800 60  0000 C CNN
+	1    8250 2900
 	1    0    0    -1  
 $EndComp
 Text Label 2150 4100 0    60   ~ 0
@@ -306,79 +291,79 @@ F 1 "RJ45" H 1200 4250 60  0000 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L R R2
+L R R1
 U 1 1 49DF8AA5
-P 5400 1500
-F 0 "R2" V 5480 1500 50  0000 C CNN
-F 1 "150" V 5400 1500 50  0000 C CNN
-	1    5400 1500
+P 6150 1900
+F 0 "R1" V 6230 1900 50  0000 C CNN
+F 1 "150" V 6150 1900 50  0000 C CNN
+	1    6150 1900
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R3
+L R R2
 U 1 1 49DF899F
-P 5400 2650
-F 0 "R3" V 5480 2650 50  0000 C CNN
-F 1 "68" V 5400 2650 50  0000 C CNN
-	1    5400 2650
+P 6150 3050
+F 0 "R2" V 6230 3050 50  0000 C CNN
+F 1 "68" V 6150 3050 50  0000 C CNN
+	1    6150 3050
 	1    0    0    -1  
 $EndComp
-Text Label 4200 3300 0    60   ~ 0
+Text Label 4950 3300 0    60   ~ 0
 GND
-Text Label 6900 4300 0    60   ~ 0
+Text Label 7650 4300 0    60   ~ 0
 VOUT
-Text Label 6900 4150 0    60   ~ 0
+Text Label 7650 4150 0    60   ~ 0
 GND
-Text Label 6900 4000 0    60   ~ 0
+Text Label 7650 4000 0    60   ~ 0
 VCC
 $Comp
 L SS441A U4
 U 1 1 49C83B82
-P 7500 3750
-F 0 "U4" H 7500 3750 60  0000 C CNN
-F 1 "SS441A" H 7650 3650 60  0000 C CNN
-	1    7500 3750
+P 8250 3750
+F 0 "U4" H 8250 3750 60  0000 C CNN
+F 1 "SS441A" H 8400 3650 60  0000 C CNN
+	1    8250 3750
 	1    0    0    -1  
 $EndComp
-Text Label 6900 2600 0    60   ~ 0
+Text Label 7650 2600 0    60   ~ 0
 VOUT
-Text Label 6900 2450 0    60   ~ 0
+Text Label 7650 2450 0    60   ~ 0
 GND
-Text Label 6900 2300 0    60   ~ 0
+Text Label 7650 2300 0    60   ~ 0
 VCC
 $Comp
 L SS441A U2
 U 1 1 49C83B66
-P 7500 2050
-F 0 "U2" H 7500 2050 60  0000 C CNN
-F 1 "SS441A" H 7650 1950 60  0000 C CNN
-	1    7500 2050
+P 8250 2050
+F 0 "U2" H 8250 2050 60  0000 C CNN
+F 1 "SS441A" H 8400 1950 60  0000 C CNN
+	1    8250 2050
 	1    0    0    -1  
 $EndComp
-Text Label 6900 1750 0    60   ~ 0
+Text Label 7650 1750 0    60   ~ 0
 VOUT
-Text Label 6900 1600 0    60   ~ 0
+Text Label 7650 1600 0    60   ~ 0
 GND
-Text Label 6900 1450 0    60   ~ 0
+Text Label 7650 1450 0    60   ~ 0
 VCC
-Text Label 3700 2400 0    60   ~ 0
+Text Label 4950 2400 0    60   ~ 0
 START/STOP
 $Comp
 L LED D1
 U 1 1 49C835C2
-P 5400 1950
-F 0 "D1" H 5400 2050 50  0000 C CNN
-F 1 "RED LED" H 5400 1850 50  0000 C CNN
-	1    5400 1950
+P 6150 1450
+F 0 "D1" H 6150 1550 50  0000 C CNN
+F 1 "RED LED" H 6150 1350 50  0000 C CNN
+	1    6150 1450
 	0    1    1    0   
 $EndComp
 $Comp
 L LED D2
 U 1 1 49C834FE
-P 5400 3100
-F 0 "D2" H 5400 3200 50  0000 C CNN
-F 1 "GRN LED" H 5400 3000 50  0000 C CNN
-	1    5400 3100
+P 6150 2600
+F 0 "D2" H 6150 2700 50  0000 C CNN
+F 1 "GRN LED" H 6150 2500 50  0000 C CNN
+	1    6150 2600
 	0    1    1    0   
 $EndComp
 Text Label 2150 1900 0    60   ~ 0
@@ -409,10 +394,10 @@ $EndComp
 $Comp
 L SS441A U1
 U 1 1 49C59A51
-P 7500 1200
-F 0 "U1" H 7500 1200 60  0000 C CNN
-F 1 "SS441A" H 7650 1100 60  0000 C CNN
-	1    7500 1200
+P 8250 1200
+F 0 "U1" H 8250 1200 60  0000 C CNN
+F 1 "SS441A" H 8400 1100 60  0000 C CNN
+	1    8250 1200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
