@@ -1,9 +1,5 @@
-update=13/4/2009-18:59:44
-last_client=pcbnew
-[general]
-version=1
-RootSch=sensor_roller_sensor.sch
-BoardNm=sensor_roller_sensor.brd
+update=Thu 04 Jun 2009 09:04:50 PM CDT
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=.net
@@ -138,3 +134,7 @@ LibName6=divers
 LibName7=libcms
 LibName8=display
 LibName9=valves
+[general]
+version=1
+RootSch=
+BoardNm=
