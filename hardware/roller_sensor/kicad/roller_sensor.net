@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Thu 04 Jun 2009 12:59:14 AM CDT
+# EESchema Netlist Version 1.1 created  Thu 04 Jun 2009 11:17:23 PM CDT
 (
  ( /4A273637 C1 C1 C
   ( 1 /VCC )
@@ -14,7 +14,7 @@
   ( 1 /START/STOP )
   ( 2 N-000012 )
  )
- ( /49E3884B LEDV D7 WHT_LED
+ ( /49E3884B LEDV D3 WHT_LED
   ( 1 /VCC )
   ( 2 N-000010 )
  )
@@ -48,15 +48,15 @@
   ( 7 /LED2 )
   ( 8 /LED3 )
  )
- ( /49DF8AA5 R1 R2 150
+ ( /49DF8AA5 R1 R1 150
   ( 1 N-000011 )
   ( 2 /START/STOP )
  )
- ( /49DF899F R1 R3 68
+ ( /49DF899F R1 R2 68
   ( 1 N-000012 )
   ( 2 /GND )
  )
- ( /49E3884E R1 R8 68
+ ( /49E3884E R1 R3 68
   ( 1 N-000010 )
   ( 2 /VOUT )
  )
@@ -104,7 +104,7 @@ $component D2
  LED-0805
  LED-1206
 $endlist
-$component D7
+$component D3
  LED-3MM
  LED-5MM
  LED-10MM
@@ -112,17 +112,17 @@ $component D7
  LED-0805
  LED-1206
 $endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+$endlist
 $component R2
  R?
  SM0603
  SM0805
 $endlist
 $component R3
- R?
- SM0603
- SM0805
-$endlist
-$component R8
  R?
  SM0603
  SM0805

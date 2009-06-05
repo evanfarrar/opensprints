@@ -1,5 +1,5 @@
-EESchema Schematic File Version 2  date Thu 04 Jun 2009 09:30:19 PM CDT
-LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,./roller_sensor.cache
+EESchema Schematic File Version 2  date Thu 04 Jun 2009 11:32:31 PM CDT
+LIBS:power,custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
 EELAYER 23  0
 EELAYER END
 $Descr User 11000 8500

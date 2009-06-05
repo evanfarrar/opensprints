@@ -1,12 +1,13 @@
 *.bak
-*.cache.dcm
-*.cache.lib
+*cache.dcm
+*cache.lib
 *.bck
 *.0??
-$savepcb.brd
+$savepcb*brd
 *.pho
 *.drl
 *-drl.rpt
 *output.zip
 *_output_barebones.zip
 *.rpt
+
