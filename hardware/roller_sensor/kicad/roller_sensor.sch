@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date Thu 04 Jun 2009 11:32:31 PM CDT
-LIBS:power,custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
+EESchema Schematic File Version 2  date Fri 05 Jun 2009 07:11:56 PM CDT
+LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
 EELAYER 23  0
 EELAYER END
 $Descr User 11000 8500
 Sheet 1 1
 Title "roller sensor progress indicator"
-Date "4 jun 2009"
+Date "5 jun 2009"
 Rev "3.0"
 Comp "www.opensprints.org"
 Comment1 "OpenSprints"
@@ -13,6 +13,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L PROTOTYPING_PINS P2
+U 1 1 4A29AB13
+P 5600 5100
+F 0 "P2" H 5600 5100 60  0000 C CNN
+F 1 "PROTOTYPING_PINS" H 5600 5200 60  0000 C CNN
+	1    5600 5100
+	1    0    0    -1  
+$EndComp
 Wire Notes Line
 	6100 2150 5100 2150
 Wire Notes Line

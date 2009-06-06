@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le Thu 04 Jun 2009 11:51:47 PM CDT
+Cmp-Mod V01 Created by CVpcb (20090216-final) date = Fri 05 Jun 2009 06:51:33 PM CDT
 
 BeginCmp
 TimeStamp = /4A273637;
@@ -54,6 +54,13 @@ TimeStamp = /49E1EB87;
 Reference = P1;
 ValeurCmp = CONN_8;
 IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A29AB13;
+Reference = P2;
+ValeurCmp = PROTOTYPING_PINS;
+IdModule  = PROTO_PINS_8x4_LJO;
 EndCmp
 
 BeginCmp
