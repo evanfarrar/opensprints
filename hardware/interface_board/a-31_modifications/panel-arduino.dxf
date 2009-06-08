@@ -1369,11 +1369,11 @@ DM
  70
 0
  62
-16
+8
   6
 CONTINUOUS
 370
--3
+0
 390
 F
   0
@@ -7259,9 +7259,57 @@ ByLayer
  31
 0.0
   0
-MTEXT
+INSERT
   5
 11E
+100
+AcDbEntity
+100
+AcDbBlockReference
+  8
+0
+ 62
+256
+370
+-1
+  6
+ByLayer
+  2
+power_jack
+ 10
+-0.9245
+ 20
+0.2
+ 30
+0.0
+  0
+INSERT
+  5
+11F
+100
+AcDbEntity
+100
+AcDbBlockReference
+  8
+0
+ 62
+256
+370
+-1
+  6
+ByLayer
+  2
+usb_jack
+ 10
+0.204
+ 20
+0.2
+ 30
+0.0
+  0
+MTEXT
+  5
+120
 100
 AcDbEntity
 100
@@ -7269,7 +7317,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7301,7 +7349,7 @@ STANDARD
   0
 LINE
   5
-11F
+121
 100
 AcDbEntity
 100
@@ -7309,7 +7357,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7329,7 +7377,7 @@ ByLayer
   0
 LINE
   5
-120
+122
 100
 AcDbEntity
 100
@@ -7337,7 +7385,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7357,7 +7405,7 @@ CONTINUOUS
   0
 LINE
   5
-121
+123
 100
 AcDbEntity
 100
@@ -7365,7 +7413,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7385,7 +7433,7 @@ CONTINUOUS
   0
 LINE
   5
-122
+124
 100
 AcDbEntity
 100
@@ -7393,7 +7441,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7413,7 +7461,7 @@ CONTINUOUS
   0
 LINE
   5
-123
+125
 100
 AcDbEntity
 100
@@ -7421,7 +7469,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7441,7 +7489,7 @@ CONTINUOUS
   0
 LINE
   5
-124
+126
 100
 AcDbEntity
 100
@@ -7449,7 +7497,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7469,7 +7517,7 @@ CONTINUOUS
   0
 LINE
   5
-125
+127
 100
 AcDbEntity
 100
@@ -7477,7 +7525,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7497,7 +7545,7 @@ CONTINUOUS
   0
 LINE
   5
-126
+128
 100
 AcDbEntity
 100
@@ -7505,7 +7553,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7525,7 +7573,7 @@ CONTINUOUS
   0
 LINE
   5
-127
+129
 100
 AcDbEntity
 100
@@ -7533,7 +7581,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7553,7 +7601,7 @@ CONTINUOUS
   0
 MTEXT
   5
-128
+12A
 100
 AcDbEntity
 100
@@ -7561,7 +7609,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7593,7 +7641,7 @@ STANDARD
   0
 LINE
   5
-129
+12B
 100
 AcDbEntity
 100
@@ -7601,7 +7649,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7621,7 +7669,7 @@ CONTINUOUS
   0
 LINE
   5
-12A
+12C
 100
 AcDbEntity
 100
@@ -7629,7 +7677,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7649,7 +7697,7 @@ CONTINUOUS
   0
 LINE
   5
-12B
+12D
 100
 AcDbEntity
 100
@@ -7657,7 +7705,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7677,7 +7725,7 @@ CONTINUOUS
   0
 LINE
   5
-12C
+12E
 100
 AcDbEntity
 100
@@ -7685,7 +7733,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7705,7 +7753,7 @@ CONTINUOUS
   0
 LINE
   5
-12D
+12F
 100
 AcDbEntity
 100
@@ -7713,7 +7761,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7733,7 +7781,7 @@ CONTINUOUS
   0
 INSERT
   5
-12E
+130
 100
 AcDbEntity
 100
@@ -7741,7 +7789,7 @@ AcDbBlockReference
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7763,7 +7811,7 @@ ByLayer
   0
 MTEXT
   5
-12F
+131
 100
 AcDbEntity
 100
@@ -7771,7 +7819,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7803,7 +7851,7 @@ STANDARD
   0
 LINE
   5
-130
+132
 100
 AcDbEntity
 100
@@ -7811,7 +7859,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7831,7 +7879,7 @@ CONTINUOUS
   0
 MTEXT
   5
-131
+133
 100
 AcDbEntity
 100
@@ -7839,7 +7887,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7871,7 +7919,7 @@ STANDARD
   0
 LINE
   5
-132
+134
 100
 AcDbEntity
 100
@@ -7879,7 +7927,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7899,7 +7947,7 @@ CONTINUOUS
   0
 LINE
   5
-133
+135
 100
 AcDbEntity
 100
@@ -7907,7 +7955,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7927,7 +7975,7 @@ CONTINUOUS
   0
 LINE
   5
-134
+136
 100
 AcDbEntity
 100
@@ -7935,7 +7983,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7955,7 +8003,7 @@ CONTINUOUS
   0
 MTEXT
   5
-135
+137
 100
 AcDbEntity
 100
@@ -7963,7 +8011,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -7995,7 +8043,7 @@ STANDARD
   0
 LINE
   5
-136
+138
 100
 AcDbEntity
 100
@@ -8003,7 +8051,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8023,7 +8071,7 @@ CONTINUOUS
   0
 LINE
   5
-137
+139
 100
 AcDbEntity
 100
@@ -8031,7 +8079,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8051,7 +8099,7 @@ CONTINUOUS
   0
 LINE
   5
-138
+13A
 100
 AcDbEntity
 100
@@ -8059,7 +8107,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8079,7 +8127,7 @@ CONTINUOUS
   0
 MTEXT
   5
-139
+13B
 100
 AcDbEntity
 100
@@ -8087,7 +8135,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8119,7 +8167,7 @@ STANDARD
   0
 MTEXT
   5
-13A
+13C
 100
 AcDbEntity
 100
@@ -8127,7 +8175,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8159,7 +8207,7 @@ STANDARD
   0
 MTEXT
   5
-13B
+13D
 100
 AcDbEntity
 100
@@ -8167,7 +8215,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8199,7 +8247,7 @@ STANDARD
   0
 LINE
   5
-13C
+13E
 100
 AcDbEntity
 100
@@ -8207,7 +8255,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8227,7 +8275,7 @@ CONTINUOUS
   0
 LINE
   5
-13D
+13F
 100
 AcDbEntity
 100
@@ -8235,7 +8283,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8255,7 +8303,7 @@ CONTINUOUS
   0
 LINE
   5
-13E
+140
 100
 AcDbEntity
 100
@@ -8263,7 +8311,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8283,7 +8331,7 @@ CONTINUOUS
   0
 LINE
   5
-13F
+141
 100
 AcDbEntity
 100
@@ -8291,7 +8339,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8311,7 +8359,7 @@ CONTINUOUS
   0
 LINE
   5
-140
+142
 100
 AcDbEntity
 100
@@ -8319,7 +8367,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8339,7 +8387,7 @@ CONTINUOUS
   0
 MTEXT
   5
-141
+143
 100
 AcDbEntity
 100
@@ -8347,7 +8395,7 @@ AcDbMText
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8379,7 +8427,7 @@ STANDARD
   0
 LINE
   5
-142
+144
 100
 AcDbEntity
 100
@@ -8387,7 +8435,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8407,7 +8455,7 @@ CONTINUOUS
   0
 LINE
   5
-143
+145
 100
 AcDbEntity
 100
@@ -8415,7 +8463,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8435,7 +8483,7 @@ CONTINUOUS
   0
 LINE
   5
-144
+146
 100
 AcDbEntity
 100
@@ -8443,7 +8491,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8463,7 +8511,7 @@ CONTINUOUS
   0
 LINE
   5
-145
+147
 100
 AcDbEntity
 100
@@ -8471,7 +8519,7 @@ AcDbLine
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8491,7 +8539,7 @@ CONTINUOUS
   0
 INSERT
   5
-146
+148
 100
 AcDbEntity
 100
@@ -8499,7 +8547,7 @@ AcDbBlockReference
   8
 DM
  62
-16
+8
 370
 -1
   6
@@ -8521,13 +8569,13 @@ ByLayer
   0
 DIMENSION
   5
-147
+149
 100
 AcDbEntity
   8
 DM
  62
-256
+8
 370
 -1
   6
@@ -8581,13 +8629,13 @@ AcDbRotatedDimension
   0
 DIMENSION
   5
-148
+14A
 100
 AcDbEntity
   8
 DM
  62
-256
+8
 370
 -1
   6
@@ -8641,13 +8689,13 @@ AcDbRotatedDimension
   0
 DIMENSION
   5
-149
+14B
 100
 AcDbEntity
   8
 DM
  62
-256
+8
 370
 -1
   6
@@ -8701,13 +8749,13 @@ AcDbRotatedDimension
   0
 DIMENSION
   5
-14A
+14C
 100
 AcDbEntity
   8
 DM
  62
-256
+8
 370
 -1
   6
@@ -8761,13 +8809,13 @@ AcDbRotatedDimension
   0
 DIMENSION
   5
-14B
+14D
 100
 AcDbEntity
   8
 DM
  62
-256
+8
 370
 -1
   6
@@ -8821,13 +8869,13 @@ AcDbRotatedDimension
   0
 DIMENSION
   5
-14C
+14E
 100
 AcDbEntity
   8
 DM
  62
-256
+8
 370
 -1
   6
@@ -8879,53 +8927,185 @@ AcDbAlignedDimension
 100
 AcDbRotatedDimension
   0
-INSERT
+DIMENSION
   5
-14D
+14F
 100
 AcDbEntity
-100
-AcDbBlockReference
   8
-0
+DEFPOINTS
  62
 256
 370
 -1
   6
 ByLayer
-  2
-power_jack
+100
+AcDbDimension
  10
--0.9245
+0.6960000000000001
  20
-0.2
+1.4600399029671194
  30
 0.0
+ 11
+0.6960000000000001
+ 21
+2.1350399029671197
+ 31
+0.0
+ 70
+0
+ 71
+5
+ 72
+1
+ 41
+1.0
+ 42
+0.0
+  1
+
+  3
+Standard
+100
+AcDbAlignedDimension
+ 13
+0.6960000000000001
+ 23
+1.4600399029671194
+ 33
+0.0
+ 14
+0.6960000000000001
+ 24
+1.4600399029671194
+ 34
+0.0
+ 50
+90.0
+100
+AcDbRotatedDimension
   0
-INSERT
+DIMENSION
   5
-14E
+150
 100
 AcDbEntity
-100
-AcDbBlockReference
   8
+DM
+ 62
+8
+370
+-1
+  6
+ByLayer
+100
+AcDbDimension
+ 10
+0.6960000000000001
+ 20
+1.4600399029671194
+ 30
+0.0
+ 11
+0.7822245821404471
+ 21
+1.069572387824693
+ 31
+0.0
+ 70
 0
+ 71
+5
+ 72
+1
+ 41
+1.0
+ 42
+0.0
+  1
+
+  3
+Standard
+100
+AcDbAlignedDimension
+ 13
+0.6960000000000001
+ 23
+0.64
+ 33
+0.0
+ 14
+0.6960000000000001
+ 24
+1.4600399029671194
+ 34
+0.0
+ 50
+90.0
+100
+AcDbRotatedDimension
+  0
+DIMENSION
+  5
+151
+100
+AcDbEntity
+  8
+DM
  62
 256
 370
 -1
   6
 ByLayer
-  2
-usb_jack
+100
+AcDbDimension
  10
-0.204
+2.1200579412947316
  20
-0.2
+1.5963766982458101
  30
 0.0
+ 11
+-0.0000000000000142
+ 21
+1.7086219348412188
+ 31
+0.0
+ 70
+0
+ 71
+5
+ 72
+1
+ 41
+1.0
+ 42
+0.0
+  1
+
+  3
+Standard
+100
+AcDbAlignedDimension
+ 13
+-2.12005794129476
+ 23
+1.4600399029671194
+ 33
+0.0
+ 14
+2.1200579412947316
+ 24
+1.4600399029671194
+ 34
+0.0
+ 50
+0.0
+100
+AcDbRotatedDimension
   0
 ENDSEC
   0
@@ -8965,7 +9145,7 @@ E
   3
 AcDbVariableDictionary
 350
-14F
+152
   0
 DICTIONARY
   5
@@ -9429,7 +9609,7 @@ Layout2
   0
 DICTIONARY
   5
-14F
+152
 100
 AcDbDictionary
 281
@@ -9437,15 +9617,15 @@ AcDbDictionary
   3
 DIMASSOC
 350
-151
+154
   3
 HIDETEXT
 350
-150
+153
   0
 DICTIONARYVAR
   5
-150
+153
 100
 DictionaryVariables
 280
@@ -9455,7 +9635,7 @@ DictionaryVariables
   0
 DICTIONARYVAR
   5
-151
+154
 100
 DictionaryVariables
 280
