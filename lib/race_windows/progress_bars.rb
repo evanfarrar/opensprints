@@ -19,7 +19,8 @@ class RacePresenter
     current_time = @sensor.time
     @race.racers.each_with_index do |racer, i|
       racer.ticks = @sensor.racers[i].size unless racer.finish_time
-      racer.text.replace(racer.name, ': ', racer.speed(current_time), UNIT_SYSTEM.to_s)
+      racer.text.replace(racer.name, ': ',
+racer.speed(current_time), UNIT_SYSTEM_STR)
     end
 
     @update_area.clear do
@@ -49,7 +50,8 @@ class RacePresenter
 
       @race.racers.each_with_index do |racer,i|
         racer.finish_time = @sensor.finish_times[i]
-        racer.text.replace("#{racer.name}: #{racer.speed(racer.finish_time)}#{UNIT_SYSTEM.to_s} #{racer.finish_time/1000.0}s") if racer.finish_time
+        racer.text.replace("#{racer.name}:
+#{racer.speed(racer.finish_time)}#{UNIT_SYSTEM_STR} #{racer.finish_time/1000.0}s") if racer.finish_time
       end
 
       if @race.complete?
@@ -88,7 +90,8 @@ module RaceWindow
               lighter = rgb(bikes[index].red,bikes[index].green,bikes[index].blue, 0.7)
               background lighter, :curve => 12
               border bikes[index], :curve => 8, :strokewidth => 4
-              racer.text = caption(racer.name, ': ', racer.speed(0), UNIT_SYSTEM.to_s)
+              racer.text = caption(racer.name, ': ',
+racer.speed(0), UNIT_SYSTEM_STR)
             end
           end
         end

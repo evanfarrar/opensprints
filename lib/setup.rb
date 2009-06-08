@@ -49,6 +49,8 @@ end
 
 
 UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kph
+UNIT_SYSTEM_STR = (options['units'] == 'standard') ? "mph" :
+"km/h"
 
 module Enumerable
   def second
