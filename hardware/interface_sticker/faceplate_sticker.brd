@@ -1,0 +1,66 @@
+PCBNEW-BOARD Version 1 date Mon 08 Jun 2009 09:06:08 AM CDT
+
+$GENERAL
+LayerCount 2
+Ly 1FFF8001
+Links 0
+NoConn 0
+Di 0 0 117000 82670
+Ndraw 1
+Ntrack 0
+Nzone 0
+Nmodule 0
+Nnets 0
+$EndGENERAL
+
+$SHEETDESCR
+Sheet A4 11700 8267
+Title ""
+Date "8 jun 2009"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndSHEETDESCR
+
+$SETUP
+InternalUnit 0.000100 INCH
+ZoneGridSize 250
+Layers 2
+Layer[0] Copper signal
+Layer[15] Component signal
+TrackWidth 170
+TrackWidthHistory 170
+TrackClearence 60
+ZoneClearence 200
+DrawSegmWidth 150
+EdgeSegmWidth 150
+ViaSize 450
+ViaDrill 250
+ViaAltDrill 250
+ViaSizeHistory 450
+MicroViaSize 200
+MicroViaDrill 80
+MicroViasAllowed 0
+TextPcbWidth 120
+TextPcbSize 600 800
+EdgeModWidth 150
+TextModSize 600 600
+TextModWidth 120
+PadSize 600 600
+PadDrill 320
+AuxiliaryAxisOrg 0 0
+$EndSETUP
+
+$TEXTPCB
+Te "OpenSprints.org"
+Po 32750 20000 2000 2700 420 0
+De 21 1 0 Normal
+$EndTEXTPCB
+$TRACK
+$EndTRACK
+$ZONE
+$EndZONE
+$EndBOARD
