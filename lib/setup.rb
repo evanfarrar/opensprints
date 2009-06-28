@@ -74,6 +74,7 @@ end
 require 'activesupport'
 require 'dm-core'
 DataMapper.setup(:default, 'sqlite3::memory:')
+require 'lib/race_participation'
 require 'lib/racer'
 require 'lib/race'
 require 'lib/interface_widgets' if defined? Shoes
