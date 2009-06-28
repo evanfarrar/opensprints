@@ -17,12 +17,7 @@ TITLE = options['title']
 bikes = options['bikes']
 bikes.delete('')
 BIKES = bikes
-require 'lib/racer'
-require 'lib/race'
-require 'lib/interface_widgets' if defined? Shoes
-require 'lib/tournament'
 load "lib/sensors/#{options['sensor']['type']}_sensor.rb"
-require "lib/race_windows/#{options['track']}"
 class MissingArduinoError < RuntimeError; end
 
 begin
@@ -70,8 +65,18 @@ end
 if defined? Shoes
   Shoes.setup do
     gem "activesupport"
+    gem "bacon"
+    gem "dm-core"
   end
 else
   require 'rubygems'
 end
 require 'activesupport'
+require 'dm-core'
+DataMapper.setup(:default, 'sqlite3::memory:')
+require 'lib/racer'
+require 'lib/race'
+require 'lib/interface_widgets' if defined? Shoes
+require 'lib/tournament'
+require "lib/race_windows/#{options['track']}"
+DataMapper.auto_migrate!

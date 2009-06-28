@@ -8,8 +8,8 @@ class Sensor
     @f = File.open(filename, 'w+')
     ticks = ($RACE_DISTANCE / $ROLLER_CIRCUMFERENCE).floor
     @f.putc ?l
-    @f.putc (ticks % 256)
-    @f.putc (ticks / 256)
+    @f.putc(ticks % 256)
+    @f.putc(ticks / 256)
     @f.putc ?\r
   end
 

@@ -28,14 +28,14 @@ racer.speed(current_time), UNIT_SYSTEM_STR)
 
       #ghost lap
       if @best_time
-        @shoes_instance.stroke gray 0.3
-        @shoes_instance.fill gray 0.3
+        @shoes_instance.stroke(gray(0.3))
+        @shoes_instance.fill(gray(0.3))
 
         @shoes_instance.rect fudge_right+6, 5, @bar_size*([1.0,(@sensor.time / 1000.0) / @best_time].min), 5+@race.racers.length*40
       end
 
 
-      @shoes_instance.stroke gray 0.5
+      @shoes_instance.stroke(gray(0.5))
       @shoes_instance.strokewidth 4
 
       @shoes_instance.line fudge_right+2, 0,fudge_right+2,20+@race.racers.length*40
