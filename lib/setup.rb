@@ -19,7 +19,7 @@ bikes.delete('')
 BIKES = bikes
 require 'lib/racer'
 require 'lib/race'
-require 'lib/interface_widgets'
+require 'lib/interface_widgets' if defined? Shoes
 require 'lib/tournament'
 load "lib/sensors/#{options['sensor']['type']}_sensor.rb"
 require "lib/race_windows/#{options['track']}"
@@ -28,23 +28,26 @@ class MissingArduinoError < RuntimeError; end
 begin
   SENSOR = Sensor.new(options['sensor']['device'])
 rescue MissingArduinoError
-  alert "The arduino could not be found at the configured address! Check your configuration."
+  if defined? Shoes
+    alert "The arduino could not be found at the configured address! Check your configuration."
+    load "lib/config_app.rb"
+  end
   load "lib/sensors/mock_sensor.rb"
-  load "lib/config_app.rb"
 end
 
 HEIGHT = options['window_height']||600
 WIDTH = options['window_width']||800
 
-
-if options['background']
-  if File.readable?(options['background'])
-    BACKGROUND = options['background']
+if defined? Shoes
+  if options['background']
+    if File.readable?(options['background'])
+      BACKGROUND = options['background']
+    else
+      BACKGROUND = Shoes.instance_eval(options['background'])
+    end
   else
-    BACKGROUND = Shoes.instance_eval(options['background'])
+    BACKGROUND = Shoes::COLORS[:black]
   end
-else
-  BACKGROUND = Shoes::COLORS[:black]
 end
 
 
@@ -52,56 +55,23 @@ UNIT_SYSTEM = (options['units'] == 'standard') ? :mph : :kph
 UNIT_SYSTEM_STR = (options['units'] == 'standard') ? "mph" :
 "km/h"
 
-module Enumerable
-  def second
-    self[1]
-  end
+require 'lib/ruby_extensions.rb'
 
-  def third
-    self[2]
-  end
-
-  def fourth
-    self[3]
-  end
-end
-
-class Numeric
-  def to_minutes_seconds_string
-    [self/60 % 60, self % 60].map{|t| t.to_s.rjust(2,'0')}.join(':')
-  end
-end
-
-module Subclasses
-  # return a list of the subclasses of a class
-  def subclasses(direct = false)
-    classes = []
-    if direct
-      ObjectSpace.each_object(Class) do |c|
-        next unless c.superclass == self
-        classes << c
-      end
-    else
-      ObjectSpace.each_object(Class) do |c|
-        next unless c.ancestors.include?(self) and (c != self)
-        classes << c
-      end
+if defined? Shoes
+  class Shoes::ColoredProgressBar < Shoes::Widget
+    def initialize(percent,top,color)
+      stroke color
+      fill color
+      rect 6, top, percent, 20
     end
-    classes
   end
 end
 
-Object.send(:include, Subclasses)
-
-class Shoes::ColoredProgressBar < Shoes::Widget
-  def initialize(percent,top,color)
-    stroke color
-    fill color
-    rect 6, top, percent, 20
+if defined? Shoes
+  Shoes.setup do
+    gem "activesupport"
   end
-end
-
-Shoes.setup do
-  gem "activesupport"
+else
+  require 'rubygems'
 end
 require 'activesupport'
