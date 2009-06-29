@@ -14,7 +14,6 @@ describe 'A tournament' do
   it 'should have some races' do
     @tournament.races = [Race.new, Race.new, Race.new]
     @tournament.races.length.should==3
-
   end
 
 end

@@ -67,7 +67,9 @@ if defined? Shoes
     gem "activesupport"
     gem "bacon"
     gem "dm-core"
+    gem "do_sqlite3"
   end
+  require 'lib/racer_controller'
 else
   require 'rubygems'
 end
