@@ -1,7 +1,7 @@
 require 'enumerator'
 
 #Tournament encapsulates a series of races and racers.
-class Tournament
+class ObsTournament
   #the racers available for racing
   # TODO: save eliminated racers somewhere
   attr_accessor :racers

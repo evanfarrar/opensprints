@@ -1,6 +1,6 @@
 # Represents data related to a race: it's participants, the winner,
 # the length, and status.
-class Race
+class ObsRace
   # The participants of the race
   attr_accessor :racers
   # Two races are considered the same if their racers are the same.
