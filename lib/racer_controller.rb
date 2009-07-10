@@ -1,30 +1,47 @@
-class RacerController < Shoes
+class RacerController < Main
   url '/racers', :list
-  url '/racers/(\d+)', :racer
+  url '/racers/(\d+)', :show
+  url '/racers/new', :new
 
   def list
-    $update.clear do
-      stack do
-        Racer.all.each {|r|
-          flow {
-            para r.name
-          }
+    nav
+    stack do
+      para(link "new racer", :click => "/racers/new")
+      Racer.all.each {|r|
+        flow {
+          para r.name
         }
-      end
+      }
     end
   end
 
-  def racer(id)
-    @racer = Racer.find(id)
-    $update.clear do
-      stack do
-        flow(:width => 0.5) {
-          para(strong("name: "))
-        }
-        flow(:width => 0.5) {
-          para(@racer.name)
-        }
+  def new
+    nav
+    racer_attrs = {}
+    stack{
+      flow {
+        para "name:"
+        edit_line('') do |edit|
+          racer_attrs[:name] = edit.text
+        end
+      }
+      button "Create" do
+        Racer.create(racer_attrs)
+        visit '/racers'
       end
+    }
+  end
+
+  def show(id)
+    nav
+    racer = Racer.find(id)
+    stack do
+      flow(:width => 0.5) {
+        para(strong("name: "))
+      }
+      flow(:width => 0.5) {
+        para(racer.name)
+      }
     end
   end
 end
