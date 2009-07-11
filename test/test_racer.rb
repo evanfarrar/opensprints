@@ -22,4 +22,12 @@ describe 'A racer' do
     Racer.get(r.id).should.not.be.nil?
   end
 
+  it "should have categories" do
+    c = Category.create(:name => "Men")
+#    @racer.categories << c
+
+    @racer.categorizations.build(:category => c)
+    @racer.categorizations.map(&:category).should.include? c
+    @racer.save.should==(true)
+  end
 end

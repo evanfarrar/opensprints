@@ -70,6 +70,7 @@ if defined? Shoes
     gem "do_sqlite3"
   end
   require 'lib/racer_controller'
+  require 'lib/category_controller'
 else
   require 'rubygems'
 end
@@ -80,6 +81,8 @@ require 'lib/race_participation'
 require 'lib/tournament_participation'
 require 'lib/racer'
 require 'lib/race'
+require 'lib/categorization'
+require 'lib/category'
 require 'lib/interface_widgets' if defined? Shoes
 require 'lib/tournament'
 require "lib/race_windows/#{options['track']}"

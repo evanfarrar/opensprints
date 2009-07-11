@@ -1,6 +1,6 @@
-class RacerController < Main
+class RacerController < Shoes::Main
   url '/racers', :list
-  url '/racers/(\d+)', :show
+  url '/racers/(\d+)', :edit
   url '/racers/new', :new
 
   def list
@@ -9,7 +9,7 @@ class RacerController < Main
       para(link "new racer", :click => "/racers/new")
       Racer.all.each {|r|
         flow {
-          para r.name
+          para(link(r.name,:click => "/racers/#{r.id}"))
         }
       }
     end
@@ -17,31 +17,39 @@ class RacerController < Main
 
   def new
     nav
-    racer_attrs = {}
+    racer = Racer.new
+    form(racer)
+  end
+
+  def edit(id)
+    nav
+    racer = Racer.get(id)
+    form(racer)
+  end
+
+  def form(racer)
     stack{
       flow {
         para "name:"
-        edit_line('') do |edit|
-          racer_attrs[:name] = edit.text
+        edit_line(racer.name) do |edit|
+          racer.name = edit.text
         end
       }
-      button "Create" do
-        Racer.create(racer_attrs)
+      flow {
+        para "categories:"
+        stack {
+          categories = stack { para racer.categorizations.map(&:category).join(', ') }
+          list_box(:items => Category.all.to_a) do |list|
+            racer.categorizations.build(:category => list.text)
+            categories.clear { para racer.categorizations.map(&:category).join(', ') }
+          end
+        }
+      }
+      button "Save" do
+        racer.save
         visit '/racers'
       end
     }
-  end
 
-  def show(id)
-    nav
-    racer = Racer.find(id)
-    stack do
-      flow(:width => 0.5) {
-        para(strong("name: "))
-      }
-      flow(:width => 0.5) {
-        para(racer.name)
-      }
-    end
   end
 end

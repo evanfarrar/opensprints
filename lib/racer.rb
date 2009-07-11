@@ -7,4 +7,6 @@ class Racer
   has n, :races, :through => :race_participations
   has n, :tournament_participations
   has n, :tournaments, :through => :tournament_participations
+  has n, :categorizations
+  has n, :categories, :through => :categorizations, :mutable => true
 end
