@@ -1,1 +1,0 @@
-the package RJ45.fp comes from http://www.gedasymbols.org/user/cory_cross/footprints/RJ45.fp
