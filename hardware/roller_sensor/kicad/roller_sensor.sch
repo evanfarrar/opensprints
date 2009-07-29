@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue Jul 28 22:35:38 2009
+EESchema Schematic File Version 2  date Tue Jul 28 23:55:21 2009
 LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
 EELAYER 23  0
 EELAYER END
