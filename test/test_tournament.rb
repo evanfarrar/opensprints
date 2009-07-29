@@ -16,4 +16,9 @@ describe 'A tournament' do
     @tournament.races.length.should==3
   end
 
+  it 'should have a name' do
+    @tournament.name = "foo"
+    @tournament.name.should == "foo"
+  end
+
 end

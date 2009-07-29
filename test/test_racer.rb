@@ -9,6 +9,7 @@ describe 'A racer' do
   it 'should have a name' do
     @racer.name = "Evan F"
     @racer.name.should=="Evan F"
+    @racer.to_s.should=="Evan F"
   end
 
   it 'should save' do

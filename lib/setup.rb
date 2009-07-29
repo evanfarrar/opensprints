@@ -71,6 +71,7 @@ if defined? Shoes
   end
   require 'lib/racer_controller'
   require 'lib/category_controller'
+  require 'lib/tournament_controller'
 else
   require 'rubygems'
 end

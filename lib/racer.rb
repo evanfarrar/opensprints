@@ -9,4 +9,9 @@ class Racer
   has n, :tournaments, :through => :tournament_participations
   has n, :categorizations
   has n, :categories, :through => :categorizations, :mutable => true
+
+  def to_s
+    self.name
+  end
+
 end
