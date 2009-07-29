@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  Fri 05 Jun 2009 06:51:02 PM CDT
+PCBNEW-LibDoc----V1  Tue Jul 28 22:09:54 2009
 #
 $MODULE 2N7000
 Li 2N7000
@@ -15,6 +15,12 @@ $MODULE LED_5MM_LJO
 Li LED_5MM_LJO
 Cd Led verticale diam 6mm
 Kw LED DEV
+$EndMODULE
+#
+$MODULE S441A
+Li S441A
+Cd Transistor TO92 brochage type BC237
+Kw TR TO92
 $EndMODULE
 #
 $EndLIBDOC
