@@ -11,4 +11,11 @@ describe 'A race' do
     @race.racers.length.should==3
   end
 
+  it 'should be able to create race with racers' do
+    racers = [Racer.new, Racer.new, Racer.new, Racer.new]
+    r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+    r.save
+    r.racers.length.should==4
+  end
+
 end

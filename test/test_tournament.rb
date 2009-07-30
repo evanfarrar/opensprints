@@ -7,7 +7,7 @@ describe 'A tournament' do
   end
 
   it 'should have some racers' do
-    @tournament.racers = [Racer.new, Racer.new, Racer.new]
+    3.times { @tournament.tournament_participations.build(:racer => Racer.new) }
     @tournament.racers.length.should==3
   end
 
@@ -19,6 +19,22 @@ describe 'A tournament' do
   it 'should have a name' do
     @tournament.name = "foo"
     @tournament.name.should == "foo"
+  end
+
+  describe 'autofill' do
+    it 'should result in all the racers being matched' do
+      @tournament = Tournament.new
+      6.times do
+        @tournament.tournament_participations.build({:racer => Racer.create})
+      end
+      @tournament.save
+      @tournament.reload
+      @tournament.races.length.should == 0
+      @tournament.autofill
+      @tournament.races.length.should == 3
+      @tournament.save
+    end
+
   end
 
 end

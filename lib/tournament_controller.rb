@@ -41,11 +41,19 @@ class TournamentController < Shoes::Main
           racers = stack { para tournament.tournament_participations.map(&:racer).join(', ') }
           list_box(:items => Racer.all.to_a) do |list|
             tournament.tournament_participations.build(:racer => list.text)
-            racers.clear { para tournament.tournament_participations.map(&:racer).join(', ') }
+            tournament.save
+            visit "/tournaments/#{tournament.id}"
           end
         }
+        para "races:"
+        stack { tournament.races.each{|r| para r.racers.join(' vs ')} }
       }
-      button "Save" do
+      button "Autofill" do
+        tournament.autofill
+        tournament.save
+        visit "/tournaments/#{tournament.id}"
+      end
+      button "Save & close" do
         tournament.save
         visit '/tournaments'
       end
