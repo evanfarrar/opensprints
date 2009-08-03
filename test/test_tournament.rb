@@ -21,6 +21,20 @@ describe 'A tournament' do
     @tournament.name.should == "foo"
   end
 
+  describe 'unmatched_racers' do
+    it 'should contain racers not in a match' do
+      @tournament.save
+      racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
+      racers.each {|racer|
+        @tournament.tournament_participations.create({:racer => racer})
+      }
+      @tournament.unmatched_racers.should ==(racers)
+      sheila = Racer.create(:name => "Sheila")
+      @tournament.autofill
+      @tournament.tournament_participations.create({:racer => sheila})
+      @tournament.unmatched_racers.should ==([sheila])
+    end
+  end
   describe 'autofill' do
     it 'should result in all the racers being matched' do
       @tournament = Tournament.new

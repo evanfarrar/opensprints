@@ -16,4 +16,19 @@ class Tournament
       races.create(:race_participations => a.map{|r| {:racer => r}})
     }
   end
+
+  def unmatched_racers
+    racers - matched_racers
+  end
+
+private
+  def matched_racers
+    matched = []
+    races.each { |race|
+      race.race_participations.each {|rp|
+        matched << rp.racer
+      }
+    }
+    matched
+  end
 end
