@@ -12,7 +12,7 @@ class Tournament
   end
 
   def autofill
-    reload.racers.each_slice(2) { |a|
+    reload.unmatched_racers.each_slice(2) { |a|
       races.create(:race_participations => a.map{|r| {:racer => r}})
     }
   end

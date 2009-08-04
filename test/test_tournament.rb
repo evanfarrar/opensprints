@@ -48,6 +48,27 @@ describe 'A tournament' do
       @tournament.races.length.should == 3
       @tournament.save
     end
+    it 'should match only unmatched racers' do
+      @tournament = Tournament.new
+      6.times do
+        @tournament.tournament_participations.build({:racer => Racer.create})
+      end
+      @tournament.save
+      @tournament.reload
+      @tournament.races.length.should == 0
+      @tournament.autofill
+      @tournament.races.length.should == 3
+      @tournament.save
+      6.times do
+        @tournament.tournament_participations.build({:racer => Racer.create})
+      end
+      @tournament.save
+      @tournament.reload
+      @tournament.autofill
+      @tournament.races.length.should == 6
+
+    end
+
 
   end
 
