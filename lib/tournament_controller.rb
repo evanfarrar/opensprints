@@ -46,7 +46,11 @@ class TournamentController < Shoes::Main
           end
         }
         para "races:"
-        stack { tournament.races.each{|r| para r.racers.join(' vs ')} }
+        stack {
+          tournament.races.each{|r|
+            para(link r.racers.join(' vs '), :click => "/races/#{r.id}/ready")
+          }
+        }
       }
       button "Autofill" do
         tournament.autofill
