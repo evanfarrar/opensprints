@@ -4,6 +4,10 @@ module RaceHelper
   def names_to_colors(racers)
     racers.join(" vs. ").split(' ').zip(BIKES.join(" white ").split(' '))
   end
+
+  def count_text(text)
+    banner text, :font => "140px", :stroke => white, :align => 'center'
+  end
 end
 
 class RaceController < Shoes::Main
@@ -38,19 +42,18 @@ class RaceController < Shoes::Main
       when 4
         @counter.clear do
           background(rgb(200,0,0, 0.7))
-          banner "GO!!!", :font => "140px", :stroke => white, :align => 'center'
+          count_text("GO!!!")
         end
       when 1
         SENSOR.start
         @counter.clear do
           background(rgb(200,0,0, 0.7))
-          background(gradient(rgb(0,0,200, 0.7),rgb(200,0,0, 0.7), :angle => 90))
-          banner 4-count, :font => "140px", :stroke => white, :align => 'center'
+          count_text(4-count)
         end
       when 0..4
         @counter.clear do
           background(rgb(200,0,0, 0.7))
-          banner 4-count, :font => "140px", :stroke => white, :align => 'center'
+          count_text(4-count)
         end
       else
         @timer.stop
@@ -68,6 +71,7 @@ class RaceController < Shoes::Main
       rp.save
     }
     para "Hooray!"
+    SENSOR.stop
     visit "/races/#{id}/winner"
   end
 
@@ -77,7 +81,10 @@ class RaceController < Shoes::Main
     background eval(winner.color+"(0.6)")
     nav
     stack(:top => 40, :left => 0) do
-      banner "WINNER IS "+winner.racer.name.upcase, :font => "Helvetica Neue Bold", :stroke => white, :align => "center"
+      banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
+      race.race_participations.each{|r|
+        subtitle("#{r.racer.name}: #{r.finish_time} seconds", :stroke => white)
+      }
     end
   end
 end
