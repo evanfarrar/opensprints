@@ -1,4 +1,13 @@
+module RaceHelper
+  # Returns an array of the format:
+  # [["joe", "red"], ["vs.", "white],["nick","blue"]]
+  def names_to_colors(racers)
+    racers.join(" vs. ").split(' ').zip(BIKES.join(" white ").split(' '))
+  end
+end
+
 class RaceController < Shoes::Main
+  include RaceHelper
   url '/races/(\d+)/ready', :ready
   url '/races/(\d+)/countdown', :countdown
   url '/races/(\d+)', :show
@@ -8,7 +17,13 @@ class RaceController < Shoes::Main
   def ready(id)
     nav
     race = Race.get(id)
-    title race.racers.join(' vs ')
+
+    stack {
+      names_to_colors(race.racers).each {|word,color|
+        subtitle(word.upcase,:font => "Helvetica Neue Bold ", :stroke => eval(color), :align => 'center',:margin => [0]*4)
+      }
+    }
+
     para(link "Start", :click => "/races/#{id}/countdown")
   end
 
