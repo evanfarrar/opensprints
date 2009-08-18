@@ -13,4 +13,8 @@ class Race
     standings = self.race_participations.sort_by { |racer| racer.finish_time||Infinity }
     standings.first
   end
+
+  def finished?
+    race_participations.all?(&:finish_time)
+  end
 end

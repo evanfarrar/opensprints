@@ -19,7 +19,7 @@ rescue
 end
 
 $RACE_DISTANCE = options['race_distance'].to_f
-$ROLLER_CIRCUMFERENCE = options['roller_circumference'].to_f  # in METERS DAMNIT!
+$ROLLER_CIRCUMFERENCE = options['roller_circumference'].to_f
 TITLE = options['title']
 bikes = options['bikes']
 bikes.delete('')

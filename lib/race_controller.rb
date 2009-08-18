@@ -66,13 +66,34 @@ class RaceController < Shoes::Main
   def show(id)
     nav
     race = Race.get(id)
-    race.race_participations.each{|rp|
-      rp.finish_time = rand(5)
-      rp.save
-    }
-    para "Hooray!"
-    SENSOR.stop
-    visit "/races/#{id}/winner"
+    @center = flow(:width => 0.90) { }
+    @race_animation = animate(14) do
+      if race.finished?
+        @race_animation.stop
+        SENSOR.stop
+        race.save
+        visit "/races/#{id}/winner"
+      else
+        @center.clear do
+          race.race_participations.each_with_index do |racer,i|
+            racer.ticks = SENSOR.racers[i].size
+            racer.finish_time = SENSOR.finish_times[i]
+          end
+          stack do
+            race.race_participations.each_with_index do |racer,i|
+              flow {
+                stack(:width => 0.92) {
+                  background(eval(racer.color), :width => racer.percent_complete, :height => 80)
+                  subtitle(racer.racer.name,":", :stroke => white, :font => "Helvetica Neue Bold", :margin => [0]*4).displace(0,-10)
+                  subtitle(racer.speed(racer.finish_time||SENSOR.time),"mph", :stroke => white, :font => "Helvetica Neue Bold", :margin => [0]*4).displace(0,-28)
+                }
+              }
+            end
+          end
+        end
+      end
+    end
+
   end
 
   def winner(id)

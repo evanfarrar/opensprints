@@ -1,4 +1,5 @@
 class RaceParticipation
+  attr_accessor :ticks
   include DataMapper::Resource
   property :id, Serial
 
@@ -9,5 +10,17 @@ class RaceParticipation
 
   def color
     BIKES[self.race.race_participations.index(self)]
+  end
+
+  def speed(stubbed)
+    31
+  end
+
+  def percent_complete
+    [1.0, self.distance / $RACE_DISTANCE].min
+  end
+
+  def distance
+    self.ticks * $ROLLER_CIRCUMFERENCE
   end
 end
