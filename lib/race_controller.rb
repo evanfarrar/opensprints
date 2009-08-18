@@ -80,6 +80,7 @@ class RaceController < Shoes::Main
     winner = race.winner
     background eval(winner.color+"(0.6)")
     nav
+    para(link "tournament", :click => "/tournaments/#{race.tournament_id}")
     stack(:top => 40, :left => 0) do
       banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
       race.race_participations.each{|r|

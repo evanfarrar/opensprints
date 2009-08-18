@@ -11,4 +11,9 @@ class TournamentParticipation
                             :order => [:finish_time.asc]
     ).try(:finish_time)
   end
+
+  def rank
+    standings = self.tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
+    standings.index(self)+1
+  end
 end

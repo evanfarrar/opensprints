@@ -74,6 +74,7 @@ if defined? Shoes
     gem "activesupport"
     gem "bacon"
     gem "dm-core"
+    gem "dm-aggregates"
     gem "do_sqlite3"
   end
   require 'lib/racer_controller'
@@ -85,6 +86,7 @@ else
 end
 require 'activesupport'
 require 'dm-core'
+require 'dm-aggregates'
 DataMapper.setup(:default, 'sqlite3::memory:')
 require 'lib/race_participation'
 require 'lib/tournament_participation'

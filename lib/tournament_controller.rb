@@ -19,7 +19,7 @@ module TournamentHelper
                 stack(:width => 0.4) { inscription racer.racer.name, :stroke => black }
                 stack(:width => 0.2) { inscription "", :stroke => black }
                 stack(:width => 0.18) { inscription racer.best_time, :stroke => black }
-                flow(:width => 0.22) { inscription '', :stroke => black }
+                flow(:width => 0.22) { inscription racer.rank, :stroke => black }
               end
             end
           end
@@ -104,7 +104,7 @@ class TournamentController < Shoes::Main
     nav
     tournament = Tournament.get(id)
     para(link "back", :click => "/tournaments/#{id}")
-    racers = tournament.tournament_participations.to_a
+    racers = tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
     @stats = flow do
       if racers.any?
         stats_table("OVERALL",racers.shift(9))
