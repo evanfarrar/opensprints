@@ -67,7 +67,7 @@ class RaceController < Shoes::Main
     nav
     race = Race.get(id)
     race.race_participations.each{|rp|
-      rp.finish_time = rand(2)
+      rp.finish_time = rand(5)
       rp.save
     }
     para "Hooray!"

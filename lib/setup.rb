@@ -4,6 +4,12 @@ require 'time'
 require 'lib/race_data'
 require 'lib/sorty'
 Infinity = 1/0.0
+class Object
+  def try(method, *args, &block)
+    send(method, *args, &block)
+  end
+end
+
 
 begin
   options = YAML::load(File.read('conf.yml'))
