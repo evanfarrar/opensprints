@@ -77,7 +77,9 @@ class RaceController < Shoes::Main
         @center.clear do
           race.race_participations.each_with_index do |racer,i|
             racer.ticks = SENSOR.racers[i].size
-            racer.finish_time = SENSOR.finish_times[i]
+            if SENSOR.finish_times[i]
+              racer.finish_time = SENSOR.finish_times[i] / 1000.0
+            end
           end
           stack do
             race.race_participations.each_with_index do |racer,i|
@@ -105,7 +107,7 @@ class RaceController < Shoes::Main
     stack(:top => 40, :left => 0) do
       banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
       race.race_participations.each{|r|
-        subtitle("#{r.racer.name}: #{r.finish_time} seconds", :stroke => white)
+        subtitle("#{r.racer.name}: #{"%.2f" % r.finish_time} seconds", :stroke => white)
       }
     end
   end

@@ -18,7 +18,7 @@ module TournamentHelper
               flow do
                 stack(:width => 0.4) { inscription racer.racer.name, :stroke => black }
                 stack(:width => 0.2) { inscription "", :stroke => black }
-                stack(:width => 0.18) { inscription racer.best_time, :stroke => black }
+                stack(:width => 0.18) { inscription((("%.2f" % racer.best_time) if racer.best_time), :stroke => black) }
                 flow(:width => 0.22) { inscription racer.rank, :stroke => black }
               end
             end
