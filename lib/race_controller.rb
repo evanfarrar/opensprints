@@ -68,6 +68,12 @@ class RaceController < Shoes::Main
   def show(id)
     nav
     race = Race.get(id)
+    para(link "Call It", :click => lambda{
+      @race_animation.stop
+      SENSOR.stop
+      race.save
+      visit "/races/#{id}/winner"
+    })
     @center = flow(:width => 0.90) { }
     @race_animation = animate(14) do
       if race.finished?
@@ -109,7 +115,12 @@ class RaceController < Shoes::Main
     stack(:top => 40, :left => 0) do
       banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
       race.race_participations.each{|r|
-        subtitle("#{r.racer.name}: #{"%.2f" % r.finish_time} seconds", :stroke => white)
+        if r.finish_time
+          subtitle("#{r.racer.name}: #{"%.2f" % r.finish_time} seconds", :stroke => white)
+        else
+          subtitle("#{r.racer.name}: DNF", :stroke => white)
+        end
+          
       }
     end
   end
@@ -161,5 +172,7 @@ class RaceController < Shoes::Main
         visit "/races/#{id}/edit"
       end
     end
+    
+    para(link "back", :click => "/races/#{id}/ready")
   end
 end
