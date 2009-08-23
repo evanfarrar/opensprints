@@ -179,8 +179,6 @@ class RaceController < Shoes::Main
         race.race_participations.create(:racer => list.text)
         visit "/races/#{id}/edit"
       end
-
     end
-    
   end
 end
