@@ -10,42 +10,8 @@ module RaceHelper
   end
 end
 
-module SortyHelper
-  def swappy(array,item)
-    idx = array.index(item)
-    array[(yield(idx)) % array.length],array[idx] = array[idx],array[(idx-1) % array.length]
-    array
-  end
-  def swap_previous(array, item)
-    swappy(array,item){|idx| idx-1}
-  end
-  def swap_next(array, item)
-    swappy(array,item){|idx| idx+1}
-  end
-  def names_n_colors(people, colors, race)
-    clear do
-      names_n_colors = colors.zip(people).map do |color, person|
-        flow(:height => 70, :width => 200) do
-          border color, :strokewidth => 4
-          my_label = subtitle person
-          fill @previous_color.next
-          rotate(90)
-          a = arrow(104, 5, 30)
-          a.click { names_n_colors(swap_previous(people, person), colors, race)  }
-          fill @next_color.next
-          rotate(180)
-          a = arrow(90, 45, 30)
-          a.click { names_n_colors(swap_next(people, person), colors, race)  }
-        end
-      end
-    end
-  end
-
-end
-
 class RaceController < Shoes::Main
   include RaceHelper
-  include SortyHelper
   url '/races/(\d+)/ready', :ready
   url '/races/(\d+)/countdown', :countdown
   url '/races/(\d+)', :show
