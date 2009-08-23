@@ -74,6 +74,11 @@ class RaceController < Shoes::Main
       race.save
       visit "/races/#{id}/winner"
     })
+    para(link "Redo", :click => lambda{
+      @race_animation.stop
+      SENSOR.stop
+      visit "/races/#{id}/ready"
+    })
     @center = flow(:width => 0.90) { }
     @race_animation = animate(14) do
       if race.finished?
@@ -120,7 +125,6 @@ class RaceController < Shoes::Main
         else
           subtitle("#{r.racer.name}: DNF", :stroke => white)
         end
-          
       }
     end
   end
