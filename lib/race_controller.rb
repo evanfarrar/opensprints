@@ -163,12 +163,27 @@ class RaceController < Shoes::Main
   def edit(id)
     race = Race.get(id)
     stack do
-      race.race_participations.each do |racer|
-        flow(:height => 70, :width => 200) do
-          border eval(racer.color), :strokewidth => 4
-          subtitle racer.racer.name
+      race.race_participations.each do |race_participation|
+        flow(:height => 70, :width => 400) do
+          border eval(race_participation.color), :strokewidth => 4
+          subtitle race_participation.racer.name
+          
+          para( "move to:")
+          list_box(:items => $BIKES) do |list|
+            new_color = list.text
+            racer = race_participation.racer
+            racers = race.racers
+            old_index = racers.index(racer)
+            new_index = $BIKES.index(new_color)
+            racers[new_index],racers[old_index] = racer,racers[new_index] 
+            race.race_participations.destroy!
+            racers.map {|r|
+              race.race_participations.create(:racer => r)
+            }
+            visit "/races/#{id}/edit"
+          end
           para(link "delete", :click => lambda {
-            racer.destroy
+            race_participation.destroy
             visit "/races/#{id}/edit"
           })
         end
