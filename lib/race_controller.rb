@@ -148,7 +148,7 @@ class RaceController < Shoes::Main
     end
   end
 
-  def edit(id)
+  def edit_off(id)
     colors = $BIKES.map{|b|eval(b)}
     @next_color = colors.cycle
     @next_color.next
@@ -157,8 +157,30 @@ class RaceController < Shoes::Main
     @previous_color = colors.cycle
     (colors.length - 1).times { @previous_color.next }
 
-
-
     names_n_colors(race.racers, colors, race)
+  end
+
+  def edit(id)
+    race = Race.get(id)
+    stack do
+      race.race_participations.each do |racer|
+        flow(:height => 70, :width => 200) do
+          border eval(racer.color), :strokewidth => 4
+          subtitle racer.racer.name
+          para(link "delete", :click => lambda {
+            racer.destroy
+            visit "/races/#{id}/edit"
+          })
+        end
+      end
+    end
+    if($BIKES.length > race.race_participations.count)
+      list_box(:items => race.tournament.unmatched_racers) do |list|
+        race.race_participations.create(:racer => list.text)
+        visit "/races/#{id}/edit"
+      end
+
+    end
+    
   end
 end
