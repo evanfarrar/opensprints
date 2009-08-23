@@ -23,7 +23,7 @@ $ROLLER_CIRCUMFERENCE = options['roller_circumference'].to_f
 TITLE = options['title']
 bikes = options['bikes']
 bikes.delete('')
-BIKES = bikes
+$BIKES = bikes
 load "lib/sensors/#{options['sensor']['type']}_sensor.rb"
 class MissingArduinoError < RuntimeError; end
 

@@ -18,7 +18,7 @@ describe 'A race' do
       racers = [Racer.new, Racer.new, Racer.new, Racer.new]
       r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
       r.save
-      r.race_participations.first.color.should== BIKES.first
+      r.race_participations.first.color.should== $BIKES.first
     end
   end
 

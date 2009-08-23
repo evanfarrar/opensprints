@@ -4,6 +4,7 @@ require 'bacon'
 describe 'A tournament' do
   before do
     @tournament = Tournament.new
+    $BIKES = ["red", "blue"]
   end
 
   it 'should have some racers' do
@@ -66,7 +67,21 @@ describe 'A tournament' do
       @tournament.reload
       @tournament.autofill
       @tournament.races.length.should == 6
+    end
 
+    it 'should make races with as many riders as there are bikes' do
+      @tournament = Tournament.new
+      $BIKES = ["red","blue","yellow"]
+      6.times do
+        @tournament.tournament_participations.build({:racer => Racer.create})
+      end
+      @tournament.save
+      @tournament.reload
+      @tournament.races.length.should == 0
+      @tournament.autofill
+      @tournament.races.length.should == 2
+      @tournament.save
+      
     end
 
 

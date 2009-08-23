@@ -9,7 +9,7 @@ class RaceParticipation
   property :finish_time, BigDecimal
 
   def color
-    BIKES[self.race.race_participations.index(self)]
+    $BIKES[self.race.race_participations.index(self)]
   end
 
   def speed(stubbed)

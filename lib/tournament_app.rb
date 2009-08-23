@@ -53,9 +53,9 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
 
   def redblue(race)
     image(20, 20, {:top => 8, :left => 340}) do
-      fill eval(BIKES[0])
+      fill eval($BIKES[0])
       rect(:top => 0, :left => 0, :height => 15, :width => 7)
-      fill eval(BIKES[1])
+      fill eval($BIKES[1])
       rect(:top => 0, :left => 7, :height => 15, :width => 7)
       click do
         case race.racers.length
@@ -64,7 +64,7 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
           race.racers[0], race.racers[1] = race.racers[1], race.racers[0]
           @matches.clear {list_matches }
         else
-          sort_names(race, BIKES.map{|b| eval b}) { @matches.clear { list_matches }}
+          sort_names(race, $BIKES.map{|b| eval b}) { @matches.clear { list_matches }}
         end
       end
     end
@@ -131,10 +131,10 @@ Shoes.app(:title => TITLE, :width => 800, :height => 600) do
         border black
         flow(:width => 270) do
           # FIXME THIS IS HORRENDOUS
-          para((span(match.racers[0].name+" ", :stroke => eval(BIKES[0])) if match.racers[0]),
-               (span(match.racers[1].name+" ", :stroke => eval(BIKES[1])) if match.racers[1]),
-               (span(match.racers[2].name+" ", :stroke => eval(BIKES[2])) if match.racers[2]),
-               (span(match.racers[3].name+" ", :stroke => eval(BIKES[3])) if match.racers[3]),
+          para((span(match.racers[0].name+" ", :stroke => eval($BIKES[0])) if match.racers[0]),
+               (span(match.racers[1].name+" ", :stroke => eval($BIKES[1])) if match.racers[1]),
+               (span(match.racers[2].name+" ", :stroke => eval($BIKES[2])) if match.racers[2]),
+               (span(match.racers[3].name+" ", :stroke => eval($BIKES[3])) if match.racers[3]),
                :weight => "ultrabold")
         end
         button("race")do
