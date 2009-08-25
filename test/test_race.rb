@@ -58,4 +58,37 @@ describe 'A race' do
       r.winner.racer.name.should==("Steve")
     end
   end
+
+  describe 'raced' do
+    it 'should track whether or not the race has been run' do
+      r = Race.create
+      r.raced?.should==(false) 
+      r.raced = true
+      r.raced?.should==(true) 
+    end
+
+    it 'should have a converse: unraced?' do
+      r = Race.create
+      r.unraced?.should==(true) 
+      r.raced = true
+      r.unraced?.should==(false) 
+    end
+  end
+
+  describe 'next race' do
+    it 'should be the next one after this one' do
+      t = Tournament.create
+      r1 = Race.create(:tournament => t)
+      r2 = Race.create(:tournament => t)
+      r1.next_race.should==(r2)
+    end
+
+    it 'should only show the next unraced race' do
+      t = Tournament.create
+      r1 = Race.create(:tournament => t)
+      r2 = Race.create(:tournament => t, :raced => true)
+      r3 = Race.create(:tournament => t)
+      r1.next_race.should==(r3)
+    end
+  end
 end

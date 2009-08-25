@@ -27,10 +27,15 @@ class RaceController < Shoes::Main
       names_to_colors(race.racers).each {|word,color|
         subtitle(word.upcase,:font => "Helvetica Neue Bold ", :stroke => eval(color), :align => 'center',:margin => [0]*4)
       }
+      flow {
+        para(link("next race: ",race.next_race.racers.join(", "), :click => "/races/#{race.next_race.id}/ready"))
+      }
+      flow {
+        para(link "Start", :click => "/races/#{id}/countdown")
+        para(link "Edit Race", :click => "/races/#{id}/edit")
+      }
     }
-
-    para(link "Start", :click => "/races/#{id}/countdown")
-    para(link "Edit Race", :click => "/races/#{id}/edit")
+    
   end
 
   def countdown(id)
@@ -71,6 +76,7 @@ class RaceController < Shoes::Main
     para(link "Call It", :click => lambda{
       @race_animation.stop
       SENSOR.stop
+      race.raced = true
       race.save
       visit "/races/#{id}/winner"
     })
@@ -84,6 +90,7 @@ class RaceController < Shoes::Main
       if race.finished?
         @race_animation.stop
         SENSOR.stop
+        race.raced = true
         race.save
         visit "/races/#{id}/winner"
       else
@@ -126,6 +133,7 @@ class RaceController < Shoes::Main
           subtitle("#{r.racer.name}: DNF", :stroke => white)
         end
       }
+      para(link("next race: ",race.next_race.racers.join(", "), :click => "/races/#{race.next_race.id}/ready"))
     end
   end
 
@@ -150,7 +158,7 @@ class RaceController < Shoes::Main
           subtitle race_participation.racer.name
           
           para( "move to:")
-          list_box(:items => $BIKES) do |list|
+          list_box(:items => race.race_participations.map(&:color) - [race_participation.color]) do |list|
             new_color = list.text
             racer = race_participation.racer
             racers = race.racers

@@ -1,11 +1,20 @@
 class Race
   include DataMapper::Resource
   property :id, Serial
+  property :raced, Boolean, :default => false
   has n, :race_participations
   belongs_to :tournament
 
   def racers
     race_participations.map(&:racer)
+  end
+
+  def unraced?
+    !raced?
+  end
+
+  def next_race
+    (tournament.races.all(:raced => false) - [self]).first
   end
 
   def winner
