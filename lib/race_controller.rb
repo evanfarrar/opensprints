@@ -27,9 +27,11 @@ class RaceController < Shoes::Main
       names_to_colors(race.racers).each {|word,color|
         subtitle(word.upcase,:font => "Helvetica Neue Bold ", :stroke => eval(color), :align => 'center',:margin => [0]*4)
       }
-      flow {
-        para(link("next race: ",race.next_race.racers.join(", "), :click => "/races/#{race.next_race.id}/ready"))
-      }
+      if next_race = race.next_race
+        flow {
+          para(link("next race: ",next_race.racers.join(", "), :click => "/races/#{next_race.id}/ready"))
+        }
+      end
       flow {
         para(link "Start", :click => "/races/#{id}/countdown")
         para(link "Edit Race", :click => "/races/#{id}/edit")
@@ -133,7 +135,9 @@ class RaceController < Shoes::Main
           subtitle("#{r.racer.name}: DNF", :stroke => white)
         end
       }
-      para(link("next race: ",race.next_race.racers.join(", "), :click => "/races/#{race.next_race.id}/ready"))
+      if next_race = race.next_race
+        para(link("next race: ",next_race.racers.join(", "), :click => "/races/#{next_race.id}/ready"))
+      end
     end
   end
 
