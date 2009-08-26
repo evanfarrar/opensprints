@@ -22,6 +22,16 @@ describe 'A tournament' do
     @tournament.name.should == "foo"
   end
 
+  it 'should know the unregistered racers' do
+    Racer.all.destroy!
+    @tournament = Tournament.new
+    6.times do
+      @tournament.tournament_participations.build({:racer => Racer.create})
+    end
+    unregistered_racer = Racer.create
+    @tournament.unregistered_racers.should==([unregistered_racer])
+  end
+
   describe 'unmatched_racers' do
     it 'should contain racers not in a match' do
       @tournament.save
@@ -36,6 +46,7 @@ describe 'A tournament' do
       @tournament.unmatched_racers.should ==([sheila])
     end
   end
+
   describe 'autofill' do
     it 'should result in all the racers being matched' do
       @tournament = Tournament.new
@@ -49,6 +60,7 @@ describe 'A tournament' do
       @tournament.races.length.should == 3
       @tournament.save
     end
+
     it 'should match only unmatched racers' do
       @tournament = Tournament.new
       6.times do
@@ -81,10 +93,6 @@ describe 'A tournament' do
       @tournament.autofill
       @tournament.races.length.should == 2
       @tournament.save
-      
     end
-
-
   end
-
 end

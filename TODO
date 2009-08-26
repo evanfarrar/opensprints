@@ -5,10 +5,7 @@ Infrastructure
   * debian packaging
 
 Tournaments
-  * delete race
-  * delete racer
   * filter by category
-  * Add racer only includes racers not already in the tournament
   * List of races only includes races that have not been raced
 
 Races

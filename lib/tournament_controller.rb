@@ -73,8 +73,18 @@ class TournamentController < Shoes::Main
       flow {
         para "racers:"
         stack {
-          racers = stack { para tournament.tournament_participations.map(&:racer).join(', ') }
-          list_box(:items => Racer.all.to_a) do |list|
+          racers = stack { 
+            tournament.tournament_participations.each do |tp|
+              flow {
+                para(
+                  tp.racer.name, 
+                  link("delete",
+                    :click => lambda{tp.destroy; visit "/tournaments/#{tournament.id}"}),
+                  :margin => [1]*4)
+              }
+            end
+          }
+          list_box(:items => tournament.unregistered_racers.to_a) do |list|
             tournament.tournament_participations.build(:racer => list.text)
             tournament.save
             visit "/tournaments/#{tournament.id}"
@@ -82,8 +92,11 @@ class TournamentController < Shoes::Main
         }
         para "races:"
         stack {
-          tournament.races.each{|r|
-            para(link r.racers.join(' vs '), :click => "/races/#{r.id}/ready")
+          tournament.races.each{|race|
+            para(
+              link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready"),' ',
+              link("delete", :click => lambda{ race.destroy; visit "/tournaments/#{tournament.id}" })
+            )
           }
         }
       }

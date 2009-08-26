@@ -21,6 +21,10 @@ class Tournament
     racers - matched_racers
   end
 
+  def unregistered_racers
+    Racer.all - racers
+  end
+
 private
   def matched_racers
     matched = []
