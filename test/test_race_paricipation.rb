@@ -29,4 +29,8 @@ describe 'A race participation' do
       @r.percent_complete.should==(1.0)
     end
   end
+
+  describe 'speed' do
+    it 'should give a speed based on a certain time'
+  end
 end
