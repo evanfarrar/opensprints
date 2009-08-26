@@ -1,6 +1,6 @@
-PCBNEW-BOARD Version 1 date Tue Aug 25 23:20:00 2009
+PCBNEW-BOARD Version 1 date Wed 26 Aug 2009 01:22:11 PM CDT
 
-# Created by Pcbnew(20090603 SVN-R1805)
+# Created by Pcbnew(20090605 SVN-R1808)
 
 $GENERAL
 LayerCount 2
@@ -1124,7 +1124,7 @@ Po 39000 31500 400 400 60 0
 De 15 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
-Te "roller sensor v2.2.2 LJO 2009.07.28"
+Te "roller sensor v2.2.3 LJO 2009.08.26"
 Po 41500 39050 300 400 75 900
 De 0 0 0 Normal
 $EndTEXTPCB
