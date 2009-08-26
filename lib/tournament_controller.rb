@@ -94,7 +94,11 @@ class TournamentController < Shoes::Main
         stack {
           tournament.races.each{|race|
             para(
-              link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready"),' ',
+              if race.unraced?
+                link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready")
+              else
+                del(race.racers.join(' vs '))
+              end,' ',
               link("delete", :click => lambda{ race.destroy; visit "/tournaments/#{tournament.id}" })
             )
           }
