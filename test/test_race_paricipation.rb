@@ -31,6 +31,6 @@ describe 'A race participation' do
   end
 
   describe 'speed' do
-    it 'should give a speed based on a certain time'
+#    it 'should give a speed based on a certain time'
   end
 end
