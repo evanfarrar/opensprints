@@ -1,7 +1,4 @@
-require 'lib/styles'
-
 class Main < Shoes
-  include Styles
   url '/', :index
 
   def custom_styles
@@ -62,4 +59,4 @@ Kernel::Main = Main
 require 'lib/setup.rb'
 load 'test/fixtures.rb'
 
-Shoes.app(:height => W_HEIGHT=675, :width => W_WIDTH=1015, :scroll => false)
+Shoes.app(:height => HEIGHT, :width => WIDTH, :scroll => false)

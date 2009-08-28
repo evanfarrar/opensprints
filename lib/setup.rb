@@ -10,12 +10,26 @@ class Object
   end
 end
 
+unless defined? Shoes
+  lib_dir = nil
+  homes = []
+  homes << [ENV['HOME'], File.join( ENV['HOME'], '.shoes' )] if ENV['HOME']
+  homes << [ENV['APPDATA'], File.join( ENV['APPDATA'], 'Shoes' )] if ENV['APPDATA']
+  homes.each do |home_top, home_dir|
+    next unless home_top
+    if File.exists? home_top
+      lib_dir = home_dir
+      break
+    end
+  end
+  LIB_DIR = lib_dir
+end
 
 begin
-  options = YAML::load(File.read('conf.yml'))
+  options = YAML::load(File.read(LIB_DIR+'opensprints_conf.yml'))
 rescue
-  FileUtils.cp 'conf-sample.yml', 'conf.yml'
-  options = YAML::load(File.read('conf.yml'))
+  FileUtils.cp 'conf-sample.yml', LIB_DIR+'opensprints_conf.yml'
+  options = YAML::load(File.read(LIB_DIR+'opensprints_conf.yml'))
 end
 
 $RACE_DISTANCE = options['race_distance'].to_f
@@ -32,13 +46,12 @@ begin
 rescue MissingArduinoError
   if defined? Shoes
     alert "The arduino could not be found at the configured address! Check your configuration."
-    load "lib/config_app.rb"
   end
   load "lib/sensors/mock_sensor.rb"
 end
 
-HEIGHT = options['window_height']||600
-WIDTH = options['window_width']||800
+HEIGHT = options['window_height'].to_i.nonzero?||600
+WIDTH = options['window_width'].to_i.nonzero?||800
 
 if defined? Shoes
   if options['background']
@@ -77,7 +90,7 @@ if defined? Shoes
     gem "dm-aggregates"
     gem "do_sqlite3"
   end
-  require 'lib/racer_controller'
+  require 'lib/config_controller'
   require 'lib/racer_controller'
   require 'lib/race_controller'
   require 'lib/category_controller'
