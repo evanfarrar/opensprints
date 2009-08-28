@@ -1,4 +1,4 @@
-update=Thu 04 Jun 2009 07:32:52 PM CDT
+update=Wed 26 Aug 2009 01:08:34 PM CDT
 last_client=kicad
 [cvpcb]
 version=1
@@ -136,5 +136,3 @@ LibName8=display
 LibName9=valves
 [general]
 version=1
-RootSch=
-BoardNm=
