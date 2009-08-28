@@ -76,7 +76,6 @@ if defined? Shoes
     gem "dm-core"
     gem "dm-aggregates"
     gem "do_sqlite3"
-    gem "ruby-debug"
   end
   require 'lib/racer_controller'
   require 'lib/racer_controller'

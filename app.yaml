@@ -8,6 +8,6 @@ icons:
 dmg:
   ds_store: platform/mac/dmg_ds_store
   background: static/hacketyhack-dmg.jpg
-run: app/main.rb
+run: app/new.rb
 clone: git checkout-index --prefix=dist/app/ -a
-ignore: [firmware]
+ignore: [firmware, hardware]
