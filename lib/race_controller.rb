@@ -17,6 +17,7 @@ class RaceController < Shoes::Main
   url '/races/(\d+)', :show
   url '/races/(\d+)/winner', :winner
   url '/races/(\d+)/edit', :edit
+  url '/races/new/tournament/(\d+)', :new_in_tournament
 
 
   def ready(id)
@@ -181,15 +182,27 @@ class RaceController < Shoes::Main
             })
           end
         end
-      end
-      if($BIKES.length > race.race_participations.count)
-        list_box(:items => race.tournament.unmatched_racers) do |list|
-          race.race_participations.create(:racer => list.text)
-          visit "/races/#{id}/edit"
-        end
+        flow {
+          if($BIKES.length > race.race_participations.count)
+            para "add a racer:"
+            list_box(:items => race.tournament.unmatched_racers) do |list|
+              race.race_participations.create(:racer => list.text)
+              visit "/races/#{id}/edit"
+            end
+          end
+        }
+        stack {
+          para(link "back", :click => "/races/#{id}/ready")
+          para(link "save & start race", :click => "/races/#{id}/ready")
+          para(link "save & return to tournament", :click => "/tournaments/#{race.tournament_id}") if race.tournament_id
+        }
       end
       
-      para(link "back", :click => "/races/#{id}/ready")
     }
+  end
+
+  def new_in_tournament(tournament_id)
+    race = Race.create(:tournament_id => tournament_id)
+    visit "/races/#{race.id}/edit"
   end
 end

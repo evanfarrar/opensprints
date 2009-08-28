@@ -111,6 +111,10 @@ class TournamentController < Shoes::Main
           )
         }
       }
+      stack(:width => 1.0) {
+        para(link("add a new race", :click => "/races/new/tournament/#{tournament.id}"))
+      }
+      
     }
     @left.clear do
       button "Autofill" do
@@ -118,12 +122,6 @@ class TournamentController < Shoes::Main
         tournament.save
         visit "/tournaments/#{tournament.id}"
       end
-      #flow {
-      #  para "name:"
-      #  edit_line(tournament.name) do |edit|
-      #    tournament.name = edit.text
-      #  end
-      #}
     end
   end
 

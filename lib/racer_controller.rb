@@ -20,10 +20,10 @@ class RacerController < Shoes::Main
     }
   end
 
-  def new
+  def edit(id)
+    racer = Racer.get(id)
     layout
     @center.clear {
-      racer = Racer.new
       stack{
         flow {
           para "name:"
@@ -34,56 +34,46 @@ class RacerController < Shoes::Main
         flow {
           para "categories:"
           stack {
-            categories = stack { para racer.categorizations.map(&:category).join(', ') }
+            stack {
+              racer.categorizations.each { |categorization|
+                flow {
+                  para categorization.category.name
+                  para(link("delete",:click => lambda {
+                    categorization.destroy
+                    visit "/racers/#{id}"              
+                  }))
+                }
+              }
+            }
             list_box(:items => Category.all.to_a) do |list|
-              racer.categorizations.build(:category => list.text)
-              categories.clear { para racer.categorizations.map(&:category).join(', ') }
+              racer.save
+              racer.categorizations.create(:category => list.text)
+              visit "/racers/#{id}"              
             end
           }
         }
         button "Save" do
           racer.save
-          visit referrer
+          if defined?(@@referrer)&&@@referrer
+            visit @@referrer
+          else
+            visit '/racers'
+          end
         end
       }
     }
+  end
+
+  def new
+    racer = Racer.create
+    visit "/racers/#{racer.id}"
   end
 
   def new_in_tournament(tournament_id)
-    layout
-    @center.clear {
-      racer = Racer.new
-      stack{
-        flow {
-          para "name:"
-          edit_line(racer.name) do |edit|
-            racer.name = edit.text
-          end
-        }
-        flow {
-          para "categories:"
-          stack {
-            categories = stack { para racer.categorizations.map(&:category).join(', ') }
-            list_box(:items => Category.all.to_a) do |list|
-              racer.categorizations.build(:category => list.text)
-              categories.clear { para racer.categorizations.map(&:category).join(', ') }
-            end
-          }
-        }
-        button "Save" do
-          racer.save
-          TournamentParticipation.create(:racer => racer, :tournament_id => tournament_id)
-          visit "/tournaments/#{tournament_id}"
-        end
-      }
-    }
+    racer = Racer.create
+    TournamentParticipation.create(:racer => racer, :tournament_id => tournament_id)
+    @@referrer ||= "/tournaments/#{tournament_id}"
+    visit "/racers/#{racer.id}"
   end
 
-  def edit(id)
-    layout
-    @center.clear {
-      racer = Racer.get(id)
-      racer_form(racer)
-    }
-  end
 end
