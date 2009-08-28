@@ -134,15 +134,31 @@ class ConfigController < Shoes::Main
             end
           end
 
+          stack(:margin => 20) do
+            para 'window height:'
+            edit_line(@prefs['window_height']) do |edit|
+              @prefs['window_height'] = edit.text
+            end
+            para 'window width:'
+            edit_line(@prefs['window_width']) do |edit|
+              @prefs['window_width'] = edit.text
+            end
+          end
+
 
         end
         stack do
           button "Save!" do
             @prefs['bikes'].compact!
+            old_width = WIDTH
+            old_height = HEIGHT
             File.open(LIB_DIR+'opensprints_conf.yml', 'w+') do |f|
               f << @prefs.to_yaml
             end
             load "lib/setup.rb"
+            if(old_width!=WIDTH||old_height!=HEIGHT)
+              alert("window dimensions have changed, please restart opensprints for this to take effect.")
+            end
             alert('Preferences saved!')
             visit '/'
           end
