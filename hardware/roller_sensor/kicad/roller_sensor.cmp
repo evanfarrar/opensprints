@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20090216-final) date = Fri 05 Jun 2009 06:51:33 PM CDT
+Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = Tue Jul 28 22:32:32 2009
 
 BeginCmp
 TimeStamp = /4A273637;
@@ -64,6 +64,34 @@ IdModule  = PROTO_PINS_8x4_LJO;
 EndCmp
 
 BeginCmp
+TimeStamp = /4A6FBEFA;
+Reference = P3;
+ValeurCmp = JUMPER_PIN;
+IdModule  = PIN_PROTO_LJO;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A6FBF03;
+Reference = P4;
+ValeurCmp = JUMPER_PIN;
+IdModule  = PIN_PROTO_LJO;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A6FBF06;
+Reference = P5;
+ValeurCmp = JUMPER_PIN;
+IdModule  = PIN_PROTO_LJO;
+EndCmp
+
+BeginCmp
+TimeStamp = /4A6FBF09;
+Reference = P6;
+ValeurCmp = JUMPER_PIN;
+IdModule  = PIN_PROTO_LJO;
+EndCmp
+
+BeginCmp
 TimeStamp = /49DF8AA5;
 Reference = R1;
 ValeurCmp = 150;
@@ -88,28 +116,28 @@ BeginCmp
 TimeStamp = /49C59A51;
 Reference = U1;
 ValeurCmp = SS441A;
-IdModule  = TO92;
+IdModule  = S441A;
 EndCmp
 
 BeginCmp
 TimeStamp = /49C83B66;
 Reference = U2;
 ValeurCmp = SS441A;
-IdModule  = TO92;
+IdModule  = S441A;
 EndCmp
 
 BeginCmp
 TimeStamp = /49DFC7F9;
 Reference = U3;
 ValeurCmp = SS441A;
-IdModule  = TO92;
+IdModule  = S441A;
 EndCmp
 
 BeginCmp
 TimeStamp = /49C83B82;
 Reference = U4;
 ValeurCmp = SS441A;
-IdModule  = TO92;
+IdModule  = S441A;
 EndCmp
 
 EndListe

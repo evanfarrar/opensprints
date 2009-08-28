@@ -1,7 +1,0 @@
-OpenSprints is a system of open source hardware, software and instructions for building and running goldsprints, AKA indoor bicycle roller racing. Feel the still air not rushing by you as you pedal your hardest ever without moving an inch. It's all over after less than 20 seconds and you stumble off the bike looking for the nearest waste bin.
-
-This Interface PCB is basically a large Arduino shield that runs signal lines from digital IO pins, 5V, and GND out to RJ45 jacks. This PCB is designed specifically to mount to the SERPAC A-31 plastic enclosure. (See http://www.serpac.com/Products/Aseries/a-31.aspx). Lots of prototyping area allows for extending the hardware as you see fit. Ethernet cables are used to connect roller sensors to this Interface PCB. The roller sensor boards are available from BatchPCB as well.
-
-Check out opensprints.org for more details about the system, which also includes a multi-platform PC app written in Shoes/Ruby, and, you guessed it, it's free/libre software.
-
-From time to time we make mass orders of these PCBs to get a way better price. Thanks to BatchPCB for letting us make these boards available to any (potential) OpenSprints hackers in a pinch for PCBs.

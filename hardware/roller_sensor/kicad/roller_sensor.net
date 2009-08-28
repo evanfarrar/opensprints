@@ -1,86 +1,98 @@
-# EESchema Netlist Version 1.1 created  Fri 05 Jun 2009 06:51:33 PM CDT
+# EESchema Netlist Version 1.1 created  Tue Jul 28 22:35:43 2009
 (
- ( /4A273637 C1 C1 C
-  ( 1 /VCC )
-  ( 2 /GND )
+ ( /4A6FBF09 $noname  P6 JUMPER_PIN {Lib=JUMPER_PIN}
+  (    ~ /VOUT )
  )
- ( /4A1F5D68 C-6_CIRCUIT_BOARD CB1 C-6_CIRCUIT_BOARD
+ ( /4A6FBF06 $noname  P5 JUMPER_PIN {Lib=JUMPER_PIN}
+  (    ~ /VCC )
  )
- ( /49C835C2 LED_5MM_LJO D1 RED_LED
-  ( 1 /VCC )
-  ( 2 N-000011 )
+ ( /4A6FBF03 $noname  P4 JUMPER_PIN {Lib=JUMPER_PIN}
+  (    ~ /VOUT )
  )
- ( /49C834FE LED_5MM_LJO D2 GRN_LED
-  ( 1 /START/STOP )
-  ( 2 N-000012 )
+ ( /4A6FBEFA $noname  P3 JUMPER_PIN {Lib=JUMPER_PIN}
+  (    ~ /VCC )
  )
- ( /49E3884B LED_5MM_LJO D3 WHT_LED
-  ( 1 /VCC )
-  ( 2 N-000010 )
+ ( /4A29AB13 $noname  P2 PROTOTYPING_PINS {Lib=PROTOTYPING_PINS}
  )
- ( /49C834DF RJ45_8_LJO J1 RJ45
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
-  ( 4 /START/STOP )
-  ( 5 /LED0 )
-  ( 6 /LED1 )
-  ( 7 /LED2 )
-  ( 8 /LED3 )
+ ( /4A273637 $noname  C1 C {Lib=C}
+  (    1 /VCC )
+  (    2 /GND )
  )
- ( /49DF9008 RJ45_8_LJO J2 RJ45
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
-  ( 4 /START/STOP )
-  ( 5 /LED0 )
-  ( 6 /LED1 )
-  ( 7 /LED2 )
-  ( 8 /LED3 )
+ ( /4A1F5D68 $noname  CB1 C-6_CIRCUIT_BOARD {Lib=C-6_CIRCUIT_BOARD}
  )
- ( /49E1EB87 SIL-8 P1 CONN_8
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
-  ( 4 /START/STOP )
-  ( 5 /LED0 )
-  ( 6 /LED1 )
-  ( 7 /LED2 )
-  ( 8 /LED3 )
+ ( /49E3884E $noname  R3 68 {Lib=R}
+  (    1 N-000010 )
+  (    2 /VOUT )
  )
- ( /4A29AB13 PROTO_PINS_8x4_LJO P2 PROTOTYPING_PINS
+ ( /49E3884B $noname  D3 WHT_LED {Lib=LED}
+  (    1 /VCC )
+  (    2 N-000010 )
  )
- ( /49DF8AA5 R1 R1 150
-  ( 1 N-000011 )
-  ( 2 /START/STOP )
+ ( /49E1EB87 $noname  P1 CONN_8 {Lib=CONN_8}
+  (    1 /VCC )
+  (    2 /GND )
+  (    3 /VOUT )
+  (    4 /START/STOP )
+  (    5 /LED0 )
+  (    6 /LED1 )
+  (    7 /LED2 )
+  (    8 /LED3 )
  )
- ( /49DF899F R1 R2 68
-  ( 1 N-000012 )
-  ( 2 /GND )
+ ( /49DFC7F9 $noname  U3 SS441A {Lib=SS441A}
+  (    1 /VCC )
+  (    2 /GND )
+  (    3 /VOUT )
  )
- ( /49E3884E R1 R3 68
-  ( 1 N-000010 )
-  ( 2 /VOUT )
+ ( /49DF9008 $noname  J2 RJ45 {Lib=RJ45}
+  (    1 /VCC )
+  (    2 /GND )
+  (    3 /VOUT )
+  (    4 /START/STOP )
+  (    5 /LED0 )
+  (    6 /LED1 )
+  (    7 /LED2 )
+  (    8 /LED3 )
  )
- ( /49C59A51 TO92 U1 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( /49DF8AA5 $noname  R1 150 {Lib=R}
+  (    1 N-000011 )
+  (    2 /START/STOP )
  )
- ( /49C83B66 TO92 U2 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( /49DF899F $noname  R2 68 {Lib=R}
+  (    1 N-000012 )
+  (    2 /GND )
  )
- ( /49DFC7F9 TO92 U3 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( /49C83B82 $noname  U4 SS441A {Lib=SS441A}
+  (    1 /VCC )
+  (    2 /GND )
+  (    3 /VOUT )
  )
- ( /49C83B82 TO92 U4 SS441A
-  ( 1 /VCC )
-  ( 2 /GND )
-  ( 3 /VOUT )
+ ( /49C83B66 $noname  U2 SS441A {Lib=SS441A}
+  (    1 /VCC )
+  (    2 /GND )
+  (    3 /VOUT )
+ )
+ ( /49C835C2 $noname  D1 RED_LED {Lib=LED}
+  (    1 /VCC )
+  (    2 N-000011 )
+ )
+ ( /49C834FE $noname  D2 GRN_LED {Lib=LED}
+  (    1 /START/STOP )
+  (    2 N-000012 )
+ )
+ ( /49C834DF $noname  J1 RJ45 {Lib=RJ45}
+  (    1 /VCC )
+  (    2 /GND )
+  (    3 /VOUT )
+  (    4 /START/STOP )
+  (    5 /LED0 )
+  (    6 /LED1 )
+  (    7 /LED2 )
+  (    8 /LED3 )
+ )
+ ( /49C59A51 $noname  U1 SS441A {Lib=SS441A}
+  (    1 /VCC )
+  (    2 /GND )
+  (    3 /VOUT )
  )
 )
 *
@@ -90,23 +102,10 @@ $component C1
  C?
  C1-1
 $endlist
-$component D1
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component D2
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
+$component R3
+ R?
+ SM0603
+ SM0805
 $endlist
 $component D3
  LED-3MM
@@ -115,7 +114,6 @@ $component D3
  LED-0603
  LED-0805
  LED-1206
- LEDV
 $endlist
 $component R1
  R?
@@ -127,10 +125,89 @@ $component R2
  SM0603
  SM0805
 $endlist
-$component R3
- R?
- SM0603
- SM0805
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
 $endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 2 "/LED3" "LED3"
+ P1 8
+ J2 8
+ J1 8
+Net 3 "/LED1" "LED1"
+ P1 6
+ J2 6
+ J1 6
+Net 4 "/START/STOP" "START/STOP"
+ P1 4
+ J2 4
+ R1 2
+ D2 1
+ J1 4
+Net 5 "/GND" "GND"
+ C1 2
+ P1 2
+ U3 2
+ J2 2
+ R2 2
+ U4 2
+ U2 2
+ J1 2
+ U1 2
+Net 6 "/VCC" "VCC"
+ P5 ~
+ P3 ~
+ C1 1
+ D3 1
+ P1 1
+ U3 1
+ J2 1
+ U4 1
+ U2 1
+ D1 1
+ J1 1
+ U1 1
+Net 7 "/LED0" "LED0"
+ P1 5
+ J2 5
+ J1 5
+Net 8 "/LED2" "LED2"
+ P1 7
+ J2 7
+ J1 7
+Net 9 "/VOUT" "VOUT"
+ P6 ~
+ P4 ~
+ R3 2
+ P1 3
+ U3 3
+ J2 3
+ U4 3
+ U2 3
+ J1 3
+ U1 3
+Net 10 "" ""
+ R3 1
+ D3 2
+Net 11 "" ""
+ R1 1
+ D1 2
+Net 12 "" ""
+ R2 1
+ D2 2
+}
+#End
