@@ -26,10 +26,10 @@ unless defined? Shoes
 end
 
 begin
-  options = YAML::load(File.read(LIB_DIR+'opensprints_conf.yml'))
+  options = YAML::load(File.read(File.join(LIB_DIR,'opensprints_conf.yml')))
 rescue
-  FileUtils.cp 'conf-sample.yml', LIB_DIR+'opensprints_conf.yml'
-  options = YAML::load(File.read(LIB_DIR+'opensprints_conf.yml'))
+  FileUtils.cp 'conf-sample.yml', File.join(LIB_DIR,'opensprints_conf.yml')
+  options = YAML::load(File.read(File.join(LIB_DIR,'opensprints_conf.yml')))
 end
 
 $RACE_DISTANCE = options['race_distance'].to_f

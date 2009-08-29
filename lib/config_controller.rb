@@ -4,8 +4,8 @@ class ConfigController < Shoes::Main
   def index
     layout
     @center.clear do
-      if File.exists?(LIB_DIR+'opensprints_conf.yml')
-        @prefs = YAML::load_file(LIB_DIR+'opensprints_conf.yml')
+      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
+        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
       else
         @prefs = YAML::load_file('conf-sample.yml')
       end
@@ -152,7 +152,7 @@ class ConfigController < Shoes::Main
             @prefs['bikes'].compact!
             old_width = WIDTH
             old_height = HEIGHT
-            File.open(LIB_DIR+'opensprints_conf.yml', 'w+') do |f|
+            File.open(File.join(LIB_DIR,'opensprints_conf.yml'), 'w+') do |f|
               f << @prefs.to_yaml
             end
             load "lib/setup.rb"
