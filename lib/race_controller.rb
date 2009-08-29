@@ -158,7 +158,7 @@ class RaceController < Shoes::Main
     @center.clear {
       stack do
         race.race_participations.each do |race_participation|
-          flow(:height => 70, :width => 400) do
+          flow(:height => 70, :width => 1.0) do
             border eval(race_participation.color), :strokewidth => 4
             subtitle race_participation.racer.name
             

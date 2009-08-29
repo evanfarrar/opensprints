@@ -81,9 +81,9 @@ class TournamentController < Shoes::Main
   end
 
   def form(tournament)
-    stack(:width => 0.4, :height => 500) {
+    stack(:width => 0.4, :height => @center.height-100) {
       para "racers:"
-      racers = stack(:height => 300, :scroll => true){ 
+      racers = stack(:height => @center.height-200, :scroll => true){ 
         tournament.tournament_participations.each do |tp|
           flow {
             para(
@@ -97,9 +97,9 @@ class TournamentController < Shoes::Main
         para(link("add a new racer", :click => "/racers/new/tournament/#{tournament.id}"))
       }
     }
-    stack(:width => 0.4, :height => 400) {
+    stack(:width => 0.4, :height => @center.height-100) {
       para "races:"
-      stack(:height => 300, :scroll => true) {
+      stack(:height => @center.height-200, :scroll => true) {
         tournament.races.each{|race|
           para(
             if race.unraced?

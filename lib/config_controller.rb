@@ -9,8 +9,8 @@ class ConfigController < Shoes::Main
       else
         @prefs = YAML::load_file('conf-sample.yml')
       end
-      stack do
-        stack(:width => 0.80, :height => 500, :scroll => true) do
+      stack(:height => @center.height-50) do
+        stack(:width => 0.80, :height => @center.height-150, :scroll => true) do
           stack(:margin => 20) do
             para 'title (e.g. RockySprints):'
             edit_line(@prefs['title']) do |edit|
