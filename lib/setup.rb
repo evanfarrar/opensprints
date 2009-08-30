@@ -95,20 +95,31 @@ if defined? Shoes
   require 'lib/race_controller'
   require 'lib/category_controller'
   require 'lib/tournament_controller'
+  require 'lib/interface_widgets'
 else
   require 'rubygems'
 end
 require 'activesupport'
 require 'dm-core'
 require 'dm-aggregates'
-DataMapper.setup(:default, 'sqlite3::memory:')
+
+DATABASE_PATH = File.join(LIB_DIR,'opensprints.db')
+unless(File.exists? DATABASE_PATH)
+  File.open(DATABASE_PATH , 'w+') {|file| nil }
+  first_time = true
+end
+DataMapper.setup(:default, "sqlite3://#{DATABASE_PATH}")
 require 'lib/race_participation'
 require 'lib/tournament_participation'
 require 'lib/racer'
 require 'lib/race'
 require 'lib/categorization'
 require 'lib/category'
-require 'lib/interface_widgets' if defined? Shoes
 require 'lib/tournament'
 require "lib/race_windows/#{options['track']}"
-DataMapper.auto_migrate!
+if(first_time)
+  DataMapper.auto_migrate!
+  #seed data
+  Category.create(:name => "Women")
+  Category.create(:name => "Men")
+end

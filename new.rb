@@ -57,6 +57,5 @@ end
 Kernel::Main = Main
 
 require 'lib/setup.rb'
-load 'test/fixtures.rb'
 
 Shoes.app(:height => HEIGHT, :width => WIDTH, :scroll => false)

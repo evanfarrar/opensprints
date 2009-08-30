@@ -1,8 +1,35 @@
 class ConfigController < Shoes::Main
   url '/configuration', :index
+  url '/configuration/data_file', :data_file
+
+  def data_file
+    layout
+    @nav.append {
+      para(link("Data File Management", :click => '/configuration/data_file'))
+    }
+    @center.clear do
+      button "Delete all data" do
+        DataMapper.auto_migrate! if confirm("Are you sure? There's no going back.")
+      end
+
+      button "Export to mysql." do
+        
+      end
+
+      button "Export SQLite" do
+        ask_save_file("opensprints.db") do |location|
+          File.copy(File.join(LIB_DIR,'opensprints.db'),location)
+        end
+      end
+      
+    end
+  end
 
   def index
     layout
+    @nav.append {
+      para(link("Data File Management", :click => '/configuration/data_file'))
+    }
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
         @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
