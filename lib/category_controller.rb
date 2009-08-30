@@ -4,8 +4,8 @@ class CategoryController < Shoes::Main
   url '/categories/new', :new
 
   def list
-    nav
-    stack do
+    layout
+    @center.clear do
       para(link "new category", :click => "/categories/new")
       Category.all.each {|r|
         flow {
@@ -16,9 +16,9 @@ class CategoryController < Shoes::Main
   end
 
   def new
-    nav
+    layout
     attrs = {}
-    stack{
+    @center.clear do
       flow {
         para "name:"
         edit_line('') do |edit|
@@ -29,6 +29,6 @@ class CategoryController < Shoes::Main
         Category.create(attrs)
         visit '/categories'
       end
-    }
+    end
   end
 end

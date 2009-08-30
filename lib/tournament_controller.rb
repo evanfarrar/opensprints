@@ -81,10 +81,18 @@ class TournamentController < Shoes::Main
   end
 
   def form(tournament)
+    if(defined?(@@category)&&(@@category != "All Categories"))
+      tournament_participations = tournament.tournament_participations.select{ |tp|
+        tp.racer.categorizations.map(&:category).include?(@@category)
+      }
+    else
+      tournament_participations = tournament.tournament_participations
+    end
+        
     stack(:width => 0.4, :height => @center.height-100) {
       para "racers:"
       racers = stack(:height => @center.height-200, :scroll => true){ 
-        tournament.tournament_participations.each do |tp|
+        tournament_participations.each do |tp|
           flow {
             para(
               tp.racer.name, 
@@ -120,6 +128,11 @@ class TournamentController < Shoes::Main
       button "Autofill" do
         tournament.autofill
         tournament.save
+        visit "/tournaments/#{tournament.id}"
+      end
+      list_box(:width => @left.width, :items => (["All Categories"]+Category.all.to_a)) do |list|
+        #in the glorious future, this will be passed in the URL
+        @@category = list.text
         visit "/tournaments/#{tournament.id}"
       end
     end
