@@ -108,7 +108,11 @@ unless(File.exists? DATABASE_PATH)
   File.open(DATABASE_PATH , 'w+') {|file| nil }
   first_time = true
 end
-DataMapper.setup(:default, "sqlite3://#{DATABASE_PATH}")
+if(defined? Shoes)
+  DataMapper.setup(:default, "sqlite3://#{DATABASE_PATH}")
+else
+  DataMapper.setup(:default, "sqlite3::memory:")
+end
 require 'lib/race_participation'
 require 'lib/tournament_participation'
 require 'lib/racer'
@@ -117,7 +121,7 @@ require 'lib/categorization'
 require 'lib/category'
 require 'lib/tournament'
 require "lib/race_windows/#{options['track']}"
-if(first_time)
+if(first_time||!defined? Shoes)
   DataMapper.auto_migrate!
   #seed data
   Category.create(:name => "Women")
