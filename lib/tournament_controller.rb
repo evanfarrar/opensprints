@@ -91,49 +91,51 @@ class TournamentController < Shoes::Main
     end
         
     stack(:width => 0.4, :height => @center.height-100) {
-      para "racers:"
+      container
+      title "racers:"
       racers = stack(:height => @center.height-200, :scroll => true){ 
-        background(gray(0.3,0.5), :curve => 10)
-        border(gray, :curve => 10, :strokewidth => 3)
-        border(black, :curve => 10, :strokewidth => 1)
         tournament_participations.each do |tp|
           flow {
-            para(tp.racer.name) 
-            button("delete") do
-              tp.destroy; visit "/tournaments/#{tournament.id}"
-            end
+            flow(:width => 0.6) { para(tp.racer.name) }
+            flow(:width => 0.3) {
+              light_button("delete") do
+                tp.destroy; visit "/tournaments/#{tournament.id}"
+              end
+            }
           }
         end
       }
       stack(:width => 1.0) {
-        button("add a new racer") { visit "/racers/new/tournament/#{tournament.id}" }
+        light_button("add a new racer") { visit "/racers/new/tournament/#{tournament.id}" }
       }
     }
     stack(:width => 0.4, :height => @center.height-100) {
-      para "races:"
+      container
+      title "races:"
       stack(:height => @center.height-200, :scroll => true) {
-        background(gray(0.3,0.5), :curve => 10)
-        border(gray, :curve => 10, :strokewidth => 3)
-        border(black, :curve => 10, :strokewidth => 1)
         tournament.races.each{|race|
           flow {
-            para(
-              if race.unraced?
-                link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready")
-              else
-                del(race.racers.join(' vs '))
-              end)
-            button("delete") { race.destroy; visit "/tournaments/#{tournament.id}" }
+            flow(:width => 0.6) {
+              para(
+                if race.unraced?
+                  link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready")
+                else
+                  del(race.racers.join(' vs '))
+                end)
+            }
+            flow(:width => 0.3) {
+              light_button("delete") { race.destroy; visit "/tournaments/#{tournament.id}" }
+            }
           }
         }
       }
       stack(:width => 1.0) {
-        button("add a new race") { visit "/races/new/tournament/#{tournament.id}" }
+        light_button("add a new race") { visit "/races/new/tournament/#{tournament.id}" }
       }
       
     }
     @left.clear do
-      button "Autofill" do
+      left_button "Autofill" do
         tournament.autofill
         tournament.save
         visit "/tournaments/#{tournament.id}"

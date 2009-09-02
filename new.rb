@@ -1,8 +1,8 @@
 module MainHelper
   def button(text, styles={}, &callback)
     stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin_right => 10, :margin_top => 10) do
-      background(gray(0.2,0.5), :curve => 5)
-      t = inscription text
+      background(styles[:fill]||gray(0.2,0.5), :curve => 5)
+      t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||white)
       click &callback
       hover {
         t.underline = 'single'
@@ -11,7 +11,20 @@ module MainHelper
         t.underline = 'none'
       }
     end
+  end
 
+  def left_button(text, styles={}, &callback)
+    button(text, styles.merge({:width => 1.0, :align => 'left'}))
+  end
+
+  def light_button(text, styles={}, &callback)
+    button(text, styles.merge({:fill => rgb(200,200,200,0.7), :stroke => rgb(50,50,50)}))
+  end
+
+  def container
+    background(gray(0.3,0.5), :curve => 10)
+    border(gray, :curve => 10, :strokewidth => 3)
+    border(black, :curve => 10, :strokewidth => 1)
   end
 end
 
@@ -22,7 +35,7 @@ class Main < Shoes
 
   def custom_styles
     style(Banner,     :size => 48, :stroke => white)
-    style(Title,      :size => 34)
+    style(Title,      :size => 34, :stroke => white)
     style(Subtitle,   :size => 26)
     style(Tagline,    :size => 18)
     style(Caption,    :size => 14)
@@ -68,7 +81,7 @@ class Main < Shoes
     end
     @left = stack(:width => 150) do
     end
-    @center = flow(:width => width - (175+125), :height => HEIGHT-@header.height-100) do
+    @center = flow(:width => width - (175+125), :height => HEIGHT-@header.height-150) do
     end
     @right = flow(:width => 150) do
     end

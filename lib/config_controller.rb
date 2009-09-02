@@ -8,6 +8,7 @@ class ConfigController < Shoes::Main
       button("Back") { visit '/configuration' }
     }
     @center.clear do
+      container
       button "Delete all data" do
         DataMapper.auto_migrate! if confirm("Are you sure? There's no going back.")
       end
@@ -35,6 +36,7 @@ class ConfigController < Shoes::Main
 
   def index
     layout
+
     @nav.append {
       button("Data Management") { visit '/configuration/data_file' }
     }
@@ -44,8 +46,9 @@ class ConfigController < Shoes::Main
       else
         @prefs = YAML::load_file('conf-sample.yml')
       end
-      stack(:height => @center.height-50) do
-        stack(:width => 0.80, :height => @center.height-150, :scroll => true) do
+      stack(:height => @center.height-50, :width => 0.8) do
+        container
+        stack(:height => @center.height-150, :scroll => true) do
           stack(:margin => 20) do
             para 'title (e.g. RockySprints):'
             edit_line(@prefs['title']) do |edit|
