@@ -28,6 +28,14 @@ module TournamentHelper
     end
   end
 
+  def session
+    if(defined?(@@session) && @@session)
+      @@session
+    else
+      @@session = {}
+    end
+  end
+
 end
 
 class TournamentController < Shoes::Main
@@ -37,7 +45,7 @@ class TournamentController < Shoes::Main
   url '/tournaments/(\d+)', :edit
   url '/tournaments/(\d+)/stats', :stats
   url '/tournaments/new', :new
-
+ 
   def list
     layout
     @center.clear {
@@ -82,12 +90,19 @@ class TournamentController < Shoes::Main
   end
 
   def form(tournament)
-    if(defined?(@@category)&&(@@category != "All Categories"))
+    if(session[:category] && (session[:category] != "All Categories"))
       tournament_participations = tournament.tournament_participations.select{ |tp|
-        tp.racer.categorizations.map(&:category).include?(@@category)
+        tp.racer.categorizations.map(&:category).include?(session[:category])
       }
     else
       tournament_participations = tournament.tournament_participations
+    end
+
+    case session[:order_by]
+      when "Best time"
+        tournament_participations = tournament_participations.sort_by(&:rank)
+      when "Name"
+        tournament_participations = tournament_participations.sort_by{|tp|tp.racer.name.downcase}
     end
         
     stack(:width => 0.4, :height => @center.height-100) {
@@ -140,13 +155,20 @@ class TournamentController < Shoes::Main
         tournament.save
         visit "/tournaments/#{tournament.id}"
       end
-      category = (@@category if(defined?(@@category) && @@category))
+      category = session[:category]
+      order_by = session[:order_by]
       categories = ["All Categories"]+Category.all.to_a
-      para "filter:"
-      list_box(:width => @left.width, :choose => category, :items => categories) do |list|
-        @@category = list.text
-        visit "/tournaments/#{tournament.id}" if category != @@category
+      para "category:"
+      list_box(:width => 1.0, :choose => category, :items => categories) do |list|
+        session[:category] = list.text
+        visit "/tournaments/#{tournament.id}" if category != session[:category]
       end
+      para "order:"
+      list_box(:width => 1.0, :choose => order_by, :items => ["Name","Best time"]) do |list|
+        session[:order_by] = list.text
+        visit "/tournaments/#{tournament.id}" if order_by != session[:order_by]
+      end
+      
     end
   end
 

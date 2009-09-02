@@ -6,10 +6,11 @@ class TournamentParticipation
   belongs_to :tournament
 
   def best_time
-    RaceParticipation.first("race.tournament_id" => tournament.id,
+    best = RaceParticipation.first("race.tournament_id" => tournament.id,
                             :racer_id => racer.id,
                             :order => [:finish_time.asc]
-    ).try(:finish_time)
+    )
+    best.finish_time if best
   end
 
   def rank
