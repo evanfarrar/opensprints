@@ -5,7 +5,7 @@ class ConfigController < Shoes::Main
   def data_file
     layout
     @nav.append {
-      para(link("Data File Management", :click => '/configuration/data_file'))
+      button("Back") { visit '/configuration' }
     }
     @center.clear do
       button "Delete all data" do
@@ -21,6 +21,14 @@ class ConfigController < Shoes::Main
           File.copy(File.join(LIB_DIR,'opensprints.db'),location)
         end
       end
+
+      button "Upload my settings to server" do
+
+      end
+ 
+      button "Get my settings from server" do
+
+      end
       
     end
   end
@@ -28,7 +36,7 @@ class ConfigController < Shoes::Main
   def index
     layout
     @nav.append {
-      para(link("Data File Management", :click => '/configuration/data_file'))
+      button("Data Management") { visit '/configuration/data_file' }
     }
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))

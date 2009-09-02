@@ -24,14 +24,12 @@ class RaceController < Shoes::Main
     layout
     race = Race.get(id)
     @nav.clear {
-      para(link "Start", :click => "/races/#{id}/countdown")
-      para(link "Edit Race", :click => "/races/#{id}/edit")
+      button("Start") { visit "/races/#{id}/countdown" }
+      button("Edit Race") { visit "/races/#{id}/edit" }
       if next_race = race.next_race
-        flow {
-          para(link "Skip to Next Race", :click => "/races/#{next_race.id}/ready")
-        }
+         button("Skip to Next Race") { visit "/races/#{next_race.id}/ready" }
       end
-      para(link "New Race", :click => "/races/new")
+      button("New Race") { visit "/races/new" }
     }
     @center.clear {
       race = Race.get(id)
@@ -54,7 +52,7 @@ class RaceController < Shoes::Main
     layout
     race = Race.get(id)
     @nav.clear {
-      para(link "Stop Countdown", :click => "/races/#{id}/ready")
+      button("Stop Countdown") { visit "/races/#{id}/ready" }
     }
     @timer = animate(1) { |count|
       case count
@@ -85,18 +83,18 @@ class RaceController < Shoes::Main
     layout
     race = Race.get(id)
     @nav.clear {
-      para(link "Call It", :click => lambda{
+      button("Call It") {
         @race_animation.stop
         SENSOR.stop
         race.raced = true
         race.save
         visit "/races/#{id}/winner"
-      })
-      para(link "Redo", :click => lambda{
+      }
+      button("Redo") {
         @race_animation.stop
         SENSOR.stop
         visit "/races/#{id}/ready"
-      })
+      }
     }
     @race_animation = animate(14) do
       if race.finished?
@@ -132,10 +130,12 @@ class RaceController < Shoes::Main
   def winner(id)
     race = Race.get(id)
     winner = race.winner
-    background eval(winner.color+"(0.6)")
     layout
+    @nav.append {
+      button("tournament") { visit "/tournaments/#{race.tournament_id}" }
+    }
     @center.clear {
-      para(link "tournament", :click => "/tournaments/#{race.tournament_id}")
+      background eval(winner.color+"(0.6)")
       stack(:top => 40, :left => 0) do
         banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
         race.race_participations.each{|r|
@@ -176,10 +176,10 @@ class RaceController < Shoes::Main
               }
               visit "/races/#{id}/edit"
             end
-            para(link "delete", :click => lambda {
+            button("delete") {
               race_participation.destroy
               visit "/races/#{id}/edit"
-            })
+            }
           end
         end
         flow {
@@ -192,9 +192,9 @@ class RaceController < Shoes::Main
           end
         }
         stack {
-          para(link "back", :click => "/races/#{id}/ready")
-          para(link "save & start race", :click => "/races/#{id}/ready")
-          para(link "save & return to tournament", :click => "/tournaments/#{race.tournament_id}") if race.tournament_id
+          button("back") { visit "/races/#{id}/ready" }
+          button("save & start race") { visit "/races/#{id}/ready" }
+          (button("save & return to tournament") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
         }
       end
       

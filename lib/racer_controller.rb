@@ -12,7 +12,7 @@ class RacerController < Shoes::Main
     layout    
     @center.clear {
       stack do
-        para(link "new racer", :click => "/racers/new")
+        button("new racer") { visit "/racers/new" }
         Racer.all.each {|r|
           para(link(r.name,:click => "/racers/#{r.id}"))
         }
@@ -38,10 +38,10 @@ class RacerController < Shoes::Main
               racer.categorizations.each { |categorization|
                 flow {
                   para categorization.category.name
-                  para(link("delete",:click => lambda {
+                  button("delete") {
                     categorization.destroy
                     visit "/racers/#{id}"              
-                  }))
+                  }
                 }
               }
             }

@@ -6,7 +6,7 @@ class CategoryController < Shoes::Main
   def list
     layout
     @center.clear do
-      para(link "new category", :click => "/categories/new")
+      button("new category") { visit "/categories/new" }
       Category.all.each {|r|
         flow {
           para r.name

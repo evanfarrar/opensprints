@@ -42,10 +42,11 @@ class TournamentController < Shoes::Main
     layout
     @center.clear {
       stack do
-        para(link "new tournament", :click => "/tournaments/new")
+        button("new tournament") { visit "/tournaments/new" }
         Tournament.all.each {|tournament|
           flow {
             para(link(tournament.name,:click => "/tournaments/#{tournament.id}"))
+            button("delete") { tournament.destroy; visit "/tournaments" }
           }
         }
       end
@@ -73,7 +74,7 @@ class TournamentController < Shoes::Main
     layout
     tournament = Tournament.get(id)
     @nav.append {
-      para(link "stats", :click => "/tournaments/#{tournament.id}/stats")
+      button("stats") { visit "/tournaments/#{tournament.id}/stats" }
     }
     @center.clear {
       form(tournament)
@@ -92,35 +93,42 @@ class TournamentController < Shoes::Main
     stack(:width => 0.4, :height => @center.height-100) {
       para "racers:"
       racers = stack(:height => @center.height-200, :scroll => true){ 
+        background(gray(0.3,0.5), :curve => 10)
+        border(gray, :curve => 10, :strokewidth => 3)
+        border(black, :curve => 10, :strokewidth => 1)
         tournament_participations.each do |tp|
           flow {
-            para(
-              tp.racer.name, 
-              link("delete",
-                :click => lambda{tp.destroy; visit "/tournaments/#{tournament.id}"}))
+            para(tp.racer.name) 
+            button("delete") do
+              tp.destroy; visit "/tournaments/#{tournament.id}"
+            end
           }
         end
       }
       stack(:width => 1.0) {
-        para(link("add a new racer", :click => "/racers/new/tournament/#{tournament.id}"))
+        button("add a new racer") { visit "/racers/new/tournament/#{tournament.id}" }
       }
     }
     stack(:width => 0.4, :height => @center.height-100) {
       para "races:"
       stack(:height => @center.height-200, :scroll => true) {
+        background(gray(0.3,0.5), :curve => 10)
+        border(gray, :curve => 10, :strokewidth => 3)
+        border(black, :curve => 10, :strokewidth => 1)
         tournament.races.each{|race|
-          para(
-            if race.unraced?
-              link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready")
-            else
-              del(race.racers.join(' vs '))
-            end,' ',
-            link("delete", :click => lambda{ race.destroy; visit "/tournaments/#{tournament.id}" })
-          )
+          flow {
+            para(
+              if race.unraced?
+                link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready")
+              else
+                del(race.racers.join(' vs '))
+              end)
+            button("delete") { race.destroy; visit "/tournaments/#{tournament.id}" }
+          }
         }
       }
       stack(:width => 1.0) {
-        para(link("add a new race", :click => "/races/new/tournament/#{tournament.id}"))
+        button("add a new race") { visit "/races/new/tournament/#{tournament.id}" }
       }
       
     }
@@ -130,10 +138,12 @@ class TournamentController < Shoes::Main
         tournament.save
         visit "/tournaments/#{tournament.id}"
       end
-      list_box(:width => @left.width, :items => (["All Categories"]+Category.all.to_a)) do |list|
-        #in the glorious future, this will be passed in the URL
+      category = (@@category if(defined?(@@category) && @@category))
+      categories = ["All Categories"]+Category.all.to_a
+      para "filter:"
+      list_box(:width => @left.width, :choose => category, :items => categories) do |list|
         @@category = list.text
-        visit "/tournaments/#{tournament.id}"
+        visit "/tournaments/#{tournament.id}" if category != @@category
       end
     end
   end
