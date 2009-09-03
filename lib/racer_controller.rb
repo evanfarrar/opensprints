@@ -54,11 +54,7 @@ class RacerController < Shoes::Main
         }
         button "Save" do
           racer.save
-          if defined?(@@referrer)&&@@referrer
-            visit @@referrer
-          else
-            visit '/racers'
-          end
+          visit session[:referrer].pop||'/racers'
         end
       }
     }
@@ -72,7 +68,6 @@ class RacerController < Shoes::Main
   def new_in_tournament(tournament_id)
     racer = Racer.create
     TournamentParticipation.create(:racer => racer, :tournament_id => tournament_id)
-    @@referrer ||= "/tournaments/#{tournament_id}"
     visit "/racers/#{racer.id}"
   end
 

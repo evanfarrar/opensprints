@@ -25,11 +25,14 @@ class RaceController < Shoes::Main
     race = Race.get(id)
     @nav.clear {
       button("Start") { visit "/races/#{id}/countdown" }
-      button("Edit Race") { visit "/races/#{id}/edit" }
+      button("Edit Race") { session[:referrer].push(@center.app.location); visit "/races/#{id}/edit" }
       if next_race = race.next_race
          button("Skip to Next Race") { visit "/races/#{next_race.id}/ready" }
       end
       button("New Race") { visit "/races/new" }
+      if race.tournament
+        button("tournament") { visit "/tournament/#{race.tournament.id}" }
+      end
     }
     @center.clear {
       race = Race.get(id)
@@ -58,18 +61,18 @@ class RaceController < Shoes::Main
       case count
       when 4
         @center.clear do
-          background(rgb(200,0,0, 0.7))
+          container
           count_text("GO!!!")
         end
       when 1
         SENSOR.start
         @center.clear do
-          background(rgb(200,0,0, 0.7))
+          container
           count_text(4-count)
         end
       when 0..4
         @center.clear do
-          background(rgb(200,0,0, 0.7))
+          container
           count_text(4-count)
         end
       else
@@ -146,7 +149,7 @@ class RaceController < Shoes::Main
           end
         }
         if next_race = race.next_race
-          para(link("next race: ",next_race.racers.join(", "), :click => "/races/#{next_race.id}/ready"))
+          light_button("next race: #{next_race.racers.join(", ")}") { visit "/races/#{next_race.id}/ready" }
         end
       end
     }
@@ -192,7 +195,7 @@ class RaceController < Shoes::Main
           end
         }
         stack {
-          button("back") { visit "/races/#{id}/ready" }
+          # TODO: this should clearly indicate which choice the user has just come from. "Save and go BACK to tournament"
           button("save & start race") { visit "/races/#{id}/ready" }
           (button("save & return to tournament") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
         }

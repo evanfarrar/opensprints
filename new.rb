@@ -14,17 +14,25 @@ module MainHelper
   end
 
   def left_button(text, styles={}, &callback)
-    button(text, styles.merge({:width => 1.0, :align => 'left'}))
+    button(text, styles.merge({:width => 1.0, :align => 'left'}), &callback)
   end
 
   def light_button(text, styles={}, &callback)
-    button(text, styles.merge({:fill => rgb(200,200,200,0.7), :stroke => rgb(50,50,50)}))
+    button(text, styles.merge({:fill => rgb(200,200,200,0.7), :stroke => rgb(50,50,50)}), &callback)
   end
 
   def container
     background(gray(0.3,0.5), :curve => 10)
     border(gray, :curve => 10, :strokewidth => 3)
     border(black, :curve => 10, :strokewidth => 1)
+  end
+
+  def session
+    if(defined?(@@session) && @@session)
+      @@session
+    else
+      @@session = {:referrer => []}
+    end
   end
 end
 
@@ -57,7 +65,6 @@ class Main < Shoes
   def index
     layout
     @nav.clear {
-      button("racers") { visit "/racers"}
       button("categories") { visit "/categories"}
       button("tournaments") { visit "/tournaments"}
       button("configuration") { visit "/configuration"}

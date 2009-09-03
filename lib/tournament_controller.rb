@@ -28,14 +28,6 @@ module TournamentHelper
     end
   end
 
-  def session
-    if(defined?(@@session) && @@session)
-      @@session
-    else
-      @@session = {}
-    end
-  end
-
 end
 
 class TournamentController < Shoes::Main
@@ -80,6 +72,7 @@ class TournamentController < Shoes::Main
 
   def edit(id)
     layout
+    session[:referrer] = []
     tournament = Tournament.get(id)
     @nav.append {
       button("stats") { visit "/tournaments/#{tournament.id}/stats" }
@@ -121,7 +114,11 @@ class TournamentController < Shoes::Main
         end
       }
       stack(:width => 1.0) {
-        light_button("add a new racer") { visit "/racers/new/tournament/#{tournament.id}" }
+        light_button("add a new racer") {
+          session[:referrer].push(@center.app.location)
+          visit("/racers/new/tournament/#{tournament.id}")
+        }
+
       }
     }
     stack(:width => 0.4, :height => @center.height-100) {
@@ -145,7 +142,10 @@ class TournamentController < Shoes::Main
         }
       }
       stack(:width => 1.0) {
-        light_button("add a new race") { visit "/races/new/tournament/#{tournament.id}" }
+        light_button("add a new race") {
+          session[:referrer].push(@center.app.location)
+          visit "/races/new/tournament/#{tournament.id}"
+        }
       }
       
     }
