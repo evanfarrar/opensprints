@@ -34,18 +34,21 @@ class RacerController < Shoes::Main
         flow {
           para "categories:"
           stack {
-            stack {
+            stack(:width => 0.5) {
               racer.categorizations.each { |categorization|
                 flow {
-                  para categorization.category.name
-                  button("delete") {
-                    categorization.destroy
-                    visit "/racers/#{id}"              
+                  flow(:width => 0.6, :margin_top => 8) { para categorization.category.name }
+                  flow(:width => 0.1)
+                  flow(:width => 0.3) {
+                    button("delete") {
+                      categorization.destroy
+                      visit "/racers/#{id}"              
+                    }
                   }
                 }
               }
             }
-            list_box(:items => Category.all.to_a) do |list|
+            list_box(:items => Category.all.to_a - racer.categories) do |list|
               racer.save
               racer.categorizations.create(:category => list.text)
               visit "/racers/#{id}"              

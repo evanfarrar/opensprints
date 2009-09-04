@@ -41,12 +41,18 @@ class TournamentController < Shoes::Main
   def list
     layout
     @center.clear {
-      stack do
+      stack(:width => 0.5) do
         button("new tournament") { visit "/tournaments/new" }
         Tournament.all.each {|tournament|
-          flow {
-            para(link(tournament.name,:click => "/tournaments/#{tournament.id}"))
-            button("delete") { tournament.destroy; visit "/tournaments" }
+          separator_line
+          flow(:width => 1.0) {
+            flow(:width => 0.6, :margin_top => 8) {
+              para(link(tournament.name,:click => "/tournaments/#{tournament.id}"))
+            }
+            flow(:width => 0.1) { }
+            flow(:width => 0.3) {
+              button("delete") { tournament.destroy; visit "/tournaments" }
+            }
           }
         }
       end

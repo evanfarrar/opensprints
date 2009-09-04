@@ -1,6 +1,6 @@
 module MainHelper
   def button(text, styles={}, &callback)
-    stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin_right => 10, :margin_top => 10) do
+    stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin => [5,10,5,0], :padding_top => 0) do
       background(styles[:fill]||gray(0.2,0.5), :curve => 5)
       t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||white)
       click &callback
@@ -34,6 +34,12 @@ module MainHelper
       @@session = {:referrer => []}
     end
   end
+
+  def separator_line
+    flow(:height => 18, :scroll => false) do
+      45.times { inscription '-', :margin => 4, :stroke => gray(0.8) }
+    end
+  end
 end
 
 class Main < Shoes
@@ -44,11 +50,11 @@ class Main < Shoes
   def custom_styles
     style(Banner,     :size => 48, :stroke => white)
     style(Title,      :size => 34, :stroke => white)
-    style(Subtitle,   :size => 26)
-    style(Tagline,    :size => 18)
-    style(Caption,    :size => 14)
+    style(Subtitle,   :size => 26, :stroke => white)
+    style(Tagline,    :size => 18, :stroke => white)
+    style(Caption,    :size => 14, :stroke => white)
     style(Para,       :size => 12, :margin => [0]*4, :weight => "Bold", :stroke => white)
-    style(Inscription,:size => 10, :stroke => white)
+    style(Inscription,:size => 10, :stroke => white, :margin => [0]*4)
 
     style(Code,       :family => 'monospace')
     style(Del,        :strikethrough => 'single')

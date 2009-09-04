@@ -1,3 +1,6 @@
+# for some reason, when a scrollable slot has native controls, 
+# the native controls render even when they should be scrolled out of view.
+
 class ConfigController < Shoes::Main
   url '/configuration', :index
   url '/configuration/data_file', :data_file
@@ -9,28 +12,29 @@ class ConfigController < Shoes::Main
     }
     @center.clear do
       container
-      button "Delete all data" do
-        DataMapper.auto_migrate! if confirm("Are you sure? There's no going back.")
-      end
+      stack do
+        button "Delete all data" do
+          DataMapper.auto_migrate! if confirm("Are you sure? There's no going back.")
+        end
 
-      button "Export to mysql." do
-        
-      end
+        button "Export to mysql." do
+          
+        end
 
-      button "Export SQLite" do
-        ask_save_file("opensprints.db") do |location|
-          File.copy(File.join(LIB_DIR,'opensprints.db'),location)
+        button "Export SQLite" do
+          ask_save_file("opensprints.db") do |location|
+            File.copy(File.join(LIB_DIR,'opensprints.db'),location)
+          end
+        end
+
+        button "Upload my settings to server" do
+
+        end
+   
+        button "Get my settings from server" do
+
         end
       end
-
-      button "Upload my settings to server" do
-
-      end
- 
-      button "Get my settings from server" do
-
-      end
-      
     end
   end
 

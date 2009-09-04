@@ -8,7 +8,10 @@ class Racer
   has n, :tournament_participations
   has n, :tournaments, :through => :tournament_participations
   has n, :categorizations
-  has n, :categories, :through => :categorizations, :mutable => true
+  
+  def categories
+    categorizations.map(&:category)
+  end
 
   def to_s
     self.name

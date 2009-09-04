@@ -6,10 +6,19 @@ class CategoryController < Shoes::Main
   def list
     layout
     @center.clear do
-      button("new category") { visit "/categories/new" }
-      Category.all.each {|r|
-        flow {
-          para r.name
+      stack(:width => 0.5) {
+        button("new category") { visit "/categories/new" }
+        Category.all.each {|category|
+          separator_line
+          flow(:width => 1.0) {
+            flow(:width => 0.6, :margin_top => 8) {
+              para category.name
+            }
+            flow(:width => 0.1)
+            flow(:width => 0.3) {
+              button("delete") { category.destroy; visit '/categories' }
+            }
+          }
         }
       }
     end
