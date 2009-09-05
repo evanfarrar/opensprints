@@ -27,85 +27,84 @@ class ConfigController < Shoes::Main
       else
         @prefs = YAML::load_file('conf-sample.yml')
       end
-      stack(:height => @center.height-50, :width => 0.8) do
+      flow(:height => @center.height-50, :width => 1.0) do
         container
-        stack(:height => @center.height-150, :scroll => true) do
-          stack(:margin => 20) do
-            para 'title (e.g. RockySprints):'
-            edit_line(@prefs['title']) do |edit|
-              @prefs['title'] = edit.text
-            end
-          end
-
-          stack(:margin => 20, :padding => 0) do
-            stack(:margin => 0) do
-              para "Display speed in:", :margin => 0
-              metric = nil; standard = nil;
-              flow(:margin => 0) do
-                standard = radio(:units){ @prefs['units'] = 'standard'}
-                para 'standard', :margin => 2
-              end
-              flow(:margin => 0) do
-                metric = radio(:units){ @prefs['units'] = 'metric'}
-                para 'metric', :margin => 2
-              end
-              if @prefs['units'] == 'metric'
-                metric.checked = true
-              else
-                standard.checked = true
+        flow(:height => @center.height-150, :scroll => true) do
+          stack(:width => 0.4) do
+            stack(:margin => 10) do
+              inscription 'title (e.g. RockySprints):'
+              edit_line(@prefs['title']) do |edit|
+                @prefs['title'] = edit.text
               end
             end
-          end
 
-          stack(:margin => 20) do
-            para 'Track Skin:'
-            sensors = Dir.glob('lib/race_windows/*.rb').map do |s|
-              s.gsub(/lib\/race_windows\/(.*)\.rb/, '\1')
+            stack(:margin => 10, :padding => 0) do
+              stack(:margin => 0) do
+                inscription "Display speed in:", :margin => 0
+                metric = nil; standard = nil;
+                flow(:margin => 0) do
+                  standard = radio(:units){ @prefs['units'] = 'standard'}
+                  inscription 'standard', :margin => 2
+                end
+                flow(:margin => 0) do
+                  metric = radio(:units){ @prefs['units'] = 'metric'}
+                  inscription 'metric', :margin => 2
+                end
+                if @prefs['units'] == 'metric'
+                  metric.checked = true
+                else
+                  standard.checked = true
+                end
+              end
             end
-            list_box(:items => sensors,
-              :choose => @prefs['track']) do |changed|
-                @prefs['track'] = changed.text
 
+            stack(:margin => 10) do
+              inscription 'Track Skin:'
+              sensors = Dir.glob('lib/race_windows/*.rb').map do |s|
+                s.gsub(/lib\/race_windows\/(.*)\.rb/, '\1')
+              end
+              list_box(:items => sensors,
+                :choose => @prefs['track']) do |changed|
+                  @prefs['track'] = changed.text
+              end
             end
           end
-          stack(:margin => 20) do
-            para 'Background (color or image):'
-            flow do
+          stack(:width => 0.6) do
+            stack(:margin => 10) do
+              inscription 'Background (color or image):'
               color_edit = edit_line(@prefs['background']) do |edit|
                 @prefs['background'] = edit.text
               end
-              button "pick color" do
-                color_edit.text = ask_color('pick...')
-                @prefs['background'] = color_edit.text
+              flow do
+                button "pick color" do
+                  color_edit.text = ask_color('pick...')
+                  @prefs['background'] = color_edit.text
+                end
+                button "pick file" do
+                  color_edit.text = ask_open_file
+                  @prefs['background'] = color_edit.text
+                  @prefs['bikes'][i] = color_edit.text
+                end
               end
-              button "pick file" do
-                color_edit.text = ask_open_file
-                @prefs['background'] = color_edit.text
-                @prefs['bikes'][i] = color_edit.text
+            end
+
+            stack(:margin => 10) do
+              inscription 'window height:'
+              edit_line(@prefs['window_height']) do |edit|
+                @prefs['window_height'] = edit.text
+              end
+              inscription 'window width:'
+              edit_line(@prefs['window_width']) do |edit|
+                @prefs['window_width'] = edit.text
               end
             end
           end
-
-          stack(:margin => 20) do
-            para 'window height:'
-            edit_line(@prefs['window_height']) do |edit|
-              @prefs['window_height'] = edit.text
-            end
-            para 'window width:'
-            edit_line(@prefs['window_width']) do |edit|
-              @prefs['window_width'] = edit.text
-            end
-          end
-
-
         end
         stack do
           save_button
         end
-
       end
     end
-
   end
 
   def data_file
@@ -156,12 +155,12 @@ class ConfigController < Shoes::Main
       stack(:height => @center.height-50, :width => 0.8) do
         container
         stack(:height => @center.height-150, :scroll => true) do
-          stack(:margin => 20) do
-            para 'Bikes:'
+          stack(:margin => 10) do
+            inscription 'Bikes:'
             @prefs['bikes']||=[]
             @r = 4.times do |i|
               flow do
-                para "Bike #{i+1} Color:"
+                inscription "Bike #{i+1} Color:"
                 color_edit = edit_line(@prefs['bikes'][i]) do |edit|
                   @prefs['bikes'][i] = edit.text
                 end
@@ -183,7 +182,7 @@ class ConfigController < Shoes::Main
                 else
                   color_edit.state = "disabled"
                 end
-                para "active?"
+                inscription "active?"
               end
             end
           end
@@ -208,41 +207,47 @@ class ConfigController < Shoes::Main
       end
       stack(:height => @center.height-50, :width => 0.8) do
         container
-        stack(:height => @center.height-150, :scroll => true) do
-          stack(:margin => 20) do
-            para 'Race distance (METERS):'
-            edit_line(@prefs['race_distance']) do |edit|
-              @prefs['race_distance'] = edit.text.to_f
+        flow(:height => @center.height-150, :scroll => true) do
+          stack(:width => 0.5) do
+            stack(:margin => 10) do
+              inscription 'Race distance (METERS):'
+              edit_line(@prefs['race_distance']) do |edit|
+                @prefs['race_distance'] = edit.text.to_f
+              end
+            end
+
+            stack(:margin => 10) do
+              inscription 'Roller circumference (METERS):'
+              edit_line(@prefs['roller_circumference']) do |edit|
+                @prefs['roller_circumference'] = edit.text.to_f
+              end
             end
           end
 
-          stack(:margin => 20) do
-            para 'Roller circumference (METERS):'
-            edit_line(@prefs['roller_circumference']) do |edit|
-              @prefs['roller_circumference'] = edit.text.to_f
+          stack(:width => 0.5) do
+            stack(:margin => 10) do
+              inscription 'Sensor type:'
+              sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s|
+                s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
+              end
+              list_box(:items => sensors,
+                :choose => @prefs['sensor']['type']) do |changed|
+                  @prefs['sensor']['type'] = changed.text
+                  if (changed.text=="mock")||(changed.text=="network")
+                    @sensor_location_edit.state = "disabled"
+                  else
+                    @sensor_location_edit.state = nil
+                  end
+              end
             end
-          end
 
-          stack(:margin => 20) do
-            para 'Sensor type:'
-            sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s|
-              s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
+            stack(:margin => 10) do
+              inscription 'Sensor location:'
+              @sensor_location_edit = edit_line(@prefs['sensor']['device']) do |edit|
+                @prefs['sensor']['device'] = edit.text
+              end
+              inscription "e.g. Linux: /dev/tty0"
             end
-            list_box(:items => sensors,
-              :choose => @prefs['sensor']['type']) do |changed|
-                @prefs['sensor']['type'] = changed.text
-
-            end
-          end
-
-          stack(:margin => 20) do
-            para 'Sensor location:'
-            edit_line(@prefs['sensor']['device']) do |edit|
-              @prefs['sensor']['device'] = edit.text
-            end
-            para "e.g. Mac OS X: /dev/tty.usbmodem0000103D1"
-            para "e.g. Linux: /dev/ttyUSB0"
-            para "e.g. Windows: com6"
           end
         end
         stack do
