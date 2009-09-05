@@ -9,4 +9,13 @@ class Category
   def to_s
     self.name
   end
+
+  def Category.next_after(other)
+    if(other)
+      category = Category.first(:id.gt => other.id, :order => [:id.asc])
+    else
+      category = Category.first(:order => [:id.asc])
+    end
+    category ? category.id : nil
+  end
 end

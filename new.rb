@@ -35,9 +35,9 @@ module MainHelper
     end
   end
 
-  def separator_line
+  def separator_line(n=45)
     flow(:height => 18, :scroll => false) do
-      45.times { inscription '-', :margin => 4, :stroke => gray(0.8) }
+      n.times { inscription '-', :margin => 4, :stroke => gray(0.8) }
     end
   end
 end

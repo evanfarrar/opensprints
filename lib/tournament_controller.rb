@@ -2,24 +2,24 @@ module TournamentHelper
   def stats_table(label,racers)
     if racers.any?
       stack do
-        background gray(0.2, 0.5)
-
-        flow(:height => 52) { title label+':', :font => "Bold", :stroke => black }
-
+        container
+        flow(:height => 52) { title label+':', :font => "Bold" }
+        separator_line(80)
         flow(:height => 20) do
-          stack(:width => 0.4) { para 'NAME', :stroke => black }
-          stack(:width => 0.2) { para 'WINS/LOSSES', :font => "Helvetica Neue", :stroke => black }
-          stack(:width => 0.2) { para 'BEST', :font => "Helvetica Neue", :stroke => black }
-          stack(:width => 0.2) { para 'PLACE', :font => "Helvetica Neue", :stroke => black }
+          stack(:width => 0.4) { para 'NAME' }
+          stack(:width => 0.2) { para 'WINS/LOSSES' }
+          stack(:width => 0.2) { para 'BEST' }
+          stack(:width => 0.2) { para 'PLACE' }
         end
+        separator_line(80)
         stack(:scroll => false) do
           racers.each do |racer|
             stack do
               flow do
-                stack(:width => 0.4) { inscription racer.racer.name, :stroke => black }
-                stack(:width => 0.2) { inscription "", :stroke => black }
-                stack(:width => 0.18) { inscription((("%.2f" % racer.best_time) if racer.best_time), :stroke => black) }
-                flow(:width => 0.22) { inscription racer.rank, :stroke => black }
+                stack(:width => 0.4) { inscription racer.racer.name }
+                stack(:width => 0.2) { inscription "" }
+                stack(:width => 0.18) { inscription((("%.2f" % racer.best_time) if racer.best_time)) }
+                flow(:width => 0.22) { inscription racer.rank }
               end
             end
           end
@@ -35,9 +35,13 @@ class TournamentController < Shoes::Main
   include RacerHelper
   url '/tournaments', :list
   url '/tournaments/(\d+)', :edit
-  url '/tournaments/(\d+)/stats', :stats
   url '/tournaments/new', :new
  
+  url '/tournaments/(\d+)/stats', :overall_stats
+  url '/tournaments/(\d+)/stats/(\d+)', :overall_stats
+  url '/tournaments/(\d+)/stats/category//(\d+)', :overall_stats
+  url '/tournaments/(\d+)/stats/category/(\d+)/(\d+)', :category_stats
+
   def list
     layout
     @center.clear {
@@ -178,25 +182,60 @@ class TournamentController < Shoes::Main
     end
   end
 
-  def stats(id)
+  def overall_stats(id, racers_offset=0)
     layout
+    racers_offset = racers_offset.to_i
+    tournament = Tournament.get(id)
+    racers = tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
+    racers.shift(9*racers_offset)
+
+    @nav.append {
+      button("back to tournament") { visit "/tournaments/#{id}" }
+      button("next") { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
+      pause = button("pause")
+      play = button("play")
+      pause.click { @t.toggle; play.toggle; pause.toggle }
+      play.click  { @t.toggle; play.toggle; pause.toggle }
+      play.hide
+    }
     @center.clear {
-      tournament = Tournament.get(id)
-      para(link "back", :click => "/tournaments/#{id}")
-      racers = tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
-      @stats = flow do
-        if racers.any?
-          stats_table("OVERALL",racers.shift(9))
+      if racers.any?
+        @stats = flow do
+           stats_table("OVERALL",racers.shift(9))
+           @t = timer(5) { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
         end
+      else# out of racers in overall
+        visit "/tournaments/#{id}/stats/category/#{Category.next_after(nil)}/0" #try the next category
       end
-      every(10) do
-        if racers.any?
-          @stats.clear do
-            stats_table("OVERALL",racers.shift(9))
-          end
-        else
-          timer(10) { visit "/tournaments/#{id}/stats" }
+    }
+  end
+
+  def category_stats(tournament_id,category_id,racers_offset=0)
+    layout
+    racers_offset = racers_offset.to_i
+    tournament = Tournament.get(tournament_id)
+    category = Category.get(category_id)
+    racers = TournamentParticipation.all(:tournament_id => tournament_id, "racer.categorizations.category_id" => category_id)
+    racers = racers.sort_by{|tp|tp.best_time||Infinity}
+    racers.shift(9*racers_offset)
+
+    @nav.append {
+      button("back to tournament") { visit "/tournaments/#{tournament_id}" }
+      button("next") { visit "/tournaments/#{tournament_id}/stats/category/#{category_id}/#{racers_offset+1}" }
+      pause = button("pause")
+      play = button("play")
+      pause.click { @t.toggle; play.toggle; pause.toggle }
+      play.click  { @t.toggle; play.toggle; pause.toggle }
+      play.hide
+    }
+    @center.clear {
+      if racers.any?
+        @stats = flow do
+          stats_table(category.name,racers.shift(9))
+          @t = timer(5) { visit "/tournaments/#{tournament_id}/stats/category/#{category_id}/#{racers_offset+1}" }
         end
+      else# out of racers in category
+        visit "/tournaments/#{tournament_id}/stats/category/#{Category.next_after(category)}/0" #try the next category
       end
     }
   end

@@ -4,46 +4,23 @@
 class ConfigController < Shoes::Main
   url '/configuration', :index
   url '/configuration/data_file', :data_file
+  url '/configuration/appearance', :appearance
+  url '/configuration/hardware', :hardware
+  url '/configuration/bikes', :bikes
 
-  def data_file
-    layout
+  def config_nav
     @nav.append {
-      button("Back") { visit '/configuration' }
-    }
-    @center.clear do
-      container
-      stack do
-        button "Delete all data" do
-          DataMapper.auto_migrate! if confirm("Are you sure? There's no going back.")
-        end
-
-        button "Export to mysql." do
-          
-        end
-
-        button "Export SQLite" do
-          ask_save_file("opensprints.db") do |location|
-            File.copy(File.join(LIB_DIR,'opensprints.db'),location)
-          end
-        end
-
-        button "Upload my settings to server" do
-
-        end
-   
-        button "Get my settings from server" do
-
-        end
-      end
-    end
-  end
-
-  def index
-    layout
-
-    @nav.append {
+      button("Apearance") { visit '/configuration/appearance' }
+      button("Hardware") { visit '/configuration/hardware' }
+      button("Bikes") { visit '/configuration/bikes' }
       button("Data Management") { visit '/configuration/data_file' }
     }
+  end
+  
+  def appearance
+    layout
+    config_nav
+
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
         @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -57,20 +34,6 @@ class ConfigController < Shoes::Main
             para 'title (e.g. RockySprints):'
             edit_line(@prefs['title']) do |edit|
               @prefs['title'] = edit.text
-            end
-          end
-
-          stack(:margin => 20) do
-            para 'Race distance (METERS):'
-            edit_line(@prefs['race_distance']) do |edit|
-              @prefs['race_distance'] = edit.text.to_f
-            end
-          end
-
-          stack(:margin => 20) do
-            para 'Roller circumference (METERS):'
-            edit_line(@prefs['roller_circumference']) do |edit|
-              @prefs['roller_circumference'] = edit.text.to_f
             end
           end
 
@@ -122,28 +85,77 @@ class ConfigController < Shoes::Main
               end
             end
           end
-          stack(:margin => 20) do
-            para 'Sensor type:'
-            sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s|
-              s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
-            end
-            list_box(:items => sensors,
-              :choose => @prefs['sensor']['type']) do |changed|
-                @prefs['sensor']['type'] = changed.text
 
-            end
-          end
           stack(:margin => 20) do
-            para 'Sensor location:'
-            edit_line(@prefs['sensor']['device']) do |edit|
-              @prefs['sensor']['device'] = edit.text
+            para 'window height:'
+            edit_line(@prefs['window_height']) do |edit|
+              @prefs['window_height'] = edit.text
             end
-            para "e.g. Mac OS X: /dev/tty.usbmodem0000103D1"
-            para "e.g. Linux: /dev/ttyUSB0"
-            para "e.g. Windows: com6"
+            para 'window width:'
+            edit_line(@prefs['window_width']) do |edit|
+              @prefs['window_width'] = edit.text
+            end
           end
 
 
+        end
+        stack do
+          save_button
+        end
+
+      end
+    end
+
+  end
+
+  def data_file
+    layout
+    config_nav
+    @center.clear do
+      container
+      stack do
+        button("Delete all data", :width => 200) do
+          DataMapper.auto_migrate! if confirm("Are you sure? There's no going back.")
+        end
+
+        button("Export to mysql.", :width => 200) do
+          
+        end
+
+        button("Export SQLite", :width => 200) do
+          ask_save_file("opensprints.db") do |location|
+            File.copy(File.join(LIB_DIR,'opensprints.db'),location)
+          end
+        end
+
+        button("Upload my settings to server", :width => 200) do
+
+        end
+   
+        button("Get my settings from server", :width => 200) do
+
+        end
+      end
+    end
+  end
+  
+  def index
+    layout
+    config_nav
+  end
+
+  def bikes
+    layout
+    config_nav
+    @center.clear do
+      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
+        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
+      else
+        @prefs = YAML::load_file('conf-sample.yml')
+      end
+      stack(:height => @center.height-50, :width => 0.8) do
+        container
+        stack(:height => @center.height-150, :scroll => true) do
           stack(:margin => 20) do
             para 'Bikes:'
             @prefs['bikes']||=[]
@@ -175,38 +187,86 @@ class ConfigController < Shoes::Main
               end
             end
           end
-
-          stack(:margin => 20) do
-            para 'window height:'
-            edit_line(@prefs['window_height']) do |edit|
-              @prefs['window_height'] = edit.text
-            end
-            para 'window width:'
-            edit_line(@prefs['window_width']) do |edit|
-              @prefs['window_width'] = edit.text
-            end
-          end
-
-
         end
         stack do
-          button "Save!" do
-            @prefs['bikes'].compact!
-            old_width = WIDTH
-            old_height = HEIGHT
-            File.open(File.join(LIB_DIR,'opensprints_conf.yml'), 'w+') do |f|
-              f << @prefs.to_yaml
-            end
-            load "lib/setup.rb"
-            if(old_width!=WIDTH||old_height!=HEIGHT)
-              alert("window dimensions have changed, please restart opensprints for this to take effect.")
-            end
-            alert('Preferences saved!')
-            visit '/'
-          end
+          save_button
         end
 
       end
+    end
+  end
+
+  def hardware
+    layout
+    config_nav
+    
+    @center.clear do
+      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
+        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
+      else
+        @prefs = YAML::load_file('conf-sample.yml')
+      end
+      stack(:height => @center.height-50, :width => 0.8) do
+        container
+        stack(:height => @center.height-150, :scroll => true) do
+          stack(:margin => 20) do
+            para 'Race distance (METERS):'
+            edit_line(@prefs['race_distance']) do |edit|
+              @prefs['race_distance'] = edit.text.to_f
+            end
+          end
+
+          stack(:margin => 20) do
+            para 'Roller circumference (METERS):'
+            edit_line(@prefs['roller_circumference']) do |edit|
+              @prefs['roller_circumference'] = edit.text.to_f
+            end
+          end
+
+          stack(:margin => 20) do
+            para 'Sensor type:'
+            sensors = Dir.glob('lib/sensors/*_sensor.rb').map do |s|
+              s.gsub(/lib\/sensors\/(.*)_sensor\.rb/, '\1')
+            end
+            list_box(:items => sensors,
+              :choose => @prefs['sensor']['type']) do |changed|
+                @prefs['sensor']['type'] = changed.text
+
+            end
+          end
+
+          stack(:margin => 20) do
+            para 'Sensor location:'
+            edit_line(@prefs['sensor']['device']) do |edit|
+              @prefs['sensor']['device'] = edit.text
+            end
+            para "e.g. Mac OS X: /dev/tty.usbmodem0000103D1"
+            para "e.g. Linux: /dev/ttyUSB0"
+            para "e.g. Windows: com6"
+          end
+        end
+        stack do
+          save_button
+        end
+
+      end
+    end
+  end
+
+  def save_button
+    button "Save!" do
+      @prefs['bikes'].compact!
+      old_width = WIDTH
+      old_height = HEIGHT
+      File.open(File.join(LIB_DIR,'opensprints_conf.yml'), 'w+') do |f|
+        f << @prefs.to_yaml
+      end
+      load "lib/setup.rb"
+      if(old_width!=WIDTH||old_height!=HEIGHT)
+        alert("window dimensions have changed, please restart opensprints for this to take effect.")
+      end
+      alert('Preferences saved!')
+      visit '/configuration'
     end
   end
 
