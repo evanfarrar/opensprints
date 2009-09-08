@@ -1,0 +1,7 @@
+?package(opensprints):\
+needs="X11"\
+section="Applications/Other"\
+title="opensprints"\
+icon="/opt/opensprints/media/logo.png"\
+command="/usr/bin/opensprints"
+

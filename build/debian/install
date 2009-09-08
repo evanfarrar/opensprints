@@ -1,0 +1,3 @@
+opensprints/* /opt/opensprints
+bin/shoes2.run /opt/opensprints
+bin/opensprints /usr/bin

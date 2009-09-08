@@ -2,10 +2,8 @@ Infrastructure
   * Rename Tournament Participation -> Registration
   * Rename RaceParticipation -> Performance
   * windows packaging
-  * debian packaging
 
 Tournaments
-  * filter by category
   * add specific racers to a match
 
 Race Edit

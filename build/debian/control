@@ -1,0 +1,12 @@
+Source: opensprints
+Section: unknown
+Priority: extra
+Maintainer: Alexander Rakoczy <arakoczy@gmail.com>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.0
+Homepage: http://www.opensprints.org
+
+Package: opensprints
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A program for running goldsprints
