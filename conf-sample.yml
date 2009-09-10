@@ -42,6 +42,6 @@ bikes:
 #the background the race window should use.
 background: media/background.jpg
 
-# Sets the height and width of the race window.
-window_height: 800
-window_width: 1280
+# Sets the height and width of the race window. Blank to auto-detect.
+window_height:
+window_width:

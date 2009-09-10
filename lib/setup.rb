@@ -50,8 +50,14 @@ rescue MissingArduinoError
   load "lib/sensors/mock_sensor.rb"
 end
 
-HEIGHT = options['window_height'].to_i.nonzero?||600
-WIDTH = options['window_width'].to_i.nonzero?||800
+if RUBY_PLATFORM =~ /linux/
+  width,height = `xrandr | grep '*'`.split[0].split('x')
+else
+  width,height = 800,600
+end
+
+HEIGHT = options['window_height'].to_i.nonzero?||(height.to_i-100)
+WIDTH = options['window_width'].to_i.nonzero?||(width.to_i-50)
 
 if defined? Shoes
   if options['background']
