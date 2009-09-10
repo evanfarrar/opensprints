@@ -83,13 +83,6 @@ if defined? Shoes
 end
 
 if defined? Shoes
-  Shoes.setup do
-    gem "activesupport"
-    gem "bacon"
-    gem "dm-core"
-    gem "dm-aggregates"
-    gem "do_sqlite3"
-  end
   require 'lib/config_controller'
   require 'lib/racer_controller'
   require 'lib/race_controller'

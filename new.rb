@@ -1,3 +1,13 @@
+if defined? Shoes
+  Shoes.setup do
+    gem "activesupport"
+    gem "bacon"
+    gem "dm-core"
+    gem "dm-aggregates"
+    gem "do_sqlite3"
+  end
+end
+ 
 module MainHelper
   def button(text, styles={}, &callback)
     stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin => [5,10,5,0], :padding_top => 0) do
