@@ -8,5 +8,5 @@ Homepage: http://www.opensprints.org
 
 Package: opensprints
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsqlite3-dev, libsqlite3-0, sqlite3, build-essential, libssl-dev, libreadline5-dev, zlib1g-dev, gcc-avr, avr-libc, make, gtkterm, avrdude, binutils-avr
 Description: A program for running goldsprints
