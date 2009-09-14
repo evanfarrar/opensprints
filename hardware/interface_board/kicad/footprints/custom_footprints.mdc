@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  Wed Aug 26 21:44:21 2009
+PCBNEW-LibDoc----V1  Sun Sep 13 20:52:16 2009
 #
 $MODULE 2N7000
 Li 2N7000
@@ -63,6 +63,12 @@ $EndMODULE
 $MODULE RJ45_8-LJO
 Li RJ45_8-LJO
 Kw RJ45
+$EndMODULE
+#
+$MODULE LED5mm_LJO
+Li LED5mm_LJO
+Cd Led verticale diam 6mm
+Kw LED DEV
 $EndMODULE
 #
 $EndLIBDOC
