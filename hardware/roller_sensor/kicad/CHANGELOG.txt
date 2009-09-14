@@ -1,0 +1,36 @@
+v2.2.3 2009.09.13
+---------------------------------------------------
+gerbers generated with Pcbnew Build: SVN-R1805 (20090603)
+
+Changes:
+
+    * VOUT and VCC signals going to hall effect sensors can now be swapped in order to allow the user to install hall effect sensor backwards, which swaps the magnetic pole that the sensor senses.
+	* designed for soldermask and silkscreen for the first time.
+	* font has curves
+
+v2.1
+---------------------------------------------------
+Changes:
+
+    * Sensor indicator LED wiring issue was corrected.
+    * "top" and "bottom" labels. 
+
+Bugs:
+
+    * TBD 
+
+v2
+---------------------------------------------------
+Changes:
+
+    * Designed to fit a specific plastic project enclosure.
+    * Added power indicator LED.
+    * Moved the placement of the RJ45 jacks to provide better access to the tabs. 
+
+Bugs:
+
+    * Ouch! The sensor trigger indicator LED was wired incorrectly. 
+
+First version: v1
+---------------------------------------------------
+Worked fine, wired correctly. 
