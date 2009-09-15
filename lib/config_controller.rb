@@ -75,20 +75,21 @@ class ConfigController < Shoes::Main
           end
           stack(:width => 0.6) do
             stack(:margin => 10) do
-              inscription 'Background (color or image):'
-              color_edit = edit_line(@prefs['background']) do |edit|
-                @prefs['background'] = edit.text
+              inscription 'Background color:'
+              color_edit = edit_line(@prefs['background_color']) do |edit|
+                @prefs['background_color'] = edit.text
               end
-              flow do
-                button "pick color" do
-                  color_edit.text = ask_color('pick...')
-                  @prefs['background'] = color_edit.text
-                end
-                button "pick file" do
-                  color_edit.text = ask_open_file
-                  @prefs['background'] = color_edit.text
-                  @prefs['bikes'][i] = color_edit.text
-                end
+              button "pick color" do
+                color_edit.text = ask_color('pick...')
+                @prefs['background_color'] = color_edit.text
+              end
+              inscription 'Background image:'
+              image_edit = edit_line(@prefs['background_image']) do |edit|
+                @prefs['background_image'] = edit.text
+              end
+              button "pick file" do
+                image_edit.text = ask_open_file
+                @prefs['background_image'] = image_edit.text
               end
             end
 

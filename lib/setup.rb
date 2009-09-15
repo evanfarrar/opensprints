@@ -60,14 +60,29 @@ HEIGHT = options['window_height'].to_i.nonzero?||(height.to_i-100)
 WIDTH = options['window_width'].to_i.nonzero?||(width.to_i-50)
 
 if defined? Shoes
-  if options['background']
-    if File.readable?(options['background'])
-      BACKGROUND = options['background']
-    else
-      BACKGROUND = Shoes.instance_eval(options['background'])
+  class String
+    def is_shoes_color?
+      if self =~ /rgb/
+        true
+      elsif self =~ /^#....../
+        true
+      elsif Shoes::COLORS.keys.include? self.to_sym
+        true
+      else
+        false
+      end
     end
+  end
+  if options['background_color'] && options['background_color'].is_shoes_color?
+    BACKGROUND_COLOR = Shoes.instance_eval(options['background_color'])
   else
-    BACKGROUND = Shoes::COLORS[:black]
+    BACKGROUND_COLOR = Shoes::COLORS[:black]
+  end
+
+  if options['background_image'] && File.readable?(options['background_image'])
+    BACKGROUND_IMAGE = options['background_image']
+  else
+    BACKGROUND_IMAGE = rgb(0,0,0,0)
   end
 end
 

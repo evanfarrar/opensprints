@@ -39,8 +39,10 @@ bikes:
 - red
 - blue
 
-#the background the race window should use.
-background: media/background.jpg
+#the background image.
+background_image: media/background.png
+#the background color.
+background_color: "#999999"
 
 # Sets the height and width of the race window. Blank to auto-detect.
 window_height:

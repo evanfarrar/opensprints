@@ -95,9 +95,8 @@ class Main < Shoes
 
   def layout
     custom_styles
-    background black
-    background BACKGROUND
-    background black(0.25)
+    background BACKGROUND_COLOR if(defined?(BACKGROUND_COLOR))
+    background BACKGROUND_IMAGE if(defined?(BACKGROUND_IMAGE))
     nav
     @header = flow do
       banner TITLE
