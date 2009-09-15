@@ -288,10 +288,10 @@ class ConfigController < Shoes::Main
       stack do
         para ""
         button("Check for updates", :width => 200) do
-          sudo_password = ask("Please enter your password")
+          @sudo_password = ask("Please enter your password")
           @checking.show
-          `echo "#{sudo_password}" | sudo -S apt-get update`
-          if(`echo "#{sudo_password}" | sudo apt-get install opensprints -s -u` =~ /opensprints is already the newest version./)
+          `echo "#{@sudo_password}" | sudo -S apt-get update`
+          if(`echo "#{@sudo_password}" | sudo apt-get install opensprints -s -u` =~ /opensprints is already the newest version./)
             @checking.toggle
             @sorry.toggle
           else
@@ -303,7 +303,7 @@ class ConfigController < Shoes::Main
         @sorry = para("You're up to date!").hide
         @upgrade = button("Upgrade", :width => 200) do
           @upgrading.show
-          `echo "#{sudo_password}" | sudo -S apt-get install opensprints`
+          `echo "#{@sudo_password}" | sudo -S apt-get install opensprints`
           alert("Upgrade complete. Restarting opensprints...")
           fork ? exit : exec("opensprints")
         end.hide

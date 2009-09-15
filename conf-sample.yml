@@ -34,7 +34,7 @@ units: standard
 # The list of racers' colors. Supports from 1-4 racers.
 # Provide as many colors as you want racers.
 # Can be in any format shoes understands:
-# e.g.: "red" or "#FF0000" or "rgb(255,0,0)"
+# e.g.: "red" or '"#FF0000"' or "rgb(255,0,0)"
 bikes:
 - red
 - blue
@@ -42,7 +42,7 @@ bikes:
 #the background image.
 background_image: media/background.png
 #the background color.
-background_color: "#999999"
+background_color: '"#999999"'
 
 # Sets the height and width of the race window. Blank to auto-detect.
 window_height:
