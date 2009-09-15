@@ -25,4 +25,12 @@ class Race
   def finished?
     race_participations.all?(&:finish_time)
   end
+
+  def names
+    racers.map(&:name)
+  end
+
+  def names_to_colors
+    racers.join("|vs.|").split('|').zip($BIKES.join("|white|").split('|'))
+  end
 end

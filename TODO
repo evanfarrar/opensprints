@@ -2,6 +2,7 @@ Infrastructure
   * Rename Tournament Participation -> Registration
   * Rename RaceParticipation -> Performance
   * windows packaging
+  * OSX packaging
 
 Tournaments
   * add specific racers to a match

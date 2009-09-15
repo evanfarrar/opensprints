@@ -24,7 +24,7 @@ end
 
 task :update_changelog => :check_version_provided do
   old_changelog = File.read("build/debian/changelog")
-  OPENSPRINTS_VERSION = "#{ENV['VERSION']}-#{calculate_minor_version+1}"
+  OPENSPRINTS_VERSION = "#{ENV['VERSION']}-#{(calculate_minor_version||0)+1}"
   changelog = CHANGELOG_TEMPLATE.result + old_changelog
   File.open("build/debian/changelog", "w") {|f| f << changelog }
   print "Changelogged..."

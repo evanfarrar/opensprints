@@ -7,6 +7,7 @@ class ConfigController < Shoes::Main
   url '/configuration/appearance', :appearance
   url '/configuration/hardware', :hardware
   url '/configuration/bikes', :bikes
+  url '/configuration/upgrade', :upgrade
 
   def config_nav
     @nav.append {
@@ -14,6 +15,9 @@ class ConfigController < Shoes::Main
       button("Hardware") { visit '/configuration/hardware' }
       button("Bikes") { visit '/configuration/bikes' }
       button("Data Management") { visit '/configuration/data_file' }
+      if(PLATFORM =~ /linux/)
+        button("Upgrade") { visit '/configuration/upgrade' }
+      end
     }
   end
   
@@ -275,4 +279,35 @@ class ConfigController < Shoes::Main
     end
   end
 
+  def upgrade
+    layout
+    config_nav
+    @center.clear do
+      container
+      stack do
+        para ""
+        button("Check for updates", :width => 200) do
+          sudo_password = ask("Please enter your password")
+          @checking.show
+          `echo "#{sudo_password}" | sudo -S apt-get update`
+          if(`echo "#{sudo_password}" | sudo apt-get install opensprints -s -u` =~ /opensprints is already the newest version./)
+            @checking.toggle
+            @sorry.toggle
+          else
+            @checking.toggle
+            @upgrade.show
+          end
+        end
+        @checking = para("Checking for updates...").hide
+        @sorry = para("You're up to date!").hide
+        @upgrade = button("Upgrade", :width => 200) do
+          @upgrading.show
+          `echo "#{sudo_password}" | sudo -S apt-get install opensprints`
+          alert("Upgrade complete. Restarting opensprints...")
+          fork ? exit : exec("opensprints")
+        end.hide
+        @upgrading = para("Upgrading...").hide
+      end
+    end
+  end
 end

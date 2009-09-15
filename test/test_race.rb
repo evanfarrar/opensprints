@@ -91,4 +91,35 @@ describe 'A race' do
       r1.next_race.should==(r3)
     end
   end
+
+  it "should match up names and versus to colors" do
+    $BIKES = ["fuschia", "pink", "maroon", "blue"]
+    racers = [Racer.create(:name => "Alice"),
+              Racer.create(:name => "Bob"),
+              Racer.create(:name => "Cathy"),
+              Racer.create(:name => "Dale")]
+    r = Race.create(:race_participations => [{:racer => racers[0]}])
+    r.names_to_colors.should==([["Alice","fuschia"]])
+
+    r = Race.create(:race_participations => racers[0..1].map{|e|{:racer => e}})
+    r.names_to_colors.should==([["Alice","fuschia"],
+                                ["vs.","white"],
+                                ["Bob","pink"]])
+
+    r = Race.create(:race_participations => racers[0..2].map{|e|{:racer => e}})
+    r.names_to_colors.should==([["Alice","fuschia"],
+                                ["vs.","white"],
+                                ["Bob","pink"],
+                                ["vs.","white"],
+                                ["Cathy","maroon"]])
+
+    r = Race.create(:race_participations => racers[0..3].map{|e|{:racer => e}})
+    r.names_to_colors.should==([["Alice","fuschia"],
+                                ["vs.","white"],
+                                ["Bob","pink"],
+                                ["vs.","white"],
+                                ["Cathy","maroon"],
+                                ["vs.","white"],
+                                ["Dale","blue"]])
+  end
 end

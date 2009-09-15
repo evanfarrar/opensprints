@@ -1,10 +1,4 @@
 module RaceHelper
-  # Returns an array of the format:
-  # [["joe", "red"], ["vs.", "white],["nick","blue"]]
-  def names_to_colors(racers)
-    racers.join(" vs. ").split(' ').zip($BIKES.join(" white ").split(' '))
-  end
-
   def count_text(text)
     banner text, :font => "140px", :stroke => white, :align => 'center'
   end
@@ -38,8 +32,12 @@ class RaceController < Shoes::Main
       race = Race.get(id)
 
       stack {
-        names_to_colors(race.racers).each {|word,color|
-          subtitle(word.upcase,:font => "Helvetica Neue Bold ", :stroke => eval(color), :align => 'center',:margin => [0]*4)
+        race.names_to_colors.each {|word,color|
+          subtitle(
+            word.upcase,
+            :font => "Helvetica Neue Bold ",
+            :stroke => eval(color),
+            :align => 'center',:margin => [0]*4)
         }
         if next_race = race.next_race
           flow {
