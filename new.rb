@@ -116,4 +116,4 @@ Kernel::Main = Main
 
 require 'lib/setup.rb'
 
-Shoes.app(:height => HEIGHT, :width => WIDTH, :scroll => false)
+Shoes.app(:height => HEIGHT, :width => WIDTH, :scroll => false, :title => TITLE)

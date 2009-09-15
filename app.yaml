@@ -1,10 +1,10 @@
-name: Opensprints
+name: Open Sprints
 version: 1
 release: brifter
 icons:
 #  win32: platform/msw/App.ico
 #  osx:   platform/mac/App.icns
-  gtk:   media/app.png
+  gtk:   media/logo.png
 dmg:
   ds_store: platform/mac/dmg_ds_store
   background: static/hacketyhack-dmg.jpg

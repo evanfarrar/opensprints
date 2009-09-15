@@ -24,7 +24,7 @@ race_distance: 200
 roller_circumference: 1.0
 
 #the title displayed
-title: OpenSprints
+title: Open Sprints
 
 #the measurement system displayed: standard or metric
 units: standard
