@@ -1,3 +1,4 @@
 opensprints/* /opt/opensprints
 bin/shoes2.run /opt/opensprints
 bin/opensprints /usr/bin
+shortcuts/opensprints.desktop /usr/share/applications

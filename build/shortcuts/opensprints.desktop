@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Open Sprints
+Type=Application
+Terminal=true
+Categories=Favorites;Game;
+Exec=/usr/bin/opensprints
+Comment=Run Opensprints
+Icon=/opt/opensprints/media/logo.png
+GenericName=www.opensprints.com

@@ -58,13 +58,18 @@ class Main < Shoes
   include MainHelper
 
   def custom_styles
-    style(Banner,     :size => 48, :stroke => white)
-    style(Title,      :size => 34, :stroke => white)
-    style(Subtitle,   :size => 26, :stroke => white)
-    style(Tagline,    :size => 18, :stroke => white)
-    style(Caption,    :size => 14, :stroke => white)
-    style(Para,       :size => 12, :margin => [0]*4, :weight => "Bold", :stroke => white)
-    style(Inscription,:size => 10, :stroke => white, :margin => [0]*4)
+    if Shoes::FONTS.grep(/Avenir/).any?
+      default_font = "Avenir Black"
+    else
+      default_font = "Delicious Heavy"
+    end
+    style(Banner,     :size => 48, :stroke => white, :font => default_font)
+    style(Title,      :size => 34, :stroke => white, :font => default_font)
+    style(Subtitle,   :size => 26, :stroke => white, :font => default_font)
+    style(Tagline,    :size => 18, :stroke => white, :font => default_font)
+    style(Caption,    :size => 14, :stroke => white, :font => default_font)
+    style(Para,       :size => 12, :margin => [0]*4, :weight => "Bold", :stroke => white, :font => default_font)
+    style(Inscription,:size => 10, :stroke => white, :margin => [0]*4, :font => default_font)
 
     style(Code,       :family => 'monospace')
     style(Del,        :strikethrough => 'single')
@@ -82,21 +87,25 @@ class Main < Shoes
     layout
     @nav.clear {
       button("categories") { visit "/categories"}
-      button("tournaments") { visit "/tournaments"}
+      button("events") { visit "/tournaments"}
       button("configuration") { visit "/configuration"}
     }
   end
 
   def nav
     @nav = flow(:attach => Window, :top => 0, :left => 20) {
-      button("index") { visit "/" }
+      button("Return to Main Menu") { visit "/" }
     }
   end
 
-  def layout
+  def layout(background_type=:normal)
     custom_styles
     background BACKGROUND_COLOR if(defined?(BACKGROUND_COLOR))
-    background BACKGROUND_IMAGE if(defined?(BACKGROUND_IMAGE))
+    if(background_type==:menu)
+      background MENU_BACKGROUND_IMAGE if(defined?(MENU_BACKGROUND_IMAGE))
+    else
+      background BACKGROUND_IMAGE if(defined?(BACKGROUND_IMAGE))
+    end
     nav
     @header = flow do
       banner TITLE

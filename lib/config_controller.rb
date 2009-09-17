@@ -91,6 +91,14 @@ class ConfigController < Shoes::Main
                 image_edit.text = ask_open_file
                 @prefs['background_image'] = image_edit.text
               end
+              inscription 'Menu Background image:'
+              m_image_edit = edit_line(@prefs['menu_background_image']) do |edit|
+                @prefs['menu_background_image'] = edit.text
+              end
+              button "pick file" do
+                m_image_edit.text = ask_open_file
+                @prefs['menu_background_image'] = m_image_edit.text
+              end
             end
 
             stack(:margin => 10) do

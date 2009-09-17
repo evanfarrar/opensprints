@@ -46,7 +46,7 @@ class TournamentController < Shoes::Main
     layout
     @center.clear {
       stack(:width => 0.5) do
-        button("new tournament") { visit "/tournaments/new" }
+        button("new event") { visit "/tournaments/new" }
         Tournament.all.each {|tournament|
           separator_line
           flow(:width => 1.0) {
@@ -81,7 +81,7 @@ class TournamentController < Shoes::Main
   end
 
   def edit(id)
-    layout
+    layout(:menu)
     session[:referrer] = []
     tournament = Tournament.get(id)
     @nav.append {
@@ -190,7 +190,7 @@ class TournamentController < Shoes::Main
     racers.shift(9*racers_offset)
 
     @nav.append {
-      button("back to tournament") { visit "/tournaments/#{id}" }
+      button("back to event") { visit "/tournaments/#{id}" }
       button("next") { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
       pause = button("pause")
       play = button("play")
@@ -220,7 +220,7 @@ class TournamentController < Shoes::Main
     racers.shift(9*racers_offset)
 
     @nav.append {
-      button("back to tournament") { visit "/tournaments/#{tournament_id}" }
+      button("back to event") { visit "/tournaments/#{tournament_id}" }
       button("next") { visit "/tournaments/#{tournament_id}/stats/category/#{category_id}/#{racers_offset+1}" }
       pause = button("pause")
       play = button("play")

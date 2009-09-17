@@ -64,7 +64,7 @@ if defined? Shoes
     def is_shoes_color?
       if self =~ /rgb/
         true
-      elsif self =~ /^#....../
+      elsif self =~ /^"#....../
         true
       elsif Shoes::COLORS.keys.include? self.to_sym
         true
@@ -83,6 +83,11 @@ if defined? Shoes
     BACKGROUND_IMAGE = options['background_image']
   else
     BACKGROUND_IMAGE = rgb(0,0,0,0)
+  end
+  if options['menu_background_image'] && File.readable?(options['menu_background_image'])
+    MENU_BACKGROUND_IMAGE = options['menu_background_image']
+  else
+    MENU_BACKGROUND_IMAGE = rgb(0,0,0,0)
   end
 end
 
