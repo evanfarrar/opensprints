@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date Tue 26 May 2009 01:19:22 PM CDT
-LIBS:power,./symbols/custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves
+EESchema Schematic File Version 2  date Sun Sep 13 21:22:10 2009
+LIBS:power,custom_symbols,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,interface_board-cache
 EELAYER 23  0
 EELAYER END
 $Descr User 11000 8500
 Sheet 2 2
 Title ""
-Date "26 may 2009"
+Date "14 sep 2009"
 Rev ""
 Comp ""
 Comment1 ""

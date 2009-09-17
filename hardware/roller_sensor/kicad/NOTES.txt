@@ -1,0 +1,5 @@
+printing:
+To print a drawing of the layout, print to pdf with X and Y scaling 1.0. Then print the generated PDF at 1.077 scale.
+
+The mounting hole is a single pad with diameter 0.26" with a pad diameter 0.26".
+

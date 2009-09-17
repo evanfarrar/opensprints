@@ -1,0 +1,55 @@
+---------------------------------------------------
+v2.3.2 2009.09.13
+---------------------------------------------------
+gerbers generated with Pcbnew Build: SVN-R1805 (20090603)
+
+Changes:
+
+    * added blink LED to design
+	* designed for soldermask and silkscreen for the first time.
+	* font has curves
+
+---------------------------------------------------
+v2.2
+---------------------------------------------------
+
+Changes:
+
+    * FIXED: The Arduino's power jack doesn't poke through the end panel of the enclosure.
+          o Moves the Arduino out 0.05". 
+    * improved indication of the columns of holes where the male headers are installed.
+    * now text says "opensprints.org" instead of "OpenSprints". 
+
+---------------------------------------------------
+Previous version: v2.1
+---------------------------------------------------
+
+Changes:
+
+    * Arduino placement moved so it fits better inside the enclosure.
+    * Mounting holes for affixing the Arduino to the board with small nuts and bolts.
+    * "top" and "bottom" labels.
+    * Aesthetic changes to the title text. 
+
+Bugs:
+
+    * The Arduino's power jack doesn't poke through the end panel of the enclosure. 
+
+---------------------------------------------------
+Previous version: v2
+---------------------------------------------------
+Changes:
+
+    * Phased out UBW support.
+    * Designed to fit a specific plastic project box.
+    * Moved the placement of the RJ45 jacks to provide better access to the tabs. 
+
+Bugs:
+
+    * The Arduino is positioned too far out. A slot must be routed out of the end panel to fit the panel in the enclosure. 
+
+---------------------------------------------------
+First version: v1
+---------------------------------------------------
+
+This version supported both the UBW and the Arduino microcontroller boards. NOTE: V1 interface board rework 

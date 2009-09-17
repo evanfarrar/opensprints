@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by CVpcb (20090216-final) date = Tue 26 May 2009 12:56:10 PM CDT
+Cmp-Mod V01 Created by Cvpcb (20090603 SVN-R1805) date = Sun Sep 13 20:55:01 2009
+
+BeginCmp
+TimeStamp = /4AAD93A2;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LED5mm_LJO;
+EndCmp
 
 BeginCmp
 TimeStamp = /49C834DF;
@@ -250,6 +257,13 @@ TimeStamp = /4A1B2633/4A1B65A9;
 Reference = P42;
 ValeurCmp = PROTO_2X5;
 IdModule  = PROTO_2x5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4AAD93B5;
+Reference = R1;
+ValeurCmp = 100;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
