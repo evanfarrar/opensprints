@@ -106,6 +106,10 @@ class Main < Shoes
     }
   end
 
+  def small_logo
+    image("media/logo_text.png", :attach => Window, :top => 40, :left => WIDTH-170)
+  end
+
   def layout(background_type=:normal)
     custom_styles
     background BACKGROUND_COLOR if(defined?(BACKGROUND_COLOR))
@@ -116,7 +120,7 @@ class Main < Shoes
     end
     nav
     @header = flow do
-      banner TITLE
+      title @title||TITLE
     end
     @left = stack(:width => 150) do
     end

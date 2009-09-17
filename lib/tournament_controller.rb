@@ -81,15 +81,18 @@ class TournamentController < Shoes::Main
   end
 
   def edit(id)
-    layout(:menu)
-    session[:referrer] = []
     tournament = Tournament.get(id)
+    @title = tournament.name
+    layout(:menu)
+    small_logo
+    session[:referrer] = []
     @nav.append {
       button("stats") { visit "/tournaments/#{tournament.id}/stats" }
     }
     @center.clear {
       form(tournament)
     }
+
   end
 
   def form(tournament)

@@ -1,6 +1,6 @@
 module RaceHelper
   def count_text(text)
-    banner text, :font => "140px", :stroke => white, :align => 'center'
+    banner text, :font => "140px", :align => 'center'
   end
 end
 
@@ -35,7 +35,6 @@ class RaceController < Shoes::Main
         race.names_to_colors.each {|word,color|
           subtitle(
             word.upcase,
-            :font => "Helvetica Neue Bold ",
             :stroke => eval(color),
             :align => 'center',:margin => [0]*4)
         }
@@ -82,6 +81,7 @@ class RaceController < Shoes::Main
 
   def show(id)
     layout
+    small_logo
     race = Race.get(id)
     @nav.clear {
       button("Call It") {
@@ -97,6 +97,32 @@ class RaceController < Shoes::Main
         visit "/races/#{id}/ready"
       }
     }
+    @left.clear { 
+      stack do # start progress_bars
+        race.race_participations.each_with_index do |racer,i|
+          stack(:width => 1.0) {
+            background(eval(racer.color), :width => 1.0, :height => 80)
+            subtitle(" ", :margin => [0]*4).displace(0,-10)
+            subtitle(" ",:margin => [0]*4).displace(0,-28)
+          }
+        end
+      end # end progress_bars
+    }
+    @right.clear { 
+          stack do # start progress_bars
+            race.race_participations.each_with_index do |racer,i|
+              flow {
+                stack(:width => 1.0) {
+                  background("#e4e5e6", :width => 1.0, :height => 80)
+                  subtitle(" ", :margin => [0]*4).displace(0,-10)
+                  subtitle(" ",:margin => [0]*4).displace(0,-28)
+                }
+              }
+            end
+          end # end progress_bars
+    }
+    stroke red
+    line(@right.left, 0, @right.left, HEIGHT)
     @race_animation = animate(14) do
       if race.finished?
         @race_animation.stop
@@ -112,17 +138,18 @@ class RaceController < Shoes::Main
               racer.finish_time = SENSOR.finish_times[i] / 1000.0
             end
           end
-          stack do
+          progress_bars = stack do # start progress_bars
             race.race_participations.each_with_index do |racer,i|
               flow {
-                stack(:width => 0.92) {
+                stack(:width => 1.0) {
+                  background("#e4e5e6", :width => 1.0, :height => 80)
                   background(eval(racer.color), :width => racer.percent_complete, :height => 80)
-                  subtitle(racer.racer.name,":", :stroke => white, :font => "Helvetica Neue Bold", :margin => [0]*4).displace(0,-10)
-                  subtitle(racer.speed(racer.finish_time||SENSOR.time),"mph", :stroke => white, :font => "Helvetica Neue Bold", :margin => [0]*4).displace(0,-28)
+                  subtitle(racer.racer.name,":", :stroke => white, :margin => [0]*4).displace(0,-10)
+                  subtitle(racer.speed(racer.finish_time||SENSOR.time),"mph", :stroke => white, :margin => [0]*4).displace(0,-28)
                 }
               }
             end
-          end
+          end # end progress_bars
         end
       end
     end
