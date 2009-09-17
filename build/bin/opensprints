@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /opt/opensprints/
-/opt/opensprints/shoes2.run -- /opt/opensprints/new.rb
+/opt/opensprints/shoes2.run -- /opt/opensprints/opensprints.rb
