@@ -101,9 +101,10 @@ if defined? Shoes
       rect 6, top, percent, 20
     end
   end
-end
+  Dir.glob('media/fonts/*').each do |f|
+    font(f)
+  end
 
-if defined? Shoes
   require 'lib/config_controller'
   require 'lib/racer_controller'
   require 'lib/race_controller'
