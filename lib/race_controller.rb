@@ -25,7 +25,7 @@ class RaceController < Shoes::Main
       end
       button("New Race") { visit "/races/new" }
       if race.tournament
-        button("tournament") { visit "/tournament/#{race.tournament.id}" }
+        button("back to event") { visit "/tournament/#{race.tournament.id}" }
       end
     }
     @center.clear {
@@ -133,7 +133,7 @@ class RaceController < Shoes::Main
     winner = race.winner
     layout
     @nav.append {
-      button("tournament") { visit "/tournaments/#{race.tournament_id}" }
+      button("back to event") { visit "/tournaments/#{race.tournament_id}" }
     }
     @center.clear {
       background eval(winner.color+"(0.6)")
@@ -195,7 +195,7 @@ class RaceController < Shoes::Main
         stack {
           # TODO: this should clearly indicate which choice the user has just come from. "Save and go BACK to tournament"
           button("save & start race") { visit "/races/#{id}/ready" }
-          (button("save & return to tournament") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
+          (button("save & return to event") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
         }
       end
       

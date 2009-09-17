@@ -131,6 +131,7 @@ class TournamentController < Shoes::Main
 
       }
     }
+    stack(:width => 0.1)
     stack(:width => 0.4, :height => @center.height-100) {
       container
       title "races:"

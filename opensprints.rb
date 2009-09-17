@@ -11,8 +11,9 @@ end
 module MainHelper
   def button(text, styles={}, &callback)
     stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin => [5,10,5,0], :padding_top => 0) do
-      background(styles[:fill]||gray(0.2,0.5), :curve => 5)
-      t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||white)
+      background(styles[:fill]||("#e5e6e6"..."#c1c2c4"), :curve => 1)
+      border(black) if styles[:border]
+      t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||black, :margin => styles[:margin]||[0]*4)
       click &callback
       hover {
         t.underline = 'single'
@@ -24,17 +25,15 @@ module MainHelper
   end
 
   def left_button(text, styles={}, &callback)
-    button(text, styles.merge({:width => 1.0, :align => 'left'}), &callback)
+    button(text, styles.merge({:width => 1.0, :align => 'left', :margin => [10,0,0,0]}), &callback)
   end
 
   def light_button(text, styles={}, &callback)
-    button(text, styles.merge({:fill => rgb(200,200,200,0.7), :stroke => rgb(50,50,50)}), &callback)
+    button(text, styles.merge({:stroke => rgb(50,50,50)}), &callback)
   end
 
   def container
-    background(gray(0.3,0.5), :curve => 10)
-    border(gray, :curve => 10, :strokewidth => 3)
-    border(black, :curve => 10, :strokewidth => 1)
+    background("#e5e6e6"..."#babcbe", :curve => 1)
   end
 
   def session
@@ -63,20 +62,20 @@ class Main < Shoes
     else
       default_font = "Delicious Heavy"
     end
-    style(Banner,     :size => 48, :stroke => white, :font => default_font)
-    style(Title,      :size => 34, :stroke => white, :font => default_font)
-    style(Subtitle,   :size => 26, :stroke => white, :font => default_font)
-    style(Tagline,    :size => 18, :stroke => white, :font => default_font)
-    style(Caption,    :size => 14, :stroke => white, :font => default_font)
-    style(Para,       :size => 12, :margin => [0]*4, :weight => "Bold", :stroke => white, :font => default_font)
-    style(Inscription,:size => 10, :stroke => white, :margin => [0]*4, :font => default_font)
+    style(Banner,     :size => 48, :stroke => black, :font => default_font)
+    style(Title,      :size => 34, :stroke => black, :font => default_font)
+    style(Subtitle,   :size => 26, :stroke => black, :font => default_font)
+    style(Tagline,    :size => 18, :stroke => black, :font => default_font)
+    style(Caption,    :size => 14, :stroke => black, :font => default_font)
+    style(Para,       :size => 12, :margin => [0]*4, :weight => "Bold", :stroke => black, :font => default_font)
+    style(Inscription,:size => 10, :stroke => black, :margin => [0]*4, :font => default_font)
 
     style(Code,       :family => 'monospace')
     style(Del,        :strikethrough => 'single')
     style(Em,         :emphasis => 'italic')
     style(Ins,        :underline => 'single')
-    style(Link,       :underline => 'none', :stroke => white)
-    style(LinkHover,  :underline => 'single',  :stroke => white)
+    style(Link,       :underline => 'none', :stroke => "#ffcf01")
+    style(LinkHover,  :underline => 'none',  :stroke => black, :fill => "#ffcf01")
     style(Strong,     :weight => 'bold')
     style(Sup,        :rise =>   10,        :size =>  'x-small')
     style(Sub,        :rise =>   -10, :size => 'x-small')
@@ -85,10 +84,19 @@ class Main < Shoes
 
   def index
     layout
-    @nav.clear {
-      button("categories") { visit "/categories"}
-      button("events") { visit "/tournaments"}
-      button("configuration") { visit "/configuration"}
+    @header.clear
+    @nav.clear
+    @center.clear {
+      stack {
+        flow(:attach => Window, :top => (HEIGHT * 0.2).to_i, :left => (WIDTH / 2)-350) { image("media/logo_with_text.png") }
+        flow(:attach => Window, :top => (HEIGHT * 0.6).to_i, :left => (WIDTH / 2)-350) {
+          caption(link("categories", :click => "/categories"))
+          caption(" / ", :stroke => "#ffcf01")
+          caption(link("events", :click => "/tournaments"))
+          caption(" / ", :stroke => "#ffcf01")
+          caption(link("configuration", :click => "/configuration"))
+        }
+      }
     }
   end
 
