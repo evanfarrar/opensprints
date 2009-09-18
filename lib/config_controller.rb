@@ -234,6 +234,8 @@ class ConfigController < Shoes::Main
               edit_line(@prefs['roller_circumference']) do |edit|
                 @prefs['roller_circumference'] = edit.text.to_f
               end
+              inscription "e.g. 4.5 in. roller drum = 0.35908404 meters"
+              inscription "e.g. 3.0 in. roller drum = 0.23938936 meters"
             end
           end
 
