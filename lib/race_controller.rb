@@ -204,7 +204,7 @@ class RaceController < Shoes::Main
               }
               visit "/races/#{id}/edit"
             end
-            button("delete") {
+            delete_button {
               race_participation.destroy
               visit "/races/#{id}/edit"
             }

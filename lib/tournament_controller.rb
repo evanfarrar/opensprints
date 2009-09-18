@@ -55,7 +55,7 @@ class TournamentController < Shoes::Main
             }
             flow(:width => 0.1) { }
             flow(:width => 0.3) {
-              button("delete") { tournament.destroy; visit "/tournaments" }
+              delete_button { tournament.destroy; visit "/tournaments" }
             }
           }
         }
@@ -119,7 +119,7 @@ class TournamentController < Shoes::Main
           flow {
             flow(:width => 0.6) { para(tp.racer.name) }
             flow(:width => 0.3) {
-              light_button("delete") do
+              delete_button do
                 tp.destroy; visit "/tournaments/#{tournament.id}"
               end
             }
@@ -150,7 +150,7 @@ class TournamentController < Shoes::Main
                 end)
             }
             flow(:width => 0.3) {
-              light_button("delete") { race.destroy; visit "/tournaments/#{tournament.id}" }
+              delete_button { race.destroy; visit "/tournaments/#{tournament.id}" }
             }
           }
         }

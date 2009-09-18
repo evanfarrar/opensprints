@@ -16,7 +16,7 @@ class CategoryController < Shoes::Main
             }
             flow(:width => 0.1)
             flow(:width => 0.3) {
-              button("delete") { category.destroy; visit '/categories' }
+              delete_button { category.destroy; visit '/categories' }
             }
           }
         }

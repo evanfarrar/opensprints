@@ -40,7 +40,7 @@ class RacerController < Shoes::Main
                   flow(:width => 0.6, :margin_top => 8) { para categorization.category.name }
                   flow(:width => 0.1)
                   flow(:width => 0.3) {
-                    button("delete") {
+                    delete_button {
                       categorization.destroy
                       visit "/racers/#{id}"              
                     }

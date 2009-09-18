@@ -32,6 +32,23 @@ module MainHelper
     button(text, styles.merge({:stroke => rgb(50,50,50)}), &callback)
   end
 
+  def delete_button(styles={}, &callback)
+    stack(:margin_top => 8, :width => 20) do
+      click &callback
+      b = background "#ffcf01"
+      link(image "media/cross.png")
+      b.hide
+      hover {
+        b.show
+        self.cursor = :hand
+      }
+      leave {
+        b.hide
+        self.cursor = :arrow
+      }
+    end
+  end
+
   def container
     background("#e5e6e6"..."#babcbe", :curve => 1)
   end
@@ -48,6 +65,10 @@ module MainHelper
     flow(:height => 18, :scroll => false) do
       n.times { inscription '-', :margin => 4, :stroke => gray(0.8) }
     end
+  end
+
+  def small_logo
+    image("media/logo_text.png", :attach => Window, :top => 30, :left => WIDTH-110)
   end
 end
 
@@ -105,11 +126,6 @@ class Main < Shoes
       button("Return to Main Menu") { visit "/" }
     }
   end
-
-  def small_logo
-    image("media/logo_text.png", :attach => Window, :top => 30, :left => WIDTH-110)
-  end
-
   def layout(background_type=:normal)
     custom_styles
     background BACKGROUND_COLOR if(defined?(BACKGROUND_COLOR))
