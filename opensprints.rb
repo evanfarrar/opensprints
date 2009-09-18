@@ -107,7 +107,7 @@ class Main < Shoes
   end
 
   def small_logo
-    image("media/logo_text.png", :attach => Window, :top => 40, :left => WIDTH-170)
+    image("media/logo_text.png", :attach => Window, :top => 30, :left => WIDTH-110)
   end
 
   def layout(background_type=:normal)

@@ -259,7 +259,7 @@ class ConfigController < Shoes::Main
               @sensor_location_edit = edit_line(@prefs['sensor']['device']) do |edit|
                 @prefs['sensor']['device'] = edit.text
               end
-              inscription "e.g. Linux: /dev/tty0"
+              inscription "e.g. Linux: /dev/ttyUSB0"
             end
           end
         end
