@@ -11,7 +11,7 @@ class ConfigController < Shoes::Main
 
   def config_nav
     @nav.append {
-      button("Apearance") { visit '/configuration/appearance' }
+      button("Appearance") { visit '/configuration/appearance' }
       button("Hardware") { visit '/configuration/hardware' }
       button("Bikes") { visit '/configuration/bikes' }
       button("Data Management") { visit '/configuration/data_file' }
@@ -296,7 +296,9 @@ class ConfigController < Shoes::Main
     @center.clear do
       container
       stack do
-        para ""
+        version = `dpkg-query -W -f='${Version}' opensprints`
+        version = File.readlines('build/debian/changelog').first.gsub(/.*\((.*)\).*/,'\1').strip if version.empty?
+        para "You're using version: #{version}"
         button("Check for updates", :width => 200) do
           @sudo_password = ask("Please enter your password")
           @checking.show
