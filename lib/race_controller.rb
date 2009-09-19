@@ -25,7 +25,17 @@ class RaceController < Shoes::Main
       end
       button("New Race") { visit "/races/new" }
       if race.tournament
-        button("back to event") { visit "/tournament/#{race.tournament.id}" }
+        button("back to event") { visit "/tournaments/#{race.tournament.id}" }
+      end
+      if race.racers.length == 2
+        button("swap") {
+          racers = race.racers.reverse
+          race.race_participations.destroy!
+          racers.map {|r|
+            race.race_participations.create(:racer => r)
+          }
+          visit "/races/#{id}/ready"
+        } 
       end
     }
     @center.clear {
@@ -184,48 +194,105 @@ class RaceController < Shoes::Main
     race = Race.get(id)
     layout
     @center.clear {
-      stack do
-        race.race_participations.each do |race_participation|
-          flow(:height => 70, :width => 1.0) do
-            border eval(race_participation.color), :strokewidth => 4
-            subtitle race_participation.racer.name
-            
-            para( "move to:")
-            list_box(:items => race.race_participations.map(&:color) - [race_participation.color]) do |list|
-              new_color = list.text
-              racer = race_participation.racer
-              racers = race.racers
-              old_index = racers.index(racer)
-              new_index = $BIKES.index(new_color)
-              racers[new_index],racers[old_index] = racer,racers[new_index] 
-              race.race_participations.destroy!
-              racers.map {|r|
-                race.race_participations.create(:racer => r)
+      stack(:width => 0.2, :height => @center.height-100) {
+        container
+        para "UNMATCHED:"
+        stack(:height => @center.height-150, :scroll => true){ 
+          race.tournament.unmatched_racers.each do |racer|
+            flow {
+              flow(:width => 0.6) { para(racer.name) }
+              flow(:width => 0.3) {
+                image_button("media/add.png") do
+                  race.race_participations.create(:racer => racer)
+                  visit "/races/#{id}/edit"
+                end
               }
-              visit "/races/#{id}/edit"
-            end
-            delete_button {
-              race_participation.destroy
-              visit "/races/#{id}/edit"
             }
           end
-        end
-        flow {
-          if($BIKES.length > race.race_participations.count)
-            para "add a racer:"
-            list_box(:items => race.tournament.unmatched_racers) do |list|
-              race.race_participations.create(:racer => list.text)
-              visit "/races/#{id}/edit"
-            end
+        }
+      }
+      stack(:width => 0.1)
+      stack(:width => 0.7, :height => @center.height-100) {
+        flow(:height => @center.height-150){ 
+          container
+          case race.racers.length
+            when 1
+              race.race_participations.each do |race_participation|
+                stack(:height => 1.0, :width => (0.50)){ 
+                  flow(:height => 0.3) {
+                    background(eval(race_participation.color), :width=> 0.9)
+                  }
+                  flow(:height => 0.3) {
+                    caption race_participation.racer.name
+                    delete_button {
+                      race_participation.destroy!
+                      visit "/races/#{id}/edit"
+                    }
+                  }
+                  flow(:height => 0.3) {
+                    background(eval(race_participation.color), :width=> 0.9)
+                  }
+                }
+              end
+            when 2
+              race.race_participations.each do |race_participation|
+                stack(:height => 1.0, :width => (0.4)){ 
+                  flow(:height => 0.3) {
+                    background(eval(race_participation.color), :width=> 0.9)
+                  }
+                  flow(:height => 0.3) {
+                    caption race_participation.racer.name
+                    delete_button {
+                      race_participation.destroy!
+                      visit "/races/#{id}/edit"
+                    }
+                  }
+                  flow(:height => 0.3) {
+                    background(eval(race_participation.color), :width=> 0.9)
+                  }
+                }
+              end
+              stack(:width => (0.1)){ 
+                button("swap") {
+                  racers = race.racers.reverse
+                  race.race_participations.destroy!
+                  racers.map {|r|
+                    race.race_participations.create(:racer => r)
+                  }
+                  visit "/races/#{id}/edit"
+                } 
+              }
+            else
+              race.race_participations.each do |race_participation|
+                stack(:height => 1.0, :width => (1.0 / $BIKES.length)){ 
+                  border eval(race_participation.color), :strokewidth => 50
+                  tagline race_participation.racer.name
+                  para( "move to:")
+                  list_box(:items => race.race_participations.map(&:color) - [race_participation.color]) do |list|
+                    new_color = list.text
+                    racer = race_participation.racer
+                    racers = race.racers
+                    old_index = racers.index(racer)
+                    new_index = $BIKES.index(new_color)
+                    racers[new_index],racers[old_index] = racer,racers[new_index] 
+                    race.race_participations.destroy!
+                    racers.map {|r|
+                      race.race_participations.create(:racer => r)
+                    }
+                    visit "/races/#{id}/edit"
+                  end
+                }
+
+              end
           end
         }
         stack {
           # TODO: this should clearly indicate which choice the user has just come from. "Save and go BACK to tournament"
           button("save & start race") { visit "/races/#{id}/ready" }
+          (button("save & add another") { visit "/races/new/#{race.tournament_id}" }) if race.tournament_id
           (button("save & return to event") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
         }
-      end
-      
+      }
     }
   end
 

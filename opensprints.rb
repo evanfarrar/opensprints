@@ -43,6 +43,10 @@ module DefaultStyles
   def button_border
     nil
   end
+
+  def divider_color
+    nil
+  end
 end
  
 module MainHelper
@@ -71,11 +75,11 @@ module MainHelper
     button(text, styles.merge({:stroke => rgb(50,50,50)}), &callback)
   end
 
-  def delete_button(styles={}, &callback)
+  def image_button(path,styles={}, &callback)
     stack(:margin_top => 8, :width => 20) do
       click &callback
       b = background(link_hover_background||"#ffcf01")
-      link(image "media/cross.png")
+      image path
       b.hide
       hover {
         b.show
@@ -86,6 +90,13 @@ module MainHelper
         self.cursor = :arrow
       }
     end
+  end
+
+  def delete_button(styles={}, &callback)
+    image_button("media/cross.png", styles, &callback)
+  end
+  def edit_button(styles={}, &callback)
+    image_button("media/application_form_edit.png", styles, &callback)
   end
 
   def container

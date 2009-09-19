@@ -122,6 +122,11 @@ class TournamentController < Shoes::Main
           flow {
             flow(:width => 0.6) { para(tp.racer.name) }
             flow(:width => 0.3) {
+              edit_button do
+                session[:referrer].push(@center.app.location)
+                visit "/racers/#{tp.racer.id}"
+              end
+              flow(:width => 15)
               delete_button do
                 tp.destroy; visit "/tournaments/#{tournament.id}"
               end
@@ -145,14 +150,16 @@ class TournamentController < Shoes::Main
         tournament.races.each{|race|
           flow {
             flow(:width => 0.6) {
-              para(
-                if race.unraced?
-                  link(race.racers.join(' vs '), :click => "/races/#{race.id}/ready")
-                else
-                  del(race.racers.join(' vs '))
-                end)
+              if race.unraced?
+                para(race.racers.join(' vs '))
+              else
+                para(del(race.racers.join(' vs ')))
+              end
             }
-            flow(:width => 0.3) {
+            flow(:width => 0.4) {
+              button "RACE" do
+                visit "/races/#{race.id}/ready"
+              end
               delete_button { race.destroy; visit "/tournaments/#{tournament.id}" }
             }
           }

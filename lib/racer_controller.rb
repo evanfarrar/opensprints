@@ -56,10 +56,15 @@ class RacerController < Shoes::Main
             }
           }
         }
-        button "Save" do
-          racer.save
-          visit session[:referrer].pop||'/racers'
-        end
+        flow {
+          button "Save" do
+            racer.save
+            visit session[:referrer].pop||'/racers'
+          end
+          button "Cancel" do
+            visit session[:referrer].pop||'/racers'
+          end
+        }
       }
     }
   end
