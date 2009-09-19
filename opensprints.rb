@@ -12,7 +12,7 @@ module MainHelper
   def button(text, styles={}, &callback)
     stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin => [5,10,5,0], :padding_top => 0) do
       background(styles[:fill]||("#e5e6e6"..."#c1c2c4"), :curve => 1)
-      border(black) if styles[:border]
+      border(styles[:border]||"#ffcf01")
       t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||black, :margin => styles[:margin]||[0]*4)
       click &callback
       hover {
@@ -51,6 +51,7 @@ module MainHelper
 
   def container
     background("#e5e6e6"..."#babcbe", :curve => 1)
+    border("#ffcf01")
   end
 
   def session
@@ -63,7 +64,7 @@ module MainHelper
 
   def separator_line(n=45)
     flow(:height => 18, :scroll => false) do
-      n.times { inscription '-', :margin => 4, :stroke => gray(0.8) }
+      inscription '_'*n, :margin => [0]*4, :stroke => "#ffcf01"
     end
   end
 

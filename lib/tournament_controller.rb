@@ -46,10 +46,13 @@ class TournamentController < Shoes::Main
     layout
     @center.clear {
       stack(:width => 0.5) do
+        container
         button("new event") { visit "/tournaments/new" }
         Tournament.all.each {|tournament|
-          separator_line
-          flow(:width => 1.0) {
+          flow(:width => 1.0, :margin_left => 20) {
+            separator_line
+          }
+          flow(:width => 1.0, :margin_left => 20) {
             flow(:width => 0.6, :margin_top => 8) {
               para(link(tournament.name,:click => "/tournaments/#{tournament.id}"))
             }

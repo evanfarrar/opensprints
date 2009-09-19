@@ -7,10 +7,13 @@ class CategoryController < Shoes::Main
     layout
     @center.clear do
       stack(:width => 0.5) {
+        container
         button("new category") { visit "/categories/new" }
         Category.all.each {|category|
-          separator_line
-          flow(:width => 1.0) {
+          flow(:width => 1.0, :margin_left => 20) {
+            separator_line
+          }
+          flow(:width => 1.0, :margin_left => 20) {
             flow(:width => 0.6, :margin_top => 8) {
               para category.name
             }

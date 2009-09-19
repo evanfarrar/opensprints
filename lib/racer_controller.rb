@@ -35,7 +35,13 @@ class RacerController < Shoes::Main
           para "categories:"
           stack {
             stack(:width => 0.5) {
+              list_box(:items => Category.all.to_a - racer.categories) do |list|
+                racer.save
+                racer.categorizations.create(:category => list.text)
+                visit "/racers/#{id}"              
+              end
               racer.categorizations.each { |categorization|
+                separator_line
                 flow {
                   flow(:width => 0.6, :margin_top => 8) { para categorization.category.name }
                   flow(:width => 0.1)
@@ -48,11 +54,6 @@ class RacerController < Shoes::Main
                 }
               }
             }
-            list_box(:items => Category.all.to_a - racer.categories) do |list|
-              racer.save
-              racer.categorizations.create(:category => list.text)
-              visit "/racers/#{id}"              
-            end
           }
         }
         button "Save" do
