@@ -57,3 +57,7 @@ end
 task :package => [:update_changelog, :build, :upload, :release] do
   puts "Finished version #{OPENSPRINTS_VERSION}"
 end
+
+task :build_deb => [:update_changelog, :build] do
+  puts "Finished version #{OPENSPRINTS_VERSION}"
+end
