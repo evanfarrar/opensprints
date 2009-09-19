@@ -11,8 +11,9 @@ class Tournament
     tournament_participations.map(&:racer)
   end
 
-  def autofill
-    reload.unmatched_racers.each_slice($BIKES.length) { |a|
+  def autofill(racer_list=nil)
+    racer_list ||= reload.unmatched_racers
+    racer_list.each_slice($BIKES.length) { |a|
       races.create(:race_participations => a.map{|r| {:racer => r}})
     }
   end
@@ -25,7 +26,6 @@ class Tournament
     Racer.all - racers
   end
 
-private
   def matched_racers
     matched = []
     races.each { |race|

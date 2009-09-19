@@ -94,5 +94,18 @@ describe 'A tournament' do
       @tournament.races.length.should == 2
       @tournament.save
     end
+
+    it 'should accept a list of racers' do
+      @tournament = Tournament.new
+      6.times do
+        @tournament.tournament_participations.build({:racer => Racer.create})
+      end
+      @tournament.save
+      @tournament.reload
+      @tournament.races.length.should == 0
+      @tournament.autofill(@tournament.tournament_participations[0..2])
+      @tournament.races.length.should == 2
+      @tournament.races.first.racers.length.should == 2
+    end
   end
 end

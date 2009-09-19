@@ -175,7 +175,14 @@ class TournamentController < Shoes::Main
     }
     @left.clear do
       left_button "Autofill" do
-        tournament.autofill
+        if(session[:category] && (session[:category] != "All Categories"))
+          racers = tournament.tournament_participations.select{ |tp|
+            tp.racer.categorizations.map(&:category).include?(session[:category])
+          }
+          tournament.autofill(racers.map(&:racer)-tournament.matched_racers)
+        else
+          tournament.autofill
+        end
         tournament.save
         visit "/tournaments/#{tournament.id}"
       end
