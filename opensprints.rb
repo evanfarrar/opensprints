@@ -90,7 +90,7 @@ module MainHelper
 
   def container
     background(container_background||("#e5e6e6"..."#babcbe"), :curve => 1)
-    border(container_background||"#ffcf01")
+    border(container_border||"#ffcf01")
   end
 
   def session
@@ -103,7 +103,7 @@ module MainHelper
 
   def separator_line(n=45)
     flow(:height => 18, :scroll => false) do
-      inscription '_'*n, :margin => [0]*4, :stroke => "#ffcf01"
+      inscription '_'*n, :margin => [0]*4, :stroke => divider_color||"#ffcf01"
     end
   end
 
