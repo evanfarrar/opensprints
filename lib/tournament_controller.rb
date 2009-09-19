@@ -122,14 +122,17 @@ class TournamentController < Shoes::Main
           flow {
             flow(:width => 0.6) { para(tp.racer.name) }
             flow(:width => 0.3) {
-              edit_button do
-                session[:referrer].push(@center.app.location)
-                visit "/racers/#{tp.racer.id}"
-              end
-              flow(:width => 15)
-              delete_button do
-                tp.destroy; visit "/tournaments/#{tournament.id}"
-              end
+              flow(:width => 0.8) {
+                edit_button do
+                  session[:referrer].push(@center.app.location)
+                  visit "/racers/#{tp.racer.id}"
+                end
+              }
+              flow(:width => 0.2) {
+                delete_button do
+                  tp.destroy; visit "/tournaments/#{tournament.id}"
+                end
+              }
             }
           }
         end
@@ -142,8 +145,8 @@ class TournamentController < Shoes::Main
 
       }
     }
-    stack(:width => 0.1)
-    stack(:width => 0.4, :height => @center.height-100) {
+    stack(:width => 0.05)
+    stack(:width => 0.55, :height => @center.height-100) {
       container
       title "races:"
       stack(:height => @center.height-200, :scroll => true) {
@@ -156,11 +159,15 @@ class TournamentController < Shoes::Main
                 para(del(race.racers.join(' vs ')))
               end
             }
-            flow(:width => 0.4) {
-              button "RACE" do
-                visit "/races/#{race.id}/ready"
-              end
-              delete_button { race.destroy; visit "/tournaments/#{tournament.id}" }
+            flow(:width => 0.35) {
+              flow(:width => 0.8){
+                button "RACE" do
+                  visit "/races/#{race.id}/ready"
+                end
+              }
+              flow(:width => 0.2){
+                delete_button { race.destroy; visit "/tournaments/#{tournament.id}" }
+              }
             }
           }
         }
