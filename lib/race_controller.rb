@@ -174,7 +174,7 @@ class RaceController < Shoes::Main
           end
         }
         if next_race = race.next_race
-          light_button("next race: #{next_race.racers.join(", ")}") { visit "/races/#{next_race.id}/ready" }
+          button("next race: #{next_race.racers.join(", ")}") { visit "/races/#{next_race.id}/ready" }
         end
       end
     }

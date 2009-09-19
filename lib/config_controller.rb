@@ -5,6 +5,7 @@ class ConfigController < Shoes::Main
   url '/configuration', :index
   url '/configuration/data_file', :data_file
   url '/configuration/appearance', :appearance
+  url '/configuration/skin', :skin
   url '/configuration/hardware', :hardware
   url '/configuration/bikes', :bikes
   url '/configuration/upgrade', :upgrade
@@ -12,6 +13,7 @@ class ConfigController < Shoes::Main
   def config_nav
     @nav.append {
       button("Appearance") { visit '/configuration/appearance' }
+      button("Skin") { visit '/configuration/skin' }
       button("Hardware") { visit '/configuration/hardware' }
       button("Bikes") { visit '/configuration/bikes' }
       button("Data Management") { visit '/configuration/data_file' }
@@ -62,18 +64,40 @@ class ConfigController < Shoes::Main
               end
             end
 
+          end
+          stack(:width => 0.6) do
             stack(:margin => 10) do
-              inscription 'Track Skin:'
-              sensors = Dir.glob('lib/race_windows/*.rb').map do |s|
-                s.gsub(/lib\/race_windows\/(.*)\.rb/, '\1')
+              inscription 'window height:'
+              edit_line(@prefs['window_height']) do |edit|
+                @prefs['window_height'] = edit.text
               end
-              list_box(:items => sensors,
-                :choose => @prefs['track']) do |changed|
-                  @prefs['track'] = changed.text
+              inscription 'window width:'
+              edit_line(@prefs['window_width']) do |edit|
+                @prefs['window_width'] = edit.text
               end
             end
           end
-          stack(:width => 0.6) do
+        end
+        stack do
+          save_button
+        end
+      end
+    end
+  end
+  def skin
+    layout
+    config_nav
+
+    @center.clear do
+      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
+        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
+      else
+        @prefs = YAML::load_file('conf-sample.yml')
+      end
+      flow(:height => @center.height-50, :width => 1.0) do
+        container
+        flow(:height => @center.height-150, :scroll => true) do
+          stack(:width => 0.4) do
             stack(:margin => 10) do
               inscription 'Background color:'
               color_edit = edit_line(@prefs['background_color']) do |edit|
@@ -100,15 +124,16 @@ class ConfigController < Shoes::Main
                 @prefs['menu_background_image'] = m_image_edit.text
               end
             end
-
+          end
+          stack(:width => 0.6) do
             stack(:margin => 10) do
-              inscription 'window height:'
-              edit_line(@prefs['window_height']) do |edit|
-                @prefs['window_height'] = edit.text
+              inscription 'Skin:'
+              sensors = Dir.glob('media/skins/*').map do |s|
+                s.gsub(/media\/skins\/(.*)/, '\1')
               end
-              inscription 'window width:'
-              edit_line(@prefs['window_width']) do |edit|
-                @prefs['window_width'] = edit.text
+              list_box(:items => [nil]+sensors,
+                :choose => @prefs['skin']) do |changed|
+                  @prefs['skin'] = changed.text
               end
             end
           end
@@ -278,14 +303,31 @@ class ConfigController < Shoes::Main
       @prefs['bikes'].compact!
       old_width = WIDTH
       old_height = HEIGHT
+      old_skin = SKIN
       File.open(File.join(LIB_DIR,'opensprints_conf.yml'), 'w+') do |f|
         f << @prefs.to_yaml
       end
       load "lib/setup.rb"
-      if(old_width!=WIDTH||old_height!=HEIGHT)
-        alert("window dimensions have changed, please restart opensprints for this to take effect.")
-      end
       alert('Preferences saved!')
+      if(old_width!=WIDTH||old_height!=HEIGHT)
+        if((PLATFORM =~ /linux/)&&!(`which opensprints`).empty?)
+          alert("window dimensions have changed, restarting...")
+          fork ? exit : exec("opensprints")
+        else
+          alert("window dimensions have changed, please restart opensprints for this to take effect.")
+          exit
+        end
+      end
+      if(old_skin!=SKIN)
+        if((PLATFORM =~ /linux/)&&!(`which opensprints`).empty?)
+          alert("Skin has changed, restarting...")
+          fork ? exit : exec("opensprints")
+        else
+          alert("Skin has changed, please restart opensprints for this to take effect.")
+          exit
+        end
+      end
+      
       visit '/configuration'
     end
   end

@@ -35,6 +35,7 @@ end
 $RACE_DISTANCE = options['race_distance'].to_f
 $ROLLER_CIRCUMFERENCE = options['roller_circumference'].to_f
 TITLE = options['title']
+SKIN = options['skin'] if File.exist?('media/skins/'+options['skin'].to_s)
 bikes = options['bikes']
 bikes.delete('')
 $BIKES = bikes

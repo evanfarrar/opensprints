@@ -54,4 +54,6 @@ task :check_version_provided do
   abort("Sorry, need to provide a major version number") unless ENV['VERSION']
 end
 
-task :package => [:update_changelog, :build, :upload, :release]
+task :package => [:update_changelog, :build, :upload, :release] do
+  puts "Finished version #{OPENSPRINTS_VERSION}"
+end

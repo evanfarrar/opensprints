@@ -43,7 +43,7 @@ class TournamentController < Shoes::Main
   url '/tournaments/(\d+)/stats/category/(\d+)/(\d+)', :category_stats
 
   def list
-    layout
+    layout(:menu)
     @center.clear {
       stack(:width => 0.5) do
         container
@@ -67,7 +67,7 @@ class TournamentController < Shoes::Main
   end
 
   def new
-    layout
+    layout(:menu)
     @center.clear {
       tournament = Tournament.new
       flow {
@@ -130,7 +130,7 @@ class TournamentController < Shoes::Main
         end
       }
       stack(:width => 1.0) {
-        light_button("add a new racer") {
+        button("add a new racer") {
           session[:referrer].push(@center.app.location)
           visit("/racers/new/tournament/#{tournament.id}")
         }
@@ -190,7 +190,7 @@ class TournamentController < Shoes::Main
   end
 
   def overall_stats(id, racers_offset=0)
-    layout
+    layout(:menu)
     racers_offset = racers_offset.to_i
     tournament = Tournament.get(id)
     racers = tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
@@ -218,7 +218,7 @@ class TournamentController < Shoes::Main
   end
 
   def category_stats(tournament_id,category_id,racers_offset=0)
-    layout
+    layout(:menu)
     racers_offset = racers_offset.to_i
     tournament = Tournament.get(tournament_id)
     category = Category.get(category_id)

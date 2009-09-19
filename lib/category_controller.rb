@@ -4,7 +4,7 @@ class CategoryController < Shoes::Main
   url '/categories/new', :new
 
   def list
-    layout
+    layout(:menu)
     @center.clear do
       stack(:width => 0.5) {
         container
@@ -28,7 +28,7 @@ class CategoryController < Shoes::Main
   end
 
   def new
-    layout
+    layout(:menu)
     attrs = {}
     @center.clear do
       flow {
