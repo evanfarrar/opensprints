@@ -57,11 +57,9 @@ module MainHelper
       t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||black, :margin => styles[:margin]||[0]*4)
       click &callback
       hover {
-        t.underline = 'single'
         self.cursor = :hand
       }
       leave {
-        t.underline = 'none'
         self.cursor = :arrow
       }
     end
