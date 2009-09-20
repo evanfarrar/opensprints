@@ -35,30 +35,21 @@ class RacerController < Shoes::Main
           para "Assign to Categories:"
           stack {
             stack(:width => 0.5) {
-              list_box(:items => Category.all.to_a - racer.categories) do |list|
-                racer.save
-                racer.categorizations.create(:category => list.text)
-                visit "/racers/#{id}"              
+              @checkboxes = Category.all.map do |category|
+                flow { @c = check; para category.name }
+                @c.checked = racer.categories.include?(category)
+                [@c, category]
               end
-              racer.categorizations.each { |categorization|
-                separator_line
-                flow {
-                  flow(:width => 0.6, :margin_top => 8) { para categorization.category.name }
-                  flow(:width => 0.1)
-                  flow(:width => 0.3) {
-                    delete_button {
-                      categorization.destroy
-                      visit "/racers/#{id}"              
-                    }
-                  }
-                }
-              }
             }
           }
         }
         flow {
           button "Save" do
             racer.save
+            racer.categorizations.destroy!
+            @checkboxes.each do |cb, category|
+              racer.categorizations.create(:category => category) if cb.checked?
+            end
             visit session[:referrer].pop||'/racers'
           end
           button "Cancel" do
