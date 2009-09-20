@@ -26,7 +26,7 @@ class RacerController < Shoes::Main
     @center.clear {
       stack{
         flow {
-          para "name:"
+          para "Name:"
           edit_line(racer.name) do |edit|
             racer.name = edit.text
           end
@@ -50,9 +50,13 @@ class RacerController < Shoes::Main
             @checkboxes.each do |cb, category|
               racer.categorizations.create(:category => category) if cb.checked?
             end
+            racer.destroy if Racer.get(racer.id).name.blank? && racer.name.blank?
+            TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
             visit session[:referrer].pop||'/racers'
           end
           button "Cancel" do
+            racer.destroy if Racer.get(racer.id).try(:name).blank?
+            TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
             visit session[:referrer].pop||'/racers'
           end
         }

@@ -77,8 +77,12 @@ class TournamentController < Shoes::Main
         end
       }
       button "Save & continue" do
-        tournament.save
-        visit "/tournaments/#{tournament.id}"
+        if tournament.name.blank?
+          alert("Tournament name can't be blank.")
+        else
+          tournament.save
+          visit "/tournaments/#{tournament.id}"
+        end
       end
     }
   end
@@ -120,7 +124,7 @@ class TournamentController < Shoes::Main
       racers = stack(:height => @center.height-200, :scroll => true){ 
         tournament_participations.each do |tp|
           flow {
-            flow(:width => 0.6) { para(tp.racer.name) }
+            flow(:width => 0.6) { para(tp.racer.name) if tp.racer }
             flow(:width => 0.3) {
               flow(:width => 0.8) {
                 edit_button do

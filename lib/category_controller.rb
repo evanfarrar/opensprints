@@ -38,8 +38,12 @@ class CategoryController < Shoes::Main
         end
       }
       button "Create" do
-        Category.create(attrs)
-        visit '/categories'
+        if attrs[:name].blank?
+          alert("Sorry, name can't be blank")
+        else
+          Category.create(attrs)
+          visit '/categories'
+        end
       end
     end
   end
