@@ -196,20 +196,22 @@ class RaceController < Shoes::Main
     @center.clear {
       stack(:width => 0.2, :height => @center.height-100) {
         container
-        para "UNMATCHED:"
-        stack(:height => @center.height-150, :scroll => true){ 
-          race.tournament.unmatched_racers.each do |racer|
-            flow {
-              flow(:width => 0.6) { para(racer.name) }
-              flow(:width => 0.3) {
-                image_button("media/add.png") do
-                  race.race_participations.create(:racer => racer)
-                  visit "/races/#{id}/edit"
-                end
+        if($BIKES.length > race.racers.length)
+          para "UNMATCHED:"
+          stack(:height => @center.height-150, :scroll => true){ 
+            race.tournament.unmatched_racers.each do |racer|
+              flow {
+                flow(:width => 0.6) { para(racer.name) }
+                flow(:width => 0.3) {
+                  image_button("media/add.png") do
+                    race.race_participations.create(:racer => racer)
+                    visit "/races/#{id}/edit"
+                  end
+                }
               }
-            }
-          end
-        }
+            end
+          }
+        end
       }
       stack(:width => 0.1)
       stack(:width => 0.7, :height => @center.height-100) {
@@ -243,7 +245,7 @@ class RaceController < Shoes::Main
                   flow(:height => 0.3) {
                     caption race_participation.racer.name
                     delete_button {
-                      race_participation.destroy!
+                      race_participation.destroy
                       visit "/races/#{id}/edit"
                     }
                   }
