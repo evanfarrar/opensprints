@@ -32,7 +32,7 @@ class RacerController < Shoes::Main
           end
         }
         flow {
-          para "categories:"
+          para "Assign to Categories:"
           stack {
             stack(:width => 0.5) {
               list_box(:items => Category.all.to_a - racer.categories) do |list|
