@@ -67,11 +67,17 @@ class ConfigController < Shoes::Main
           end
           stack(:width => 0.6) do
             stack(:margin => 10) do
-              inscription 'window height:'
+              if RUBY_PLATFORM =~ /linux/
+                width,height = `xrandr | grep '*'`.split[0].split('x')
+              else
+                width,height = 1024,768
+              end
+
+              inscription "window height (e.g. #{height.to_i - 100}):"
               edit_line(@prefs['window_height']) do |edit|
                 @prefs['window_height'] = edit.text
               end
-              inscription 'window width:'
+              inscription "window width (e.g. #{width.to_i - 50}):"
               edit_line(@prefs['window_width']) do |edit|
                 @prefs['window_width'] = edit.text
               end
