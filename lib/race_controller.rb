@@ -225,7 +225,7 @@ class RaceController < Shoes::Main
                   flow(:height => 0.3) {
                     caption race_participation.racer.name
                     delete_button {
-                      race_participation.destroy!
+                      race_participation.destroy
                       visit "/races/#{id}/edit"
                     }
                   }
