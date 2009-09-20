@@ -23,7 +23,9 @@ class RaceController < Shoes::Main
       if next_race = race.next_race
          button("Skip to Next Race") { visit "/races/#{next_race.id}/ready" }
       end
-      button("New Race") { visit "/races/new" }
+      button("New Race") {
+        visit "/races/new/tournament/#{race.tournament_id}"
+      }
       if race.tournament
         button("back to event") { visit "/tournaments/#{race.tournament.id}" }
       end

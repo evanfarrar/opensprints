@@ -217,7 +217,7 @@ class TournamentController < Shoes::Main
     racers = tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
     racers.shift(9*racers_offset)
 
-    @nav.append {
+    @nav.clear {
       button("back to event") { visit "/tournaments/#{id}" }
       button("next") { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
       pause = button("pause")
@@ -247,7 +247,7 @@ class TournamentController < Shoes::Main
     racers = racers.sort_by{|tp|tp.best_time||Infinity}
     racers.shift(9*racers_offset)
 
-    @nav.append {
+    @nav.clear {
       button("back to event") { visit "/tournaments/#{tournament_id}" }
       button("next") { visit "/tournaments/#{tournament_id}/stats/category/#{category_id}/#{racers_offset+1}" }
       pause = button("pause")
