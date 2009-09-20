@@ -196,12 +196,12 @@ class TournamentController < Shoes::Main
       category = session[:category]
       order_by = session[:order_by]
       categories = ["All Categories"]+Category.all.to_a
-      para "category:"
+      inscription "Filter by Category:", :margin => [0,30,0,0]
       list_box(:width => 1.0, :choose => category, :items => categories) do |list|
         session[:category] = list.text
         visit "/tournaments/#{tournament.id}" if category != session[:category]
       end
-      para "order:"
+      inscription "Order Racers:", :margin => [0,30,0,0]
       list_box(:width => 1.0, :choose => order_by, :items => ["Name","Best time"]) do |list|
         session[:order_by] = list.text
         visit "/tournaments/#{tournament.id}" if order_by != session[:order_by]
