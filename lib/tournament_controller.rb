@@ -95,7 +95,7 @@ class TournamentController < Shoes::Main
   def edit(id)
     tournament = Tournament.get(id)
     Race.all(:tournament => tournament).each { |r| r.destroy if(r.racers.length == 0) }
-    tournament.tournament_participations.each { |tp| tp.destroy if(tp.racer.name.blank?) }
+    tournament.tournament_participations.each { |tp| tp.destroy if(tp.racer.nil?||tp.racer.name.blank?) }
     tournament = Tournament.get(id)
     @title = tournament.name
     layout(:menu)

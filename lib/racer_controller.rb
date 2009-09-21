@@ -59,6 +59,8 @@ class RacerController < Shoes::Main
           button "Save" do
             if((tournament.racers-[racer]).any? { |r| racer.name == r.name })
               alert("Racer is already in this event.")
+            elsif racer.name.blank?
+              alert "Sorry, name is required."
             elsif old_racer = Racer.first(:name => racer.name, :id.not => racer.id)
               TournamentParticipation.create(:racer => racer, :tournament => tournament)
               old_racer.save
@@ -79,6 +81,7 @@ class RacerController < Shoes::Main
                 racer.categorizations.create(:category => category) if cb.checked?
               end
               if Racer.get(racer.id).name.blank? && racer.name.blank?
+                TournamentParticipation.all(:racer => racer)
                 racer.destroy
               end
               visit session[:referrer].pop||'/racers'
