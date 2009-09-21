@@ -28,7 +28,7 @@ class RacerController < Shoes::Main
       stack{
         flow {
           para "Name:"
-          edit_line(racer.name) do |edit|
+          @e = edit_line(racer.name) do |edit|
             racer.name = edit.text
           end
         }
@@ -82,6 +82,7 @@ class RacerController < Shoes::Main
         }
       }
     }
+    timer(0.01) { @e.focus }
   end
 
   def new
