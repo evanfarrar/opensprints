@@ -103,7 +103,7 @@ describe 'A tournament' do
       @tournament.save
       @tournament.reload
       @tournament.races.length.should == 0
-      @tournament.autofill(@tournament.tournament_participations[0..2])
+      @tournament.autofill(@tournament.tournament_participations.racers[0..2])
       @tournament.races.length.should == 2
       @tournament.races.first.racers.length.should == 2
     end

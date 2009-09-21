@@ -260,7 +260,7 @@ class TournamentController < Shoes::Main
     tournament = Tournament.get(tournament_id)
     category = Category.get(category_id)
     racers = TournamentParticipation.all(:tournament_id => tournament_id, "racer.categorizations.category_id" => category_id)
-    racers = racers.sort_by{|tp|tp.best_time||Infinity}
+    racers = racers.sort_by{|tp|[tp.losses,tp.best_time||Infinity]}
     racers.shift(9*racers_offset)
 
     @nav.clear {

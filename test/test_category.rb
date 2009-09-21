@@ -52,12 +52,4 @@ describe 'A category' do
     end
   end
 
-  it 'should know if it is unique' do
-    c1 = Category.create(:name => "TestTestTest")
-    c1.unique?.should==(true)
-    Category.new(:name => "Test").unique?.should==(false)
-    
-    
-
-  end
 end
