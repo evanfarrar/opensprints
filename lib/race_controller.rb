@@ -176,12 +176,12 @@ class RaceController < Shoes::Main
     }
     @center.clear {
       stack(:height => 1.0) do
-        flow(:height => 0.1) { background eval(winner.color+"(0.6)") }
+        flow(:height => 0.1) { background eval(winner.color) }
         flow(:height => 0.4) {
           banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
 
         }
-        flow(:height => 0.1) { background eval(winner.color+"(0.6)") }
+        flow(:height => 0.1) { background eval(winner.color) }
         stack(:height => 0.4) {
           standings = race.race_participations.sort_by { |racer| racer.finish_time||Infinity }
           standings.each_with_index {|r,i|

@@ -11,14 +11,14 @@ class ConfigController < Shoes::Main
   url '/configuration/upgrade', :upgrade
 
   def config_nav
-    @nav.append {
-      button("Appearance") { visit '/configuration/appearance' }
-      button("Skin") { visit '/configuration/skin' }
-      button("Hardware") { visit '/configuration/hardware' }
-      button("Bikes") { visit '/configuration/bikes' }
-      button("Data Management") { visit '/configuration/data_file' }
+    @left.clear {
+      left_button("Appearance") { visit '/configuration/appearance' }
+      left_button("Skin") { visit '/configuration/skin' }
+      left_button("Hardware") { visit '/configuration/hardware' }
+      left_button("Bikes") { visit '/configuration/bikes' }
+      left_button("Data Management") { visit '/configuration/data_file' }
       if(PLATFORM =~ /linux/)
-        button("Upgrade") { visit '/configuration/upgrade' }
+        left_button("Upgrade") { visit '/configuration/upgrade' }
       end
     }
   end
@@ -26,6 +26,7 @@ class ConfigController < Shoes::Main
   def appearance
     layout
     config_nav
+    @header.clear { title "Appearance" }
 
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -93,6 +94,7 @@ class ConfigController < Shoes::Main
   def skin
     layout
     config_nav
+    @header.clear { title "Skin" }
 
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -154,6 +156,7 @@ class ConfigController < Shoes::Main
   def data_file
     layout
     config_nav
+    @header.clear { title "Data" }
     @center.clear do
       container
       stack do
@@ -185,11 +188,13 @@ class ConfigController < Shoes::Main
   def index
     layout
     config_nav
+    @header.clear { title "Appearance" }
   end
 
   def bikes
     layout
     config_nav
+    @header.clear { title "Appearance" }
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
         @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -242,6 +247,7 @@ class ConfigController < Shoes::Main
   def hardware
     layout
     config_nav
+    @header.clear { title "Appearance" }
     
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -341,6 +347,7 @@ class ConfigController < Shoes::Main
   def upgrade
     layout
     config_nav
+    @header.clear { title "Appearance" }
     @center.clear do
       container
       stack do
