@@ -17,6 +17,8 @@ class RaceController < Shoes::Main
   def ready(id)
     layout
     race = Race.get(id)
+    empty_bars(race)
+    @header.clear { title "GET READY TO RACE" }
     @nav.clear {
       button("Start") { visit "/races/#{id}/countdown" }
       button("Edit Race") { session[:referrer].push(@center.app.location); visit "/races/#{id}/edit" }
@@ -40,16 +42,9 @@ class RaceController < Shoes::Main
         } 
       end
     }
-    @center.clear {
+    @center.append {
       race = Race.get(id)
-
       stack {
-        race.names_to_colors.each {|word,color|
-          subtitle(
-            word.upcase,
-            :stroke => eval(color),
-            :align => 'center',:margin => [0]*4)
-        }
         if next_race = race.next_race
           flow {
             para("next race: ",next_race.racers.join(", "))
@@ -63,24 +58,33 @@ class RaceController < Shoes::Main
   def countdown(id)
     layout
     race = Race.get(id)
+    empty_bars(race)
     @nav.clear {
       button("Stop Countdown") { visit "/races/#{id}/ready" }
+    }
+    @center.append {
+      f = flow(:width => 1.0){
+        flow(:width => 0.3)
+        @countbox = flow(:width => 0.4) { }
+        flow(:width => 0.3)
+      }
+      f.displace(0, -100)
     }
     @timer = animate(1) { |count|
       case count
       when 4
-        @center.clear do
+        @countbox.clear do
           container
-          count_text("GO!!!")
+          count_text("GO!")
         end
       when 1
         SENSOR.start
-        @center.clear do
+        @countbox.clear do
           container
           count_text(4-count)
         end
       when 0..4
-        @center.clear do
+        @countbox.clear do
           container
           count_text(4-count)
         end
@@ -114,8 +118,8 @@ class RaceController < Shoes::Main
         race.race_participations.each_with_index do |racer,i|
           stack(:width => 1.0) {
             background(eval(racer.color), :width => 1.0, :height => 80)
-            subtitle(" ", :margin => [0]*4).displace(0,-10)
-            subtitle(" ",:margin => [0]*4).displace(0,-28)
+            subtitle(" ", :margin => [0]*4).displace(0,0)
+            subtitle(" ",:margin => [0]*4).displace(0,0)
           }
         end
       end # end progress_bars
@@ -126,8 +130,8 @@ class RaceController < Shoes::Main
               flow {
                 stack(:width => 1.0) {
                   background("#e4e5e6", :width => 1.0, :height => 80)
-                  subtitle(" ", :margin => [0]*4).displace(0,-10)
-                  subtitle(" ",:margin => [0]*4).displace(0,-28)
+                  subtitle(" ", :margin => [0]*4).displace(0,0)
+                  subtitle(" ",:margin => [0]*4).displace(0,0)
                 }
               }
             end
@@ -156,8 +160,8 @@ class RaceController < Shoes::Main
                 stack(:width => 1.0) {
                   background("#e4e5e6", :width => 1.0, :height => 80)
                   background(eval(racer.color), :width => racer.percent_complete, :height => 80)
-                  subtitle(racer.racer.name,":", :margin => [0]*4).displace(0,-10)
-                  subtitle(racer.speed(racer.finish_time||SENSOR.time),"mph", :margin => [0]*4).displace(0,-28)
+                  subtitle(racer.racer.name, :margin => [0]*4).displace(0,0)
+                  subtitle(racer.speed(racer.finish_time||SENSOR.time),"mph", :margin => [0]*4).displace(0,0)
                 }
               }
             end
@@ -315,6 +319,48 @@ class RaceController < Shoes::Main
         }
       }
     }
+  end
+
+  def empty_bars(race)
+    @left.clear { 
+      stack do # start progress_bars
+        race.race_participations.each_with_index do |racer,i|
+          stack(:width => 1.0) {
+            background(eval(racer.color), :width => 1.0, :height => 80)
+            subtitle(" ", :margin => [0]*4).displace(0,0)
+            subtitle(" ",:margin => [0]*4).displace(0,0)
+          }
+        end
+      end # end progress_bars
+    }
+    @right.clear { 
+      stack do # start progress_bars
+        race.race_participations.each_with_index do |racer,i|
+          flow {
+            stack(:width => 1.0) {
+              background("#e4e5e6", :width => 1.0, :height => 80)
+              subtitle(" ", :margin => [0]*4).displace(0,0)
+              subtitle(" ",:margin => [0]*4).displace(0,0)
+            }
+          }
+        end
+      end # end progress_bars
+    }
+    stroke red
+    line(@right.left, 0, @right.left, HEIGHT)
+    @center.clear do
+      progress_bars = stack do # start progress_bars
+        race.race_participations.each_with_index do |racer,i|
+          flow {
+            stack(:width => 1.0) {
+              background("#e4e5e6", :width => 1.0, :height => 80)
+              subtitle(racer.racer.name, :margin => [0]*4).displace(0,0)
+              subtitle(" ",:margin => [0]*4).displace(0,0)
+            }
+          }
+        end
+      end # end progress_bars
+    end
   end
 
   def new_in_tournament(tournament_id)
