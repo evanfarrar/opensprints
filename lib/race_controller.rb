@@ -175,19 +175,33 @@ class RaceController < Shoes::Main
       button("back to event") { visit "/tournaments/#{race.tournament_id}" }
     }
     @center.clear {
-      background eval(winner.color+"(0.6)")
-      stack(:top => 40, :left => 0) do
-        banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
-        race.race_participations.each{|r|
-          if r.finish_time
-            subtitle("#{r.racer.name}: #{"%.2f" % r.finish_time} seconds", :stroke => white)
-          else
-            subtitle("#{r.racer.name}: DNF", :stroke => white)
+      stack(:height => 1.0) do
+        flow(:height => 0.1) { background eval(winner.color+"(0.6)") }
+        flow(:height => 0.4) {
+          banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
+
+        }
+        flow(:height => 0.1) { background eval(winner.color+"(0.6)") }
+        stack(:height => 0.4) {
+          standings = race.race_participations.sort_by { |racer| racer.finish_time||Infinity }
+          standings.each_with_index {|r,i|
+            flow {
+              flow(:width => 0.3) { caption (i+1).ordinal }
+              flow(:width => 0.3) { caption r.racer.name  }
+              flow(:width => 0.3) { 
+                if r.finish_time
+                  caption("#{"%.2f" % r.finish_time} seconds")
+                else
+                  caption("DNF")
+                end
+
+              }
+            }
+          }
+          if next_race = race.next_race
+            button("next race: #{next_race.racers.join(", ")}") { visit "/races/#{next_race.id}/ready" }
           end
         }
-        if next_race = race.next_race
-          button("next race: #{next_race.racers.join(", ")}") { visit "/races/#{next_race.id}/ready" }
-        end
       end
     }
   end
