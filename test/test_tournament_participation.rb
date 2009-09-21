@@ -18,6 +18,7 @@ describe 'A tournament participation' do
     @tournament_participation3 = TournamentParticipation.create(:racer => @racer3, :tournament => @tournament)
     r = Race.create(:tournament => @tournament)
     r.race_participations.create(:racer => @racer3, :finish_time => [10.0])
+    r.race_participations.create(:racer => @racer, :finish_time => [5.0])
   end
 
   
@@ -31,8 +32,14 @@ describe 'A tournament participation' do
 
   it 'should have a relative rank' do
     @tournament_participation.rank.should==(1)
-    @tournament_participation2.rank.should==(3)
-    @tournament_participation3.rank.should==(2)
+    @tournament_participation2.rank.should==(2)
+    @tournament_participation3.rank.should==(3)
+  end
+
+  it 'should have a number of losses for eliminaton' do
+    @tournament_participation.losses.should==(0)
+    @tournament_participation2.losses.should==(0)
+    @tournament_participation3.losses.should==(1)
   end
 
 

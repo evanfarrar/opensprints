@@ -118,7 +118,7 @@ class TournamentController < Shoes::Main
     end
 
     case session[:order_by]
-      when "Best time"
+      when "Rank"
         tournament_participations = tournament_participations.sort_by(&:rank)
       when "Name"
         tournament_participations = tournament_participations.sort_by{|tp|tp.racer.name.downcase}
@@ -230,7 +230,7 @@ class TournamentController < Shoes::Main
     layout(:menu)
     racers_offset = racers_offset.to_i
     tournament = Tournament.get(id)
-    racers = tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
+    racers = tournament.tournament_participations.sort_by{|tp|[tp.losses,(tp.best_time||Infinity)]}
     racers.shift(9*racers_offset)
 
     @nav.clear {
