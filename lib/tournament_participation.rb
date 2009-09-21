@@ -22,4 +22,13 @@ class TournamentParticipation
   def losses
     (RaceParticipation.all(:racer_id => self.racer_id, "race.tournament_id" => self.tournament_id).select {|rp| rp.race.winner != rp }).length
   end
+
+  def race_participations
+    RaceParticipation.all("race.tournament_id" => tournament.id,
+                          :racer_id => racer.id)
+  end
+
+  def eliminate
+    self.update_attributes(:eliminated => true)
+  end
 end

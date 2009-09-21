@@ -150,7 +150,12 @@ class TournamentController < Shoes::Main
               }
               flow(:width => 0.2) {
                 delete_button do
-                  tp.destroy; visit "/tournaments/#{tournament.id}"
+                  if tp.race_participations.any?
+                    tp.eliminate
+                  else
+                    tp.destroy
+                  end
+                  visit "/tournaments/#{tournament.id}"
                 end
               }
             }
