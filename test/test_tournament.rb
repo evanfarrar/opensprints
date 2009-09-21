@@ -45,6 +45,36 @@ describe 'A tournament' do
       @tournament.tournament_participations.create({:racer => sheila})
       @tournament.unmatched_racers.should ==([sheila])
     end
+
+    it 'should contain racers in a completed match.' do
+      @tournament.save
+      racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
+      racers.each {|racer|
+        @tournament.tournament_participations.create({:racer => racer})
+      }
+      @tournament.unmatched_racers.should ==(racers)
+      sheila = Racer.create(:name => "Sheila")
+      @tournament.autofill
+      @tournament.races.each{|r|r.update_attributes(:raced => true)}
+      @tournament.tournament_participations.create({:racer => sheila})
+      @tournament.unmatched_racers.length.should==(3)
+      
+    end
+
+    it 'should not contain eliminated racers' do
+      @tournament.save
+      racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
+      racers.each {|racer|
+        @tournament.tournament_participations.create({:racer => racer})
+      }
+      @tournament.unmatched_racers.should ==(racers)
+      sheila = Racer.create(:name => "Sheila")
+      @tournament.autofill
+      @tournament.races.each{|r|r.update_attributes(:raced => true)}
+      @tournament.tournament_participations.each{|tp|tp.update_attributes(:eliminated => true)}
+      @tournament.tournament_participations.create({:racer => sheila})
+      @tournament.unmatched_racers.should==([sheila])
+    end
   end
 
   describe 'autofill' do
