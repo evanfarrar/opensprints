@@ -4,7 +4,7 @@ end
 class RacerController < Shoes::Main
   include RacerHelper
   url '/racers', :list
-  url '/racers/(\d+)', :edit
+  url '/racers/(\d+)/(\d+)', :edit
   url '/racers/new', :new
   url '/racers/new/tournament/(\d+)', :new_in_tournament
 
@@ -20,8 +20,9 @@ class RacerController < Shoes::Main
     }
   end
 
-  def edit(id)
+  def edit(id, tournament_id)
     racer = Racer.get(id)
+    tournament = Tournament.get(tournament_id)
     layout
     @center.clear {
       stack{
@@ -45,14 +46,33 @@ class RacerController < Shoes::Main
         }
         flow {
           button "Save" do
-            racer.save
-            racer.categorizations.destroy!
-            @checkboxes.each do |cb, category|
-              racer.categorizations.create(:category => category) if cb.checked?
+            if((tournament.racers-[racer]).any? { |r| racer.name == r.name })
+              alert("Racer is already in this event.")
+            elsif old_racer = Racer.first(:name => racer.name, :id.not => racer.id)
+              TournamentParticipation.create(:racer => racer, :tournament => tournament)
+              old_racer.save
+              old_racer.categorizations.destroy!
+              @checkboxes.each do |cb, category|
+                old_racer.categorizations.create(:category => category) if cb.checked?
+              end
+              if Racer.get(racer.id).name.blank? && racer.name.blank?
+                TournamentParticipation.all(:racer => racer)
+                racer.destroy
+              end
+              visit session[:referrer].pop||'/racers'
+            else
+              racer.save
+              TournamentParticipation.create(:racer => racer, :tournament => tournament)
+              racer.categorizations.destroy!
+              @checkboxes.each do |cb, category|
+                racer.categorizations.create(:category => category) if cb.checked?
+              end
+              if Racer.get(racer.id).name.blank? && racer.name.blank?
+                TournamentParticipation.all(:racer => racer)
+                racer.destroy
+              end
+              visit session[:referrer].pop||'/racers'
             end
-            racer.destroy if Racer.get(racer.id).name.blank? && racer.name.blank?
-            TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
-            visit session[:referrer].pop||'/racers'
           end
           button "Cancel" do
             racer.destroy if Racer.get(racer.id).try(:name).blank?
@@ -71,8 +91,7 @@ class RacerController < Shoes::Main
 
   def new_in_tournament(tournament_id)
     racer = Racer.create
-    TournamentParticipation.create(:racer => racer, :tournament_id => tournament_id)
-    visit "/racers/#{racer.id}"
+    visit "/racers/#{racer.id}/#{tournament_id}"
   end
 
 end

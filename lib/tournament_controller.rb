@@ -78,11 +78,16 @@ class TournamentController < Shoes::Main
       }
       button "Save & continue" do
         if tournament.name.blank?
-          alert("Tournament name can't be blank.")
+          alert("Sorry, Tournament name can't be blank.")
+        elsif Tournament.first(:name => tournament.name)
+          alert("Sorry, Tournament name is already taken.")
         else
           tournament.save
           visit "/tournaments/#{tournament.id}"
         end
+      end
+      button "Cancel" do
+        visit "/tournaments"
       end
     }
   end

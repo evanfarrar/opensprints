@@ -39,11 +39,16 @@ class CategoryController < Shoes::Main
       }
       button "Create" do
         if attrs[:name].blank?
-          alert("Sorry, name can't be blank")
+          alert("Sorry, name can't be blank.")
+        elsif Category.first(:name => attrs[:name])
+          alert("Sorry, name is taken.")
         else
           Category.create(attrs)
           visit '/categories'
         end
+      end
+      button "Cancel" do
+        visit '/categories'
       end
     end
   end
