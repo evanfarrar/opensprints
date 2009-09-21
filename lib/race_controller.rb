@@ -196,11 +196,11 @@ class RaceController < Shoes::Main
     race = Race.get(id)
     layout
     @center.clear {
-      stack(:width => 0.2, :height => @center.height-100) {
+      stack(:width => 0.2, :height => 0.8) {
         container
         if($BIKES.length > race.racers.length)
-          para "UNMATCHED:"
-          stack(:height => @center.height-150, :scroll => true){ 
+          stack(:height => 0.1){ para "UNMATCHED:" }
+          stack(:height => 0.89, :scroll => true){ 
             race.tournament.unmatched_racers.each do |racer|
               flow {
                 flow(:width => 0.6) { para(racer.name) }

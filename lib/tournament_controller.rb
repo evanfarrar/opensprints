@@ -171,8 +171,14 @@ class TournamentController < Shoes::Main
             }
             flow(:width => 0.35) {
               flow(:width => 0.8){
-                button "RACE" do
-                  visit "/races/#{race.id}/ready"
+                if race.raced?
+                  button "RESULTS" do
+                    visit "/races/#{race.id}/winner"
+                  end
+                else
+                  button "RACE" do
+                    visit "/races/#{race.id}/ready"
+                  end
                 end
               }
               flow(:width => 0.2){
