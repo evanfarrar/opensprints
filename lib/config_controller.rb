@@ -104,7 +104,7 @@ class ConfigController < Shoes::Main
         container
         flow(:height => @center.height-150, :scroll => true) do
           stack(:width => 0.4) do
-            stack(:margin => 10) do
+            stack do
               inscription 'Background color:'
               color_edit = edit_line(@prefs['background_color']) do |edit|
                 @prefs['background_color'] = edit.text
