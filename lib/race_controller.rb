@@ -293,7 +293,7 @@ class RaceController < Shoes::Main
         stack {
           # TODO: this should clearly indicate which choice the user has just come from. "Save and go BACK to tournament"
           button("save & start race") { visit "/races/#{id}/ready" }
-          (button("save & add another") { visit "/races/new/#{race.tournament_id}" }) if race.tournament_id
+          (button("save & add another") { visit "/races/new/tournament/#{race.tournament_id}" }) if race.tournament_id
           (button("save & return to event") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
         }
       }
