@@ -93,7 +93,9 @@ class TournamentController < Shoes::Main
   end
 
   def edit(id)
-    Race.all(:tournament => Tournament.get(id)).each { |r| r.destroy if(r.racers.length == 0) }
+    tournament = Tournament.get(id)
+    Race.all(:tournament => tournament).each { |r| r.destroy if(r.racers.length == 0) }
+    tournament.tournament_participations.each { |tp| tp.destroy if(tp.racer.name.blank?) }
     tournament = Tournament.get(id)
     @title = tournament.name
     layout(:menu)
@@ -123,6 +125,11 @@ class TournamentController < Shoes::Main
       when "Name"
         tournament_participations = tournament_participations.sort_by{|tp|tp.racer.name.downcase}
     end
+    races = tournament.races
+    if session[:hide_finished]
+      tournament_participations.reject! {|tp| tp.eliminated? }
+      races.reject! { |r| r.raced? }
+    end
         
     stack(:width => 0.4, :height => @center.height-100) {
       container
@@ -130,12 +137,14 @@ class TournamentController < Shoes::Main
       racers = stack(:height => @center.height-200, :scroll => true){ 
         tournament_participations.each do |tp|
           flow {
-            flow(:width => 0.6) { para(tp.racer.name) if tp.racer }
+            flow(:width => 0.6) {
+              tp.eliminated? ? para(del(tp.racer.name)) : para(tp.racer.name) 
+            }
             flow(:width => 0.3) {
               flow(:width => 0.8) {
                 edit_button do
                   session[:referrer].push(@center.app.location)
-                  visit "/racers/#{tp.racer.id}"
+                  visit "/racers/#{tp.racer.id}/#{tp.tournament.id}"
                 end
               }
               flow(:width => 0.2) {
@@ -160,7 +169,7 @@ class TournamentController < Shoes::Main
       container
       title "races:"
       stack(:height => @center.height-200, :scroll => true) {
-        tournament.races.each{|race|
+        races.each{|race|
           flow {
             flow(:width => 0.6) {
               if race.unraced?
@@ -209,8 +218,17 @@ class TournamentController < Shoes::Main
         tournament.save
         visit "/tournaments/#{tournament.id}"
       end
+      left_button "New round" do
+        n = ask("how many should advance?").to_i
+        tournament_participations.sort_by{ |tp|
+          tp.rank
+        }[n..-1].each{ |tp| tp.update_attributes(:eliminated => true) }
+        tournament.save
+        visit "/tournaments/#{tournament.id}"
+      end
       category = session[:category]
       order_by = session[:order_by]
+      hide_finished = session[:hide_finished]
       categories = ["All Categories"]+Category.all.to_a
       inscription "Filter by Category:", :margin => [0,30,0,0]
       list_box(:width => 1.0, :choose => category, :items => categories) do |list|
@@ -222,7 +240,16 @@ class TournamentController < Shoes::Main
         session[:order_by] = list.text
         visit "/tournaments/#{tournament.id}" if order_by != session[:order_by]
       end
-      
+      flow {
+        c = check 
+        c.click {|cb|
+          session[:hide_finished] =  cb.checked? 
+          visit "/tournaments/#{tournament.id}" if hide_finished != session[:hide_finished]
+        }
+        inscription "Hide Finished"
+        session[:hide_finished] = true if session[:hide_finished].nil?
+        c.checked = session[:hide_finished]
+      }
     end
   end
 

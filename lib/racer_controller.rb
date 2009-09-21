@@ -23,8 +23,10 @@ class RacerController < Shoes::Main
   def edit(id, tournament_id)
     racer = Racer.get(id)
     tournament = Tournament.get(tournament_id)
+    tournament_participation = TournamentParticipation.first(:tournament => tournament, :racer => racer)||TournamentParticipation.create(:racer => racer, :tournament => tournament)
     layout
     @center.clear {
+      container
       stack{
         flow {
           para "Name:"
@@ -32,6 +34,7 @@ class RacerController < Shoes::Main
             racer.name = edit.text
           end
         }
+        separator_line
         flow {
           para "Assign to Categories:"
           stack {
@@ -44,6 +47,14 @@ class RacerController < Shoes::Main
             }
           }
         }
+        separator_line
+        flow { 
+          c = check
+          c.click { |c| tournament_participation.eliminated = c.checked? }
+          c.checked = tournament_participation.eliminated
+          para "Eliminated?"
+        }
+        
         flow {
           button "Save" do
             if((tournament.racers-[racer]).any? { |r| racer.name == r.name })
@@ -62,13 +73,12 @@ class RacerController < Shoes::Main
               visit session[:referrer].pop||'/racers'
             else
               racer.save
-              TournamentParticipation.create(:racer => racer, :tournament => tournament)
+              tournament_participation.save
               racer.categorizations.destroy!
               @checkboxes.each do |cb, category|
                 racer.categorizations.create(:category => category) if cb.checked?
               end
               if Racer.get(racer.id).name.blank? && racer.name.blank?
-                TournamentParticipation.all(:racer => racer)
                 racer.destroy
               end
               visit session[:referrer].pop||'/racers'
