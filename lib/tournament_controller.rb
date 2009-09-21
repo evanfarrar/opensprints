@@ -126,6 +126,7 @@ class TournamentController < Shoes::Main
         tournament_participations = tournament_participations.sort_by{|tp|tp.racer.name.downcase}
     end
     races = tournament.races
+    session[:hide_finished] = true if session[:hide_finished].nil?
     if session[:hide_finished]
       tournament_participations.reject! {|tp| tp.eliminated? }
       races.reject! { |r| r.raced? }
@@ -240,16 +241,17 @@ class TournamentController < Shoes::Main
         session[:order_by] = list.text
         visit "/tournaments/#{tournament.id}" if order_by != session[:order_by]
       end
-      flow {
-        c = check 
-        c.click {|cb|
-          session[:hide_finished] =  cb.checked? 
+      if session[:hide_finished]
+        left_button "show finished" do
+          session[:hide_finished] =  false
           visit "/tournaments/#{tournament.id}" if hide_finished != session[:hide_finished]
-        }
-        inscription "Hide Finished"
-        session[:hide_finished] = true if session[:hide_finished].nil?
-        c.checked = session[:hide_finished]
-      }
+        end
+      else
+        left_button "hide finished" do
+          session[:hide_finished] =  true
+          visit "/tournaments/#{tournament.id}" if hide_finished != session[:hide_finished]
+        end
+      end
     end
   end
 

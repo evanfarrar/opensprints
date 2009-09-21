@@ -188,13 +188,13 @@ class ConfigController < Shoes::Main
   def index
     layout
     config_nav
-    @header.clear { title "Appearance" }
+    @header.clear { title "Configuration" }
   end
 
   def bikes
     layout
     config_nav
-    @header.clear { title "Appearance" }
+    @header.clear { title "Bike Setup" }
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
         @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -247,7 +247,7 @@ class ConfigController < Shoes::Main
   def hardware
     layout
     config_nav
-    @header.clear { title "Appearance" }
+    @header.clear { title "Hardware & Rollers" }
     
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -347,7 +347,7 @@ class ConfigController < Shoes::Main
   def upgrade
     layout
     config_nav
-    @header.clear { title "Appearance" }
+    @header.clear { title "Upgrade" }
     @center.clear do
       container
       stack do
