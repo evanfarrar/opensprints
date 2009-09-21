@@ -156,8 +156,8 @@ class RaceController < Shoes::Main
                 stack(:width => 1.0) {
                   background("#e4e5e6", :width => 1.0, :height => 80)
                   background(eval(racer.color), :width => racer.percent_complete, :height => 80)
-                  subtitle(racer.racer.name,":", :stroke => white, :margin => [0]*4).displace(0,-10)
-                  subtitle(racer.speed(racer.finish_time||SENSOR.time),"mph", :stroke => white, :margin => [0]*4).displace(0,-28)
+                  subtitle(racer.racer.name,":", :margin => [0]*4).displace(0,-10)
+                  subtitle(racer.speed(racer.finish_time||SENSOR.time),"mph", :margin => [0]*4).displace(0,-28)
                 }
               }
             end
@@ -178,7 +178,7 @@ class RaceController < Shoes::Main
       stack(:height => 1.0) do
         flow(:height => 0.1) { background eval(winner.color) }
         flow(:height => 0.4) {
-          banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :stroke => white, :align => "center"
+          banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :align => "center"
 
         }
         flow(:height => 0.1) { background eval(winner.color) }

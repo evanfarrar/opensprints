@@ -132,10 +132,10 @@ class TournamentController < Shoes::Main
       races.reject! { |r| r.raced? }
     end
         
-    stack(:width => 0.4, :height => @center.height-100) {
+    stack(:width => 0.4, :height => 1.0) {
       container
-      title "racers:"
-      racers = stack(:height => @center.height-200, :scroll => true){ 
+      stack(:height => 0.1) { title "racers:" }
+      racers = stack(:height => 0.82, :scroll => true){ 
         tournament_participations.each do |tp|
           flow {
             flow(:width => 0.6) {
@@ -157,7 +157,7 @@ class TournamentController < Shoes::Main
           }
         end
       }
-      stack(:width => 1.0) {
+      stack(:width => 1.0, :height => 0.08) {
         button("add a new racer") {
           session[:referrer].push(@center.app.location)
           visit("/racers/new/tournament/#{tournament.id}")
@@ -166,10 +166,10 @@ class TournamentController < Shoes::Main
       }
     }
     stack(:width => 0.05)
-    stack(:width => 0.55, :height => @center.height-100) {
+    stack(:width => 0.55, :height => 1.0) {
       container
-      title "races:"
-      stack(:height => @center.height-200, :scroll => true) {
+      stack(:height => 0.1) { title "races:" }
+      stack(:height => 0.82, :scroll => true) {
         races.each{|race|
           flow {
             flow(:width => 0.6) {
@@ -198,7 +198,7 @@ class TournamentController < Shoes::Main
           }
         }
       }
-      stack(:width => 1.0) {
+      stack(:width => 1.0, :height => 0.08) {
         light_button("add a new race") {
           session[:referrer].push(@center.app.location)
           visit "/races/new/tournament/#{tournament.id}"
