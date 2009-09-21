@@ -16,7 +16,7 @@ class ConfigController < Shoes::Main
       left_button("Skin") { visit '/configuration/skin' }
       left_button("Hardware") { visit '/configuration/hardware' }
       left_button("Bikes") { visit '/configuration/bikes' }
-      left_button("Data Management") { visit '/configuration/data_file' }
+      left_button("Data") { visit '/configuration/data_file' }
       if(PLATFORM =~ /linux/)
         left_button("Upgrade") { visit '/configuration/upgrade' }
       end
@@ -172,14 +172,6 @@ class ConfigController < Shoes::Main
           ask_save_file("opensprints.db") do |location|
             File.copy(File.join(LIB_DIR,'opensprints.db'),location)
           end
-        end
-
-        button("Upload my settings to server", :width => 200) do
-
-        end
-   
-        button("Get my settings from server", :width => 200) do
-
         end
       end
     end
