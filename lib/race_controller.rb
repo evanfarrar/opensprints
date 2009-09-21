@@ -213,6 +213,9 @@ class RaceController < Shoes::Main
               }
             end
           }
+        else
+          stack(:height => 0.1){  }
+          stack(:height => 0.89, :scroll => true){ para "No more racers need assignment." }
         end
       }
       stack(:width => 0.1)
