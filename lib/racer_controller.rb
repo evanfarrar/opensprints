@@ -62,16 +62,14 @@ class RacerController < Shoes::Main
             elsif racer.name.blank?
               alert "Sorry, name is required."
             elsif old_racer = Racer.first(:name => racer.name, :id.not => racer.id)
-              TournamentParticipation.create(:racer => racer, :tournament => tournament)
+              TournamentParticipation.create(:racer => old_racer, :tournament => tournament)
               old_racer.save
               old_racer.categorizations.destroy!
               @checkboxes.each do |cb, category|
                 old_racer.categorizations.create(:category => category) if cb.checked?
               end
-              if Racer.get(racer.id).name.blank? && racer.name.blank?
-                TournamentParticipation.all(:racer => racer)
-                racer.destroy
-              end
+              TournamentParticipation.all(:racer => racer)
+              racer.destroy
               visit session[:referrer].pop||'/racers'
             else
               racer.save

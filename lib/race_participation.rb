@@ -21,7 +21,11 @@ class RaceParticipation
   end
 
   def distance
-    self.ticks * $ROLLER_CIRCUMFERENCE
+    if self.ticks
+      self.ticks * $ROLLER_CIRCUMFERENCE
+    else
+      0.0
+    end
   end
 
   METERS_PER_MILLISECOND_TO_MILES_PER_HOUR = 2236.93629

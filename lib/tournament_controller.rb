@@ -7,7 +7,7 @@ module TournamentHelper
         separator_line(80)
         flow(:height => 20) do
           stack(:width => 0.4) { para 'NAME' }
-          stack(:width => 0.2) { para 'WINS/LOSSES' }
+          stack(:width => 0.2) { para 'LOSSES' }
           stack(:width => 0.2) { para 'BEST' }
           stack(:width => 0.2) { para 'PLACE' }
         end
@@ -17,7 +17,7 @@ module TournamentHelper
             stack do
               flow do
                 stack(:width => 0.4) { inscription racer.racer.name }
-                stack(:width => 0.2) { inscription "" }
+                stack(:width => 0.2) { inscription racer.losses }
                 stack(:width => 0.18) { inscription((("%.2f" % racer.best_time) if racer.best_time)) }
                 flow(:width => 0.22) { inscription racer.rank }
               end
@@ -134,8 +134,8 @@ class TournamentController < Shoes::Main
         
     stack(:width => 0.4, :height => 1.0) {
       container
-      stack(:height => 0.1) { title "racers:" }
-      racers = stack(:height => 0.82, :scroll => true){ 
+      stack(:height => 0.12) { subtitle "racers:" }
+      racers = stack(:height => 0.80, :scroll => true){ 
         tournament_participations.each do |tp|
           flow {
             flow(:width => 0.6) {
@@ -167,14 +167,13 @@ class TournamentController < Shoes::Main
           session[:referrer].push(@center.app.location)
           visit("/racers/new/tournament/#{tournament.id}")
         }
-
       }
     }
     stack(:width => 0.05)
     stack(:width => 0.55, :height => 1.0) {
       container
-      stack(:height => 0.1) { title "races:" }
-      stack(:height => 0.82, :scroll => true) {
+      stack(:height => 0.12) { subtitle "races:" }
+      stack(:height => 0.8, :scroll => true) {
         races.each{|race|
           flow {
             flow(:width => 0.6) {
@@ -293,7 +292,7 @@ class TournamentController < Shoes::Main
     racers_offset = racers_offset.to_i
     tournament = Tournament.get(tournament_id)
     category = Category.get(category_id)
-    racers = TournamentParticipation.all(:tournament_id => tournament_id, "racer.categorizations.category_id" => category_id)
+    racers = TournamentParticipation.all(:tournament_id => tournament_id).select{|tp|tp.racer.categorizations.category.include? category}
     racers = racers.sort_by{|tp|[tp.losses,tp.best_time||Infinity]}
     racers.shift(9*racers_offset)
 

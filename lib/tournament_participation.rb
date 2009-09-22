@@ -25,7 +25,7 @@ class TournamentParticipation
 
   def race_participations
     RaceParticipation.all("race.tournament_id" => tournament.id,
-                          :racer_id => racer.id)
+                          :racer => racer)
   end
 
   def eliminate

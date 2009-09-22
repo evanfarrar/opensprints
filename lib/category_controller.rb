@@ -5,6 +5,7 @@ class CategoryController < Shoes::Main
 
   def list
     layout(:menu)
+    @title.clear { title "Setup Categories" }
     @center.clear do
       stack(:width => 0.5) {
         container
@@ -30,7 +31,9 @@ class CategoryController < Shoes::Main
   def new
     layout(:menu)
     attrs = {}
+    @title.clear { title "New Category" }
     @center.clear do
+      container
       flow {
         para "name:"
         edit_line('') do |edit|

@@ -70,7 +70,7 @@ module MainHelper
   end
 
   def light_button(text, styles={}, &callback)
-    button(text, styles.merge({:stroke => rgb(50,50,50)}), &callback)
+    button(text, styles.merge({}), &callback)
   end
 
   def image_button(path,styles={}, &callback)
