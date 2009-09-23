@@ -4,19 +4,22 @@ class CategoryController < Shoes::Main
   url '/categories/new', :new
 
   def list
-    layout
+    layout(:menu)
     @center.clear do
       stack(:width => 0.5) {
+        container
         button("new category") { visit "/categories/new" }
         Category.all.each {|category|
-          separator_line
-          flow(:width => 1.0) {
+          flow(:width => 1.0, :margin_left => 20) {
+            separator_line
+          }
+          flow(:width => 1.0, :margin_left => 20) {
             flow(:width => 0.6, :margin_top => 8) {
               para category.name
             }
             flow(:width => 0.1)
             flow(:width => 0.3) {
-              button("delete") { category.destroy; visit '/categories' }
+              delete_button { category.destroy; visit '/categories' }
             }
           }
         }
@@ -25,7 +28,7 @@ class CategoryController < Shoes::Main
   end
 
   def new
-    layout
+    layout(:menu)
     attrs = {}
     @center.clear do
       flow {
@@ -35,7 +38,16 @@ class CategoryController < Shoes::Main
         end
       }
       button "Create" do
-        Category.create(attrs)
+        if attrs[:name].blank?
+          alert("Sorry, name can't be blank.")
+        elsif Category.first(:name => attrs[:name])
+          alert("Sorry, name is taken.")
+        else
+          Category.create(attrs)
+          visit '/categories'
+        end
+      end
+      button "Cancel" do
         visit '/categories'
       end
     end

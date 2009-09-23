@@ -5,18 +5,20 @@ class ConfigController < Shoes::Main
   url '/configuration', :index
   url '/configuration/data_file', :data_file
   url '/configuration/appearance', :appearance
+  url '/configuration/skin', :skin
   url '/configuration/hardware', :hardware
   url '/configuration/bikes', :bikes
   url '/configuration/upgrade', :upgrade
 
   def config_nav
-    @nav.append {
-      button("Apearance") { visit '/configuration/appearance' }
-      button("Hardware") { visit '/configuration/hardware' }
-      button("Bikes") { visit '/configuration/bikes' }
-      button("Data Management") { visit '/configuration/data_file' }
+    @left.clear {
+      left_button("Appearance") { visit '/configuration/appearance' }
+      left_button("Skin") { visit '/configuration/skin' }
+      left_button("Hardware") { visit '/configuration/hardware' }
+      left_button("Bikes") { visit '/configuration/bikes' }
+      left_button("Data") { visit '/configuration/data_file' }
       if(PLATFORM =~ /linux/)
-        button("Upgrade") { visit '/configuration/upgrade' }
+        left_button("Upgrade") { visit '/configuration/upgrade' }
       end
     }
   end
@@ -24,6 +26,7 @@ class ConfigController < Shoes::Main
   def appearance
     layout
     config_nav
+    @header.clear { title "Appearance" }
 
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -62,19 +65,48 @@ class ConfigController < Shoes::Main
               end
             end
 
-            stack(:margin => 10) do
-              inscription 'Track Skin:'
-              sensors = Dir.glob('lib/race_windows/*.rb').map do |s|
-                s.gsub(/lib\/race_windows\/(.*)\.rb/, '\1')
-              end
-              list_box(:items => sensors,
-                :choose => @prefs['track']) do |changed|
-                  @prefs['track'] = changed.text
-              end
-            end
           end
           stack(:width => 0.6) do
             stack(:margin => 10) do
+              if RUBY_PLATFORM =~ /linux/
+                width,height = `xrandr | grep '*'`.split[0].split('x')
+              else
+                width,height = 1024,768
+              end
+
+              inscription "window height (e.g. #{height.to_i - 100}):"
+              edit_line(@prefs['window_height']) do |edit|
+                @prefs['window_height'] = edit.text
+              end
+              inscription "window width (e.g. #{width.to_i - 50}):"
+              edit_line(@prefs['window_width']) do |edit|
+                @prefs['window_width'] = edit.text
+              end
+            end
+          end
+        end
+        stack do
+          save_button
+        end
+      end
+    end
+  end
+  def skin
+    layout
+    config_nav
+    @header.clear { title "Skin" }
+
+    @center.clear do
+      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
+        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
+      else
+        @prefs = YAML::load_file('conf-sample.yml')
+      end
+      flow(:height => @center.height-50, :width => 1.0) do
+        container
+        flow(:height => @center.height-150, :scroll => true) do
+          stack(:width => 0.4) do
+            stack do
               inscription 'Background color:'
               color_edit = edit_line(@prefs['background_color']) do |edit|
                 @prefs['background_color'] = edit.text
@@ -100,15 +132,16 @@ class ConfigController < Shoes::Main
                 @prefs['menu_background_image'] = m_image_edit.text
               end
             end
-
+          end
+          stack(:width => 0.6) do
             stack(:margin => 10) do
-              inscription 'window height:'
-              edit_line(@prefs['window_height']) do |edit|
-                @prefs['window_height'] = edit.text
+              inscription 'Skin:'
+              sensors = Dir.glob('media/skins/*').map do |s|
+                s.gsub(/media\/skins\/(.*)/, '\1')
               end
-              inscription 'window width:'
-              edit_line(@prefs['window_width']) do |edit|
-                @prefs['window_width'] = edit.text
+              list_box(:items => [nil]+sensors,
+                :choose => @prefs['skin']) do |changed|
+                  @prefs['skin'] = changed.text
               end
             end
           end
@@ -123,6 +156,7 @@ class ConfigController < Shoes::Main
   def data_file
     layout
     config_nav
+    @header.clear { title "Data" }
     @center.clear do
       container
       stack do
@@ -139,14 +173,6 @@ class ConfigController < Shoes::Main
             File.copy(File.join(LIB_DIR,'opensprints.db'),location)
           end
         end
-
-        button("Upload my settings to server", :width => 200) do
-
-        end
-   
-        button("Get my settings from server", :width => 200) do
-
-        end
       end
     end
   end
@@ -154,11 +180,13 @@ class ConfigController < Shoes::Main
   def index
     layout
     config_nav
+    @header.clear { title "Configuration" }
   end
 
   def bikes
     layout
     config_nav
+    @header.clear { title "Bike Setup" }
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
         @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -211,6 +239,7 @@ class ConfigController < Shoes::Main
   def hardware
     layout
     config_nav
+    @header.clear { title "Hardware & Rollers" }
     
     @center.clear do
       if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
@@ -234,6 +263,8 @@ class ConfigController < Shoes::Main
               edit_line(@prefs['roller_circumference']) do |edit|
                 @prefs['roller_circumference'] = edit.text.to_f
               end
+              inscription "e.g. 4.5 in. roller drum = 0.35908404 meters"
+              inscription "e.g. 3.0 in. roller drum = 0.23938936 meters"
             end
           end
 
@@ -259,7 +290,7 @@ class ConfigController < Shoes::Main
               @sensor_location_edit = edit_line(@prefs['sensor']['device']) do |edit|
                 @prefs['sensor']['device'] = edit.text
               end
-              inscription "e.g. Linux: /dev/tty0"
+              inscription "e.g. Linux: /dev/ttyUSB0"
             end
           end
         end
@@ -276,14 +307,31 @@ class ConfigController < Shoes::Main
       @prefs['bikes'].compact!
       old_width = WIDTH
       old_height = HEIGHT
+      old_skin = SKIN
       File.open(File.join(LIB_DIR,'opensprints_conf.yml'), 'w+') do |f|
         f << @prefs.to_yaml
       end
       load "lib/setup.rb"
-      if(old_width!=WIDTH||old_height!=HEIGHT)
-        alert("window dimensions have changed, please restart opensprints for this to take effect.")
-      end
       alert('Preferences saved!')
+      if(old_width!=WIDTH||old_height!=HEIGHT)
+        if((PLATFORM =~ /linux/)&&!(`which opensprints`).empty?)
+          alert("window dimensions have changed, restarting...")
+          fork ? exit : exec("opensprints")
+        else
+          alert("window dimensions have changed, please restart opensprints for this to take effect.")
+          exit
+        end
+      end
+      if(old_skin!=SKIN)
+        if((PLATFORM =~ /linux/)&&!(`which opensprints`).empty?)
+          alert("Skin has changed, restarting...")
+          fork ? exit : exec("opensprints")
+        else
+          alert("Skin has changed, please restart opensprints for this to take effect.")
+          exit
+        end
+      end
+      
       visit '/configuration'
     end
   end
@@ -291,10 +339,13 @@ class ConfigController < Shoes::Main
   def upgrade
     layout
     config_nav
+    @header.clear { title "Upgrade" }
     @center.clear do
       container
       stack do
-        para ""
+        version = `dpkg-query -W -f='${Version}' opensprints`
+        version = File.readlines('build/debian/changelog').first.gsub(/.*\((.*)\).*/,'\1').strip if version.empty?
+        para "You're using version: #{version}"
         button("Check for updates", :width => 200) do
           @sudo_password = ask("Please enter your password")
           @checking.show

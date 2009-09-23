@@ -3,7 +3,7 @@ class Race
   property :id, Serial
   property :raced, Boolean, :default => false
   has n, :race_participations
-  belongs_to :tournament
+  belongs_to :tournament, :nullable => true
 
   def racers
     race_participations.map(&:racer)

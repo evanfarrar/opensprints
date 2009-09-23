@@ -45,6 +45,36 @@ describe 'A tournament' do
       @tournament.tournament_participations.create({:racer => sheila})
       @tournament.unmatched_racers.should ==([sheila])
     end
+
+    it 'should contain racers in a completed match.' do
+      @tournament.save
+      racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
+      racers.each {|racer|
+        @tournament.tournament_participations.create({:racer => racer})
+      }
+      @tournament.unmatched_racers.should ==(racers)
+      sheila = Racer.create(:name => "Sheila")
+      @tournament.autofill
+      @tournament.races.each{|r|r.update_attributes(:raced => true)}
+      @tournament.tournament_participations.create({:racer => sheila})
+      @tournament.unmatched_racers.length.should==(3)
+      
+    end
+
+    it 'should not contain eliminated racers' do
+      @tournament.save
+      racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
+      racers.each {|racer|
+        @tournament.tournament_participations.create({:racer => racer})
+      }
+      @tournament.unmatched_racers.should ==(racers)
+      sheila = Racer.create(:name => "Sheila")
+      @tournament.autofill
+      @tournament.races.each{|r|r.update_attributes(:raced => true)}
+      @tournament.tournament_participations.each{|tp|tp.update_attributes(:eliminated => true)}
+      @tournament.tournament_participations.create({:racer => sheila})
+      @tournament.unmatched_racers.should==([sheila])
+    end
   end
 
   describe 'autofill' do
@@ -93,6 +123,19 @@ describe 'A tournament' do
       @tournament.autofill
       @tournament.races.length.should == 2
       @tournament.save
+    end
+
+    it 'should accept a list of racers' do
+      @tournament = Tournament.new
+      6.times do
+        @tournament.tournament_participations.build({:racer => Racer.create})
+      end
+      @tournament.save
+      @tournament.reload
+      @tournament.races.length.should == 0
+      @tournament.autofill(@tournament.tournament_participations.racers[0..2])
+      @tournament.races.length.should == 2
+      @tournament.races.first.racers.length.should == 2
     end
   end
 end

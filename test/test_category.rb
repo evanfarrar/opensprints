@@ -51,4 +51,5 @@ describe 'A category' do
       Category.create(:name => "Women")
     end
   end
+
 end

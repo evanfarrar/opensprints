@@ -27,7 +27,7 @@ describe 'A racer' do
     c = Category.create(:name => "Men")
 #    @racer.categories << c
 
-    @racer.categorizations.build(:category => c)
+    @racer.categorizations.new(:category => c)
     @racer.categorizations.map(&:category).should.include? c
     @racer.save.should==(true)
   end
