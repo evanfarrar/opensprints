@@ -214,7 +214,7 @@ class TournamentController < Shoes::Main
       left_button "Autofill" do
         if(session[:category] && (session[:category] != "All Categories"))
           racers = tournament.tournament_participations.select{ |tp|
-            tp.racer.categorizations.map(&:category).include?(session[:category])
+            !tp.eliminated? && tp.racer.categorizations.map(&:category).include?(session[:category])
           }
           tournament.autofill(racers.map(&:racer)-tournament.matched_racers)
         else
@@ -224,12 +224,14 @@ class TournamentController < Shoes::Main
         visit "/tournaments/#{tournament.id}"
       end
       left_button "New round" do
-        n = ask("how many should advance?").to_i
-        tournament_participations.sort_by{ |tp|
-          tp.rank
-        }[n..-1].each{ |tp| tp.update_attributes(:eliminated => true) }
-        tournament.save
-        visit "/tournaments/#{tournament.id}"
+        n = ask("how many should advance?")
+        unless n.nil?
+          tournament_participations.sort_by{ |tp|
+            tp.rank
+          }[n.to_i..-1].each{ |tp| tp.update_attributes(:eliminated => true) }
+          tournament.save
+          visit "/tournaments/#{tournament.id}"
+        end
       end
       category = session[:category]
       order_by = session[:order_by]
@@ -263,7 +265,7 @@ class TournamentController < Shoes::Main
     layout(:menu)
     racers_offset = racers_offset.to_i
     tournament = Tournament.get(id)
-    racers = tournament.tournament_participations.sort_by{|tp|[tp.losses,(tp.best_time||Infinity)]}
+    racers = tournament.tournament_participations.sort_by{|tp|[(tp.best_time||Infinity)]}
     racers.shift(9*racers_offset)
 
     @nav.clear {
@@ -293,7 +295,7 @@ class TournamentController < Shoes::Main
     tournament = Tournament.get(tournament_id)
     category = Category.get(category_id)
     racers = TournamentParticipation.all(:tournament_id => tournament_id).select{|tp|tp.racer.categorizations.category.include? category}
-    racers = racers.sort_by{|tp|[tp.losses,tp.best_time||Infinity]}
+    racers = racers.sort_by{|tp|[tp.best_time||Infinity]}
     racers.shift(9*racers_offset)
 
     @nav.clear {

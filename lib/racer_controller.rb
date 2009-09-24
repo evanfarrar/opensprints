@@ -5,8 +5,10 @@ class RacerController < Shoes::Main
   include RacerHelper
   url '/racers', :list
   url '/racers/(\d+)/(\d+)', :edit
+  url '/racers/(\d+)/race/(\d+)', :edit_in_race
   url '/racers/new', :new
   url '/racers/new/tournament/(\d+)', :new_in_tournament
+  url '/racers/new/race/(\d+)', :new_in_race
 
   def list
     layout    
@@ -106,4 +108,88 @@ class RacerController < Shoes::Main
     visit "/racers/#{racer.id}/#{tournament_id}"
   end
 
+  def new_in_race(race_id)
+    racer = Racer.create
+    visit "/racers/#{racer.id}/race/#{race_id}"
+  end
+
+  def edit_in_race(id, race_id)
+    racer = Racer.get(id)
+    race = Race.get(race_id)
+    tournament = race.tournament
+    tournament_participation = TournamentParticipation.first(:tournament => tournament, :racer => racer)||TournamentParticipation.create(:racer => racer, :tournament => tournament)
+    layout
+    @center.clear {
+      container
+      stack{
+        flow {
+          para "Name:"
+          @e = edit_line(racer.name) do |edit|
+            racer.name = edit.text
+          end
+        }
+        separator_line
+        flow {
+          para "Assign to Categories:"
+          stack {
+            stack(:width => 0.5) {
+              @checkboxes = Category.all.map do |category|
+                flow { @c = check; para category.name }
+                @c.checked = racer.categories.include?(category)
+                [@c, category]
+              end
+            }
+          }
+        }
+        separator_line
+        flow { 
+          c = check
+          c.click { |c| tournament_participation.eliminated = c.checked? }
+          c.checked = tournament_participation.eliminated
+          para "Eliminated?"
+        }
+        
+        flow {
+          button "Save" do
+            if((tournament.racers-[racer]).any? { |r| racer.name == r.name })
+              alert("Racer is already in this event.")
+            elsif racer.name.blank?
+              alert "Sorry, name is required."
+            elsif old_racer = Racer.first(:name => racer.name, :id.not => racer.id)
+              TournamentParticipation.create(:racer => old_racer, :tournament => tournament)
+              old_racer.save
+              old_racer.categorizations.destroy!
+              @checkboxes.each do |cb, category|
+                old_racer.categorizations.create(:category => category) if cb.checked?
+              end
+              RaceParticipation.create(:racer => old_racer, :race => race)
+              TournamentParticipation.all(:racer => racer)
+              racer.destroy
+              visit "/races/#{race_id}/edit"
+            else
+              racer.save
+              tournament_participation.save
+              racer.categorizations.destroy!
+              @checkboxes.each do |cb, category|
+                racer.categorizations.create(:category => category) if cb.checked?
+              end
+              if Racer.get(racer.id).name.blank? && racer.name.blank?
+                TournamentParticipation.all(:racer => racer)
+                racer.destroy
+              else
+                rp = RaceParticipation.create(:racer => racer, :race => race)
+              end
+              visit "/races/#{race_id}/edit"
+            end
+          end
+          button "Cancel" do
+            racer.destroy if Racer.get(racer.id).try(:name).blank?
+            TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
+            visit "/races/#{race_id}/edit"
+          end
+        }
+      }
+    }
+    timer(0.01) { @e.focus }
+  end
 end

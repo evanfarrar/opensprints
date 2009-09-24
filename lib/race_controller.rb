@@ -15,6 +15,20 @@ module RaceHelper
       end.displace(0,162) # end progress_bars
     }
   end
+
+  def right_bars(race)
+    @right.clear { 
+      stack do # start progress_bars
+        race.race_participations.each_with_index do |racer,i|
+          fill right_bar_color||gradient(rgb(230,230,230),rgb(167,167,167), :angle => -90)
+          stroke(black(0.0))
+          rect(4,81*i+162,@right.width,69)
+        end
+      end.displace(0,162) # end progress_bars
+    }
+
+  end
+
   def progress_bars(race,speed=false)
     stack do # start progress_bars
       flow {
@@ -42,7 +56,7 @@ module RaceHelper
         rect(-1,81*i+162,@center.width+1,69)
         fill eval(racer.color)
         rect(-1,81*i+162,@center.width*racer.percent_complete+1,69)
-        oval(:radius => 34, :left => @center.width*racer.percent_complete+10, :top => 81*i+162)
+        #oval(:radius => 34, :left => @center.width*racer.percent_complete+10, :top => 81*i+162)
       end
       
     end.displace(0,0) # end progress_bars
@@ -63,6 +77,7 @@ class RaceController < Shoes::Main
     layout(:race)
     race = Race.get(id)
     left_names(race)
+    right_bars(race)
     @header.clear { title "GET READY TO RACE" }
     @nav.clear {
       button("Start") { visit "/races/#{id}/countdown" }
@@ -103,6 +118,7 @@ class RaceController < Shoes::Main
     race = Race.get(id)
     layout(:race)
     left_names(race)
+    right_bars(race)
     @nav.clear {
       button("Stop Countdown") { visit "/races/#{id}/ready" }
     }
@@ -159,6 +175,7 @@ class RaceController < Shoes::Main
       }
     }
     left_names(race)
+    right_bars(race)
     @race_animation = animate(7) do
       if race.finished?
         @race_animation.stop
@@ -227,8 +244,13 @@ class RaceController < Shoes::Main
         container
         if($BIKES.length > race.racers.length)
           stack(:height => 0.1){ para "UNMATCHED:" }
-          stack(:height => 0.89, :scroll => true){ 
-            race.tournament.unmatched_racers.each do |racer|
+          stack(:height => 0.79, :scroll => true){ 
+            if session[:hide_finished]
+              racers = race.tournament.never_raced_and_not_eliminated
+            else
+              racers = race.tournament.unmatched_racers
+            end
+            racers.each do |racer|
               flow {
                 flow(:width => 0.6) { para(racer.name) }
                 flow(:width => 0.3) {
@@ -239,6 +261,9 @@ class RaceController < Shoes::Main
                 }
               }
             end
+          }
+          stack(:height => 0.1){ 
+            (button("add racer") { visit "/racers/new/race/#{race.id}" })
           }
         else
           stack(:height => 0.1){  }
@@ -322,9 +347,9 @@ class RaceController < Shoes::Main
         }
         stack {
           # TODO: this should clearly indicate which choice the user has just come from. "Save and go BACK to tournament"
-          button("save & start race") { visit "/races/#{id}/ready" }
-          (button("save & add another") { visit "/races/new/tournament/#{race.tournament_id}" }) if race.tournament_id
-          (button("save & return to event") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
+          button("start race") { visit "/races/#{id}/ready" }
+          (button("add another race") { visit "/races/new/tournament/#{race.tournament_id}" }) if race.tournament_id
+          (button("return to event") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
         }
       }
     }

@@ -47,6 +47,10 @@ module DefaultStyles
   def divider_color
     nil
   end
+
+  def right_bar_color
+    nil
+  end
 end
  
 module MainHelper

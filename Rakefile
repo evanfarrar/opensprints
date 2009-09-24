@@ -62,6 +62,6 @@ task :build_deb => [:update_changelog, :build] do
 end
 
 task :testing_package => [:build_deb] do
-  `cp /tmp/opensprints_#{OPENSPRINTS_VERSION}_i386.deb /home/evan/Dropbox/opensprints`
+  `cp /tmp/opensprints_#{OPENSPRINTS_VERSION}_i386.deb /media/disk`
   puts "Finished version #{OPENSPRINTS_VERSION}"
 end

@@ -22,6 +22,16 @@ class Tournament
     racers - matched_racers - tournament_participations.all(:eliminated => true).racers
   end
 
+  def never_raced_and_not_eliminated
+    matched = []
+    races.each { |race|
+      race.race_participations.each {|rp|
+        matched << rp.racer
+      }
+    }
+    racers - matched - tournament_participations.all(:eliminated => true).racers
+  end
+
   def unregistered_racers
     Racer.all - racers
   end

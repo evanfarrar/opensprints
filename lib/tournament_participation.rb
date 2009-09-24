@@ -15,7 +15,7 @@ class TournamentParticipation
   end
 
   def rank
-    standings = self.tournament.tournament_participations.sort_by{|tp|[tp.losses,tp.best_time||Infinity]}
+    standings = self.tournament.tournament_participations.sort_by{|tp|[tp.best_time||Infinity]}
     standings.index(self)+1
   end
 
