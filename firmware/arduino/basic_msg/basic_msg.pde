@@ -127,13 +127,12 @@ void checkSerial(){
       }
           
       else if(val == 'm') {
-        raceStart();
-        mockMode = true;
-
+        // toggle mock mode
+        mockMode = !mockMode;
       }
+
       if(val == 's') {
         raceStarted = false;
-        mockMode = false;
 
         digitalWrite(racer0GoLedPin,LOW);
         digitalWrite(racer1GoLedPin,LOW);
