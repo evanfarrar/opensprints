@@ -1,12 +1,17 @@
-if defined? Shoes
-  Shoes.setup do
-    gem "activesupport"
-    gem "bacon"
-    gem "dm-core"
-    gem "dm-aggregates"
-    gem "do_sqlite3"
+Shoes.setup do
+  gem "activesupport"
+  gem "bacon"
+  gem "dm-core"
+  gem "dm-aggregates"
+  gem "do_sqlite3"
+end
+
+class Shoes::Check
+  def toggle
+    self.checked = !self.checked?
   end
 end
+
 module DefaultStyles
   def custom_font
     nil
@@ -190,6 +195,7 @@ class Main < Shoes
     }
   end
   def layout(background_type=:race)
+    self.cursor = :arrow
     custom_styles
     background BACKGROUND_COLOR if(defined?(BACKGROUND_COLOR))
     if(background_type==:menu)

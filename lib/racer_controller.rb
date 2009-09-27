@@ -42,7 +42,7 @@ class RacerController < Shoes::Main
           stack {
             stack(:width => 0.5) {
               @checkboxes = Category.all.map do |category|
-                flow { @c = check; para category.name }
+                flow { @c = c = check; para(category.name); click { c.toggle } }
                 @c.checked = racer.categories.include?(category)
                 [@c, category]
               end
