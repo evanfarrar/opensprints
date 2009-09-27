@@ -69,6 +69,7 @@ class TournamentController < Shoes::Main
   def new
     layout(:menu)
     @center.clear {
+      container
       tournament = Tournament.new
       flow {
         para "name:"
