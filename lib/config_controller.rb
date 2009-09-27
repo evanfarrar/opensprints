@@ -5,6 +5,7 @@ class ConfigController < Shoes::Main
   url '/configuration', :index
   url '/configuration/data_file', :data_file
   url '/configuration/appearance', :appearance
+  url '/configuration/locale', :locale
   url '/configuration/skin', :skin
   url '/configuration/hardware', :hardware
   url '/configuration/bikes', :bikes
@@ -16,6 +17,7 @@ class ConfigController < Shoes::Main
       left_button("Skin") { visit '/configuration/skin' }
       left_button("Hardware") { visit '/configuration/hardware' }
       left_button("Bikes") { visit '/configuration/bikes' }
+      left_button("Locale") { visit '/configuration/locale' }
       left_button("Data") { visit '/configuration/data_file' }
       if(PLATFORM =~ /linux/)
         left_button("Upgrade") { visit '/configuration/upgrade' }
@@ -24,7 +26,7 @@ class ConfigController < Shoes::Main
   end
   
   def appearance
-    layout
+    layout(:menu)
     config_nav
     @header.clear { title "Appearance" }
 
@@ -92,7 +94,7 @@ class ConfigController < Shoes::Main
     end
   end
   def skin
-    layout
+    layout(:menu)
     config_nav
     @header.clear { title "Skin" }
 
@@ -154,7 +156,7 @@ class ConfigController < Shoes::Main
   end
 
   def data_file
-    layout
+    layout(:menu)
     config_nav
     @header.clear { title "Data" }
     @center.clear do
@@ -178,13 +180,13 @@ class ConfigController < Shoes::Main
   end
   
   def index
-    layout
+    layout(:menu)
     config_nav
     @header.clear { title "Configuration" }
   end
 
   def bikes
-    layout
+    layout(:menu)
     config_nav
     @header.clear { title "Bike Setup" }
     @center.clear do
@@ -237,7 +239,7 @@ class ConfigController < Shoes::Main
   end
 
   def hardware
-    layout
+    layout(:menu)
     config_nav
     @header.clear { title "Hardware & Rollers" }
     
@@ -337,7 +339,7 @@ class ConfigController < Shoes::Main
   end
 
   def upgrade
-    layout
+    layout(:menu)
     config_nav
     @header.clear { title "Upgrade" }
     @center.clear do
@@ -367,6 +369,61 @@ class ConfigController < Shoes::Main
           fork ? exit : exec("opensprints")
         end.hide
         @upgrading = para("Upgrading...").hide
+      end
+    end
+  end
+
+  def locale
+    layout(:menu)
+    config_nav
+    @header.clear { title "Appearance" }
+
+    @center.clear do
+      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
+        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
+      else
+        @prefs = YAML::load_file('conf-sample.yml')
+      end
+      flow(:height => @center.height-50, :width => 1.0) do
+        container
+        flow(:height => @center.height-150, :scroll => true) do
+          stack(:width => 0.6) do
+            stack(:margin => 10, :padding => 0) do
+              stack(:margin => 0) do
+                inscription "Display speed in:", :margin => 0
+                metric = nil; standard = nil;
+                flow(:margin => 0) do
+                  standard = radio(:units){ @prefs['units'] = 'standard'}
+                  inscription 'standard', :margin => 2
+                end
+                flow(:margin => 0) do
+                  metric = radio(:units){ @prefs['units'] = 'metric'}
+                  inscription 'metric', :margin => 2
+                end
+                if @prefs['units'] == 'metric'
+                  metric.checked = true
+                else
+                  standard.checked = true
+                end
+              end
+            end
+          end
+          stack(:width => 0.6) do
+            stack(:margin => 10) do
+              inscription 'Locale:'
+              sensors = Dir.glob('lib/translations/*').map do |s|
+                s.gsub(/lib\/translations\/(.*).yml/, '\1')
+              end
+              list_box(:items => [nil]+sensors,
+                :choose => @prefs['locale']) do |changed|
+                  @prefs['locale'] = changed.text
+              end
+            end
+          end
+        end
+        stack do
+          save_button
+        end
       end
     end
   end

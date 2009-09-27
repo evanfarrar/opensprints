@@ -31,14 +31,14 @@ class RacerController < Shoes::Main
       container
       stack{
         flow {
-          para "Name:"
+          para $i18n.name
           @e = edit_line(racer.name) do |edit|
             racer.name = edit.text
           end
         }
         separator_line
         flow {
-          para "Assign to Categories:"
+          para $i18n.assign_to_categories
           stack {
             stack(:width => 0.5) {
               @checkboxes = Category.all.map do |category|
@@ -54,11 +54,11 @@ class RacerController < Shoes::Main
           c = check
           c.click { |c| tournament_participation.eliminated = c.checked? }
           c.checked = tournament_participation.eliminated
-          para "Eliminated?"
+          para $i18n.eliminated
         }
         
         flow {
-          button "Save" do
+          button $i18n.save do
             if((tournament.racers-[racer]).any? { |r| racer.name == r.name })
               alert("Racer is already in this event.")
             elsif racer.name.blank?
@@ -87,7 +87,7 @@ class RacerController < Shoes::Main
               visit session[:referrer].pop||'/racers'
             end
           end
-          button "Cancel" do
+          button $i18n.cancel do
             racer.destroy if Racer.get(racer.id).try(:name).blank?
             TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
             visit session[:referrer].pop||'/racers'
@@ -123,14 +123,14 @@ class RacerController < Shoes::Main
       container
       stack{
         flow {
-          para "Name:"
+          para $i18n.name
           @e = edit_line(racer.name) do |edit|
             racer.name = edit.text
           end
         }
         separator_line
         flow {
-          para "Assign to Categories:"
+          para $i18n.assign_to_categories
           stack {
             stack(:width => 0.5) {
               @checkboxes = Category.all.map do |category|
@@ -146,11 +146,11 @@ class RacerController < Shoes::Main
           c = check
           c.click { |c| tournament_participation.eliminated = c.checked? }
           c.checked = tournament_participation.eliminated
-          para "Eliminated?"
+          para $i18n.eliminated
         }
         
         flow {
-          button "Save" do
+          button $i18n.save do
             if((tournament.racers-[racer]).any? { |r| racer.name == r.name })
               alert("Racer is already in this event.")
             elsif racer.name.blank?
@@ -182,7 +182,7 @@ class RacerController < Shoes::Main
               visit "/races/#{race_id}/edit"
             end
           end
-          button "Cancel" do
+          button $i18n.cancel do
             racer.destroy if Racer.get(racer.id).try(:name).blank?
             TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
             visit "/races/#{race_id}/edit"

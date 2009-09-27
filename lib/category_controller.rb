@@ -4,12 +4,12 @@ class CategoryController < Shoes::Main
   url '/categories/new', :new
 
   def list
-    @title = "Setup Categories"
+    @title = $i18n.setup_categories
     layout(:menu)
     @center.clear do
       stack(:width => 0.5) {
         container
-        button("new category") { visit "/categories/new" }
+        button($i18n.new_category) { visit "/categories/new" }
         Category.all.each {|category|
           flow(:width => 1.0, :margin_left => 20) {
             separator_line
@@ -29,28 +29,28 @@ class CategoryController < Shoes::Main
   end
 
   def new
-    @title = "New Category"
+    @title = $i18n.new_category
     layout(:menu)
     attrs = {}
     @center.clear do
       container
       flow {
-        para "name:"
+        para $i18n.name
         edit_line('') do |edit|
           attrs[:name] = edit.text
         end
       }
-      button "Create" do
+      button $i18n.create do
         if attrs[:name].blank?
-          alert("Sorry, name can't be blank.")
+          alert($i18n.name_cant_be_blank)
         elsif Category.first(:name => attrs[:name])
-          alert("Sorry, name is taken.")
+          alert($i18n.name_is_taken)
         else
           Category.create(attrs)
           visit '/categories'
         end
       end
-      button "Cancel" do
+      button $i18n.cancel do
         visit '/categories'
       end
     end

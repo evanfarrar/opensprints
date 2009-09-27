@@ -6,10 +6,10 @@ module TournamentHelper
         flow(:height => 52) { title label+':', :font => "Bold" }
         separator_line(80)
         flow(:height => 20) do
-          stack(:width => 0.4) { para 'NAME' }
-          stack(:width => 0.2) { para 'LOSSES' }
-          stack(:width => 0.2) { para 'BEST' }
-          stack(:width => 0.2) { para 'PLACE' }
+          stack(:width => 0.4) { para $i18n.name }
+          stack(:width => 0.2) { para $i18n.losses }
+          stack(:width => 0.2) { para $i18n.best }
+          stack(:width => 0.2) { para $i18n.place }
         end
         separator_line(80)
         stack(:scroll => false) do
@@ -47,7 +47,7 @@ class TournamentController < Shoes::Main
     @center.clear {
       stack(:width => 0.5) do
         container
-        button("new event") { visit "/tournaments/new" }
+        button($i18n.new_event) { visit "/tournaments/new" }
         Tournament.all.each {|tournament|
           flow(:width => 1.0, :margin_left => 20) {
             separator_line
@@ -72,12 +72,12 @@ class TournamentController < Shoes::Main
       container
       tournament = Tournament.new
       flow {
-        para "name:"
+        para $i18n.name
         edit_line(tournament.name) do |edit|
           tournament.name = edit.text
         end
       }
-      button "Save & continue" do
+      button $i18n.save_and_continue do
         if tournament.name.blank?
           alert("Sorry, Tournament name can't be blank.")
         elsif Tournament.first(:name => tournament.name)
@@ -87,7 +87,7 @@ class TournamentController < Shoes::Main
           visit "/tournaments/#{tournament.id}"
         end
       end
-      button "Cancel" do
+      button $i18n.cancel do
         visit "/tournaments"
       end
     }
@@ -164,7 +164,7 @@ class TournamentController < Shoes::Main
         end
       }
       stack(:width => 1.0, :height => 0.08) {
-        button("add a new racer") {
+        button($i18n.add_a_new_racer) {
           session[:referrer].push(@center.app.location)
           visit("/racers/new/tournament/#{tournament.id}")
         }
@@ -191,7 +191,7 @@ class TournamentController < Shoes::Main
                     visit "/races/#{race.id}/winner"
                   end
                 else
-                  button "RACE" do
+                  button $i18n.race do
                     visit "/races/#{race.id}/ready"
                   end
                 end
@@ -204,7 +204,7 @@ class TournamentController < Shoes::Main
         }
       }
       stack(:width => 1.0, :height => 0.08) {
-        light_button("add a new race") {
+        light_button($i18n.add_a_new_race) {
           session[:referrer].push(@center.app.location)
           visit "/races/new/tournament/#{tournament.id}"
         }
@@ -212,8 +212,8 @@ class TournamentController < Shoes::Main
       
     }
     @left.clear do
-      left_button "Autofill" do
-        if(session[:category] && (session[:category] != "All Categories"))
+      left_button $i18n.autofill do
+        if(session[:category] && (session[:category] != $i18n.all_categories))
           racers = tournament.tournament_participations.select{ |tp|
             !tp.eliminated? && tp.racer.categorizations.map(&:category).include?(session[:category])
           }
@@ -224,8 +224,8 @@ class TournamentController < Shoes::Main
         tournament.save
         visit "/tournaments/#{tournament.id}"
       end
-      left_button "New round" do
-        n = ask("how many should advance?")
+      left_button $i18n.new_round do
+        n = ask($i18n.how_many_should_advance)
         unless n.nil?
           tournament_participations.sort_by{ |tp|
             tp.rank
@@ -237,24 +237,24 @@ class TournamentController < Shoes::Main
       category = session[:category]
       order_by = session[:order_by]
       hide_finished = session[:hide_finished]
-      categories = ["All Categories"]+Category.all.to_a
+      categories = [$i18n.all_categories]+Category.all.to_a
       inscription "Filter by Category:", :margin => [0,30,0,0]
       list_box(:width => 1.0, :choose => category, :items => categories) do |list|
         session[:category] = list.text
         visit "/tournaments/#{tournament.id}" if category != session[:category]
       end
       inscription "Order Racers:", :margin => [0,30,0,0]
-      list_box(:width => 1.0, :choose => order_by, :items => ["Name","Best time"]) do |list|
+      list_box(:width => 1.0, :choose => order_by, :items => [$i18n.name,$i18n.best_time]) do |list|
         session[:order_by] = list.text
         visit "/tournaments/#{tournament.id}" if order_by != session[:order_by]
       end
       if session[:hide_finished]
-        left_button "show finished" do
+        left_button $i18n.show_finished do
           session[:hide_finished] =  false
           visit "/tournaments/#{tournament.id}" if hide_finished != session[:hide_finished]
         end
       else
-        left_button "hide finished" do
+        left_button $i18n.hide_finished do
           session[:hide_finished] =  true
           visit "/tournaments/#{tournament.id}" if hide_finished != session[:hide_finished]
         end
@@ -270,10 +270,10 @@ class TournamentController < Shoes::Main
     racers.shift(9*racers_offset)
 
     @nav.clear {
-      button("back to event") { visit "/tournaments/#{id}" }
-      button("next") { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
-      pause = button("pause")
-      play = button("play")
+      button($i18n.back_to_event) { visit "/tournaments/#{id}" }
+      button($i18n.next) { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
+      pause = button($i18n.pause)
+      play = button($i18n.play)
       pause.click { @t.toggle; play.toggle; pause.toggle }
       play.click  { @t.toggle; play.toggle; pause.toggle }
       play.hide
@@ -281,7 +281,7 @@ class TournamentController < Shoes::Main
     @center.clear {
       if racers.any?
         @stats = flow do
-           stats_table("OVERALL",racers.shift(9))
+           stats_table($i18n.overall,racers.shift(9))
            @t = timer(5) { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
         end
       else# out of racers in overall
@@ -300,10 +300,10 @@ class TournamentController < Shoes::Main
     racers.shift(9*racers_offset)
 
     @nav.clear {
-      button("back to event") { visit "/tournaments/#{tournament_id}" }
-      button("next") { visit "/tournaments/#{tournament_id}/stats/category/#{category_id}/#{racers_offset+1}" }
-      pause = button("pause")
-      play = button("play")
+      button($i18n.back_to_event) { visit "/tournaments/#{tournament_id}" }
+      button($i18n.next) { visit "/tournaments/#{tournament_id}/stats/category/#{category_id}/#{racers_offset+1}" }
+      pause = button($i18n.pause)
+      play = button($i18n.play)
       pause.click { @t.toggle; play.toggle; pause.toggle }
       play.click  { @t.toggle; play.toggle; pause.toggle }
       play.hide

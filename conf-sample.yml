@@ -48,3 +48,6 @@ background_color: "\"#bec0c2\"...\"#86888b\""
 # Sets the height and width of the race window. Blank to auto-detect.
 window_height:
 window_width:
+
+# The language you want to use
+locale: 'it'

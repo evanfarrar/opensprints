@@ -74,25 +74,25 @@ class RaceController < Shoes::Main
 
 
   def ready(id)
+    @title = $i18n.get_ready_to_race
     layout(:race)
     race = Race.get(id)
     left_names(race)
     right_bars(race)
-    @header.clear { title "GET READY TO RACE" }
     @nav.clear {
       button("Start") { visit "/races/#{id}/countdown" }
-      button("Edit Race") { session[:referrer].push(@center.app.location); visit "/races/#{id}/edit" }
+      button($i18n.edit_race) { session[:referrer].push(@center.app.location); visit "/races/#{id}/edit" }
       if next_race = race.next_race
          button("Skip to Next Race") { visit "/races/#{next_race.id}/ready" }
       end
-      button("New Race") {
+      button($i18n.new_race) {
         visit "/races/new/tournament/#{race.tournament_id}"
       }
       if race.tournament
-        button("back to event") { visit "/tournaments/#{race.tournament.id}" }
+        button($i18n.back_to_event) { visit "/tournaments/#{race.tournament.id}" }
       end
       if race.racers.length == 2
-        button("swap") {
+        button($i18n.swap) {
           racers = race.racers.reverse
           race.race_participations.destroy!
           racers.map {|r|
@@ -136,7 +136,7 @@ class RaceController < Shoes::Main
       when 4
         @countbox.clear do
           container
-          count_text("GO!")
+          count_text($i18n.go)
         end
       when 1
         SENSOR.start
@@ -202,13 +202,13 @@ class RaceController < Shoes::Main
     winner = race.winner
     layout(:menu)
     @nav.append {
-      button("back to event") { visit "/tournaments/#{race.tournament_id}" }
+      button($i18n.back_to_event) { visit "/tournaments/#{race.tournament_id}" }
     }
     @center.clear {
       stack(:height => 1.0) do
         flow(:height => 0.1) { background eval(winner.color) }
         flow(:height => 0.4) {
-          banner "WINNER IS "+winner.racer.name.upcase, :font => "Bold", :align => "center"
+          banner $i18n.winner(winner.racer.name), :font => "Bold", :align => "center"
 
         }
         flow(:height => 0.1) { background eval(winner.color) }
@@ -267,7 +267,7 @@ class RaceController < Shoes::Main
           }
         else
           stack(:height => 0.1){  }
-          stack(:height => 0.89, :scroll => true){ para "No more racers need assignment." }
+          stack(:height => 0.89, :scroll => true){ para $i18n.no_more_racers_need_assignment }
         end
       }
       stack(:width => 0.1)
@@ -312,7 +312,7 @@ class RaceController < Shoes::Main
                 }
               end
               stack(:width => (0.1)){ 
-                button("swap") {
+                button($i18n.swap) {
                   racers = race.racers.reverse
                   race.race_participations.destroy!
                   racers.map {|r|
@@ -347,9 +347,9 @@ class RaceController < Shoes::Main
         }
         stack {
           # TODO: this should clearly indicate which choice the user has just come from. "Save and go BACK to tournament"
-          button("start race") { visit "/races/#{id}/ready" }
-          (button("add another race") { visit "/races/new/tournament/#{race.tournament_id}" }) if race.tournament_id
-          (button("return to event") { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
+          button($i18n.start_race) { visit "/races/#{id}/ready" }
+          (button($i18n.add_another_race) { visit "/races/new/tournament/#{race.tournament_id}" }) if race.tournament_id
+          (button($i18n.return_to_event) { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
         }
       }
     }

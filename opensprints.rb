@@ -4,6 +4,7 @@ Shoes.setup do
   gem "dm-core"
   gem "dm-aggregates"
   gem "do_sqlite3"
+  gem "r18n-desktop"
 end
 
 class Shoes::Check
@@ -179,11 +180,11 @@ class Main < Shoes
       stack {
         flow(:attach => Window, :top => (HEIGHT * 0.2).to_i, :left => (WIDTH / 2)-350) { image(logoimage) }
         flow(:attach => Window, :top => (HEIGHT * 0.6).to_i, :left => (WIDTH / 2)-350) {
-          caption(link("CATEGORIES", :click => "/categories"))
+          caption(link($i18n.categories, :click => "/categories"))
           caption(" / ", :stroke => link_color)
-          caption(link("EVENTS", :click => "/tournaments"))
+          caption(link($i18n.events, :click => "/tournaments"))
           caption(" / ", :stroke => link_color)
-          caption(link("CONFIGURATION", :click => "/configuration"))
+          caption(link($i18n.configuration, :click => "/configuration"))
         }
       }
     }
@@ -191,7 +192,7 @@ class Main < Shoes
 
   def nav
     @nav = flow(:attach => Window, :top => 0, :left => 20) {
-      button("Return to Main Menu") { visit "/" }
+      button($i18n.return_to_main_menu) { visit "/" }
     }
   end
   def layout(background_type=:race)

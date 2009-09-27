@@ -1,4 +1,5 @@
 require 'yaml'
+require 'ostruct'
 require 'socket'
 require 'time'
 require 'lib/race_data'
@@ -123,6 +124,9 @@ end
 require 'activesupport'
 require 'dm-core'
 require 'dm-aggregates'
+
+require 'r18n-desktop'
+$i18n = R18n.from_env('lib/translations',options['locale'])
 
 DATABASE_PATH = File.join(LIB_DIR,'opensprints.db')
 unless(File.exists? DATABASE_PATH)
