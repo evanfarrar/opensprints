@@ -49,5 +49,5 @@ background_color: "\"#bec0c2\"...\"#86888b\""
 window_height:
 window_width:
 
-# The language you want to use
-locale: 'it'
+# The language you want to use, e.g. 'it' for Italian, 'es' for Spanish.
+locale: 'en'
