@@ -34,7 +34,7 @@ start_race: "Start Race"
 add_another_race: "Add Another Race"
 return_to_event: "Return to Event"
 go: "GO!"
-winner: !!proc |name| "WINNER IS #{name.upcase}"
+winner: !!proc |name| "WINNER IS "+name.upcase
 losses: "LOSSES"
 best: "BEST"
 overall: "OVERALL"
