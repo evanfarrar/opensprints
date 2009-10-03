@@ -68,7 +68,7 @@ if defined? Shoes
         true
       elsif self =~ /^"#....../
         true
-      elsif Shoes::COLORS.keys.include? self.to_sym
+      elsif self.any? && Shoes::COLORS.keys.include?(self.to_sym)
         true
       else
         false
