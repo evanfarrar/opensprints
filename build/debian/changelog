@@ -1,8 +1,32 @@
+opensprints (0.4-6) unstable; urgency=low
+
+  Changed some stuff
+
+ -- Evan Farrar <evan@opensprints.org>  Sat, 03 Oct 2009 13:19:48 -0500
+opensprints (0.4-5) unstable; urgency=low
+
+  Changed some stuff
+
+ -- Evan Farrar <evan@opensprints.org>  Thu, 01 Oct 2009 14:40:58 -0500
+opensprints (0.4-4) unstable; urgency=low
+
+  Changed some stuff
+
+ -- Evan Farrar <evan@opensprints.org>  Thu, 01 Oct 2009 14:40:41 -0500
+opensprints (0.4-3) unstable; urgency=low
+
+  Changed some stuff
+
+ -- Evan Farrar <evan@opensprints.org>  Thu, 01 Oct 2009 14:27:02 -0500
 opensprints (0.4-2) unstable; urgency=low
 
   Changed some stuff
 
+<<<<<<< HEAD:build/debian/changelog
  -- Evan Farrar <evan@opensprints.org>  Mon, 28 Sep 2009 16:44:03 -0500
+=======
+ -- Evan Farrar <evan@opensprints.org>  Mon, 28 Sep 2009 10:25:24 -0500
+>>>>>>> 973c5db96f2de324ecb1f870b0d5e32ee61103d3:build/debian/changelog
 opensprints (0.4-1) unstable; urgency=low
 
   Changed some stuff

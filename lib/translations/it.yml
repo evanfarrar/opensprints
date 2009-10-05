@@ -34,7 +34,7 @@ start_race: "Inizio Gara"
 add_another_race: "Aggiungi un'altra Gara"
 return_to_event: "Ritorna all' Evento"
 go: "VAI!"
-winner: !!proc |name| "VINCITORE #{name.upcase}"
+winner: !!proc |name| "VINCITORE "+name.upcase
 losses: "PERSE"
 best: "MIGLIOR TEMPO"
 overall: "Classifica Generale"
