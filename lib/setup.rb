@@ -147,11 +147,12 @@ require 'lib/race_participation'
 require 'lib/tournament_participation'
 require 'lib/obs_racer'
 require 'lib/race'
-require 'lib/categorization'
+require 'lib/obs_categorization'
 require 'lib/obs_category'
 require 'lib/category'
 require 'lib/tournament'
 require 'lib/racer'
+require 'lib/categorization'
 require "lib/race_windows/#{options['track']}"
 if(first_time||!defined? Shoes)
   DataMapper.auto_migrate!

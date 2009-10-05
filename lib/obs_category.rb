@@ -3,8 +3,8 @@ class ObsCategory
   property :id, Serial
   property :name, String
 
-  has n, :categorizations
-  has n, :obs_racers, :through => :categorizations, :mutable => true
+  has n, :obs_categorizations
+  has n, :obs_racers, :through => :obs_categorizations, :mutable => true
 
   def to_s
     self.name

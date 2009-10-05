@@ -27,8 +27,8 @@ describe 'An obsolete racer' do
     c = ObsCategory.create(:name => "Men")
 #    @racer.categories << c
 
-    @racer.categorizations.new(:obs_category => c)
-    @racer.categorizations.map(&:obs_category).should.include? c
+    @racer.obs_categorizations.new(:obs_category => c)
+    @racer.obs_categorizations.map(&:obs_category).should.include? c
     @racer.save.should==(true)
   end
 end
@@ -54,14 +54,12 @@ describe 'A racer' do
     Racer[r.pk].should.not.be.nil?
   end
 
-=begin
   it "should have categories" do
-    c = ObsCategory.create(:name => "Men")
+    c = Category.create(:name => "Men")
 #    @racer.categories << c
 
-    @racer.categorizations.new(:obs_category => c)
-    @racer.categorizations.map(&:obs_category).should.include? c
-    @racer.save.should==(true)
+    @racer.save
+    @racer.categorizations << Categorization.new(:category => c)
+    @racer.categorizations.map(&:category).should.include? c
   end
-=end
 end
