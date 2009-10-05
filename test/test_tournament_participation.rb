@@ -32,8 +32,8 @@ describe 'A tournament participation' do
 
   it 'should have a relative rank' do
     @tournament_participation.rank.should==(1)
-    @tournament_participation2.rank.should==(2)
-    @tournament_participation3.rank.should==(3)
+    @tournament_participation2.rank.should==(3)
+    @tournament_participation3.rank.should==(2)
   end
 
   it 'should have a number of losses for eliminaton' do

@@ -10,7 +10,7 @@ class Racer
   has n, :categorizations
   
   def categories
-    categorizations.map(&:category)
+    categorizations.map(&:obs_category)
   end
 
   def to_s

@@ -124,6 +124,8 @@ end
 require 'activesupport'
 require 'dm-core'
 require 'dm-aggregates'
+require 'sequel'
+require 'sequel/extensions/migration'
 
 require 'r18n-desktop'
 $i18n = R18n.from_env('lib/translations',options['locale'])
@@ -137,18 +139,21 @@ if(defined? Shoes)
   DataMapper.setup(:default, "sqlite3://#{DATABASE_PATH}")
 else
   DataMapper.setup(:default, "sqlite3::memory:")
+  DB = Sequel.connect("sqlite::memory:")
+  Sequel::Migrator.apply(DB, 'lib/migrations/')
 end
 require 'lib/race_participation'
 require 'lib/tournament_participation'
 require 'lib/racer'
 require 'lib/race'
 require 'lib/categorization'
+require 'lib/obs_category'
 require 'lib/category'
 require 'lib/tournament'
 require "lib/race_windows/#{options['track']}"
 if(first_time||!defined? Shoes)
   DataMapper.auto_migrate!
   #seed data
-  Category.create(:name => "Women")
-  Category.create(:name => "Men")
+  ObsCategory.create(:name => "Women")
+  ObsCategory.create(:name => "Men")
 end

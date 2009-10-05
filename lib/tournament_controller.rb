@@ -237,7 +237,7 @@ class TournamentController < Shoes::Main
       category = session[:category]
       order_by = session[:order_by]
       hide_finished = session[:hide_finished]
-      categories = [$i18n.all_categories]+Category.all.to_a
+      categories = [$i18n.all_categories]+ObsCategory.all.to_a
       inscription "Filter by Category:", :margin => [0,30,0,0]
       list_box(:width => 1.0, :choose => category, :items => categories) do |list|
         session[:category] = list.text
@@ -285,7 +285,7 @@ class TournamentController < Shoes::Main
            @t = timer(5) { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
         end
       else# out of racers in overall
-        visit "/tournaments/#{id}/stats/category/#{Category.next_after(nil)}/0" #try the next category
+        visit "/tournaments/#{id}/stats/category/#{ObsCategory.next_after(nil)}/0" #try the next category
       end
     }
   end
@@ -294,7 +294,7 @@ class TournamentController < Shoes::Main
     layout(:menu)
     racers_offset = racers_offset.to_i
     tournament = Tournament.get(tournament_id)
-    category = Category.get(category_id)
+    category = ObsCategory.get(category_id)
     racers = TournamentParticipation.all(:tournament_id => tournament_id).select{|tp|tp.racer.categorizations.category.include? category}
     racers = racers.sort_by{|tp|[tp.best_time||Infinity]}
     racers.shift(9*racers_offset)
@@ -315,7 +315,7 @@ class TournamentController < Shoes::Main
           @t = timer(5) { visit "/tournaments/#{tournament_id}/stats/category/#{category_id}/#{racers_offset+1}" }
         end
       else# out of racers in category
-        visit "/tournaments/#{tournament_id}/stats/category/#{Category.next_after(category)}/0" #try the next category
+        visit "/tournaments/#{tournament_id}/stats/category/#{ObsCategory.next_after(category)}/0" #try the next category
       end
     }
   end

@@ -41,7 +41,7 @@ class RacerController < Shoes::Main
           para $i18n.assign_to_categories
           stack {
             stack(:width => 0.5) {
-              @checkboxes = Category.all.map do |category|
+              @checkboxes = ObsCategory.all.map do |category|
                 flow { @c = c = check; para(category.name); click { c.toggle } }
                 @c.checked = racer.categories.include?(category)
                 [@c, category]
@@ -133,7 +133,7 @@ class RacerController < Shoes::Main
           para $i18n.assign_to_categories
           stack {
             stack(:width => 0.5) {
-              @checkboxes = Category.all.map do |category|
+              @checkboxes = ObsCategory.all.map do |category|
                 flow { @c = check; para category.name }
                 @c.checked = racer.categories.include?(category)
                 [@c, category]
