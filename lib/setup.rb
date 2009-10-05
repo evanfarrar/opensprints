@@ -126,6 +126,7 @@ require 'dm-core'
 require 'dm-aggregates'
 require 'sequel'
 require 'sequel/extensions/migration'
+require 'sequel/extensions/schema_dumper'
 
 require 'r18n-desktop'
 $i18n = R18n.from_env('lib/translations',options['locale'])
@@ -144,12 +145,13 @@ else
 end
 require 'lib/race_participation'
 require 'lib/tournament_participation'
-require 'lib/racer'
+require 'lib/obs_racer'
 require 'lib/race'
 require 'lib/categorization'
 require 'lib/obs_category'
 require 'lib/category'
 require 'lib/tournament'
+require 'lib/racer'
 require "lib/race_windows/#{options['track']}"
 if(first_time||!defined? Shoes)
   DataMapper.auto_migrate!

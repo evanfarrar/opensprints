@@ -7,24 +7,24 @@ describe 'A race' do
   end
 
   it 'should be able to create race with racers' do
-    racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-    r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+    racers = [ObsRacer.new, ObsRacer.new, ObsRacer.new, ObsRacer.new]
+    r = Race.create(:race_participations => racers.map{|e| {:obs_racer => e}})
     r.save
     r.racers.length.should==4
   end
 
   describe "racers" do
     it "should have a color" do
-      racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-      r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+      racers = [ObsRacer.new, ObsRacer.new, ObsRacer.new, ObsRacer.new]
+      r = Race.create(:race_participations => racers.map{|e| {:obs_racer => e}})
       r.save
       r.race_participations.first.color.should== $BIKES.first
     end
   end
 
   it 'should have times' do
-    racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-    r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+    racers = [ObsRacer.new, ObsRacer.new, ObsRacer.new, ObsRacer.new]
+    r = Race.create(:race_participations => racers.map{|e| {:obs_racer => e}})
     r.save
     r.race_participations.first.finish_time = 10.116
     r.save
@@ -33,8 +33,8 @@ describe 'A race' do
   end
 
   it 'should be finished if everyone has times.' do
-    racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-    r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+    racers = [ObsRacer.new, ObsRacer.new, ObsRacer.new, ObsRacer.new]
+    r = Race.create(:race_participations => racers.map{|e| {:obs_racer => e}})
     r.save
     r.race_participations.first.finish_time = 10.116
     r.save
@@ -48,14 +48,14 @@ describe 'A race' do
 
   describe 'winner' do
     it 'should be the lowest (fastest) time' do
-      racers = [Racer.create(:name => "Steve"),
-                Racer.create(:name => "Joe")]
-      r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+      racers = [ObsRacer.create(:name => "Steve"),
+                ObsRacer.create(:name => "Joe")]
+      r = Race.create(:race_participations => racers.map{|e| {:obs_racer => e}})
       r.save
       r.race_participations.first.finish_time = 10.116
       r.save
       r.reload
-      r.winner.racer.name.should==("Steve")
+      r.winner.obs_racer.name.should==("Steve")
     end
   end
 
@@ -94,26 +94,26 @@ describe 'A race' do
 
   it "should match up names and versus to colors" do
     $BIKES = ["fuschia", "pink", "maroon", "blue"]
-    racers = [Racer.create(:name => "Alice"),
-              Racer.create(:name => "Bob"),
-              Racer.create(:name => "Cathy"),
-              Racer.create(:name => "Dale")]
-    r = Race.create(:race_participations => [{:racer => racers[0]}])
+    racers = [ObsRacer.create(:name => "Alice"),
+              ObsRacer.create(:name => "Bob"),
+              ObsRacer.create(:name => "Cathy"),
+              ObsRacer.create(:name => "Dale")]
+    r = Race.create(:race_participations => [{:obs_racer => racers[0]}])
     r.names_to_colors.should==([["Alice","fuschia"]])
 
-    r = Race.create(:race_participations => racers[0..1].map{|e|{:racer => e}})
+    r = Race.create(:race_participations => racers[0..1].map{|e|{:obs_racer => e}})
     r.names_to_colors.should==([["Alice","fuschia"],
                                 ["vs.","white"],
                                 ["Bob","pink"]])
 
-    r = Race.create(:race_participations => racers[0..2].map{|e|{:racer => e}})
+    r = Race.create(:race_participations => racers[0..2].map{|e|{:obs_racer => e}})
     r.names_to_colors.should==([["Alice","fuschia"],
                                 ["vs.","white"],
                                 ["Bob","pink"],
                                 ["vs.","white"],
                                 ["Cathy","maroon"]])
 
-    r = Race.create(:race_participations => racers[0..3].map{|e|{:racer => e}})
+    r = Race.create(:race_participations => racers[0..3].map{|e|{:obs_racer => e}})
     r.names_to_colors.should==([["Alice","fuschia"],
                                 ["vs.","white"],
                                 ["Bob","pink"],

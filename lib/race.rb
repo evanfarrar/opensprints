@@ -6,7 +6,7 @@ class Race
   belongs_to :tournament, :nullable => true
 
   def racers
-    race_participations.map(&:racer)
+    race_participations.map(&:obs_racer)
   end
 
   def unraced?

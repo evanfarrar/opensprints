@@ -3,5 +3,5 @@ class Categorization
   property :id, Serial
 
   belongs_to :obs_category
-  belongs_to :racer
+  belongs_to :obs_racer
 end

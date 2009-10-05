@@ -4,21 +4,21 @@ require 'bacon'
 describe 'A tournament participation' do
   before do
     @tournament = Tournament.create(:name => "December")
-    @racer = Racer.create(:name => "winston")
-    @tournament_participation = TournamentParticipation.create(:racer => @racer, :tournament => @tournament)
+    @racer = ObsRacer.create(:name => "winston")
+    @tournament_participation = TournamentParticipation.create(:obs_racer => @racer, :tournament => @tournament)
     [4.2, 5.3, 3.0, 6.1].each do |time|
       r = Race.create(:tournament => @tournament)
-      r.race_participations.create(:racer => @racer, :finish_time => time)
+      r.race_participations.create(:obs_racer => @racer, :finish_time => time)
     end
 
-    @racer2 = Racer.create(:name => "winston")
-    @tournament_participation2 = TournamentParticipation.create(:racer => @racer2, :tournament => @tournament)
+    @racer2 = ObsRacer.create(:name => "winston")
+    @tournament_participation2 = TournamentParticipation.create(:obs_racer => @racer2, :tournament => @tournament)
 
-    @racer3 = Racer.create(:name => "winston")
-    @tournament_participation3 = TournamentParticipation.create(:racer => @racer3, :tournament => @tournament)
+    @racer3 = ObsRacer.create(:name => "winston")
+    @tournament_participation3 = TournamentParticipation.create(:obs_racer => @racer3, :tournament => @tournament)
     r = Race.create(:tournament => @tournament)
-    r.race_participations.create(:racer => @racer3, :finish_time => [10.0])
-    r.race_participations.create(:racer => @racer, :finish_time => [5.0])
+    r.race_participations.create(:obs_racer => @racer3, :finish_time => [10.0])
+    r.race_participations.create(:obs_racer => @racer, :finish_time => [5.0])
   end
 
   

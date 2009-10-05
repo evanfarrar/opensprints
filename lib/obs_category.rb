@@ -4,7 +4,7 @@ class ObsCategory
   property :name, String
 
   has n, :categorizations
-  has n, :racers, :through => :categorizations, :mutable => true
+  has n, :obs_racers, :through => :categorizations, :mutable => true
 
   def to_s
     self.name
