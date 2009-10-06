@@ -144,17 +144,19 @@ else
   Sequel::Migrator.apply(DB, 'lib/migrations/')
 end
 require 'lib/obs_race_participation'
-require 'lib/tournament_participation'
+require 'lib/obs_tournament_participation'
 require 'lib/obs_racer'
 require 'lib/obs_race'
 require 'lib/obs_categorization'
 require 'lib/obs_category'
+require 'lib/obs_tournament'
 require 'lib/category'
-require 'lib/tournament'
 require 'lib/racer'
 require 'lib/race'
 require 'lib/race_participation'
 require 'lib/categorization'
+require 'lib/tournament'
+require 'lib/tournament_participation'
 require "lib/race_windows/#{options['track']}"
 if(first_time||!defined? Shoes)
   DataMapper.auto_migrate!

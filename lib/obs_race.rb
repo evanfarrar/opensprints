@@ -3,7 +3,7 @@ class ObsRace
   property :id, Serial
   property :raced, Boolean, :default => false
   has n, :obs_race_participations
-  belongs_to :tournament, :nullable => true
+  belongs_to :obs_tournament, :nullable => true
 
   def racers
     obs_race_participations.map(&:obs_racer)
@@ -14,7 +14,7 @@ class ObsRace
   end
 
   def next_race
-    (tournament.obs_races.all(:raced => false) - [self]).first
+    (obs_tournament.obs_races.all(:raced => false) - [self]).first
   end
 
   def winner

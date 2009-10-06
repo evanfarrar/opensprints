@@ -26,7 +26,7 @@ ObsCategory.create(:name => "Women")
 ObsCategory.create(:name => "Men")
 Category.create(:name => "Women")
 Category.create(:name => "Men")
-t = Tournament.create(:name => "December Series")
+t = obs_Tournament.create(:name => "December Series")
 ObsRacer.all.each{|r|
-  t.tournament_participations.create(:obs_racer => r)
+  t.obs_tournament_participations.create(:obs_racer => r)
 }

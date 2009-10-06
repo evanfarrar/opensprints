@@ -77,17 +77,17 @@ describe 'An obsolete race' do
 
   describe 'next race' do
     it 'should be the next one after this one' do
-      t = Tournament.create
-      r1 = ObsRace.create(:tournament => t)
-      r2 = ObsRace.create(:tournament => t)
+      t = ObsTournament.create
+      r1 = ObsRace.create(:obs_tournament => t)
+      r2 = ObsRace.create(:obs_tournament => t)
       r1.next_race.should==(r2)
     end
 
     it 'should only show the next unraced race' do
-      t = Tournament.create
-      r1 = ObsRace.create(:tournament => t)
-      r2 = ObsRace.create(:tournament => t, :raced => true)
-      r3 = ObsRace.create(:tournament => t)
+      t = ObsTournament.create
+      r1 = ObsRace.create(:obs_tournament => t)
+      r2 = ObsRace.create(:obs_tournament => t, :raced => true)
+      r3 = ObsRace.create(:obs_tournament => t)
       r1.next_race.should==(r3)
     end
   end

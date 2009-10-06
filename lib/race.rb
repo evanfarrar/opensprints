@@ -1,6 +1,7 @@
 class Race < Sequel::Model
   one_to_many :race_participations
   many_to_many :racers, :join_table => :race_participations
+  many_to_one :tournament
 
   def finished?
     race_participations.all?(&:finish_time)
