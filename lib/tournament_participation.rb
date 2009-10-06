@@ -7,7 +7,7 @@ class TournamentParticipation
   belongs_to :tournament
 
   def best_time
-    best = RaceParticipation.first("race.tournament_id" => tournament.id,
+    best = ObsRaceParticipation.first("obs_race.tournament_id" => tournament.id,
                             :obs_racer_id => obs_racer.id,
                             :order => [:finish_time.asc]
     )
@@ -20,11 +20,11 @@ class TournamentParticipation
   end
 
   def losses
-    (RaceParticipation.all(:obs_racer_id => self.obs_racer_id, "race.tournament_id" => self.tournament_id).select {|rp| rp.race.winner != rp }).length
+    (ObsRaceParticipation.all(:obs_racer_id => self.obs_racer_id, "obs_race.tournament_id" => self.tournament_id).select {|rp| rp.obs_race.winner != rp }).length
   end
 
   def race_participations
-    RaceParticipation.all("race.tournament_id" => tournament.id,
+    ObsRaceParticipation.all("obs_race.tournament_id" => tournament.id,
                           :obs_racer => obs_racer)
   end
 

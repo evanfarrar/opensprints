@@ -7,8 +7,8 @@ describe 'A tournament participation' do
     @racer = ObsRacer.create(:name => "winston")
     @tournament_participation = TournamentParticipation.create(:obs_racer => @racer, :tournament => @tournament)
     [4.2, 5.3, 3.0, 6.1].each do |time|
-      r = Race.create(:tournament => @tournament)
-      r.race_participations.create(:obs_racer => @racer, :finish_time => time)
+      r = ObsRace.create(:tournament => @tournament)
+      r.obs_race_participations.create(:obs_racer => @racer, :finish_time => time)
     end
 
     @racer2 = ObsRacer.create(:name => "winston")
@@ -16,9 +16,9 @@ describe 'A tournament participation' do
 
     @racer3 = ObsRacer.create(:name => "winston")
     @tournament_participation3 = TournamentParticipation.create(:obs_racer => @racer3, :tournament => @tournament)
-    r = Race.create(:tournament => @tournament)
-    r.race_participations.create(:obs_racer => @racer3, :finish_time => [10.0])
-    r.race_participations.create(:obs_racer => @racer, :finish_time => [5.0])
+    r = ObsRace.create(:tournament => @tournament)
+    r.obs_race_participations.create(:obs_racer => @racer3, :finish_time => [10.0])
+    r.obs_race_participations.create(:obs_racer => @racer, :finish_time => [5.0])
   end
 
   

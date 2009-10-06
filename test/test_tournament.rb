@@ -13,8 +13,8 @@ describe 'A tournament' do
   end
 
   it 'should have some races' do
-    @tournament.races = [Race.new, Race.new, Race.new]
-    @tournament.races.length.should==3
+    @tournament.obs_races = [ObsRace.new, ObsRace.new, ObsRace.new]
+    @tournament.obs_races.length.should==3
   end
 
   it 'should have a name' do
@@ -55,7 +55,7 @@ describe 'A tournament' do
       @tournament.unmatched_racers.should ==(racers)
       sheila = ObsRacer.create(:name => "Sheila")
       @tournament.autofill
-      @tournament.races.each{|r|r.update_attributes(:raced => true)}
+      @tournament.obs_races.each{|r|r.update_attributes(:raced => true)}
       @tournament.tournament_participations.create({:obs_racer => sheila})
       @tournament.unmatched_racers.length.should==(3)
       
@@ -70,7 +70,7 @@ describe 'A tournament' do
       @tournament.unmatched_racers.should ==(racers)
       sheila = ObsRacer.create(:name => "Sheila")
       @tournament.autofill
-      @tournament.races.each{|r|r.update_attributes(:raced => true)}
+      @tournament.obs_races.each{|r|r.update_attributes(:raced => true)}
       @tournament.tournament_participations.each{|tp|tp.update_attributes(:eliminated => true)}
       @tournament.tournament_participations.create({:obs_racer => sheila})
       @tournament.unmatched_racers.should==([sheila])
@@ -85,9 +85,9 @@ describe 'A tournament' do
       end
       @tournament.save
       @tournament.reload
-      @tournament.races.length.should == 0
+      @tournament.obs_races.length.should == 0
       @tournament.autofill
-      @tournament.races.length.should == 3
+      @tournament.obs_races.length.should == 3
       @tournament.save
     end
 
@@ -98,9 +98,9 @@ describe 'A tournament' do
       end
       @tournament.save
       @tournament.reload
-      @tournament.races.length.should == 0
+      @tournament.obs_races.length.should == 0
       @tournament.autofill
-      @tournament.races.length.should == 3
+      @tournament.obs_races.length.should == 3
       @tournament.save
       6.times do
         @tournament.tournament_participations.build({:obs_racer => ObsRacer.create})
@@ -108,7 +108,7 @@ describe 'A tournament' do
       @tournament.save
       @tournament.reload
       @tournament.autofill
-      @tournament.races.length.should == 6
+      @tournament.obs_races.length.should == 6
     end
 
     it 'should make races with as many riders as there are bikes' do
@@ -119,9 +119,9 @@ describe 'A tournament' do
       end
       @tournament.save
       @tournament.reload
-      @tournament.races.length.should == 0
+      @tournament.obs_races.length.should == 0
       @tournament.autofill
-      @tournament.races.length.should == 2
+      @tournament.obs_races.length.should == 2
       @tournament.save
     end
 
@@ -132,10 +132,10 @@ describe 'A tournament' do
       end
       @tournament.save
       @tournament.reload
-      @tournament.races.length.should == 0
+      @tournament.obs_races.length.should == 0
       @tournament.autofill(@tournament.tournament_participations.obs_racers[0..2])
-      @tournament.races.length.should == 2
-      @tournament.races.first.racers.length.should == 2
+      @tournament.obs_races.length.should == 2
+      @tournament.obs_races.first.racers.length.should == 2
     end
   end
 end

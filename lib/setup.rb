@@ -143,15 +143,17 @@ else
   DB = Sequel.connect("sqlite::memory:")
   Sequel::Migrator.apply(DB, 'lib/migrations/')
 end
-require 'lib/race_participation'
+require 'lib/obs_race_participation'
 require 'lib/tournament_participation'
 require 'lib/obs_racer'
-require 'lib/race'
+require 'lib/obs_race'
 require 'lib/obs_categorization'
 require 'lib/obs_category'
 require 'lib/category'
 require 'lib/tournament'
 require 'lib/racer'
+require 'lib/race'
+require 'lib/race_participation'
 require 'lib/categorization'
 require "lib/race_windows/#{options['track']}"
 if(first_time||!defined? Shoes)
