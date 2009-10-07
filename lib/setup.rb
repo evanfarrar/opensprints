@@ -122,8 +122,6 @@ else
   require 'rubygems'
 end
 require 'activesupport'
-require 'dm-core'
-require 'dm-aggregates'
 require 'sequel'
 require 'sequel/extensions/migration'
 require 'sequel/extensions/schema_dumper'
@@ -132,27 +130,17 @@ require 'sqlite3'
 require 'r18n-desktop'
 $i18n = R18n.from_env('lib/translations',options['locale'])
 
-DATABASE_PATH = File.join(LIB_DIR,'opensprints.db')
-DATABASE2_PATH = File.join(LIB_DIR,'opensprints2.db')
+DATABASE_PATH = File.join(LIB_DIR,'opensprints_data.db')
 unless(File.exists? DATABASE_PATH)
   File.open(DATABASE_PATH , 'w+') {|file| nil }
   first_time = true
 end
-if(defined? Shoes)
-  DataMapper.setup(:default, "sqlite3://#{DATABASE_PATH}")
+if(defined? Shoes) #Real environment
   DB = Sequel.connect("sqlite://#{DATABASE2_PATH}")
-else
-  DataMapper.setup(:default, "sqlite3::memory:")
+else               #Test environment
   DB = Sequel.connect("sqlite::memory:")
 end
 Sequel::Migrator.apply(DB, 'lib/migrations/')
-require 'lib/obs_race_participation'
-require 'lib/obs_tournament_participation'
-require 'lib/obs_racer'
-require 'lib/obs_race'
-require 'lib/obs_categorization'
-require 'lib/obs_category'
-require 'lib/obs_tournament'
 require 'lib/category'
 require 'lib/racer'
 require 'lib/race'
@@ -162,8 +150,7 @@ require 'lib/tournament'
 require 'lib/tournament_participation'
 require "lib/race_windows/#{options['track']}"
 if(first_time||!defined? Shoes)
-  DataMapper.auto_migrate!
   #seed data
-  ObsCategory.create(:name => "Women")
-  ObsCategory.create(:name => "Men")
+  Category.create(:name => "Women")
+  Category.create(:name => "Men")
 end
