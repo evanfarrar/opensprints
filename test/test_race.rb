@@ -201,7 +201,6 @@ describe 'A race' do
     end
   end
 
-=begin
   describe 'next race' do
     it 'should be the next one after this one' do
       t = Tournament.create
@@ -219,5 +218,4 @@ describe 'A race' do
     end
   end
 
-=end
 end

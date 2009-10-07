@@ -31,4 +31,17 @@ class Tournament < Sequel::Model
     matched
   end
 
+  #TODO: test
+  def never_raced_and_not_eliminated
+    matched = []
+    races.each { |race|
+      race.race_participations.each {|rp|
+        matched << rp.racer
+      }
+    }
+    racers - matched - tournament_participations.select{|tp|tp.eliminated}.map{|tp|tp.racer}
+  end
+
+
+
 end

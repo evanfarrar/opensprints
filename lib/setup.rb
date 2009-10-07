@@ -127,22 +127,25 @@ require 'dm-aggregates'
 require 'sequel'
 require 'sequel/extensions/migration'
 require 'sequel/extensions/schema_dumper'
+require 'sqlite3'
 
 require 'r18n-desktop'
 $i18n = R18n.from_env('lib/translations',options['locale'])
 
 DATABASE_PATH = File.join(LIB_DIR,'opensprints.db')
+DATABASE2_PATH = File.join(LIB_DIR,'opensprints2.db')
 unless(File.exists? DATABASE_PATH)
   File.open(DATABASE_PATH , 'w+') {|file| nil }
   first_time = true
 end
 if(defined? Shoes)
   DataMapper.setup(:default, "sqlite3://#{DATABASE_PATH}")
+  DB = Sequel.connect("sqlite://#{DATABASE2_PATH}")
 else
   DataMapper.setup(:default, "sqlite3::memory:")
   DB = Sequel.connect("sqlite::memory:")
-  Sequel::Migrator.apply(DB, 'lib/migrations/')
 end
+Sequel::Migrator.apply(DB, 'lib/migrations/')
 require 'lib/obs_race_participation'
 require 'lib/obs_tournament_participation'
 require 'lib/obs_racer'

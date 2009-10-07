@@ -16,4 +16,8 @@ class Race < Sequel::Model
     !raced
   end
 
+  def next_race
+    (Race.filter(:raced => false, :tournament_id => tournament.pk).all - [self]).first
+  end
+
 end

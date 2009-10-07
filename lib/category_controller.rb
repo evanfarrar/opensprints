@@ -10,7 +10,7 @@ class CategoryController < Shoes::Main
       stack(:width => 0.5) {
         container
         button($i18n.new_category) { visit "/categories/new" }
-        ObsCategory.all.each {|category|
+        Category.all.each {|category|
           flow(:width => 1.0, :margin_left => 20) {
             separator_line
           }
@@ -43,10 +43,10 @@ class CategoryController < Shoes::Main
       button $i18n.create do
         if attrs[:name].blank?
           alert($i18n.name_cant_be_blank)
-        elsif ObsCategory.first(:name => attrs[:name])
+        elsif Category.filter(:name => attrs[:name]).any?
           alert($i18n.name_is_taken)
         else
-          ObsCategory.create(attrs)
+          Category.create(attrs)
           visit '/categories'
         end
       end

@@ -59,7 +59,8 @@ describe 'A racer' do
 #    @racer.categories << c
 
     @racer.save
-    @racer.categorizations << Categorization.new(:category => c)
-    @racer.categorizations.map(&:category).should.include? c
+    Categorization.create(:category => c, :racer => @racer)
+    @racer.reload.categorizations.map(&:category).should.include? c
+    @racer.categories.should.include? c
   end
 end

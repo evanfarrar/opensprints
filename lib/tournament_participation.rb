@@ -22,4 +22,8 @@ class TournamentParticipation < Sequel::Model
     self.update(:eliminated => true)
   end
 
+  def race_participations
+    RaceParticipation.filter(:racer_id => racer.id).join(:races, :tournament_id => tournament.id).group(:id).all
+  end
+
 end
