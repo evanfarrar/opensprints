@@ -112,11 +112,11 @@ if defined? Shoes
     font(f)
   end
 
-  require 'lib/config_controller'
-  require 'lib/racer_controller'
-  require 'lib/race_controller'
-  require 'lib/category_controller'
-  require 'lib/tournament_controller'
+  require 'lib/controllers/config_controller'
+  require 'lib/controllers/racer_controller'
+  require 'lib/controllers/race_controller'
+  require 'lib/controllers/category_controller'
+  require 'lib/controllers/tournament_controller'
   require 'lib/interface_widgets'
 else
   require 'rubygems'
@@ -136,19 +136,18 @@ unless(File.exists? DATABASE_PATH)
   first_time = true
 end
 if(defined? Shoes) #Real environment
-  DB = Sequel.connect("sqlite://#{DATABASE2_PATH}")
+  DB = Sequel.connect("sqlite://#{DATABASE_PATH}")
 else               #Test environment
   DB = Sequel.connect("sqlite::memory:")
 end
 Sequel::Migrator.apply(DB, 'lib/migrations/')
-require 'lib/category'
-require 'lib/racer'
-require 'lib/race'
-require 'lib/race_participation'
-require 'lib/categorization'
-require 'lib/tournament'
-require 'lib/tournament_participation'
-require "lib/race_windows/#{options['track']}"
+require 'lib/models/category'
+require 'lib/models/racer'
+require 'lib/models/race'
+require 'lib/models/race_participation'
+require 'lib/models/categorization'
+require 'lib/models/tournament'
+require 'lib/models/tournament_participation'
 if(first_time||!defined? Shoes)
   #seed data
   Category.create(:name => "Women")
