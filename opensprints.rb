@@ -5,6 +5,7 @@ Shoes.setup do
   gem "dm-aggregates"
   gem "do_sqlite3"
   gem "r18n-desktop"
+  gem "sequel"
 end
 
 class Shoes::Check

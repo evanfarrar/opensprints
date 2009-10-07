@@ -3,17 +3,23 @@ require 'bacon'
 
 describe 'A tournament' do
   before do
-    @tournament = Tournament.new
+    @tournament = Tournament.create
     $BIKES = ["red", "blue"]
   end
 
   it 'should have some racers' do
-    3.times { @tournament.tournament_participations.build(:racer => Racer.new) }
+    3.times do
+      racer = Racer.create
+      tp = TournamentParticipation.create(:racer => racer,
+        :tournament => @tournament)
+    end
     @tournament.racers.length.should==3
   end
 
   it 'should have some races' do
-    @tournament.races = [Race.new, Race.new, Race.new]
+    3.times do
+      Race.create(:tournament => @tournament)
+    end
     @tournament.races.length.should==3
   end
 
@@ -23,10 +29,11 @@ describe 'A tournament' do
   end
 
   it 'should know the unregistered racers' do
-    Racer.all.destroy!
-    @tournament = Tournament.new
+    Racer.all.each{|r|r.destroy}
+    @tournament = Tournament.create
     6.times do
-      @tournament.tournament_participations.build({:racer => Racer.create})
+      TournamentParticipation.create(:racer => Racer.create,
+        :tournament => @tournament)
     end
     unregistered_racer = Racer.create
     @tournament.unregistered_racers.should==([unregistered_racer])
@@ -37,51 +44,57 @@ describe 'A tournament' do
       @tournament.save
       racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
       racers.each {|racer|
-        @tournament.tournament_participations.create({:racer => racer})
+        TournamentParticipation.create(:racer => racer,
+          :tournament => @tournament)
       }
       @tournament.unmatched_racers.should ==(racers)
       sheila = Racer.create(:name => "Sheila")
       @tournament.autofill
-      @tournament.tournament_participations.create({:racer => sheila})
-      @tournament.unmatched_racers.should ==([sheila])
+      TournamentParticipation.create(:racer => sheila,
+        :tournament => @tournament)
+      @tournament.reload.unmatched_racers.should ==([sheila])
     end
 
     it 'should contain racers in a completed match.' do
       @tournament.save
       racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
       racers.each {|racer|
-        @tournament.tournament_participations.create({:racer => racer})
+        TournamentParticipation.create(:racer => racer,
+          :tournament => @tournament)
       }
       @tournament.unmatched_racers.should ==(racers)
       sheila = Racer.create(:name => "Sheila")
       @tournament.autofill
-      @tournament.races.each{|r|r.update_attributes(:raced => true)}
-      @tournament.tournament_participations.create({:racer => sheila})
-      @tournament.unmatched_racers.length.should==(3)
-      
+      @tournament.races.each{|r|r.raced = true; r.save}
+      TournamentParticipation.create(:racer => sheila,
+        :tournament => @tournament)
+      @tournament.reload.unmatched_racers.length.should==(3)
     end
 
     it 'should not contain eliminated racers' do
       @tournament.save
       racers = ["Steve", "Joe"].map {|racer| Racer.create(:name => racer) }
       racers.each {|racer|
-        @tournament.tournament_participations.create({:racer => racer})
+        TournamentParticipation.create(:racer => racer,
+          :tournament => @tournament)
       }
       @tournament.unmatched_racers.should ==(racers)
+
       sheila = Racer.create(:name => "Sheila")
       @tournament.autofill
-      @tournament.races.each{|r|r.update_attributes(:raced => true)}
-      @tournament.tournament_participations.each{|tp|tp.update_attributes(:eliminated => true)}
-      @tournament.tournament_participations.create({:racer => sheila})
-      @tournament.unmatched_racers.should==([sheila])
+      @tournament.races.each{|r|r.raced = true; r.save}
+      @tournament.tournament_participations.each{|tp|tp.eliminated = true; tp.save}
+      TournamentParticipation.create(:racer => sheila,
+        :tournament => @tournament)
+      @tournament.reload.unmatched_racers.should==([sheila])
     end
   end
 
   describe 'autofill' do
     it 'should result in all the racers being matched' do
-      @tournament = Tournament.new
+      @tournament = Tournament.create
       6.times do
-        @tournament.tournament_participations.build({:racer => Racer.create})
+        TournamentParticipation.create(:racer => Racer.create, :tournament => @tournament)
       end
       @tournament.save
       @tournament.reload
@@ -92,9 +105,9 @@ describe 'A tournament' do
     end
 
     it 'should match only unmatched racers' do
-      @tournament = Tournament.new
+      @tournament = Tournament.create
       6.times do
-        @tournament.tournament_participations.build({:racer => Racer.create})
+        TournamentParticipation.create(:racer => Racer.create, :tournament => @tournament)
       end
       @tournament.save
       @tournament.reload
@@ -103,7 +116,7 @@ describe 'A tournament' do
       @tournament.races.length.should == 3
       @tournament.save
       6.times do
-        @tournament.tournament_participations.build({:racer => Racer.create})
+        TournamentParticipation.create(:racer => Racer.create, :tournament => @tournament)
       end
       @tournament.save
       @tournament.reload
@@ -112,10 +125,10 @@ describe 'A tournament' do
     end
 
     it 'should make races with as many riders as there are bikes' do
-      @tournament = Tournament.new
+      @tournament = Tournament.create
       $BIKES = ["red","blue","yellow"]
       6.times do
-        @tournament.tournament_participations.build({:racer => Racer.create})
+        TournamentParticipation.create(:racer => Racer.create, :tournament => @tournament)
       end
       @tournament.save
       @tournament.reload
@@ -126,14 +139,14 @@ describe 'A tournament' do
     end
 
     it 'should accept a list of racers' do
-      @tournament = Tournament.new
+      @tournament = Tournament.create
       6.times do
-        @tournament.tournament_participations.build({:racer => Racer.create})
+        TournamentParticipation.create(:racer => Racer.create, :tournament => @tournament)
       end
       @tournament.save
       @tournament.reload
       @tournament.races.length.should == 0
-      @tournament.autofill(@tournament.tournament_participations.racers[0..2])
+      @tournament.autofill(@tournament.tournament_participations[0..2].map(&:racer))
       @tournament.races.length.should == 2
       @tournament.races.first.racers.length.should == 2
     end

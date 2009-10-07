@@ -76,27 +76,27 @@ class RaceController < Shoes::Main
   def ready(id)
     @title = $i18n.get_ready_to_race
     layout(:race)
-    race = Race.get(id)
+    race = Race[id]
     left_names(race)
     right_bars(race)
     @nav.clear {
       button("Start") { visit "/races/#{id}/countdown" }
       button($i18n.edit_race) { session[:referrer].push(@center.app.location); visit "/races/#{id}/edit" }
       if next_race = race.next_race
-         button("Skip to Next Race") { visit "/races/#{next_race.id}/ready" }
+         button("Skip to Next Race") { visit "/races/#{next_race.pk}/ready" }
       end
       button($i18n.new_race) {
         visit "/races/new/tournament/#{race.tournament_id}"
       }
       if race.tournament
-        button($i18n.back_to_event) { visit "/tournaments/#{race.tournament.id}" }
+        button($i18n.back_to_event) { visit "/tournaments/#{race.tournament.pk}" }
       end
       if race.racers.length == 2
         button($i18n.swap) {
           racers = race.racers.reverse
-          race.race_participations.destroy!
+          race.race_participations.each{|rp|rp.destroy}
           racers.map {|r|
-            race.race_participations.create(:racer => r)
+            RaceParticipation.create(:racer => r, :race => race)
           }
           visit "/races/#{id}/ready"
         } 
@@ -115,7 +115,7 @@ class RaceController < Shoes::Main
     
   end
   def countdown(id)
-    race = Race.get(id)
+    race = Race[id]
     layout(:race)
     left_names(race)
     right_bars(race)
@@ -159,13 +159,14 @@ class RaceController < Shoes::Main
   def show(id)
     layout(:race)
     small_logo
-    race = Race.get(id)
+    race = Race[id]
     @nav.clear {
       button("Call It") {
         @race_animation.stop
         SENSOR.stop
         race.raced = true
         race.save
+        race.race_participations.map(&:save)
         visit "/races/#{id}/winner"
       }
       button("Redo") {
@@ -182,6 +183,7 @@ class RaceController < Shoes::Main
         SENSOR.stop
         race.raced = true
         race.save
+        race.race_participations.map(&:save)
         visit "/races/#{id}/winner"
       else
         @center.clear do
@@ -198,7 +200,7 @@ class RaceController < Shoes::Main
   end
 
   def winner(id)
-    race = Race.get(id)
+    race = Race[id]
     winner = race.winner
     layout(:menu)
     @nav.append {
@@ -229,7 +231,7 @@ class RaceController < Shoes::Main
             }
           }
           if next_race = race.next_race
-            button("next race: #{next_race.racers.join(", ")}") { visit "/races/#{next_race.id}/ready" }
+            button("next race: #{next_race.racers.join(", ")}") { visit "/races/#{next_race.pk}/ready" }
           end
         }
       end
@@ -237,7 +239,7 @@ class RaceController < Shoes::Main
   end
 
   def edit(id)
-    race = Race.get(id)
+    race = Race[id]
     layout
     @center.clear {
       stack(:width => 0.2, :height => 0.8) {
@@ -255,7 +257,7 @@ class RaceController < Shoes::Main
                 flow(:width => 0.6) { para(racer.name) }
                 flow(:width => 0.3) {
                   image_button("media/add.png") do
-                    race.race_participations.create(:racer => racer)
+                    RaceParticipation.create(:racer => racer, :race => race)
                     visit "/races/#{id}/edit"
                   end
                 }
@@ -263,7 +265,7 @@ class RaceController < Shoes::Main
             end
           }
           stack(:height => 0.1){ 
-            (button("add racer") { visit "/racers/new/race/#{race.id}" })
+            (button("add racer") { visit "/racers/new/race/#{race.pk}" })
           }
         else
           stack(:height => 0.1){  }
@@ -314,9 +316,9 @@ class RaceController < Shoes::Main
               stack(:width => (0.1)){ 
                 button($i18n.swap) {
                   racers = race.racers.reverse
-                  race.race_participations.destroy!
+                  race.race_participations.each{|rp|rp.destroy}
                   racers.map {|r|
-                    race.race_participations.create(:racer => r)
+                    RaceParticipation.create(:racer => r, :race => race)
                   }
                   visit "/races/#{id}/edit"
                 } 
@@ -357,6 +359,6 @@ class RaceController < Shoes::Main
 
   def new_in_tournament(tournament_id)
     race = Race.create(:tournament_id => tournament_id)
-    visit "/races/#{race.id}/edit"
+    visit "/races/#{race.pk}/edit"
   end
 end

@@ -43,7 +43,7 @@ class CategoryController < Shoes::Main
       button $i18n.create do
         if attrs[:name].blank?
           alert($i18n.name_cant_be_blank)
-        elsif Category.first(:name => attrs[:name])
+        elsif Category.filter(:name => attrs[:name]).any?
           alert($i18n.name_is_taken)
         else
           Category.create(attrs)

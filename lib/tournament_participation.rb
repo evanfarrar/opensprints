@@ -1,34 +1,29 @@
-class TournamentParticipation
-  include DataMapper::Resource
-  property :id, Serial
-  property :eliminated, Boolean
-
-  belongs_to :racer
-  belongs_to :tournament
+class TournamentParticipation < Sequel::Model
+  many_to_one :racer
+  many_to_one :tournament
 
   def best_time
-    best = RaceParticipation.first("race.tournament_id" => tournament.id,
-                            :racer_id => racer.id,
-                            :order => [:finish_time.asc]
-    )
-    best.finish_time if best
+    best = DB[:race_participations].filter(:racer_id => racer.id).join(:races, :tournament_id => tournament.id).order(:finish_time).select(:finish_time).first
+
+    best[:finish_time] if best
   end
 
+  #TODO: optimize / convert to sequel
   def rank
-    standings = self.tournament.tournament_participations.sort_by{|tp|[tp.best_time||Infinity]}
+    standings = self.tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
     standings.index(self)+1
   end
 
   def losses
-    (RaceParticipation.all(:racer_id => self.racer_id, "race.tournament_id" => self.tournament_id).select {|rp| rp.race.winner != rp }).length
-  end
-
-  def race_participations
-    RaceParticipation.all("race.tournament_id" => tournament.id,
-                          :racer => racer)
+    RaceParticipation.filter(:racer_id => racer.id).join(:races, :tournament_id => tournament.id).group(:id).all.select{|rp|rp.race.winner.racer.pk != self.racer.pk}.length
   end
 
   def eliminate
-    self.update_attributes(:eliminated => true)
+    self.update(:eliminated => true)
   end
+
+  def race_participations
+    RaceParticipation.filter(:racer_id => racer.id).join(:races, :tournament_id => tournament.id).group(:id).all
+  end
+
 end

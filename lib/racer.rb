@@ -1,20 +1,7 @@
-class Racer
-  include DataMapper::Resource
-  property :id, Serial
-  property :name, String
-
-  has n, :race_participations
-  has n, :races, :through => :race_participations
-  has n, :tournament_participations
-  has n, :tournaments, :through => :tournament_participations
-  has n, :categorizations
-  
-  def categories
-    categorizations.map(&:category)
-  end
-
+class Racer < Sequel::Model
+  one_to_many :categorizations
+  many_to_many :categories, :join_table => :categorizations
   def to_s
-    self.name
+    name
   end
-
 end

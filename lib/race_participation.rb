@@ -1,20 +1,12 @@
-class RaceParticipation
-  attr_accessor :ticks
-  include DataMapper::Resource
-  property :id, Serial
-
-  belongs_to :racer
-  belongs_to :race
-
-  property :finish_time, BigDecimal
+class RaceParticipation < Sequel::Model
+  many_to_one :race
+  many_to_one :racer
 
   def color
     @color ||= $BIKES[self.race.race_participations.index(self)]
   end
 
-  def speed(stubbed)
-    31
-  end
+  attr_accessor :ticks
 
   def percent_complete
     [1.0, self.distance / $RACE_DISTANCE].min
@@ -65,5 +57,4 @@ class RaceParticipation
       @speed
     end
   end
-
 end

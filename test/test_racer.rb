@@ -3,7 +3,7 @@ require 'bacon'
 
 describe 'A racer' do
   before do
-    @racer = Racer.new
+      @racer = Racer.new
   end
 
   it 'should have a name' do
@@ -14,21 +14,22 @@ describe 'A racer' do
 
   it 'should save' do
     r = Racer.new(:name => "Test")
-    r.save.should==(true)
+    (!!r.save).should==(true)
   end
 
   it 'should load from the database' do
     r = Racer.new(:name => "Test")
-    r.save.should==(true)
-    Racer.get(r.id).should.not.be.nil?
+    (!!r.save).should==(true)
+    Racer[r.pk].should.not.be.nil?
   end
 
   it "should have categories" do
     c = Category.create(:name => "Men")
 #    @racer.categories << c
 
-    @racer.categorizations.new(:category => c)
-    @racer.categorizations.map(&:category).should.include? c
-    @racer.save.should==(true)
+    @racer.save
+    Categorization.create(:category => c, :racer => @racer)
+    @racer.reload.categorizations.map(&:category).should.include? c
+    @racer.categories.should.include? c
   end
 end

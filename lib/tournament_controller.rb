@@ -54,7 +54,7 @@ class TournamentController < Shoes::Main
           }
           flow(:width => 1.0, :margin_left => 20) {
             flow(:width => 0.6, :margin_top => 8) {
-              para(link(tournament.name,:click => "/tournaments/#{tournament.id}"))
+              para(link(tournament.name,:click => "/tournaments/#{tournament.pk}"))
             }
             flow(:width => 0.1) { }
             flow(:width => 0.3) {
@@ -79,12 +79,14 @@ class TournamentController < Shoes::Main
       }
       button $i18n.save_and_continue do
         if tournament.name.blank?
+          #FIXME: i18n 
           alert("Sorry, Tournament name can't be blank.")
-        elsif Tournament.first(:name => tournament.name)
+        elsif Tournament.filter(:name => tournament.name).any?
+          #FIXME: i18n 
           alert("Sorry, Tournament name is already taken.")
         else
           tournament.save
-          visit "/tournaments/#{tournament.id}"
+          visit "/tournaments/#{tournament.pk}"
         end
       end
       button $i18n.cancel do
@@ -94,16 +96,18 @@ class TournamentController < Shoes::Main
   end
 
   def edit(id)
-    tournament = Tournament.get(id)
-    Race.all(:tournament => tournament).each { |r| r.destroy if(r.racers.length == 0) }
+    tournament = Tournament[id]
+    # TODO: optimize
+    Race.filter(:tournament_id => id).all.each { |r| r.destroy if(r.racers.length == 0) }
+    # TODO: optimize
     tournament.tournament_participations.each { |tp| tp.destroy if(tp.racer.nil?||tp.racer.name.blank?) }
-    tournament = Tournament.get(id)
+    tournament = Tournament[id]
     @title = tournament.name
     layout(:menu)
     small_logo
     session[:referrer] = []
     @nav.append {
-      button("stats") { visit "/tournaments/#{tournament.id}/stats" }
+      button("stats") { visit "/tournaments/#{tournament.pk}/stats" }
     }
     @center.clear {
       form(tournament)
@@ -129,8 +133,8 @@ class TournamentController < Shoes::Main
     races = tournament.races
     session[:hide_finished] = true if session[:hide_finished].nil?
     if session[:hide_finished]
-      tournament_participations.reject! {|tp| tp.eliminated? }
-      races.reject! { |r| r.raced? }
+      tournament_participations.reject! {|tp| tp.eliminated }
+      races.reject! { |r| r.raced }
     end
         
     stack(:width => 0.4, :height => 1.0) {
@@ -140,13 +144,13 @@ class TournamentController < Shoes::Main
         tournament_participations.each do |tp|
           flow {
             flow(:width => 0.6) {
-              tp.eliminated? ? para(del(tp.racer.name)) : para(tp.racer.name) 
+              tp.eliminated ? para(del(tp.racer.name)) : para(tp.racer.name) 
             }
             flow(:width => 0.3) {
               flow(:width => 0.8) {
                 edit_button do
                   session[:referrer].push(@center.app.location)
-                  visit "/racers/#{tp.racer.id}/#{tp.tournament.id}"
+                  visit "/racers/#{tp.racer.pk}/#{tp.tournament.pk}"
                 end
               }
               flow(:width => 0.2) {
@@ -156,7 +160,7 @@ class TournamentController < Shoes::Main
                   else
                     tp.destroy
                   end
-                  visit "/tournaments/#{tournament.id}"
+                  visit "/tournaments/#{tournament.pk}"
                 end
               }
             }
@@ -166,7 +170,7 @@ class TournamentController < Shoes::Main
       stack(:width => 1.0, :height => 0.08) {
         button($i18n.add_a_new_racer) {
           session[:referrer].push(@center.app.location)
-          visit("/racers/new/tournament/#{tournament.id}")
+          visit("/racers/new/tournament/#{tournament.pk}")
         }
       }
     }
@@ -186,18 +190,18 @@ class TournamentController < Shoes::Main
             }
             flow(:width => 0.35) {
               flow(:width => 0.8){
-                if race.raced?
+                if race.raced
                   button "RESULTS" do
-                    visit "/races/#{race.id}/winner"
+                    visit "/races/#{race.pk}/winner"
                   end
                 else
                   button $i18n.race do
-                    visit "/races/#{race.id}/ready"
+                    visit "/races/#{race.pk}/ready"
                   end
                 end
               }
               flow(:width => 0.2){
-                delete_button { race.destroy; visit "/tournaments/#{tournament.id}" }
+                delete_button { race.destroy; visit "/tournaments/#{tournament.pk}" }
               }
             }
           }
@@ -206,7 +210,7 @@ class TournamentController < Shoes::Main
       stack(:width => 1.0, :height => 0.08) {
         light_button($i18n.add_a_new_race) {
           session[:referrer].push(@center.app.location)
-          visit "/races/new/tournament/#{tournament.id}"
+          visit "/races/new/tournament/#{tournament.pk}"
         }
       }
       
@@ -215,23 +219,23 @@ class TournamentController < Shoes::Main
       left_button $i18n.autofill do
         if(session[:category] && (session[:category] != $i18n.all_categories))
           racers = tournament.tournament_participations.select{ |tp|
-            !tp.eliminated? && tp.racer.categorizations.map(&:category).include?(session[:category])
+            !tp.eliminated && tp.racer.categorizations.map(&:category).include?(session[:category])
           }
           tournament.autofill(racers.map(&:racer)-tournament.matched_racers)
         else
           tournament.autofill
         end
         tournament.save
-        visit "/tournaments/#{tournament.id}"
+        visit "/tournaments/#{tournament.pk}"
       end
       left_button $i18n.new_round do
         n = ask($i18n.how_many_should_advance)
         unless n.nil?
           tournament_participations.sort_by{ |tp|
             tp.rank
-          }[n.to_i..-1].each{ |tp| tp.update_attributes(:eliminated => true) }
+          }[n.to_i..-1].each{ |tp| tp.update(:eliminated => true) }
           tournament.save
-          visit "/tournaments/#{tournament.id}"
+          visit "/tournaments/#{tournament.pk}"
         end
       end
       category = session[:category]
@@ -241,22 +245,22 @@ class TournamentController < Shoes::Main
       inscription "Filter by Category:", :margin => [0,30,0,0]
       list_box(:width => 1.0, :choose => category, :items => categories) do |list|
         session[:category] = list.text
-        visit "/tournaments/#{tournament.id}" if category != session[:category]
+        visit "/tournaments/#{tournament.pk}" if category != session[:category]
       end
       inscription "Order Racers:", :margin => [0,30,0,0]
       list_box(:width => 1.0, :choose => order_by, :items => [$i18n.name,$i18n.best_time]) do |list|
         session[:order_by] = list.text
-        visit "/tournaments/#{tournament.id}" if order_by != session[:order_by]
+        visit "/tournaments/#{tournament.pk}" if order_by != session[:order_by]
       end
       if session[:hide_finished]
         left_button $i18n.show_finished do
           session[:hide_finished] =  false
-          visit "/tournaments/#{tournament.id}" if hide_finished != session[:hide_finished]
+          visit "/tournaments/#{tournament.pk}" if hide_finished != session[:hide_finished]
         end
       else
         left_button $i18n.hide_finished do
           session[:hide_finished] =  true
-          visit "/tournaments/#{tournament.id}" if hide_finished != session[:hide_finished]
+          visit "/tournaments/#{tournament.pk}" if hide_finished != session[:hide_finished]
         end
       end
     end
@@ -293,9 +297,9 @@ class TournamentController < Shoes::Main
   def category_stats(tournament_id,category_id,racers_offset=0)
     layout(:menu)
     racers_offset = racers_offset.to_i
-    tournament = Tournament.get(tournament_id)
-    category = Category.get(category_id)
-    racers = TournamentParticipation.all(:tournament_id => tournament_id).select{|tp|tp.racer.categorizations.category.include? category}
+    tournament = Tournament[tournament_id]
+    category = Category[category_id]
+    racers = TournamentParticipation.filter(:tournament_id => tournament_id).select{|tp|tp.racer.categorizations.map(&:category).include? category}
     racers = racers.sort_by{|tp|[tp.best_time||Infinity]}
     racers.shift(9*racers_offset)
 

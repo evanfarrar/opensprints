@@ -1,11 +1,6 @@
 Infrastructure
+  * Rename Tournament -> Event
   * Rename Tournament Participation -> Registration
   * Rename RaceParticipation -> Performance
-  * windows packaging
-  * OSX packaging
-
-Tournaments
-  * add specific racers to a match
-
-Race Edit
-  * add a racer directly in the race edit
+  * Windows Packaging
+  * OSX Packaging

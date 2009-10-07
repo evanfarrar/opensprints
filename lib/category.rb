@@ -1,21 +1,15 @@
-class Category
-  include DataMapper::Resource
-  property :id, Serial
-  property :name, String
-
-  has n, :categorizations
-  has n, :racers, :through => :categorizations, :mutable => true
-
+class Category < Sequel::Model
   def to_s
     self.name
   end
 
   def Category.next_after(other)
     if(other)
-      category = Category.first(:id.gt => other.id, :order => [:id.asc])
+      category = Category.filter(:id > other.pk).order(:id).first
     else
-      category = Category.first(:order => [:id.asc])
+      category = Category.order(:id).first
     end
-    category ? category.id : nil
+    category ? category.pk : nil
   end
+
 end

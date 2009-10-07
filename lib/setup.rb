@@ -122,32 +122,34 @@ else
   require 'rubygems'
 end
 require 'activesupport'
-require 'dm-core'
-require 'dm-aggregates'
+require 'sequel'
+require 'sequel/extensions/migration'
+require 'sequel/extensions/schema_dumper'
+require 'sqlite3'
 
 require 'r18n-desktop'
 $i18n = R18n.from_env('lib/translations',options['locale'])
 
-DATABASE_PATH = File.join(LIB_DIR,'opensprints.db')
+DATABASE_PATH = File.join(LIB_DIR,'opensprints_data.db')
 unless(File.exists? DATABASE_PATH)
   File.open(DATABASE_PATH , 'w+') {|file| nil }
   first_time = true
 end
-if(defined? Shoes)
-  DataMapper.setup(:default, "sqlite3://#{DATABASE_PATH}")
-else
-  DataMapper.setup(:default, "sqlite3::memory:")
+if(defined? Shoes) #Real environment
+  DB = Sequel.connect("sqlite://#{DATABASE2_PATH}")
+else               #Test environment
+  DB = Sequel.connect("sqlite::memory:")
 end
-require 'lib/race_participation'
-require 'lib/tournament_participation'
+Sequel::Migrator.apply(DB, 'lib/migrations/')
+require 'lib/category'
 require 'lib/racer'
 require 'lib/race'
+require 'lib/race_participation'
 require 'lib/categorization'
-require 'lib/category'
 require 'lib/tournament'
+require 'lib/tournament_participation'
 require "lib/race_windows/#{options['track']}"
 if(first_time||!defined? Shoes)
-  DataMapper.auto_migrate!
   #seed data
   Category.create(:name => "Women")
   Category.create(:name => "Men")

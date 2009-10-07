@@ -24,7 +24,9 @@ Racer.create(:name => "luke6")
 Racer.create(:name => "jon6")
 Category.create(:name => "Women")
 Category.create(:name => "Men")
+Category.create(:name => "Women")
+Category.create(:name => "Men")
 t = Tournament.create(:name => "December Series")
 Racer.all.each{|r|
-  t.tournament_participations.create(:racer => r)
+  TournamentParticipation.create(:racer => r, :tournament => t)
 }

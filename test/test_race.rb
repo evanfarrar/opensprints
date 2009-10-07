@@ -7,41 +7,44 @@ describe 'A race' do
   end
 
   it 'should be able to create race with racers' do
-    racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-    r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+    racers = [Racer.create, Racer.create, Racer.create, Racer.create]
+    r = Race.create
+    racers.map{|e| RaceParticipation.create(:racer => e, :race => r)}
     r.save
-    r.racers.length.should==4
+    Race[r.pk].racers.length.should==4
   end
 
   describe "racers" do
     it "should have a color" do
-      racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-      r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+      racers = [Racer.create, Racer.create, Racer.create, Racer.create]
+      r = Race.create
+      racers.map{|e| RaceParticipation.create(:racer => e, :race => r)}
       r.save
       r.race_participations.first.color.should== $BIKES.first
     end
   end
 
   it 'should have times' do
-    racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-    r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+    racers = [Racer.create, Racer.create, Racer.create, Racer.create]
+    r = Race.create
+    racers.map{|e| RaceParticipation.create(:racer => e, :race => r)}
     r.save
     r.race_participations.first.finish_time = 10.116
-    r.save
+    r.race_participations.first.save
     r.reload
     r.race_participations.first.finish_time.should==(10.116)
   end
 
   it 'should be finished if everyone has times.' do
-    racers = [Racer.new, Racer.new, Racer.new, Racer.new]
-    r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+    racers = [Racer.create, Racer.create, Racer.create, Racer.create]
+    r = Race.create
+    racers.map{|e| RaceParticipation.create(:racer => e, :race => r)}
     r.save
     r.race_participations.first.finish_time = 10.116
-    r.save
+    r.race_participations.first.save
     r.reload
     r.finished?.should==(false)
-    r.race_participations.each{|rp|rp.finish_time = 10.116}
-    r.save
+    r.race_participations.each{|rp|rp.finish_time = 10.116; rp.save}
     r.reload
     r.finished?.should==(true)
   end
@@ -50,7 +53,8 @@ describe 'A race' do
     it 'should be the lowest (fastest) time' do
       racers = [Racer.create(:name => "Steve"),
                 Racer.create(:name => "Joe")]
-      r = Race.create(:race_participations => racers.map{|e| {:racer => e}})
+      r = Race.create
+      racers.each{|racer| RaceParticipation.create(:racer => racer,:race => r)} 
       r.save
       r.race_participations.first.finish_time = 10.116
       r.save
@@ -58,13 +62,12 @@ describe 'A race' do
       r.winner.racer.name.should==("Steve")
     end
   end
-
   describe 'raced' do
     it 'should track whether or not the race has been run' do
       r = Race.create
-      r.raced?.should==(false) 
+      r.raced.should==(false) 
       r.raced = true
-      r.raced?.should==(true) 
+      r.raced.should==(true) 
     end
 
     it 'should have a converse: unraced?' do
@@ -92,34 +95,4 @@ describe 'A race' do
     end
   end
 
-  it "should match up names and versus to colors" do
-    $BIKES = ["fuschia", "pink", "maroon", "blue"]
-    racers = [Racer.create(:name => "Alice"),
-              Racer.create(:name => "Bob"),
-              Racer.create(:name => "Cathy"),
-              Racer.create(:name => "Dale")]
-    r = Race.create(:race_participations => [{:racer => racers[0]}])
-    r.names_to_colors.should==([["Alice","fuschia"]])
-
-    r = Race.create(:race_participations => racers[0..1].map{|e|{:racer => e}})
-    r.names_to_colors.should==([["Alice","fuschia"],
-                                ["vs.","white"],
-                                ["Bob","pink"]])
-
-    r = Race.create(:race_participations => racers[0..2].map{|e|{:racer => e}})
-    r.names_to_colors.should==([["Alice","fuschia"],
-                                ["vs.","white"],
-                                ["Bob","pink"],
-                                ["vs.","white"],
-                                ["Cathy","maroon"]])
-
-    r = Race.create(:race_participations => racers[0..3].map{|e|{:racer => e}})
-    r.names_to_colors.should==([["Alice","fuschia"],
-                                ["vs.","white"],
-                                ["Bob","pink"],
-                                ["vs.","white"],
-                                ["Cathy","maroon"],
-                                ["vs.","white"],
-                                ["Dale","blue"]])
-  end
 end
