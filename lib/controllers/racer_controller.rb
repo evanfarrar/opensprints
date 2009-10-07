@@ -107,8 +107,8 @@ class RacerController < Shoes::Main
           end
           button $i18n.cancel do
             racer.destroy if Racer[racer.pk].try(:name).blank?
-            #TODO: optimize
-            TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
+            # Delete all participations where the racer_id is not in racers.
+            TournamentParticipation.exclude(:id => TournamentParticipation.join(:racers, :id => :racer_id).select(:tournament_participations__id)).delete
             visit session[:referrer].pop||'/racers'
           end
         }
@@ -170,7 +170,8 @@ class RacerController < Shoes::Main
           end
           button $i18n.cancel do
             racer.destroy if Racer[racer.pk].try(:name).blank?
-            TournamentParticipation.all.each{ |tp| tp.destroy if tp.racer.nil? }
+            # Delete all participations where the racer_id is not in racers.
+            TournamentParticipation.exclude(:id => TournamentParticipation.join(:racers, :id => :racer_id).select(:tournament_participations__id)).delete
             visit "/races/#{race_id}/edit"
           end
         }

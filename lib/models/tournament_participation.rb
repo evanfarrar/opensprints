@@ -8,7 +8,6 @@ class TournamentParticipation < Sequel::Model
     best[:finish_time] if best
   end
 
-  #TODO: optimize / convert to sequel
   def rank
     standings = self.tournament.tournament_participations.sort_by{|tp|tp.best_time||Infinity}
     standings.index(self)+1

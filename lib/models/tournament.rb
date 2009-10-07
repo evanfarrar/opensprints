@@ -3,9 +3,8 @@ class Tournament < Sequel::Model
   many_to_many :racers, :join_table => :tournament_participations
   one_to_many :races
 
-  #TODO: optimize
   def unregistered_racers
-    Racer.all - self.racers
+    Racer.exclude(:id => Racer.join(:tournament_participations, :racer_id => :id).select(:racers__id)).all
   end
 
   def autofill(racer_list=nil)
