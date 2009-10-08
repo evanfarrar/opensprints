@@ -116,7 +116,8 @@ class TournamentController < Shoes::Main
   end
 
   def form(tournament)
-    if(session[:category] && (session[:category] != "All Categories"))
+    if(session[:category] && (session[:category] != $i18n.all_categories))
+      #TODO optimize and use Sequel
       tournament_participations = tournament.tournament_participations.select{ |tp|
         tp.racer.categorizations.map(&:category).include?(session[:category])
       }
@@ -125,9 +126,9 @@ class TournamentController < Shoes::Main
     end
 
     case session[:order_by]
-      when "Rank"
+      when $i18n.rank
         tournament_participations = tournament_participations.sort_by(&:rank)
-      when "Name"
+      when $i18n.name
         tournament_participations = tournament_participations.sort_by{|tp|tp.racer.name.downcase}
     end
     races = tournament.races
@@ -139,6 +140,7 @@ class TournamentController < Shoes::Main
         
     stack(:width => 0.4, :height => 1.0) {
       container
+      #TODO i18n
       stack(:height => 0.12) { subtitle "racers:" }
       racers = stack(:height => 0.80, :scroll => true){ 
         tournament_participations.each do |tp|
@@ -177,6 +179,7 @@ class TournamentController < Shoes::Main
     stack(:width => 0.05)
     stack(:width => 0.55, :height => 1.0) {
       container
+      #TODO i18n
       stack(:height => 0.12) { subtitle "races:" }
       stack(:height => 0.8, :scroll => true) {
         races.each{|race|
@@ -208,7 +211,7 @@ class TournamentController < Shoes::Main
         }
       }
       stack(:width => 1.0, :height => 0.08) {
-        light_button($i18n.add_a_new_race) {
+        button($i18n.add_a_new_race) {
           session[:referrer].push(@center.app.location)
           visit "/races/new/tournament/#{tournament.pk}"
         }
@@ -218,6 +221,7 @@ class TournamentController < Shoes::Main
     @left.clear do
       left_button $i18n.autofill do
         if(session[:category] && (session[:category] != $i18n.all_categories))
+          #TODO optimize and use Sequel
           racers = tournament.tournament_participations.select{ |tp|
             !tp.eliminated && tp.racer.categorizations.map(&:category).include?(session[:category])
           }
@@ -269,7 +273,7 @@ class TournamentController < Shoes::Main
   def overall_stats(id, racers_offset=0)
     layout(:menu)
     racers_offset = racers_offset.to_i
-    tournament = Tournament.get(id)
+    tournament = Tournament[id]
     racers = tournament.tournament_participations.sort_by{|tp|[(tp.best_time||Infinity)]}
     racers.shift(9*racers_offset)
 
@@ -299,7 +303,8 @@ class TournamentController < Shoes::Main
     racers_offset = racers_offset.to_i
     tournament = Tournament[tournament_id]
     category = Category[category_id]
-    racers = TournamentParticipation.filter(:tournament_id => tournament_id).select{|tp|tp.racer.categorizations.map(&:category).include? category}
+    #TODO optimize
+    racers = TournamentParticipation.filter(:tournament_id => tournament_id).all.select{|tp|tp.racer.categorizations.map(&:category).include? category}
     racers = racers.sort_by{|tp|[tp.best_time||Infinity]}
     racers.shift(9*racers_offset)
 

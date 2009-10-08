@@ -3,7 +3,6 @@ require 'ostruct'
 require 'socket'
 require 'time'
 require 'lib/race_data'
-require 'lib/sorty'
 Infinity = 1/0.0
 class Object
   def try(method, *args, &block)

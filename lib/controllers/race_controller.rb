@@ -26,7 +26,6 @@ module RaceHelper
         end
       end.displace(0,162) # end progress_bars
     }
-
   end
 
   def progress_bars(race,speed=false)
@@ -61,6 +60,42 @@ module RaceHelper
       
     end.displace(0,0) # end progress_bars
   end
+
+  def stop_save_and_show_winner(race, id)
+    @race_animation.stop
+    SENSOR.stop
+    race.raced = true
+    race.save
+    race.race_participations.map(&:save)
+    visit "/races/#{id}/winner"
+  end
+
+  def swap_button(race,rerender_url)
+    button($i18n.swap) {
+      racers = race.racers.reverse
+      race.race_participations.each{|rp|rp.destroy}
+      racers.map {|r|
+        RaceParticipation.create(:racer => r, :race => race)
+      }
+      visit rerender_url
+    } 
+  end
+
+  def render_racer_name_and_color(race_participation,id)
+    flow(:height => 0.3) {
+      background(eval(race_participation.color), :width=> 0.9)
+    }
+    flow(:height => 0.3) {
+      caption race_participation.racer.name
+      delete_button {
+        race_participation.destroy
+        visit "/races/#{id}/edit"
+      }
+    }
+    flow(:height => 0.3) {
+      background(eval(race_participation.color), :width=> 0.9)
+    }
+  end
 end
 
 class RaceController < Shoes::Main
@@ -92,14 +127,7 @@ class RaceController < Shoes::Main
         button($i18n.back_to_event) { visit "/tournaments/#{race.tournament.pk}" }
       end
       if race.racers.length == 2
-        button($i18n.swap) {
-          racers = race.racers.reverse
-          race.race_participations.each{|rp|rp.destroy}
-          racers.map {|r|
-            RaceParticipation.create(:racer => r, :race => race)
-          }
-          visit "/races/#{id}/ready"
-        } 
+        swap_button(race,"/races/#{id}/ready")
       end
     }
     @center.clear {
@@ -162,12 +190,7 @@ class RaceController < Shoes::Main
     race = Race[id]
     @nav.clear {
       button("Call It") {
-        @race_animation.stop
-        SENSOR.stop
-        race.raced = true
-        race.save
-        race.race_participations.map(&:save)
-        visit "/races/#{id}/winner"
+        stop_save_and_show_winner(race, id)
       }
       button("Redo") {
         @race_animation.stop
@@ -179,12 +202,7 @@ class RaceController < Shoes::Main
     right_bars(race)
     @race_animation = animate(7) do
       if race.finished?
-        @race_animation.stop
-        SENSOR.stop
-        race.raced = true
-        race.save
-        race.race_participations.map(&:save)
-        visit "/races/#{id}/winner"
+        stop_save_and_show_winner(race, id)
       else
         @center.clear do
           race.race_participations.each_with_index do |racer,i|
@@ -222,8 +240,10 @@ class RaceController < Shoes::Main
               flow(:width => 0.3) { caption r.racer.name  }
               flow(:width => 0.3) { 
                 if r.finish_time
+                  #TODO i18n
                   caption("#{"%.2f" % r.finish_time} seconds")
                 else
+                  #TODO i18n ?
                   caption("DNF")
                 end
 
@@ -245,6 +265,7 @@ class RaceController < Shoes::Main
       stack(:width => 0.2, :height => 0.8) {
         container
         if($BIKES.length > race.racers.length)
+          #TODO i18n
           stack(:height => 0.1){ para "UNMATCHED:" }
           stack(:height => 0.79, :scroll => true){ 
             if session[:hide_finished]
@@ -280,48 +301,17 @@ class RaceController < Shoes::Main
             when 1
               race.race_participations.each do |race_participation|
                 stack(:height => 1.0, :width => (0.50)){ 
-                  flow(:height => 0.3) {
-                    background(eval(race_participation.color), :width=> 0.9)
-                  }
-                  flow(:height => 0.3) {
-                    caption race_participation.racer.name
-                    delete_button {
-                      race_participation.destroy
-                      visit "/races/#{id}/edit"
-                    }
-                  }
-                  flow(:height => 0.3) {
-                    background(eval(race_participation.color), :width=> 0.9)
-                  }
+                  render_racer_name_and_color(race_participation, id)
                 }
               end
             when 2
               race.race_participations.each do |race_participation|
                 stack(:height => 1.0, :width => (0.4)){ 
-                  flow(:height => 0.3) {
-                    background(eval(race_participation.color), :width=> 0.9)
-                  }
-                  flow(:height => 0.3) {
-                    caption race_participation.racer.name
-                    delete_button {
-                      race_participation.destroy
-                      visit "/races/#{id}/edit"
-                    }
-                  }
-                  flow(:height => 0.3) {
-                    background(eval(race_participation.color), :width=> 0.9)
-                  }
+                  render_racer_name_and_color(race_participation, id)
                 }
               end
               stack(:width => (0.1)){ 
-                button($i18n.swap) {
-                  racers = race.racers.reverse
-                  race.race_participations.each{|rp|rp.destroy}
-                  racers.map {|r|
-                    RaceParticipation.create(:racer => r, :race => race)
-                  }
-                  visit "/races/#{id}/edit"
-                } 
+                swap_button(race,"/races/#{id}/edit")
               }
             else
               race.race_participations.each do |race_participation|
@@ -348,10 +338,11 @@ class RaceController < Shoes::Main
           end
         }
         stack {
-          # TODO: this should clearly indicate which choice the user has just come from. "Save and go BACK to tournament"
-          button($i18n.start_race) { visit "/races/#{id}/ready" }
-          (button($i18n.add_another_race) { visit "/races/new/tournament/#{race.tournament_id}" }) if race.tournament_id
-          (button($i18n.return_to_event) { visit "/tournaments/#{race.tournament_id}" }) if race.tournament_id
+          button($i18n.start_race) { visit "/races/#{id}/ready" if race.race_participations.any? }
+          if race.tournament_id
+            button($i18n.add_another_race) { visit "/races/new/tournament/#{race.tournament_id}"  }
+            button($i18n.return_to_event)  { visit "/tournaments/#{race.tournament_id}"           }
+          end
         }
       }
     }

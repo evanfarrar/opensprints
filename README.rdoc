@@ -1,6 +1,6 @@
-== About Open Sprints
+== About OpenSprints
 
-Open Sprints is the Open Source (FREE) version of GoldSprints.
+OpenSprints is the Open Source (FREE) version of GoldSprints.
 
 == About GoldSprints
 Via Wikipedia: A *goldsprint* is a bicycle rollers racing and social event. Riders on stationary bikes compete against each other in front of a crowd of cheering friends.
@@ -14,7 +14,7 @@ Roller racing has a long history going back to the beginning of cycling, however
 
 == Installation
 
-Open Sprints is not just a piece of software but a whole system consisting of software, electronics, A/V and stock bicycle components. Users are encouraged to read the guides[http://wiki.opensprints.org] in our wiki to learn about how to put together the entire system. But one step is to get the software working:
+OpenSprints is not just a piece of software but a whole system consisting of software, electronics, A/V and stock bicycle components. Users are encouraged to read the guides[http://wiki.opensprints.org] in our wiki to learn about how to put together the entire system. But one step is to get the software working:
 
 1. Get shoes[http://shoooes.net/] for your platform.
 1. Get our latest code[http://github.com/evanfarrar/opensprints/tarball/master].
@@ -25,4 +25,5 @@ Open Sprints is not just a piece of software but a whole system consisting of so
 
 * read our wiki[http://wiki.opensprints.org].
 * follow our blog[http://opensprints.org/news] for news about kits and events in your area.
+* buy rollers and electronics kits at our store[http://store.opensprints.org]
 * sign up for our forum[http://opensprints.org/forum] to share tips on running events.

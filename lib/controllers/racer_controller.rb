@@ -10,25 +10,31 @@ module RacerHelper
     TournamentParticipation.filter(:tournament_id => tournament.pk, :racer_id => racer.pk).first||TournamentParticipation.create(:racer => racer, :tournament => tournament)
   end
 
-  def render_name_field(racer)
+
+  def create_old_racer(old_racer, racer, tournament)
+    TournamentParticipation.create(:racer => old_racer, :tournament => tournament)
+    old_racer.save
+    create_categorizations_for_checkboxes(old_racer)
+    racer.destroy
+  end
+  
+  def cancel_button(racer,after_url)
+    button $i18n.cancel do
+      racer.destroy if Racer[racer.pk].try(:name).blank?
+      # Delete all participations where the racer_id is not in racers.
+      TournamentParticipation.exclude(:id => TournamentParticipation.join(:racers, :id => :racer_id).select(:tournament_participations__id)).delete
+      visit after_url
+    end
+  end
+  
+  def render_racer_form(racer, tournament_participation)
     flow {
       para $i18n.name
       @e = edit_line(racer.name) do |edit|
         racer.name = edit.text
       end
     }
-  end
-
-  def render_elimination_checkbox(tournament_participation)
-    flow { 
-      c = check
-      c.click { |c| tournament_participation.eliminated = c.checked? }
-      c.checked = tournament_participation.eliminated
-      para $i18n.eliminated
-    }
-  end
-  
-  def render_category_checkboxes(racer)
+    separator_line
     flow {
       para $i18n.assign_to_categories
       stack {
@@ -41,13 +47,13 @@ module RacerHelper
         }
       }
     }
-  end
-
-  def create_old_racer(old_racer, racer, tournament)
-    TournamentParticipation.create(:racer => old_racer, :tournament => tournament)
-    old_racer.save
-    create_categorizations_for_checkboxes(old_racer)
-    racer.destroy
+    separator_line
+    flow { 
+      c = check
+      c.click { |c| tournament_participation.eliminated = c.checked? }
+      c.checked = tournament_participation.eliminated
+      para $i18n.eliminated
+    }
   end
 end
 
@@ -76,15 +82,25 @@ class RacerController < Shoes::Main
     racer = Racer[id]
     tournament = Tournament[tournament_id]
     tournament_participation = find_or_create_participation(racer,tournament)
+    return_to_url = session[:referrer].pop
     layout
     @center.clear {
       container
       stack{
-        render_name_field(racer)
-        separator_line
-        render_category_checkboxes(racer)
-        separator_line
-        render_elimination_checkbox(tournament_participation)
+        flow {
+          stack(:width => 0.4) { render_racer_form(racer, tournament_participation) }
+          stack(:width => 0.05)
+          stack(:width => 0.4) {
+            if best = tournament_participation.best_time
+              #TODO i18n
+              para "Best time in this event:","#{"%.2f" % best} seconds"
+            end
+            if best = racer.best_time
+              #TODO i18n
+              para "Best time ever:","#{"%.2f" % best} seconds"
+            end
+          }
+        }
         
         flow {
           button $i18n.save do
@@ -94,7 +110,7 @@ class RacerController < Shoes::Main
               alert "Sorry, name is required."
             elsif old_racer = Racer.filter(:name => racer.name).exclude(:id => racer.pk).any?
               create_old_racer(old_racer, new_racer, tournament)
-              visit session[:referrer].pop||'/racers'
+              visit(return_to_url||'/racers')
             else
               racer.save
               tournament_participation.save
@@ -102,15 +118,10 @@ class RacerController < Shoes::Main
               if Racer[racer.pk].name.blank? && racer.name.blank?
                 racer.destroy
               end
-              visit session[:referrer].pop||'/racers'
+              visit(return_to_url||'/racers')
             end
           end
-          button $i18n.cancel do
-            racer.destroy if Racer[racer.pk].try(:name).blank?
-            # Delete all participations where the racer_id is not in racers.
-            TournamentParticipation.exclude(:id => TournamentParticipation.join(:racers, :id => :racer_id).select(:tournament_participations__id)).delete
-            visit session[:referrer].pop||'/racers'
-          end
+          cancel_button(racer,return_to_url||'/racers')
         }
       }
     }
@@ -141,12 +152,20 @@ class RacerController < Shoes::Main
     @center.clear {
       container
       stack{
-        render_name_field(racer)
-        separator_line
-        render_category_checkboxes(racer)
-        separator_line
-        render_elimination_checkbox(tournament_participation)
-        
+        flow {
+          stack(:width => 0.4) { render_racer_form(racer, tournament_participation) }
+          stack(:width => 0.05)
+          stack(:width => 0.4) {
+            if best = tournament_participation.best_time
+              #TODO i18n
+              para "Best time in this event:","#{"%.2f" % best} seconds"
+            end
+            if best = racer.best_time
+              #TODO i18n
+              para "Best time ever:","#{"%.2f" % best} seconds"
+            end
+          }
+        }
         flow {
           button $i18n.save do
             if((tournament.racers-[racer]).any? { |r| racer.name == r.name })
@@ -168,12 +187,7 @@ class RacerController < Shoes::Main
               visit "/races/#{race_id}/edit"
             end
           end
-          button $i18n.cancel do
-            racer.destroy if Racer[racer.pk].try(:name).blank?
-            # Delete all participations where the racer_id is not in racers.
-            TournamentParticipation.exclude(:id => TournamentParticipation.join(:racers, :id => :racer_id).select(:tournament_participations__id)).delete
-            visit "/races/#{race_id}/edit"
-          end
+          cancel_button(racer,"/races/#{race_id}/edit")
         }
       }
     }
