@@ -65,3 +65,7 @@ task :testing_package => [:build_deb] do
   `cp /tmp/opensprints_#{OPENSPRINTS_VERSION}_i386.deb /media/disk`
   puts "Finished version #{OPENSPRINTS_VERSION}"
 end
+
+task :default do
+  sh "bacon --automatic --quiet"
+end
