@@ -53,13 +53,25 @@ describe 'A race' do
     it 'should be the lowest (fastest) time' do
       racers = [Racer.create(:name => "Steve"),
                 Racer.create(:name => "Joe")]
-      r = Race.create
+      r = Race.create(:raced => true)
       racers.each{|racer| RaceParticipation.create(:racer => racer,:race => r)} 
       r.save
       r.race_participations.first.finish_time = 10.116
       r.save
       r.reload
       r.winner.racer.name.should==("Steve")
+    end
+
+    it 'should be nil if the race has not been run' do
+      racers = [Racer.create(:name => "Steve"),
+                Racer.create(:name => "Joe")]
+      r = Race.create
+      racers.each{|racer| RaceParticipation.create(:racer => racer,:race => r)} 
+      r.save
+      r.race_participations.first.finish_time = 10.116
+      r.save
+      r.reload
+      r.winner.should==(nil)
     end
   end
   describe 'raced' do

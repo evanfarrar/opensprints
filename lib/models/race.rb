@@ -8,8 +8,12 @@ class Race < Sequel::Model
   end
 
   def winner
-    standings = self.race_participations.sort_by { |racer| racer.finish_time||Infinity }
-    standings.first
+    if unraced?
+      return nil
+    else
+      standings = self.race_participations.sort_by { |racer| racer.finish_time||Infinity }
+      standings.first
+    end
   end
  
   def unraced?
