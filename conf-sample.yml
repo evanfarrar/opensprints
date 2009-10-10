@@ -49,5 +49,8 @@ background_color: "\"#bec0c2\"...\"#86888b\""
 window_height:
 window_width:
 
+# Sets the ammount of the screen that is usable
+# (IE the lowest buttons can be placed to be usable)
+
 # The language you want to use, e.g. 'it' for Italian, 'es' for Spanish.
 locale: 'en'

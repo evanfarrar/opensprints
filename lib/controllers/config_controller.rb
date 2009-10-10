@@ -11,7 +11,8 @@ class ConfigController < Shoes::Main
   url '/configuration/bikes', :bikes
   url '/configuration/upgrade', :upgrade
 
-  def config_nav
+  def config_setup
+    layout(:menu)
     @left.clear {
       left_button("Appearance") { visit '/configuration/appearance' }
       left_button("Skin") { visit '/configuration/skin' }
@@ -23,19 +24,23 @@ class ConfigController < Shoes::Main
         left_button("Upgrade") { visit '/configuration/upgrade' }
       end
     }
+    if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
+      @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
+    else
+      @prefs = YAML::load_file('conf-sample.yml')
+    end
   end
-  
+
   def appearance
-    layout(:menu)
-    config_nav
+    config_setup
+    if RUBY_PLATFORM =~ /linux/
+      width,height = `xrandr | grep '*'`.split[0].split('x')
+    else
+      width,height = 1024,768
+    end
     @header.clear { title "Appearance" }
 
     @center.clear do
-      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
-        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
-      else
-        @prefs = YAML::load_file('conf-sample.yml')
-      end
       flow(:height => @center.height-50, :width => 1.0) do
         container
         flow(:height => @center.height-150, :scroll => true) do
@@ -48,33 +53,16 @@ class ConfigController < Shoes::Main
             end
 
             stack(:margin => 10, :padding => 0) do
-              stack(:margin => 0) do
-                inscription "Display speed in:", :margin => 0
-                metric = nil; standard = nil;
-                flow(:margin => 0) do
-                  standard = radio(:units){ @prefs['units'] = 'standard'}
-                  inscription 'standard', :margin => 2
-                end
-                flow(:margin => 0) do
-                  metric = radio(:units){ @prefs['units'] = 'metric'}
-                  inscription 'metric', :margin => 2
-                end
-                if @prefs['units'] == 'metric'
-                  metric.checked = true
-                else
-                  standard.checked = true
-                end
+              inscription "usable window height (e.g. #{height.to_i - 100}):"
+              edit_line(@prefs['usable_window_height']) do |edit|
+                @prefs['usable_window_height'] = edit.text
               end
+              inscription(link("(what's this?)",:click => "http://wiki.opensprints.org/index.php?title=Usable_Screen_Height"))
             end
 
           end
           stack(:width => 0.6) do
             stack(:margin => 10) do
-              if RUBY_PLATFORM =~ /linux/
-                width,height = `xrandr | grep '*'`.split[0].split('x')
-              else
-                width,height = 1024,768
-              end
 
               inscription "window height (e.g. #{height.to_i - 100}):"
               edit_line(@prefs['window_height']) do |edit|
@@ -94,16 +82,10 @@ class ConfigController < Shoes::Main
     end
   end
   def skin
-    layout(:menu)
-    config_nav
+    config_setup
     @header.clear { title "Skin" }
 
     @center.clear do
-      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
-        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
-      else
-        @prefs = YAML::load_file('conf-sample.yml')
-      end
       flow(:height => @center.height-50, :width => 1.0) do
         container
         flow(:height => @center.height-150, :scroll => true) do
@@ -156,8 +138,7 @@ class ConfigController < Shoes::Main
   end
 
   def data_file
-    layout(:menu)
-    config_nav
+    config_setup
     @header.clear { title "Data" }
     @center.clear do
       container
@@ -180,21 +161,14 @@ class ConfigController < Shoes::Main
   end
   
   def index
-    layout(:menu)
-    config_nav
+    config_setup
     @header.clear { title "Configuration" }
   end
 
   def bikes
-    layout(:menu)
-    config_nav
+    config_setup
     @header.clear { title "Bike Setup" }
     @center.clear do
-      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
-        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
-      else
-        @prefs = YAML::load_file('conf-sample.yml')
-      end
       stack(:height => @center.height-50, :width => 0.8) do
         container
         stack(:height => @center.height-150, :scroll => true) do
@@ -239,16 +213,10 @@ class ConfigController < Shoes::Main
   end
 
   def hardware
-    layout(:menu)
-    config_nav
+    config_setup
     @header.clear { title "Hardware & Rollers" }
     
     @center.clear do
-      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
-        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
-      else
-        @prefs = YAML::load_file('conf-sample.yml')
-      end
       stack(:height => @center.height-50, :width => 0.8) do
         container
         flow(:height => @center.height-150, :scroll => true) do
@@ -339,8 +307,7 @@ class ConfigController < Shoes::Main
   end
 
   def upgrade
-    layout(:menu)
-    config_nav
+    config_setup
     @header.clear { title "Upgrade" }
     @center.clear do
       container
@@ -356,16 +323,10 @@ class ConfigController < Shoes::Main
   end
 
   def locale
-    layout(:menu)
-    config_nav
+    config_setup
     @header.clear { title "Appearance" }
 
     @center.clear do
-      if File.exists?(File.join(LIB_DIR,'opensprints_conf.yml'))
-        @prefs = YAML::load_file(File.join(LIB_DIR,'opensprints_conf.yml'))
-      else
-        @prefs = YAML::load_file('conf-sample.yml')
-      end
       flow(:height => @center.height-50, :width => 1.0) do
         container
         flow(:height => @center.height-150, :scroll => true) do
