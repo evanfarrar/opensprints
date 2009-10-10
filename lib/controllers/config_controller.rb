@@ -348,27 +348,9 @@ class ConfigController < Shoes::Main
         version = `dpkg-query -W -f='${Version}' opensprints`
         version = File.readlines('build/debian/changelog').first.gsub(/.*\((.*)\).*/,'\1').strip if version.empty?
         para "You're using version: #{version}"
-        button("Check for updates", :width => 200) do
-          @sudo_password = ask("Please enter your password")
-          @checking.show
-          `echo "#{@sudo_password}" | sudo -S apt-get update`
-          if(`echo "#{@sudo_password}" | sudo apt-get install opensprints -s -u` =~ /opensprints is already the newest version./)
-            @checking.toggle
-            @sorry.toggle
-          else
-            @checking.toggle
-            @upgrade.show
-          end
+        button("Update!", :width => 200) do
+          `update-manager`
         end
-        @checking = para("Checking for updates...").hide
-        @sorry = para("You're up to date!").hide
-        @upgrade = button("Upgrade", :width => 200) do
-          @upgrading.show
-          `echo "#{@sudo_password}" | sudo -S apt-get install opensprints`
-          alert("Upgrade complete. Restarting opensprints...")
-          fork ? exit : exec("opensprints")
-        end.hide
-        @upgrading = para("Upgrading...").hide
       end
     end
   end
