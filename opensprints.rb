@@ -216,7 +216,7 @@ class Main < Shoes
     end
     @left = stack(:width => 150) do
     end
-    @center = flow(:width => width - (175+125), :height => (USABLE_HEIGHT-@header.height-150)||(HEIGHT-@header.height-150)) do
+    @center = flow(:width => width - (175+125), :height => (USABLE_HEIGHT||HEIGHT-@header.height-150)) do
     end
     @right = flow(:width => 150) do
     end

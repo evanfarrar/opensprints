@@ -204,7 +204,11 @@ class TournamentController < Shoes::Main
                 end
               }
               flow(:width => 0.2){
-                delete_button { race.destroy; visit "/tournaments/#{tournament.pk}" }
+                delete_button { 
+                  race.race_participations.each{|rp| rp.destroy }
+                  race.destroy; 
+                  visit "/tournaments/#{tournament.pk}"
+                }
               }
             }
           }

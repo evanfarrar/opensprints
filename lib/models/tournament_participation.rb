@@ -15,7 +15,7 @@ class TournamentParticipation < Sequel::Model
 
   def losses
     RaceParticipation.filter(:racer_id => racer.id).join(:races, :tournament_id => tournament.id).group(:id).all.select do |rp|
-      winner = rp.race.winner
+      winner = rp.race ? rp.race.winner : nil
       winner && (winner.racer.pk != self.racer.pk)
     end.length
   end
