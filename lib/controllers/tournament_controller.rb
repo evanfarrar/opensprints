@@ -41,6 +41,7 @@ class TournamentController < Shoes::Main
   url '/tournaments/(\d+)/stats/(\d+)', :overall_stats
   url '/tournaments/(\d+)/stats/category//(\d+)', :overall_stats
   url '/tournaments/(\d+)/stats/category/(\d+)/(\d+)', :category_stats
+  url '/tournaments/(\d+)/stats/export', :export_stats
 
   def list
     layout(:menu)
@@ -108,6 +109,7 @@ class TournamentController < Shoes::Main
     session[:referrer] = []
     @nav.append {
       button("stats") { visit "/tournaments/#{tournament.pk}/stats" }
+      button("export") { visit "/tournaments/#{tournament.pk}/stats/export" }
     }
     @center.clear {
       form(tournament)
@@ -330,6 +332,25 @@ class TournamentController < Shoes::Main
       else# out of racers in category
         visit "/tournaments/#{tournament_id}/stats/category/#{Category.next_after(category)}/0" #try the next category
       end
+    }
+  end
+
+  def export_stats(id)
+    layout(:menu)
+    tournament = Tournament[id]
+    racers = tournament.tournament_participations.sort_by{|tp|[(tp.best_time||Infinity)]}
+    @center.clear {
+      e = edit_box(:width => 400, :height => 400)
+      export = "Overall\n"
+      export << "Name,Losses,Best\n"
+      racers.each {|racer| export << "#{racer.racer.name},#{racer.losses},#{racer.best_time}\n" }
+      Category.all.each do |category|
+        racers = TournamentParticipation.filter(:tournament_id => id).all.select{|tp|tp.racer.categorizations.map(&:category).include? category}
+        export << "\n#{category.name}\n"
+        export << "Name,Losses,Best\n"
+        racers.each {|racer| export << "#{racer.racer.name},#{racer.losses},#{racer.best_time}\n" }
+      end
+      e.text = export
     }
   end
 end
