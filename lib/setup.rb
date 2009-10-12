@@ -57,6 +57,7 @@ else
   width,height = 800,600
 end
 
+USABLE_HEIGHT = options['usable_window_height'].to_i.nonzero?||nil
 HEIGHT = options['window_height'].to_i.nonzero?||(height.to_i-100)
 WIDTH = options['window_width'].to_i.nonzero?||(width.to_i-50)
 

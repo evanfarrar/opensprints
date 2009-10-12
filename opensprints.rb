@@ -179,8 +179,8 @@ class Main < Shoes
     @nav.clear
     @center.clear {
       stack {
-        flow(:attach => Window, :top => (HEIGHT * 0.2).to_i, :left => (WIDTH / 2)-350) { image(logoimage) }
-        flow(:attach => Window, :top => (HEIGHT * 0.6).to_i, :left => (WIDTH / 2)-350) {
+        flow(:attach => Window, :top => (@center.height * 0.2).to_i, :left => (WIDTH / 2)-350) { image(logoimage) }
+        flow(:attach => Window, :top => (@center.height * 0.6).to_i, :left => (WIDTH / 2)-350) {
           caption(link($i18n.categories, :click => "/categories"))
           caption(" / ", :stroke => link_color)
           caption(link($i18n.events, :click => "/tournaments"))
@@ -216,7 +216,7 @@ class Main < Shoes
     end
     @left = stack(:width => 150) do
     end
-    @center = flow(:width => width - (175+125), :height => HEIGHT-@header.height-150) do
+    @center = flow(:width => width - (175+125), :height => (USABLE_HEIGHT||HEIGHT-@header.height-150)) do
     end
     @right = flow(:width => 150) do
     end
