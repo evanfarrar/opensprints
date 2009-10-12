@@ -28,6 +28,8 @@ unsigned long currentTimeMillis;
 
 int val = 0;
 
+int pollerPin = 8;
+
 int racer0GoLedPin = 9;
 int racer1GoLedPin = 10;
 int racer2GoLedPin = 11;
@@ -162,6 +164,7 @@ void loop() {
   
   checkSerial();
 
+  static boolean pollTicker = false;
 
   if (raceStarting) {
     if((millis() - lastCountDownMillis) > 1000){
@@ -181,6 +184,18 @@ void loop() {
   }
   if (raceStarted) {
     currentTimeMillis = millis() - raceStartMillis;
+
+    // toggle a pin every time this routine
+    // is entered.
+  if(pollTicker == true)
+		{
+			digitalWrite(pollerPin, HIGH);
+		}
+		else
+		{
+			digitalWrite(pollerPin, LOW);
+		}
+		pollTicker = !pollTicker;
 
     for(int i=0; i<=3; i++)
     {
