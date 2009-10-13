@@ -6,6 +6,8 @@ Shoes.setup do
   gem "do_sqlite3"
   gem "r18n-desktop"
   gem "sequel"
+  source "http://gemcutter.org"
+  gem "opensprints-core 0.5.2"
 end
 
 class Shoes::Check

@@ -135,19 +135,7 @@ unless(File.exists? DATABASE_PATH)
   File.open(DATABASE_PATH , 'w+') {|file| nil }
   first_time = true
 end
-if(defined? Shoes) #Real environment
-  DB = Sequel.connect("sqlite://#{DATABASE_PATH}")
-else               #Test environment
-  DB = Sequel.connect("sqlite::memory:")
-end
-Sequel::Migrator.apply(DB, 'lib/migrations/')
-require 'lib/models/category'
-require 'lib/models/racer'
-require 'lib/models/race'
-require 'lib/models/race_participation'
-require 'lib/models/categorization'
-require 'lib/models/tournament'
-require 'lib/models/tournament_participation'
+require "opensprints-core"
 if(first_time||!defined? Shoes)
   #seed data
   Category.create(:name => "Women")
