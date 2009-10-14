@@ -1,9 +1,6 @@
 Shoes.setup do
   gem "activesupport"
   gem "bacon"
-  gem "dm-core"
-  gem "dm-aggregates"
-  gem "do_sqlite3"
   gem "r18n-desktop"
   gem "sequel"
   source "http://gemcutter.org"
