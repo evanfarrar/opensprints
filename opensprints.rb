@@ -7,7 +7,7 @@ Shoes.setup do
   gem "r18n-desktop"
   gem "sequel"
   source "http://gemcutter.org"
-  gem "opensprints-core 0.5.2"
+  gem "opensprints-core 0.5.3"
 end
 
 class Shoes::Check
