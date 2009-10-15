@@ -19,7 +19,7 @@ OpenSprints is not just a piece of software but a whole system consisting of sof
 1. Get shoes[http://shoooes.net/] for your platform.
 1. Get our latest code[http://github.com/evanfarrar/opensprints/tarball/master].
 1. write your configuration file, using config-sample.yml as a guide. You may use "mock" as your sensor type to run opensprints in demo mode (i.e. without a bike attached).
-1. open "main.rb" with shoes.
+1. open "opensprints.rb" with shoes.
 
 == Going Further
 
