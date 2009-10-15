@@ -147,14 +147,22 @@ class ConfigController < Shoes::Main
           DataMapper.auto_migrate! if confirm("Are you sure? There's no going back.")
         end
 
-        button("Export to mysql.", :width => 200) do
-          
+        button("Export to MySQL", :width => 200) do
+          location = ask_save_file
+          if location != nil
+              File.copy(File.join(LIB_DIR,'opensprints_data.db'),"/tmp/tmp-opensprints.db")
+              system("sqlite3 /tmp/tmp-opensprints.db .dump .quit | sed s/\\\"/\\\`/g | grep -v \"BEGIN TRANSACTION\" | grep -v \"COMMIT\" | sed s/AUTOINCREMENT/AUTO_INCREMENT/g > /tmp/tmp-opensprints.sql")
+              File.copy("/tmp/tmp-opensprints.sql",location)
+          end
+          location = nil
         end
 
         button("Export SQLite", :width => 200) do
-          ask_save_file("opensprints.db") do |location|
-            File.copy(File.join(LIB_DIR,'opensprints.db'),location)
-          end
+            location = ask_save_file
+            if location != nil
+                File.copy(File.join(LIB_DIR,'opensprints_data.db'),location)
+            end
+            location = nil
         end
       end
     end

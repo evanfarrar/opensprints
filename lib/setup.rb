@@ -3,6 +3,7 @@ require 'ostruct'
 require 'socket'
 require 'time'
 require 'lib/race_data'
+require 'ftools'
 Infinity = 1/0.0
 class Object
   def try(method, *args, &block)
