@@ -35,6 +35,7 @@ class ConfigController < Shoes::Main
     config_setup
     if RUBY_PLATFORM =~ /linux/
       width,height = `xrandr | grep '*'`.split[0].split('x')
+      height = options['window_height'].to_i.nonzero?||(height.to_i-100)
     else
       width,height = 1024,768
     end
@@ -53,7 +54,7 @@ class ConfigController < Shoes::Main
             end
 
             stack(:margin => 10, :padding => 0) do
-              inscription "usable window height (e.g. #{height.to_i - 100}):"
+              inscription "usable window height (e.g. #{[(height.to_i - 100),550].max}):"
               edit_line(@prefs['usable_window_height']) do |edit|
                 @prefs['usable_window_height'] = edit.text
               end

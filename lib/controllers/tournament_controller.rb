@@ -294,7 +294,7 @@ class TournamentController < Shoes::Main
     }
     @center.clear {
       if racers.any?
-        @stats = flow do
+        @stats = flow(:height => 1.0) do
            stats_table($i18n.overall,racers.shift(9))
            @t = timer(5) { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
         end
