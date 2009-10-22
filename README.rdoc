@@ -27,3 +27,16 @@ OpenSprints is not just a piece of software but a whole system consisting of sof
 * follow our blog[http://opensprints.org/news] for news about kits and events in your area.
 * buy rollers and electronics kits at our store[http://store.opensprints.org]
 * sign up for our forum[http://opensprints.org/forum] to share tips on running events.
+
+== Note on Patches/Pull Requests
+
+OpenSprints has an aggressively liberal commit policy. If you follow or fork the project on github, we'll add you the project's collaborators list.
+
+If you're intereseted in learning more about the structure of this application to modify, extend or fork it, read our API docs:
+http://rdoc.info/projects/evanfarrar/opensprints
+http://rdoc.info/projects/evanfarrar/opensprints-core
+
+== Copyright
+
+Copyright (c) 2009 Alex Rakoczy, Evan Farrar, Luke Orland, Morgan Venable, Jamie Howard, Jonathan Morrison and Michael Wozniak. See LICENSE for details.
+ 
