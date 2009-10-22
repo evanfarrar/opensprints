@@ -108,8 +108,8 @@ class RacerController < Shoes::Main
               alert("Racer is already in this event.")
             elsif racer.name.blank?
               alert "Sorry, name is required."
-            elsif old_racer = Racer.filter(:name => racer.name).exclude(:id => racer.pk).any?
-              create_old_racer(old_racer, new_racer, tournament)
+            elsif old_racer = Racer.filter(:name => racer.name).exclude(:id => racer.pk).first
+              create_old_racer(old_racer, racer, tournament)
               visit(return_to_url||'/racers')
             else
               racer.save
@@ -172,8 +172,8 @@ class RacerController < Shoes::Main
               alert("Racer is already in this event.")
             elsif racer.name.blank?
               alert "Sorry, name is required."
-            elsif old_racer = Racer.filter(:name => racer.name).exclude(:id => racer.pk).any?
-              create_old_racer(old_racer, new_racer, tournament)
+            elsif old_racer = Racer.filter(:name => racer.name).exclude(:id => racer.pk).first
+              create_old_racer(old_racer, racer, tournament)
               visit "/races/#{race_id}/edit"
             else
               racer.save
