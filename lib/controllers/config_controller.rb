@@ -35,7 +35,6 @@ class ConfigController < Shoes::Main
     config_setup
     if RUBY_PLATFORM =~ /linux/
       width,height = `xrandr | grep '*'`.split[0].split('x')
-      height = options['window_height'].to_i.nonzero?||(height.to_i-100)
     else
       width,height = 1024,768
     end
@@ -159,12 +158,36 @@ class ConfigController < Shoes::Main
         end
 
         button("Export SQLite", :width => 200) do
-            location = ask_save_file
-            if location != nil
-                File.copy(File.join(LIB_DIR,'opensprints_data.db'),location)
-            end
-            location = nil
+          location = ask_save_file
+          if location != nil
+            File.copy(File.join(LIB_DIR,'opensprints_data.db'),location)
+          end
+          location = nil
         end
+        para "stats.opensprints.org:" 
+        inscription "Email:"
+        edit_line do |edit|
+          @stats_email = edit.text
+        end
+        
+        inscription "Password:"
+        edit_line(:secret => true) do |edit|
+          @stats_pass = edit.text
+        end
+        inscription(link("sign up!",:click => "http://stats.opensprints.org/users/new"))
+        button("Upload to server", :width => 200) do
+          resource = RestClient::Resource.new("http://stats.opensprints.org/", :user => @stats_email, :password => @stats_pass)
+          begin
+            resource["config_files.xml"].post(:config_file => {:config => File.read(File.join(LIB_DIR,'opensprints_conf.yml'))})
+            response = resource["data_uploads.xml"].post(:data_upload => {:database => File.read(File.join(LIB_DIR,'opensprints_data.db'))})
+          rescue
+            alert("Sorry, there was a problem!")
+          end
+          if (Hpricot(response)/:id).inner_html.to_i.nonzero?
+            alert("Your stats have been sent!")
+          end
+        end
+        inscription(link("(what's this?)",:click => "http://wiki.opensprints.org/index.php?title=Upload_To_Server"))
       end
     end
   end

@@ -5,6 +5,7 @@ Shoes.setup do
   gem "sequel"
   source "http://gemcutter.org"
   gem "opensprints-core 0.5.3"
+  gem "camelpunch-rest-client"
 end
 
 class Shoes::Check
@@ -215,7 +216,7 @@ class Main < Shoes
     end
     @left = stack(:width => 150) do
     end
-    @center = flow(:width => width - (175+125), :height => (USABLE_HEIGHT||HEIGHT-@header.height-125)) do
+    @center = flow(:width => width - (175+125), :height => ((USABLE_HEIGHT||HEIGHT)-@header.height-125)) do
     end
     @right = flow(:width => 150) do
     end

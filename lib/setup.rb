@@ -4,6 +4,7 @@ require 'socket'
 require 'time'
 require 'lib/race_data'
 require 'ftools'
+require 'hpricot'
 Infinity = 1/0.0
 class Object
   def try(method, *args, &block)
@@ -128,7 +129,7 @@ require 'sequel'
 require 'sequel/extensions/migration'
 require 'sequel/extensions/schema_dumper'
 require 'sqlite3'
-
+require 'rest_client'
 require 'r18n-desktop'
 $i18n = R18n.from_env('lib/translations',options['locale'])
 
