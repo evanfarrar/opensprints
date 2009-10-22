@@ -129,7 +129,7 @@ require 'sequel'
 require 'sequel/extensions/migration'
 require 'sequel/extensions/schema_dumper'
 require 'sqlite3'
-require 'rest_client'
+require 'net/http/post/multipart'
 require 'r18n-desktop'
 $i18n = R18n.from_env('lib/translations',options['locale'])
 

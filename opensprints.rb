@@ -5,7 +5,7 @@ Shoes.setup do
   gem "sequel"
   source "http://gemcutter.org"
   gem "opensprints-core 0.5.3"
-  gem "camelpunch-rest-client"
+  gem "multipart-post"
 end
 
 class Shoes::Check

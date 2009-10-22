@@ -1,7 +1,24 @@
 # for some reason, when a scrollable slot has native controls, 
 # the native controls render even when they should be scrolled out of view.
 
+module ConfigHelper
+  def upload(url, file, key, username, password)
+    res = ''
+    url = URI.parse(url)
+    File.open(File.join(LIB_DIR,file)) do |conf|
+      req = Net::HTTP::Post::Multipart.new(url.path,
+        key => UploadIO.new(conf, "application/octet-stream", File.join(LIB_DIR,file)))
+      req.basic_auth username, password
+      res = Net::HTTP.start(url.host, url.port) do |http|
+        http.request(req)
+      end
+    end
+    res.body
+  end
+end
+
 class ConfigController < Shoes::Main
+  include ConfigHelper
   url '/configuration', :index
   url '/configuration/data_file', :data_file
   url '/configuration/appearance', :appearance
@@ -176,10 +193,9 @@ class ConfigController < Shoes::Main
         end
         inscription(link("sign up!",:click => "http://stats.opensprints.org/users/new"))
         button("Upload to server", :width => 200) do
-          resource = RestClient::Resource.new("http://stats.opensprints.org/", :user => @stats_email, :password => @stats_pass)
           begin
-            resource["config_files.xml"].post(:config_file => {:config => File.read(File.join(LIB_DIR,'opensprints_conf.yml'))})
-            response = resource["data_uploads.xml"].post(:data_upload => {:database => File.read(File.join(LIB_DIR,'opensprints_data.db'))})
+            upload("http://stats.opensprints.org/config_files.xml","opensprints_conf.yml","config_file[config]",@stats_email,@stats_pass)
+            response = upload("http://stats.opensprints.org/data_uploads.xml","opensprints_data.db","data_upload[database]",@stats_email,@stats_pass)
           rescue
             alert("Sorry, there was a problem!")
           end
