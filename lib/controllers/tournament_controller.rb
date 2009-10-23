@@ -128,7 +128,7 @@ class TournamentController < Shoes::Main
     end
 
     case session[:order_by]
-      when $i18n.rank
+      when $i18n.best_time
         tournament_participations = tournament_participations.sort_by(&:rank)
       when $i18n.name
         tournament_participations = tournament_participations.sort_by{|tp|tp.racer.name.downcase}
