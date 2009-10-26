@@ -113,6 +113,9 @@ void checkSerial(){
           charBuffLen = 0;
           isReceivingRaceLength = true;
       }
+      if(val == 'v') {
+        Serial.print("basic-1");
+      }
       if(val == 'g') {
         for(int i=0; i<=3; i++)
         {

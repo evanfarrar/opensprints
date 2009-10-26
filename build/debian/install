@@ -1,4 +1,5 @@
 opensprints/* /opt/opensprints
 bin/shoes2.run /opt/opensprints
 bin/opensprints /usr/bin
+bin/arduino-ide /usr/bin
 shortcuts/opensprints.desktop /usr/share/applications

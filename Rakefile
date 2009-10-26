@@ -32,8 +32,10 @@ end
 
 task :build => :check_version_provided do
   here = Dir.pwd
+  abort("You need to provide the arduino ide in firmware/arduino/arduino-0017") unless File.exists?("firmware/arduino/arduino-0017")
   `rm -rf /tmp/build` if File.exists?('/tmp/build')
-  `cp -L -R build /tmp/build`
+  `cp -R build /tmp/build`
+  `cp -R ../opensprints /tmp/build/`
   Dir.chdir('/tmp/build')
   `debuild --no-tgz-check`
   Dir.chdir(here)

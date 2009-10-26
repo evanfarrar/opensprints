@@ -1,7 +1,11 @@
-#Arduino: a sensor written for the arduino open source hardware.
+#Mock: a sensor intended to mock the behavior of the basic_message arduino firmware. The behavior will always repeat: the first racer will go fast, the second slow, the third will go as fast as the first and the fourth will give up after 2 seconds.
 class Sensor
   attr_accessor :r
   def initialize(filename=nil)
+  end
+
+  def version
+    "mock-1"
   end
 
   def start

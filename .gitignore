@@ -3,3 +3,5 @@ conf.yml
 *.swp
 log/*.yml
 *.bak
+firmware/arduino/arduino-0017/*
+firmware/arduino/arduino-0017

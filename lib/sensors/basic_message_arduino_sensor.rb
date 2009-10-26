@@ -1,16 +1,49 @@
 #Arduino: a sensor written for the arduino open source hardware.
 class Sensor
   attr_accessor :queue
+  attr_accessor :version
   def initialize(filename=nil)
     raise MissingArduinoError unless File.writable?(filename)
     #HACK oogity boogity magic happens here:
     `stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
     @f = File.open(filename, 'w+')
     ticks = ($RACE_DISTANCE / $ROLLER_CIRCUMFERENCE).floor
+    get_version
+    send_length(ticks)
+  end
+
+  def get_version
+    @f.flush
+    @f.putc ?v
+    @f.putc ?\r
+    @f.flush
+    begin
+      Timeout.timeout(1){
+        @version = @f.readline
+      }
+    rescue Timeout::Error
+      puts "Timeout getting version"
+    end
+    puts @version
+  end
+
+  def send_length(ticks)
+    @f.flush
     @f.putc ?l
     @f.putc(ticks % 256)
     @f.putc(ticks / 256)
     @f.putc ?\r
+    begin
+      Timeout.timeout(1){
+        @length_status = @f.readline
+      }
+    rescue Timeout::Error
+      puts "Timeout setting length"
+    else
+      #TODO raise an ErrorReceivingTickLength and catch it in the app.
+      #raise @length_status unless @length_status=~/OK/
+    end
+    puts @length_status
   end
 
   def start

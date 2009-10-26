@@ -362,9 +362,13 @@ class ConfigController < Shoes::Main
       stack do
         version = `dpkg-query -W -f='${Version}' opensprints`
         version = File.readlines('build/debian/changelog').first.gsub(/.*\((.*)\).*/,'\1').strip if version.empty?
-        para "You're using version: #{version}"
-        button("Update!", :width => 200) do
+        para "You're using software version: #{version}"
+        button("Update the software!", :width => 200) do
           `update-manager`
+        end
+        para "You're using firmware version: #{SENSOR.version}"
+        button("Update the firmware", :width => 200) do
+          `arduino-ide`
         end
       end
     end
