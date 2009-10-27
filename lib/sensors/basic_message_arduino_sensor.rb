@@ -8,42 +8,47 @@ class Sensor
     `stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
     @f = File.open(filename, 'w+')
     ticks = ($RACE_DISTANCE / $ROLLER_CIRCUMFERENCE).floor
-    get_version
+    # need to gracefully continue if no response (i.e. versions before basic-1)
+    #get_version
+
     send_length(ticks)
   end
 
   def get_version
-    @f.flush
-    @f.putc ?v
-    @f.putc ?\r
-    @f.flush
     begin
-      Timeout.timeout(1){
+      Timeout.timeout(2){
+        sleep(1)
+        @f.flush
+        @f.putc ?v
+        @f.flush
+        puts "getting version"
         @version = @f.readline
+        puts "version: #{@version}"
       }
     rescue Timeout::Error
       puts "Timeout getting version"
     end
-    puts @version
   end
 
   def send_length(ticks)
-    @f.flush
-    @f.putc ?l
-    @f.putc(ticks % 256)
-    @f.putc(ticks / 256)
-    @f.putc ?\r
     begin
-      Timeout.timeout(1){
+      Timeout.timeout(1.0){
+        @f.flush
+        @f.putc ?l
+        @f.putc(ticks % 256)
+        @f.putc(ticks / 256)
+        @f.putc ?\r
+        puts "setting length"
         @length_status = @f.readline
+        puts "length status: #{@length_status}"
       }
     rescue Timeout::Error
       puts "Timeout setting length"
     else
-      #TODO raise an ErrorReceivingTickLength and catch it in the app.
+      #TODO raise an ErrorReceivingTickLength and catch it in the app like
+      #   we do with a missing arduino error.
       #raise @length_status unless @length_status=~/OK/
     end
-    puts @length_status
   end
 
   def start
