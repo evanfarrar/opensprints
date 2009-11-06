@@ -231,13 +231,13 @@ class RaceController < Shoes::Main
           banner $i18n.winner(winner.racer.name), :font => "Bold", :align => "center"
 
         }
-        flow(:height => 0.1) { background eval(winner.color) }
+        flow(:height => 0.1) { background(eval(winner.color)) }
         stack(:height => 0.4) {
           standings = race.race_participations.sort_by { |racer| racer.finish_time||Infinity }
           standings.each_with_index {|r,i|
             flow {
-              flow(:width => 0.3) { caption (i+1).ordinal }
-              flow(:width => 0.3) { caption r.racer.name  }
+              flow(:width => 0.3) { caption((i+1).ordinal) }
+              flow(:width => 0.3) { caption(r.racer.name)  }
               flow(:width => 0.3) { 
                 if r.finish_time
                   #TODO i18n
