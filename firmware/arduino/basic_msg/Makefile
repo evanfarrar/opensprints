@@ -1,4 +1,4 @@
-# Arduino 0011 Makefile
+# Arduino 0015 Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
 # This makefile allows you to build sketches from the command line
@@ -35,12 +35,11 @@
 # $Id$
 
 TARGET = $(notdir $(CURDIR))
-# This should be a symbolic link to the arduino IDE directory:
-INSTALL_DIR = ../arduino_install_dir
-PORT = /dev/ttyUSB*
-UPLOAD_RATE = 19200
+INSTALL_DIR = /home/orluke/source_code/arduino
+PORT = /dev/ttyUSB0
+UPLOAD_RATE = 115200
 AVRDUDE_PROGRAMMER = stk500v1
-MCU = atmega168
+MCU = atmega328p
 F_CPU = 16000000
 
 ############################################################################
@@ -48,10 +47,7 @@ F_CPU = 16000000
 
 ARDUINO = $(INSTALL_DIR)/hardware/cores/arduino
 AVR_TOOLS_PATH = /usr/bin
-SRC =  $(ARDUINO)/pins_arduino.c $(ARDUINO)/wiring.c \
-$(ARDUINO)/wiring_analog.c $(ARDUINO)/wiring_digital.c \
-$(ARDUINO)/wiring_pulse.c $(ARDUINO)/wiring_serial.c \
-$(ARDUINO)/wiring_shift.c $(ARDUINO)/WInterrupts.c
+SRC = $(ARDUINO)/wiring_shift.c $(ARDUINO)/WInterrupts.c
 CXXSRC = $(ARDUINO)/HardwareSerial.cpp $(ARDUINO)/WMath.cpp \
 $(ARDUINO)/Print.cpp
 FORMAT = ihex
@@ -149,7 +145,7 @@ lss: applet/$(TARGET).lss
 sym: applet/$(TARGET).sym
 
 # Program the device.  
-upload: applet/$(TARGET).hex
+upload: 
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)
 
 
@@ -224,6 +220,13 @@ applet/core.a: $(OBJ)
 	$(CC) -c $(ALL_ASFLAGS) $< -o $@
 
 
+# Automatic dependencies
+%.d: %.c
+	$(CC) -M $(ALL_CFLAGS) $< | sed "s;$(notdir $*).o:;$*.o $*.d:;" > $@
+
+%.d: %.cpp
+	$(CXX) -M $(ALL_CXXFLAGS) $< | sed "s;$(notdir $*).o:;$*.o $*.d:;" > $@
+
 
 # Target: clean project.
 clean:
@@ -231,15 +234,7 @@ clean:
 	applet/$(TARGET).map applet/$(TARGET).sym applet/$(TARGET).lss applet/core.a \
 	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
 
-depend:
-	if grep '^# DO NOT DELETE' $(MAKEFILE) >/dev/null; \
-	then \
-		sed -e '/^# DO NOT DELETE/,$$d' $(MAKEFILE) > \
-			$(MAKEFILE).$$$$ && \
-		$(MV) $(MAKEFILE).$$$$ $(MAKEFILE); \
-	fi
-	echo '# DO NOT DELETE THIS LINE -- make depend depends on it.' \
-		>> $(MAKEFILE); \
-	$(CC) -M -mmcu=$(MCU) $(CDEFS) $(CINCS) $(SRC) $(ASRC) >> $(MAKEFILE)
+.PHONY:	all build elf hex eep lss sym program coff extcoff clean applet_files sizebefore sizeafter
 
-.PHONY:	all build elf hex eep lss sym program coff extcoff clean depend applet_files sizebefore sizeafter
+include $(SRC:.c=.d)
+include $(CXXSRC:.cpp=.d)
