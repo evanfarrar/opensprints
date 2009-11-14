@@ -56,6 +56,7 @@ class RacerController < Shoes::Main
           }
         }
         button "Save" do
+          racer.name = "Racer #{racer.id}" if racer.name.blank?
           racer.save
           visit session[:referrer].pop||'/racers'
         end
