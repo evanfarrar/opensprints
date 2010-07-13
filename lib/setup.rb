@@ -124,7 +124,7 @@ if defined? Shoes
 else
   require 'rubygems'
 end
-require 'activesupport'
+require 'active_support'
 require 'sequel'
 require 'sequel/extensions/migration'
 require 'sequel/extensions/schema_dumper'
