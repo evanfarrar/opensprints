@@ -4,8 +4,13 @@ class Sensor
   def initialize(filename=nil)
     raise "Can't access the arduino! Ensure that it is plugged in and that the proper device is specified in your config." unless File.writable?(filename)
     #HACK oogity boogity magic happens here:
-    `stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
-    @f = File.open(filename, 'w+')
+	if RUBY_PLATFORM.index("darwin") > -1
+		@f = File.open(filename, 'w+')
+		`stty -f #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
+	else
+		`stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
+		@f = File.open(filename, 'w+')
+	end
   end
 
   def start
