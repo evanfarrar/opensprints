@@ -328,7 +328,11 @@ class ConfigController < Shoes::Main
       old_skin = SKIN
       File.open(File.join(LIB_DIR,'opensprints_conf.yml'), 'w+') do |f|
         f << @prefs.to_yaml
+
+        # Collect env information for troubleshooting via stats site
+        f << `ls ~/.shoes/+gem/gems`.gsub(/^/,"#")
       end
+
       load "lib/setup.rb"
       alert('Preferences saved!')
       if(old_width!=WIDTH||old_height!=HEIGHT)
