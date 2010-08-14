@@ -5,8 +5,14 @@ class Sensor
   def initialize(filename=nil)
     raise MissingArduinoError unless File.writable?(filename)
     #HACK oogity boogity magic happens here:
-    `stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
-    @f = File.open(filename, 'w+')
+	if RUBY_PLATFORM.index("darwin") > -1
+		@f = File.open(filename, 'w+')
+		`stty -f #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
+	else
+		`stty -F #{filename} cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke -noflsh -ixon -crtscts`
+		@f = File.open(filename, 'w+')
+	end
+
     ticks = ($RACE_DISTANCE / $ROLLER_CIRCUMFERENCE).floor
     # need to gracefully continue if no response (i.e. versions before basic-1)
     #get_version
