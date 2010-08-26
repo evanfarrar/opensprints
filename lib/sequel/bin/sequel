@@ -1,0 +1,193 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'optparse'
+require 'sequel'
+
+db_opts = {}
+copy_databases = nil
+dump_migration = nil
+echo = nil
+env = nil
+logfile = nil
+migrate_dir = nil
+migrate_ver = nil
+backtrace = nil
+test_connection = true
+load_dirs = []
+
+opts = OptionParser.new do |opts|
+  opts.banner = "Sequel: The Database Toolkit for Ruby"
+  opts.define_head "Usage: sequel <uri|path> [options]"
+  opts.separator ""
+  opts.separator "Examples:"
+  opts.separator "  sequel sqlite://blog.db"
+  opts.separator "  sequel postgres://localhost/my_blog"
+  opts.separator "  sequel config/database.yml"
+  opts.separator ""
+  opts.separator "For more information see http://sequel.rubyforge.org"
+  opts.separator ""
+  opts.separator "Options:"
+
+  opts.on_tail("-h", "-?", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+  opts.on("-C", "--copy-databases", "copy one database to another") do 
+    copy_databases = true
+  end
+  
+  opts.on("-d", "--dump-migration", "print database migration to STDOUT") do 
+    dump_migration = true
+  end
+  
+  opts.on("-D", "--dump-migration-same-db", "print database migration to STDOUT without type translation") do
+    dump_migration = :same_db
+  end
+
+  opts.on("-e", "--env ENV", "use environment config for database") do |v|
+    env = v
+  end
+  
+  opts.on("-E", "--echo", "echo SQL statements") do
+    echo = true
+  end
+  
+  opts.on("-l", "--log logfile", "log SQL statements to log file") do |v|
+    logfile = v
+  end
+  
+  opts.on("-L", "--load-dir DIR", "loads all *.rb under specifed directory") do |v|
+    load_dirs << v
+  end
+  
+  opts.on("-m", "--migrate-directory DIR", "run the migrations in directory") do |v|
+    migrate_dir = v
+  end
+  
+  opts.on("-M", "--migrate-version VER", "migrate the database to version given") do |v|
+    migrate_ver = Integer(v)
+  end
+
+  opts.on("-N", "--no-test-connection", "do not test the connection") do
+    test_connection = false
+  end
+
+  opts.on("-t", "--trace", "Output the full backtrace if an exception is raised") do
+    backtrace = true
+  end
+  
+  opts.on_tail("-v", "--version", "Show version") do
+    puts "sequel #{Sequel.version}"
+    exit
+  end
+end
+opts.parse!
+
+db = ARGV.shift
+
+error_proc = lambda do |msg|
+  $stderr.puts(msg)
+  exit 1
+end
+
+error_proc["Error: Must specify -m if using -M"] if migrate_ver && !migrate_dir
+error_proc["Error: Cannot specify -D or -d with -m"] if dump_migration && migrate_dir
+error_proc["Error: Cannot specify -C with -d, -D, or -m"] if copy_databases && (dump_migration || migrate_dir)
+error_proc["Error: Must specify database connection string or path to yaml file as argument"] if db.nil? || db.empty?
+
+if logfile || echo
+  require 'logger'
+  db_opts[:loggers] = []
+  db_opts[:loggers] << Logger.new(logfile) if logfile
+  db_opts[:loggers] << Logger.new($stdout) if echo
+end
+
+connect_proc = lambda do |database|
+  db = if File.exist?(database)
+    require 'yaml'
+    env ||= "development"
+    db_config = YAML.load_file(database)
+    db_config = db_config[env] || db_config[env.to_sym] || db_config
+    db_config.keys.each{|k| db_config[k.to_sym] = db_config.delete(k)}
+    Sequel.connect(db_config.merge!(db_opts))
+  else
+    Sequel.connect(database, db_opts)
+  end
+  db.test_connection if test_connection
+  db
+end
+
+begin
+  DB = connect_proc[db]
+  if migrate_dir
+    Sequel.extension :migration
+    Sequel::Migrator.apply(DB, migrate_dir, migrate_ver)
+    exit
+  end
+  if dump_migration
+    Sequel.extension :schema_dumper
+    puts DB.dump_schema_migration(:same_db=>dump_migration==:same_db)
+    exit
+  end
+  if copy_databases
+    Sequel.extension :migration, :schema_dumper
+
+    db2 = ARGV.shift
+    error_proc["Error: Must specify database connection string or path to yaml file as second argument for database you want to copy to"] if db2.nil? || db2.empty?
+    start_time = Time.now
+    TO_DB = connect_proc[db2]
+    same_db = DB.database_type==TO_DB.database_type
+
+    puts "Databases connections successful"
+    schema_migration = eval(DB.dump_schema_migration(:indexes=>false, :same_db=>same_db))
+    index_migration = eval(DB.dump_indexes_migration(:same_db=>same_db))
+    puts "Migrations dumped successfully"
+
+    schema_migration.apply(TO_DB, :up)
+    puts "Tables created"
+
+    puts "Begin copying data"
+    DB.transaction do
+      TO_DB.transaction do
+        DB.tables.each do |table|
+          puts "Begin copying records for table: #{table}"
+          time = Time.now
+          to_ds = TO_DB.from(table)
+          j = 0
+          DB.from(table).each do |record|
+            if Time.now - time > 5
+              puts "Status: #{j} records copied" 
+              time = Time.now
+            end
+            to_ds.insert(record)
+            j += 1
+          end
+          puts "Finished copying #{j} records for table: #{table}"
+        end
+      end
+    end
+    puts "Finished copying data"
+
+    puts "Begin creating indexes"
+    index_migration.apply(TO_DB, :up)
+    puts "Finished creating indexes"
+
+    if TO_DB.database_type == :postgres
+      TO_DB.tables.each{|t| TO_DB.reset_primary_key_sequence(t)}
+      puts "Primary key sequences reset successfully"
+    end
+    puts "Database copy finished in #{Time.now - start_time} seconds"
+    exit
+  end
+rescue => e
+  raise e if backtrace
+  error_proc["Error: #{e.class}: #{e.message}#{e.backtrace.first}"]
+end
+
+load_dirs.each{|d| Dir["#{d}/**/*.rb"].each{|f| load(f)}}
+
+require 'irb'
+puts "Your database is stored in DB..."
+IRB.start

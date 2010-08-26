@@ -1,0 +1,158 @@
+= Dataset Filtering 
+
+Sequel offers unparalleled flexibility when it comes to filtering records. You can specify your conditions as a custom string, as a string with parameters, as a hash of values to compare against, or as ruby code that Sequel translates into SQL expressions.
+
+== Filtering using a custom filter string
+
+If you wish to write your SQL by hand, you can just supply it to the dataset's #filter method:
+
+  items.filter('x < 10').sql
+  #=> "SELECT * FROM items WHERE x < 10"
+
+In order to prevent SQL injection, you can replace literal values with question marks and supply the values as additional arguments:
+
+  items.filter('category = ?', 'ruby').sql
+  #=> "SELECT * FROM items WHERE category = 'ruby'"
+
+=== Specifying SQL functions
+
+Sequel also allows you to specify functions by using the Symbol#sql_function method (and the Symbol#[] method on ruby 1.8):
+
+  items.literal(:avg.sql_function(:price)) #=> "avg(price)"
+
+== Filtering using a hash
+
+If you just need to compare records against values, you can supply a hash:
+
+  items.filter(:category => 'ruby').sql
+  #=> "SELECT * FROM items WHERE (category = 'ruby')"
+
+Sequel can check for null values:
+
+  items.filter(:category => nil).sql
+  #=> "SELECT * FROM items WHERE (category IS NULL)"
+
+Or compare two columns:
+
+  items.filter(:x => :some_table__y).sql
+  #=> "SELECT * FROM items WHERE (x = some_table.y)"
+
+And also compare against multiple values:
+
+  items.filter(:category => ['ruby', 'perl']).sql
+  #=> "SELECT * FROM items WHERE (category IN ('ruby', 'perl'))"
+
+Ranges (both inclusive and exclusive) can also be used:
+
+  items.filter(:price => 100..200).sql
+  #=> "SELECT * FROM items WHERE (price >= 100 AND price <= 200)"
+
+  items.filter(:price => 100...200).sql
+  #=> "SELECT * FROM items WHERE (price >= 100 AND price < 200)"
+
+== Filtering using expressions
+
+Sequel allows you to use ruby expressions directly in the call to filter:
+
+  items.filter(:price * 2 < 50).sql
+  #=> "SELECT * FROM items WHERE ((price * 2) < 50) 
+
+This works for the standard inequality and arithmetic operators (though you can't use the inequality operators directly on a symbol in ruby 1.9):
+
+  items.filter(:price + 100 < 200).sql
+  #=> "SELECT * FROM items WHERE ((price + 100) < 200) 
+
+  items.filter(:price - 100 > 200).sql
+  #=> "SELECT * FROM items WHERE ((price - 100) > 200) 
+
+  items.filter(:price * 100 <= 200).sql
+  #=> "SELECT * FROM items WHERE ((price * 100) <= 200) 
+
+  items.filter(:price / 100 >= 200).sql
+  #=> "SELECT * FROM items WHERE ((price / 100) >= 200) 
+
+You use the overloaded bitwise and (&) and or (|) operators to combine expressions:
+
+  items.filter((:price + 100 < 200) & (:price * 100 <= 200)).sql
+  #=> "SELECT * FROM items WHERE (((price + 100) < 200) AND ((price * 100) <= 200)) 
+
+  items.filter((:price - 100 > 200) | (:price / 100 >= 200)).sql
+  #=> "SELECT * FROM items WHERE (((price - 100) > 200) OR ((price / 100) >= 200)) 
+
+To filter by equality, you use the standard hash, which can be combined with other operators:
+
+  items.filter({:category => 'ruby'} & (:price + 100 < 200)).sql
+  #=> "SELECT * FROM items WHERE ((category = 'ruby') AND ((price + 100) < 200))"
+
+This works with other hash values, such as arrays and ranges:
+
+  items.filter({:category => ['ruby', 'other']} | (:price - 100 > 200)).sql
+  #=> "SELECT * FROM items WHERE ((category IN ('ruby', 'other')) OR ((price - 100) <= 200))"
+
+  items.filter({:price => (100..200)} & :active).sql
+  #=> "SELECT * FROM items WHERE ((price >= 100 AND price <= 200) AND active)"
+
+=== Negating conditions
+
+You can use the negation operator (~) in most cases:
+
+  items.filter(~{:category => 'ruby'}).sql
+  #=> "SELECT * FROM items WHERE (category != 'ruby')"
+
+  items.filter{~:active}.sql
+  #=> "SELECT * FROM items WHERE NOT active"
+
+  items.filter(~(:price / 100 >= 200)).sql
+  #=> "SELECT * FROM items WHERE ((price / 100) < 200) 
+
+=== Comparing against column references
+
+You can also compare against other columns:
+
+  items.filter{|o| o.credit > :debit}.sql
+  #=> "SELECT * FROM items WHERE (credit > debit)
+
+Or against SQL functions:
+
+  items.filter{|o| :price - 100 < o.max(:price)}.sql
+  #=> "SELECT * FROM items WHERE ((price - 100) < max(price))"
+
+== String search functions
+
+You can search SQL strings using the #like method:
+
+  items.filter(:name.like('Acme%')).sql
+  #=> "SELECT * FROM items WHERE (name LIKE 'Acme%')"
+
+You can specify a Regexp as a like argument, but this will probably only work
+on PostgreSQL and MySQL:
+
+  items.filter(:name.like(/Acme.*/)).sql
+  #=> "SELECT * FROM items WHERE (name ~ 'Acme.*')"
+
+Like can also take more than one argument:
+
+  items.filter(:name.like('Acme%', /Beta.*/)).sql
+  #=> "SELECT * FROM items WHERE ((name LIKE 'Acme%') OR (name ~ 'Beta.*'))"
+
+== String concatenation
+
+You can concatenate SQL strings using Array#sql_string_join: 
+
+  items.filter([:name, :comment].sql_string_join.like('%acme%')).sql
+  #=> "SELECT * FROM items WHERE ((name || comment) LIKE 'Acme%')"
+
+Array#sql_string_join also takes a join argument:
+
+  items.filter([:name, :comment].sql_string_join(' ').like('%acme%')).sql
+  #=> "SELECT * FROM items WHERE ((name || ' ' || comment) LIKE 'Acme%')"
+
+== Filtering using sub-queries
+
+One of the best features of Sequel is the ability to use datasets as sub-queries. Sub-queries can be very useful for filtering records, and many times provide a simpler alternative to table joins. Sub-queries can be used in all forms of filters:
+
+  refs = consumer_refs.filter(:logged_in).select(:consumer_id)
+  consumers.filter(:id => refs).sql
+  #=> "SELECT * FROM consumers WHERE (id IN (SELECT consumer_id FROM consumer_refs WHERE logged_in))"
+
+Note that if you compare against a sub-query, you must select a single column in the sub-query.

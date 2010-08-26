@@ -1,12 +1,14 @@
+$LOAD_PATH.insert(-1,'./lib/sequel/lib')
+
 Shoes.setup do
   gem "activesupport"
-  gem "bacon"
   gem "r18n-desktop"
-  gem "sequel"
+#  gem "sequel 3.5.0"
   source "http://gemcutter.org"
   gem "opensprints-core 0.5.3"
   gem "multipart-post"
 end
+
 
 class Shoes::Check
   def toggle
