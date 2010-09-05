@@ -38,5 +38,5 @@ If you're intereseted in learning more about the structure of this application t
 
 == Copyright
 
-Copyright (c) 2009 Alex Rakoczy, Evan Farrar, Luke Orland, Morgan Venable, Jamie Howard, Jonathan Morrison and Michael Wozniak. See LICENSE for details.
+Copyright (c) 2009 Alex Rakoczy, Evan Farrar, Luke Orland, Morgan Venable, Morgan R. Allen, Jamie Howard, Jonathan Morrison and Michael Wozniak. See LICENSE for details.
  
