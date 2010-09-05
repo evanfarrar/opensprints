@@ -42,6 +42,8 @@ class TournamentController < Shoes::Main
   url '/tournaments/(\d+)/stats/category//(\d+)', :overall_stats
   url '/tournaments/(\d+)/stats/category/(\d+)/(\d+)', :category_stats
   url '/tournaments/(\d+)/stats/export', :export_stats
+  audience_friendly_urls %r'^/tournaments/(\d+)/stats$', %r'^/tournaments/(\d+)/stats/(\d+)$',
+    %r'^/tournaments/(\d+)/stats/category//(\d+)$', %r'^/tournaments/(\d+)/stats/category/(\d+)/(\d+)$'
 
   def list
     layout(:menu)
@@ -284,13 +286,15 @@ class TournamentController < Shoes::Main
     racers.shift(9*racers_offset)
 
     @nav.clear {
-      button($i18n.back_to_event) { visit "/tournaments/#{id}" }
-      button($i18n.next) { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
-      pause = button($i18n.pause)
-      play = button($i18n.play)
-      pause.click { @t.toggle; play.toggle; pause.toggle }
-      play.click  { @t.toggle; play.toggle; pause.toggle }
-      play.hide
+      if admin_window?
+        button($i18n.back_to_event) { visit "/tournaments/#{id}" }
+        button($i18n.next) { visit "/tournaments/#{id}/stats/#{racers_offset+1}" }
+        pause = button($i18n.pause)
+        play = button($i18n.play)
+        pause.click { @t.toggle; play.toggle; pause.toggle }
+        play.click  { @t.toggle; play.toggle; pause.toggle }
+        play.hide
+      end
     }
     @center.clear {
       if racers.any?

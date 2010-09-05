@@ -106,6 +106,8 @@ class RaceController < Shoes::Main
   url '/races/(\d+)/winner', :winner
   url '/races/(\d+)/edit', :edit
   url '/races/new/tournament/(\d+)', :new_in_tournament
+  audience_friendly_urls %r'^/races/(\d+)/ready$', %r'^/races/(\d+)/countdown$',
+    %r'^/races/(\d+)$', %r'^/races/(\d+)/winner$'
 
 
   def ready(id)

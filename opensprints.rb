@@ -61,20 +61,36 @@ module DefaultStyles
     nil
   end
 end
+
+module AudienceAdminSeperation
+  module InstanceMethods
+    def admin_window?; !owner; end
+    def audience_window?; !admin_window?; end
+    def audience_friendly_url?(url); $audience_visible_urls.any? { |re| url =~ re }; end
+  end
+  module ClassMethods
+    def audience_friendly_urls(*urls)
+      $audience_visible_urls ||= []
+      $audience_visible_urls += urls
+    end
+  end
+end
  
 module MainHelper
   def button(text, styles={}, &callback)
-    stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin => [5,10,5,0], :padding_top => 0) do
-      background(button_background||styles[:fill]||("#e5e6e6"..."#c1c2c4"), :curve => 1)
-      border(button_border||styles[:border]||"#ffcf01")
-      t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||black, :margin => styles[:margin]||[0]*4)
-      click &callback
-      hover {
-        self.cursor = :hand
-      }
-      leave {
-        self.cursor = :arrow
-      }
+    if admin_window?
+      stack(:height => 32, :width => styles[:width]||(40+(text.length * 8)), :margin => [5,10,5,0], :padding_top => 0) do
+        background(button_background||styles[:fill]||("#e5e6e6"..."#c1c2c4"), :curve => 1)
+        border(button_border||styles[:border]||"#ffcf01")
+        t = inscription(text, :align => styles[:align]||'center', :stroke => styles[:stroke]||black, :margin => styles[:margin]||[0]*4)
+        click &callback
+        hover {
+          self.cursor = :hand
+        }
+        leave {
+          self.cursor = :arrow
+        }
+      end
     end
   end
 
@@ -87,19 +103,21 @@ module MainHelper
   end
 
   def image_button(path,styles={}, &callback)
-    stack(:margin_top => 8, :width => 20) do
-      click &callback
-      b = background(link_hover_background||"#ffcf01")
-      image path
-      b.hide
-      hover {
-        b.show
-        self.cursor = :hand
-      }
-      leave {
+    if admin_window?
+      stack(:margin_top => 8, :width => 20) do
+        click &callback
+        b = background(link_hover_background||"#ffcf01")
+        image path
         b.hide
-        self.cursor = :arrow
-      }
+        hover {
+          b.show
+          self.cursor = :hand
+        }
+        leave {
+          b.hide
+          self.cursor = :arrow
+        }
+      end
     end
   end
 
@@ -142,6 +160,8 @@ class Main < Shoes
   url '/', :index
 
   include DefaultStyles
+  extend AudienceAdminSeperation::ClassMethods
+  include AudienceAdminSeperation::InstanceMethods
   include MainHelper
 
   def custom_styles
@@ -182,13 +202,22 @@ class Main < Shoes
     @center.clear {
       stack {
         flow(:attach => Window, :top => (@center.height * 0.2).to_i, :left => (WIDTH / 2)-350) { image(logoimage) }
-        flow(:attach => Window, :top => (@center.height * 0.6).to_i, :left => (WIDTH / 2)-350) {
-          caption(link($i18n.categories, :click => "/categories"))
-          caption(" / ", :stroke => link_color)
-          caption(link($i18n.events, :click => "/tournaments"))
-          caption(" / ", :stroke => link_color)
-          caption(link($i18n.configuration, :click => "/configuration"))
-        }
+        if admin_window?
+          flow(:attach => Window, :top => (@center.height * 0.6).to_i, :left => (WIDTH / 2)-350) {
+            caption(link($i18n.categories, :click => "/categories"))
+            caption(" / ", :stroke => link_color)
+            caption(link($i18n.events, :click => "/tournaments"))
+            caption(" / ", :stroke => link_color)
+            caption(link($i18n.configuration, :click => "/configuration"))
+          }
+          flow(:attach => Window, :top => (@center.height * 0.65).to_i, :left => (WIDTH / 2)-250) {
+            caption(link("AUDIENCE WINDOW", :click => lambda{
+              if !$child && !owner # if we are the parent, and we haven't yet created the child
+                $child = window(:height => HEIGHT, :width => WIDTH, :scroll => false, :title => TITLE)
+              end
+            } ))
+          }
+        end
       }
     }
   end
@@ -199,6 +228,13 @@ class Main < Shoes
     }
   end
   def layout(background_type=:race)
+    if audience_window?
+      animate(20) do
+        if owner.location != app.location && audience_friendly_url?(owner.location)
+          visit owner.location
+        end
+      end
+    end
     self.cursor = :arrow
     custom_styles
     background BACKGROUND_COLOR if(defined?(BACKGROUND_COLOR))
