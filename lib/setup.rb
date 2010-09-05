@@ -115,11 +115,9 @@ if defined? Shoes
     font(f)
   end
 
-  require 'lib/controllers/config_controller'
-  require 'lib/controllers/racer_controller'
-  require 'lib/controllers/race_controller'
-  require 'lib/controllers/category_controller'
-  require 'lib/controllers/tournament_controller'
+  Dir.glob('lib/controllers/*_controller.rb').each do |controller|
+    require controller
+  end
   require 'lib/interface_widgets'
 else
   require 'rubygems'
