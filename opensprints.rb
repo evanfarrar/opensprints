@@ -5,7 +5,7 @@ Shoes.setup do
   gem "r18n-desktop"
 #  gem "sequel 3.5.0"
   source "http://gemcutter.org"
-  gem "opensprints-core 0.5.3"
+  gem "opensprints-core 0.6.1"
   gem "multipart-post"
 end
 
@@ -123,11 +123,5 @@ end
 Kernel::Main = Main
 
 require 'lib/setup.rb'
-if defined? SKIN
-  load("media/skins/#{SKIN}/stylesheet.rb") if File.exist?("media/skins/#{SKIN}/stylesheet.rb")
-  class Main < Shoes
-    include CustomStyles if(defined?(CustomStyles))
-  end
-end
 
 Shoes.app(:height => HEIGHT, :width => WIDTH, :scroll => false, :title => TITLE)

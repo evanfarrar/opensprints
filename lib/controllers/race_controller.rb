@@ -240,6 +240,8 @@ class RaceController < Shoes::Main
           end
         }
         stack {
+          flow { @c = c = check; para("Just for fun?"); click { c.toggle; race.update(:for_fun => true) } }
+          @c.checked = race.for_fun
           button($i18n.start_race) { visit "/races/#{id}/ready" if race.race_participations.any? }
           if race.tournament_id
             button($i18n.add_another_race) { visit "/races/new/tournament/#{race.tournament_id}"  }

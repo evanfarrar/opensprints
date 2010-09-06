@@ -38,6 +38,13 @@ $RACE_DISTANCE = options['race_distance'].to_f
 $ROLLER_CIRCUMFERENCE = options['roller_circumference'].to_f
 TITLE = options['title']
 SKIN = options['skin'] if File.exist?('media/skins/'+options['skin'].to_s)
+if defined? SKIN
+  load("media/skins/#{SKIN}/stylesheet.rb") if File.exist?("media/skins/#{SKIN}/stylesheet.rb")
+  class Main < Shoes
+    include CustomStyles if(defined?(CustomStyles))
+  end
+end
+
 bikes = options['bikes']
 bikes.delete('')
 $BIKES = bikes
