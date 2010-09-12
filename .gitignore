@@ -3,5 +3,6 @@ conf.yml
 *.swp
 log/*.yml
 *.bak
+*.DS_Store
 firmware/arduino/arduino-0017/*
 firmware/arduino/arduino-0017
