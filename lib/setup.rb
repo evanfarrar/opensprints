@@ -44,6 +44,7 @@ if defined? SKIN
     include CustomStyles if(defined?(CustomStyles))
   end
 end
+RACE_TRACK = (["progress_bars", "clock"].detect { |track| track == options['track'] } || "progress_bars").to_sym
 
 bikes = options['bikes']
 bikes.delete('')

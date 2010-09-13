@@ -85,6 +85,7 @@ class Main < Shoes
       button($i18n.return_to_main_menu) { visit "/" }
     }
   end
+
   def layout(background_type=:race)
     if audience_window?
       animate(20) do

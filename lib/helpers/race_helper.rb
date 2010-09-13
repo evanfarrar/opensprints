@@ -29,7 +29,7 @@ module RaceHelper
   end
 
   def race_track(race,speed=false)
-    progress_bars(race, speed)
+    self.send(RACE_TRACK, race, speed)
   end
 
   def progress_bars(race,speed=false)
