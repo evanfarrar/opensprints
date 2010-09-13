@@ -28,27 +28,31 @@ module RaceHelper
     }
   end
 
+  def race_track(race,speed=false)
+    progress_bars(race, speed)
+  end
+
   def progress_bars(race,speed=false)
     stack do # start progress_bars
-      flow {
-      race.race_participations.each_with_index do |racer,i|
-        if speed
-          flow(:width => 0.5){
+      flow do
+        race.race_participations.each_with_index do |racer,i|
+          if speed
             flow(:width => 0.5){
-              title(racer.speed(racer.finish_time||SENSOR.time), :align => 'right',:margin => [0]*4,
-                :stroke => eval(racer.color))
+              flow(:width => 0.5){
+                title(racer.speed(racer.finish_time||SENSOR.time), :align => 'right',:margin => [0]*4,
+                  :stroke => eval(racer.color))
+              }
+              flow(:width => 0.5){
+                title("mph", :margin => [0]*4, :stroke => eval(racer.color))
+              }
             }
+          else
             flow(:width => 0.5){
-              title("mph", :margin => [0]*4, :stroke => eval(racer.color))
+              title(" ", :margin => [20]*4)
             }
-          }
-        else
-          flow(:width => 0.5){
-            title(" ", :margin => [20]*4)
-          }
+          end
         end
       end
-      }
       race.race_participations.each_with_index do |racer,i|
         fill gradient(rgb(230,230,230),rgb(167,167,167), :angle => -90)
         stroke(black(0.0))

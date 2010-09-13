@@ -33,7 +33,7 @@ class RaceController < Shoes::Main
       end
     }
     @center.clear {
-      progress_bars(race)
+      race_track(race)
       stack {
         if next_race = race.next_race
           flow {
@@ -42,8 +42,8 @@ class RaceController < Shoes::Main
         end
       }
     }
-    
   end
+
   def countdown(id)
     race = Race[id]
     layout(:race)
@@ -53,7 +53,7 @@ class RaceController < Shoes::Main
       button("Stop Countdown") { visit "/races/#{id}/ready" }
     }
     @center.clear {
-      progress_bars(race)
+      race_track(race)
       f = flow(:width => 1.0){
         flow(:width => 0.3)
         @countbox = flow(:width => 0.4) { }
@@ -113,7 +113,7 @@ class RaceController < Shoes::Main
               racer.finish_time = SENSOR.finish_times[i] / 1000.0
             end
           end
-          progress_bars(race, true)
+          race_track(race, true)
         end
       end
     end
