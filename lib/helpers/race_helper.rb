@@ -28,8 +28,32 @@ module RaceHelper
     }
   end
 
-  def race_track(race,speed=false)
+  def race_track(race, speed=false)
     self.send(RACE_TRACK, race, speed)
+  end
+
+  def clock(race, speed)
+    stack do
+      nofill
+      stroke black
+      strokewidth 5
+
+      left = @center.width/2
+      top = @center.height/2
+      oval :left => left, :top => top, :width => top * 2, :center => true
+
+      race.race_participations.each do |racer|
+        strokewidth 8
+        fill eval(racer.color)
+        stroke eval(racer.color)
+        progress_angle = ((racer.percent_complete * 2 * Shoes::PI) - 0.5 * Shoes::PI)
+        end_angle = (progress_angle - (2*Shoes::PI)/360)
+        shape do
+          move_to(left, top)
+          arc_to(left,top,top*2,top*2,progress_angle,progress_angle)
+        end
+      end
+    end
   end
 
   def progress_bars(race,speed=false)
