@@ -36,27 +36,54 @@ module RaceHelper
     stack do
       nofill
       stroke black
-      strokewidth 5
+      strokewidth 3
 
       left = @center.width/2
       top = @center.height/2
       oval :left => left, :top => top, :width => top * 2, :center => true
 
+      fill white
+      oval :left => left, :top => top, :width => top * 1.75, :center => true
+      oval :left => left, :top => top, :width => top * 1.65, :center => true
+
+      8.times do |i|
+        move_to(left, top)
+        nofill
+        stroke black
+        big_hashes = ((2*Shoes::PI) * i/8)
+        small_hashes = ((2*Shoes::PI) * i/8) + (Shoes::PI * 1/8)
+
+        shape do
+          strokewidth 40
+          arc left, top, (top*1.65) , (top*1.65), big_hashes + -0.01, big_hashes + 0.01
+        end
+        shape do
+          strokewidth 12
+          arc left, top, (top*1.70) , (top*1.70), small_hashes + -0.005, small_hashes + 0.005
+        end 
+      end
+
       race.race_participations.each do |racer|
-        strokewidth 8
-        fill eval(racer.color)
+        strokewidth 5
         stroke eval(racer.color)
         progress_angle = ((racer.percent_complete * 2 * Shoes::PI) - 0.5 * Shoes::PI)
-        end_angle = (progress_angle - (2*Shoes::PI)/360)
+        opposite = progress_angle + Shoes::PI
         shape do
           move_to(left, top)
-          arc_to(left,top,top*2,top*2,progress_angle,progress_angle)
+          arc_to(left,top,(top*2 - 20),(top*2 - 20),progress_angle,progress_angle)
+          arc_to(left,top,top,top,opposite,opposite)
         end
       end
+
+      fill black
+      stroke black
+      oval :left => left, :top => top, :width => 20, :center => true
     end
   end
 
   def progress_bars(race,speed=false)
+    left_names(race)
+    right_bars(race)
     stack do # start progress_bars
       flow do
         race.race_participations.each_with_index do |racer,i|

@@ -14,8 +14,6 @@ class RaceController < Shoes::Main
     @title = $i18n.get_ready_to_race
     layout(:race)
     race = Race[id]
-    left_names(race)
-    right_bars(race)
     @nav.clear {
       button("Start") { visit "/races/#{id}/countdown" }
       button($i18n.edit_race) { session[:referrer].push(@center.app.location); visit "/races/#{id}/edit" }
@@ -47,8 +45,6 @@ class RaceController < Shoes::Main
   def countdown(id)
     race = Race[id]
     layout(:race)
-    left_names(race)
-    right_bars(race)
     @nav.clear {
       button("Stop Countdown") { visit "/races/#{id}/ready" }
     }
@@ -100,8 +96,6 @@ class RaceController < Shoes::Main
         visit "/races/#{id}/ready"
       }
     }
-    left_names(race)
-    right_bars(race)
     @race_animation = animate(7) do
       if race.finished?
         stop_save_and_show_winner(race, id)
