@@ -108,14 +108,12 @@ class Main < Shoes
       background "media/skins/#{SKIN}/background_main.png" if(defined?(SKIN)&&File.exist?("media/skins/#{SKIN}/background_main.png"))
     end
     nav
-    @window_width = width
-    @window_height = height
     @header = flow do
       title @title||TITLE
     end
     @left = stack(:width => 150) do
     end
-    @center = flow(:width => width - (175+125), :height => ((USABLE_HEIGHT||HEIGHT)-@header.height-125)) do
+    @center = flow(:width => width - (300), :height => ((USABLE_HEIGHT||HEIGHT)-@header.height-125)) do
     end
     @right = flow(:width => 150) do
     end
