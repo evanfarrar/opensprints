@@ -48,15 +48,8 @@ class RaceController < Shoes::Main
     @nav.clear {
       button("Stop Countdown") { visit "/races/#{id}/ready" }
     }
-    @center.clear {
-      race_track(race)
-      f = flow(:width => 1.0){
-        flow(:width => 0.3)
-        @countbox = flow(:width => 0.4) { }
-        flow(:width => 0.3)
-      }
-      f.displace(0, 22)
-    }
+    race_track(race)
+    @countbox = flow(:attach => Window, :top => (HEIGHT/2 - 100), :left => (WIDTH/2 - 125), :width => 250, :height => 200) { }
     @timer = animate(1) { |count|
       case count
       when 4

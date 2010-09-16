@@ -108,6 +108,8 @@ class Main < Shoes
       background "media/skins/#{SKIN}/background_main.png" if(defined?(SKIN)&&File.exist?("media/skins/#{SKIN}/background_main.png"))
     end
     nav
+    @window_width = width
+    @window_height = height
     @header = flow do
       title @title||TITLE
     end
