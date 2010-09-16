@@ -38,7 +38,7 @@ $RACE_DISTANCE = options['race_distance'].to_f
 $ROLLER_CIRCUMFERENCE = options['roller_circumference'].to_f
 TITLE = options['title']
 SKIN = options['skin'] if File.exist?('media/skins/'+options['skin'].to_s)
-if defined? SKIN
+if defined? SKIN and defined? Shoes
   load("media/skins/#{SKIN}/stylesheet.rb") if File.exist?("media/skins/#{SKIN}/stylesheet.rb")
   class Main < Shoes
     include CustomStyles if(defined?(CustomStyles))
