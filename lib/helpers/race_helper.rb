@@ -36,7 +36,7 @@ module RaceHelper
     @center.remove
     @left.width = @header.width
     @left.clear do
-      nofill
+      fill gray(0.2)
       stroke black
       strokewidth 3
 
