@@ -33,7 +33,9 @@ module RaceHelper
   end
 
   def clock(race, speed)
-    stack do
+    @center.remove
+    @left.width = @header.width
+    @left.clear do
       nofill
       stroke black
       strokewidth 3
