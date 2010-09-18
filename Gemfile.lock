@@ -1,0 +1,24 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.0)
+    hpricot (0.8.2)
+    multipart-post (1.0.1)
+    opensprints-core (0.6.1)
+      sequel
+    r18n-core (0.4.7.1)
+    r18n-desktop (0.4.7.1)
+      r18n-core (= 0.4.7.1)
+    sequel (3.15.0)
+    sqlite3-ruby (1.2.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport
+  hpricot
+  multipart-post
+  opensprints-core (= 0.6.1)
+  r18n-desktop
+  sqlite3-ruby

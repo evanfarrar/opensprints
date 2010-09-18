@@ -1,0 +1,8 @@
+source "http://rubygems.org"
+gem "activesupport"
+gem "hpricot"
+gem "sqlite3-ruby"
+gem "r18n-desktop"
+#  gem "sequel 3.5.0"
+gem "opensprints-core", "0.6.1"
+gem "multipart-post"

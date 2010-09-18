@@ -4,7 +4,6 @@ require 'socket'
 require 'time'
 require 'lib/race_data'
 require 'ftools'
-require 'hpricot'
 Infinity = 1/0.0
 class Object
   def try(method, *args, &block)
@@ -129,7 +128,9 @@ if defined? Shoes
   require 'lib/interface_widgets'
 else
   require 'rubygems'
+  require 'bundler/setup'
 end
+require 'hpricot'
 require 'active_support'
 require 'sequel'
 require 'sequel/extensions/migration'
