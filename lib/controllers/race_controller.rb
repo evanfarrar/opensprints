@@ -15,7 +15,15 @@ class RaceController < Shoes::Main
     layout(:race)
     race = Race[id]
     @nav.clear {
-      button("Start") { visit "/races/#{id}/countdown" }
+      button("Start") {
+        begin
+          SENSOR.handshake if SENSOR.respond_to?(:handshake)
+        rescue MissingArduinoError
+          alert "The race manager may have come unplugged! Please check your cables and configuration and try again."
+        else
+          visit "/races/#{id}/countdown"
+        end
+      }
       button($i18n.edit_race) { session[:referrer].push(@center.app.location); visit "/races/#{id}/edit" }
       if next_race = race.next_race
          button("Skip to Next Race") { visit "/races/#{next_race.pk}/ready" }
@@ -73,6 +81,9 @@ class RaceController < Shoes::Main
         visit "/races/#{id}"
       end
     }
+    rescue FalseStart => e
+      alert "#{e.message} had a false start"
+      visit "/races/#{id}/ready"
   end
 
   def show(id)
@@ -104,6 +115,9 @@ class RaceController < Shoes::Main
         end
       end
     end
+    rescue FalseStart => e
+      alert "#{e.message} had a false start"
+      visit "/races/#{id}/ready"
   end
 
   def winner(id)

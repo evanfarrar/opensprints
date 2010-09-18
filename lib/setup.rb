@@ -50,12 +50,20 @@ bikes.delete('')
 $BIKES = bikes
 load "lib/sensors/#{options['sensor']['type']}_sensor.rb"
 class MissingArduinoError < RuntimeError; end
+class ErrorSettingLength < RuntimeError; end
+class FalseStart < RuntimeError; end
 
 begin
+  throwaway = Sensor.new(options['sensor']['device'])
   SENSOR = Sensor.new(options['sensor']['device'])
 rescue MissingArduinoError
   if defined? Shoes
     alert "The arduino could not be found at the configured address! Check your configuration."
+  end
+  load "lib/sensors/mock_sensor.rb"
+rescue ErrorSettingLength
+  if defined? Shoes
+    alert "There was an error setting the length of the race. Check your configuration."
   end
   load "lib/sensors/mock_sensor.rb"
 end

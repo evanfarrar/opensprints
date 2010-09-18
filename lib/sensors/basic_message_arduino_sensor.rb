@@ -5,22 +5,23 @@ module NewFirmware
         @f.flush
         @f.puts "!l:#{ticks}"
         puts "setting length"
-        @length_status = @f.readline
+        @length_status = nil
+        while !@length_status do
+          line = @f.readline
+          @length_status = line if line =~ /^L:#{ticks}/
+        end
         puts "length status: #{@length_status}"
       }
     rescue Timeout::Error
       puts "Timeout setting length"
-    else
-      #TODO raise an ErrorReceivingTickLength and catch it in the app like
-      #   we do with a missing arduino error.
-      #raise @length_status unless @length_status=~/OK/
+      raise ErrorSettingLength
     end
     
   end
 
   def start
     @t.kill if @t
-    @t = Thread.new do
+    @t = Thread.new(Thread.current) do |parent|
       @f.puts "!g"
       Thread.current["racers"] = [[],[],[],[]]
       Thread.current["finish_times"] = []
@@ -55,6 +56,9 @@ module NewFirmware
           if l =~ /t:/
             Thread.current["time"] = l.gsub(/t: /,'').to_i
           end
+          if l =~ /F:/
+            parent.raise FalseStart.new("Racer #{l.gsub(/F:/,'').to_i+1}")
+          end
         end
         puts l
       end
@@ -78,6 +82,28 @@ module NewFirmware
     @f.puts '!s'
     @f.flush
     @t.kill
+  end
+
+  def handshake()
+    @handshake ||= 0
+    @handshake = @handshake <= 2**16-1 ? @handshake+1 : 0
+    begin
+    Timeout.timeout(1.0){
+      @f.flush
+      @f.puts "!a:#{@handshake}"
+      puts "ping: #{@handshake}"
+      handshake_status = nil
+      while !handshake_status do
+        line = @f.readline
+        handshake_status = line if line =~ /^A:#{@handshake}/
+      end
+      puts "pong: #{handshake_status}"
+    }
+    rescue Timeout::Error
+      puts "the arduino is unplugged!"
+      raise MissingArduinoError
+    end
+    true
   end
 end
 
@@ -201,7 +227,6 @@ class Sensor
         if version =~ /^V:/
           @version = version.sub(/^V:/,'').to_f
           extend NewFirmware
-          puts "version: #{@version}"
         else
           extend LegacyFirmware
         end
