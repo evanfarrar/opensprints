@@ -50,6 +50,7 @@ module RaceHelper
         oval :left => left, :top => top, :width => top * 1.65, :center => true
         image("media/big-logo.png", :attach => Window, :top => top - 15, :left => left - 110)
 
+        # hashmarks
         8.times do |i|
           move_to(left, top)
           nofill
@@ -67,6 +68,7 @@ module RaceHelper
           end 
         end
 
+        # clock-arms
         race.race_participations.each do |racer|
           strokewidth 5
           stroke eval(racer.color)
@@ -83,16 +85,22 @@ module RaceHelper
         stroke black
         oval :left => left, :top => top, :width => 20, :center => true
       end
+
+      # racer info
       @racers = stack do
         race.race_participations.each_with_index do |bike,index|
           stack(:attach => Window, :width => (WIDTH * 0.2).to_i, :left => (WIDTH * 0.8).to_i, :top => 100 + 100*index) do
             background eval(bike.color)
             stack do
               background gray(1.0, 0.2)
-              caption(bike.racer.name[0..14])
+              name = if bike.racer.name.length > 14 then bike.racer.name[0..14].concat('...') else bike.racer.name end
+              caption(name, :margin => [4, 2, 2, 0])
             end
-            caption(if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end, :margin => [0]*4)
-            caption(bike.distance, :margin => [0]*4)
+            stack(:margin => [4,0,0,0]) do
+              bike_speed = if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
+              caption("#{sprintf('%.3d', bike_speed.to_i).rjust(5)} mph", :margin => [0]*4)
+              caption("#{sprintf('%.3d', bike.distance.to_i).rjust(5)} m", :margin => [0]*4)
+            end
           end
         end
       end
