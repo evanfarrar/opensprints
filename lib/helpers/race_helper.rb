@@ -41,18 +41,18 @@ module RaceHelper
         stroke black
         strokewidth 3
 
-        left = @center.width/2
-        top = @center.height/2
-        oval :left => left, :top => top, :width => top * 2, :center => true
+        center_x = @center.width/2
+        center_y = @center.height/2
+        oval :left => center_x, :top => center_y, :width => center_y * 2, :center => true
 
         fill white
-        oval :left => left, :top => top, :width => top * 1.75, :center => true
-        oval :left => left, :top => top, :width => top * 1.65, :center => true
-        image("media/big-logo.png", :attach => Window, :top => top - 15, :left => left - 110)
+        oval :left => center_x, :top => center_y, :width => center_y * 1.75, :center => true
+        oval :left => center_x, :top => center_y, :width => center_y * 1.65, :center => true
+        image("media/big-logo.png", :attach => Window, :top => center_y - 15, :left => center_x - 110)
 
         # hashmarks
         8.times do |i|
-          move_to(left, top)
+          move_to(center_x,center_y)
           nofill
           stroke black
           big_hashes = ((2*Shoes::PI) * i/8)
@@ -60,11 +60,11 @@ module RaceHelper
 
           shape do
             strokewidth 40
-            arc left, top, (top*1.65) , (top*1.65), big_hashes + -0.01, big_hashes + 0.01
+            arc center_x,center_y,(center_y*1.65),(center_y*1.65),big_hashes + -0.01,big_hashes + 0.01
           end
           shape do
             strokewidth 12
-            arc left, top, (top*1.70) , (top*1.70), small_hashes + -0.005, small_hashes + 0.005
+            arc center_x,center_y,(center_y*1.70),(center_y*1.70),small_hashes + -0.005,small_hashes + 0.005
           end 
         end
 
@@ -75,26 +75,26 @@ module RaceHelper
           progress_angle = ((racer.percent_complete * 2 * Shoes::PI) - 0.5 * Shoes::PI)
           opposite = progress_angle + Shoes::PI
           shape do
-            move_to(left, top)
-            arc_to(left,top,(top*2 - 20),(top*2 - 20),progress_angle,progress_angle)
-            arc_to(left,top,top,top,opposite,opposite)
+            move_to(center_x,center_y)
+            arc_to(center_x,center_y,(center_y*2 - 20),(center_y*2 - 20),progress_angle,progress_angle)
+            arc_to(center_x,center_y,(center_y - 40),(center_y - 40),opposite,opposite)
           end
         end
 
         fill black
         stroke black
-        oval :left => left, :top => top, :width => 20, :center => true
+        oval :left => center_x, :top => center_y, :width => 20, :center => true
       end
 
       # racer info
       @racers = stack do
         race.race_participations.each_with_index do |bike,index|
-          stack(:attach => Window, :width => (WIDTH * 0.2).to_i, :left => (WIDTH * 0.8).to_i, :top => 100 + 100*index) do
+          stack(:attach => Window, :width => (WIDTH * 0.2).to_i, :left => (WIDTH * 0.8).to_i, :top => 100 + 100*index, :margin => [4,4,4,4]) do
             background eval(bike.color)
             stack do
-              background gray(1.0, 0.2)
+              background gray(1.0,0.2)
               name = if bike.racer.name.length > 14 then bike.racer.name[0..14].concat('...') else bike.racer.name end
-              caption(name, :margin => [4, 2, 2, 0])
+              caption(name, :margin => [4,2,2,0])
             end
             stack(:margin => [4,0,0,0]) do
               bike_speed = if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
