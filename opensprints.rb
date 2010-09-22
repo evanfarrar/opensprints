@@ -1,7 +1,7 @@
 $LOAD_PATH.insert(-1,'./lib/sequel/lib')
 
 Shoes.setup do
-  gem "activesupport"
+  gem "activesupport 2.3.9"
   gem "r18n-desktop"
 #  gem "sequel 3.5.0"
   source "http://gemcutter.org"
