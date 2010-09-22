@@ -61,6 +61,12 @@ class ConfigController < Shoes::Main
               inscription(link("(what's this?)",:click => "http://wiki.opensprints.org/index.php?title=Usable_Screen_Height"))
             end
 
+            stack(:margin => 10, :padding => 0) do
+              inscription "Race Interface"
+              list_box(:items => ['clock', 'progress_bars'], :choose => @prefs['track']) do |changed| 
+                @prefs['track'] = changed.text
+              end
+            end
           end
           stack(:width => 0.6) do
             stack(:margin => 10) do
@@ -82,6 +88,7 @@ class ConfigController < Shoes::Main
       end
     end
   end
+
   def skin
     config_setup
     @header.clear { title "Skin" }

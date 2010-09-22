@@ -94,7 +94,7 @@ module RaceHelper
             stack do
               background gray(1.0,0.2)
               name = if bike.racer.name.length > 14 then bike.racer.name[0..14].concat('...') else bike.racer.name end
-              caption(name, :margin => [4,2,2,0])
+              tagline(name, :margin => [4,2,2,0])
             end
             stack(:margin => [4,0,0,0]) do
               bike_speed = if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
