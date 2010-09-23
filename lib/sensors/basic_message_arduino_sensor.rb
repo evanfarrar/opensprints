@@ -25,6 +25,7 @@ module NewFirmware
       @f.puts "!g"
       Thread.current["racers"] = [[],[],[],[]]
       Thread.current["finish_times"] = []
+      Thread.current["false_start"] = nil
       @f.flush
       while true do
         l = @f.readline
@@ -57,7 +58,7 @@ module NewFirmware
             Thread.current["time"] = l.gsub(/t: /,'').to_i
           end
           if l =~ /F:/
-            parent.raise FalseStart.new("Racer #{l.gsub(/F:/,'').to_i+1}")
+            Thread.current["false_start"] = l.gsub(/F:/,'').to_i
           end
         end
         puts l
@@ -76,6 +77,10 @@ module NewFirmware
 
   def time
     @t['time'] || 0
+  end
+
+  def false_start
+    @t&&@t['false_start']
   end
 
   def stop

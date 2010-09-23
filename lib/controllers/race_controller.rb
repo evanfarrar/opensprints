@@ -59,6 +59,10 @@ class RaceController < Shoes::Main
     race_track(race)
     @countbox = flow(:attach => Window, :top => (HEIGHT/2 - 100), :left => (WIDTH/2 - 125), :width => 250, :height => 200) { }
     @timer = animate(1) { |count|
+      if SENSOR.false_start
+        alert "False start by #{race.race_participations[SENSOR.false_start].racer.name}"
+        visit "/races/#{id}/ready"
+      end
       case count
       when 4
         @countbox.clear do
@@ -81,9 +85,6 @@ class RaceController < Shoes::Main
         visit "/races/#{id}"
       end
     }
-    rescue FalseStart => e
-      alert "#{e.message} had a false start"
-      visit "/races/#{id}/ready"
   end
 
   def show(id)
