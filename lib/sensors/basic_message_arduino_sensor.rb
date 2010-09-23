@@ -4,19 +4,18 @@ module NewFirmware
       Timeout.timeout(1.0){
         @f.flush
         @f.puts "!l:#{ticks}"
-        puts "setting length"
+        log "setting length"
         @length_status = nil
         while !@length_status do
           line = @f.readline
           @length_status = line if line =~ /^L:#{ticks}/
         end
-        puts "length status: #{@length_status}"
+        log "length status: #{@length_status}"
       }
     rescue Timeout::Error
-      puts "Timeout setting length"
+      log "Timeout setting length"
       raise ErrorSettingLength
     end
-    
   end
 
   def start
@@ -61,7 +60,7 @@ module NewFirmware
             Thread.current["false_start"] = l.gsub(/F:/,'').to_i
           end
         end
-        puts l
+        log l
       end
     end
     self
@@ -96,19 +95,41 @@ module NewFirmware
     Timeout.timeout(1.0){
       @f.flush
       @f.puts "!a:#{@handshake}"
-      puts "ping: #{@handshake}"
+      log "ping: #{@handshake}"
       handshake_status = nil
       while !handshake_status do
         line = @f.readline
         handshake_status = line if line =~ /^A:#{@handshake}/
       end
-      puts "pong: #{handshake_status}"
+      log "pong: #{handshake_status}"
     }
     rescue Timeout::Error
-      puts "the arduino is unplugged!"
+      log "the arduino is unplugged!"
       raise MissingArduinoError
     end
     true
+  end
+
+  private
+  #OS X doesn't have a raw terminal puts-ing.
+  def log(message)
+    if RUBY_PLATFORM =~ /darwin/
+      @logger ||= Logger.new
+      @logger.puts message
+    else
+      puts message
+    end
+  end
+
+  class Logger
+    def initialize
+      @file = File.open "/tmp/opensprintslog", "w"
+    end
+
+    def puts(message)
+      @file.puts message
+      @file.flush
+    end
   end
 end
 
