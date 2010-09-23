@@ -16,7 +16,7 @@ class Sensor
     @t = Thread.new do
       loop do
         fake = fast
-        Thread.current["racers"] = [fake, slow, fake, d_n_f]
+        Thread.current["racers"] = [fake, slow, fake, fake]
         Thread.current["time"] = (Time.now - @start)*1000
       end
     end
@@ -66,6 +66,9 @@ class Sensor
       @random += [(Time.now - @start)*1000] * 20
     end
     @random
+  end
+
+  def false_start
   end
 
   def stop

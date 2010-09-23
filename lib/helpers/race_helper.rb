@@ -98,7 +98,7 @@ module RaceHelper
             end
             stack(:margin => [4,0,0,0]) do
               if bike.finished?
-                caption("Finished: #{sprintf("%.2f", r.finish_time)}", :margin => [0]*4, :stroke => white)
+                caption("Finished: #{sprintf("%.2f", bike.finish_time)}", :margin => [0]*4, :stroke => white)
               else
                 bike_speed = if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
                 caption("#{sprintf('%.3d', bike_speed.to_i).rjust(5)} mph", :margin => [0]*4, :stroke => white)
