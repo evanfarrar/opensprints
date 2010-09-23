@@ -28,11 +28,11 @@ module RaceHelper
     }
   end
 
-  def race_track(race, speed=false)
-    self.send(RACE_TRACK, race, speed)
+  def race_track(race, race_started=false)
+    self.send(RACE_TRACK, race, race_started)
   end
 
-  def clock(race, speed)
+  def clock(race, race_started)
     @center.remove
     @left.style :width => WIDTH
     @left.clear do
@@ -84,6 +84,14 @@ module RaceHelper
         fill black
         stroke black
         oval :left => center_x, :top => center_y, :width => 20, :center => true
+
+        unless race_started && next_race = race.next_race
+          @on_deck = stack(:attach => Window, :top => (window_height - 40), :left => 10, :width => (window_width/2), :height => 200) do
+            if next_race = race.next_race
+              tagline("up next: ", next_race.racers.join(", "), :stroke => white)
+            end
+          end
+        end
       end
 
       # racer info
@@ -100,7 +108,7 @@ module RaceHelper
               if bike.finished?
                 caption("Finished: #{sprintf("%.2f", bike.finish_time)}", :margin => [0]*4, :stroke => white)
               else
-                bike_speed = if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
+                bike_speed = if race_started then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
                 caption("#{sprintf('%.3d', bike_speed.to_i).rjust(5)} mph", :margin => [0]*4, :stroke => white)
                 caption("#{sprintf('%.3d', [bike.distance.to_i, $RACE_DISTANCE].min).rjust(5)} m", :margin => [0]*4, :stroke => white)
               end
