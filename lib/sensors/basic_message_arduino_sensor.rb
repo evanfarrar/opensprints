@@ -16,6 +16,26 @@ module NewFirmware
       log "Timeout setting length"
       raise ErrorSettingLength
     end
+    send_countdown
+  end
+
+  def send_countdown
+    begin
+      Timeout.timeout(1.0){
+        @f.flush
+        @f.puts "!c:4"
+        log "setting countdown"
+        @countdown_status = nil
+        while !@countdown_status do
+          line = @f.readline
+          @countdown_status = line if line =~ /^C:4/
+        end
+        log "countdown status: #{@countdown_status}"
+      }
+    rescue Timeout::Error
+      log "Timeout setting countdown"
+      raise ErrorSettingLength
+    end
   end
 
   def start
