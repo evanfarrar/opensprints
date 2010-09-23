@@ -12,6 +12,22 @@ module Enumerable
   end
 end
 
+class Array
+  alias :shift_without_args :shift
+
+  def shift(number_of_items = nil)
+    if number_of_items
+      collection = []
+      number_of_items.times do |i|
+        collection << shift_without_args
+      end
+      collection
+    else
+      shift_without_args
+    end
+  end
+end
+
 class Numeric
   def to_minutes_seconds_string
     [self/60 % 60, self % 60].map{|t| t.to_s.rjust(2,'0')}.join(':')
