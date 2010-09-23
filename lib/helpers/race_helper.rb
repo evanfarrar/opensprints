@@ -97,9 +97,13 @@ module RaceHelper
               tagline(name, :margin => [4,2,2,0], :stroke => white)
             end
             stack(:margin => [4,0,0,0]) do
-              bike_speed = if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
-              caption("#{sprintf('%.3d', bike_speed.to_i).rjust(5)} mph", :margin => [0]*4, :stroke => white)
-              caption("#{sprintf('%.3d', [bike.distance.to_i, $RACE_DISTANCE].min).rjust(5)} m", :margin => [0]*4, :stroke => white)
+              if bike.finished?
+                caption("Finished: #{sprintf("%.2f", r.finish_time)}", :margin => [0]*4, :stroke => white)
+              else
+                bike_speed = if speed then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
+                caption("#{sprintf('%.3d', bike_speed.to_i).rjust(5)} mph", :margin => [0]*4, :stroke => white)
+                caption("#{sprintf('%.3d', [bike.distance.to_i, $RACE_DISTANCE].min).rjust(5)} m", :margin => [0]*4, :stroke => white)
+              end
             end
           end
         end

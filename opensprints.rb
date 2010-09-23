@@ -5,7 +5,7 @@ Shoes.setup do
   gem "r18n-desktop"
 #  gem "sequel 3.5.0"
   source "http://gemcutter.org"
-  gem "opensprints-core 0.6.1"
+  gem "opensprints-core 0.6.2"
   gem "multipart-post"
 end
 
