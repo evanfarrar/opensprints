@@ -80,6 +80,17 @@ class ConfigController < Shoes::Main
                 @prefs['window_width'] = edit.text
               end
             end
+
+            stack(:margin => 10) do
+              inscription "audience window height (e.g. #{height.to_i - 100}):"
+              edit_line(@prefs['audience_window_height']) do |edit|
+                @prefs['audience_window_height'] = edit.text
+              end
+              inscription "audience window width (e.g. #{width.to_i - 50}):"
+              edit_line(@prefs['audience_window_width']) do |edit|
+                @prefs['audience_window_width'] = edit.text
+              end
+            end
           end
         end
         stack do
@@ -314,8 +325,8 @@ class ConfigController < Shoes::Main
   def save_button
     button "Save!" do
       @prefs['bikes'].compact!
-      old_width = WIDTH
-      old_height = HEIGHT
+      old_width, old_height = WIDTH, HEIGHT
+      old_audience_width, old_audience_height = WIDTH_AUDIENCE, HEIGHT_AUDIENCE
       old_skin = SKIN
       File.open(File.join(LIB_DIR,'opensprints_conf.yml'), 'w+') do |f|
         f << @prefs.to_yaml
@@ -326,7 +337,7 @@ class ConfigController < Shoes::Main
 
       load "lib/setup.rb"
       alert('Preferences saved!')
-      if(old_width!=WIDTH||old_height!=HEIGHT)
+      if(old_width!=WIDTH||old_height!=HEIGHT) || (old_audience_width!=WIDTH_AUDIENCE||old_audience_height!=HEIGHT_AUDIENCE)
         if((PLATFORM =~ /linux/)&&!(`which opensprints`).empty?)
           alert("window dimensions have changed, restarting...")
           fork ? exit : exec("opensprints")

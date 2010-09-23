@@ -78,6 +78,8 @@ USABLE_HEIGHT = options['usable_window_height'].to_i.nonzero?||nil
 height = options['window_height'].to_i.nonzero?||(height.to_i-100)
 HEIGHT = [height,550].max
 WIDTH = options['window_width'].to_i.nonzero?||(width.to_i-50)
+HEIGHT_AUDIENCE = options['audience_window_height'].to_i.nonzero? || HEIGHT
+WIDTH_AUDIENCE  = options['audience_window_width'].to_i.nonzero? || WIDTH
 
 if defined? Shoes
   class String

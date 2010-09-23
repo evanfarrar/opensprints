@@ -71,7 +71,7 @@ class Main < Shoes
           flow(:attach => Window, :top => (@center.height * 0.65).to_i, :left => (WIDTH / 2)-250) {
             caption(link("AUDIENCE WINDOW", :click => lambda{
               if !$child && !owner # if we are the parent, and we haven't yet created the child
-                $child = window(:height => HEIGHT, :width => WIDTH, :scroll => false, :title => TITLE)
+                $child = window(:height => HEIGHT_AUDIENCE, :width => WIDTH_AUDIENCE, :scroll => false, :title => TITLE)
               end
             } ))
           }
