@@ -101,7 +101,7 @@ module RaceHelper
             background eval(bike.color)
             stack do
               background gray(1.0,0.3)
-              name = if bike.racer.name.length > 14 then bike.racer.name[0..14].concat('...') else bike.racer.name end
+              name = if bike.racer.name.length > 10 then bike.racer.name[0..10].concat('..') else bike.racer.name end
               title(name, :margin => [4,2,2,0], :stroke => white)
             end
             stack(:margin => [4,0,0,0]) do
