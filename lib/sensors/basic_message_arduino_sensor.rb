@@ -109,10 +109,11 @@ module NewFirmware
   def stop
     @f.puts '!s'
     @f.flush
-    @t.kill
+    @t.kill if @t
   end
 
   def handshake()
+    stop
     @handshake ||= 0
     @handshake = @handshake <= 2**16-1 ? @handshake+1 : 0
     begin

@@ -63,11 +63,17 @@ class RaceController < Shoes::Main
         false_starter = race.race_participations[SENSOR.false_start]
         if false_starter
           @timer.stop
-          alert "False start by #{false_starter.racer.name}"
+          alert "False start by #{SENSOR.false_start}: #{false_starter.racer.name}"
           visit "/races/#{id}/ready"
         end
       end
       case count
+      when 1
+        SENSOR.start
+        @countbox.clear do
+          container
+          count_text(4-count)
+        end
       when 0..3
         @countbox.clear do
           container
