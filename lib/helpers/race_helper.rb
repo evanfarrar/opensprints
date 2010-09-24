@@ -97,20 +97,20 @@ module RaceHelper
       # racer info
       @racers = stack do
         race.race_participations.each_with_index do |bike,index|
-          stack(:attach => Window, :width => (WIDTH * 0.2).to_i, :left => (WIDTH * 0.8).to_i, :top => 100 + 100*index, :margin => [4,4,4,4]) do
+          stack(:attach => Window, :width => (WIDTH * 0.3).to_i, :left => (WIDTH * 0.7).to_i, :top => 100 + 160*index, :margin => [4,4,4,4]) do
             background eval(bike.color)
             stack do
               background gray(1.0,0.3)
               name = if bike.racer.name.length > 14 then bike.racer.name[0..14].concat('...') else bike.racer.name end
-              tagline(name, :margin => [4,2,2,0], :stroke => white)
+              title(name, :margin => [4,2,2,0], :stroke => white)
             end
             stack(:margin => [4,0,0,0]) do
               if bike.finished?
-                caption("Finished: #{sprintf("%.2f", bike.finish_time)}", :margin => [0]*4, :stroke => white)
+                subtitle("Finished: #{sprintf("%.2f", bike.finish_time)}", :margin => [0]*4, :stroke => white)
               else
                 bike_speed = if race_started then bike.speed(bike.finish_time||SENSOR.time||0) else 0 end
-                caption("#{sprintf('%.3d', bike_speed.to_i).rjust(5)} mph", :margin => [0]*4, :stroke => white)
-                caption("#{sprintf('%.3d', [bike.distance.to_i, $RACE_DISTANCE].min).rjust(5)} m", :margin => [0]*4, :stroke => white)
+                subtitle("#{sprintf('%.3d', bike_speed.to_i).rjust(5)} mph", :margin => [0]*4, :stroke => white)
+                subtitle("#{sprintf('%.3d', [bike.distance.to_i, $RACE_DISTANCE].min).rjust(5)} m", :margin => [0]*4, :stroke => white)
               end
             end
           end

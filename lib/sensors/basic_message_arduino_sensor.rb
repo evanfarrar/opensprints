@@ -91,7 +91,11 @@ module NewFirmware
   end
 
   def racers
-    @t['racers'] || [[],[],[],[]]
+    if @t
+      @t['racers'] || [[],[],[],[]]
+    else
+     [[],[],[],[]]
+    end
   end
 
   def time
