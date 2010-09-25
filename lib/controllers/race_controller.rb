@@ -51,6 +51,7 @@ class RaceController < Shoes::Main
   end
 
   def countdown(id)
+    SENSOR.send_distance($RACE_DISTANCE)
     race = Race[id]
     layout(:race)
     @nav.clear {
