@@ -85,12 +85,8 @@ module RaceHelper
         stroke black
         oval :left => center_x, :top => center_y, :width => 20, :center => true
 
-        unless race_started && next_race = race.next_race
-          @on_deck = stack(:attach => Window, :top => (window_height - 60), :left => 10, :width => (window_width), :height => 200) do
-            if next_race = race.next_race
-              tagline("up next: ", next_race.racers.join(", "), :stroke => white)
-            end
-          end
+        unless race_started && race.next_race
+          on_deck(race)
         end
       end
 
@@ -188,5 +184,13 @@ module RaceHelper
     flow(:height => 0.3) {
       background(eval(race_participation.color), :width=> 0.9)
     }
+  end
+
+  def on_deck(race)
+    stack(:attach => Window, :top => (window_height - 60), :left => 10, :width => (window_width), :height => 200) do
+      if next_race = race.next_race
+        tagline("up next: ", next_race.racers.join(", "), :stroke => white)
+      end
+    end
   end
 end

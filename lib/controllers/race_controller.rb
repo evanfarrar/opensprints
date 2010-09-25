@@ -151,6 +151,7 @@ class RaceController < Shoes::Main
         }
       end
     }
+    on_deck(race)
   end
 
   def edit(id)
