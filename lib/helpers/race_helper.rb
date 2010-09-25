@@ -48,7 +48,7 @@ module RaceHelper
         fill white
         oval :left => center_x, :top => center_y, :width => center_y * 1.75, :center => true
         oval :left => center_x, :top => center_y, :width => center_y * 1.65, :center => true
-        logo = image("media/logo-westcoast.png", :attach => Window, :top => center_y, :left => center_x - 220)
+        logo = image("media/big-logo.png", :attach => Window, :top => center_y, :left => center_x - 100)
 
         # hashmarks
         8.times do |i|

@@ -141,7 +141,6 @@ class RaceController < Shoes::Main
                   #TODO i18n ?
                   caption("DNF")
                 end
-
               }
             }
           }
