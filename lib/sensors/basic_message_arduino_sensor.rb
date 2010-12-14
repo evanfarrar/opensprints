@@ -215,7 +215,7 @@ module LegacyFirmware
             Thread.current["finish_times"][3] = l.gsub(/3f: /,'').to_i
           end
           if l =~ /t:/
-            #Thread.current["time"] = l.gsub(/t: /,'').to_i
+            Thread.current["time"] = l.gsub(/t: /,'').to_i
           end
         end
         puts l
