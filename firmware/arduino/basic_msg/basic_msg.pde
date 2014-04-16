@@ -1,18 +1,18 @@
 /*
  * Arduino wiring:
- * 
+ *
  * Digital pin  Connected to
  * -----------  ------------
  * 2            Sensor 0
  * 3            Sensor 1
  * 4            Sensor 2
  * 5            Sensor 3
- * 
+ *
  * 9            Racer0 Start LED anode, Stop LED cathode
  * 10           Racer1 Start LED anode, Stop LED cathode
  * 11           Racer2 Start LED anode, Stop LED cathode
  * 12           Racer3 Start LED anode, Stop LED cathode
- * 
+ *
  */
 
 int statusLEDPin = 13;
@@ -53,7 +53,7 @@ int updateInterval = 250;
 unsigned long lastUpdateMillis = 0;
 
 void setup() {
-  Serial.begin(115200); 
+  Serial.begin(115200);
   pinMode(statusLEDPin, OUTPUT);
   pinMode(racer0GoLedPin, OUTPUT);
   pinMode(racer1GoLedPin, OUTPUT);
@@ -120,7 +120,7 @@ void checkSerial(){
         for(int i=0; i<=3; i++)
         {
           racerTicks[i] = 0;
-          racerFinishTimeMillis[i] = 256*0;          
+          racerFinishTimeMillis[i] = 256*0;
         }
 
         raceStarting = true;
@@ -128,7 +128,7 @@ void checkSerial(){
         lastCountDown = 4;
         lastCountDownMillis = millis();
       }
-          
+
       else if(val == 'm') {
         // toggle mock mode
         mockMode = !mockMode;
@@ -162,7 +162,7 @@ void printStatusUpdate() {
 
 void loop() {
   blinkLED();
-  
+
   checkSerial();
 
 
@@ -192,7 +192,7 @@ void loop() {
         if(values[i] == HIGH && previoussensorValues[i] == LOW){
           racerTicks[i]++;
           if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
-            racerFinishTimeMillis[i] = currentTimeMillis;          
+            racerFinishTimeMillis[i] = currentTimeMillis;
             Serial.print(i);
             Serial.print("f: ");
             Serial.println(racerFinishTimeMillis[i], DEC);
@@ -205,7 +205,7 @@ void loop() {
         if(currentTimeMillis - lastUpdateMillis > updateInterval) {
           racerTicks[i]+=(i+1);
           if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
-            racerFinishTimeMillis[i] = currentTimeMillis;          
+            racerFinishTimeMillis[i] = currentTimeMillis;
             Serial.print(i);
             Serial.print("f: ");
             Serial.println(racerFinishTimeMillis[i], DEC);
@@ -215,7 +215,7 @@ void loop() {
       }
     }
   }
-  
+
 
   if(racerFinishTimeMillis[0] != 0 && racerFinishTimeMillis[1] != 0 && racerFinishTimeMillis[2] != 0 && racerFinishTimeMillis[3] != 0){
     if(raceStarted) {
