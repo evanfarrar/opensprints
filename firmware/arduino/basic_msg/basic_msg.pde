@@ -42,9 +42,9 @@ unsigned long racerFinishTimeMillis[4];
 unsigned long lastCountDownMillis;
 int lastCountDown;
 
-unsigned int charBuff[8];
+unsigned int charBuff[16];
 unsigned int charBuffLen = 0;
-boolean isReceivingRaceLength = false;
+boolean isReceivingRaceDist = false;
 
 int raceLengthTicks = 20;
 int previousFakeTickMillis = 0;
@@ -90,7 +90,7 @@ void raceStart() {
 void checkSerial(){
   if(Serial.available()) {
     val = Serial.read();
-    if(isReceivingRaceLength) {
+    if(isReceivingRaceDist) {
       if(val != '\r') {
         charBuff[charBuffLen] = val;
         charBuffLen++;
@@ -100,9 +100,22 @@ void checkSerial(){
         // The maximum for 2 chars would be 65 535 ticks.
         // For a 0.25m circumference roller, that would be 16384 meters = 10.1805456 miles.
         raceLengthTicks = charBuff[1] * 256 + charBuff[0];
-        isReceivingRaceLength = false;
+        isReceivingRaceDist = false;
         Serial.print("OK ");
         Serial.println(raceLengthTicks,DEC);
+      }
+      else {
+        Serial.println("ERROR receiving tick lengths");
+      }
+    }
+    else if(isReceivingRaceDuration) {
+      if(charBuffLen!=8) {
+        charBuff[charBuffLen] = val;
+        raceDurSecs = eightDecimalCharsToInt(charBuff)
+        isReceivingRaceDuration = false;
+        Serial.print("OK RACE DURATION ");
+        Serial.println(raceDurSecs,DEC);
+        charBuffLen++;
       }
       else {
         Serial.println("ERROR receiving tick lengths");
@@ -111,7 +124,11 @@ void checkSerial(){
     else {
       if(val == 'l') {
           charBuffLen = 0;
-          isReceivingRaceLength = true;
+          isReceivingRaceDist = true;
+      }
+      if(val == 't') {
+          charBuffLen = 0;
+          isReceivingRaceDuration = true;
       }
       if(val == 'v') {
         Serial.println("basic-1");
