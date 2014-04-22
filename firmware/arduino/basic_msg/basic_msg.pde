@@ -57,11 +57,16 @@ int lastCountDown;
 
 unsigned int charBuff[16];
 unsigned int charBuffLen = 0;
-boolean isReceivingRaceDist = false;
 
+boolean isDistanceRace = false;
+boolean isReceivingRaceDist = false;
 int raceLengthTicks = 20;
 int previousFakeTickMillis = 0;
 
+const int RACE_DURATION_DIGITS = 8;
+boolean isDurationRace = false;
+boolean isReceivingRaceDuration = false;
+int raceDurSecs = 0;
 int updateInterval = 250;
 unsigned long lastUpdateMillis = 0;
 
@@ -101,6 +106,7 @@ void raceStart() {
 void checkSerial(){
   if(Serial.available()) {
     val = Serial.read();
+
     if(isReceivingRaceDist) {
       if(val != '\r') {
         charBuff[charBuffLen] = val;
@@ -117,36 +123,65 @@ void checkSerial(){
       }
       else {
         Serial.println("ERROR receiving tick lengths");
+        charBuffLen = 0;
       }
     }
 
     else if(isReceivingRaceDuration) {
-      if(charBuffLen!=8) {
+      if(charBuffLen <= RACE_DURATION_DIGITS) {
+        // Read the next character of the race duration
         charBuff[charBuffLen] = val;
-        raceDurSecs = eightDecimalCharsToInt(charBuff)
-        isReceivingRaceDuration = false;
-        Serial.print("OK RACE DURATION ");
-        Serial.println(raceDurSecs,DEC);
         charBuffLen++;
       }
       else {
-        Serial.println("ERROR receiving tick lengths");
+        // All 8 characters of the race duration in seconds should have
+        // arrived, so convert the input and set it to raceDurSecs.
+        boolean durationSettingError = false;
+        raceDurSecs = 0;
+        int tensPlace = 1;
+        for (int i = RACE_DURATION_DIGITS - 1; i >= 0 ; i--)
+        {
+          // Convert from char to int:
+          int digit = charBuff[i] - '0';
+          raceDurSecs = raceDurSecs + tensPl * digit;
+          tensPlace = tensPlace * 10;
+        }
+        if (durationSettingError) {
+          Serial.println("ERROR RACE DURATION seconds");
+        }
+        else {
+          Serial.print("OK RACE DURATION ");
+          Serial.println(raceDurSecs,DEC);
+        }
+
+        isReceivingRaceDuration = false;
+        charBuffLen = 0;
       }
     }
 
     else {
       if(val == 'l') {
           charBuffLen = 0;
+          isDistanceRace = true;
           isReceivingRaceDist = true;
       }
       if(val == 't') {
           charBuffLen = 0;
+          isDurationRace = true;
           isReceivingRaceDuration = true;
       }
       if(val == 'v') {
         Serial.println("basic-2");
       }
       if(val == 'g') {
+        // Assert proper initialization:
+        // Either a duration race or a distance race can be configured,
+        // but not both.
+        if (isDurationRace == isDistanceRace) {
+          Serial.println("ERROR initializing race");
+          return;
+        }
+
         for(int i=0; i<=3; i++)
         {
           racerTicks[i] = 0;
@@ -254,5 +289,4 @@ void loop() {
   }
 }
 
-// TODO: either a duration or a distance race can be configured, but not both.
 // TODO: handle either duration or distance race in raceStarted block.
