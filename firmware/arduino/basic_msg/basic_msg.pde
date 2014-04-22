@@ -290,3 +290,8 @@ void loop() {
 }
 
 // TODO: handle either duration or distance race in raceStarted block.
+// TODO: ignore line ending chars from input
+// TODO: Initialization routines:
+//       - reset race length, duration, flags, call initCharBuff
+//       - initCharBuff:
+              charBuffLen = 0;
