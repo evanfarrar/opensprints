@@ -35,9 +35,11 @@ long previousStatusBlinkMillis = 0;
 
 boolean raceStarted = false;
 boolean raceStarting = false;
-boolean mockMode = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
+
+boolean mockMode = false;
+int previousFakeTickMillis = 0;
 
 int val = 0;
 
@@ -61,12 +63,12 @@ unsigned int charBuffLen = 0;
 boolean isDistanceRace = false;
 boolean isReceivingRaceDist = false;
 int raceLengthTicks = 20;
-int previousFakeTickMillis = 0;
 
 const int RACE_DURATION_DIGITS = 8;
 boolean isDurationRace = false;
 boolean isReceivingRaceDuration = false;
 int raceDurSecs = 0;
+
 int updateInterval = 250;
 unsigned long lastUpdateMillis = 0;
 
@@ -185,7 +187,7 @@ void checkSerial(){
         for(int i=0; i<=3; i++)
         {
           racerTicks[i] = 0;
-          racerFinishTimeMillis[i] = 256*0;
+          racerFinishTimeMillis[i] = 0;
         }
         raceStarting = true;
         raceStarted = false;
