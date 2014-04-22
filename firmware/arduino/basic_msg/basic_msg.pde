@@ -13,6 +13,19 @@
  * 11           Racer2 Start LED anode, Stop LED cathode
  * 12           Racer3 Start LED anode, Stop LED cathode
  *
+ * Commands
+ * --------
+ * v    returns FW version basic-2
+ * lXY  Initialize race distance (byte_to_decimal(X) * 256 + Y revolutions (ticks))
+ * tABCDEFGH
+ *      Initialize race distance (ABCDEFG is a zero-padded 8 decimal number of seconds)
+ * g    Start the countdown and then the race
+ * s    Stop the race
+ * m    Toggle mock mode
+ *
+ * TODO: Error codes
+ * -----------------
+ * TBD
  */
 
 int statusLEDPin = 13;
@@ -74,9 +87,7 @@ void setup() {
 void blinkLED() {
   if (millis() - previousStatusBlinkMillis > statusBlinkInterval) {
     previousStatusBlinkMillis = millis();
-
     lastStatusLEDValue = !lastStatusLEDValue;
-
     digitalWrite(statusLEDPin, lastStatusLEDValue);
   }
 
@@ -108,6 +119,7 @@ void checkSerial(){
         Serial.println("ERROR receiving tick lengths");
       }
     }
+
     else if(isReceivingRaceDuration) {
       if(charBuffLen!=8) {
         charBuff[charBuffLen] = val;
@@ -121,6 +133,7 @@ void checkSerial(){
         Serial.println("ERROR receiving tick lengths");
       }
     }
+
     else {
       if(val == 'l') {
           charBuffLen = 0;
@@ -139,13 +152,11 @@ void checkSerial(){
           racerTicks[i] = 0;
           racerFinishTimeMillis[i] = 256*0;
         }
-
         raceStarting = true;
         raceStarted = false;
         lastCountDown = 4;
         lastCountDownMillis = millis();
       }
-
       else if(val == 'm') {
         // toggle mock mode
         mockMode = !mockMode;
@@ -182,7 +193,6 @@ void loop() {
 
   checkSerial();
 
-
   if (raceStarting) {
     if((millis() - lastCountDownMillis) > 1000){
       lastCountDown -= 1;
@@ -202,9 +212,9 @@ void loop() {
   if (raceStarted) {
     currentTimeMillis = millis() - raceStartMillis;
 
-    for(int i=0; i<=3; i++)
+    for(int i=0; i<=3; i++)  // TODO: move this for loop inside, just around
     {
-      if(!mockMode) {
+      if(!mockMode) {    // TODO: move mockMode logic inside.
         values[i] = digitalRead(sensorPins[i]);
         if(values[i] == HIGH && previoussensorValues[i] == LOW){
           racerTicks[i]++;
@@ -244,3 +254,5 @@ void loop() {
   }
 }
 
+// TODO: either a duration or a distance race can be configured, but not both.
+// TODO: handle either duration or distance race in raceStarted block.
