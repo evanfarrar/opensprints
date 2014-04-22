@@ -131,7 +131,7 @@ void checkSerial(){
           isReceivingRaceDuration = true;
       }
       if(val == 'v') {
-        Serial.println("basic-1");
+        Serial.println("basic-2");
       }
       if(val == 'g') {
         for(int i=0; i<=3; i++)
