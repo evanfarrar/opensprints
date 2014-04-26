@@ -49,7 +49,7 @@ int racer2GoLedPin = 11;
 int racer3GoLedPin = 12;
 
 int sensorPins[4] = {2,3,4,5};
-int previoussensorValues[4] = {HIGH,HIGH,HIGH,HIGH};
+int previousSensorValues[4] = {HIGH,HIGH,HIGH,HIGH};
 int values[4] = {0,0,0,0};
 unsigned long racerTicks[4] = {0,0,0,0};
 unsigned long racerFinishTimeMillis[4];
@@ -249,21 +249,26 @@ void loop() {
   if (raceStarted) {
     currentTimeMillis = millis() - raceStartMillis;
 
+    // Process sensor readings.
     for(int i=0; i<=3; i++)  // TODO: move this for loop inside, just around
     {
-      if(!mockMode) {    // TODO: move mockMode logic inside.
-        values[i] = digitalRead(sensorPins[i]);
-        if(values[i] == HIGH && previoussensorValues[i] == LOW){
-          racerTicks[i]++;
-          if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
-            racerFinishTimeMillis[i] = currentTimeMillis;
-            Serial.print(i);
-            Serial.print("f: ");
-            Serial.println(racerFinishTimeMillis[i], DEC);
-            digitalWrite(racer0GoLedPin+i,LOW);
-          }
+      values[i] = digitalRead(sensorPins[i]);
+      if(values[i] == HIGH && previousSensorValues[i] == LOW){
+        racerTicks[i]++;
+      }
+      previousSensorValues[i] = values[i];
+    }
+
+    if(isDistanceRace) {
+      for(int i=0; i<=3; i++)
+      {
+        if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
+          racerFinishTimeMillis[i] = currentTimeMillis;
+          Serial.print(i);
+          Serial.print("f: ");
+          Serial.println(racerFinishTimeMillis[i], DEC);
+          digitalWrite(racer0GoLedPin+i,LOW);
         }
-        previoussensorValues[i] = values[i];
       }
       else {
         if(currentTimeMillis - lastUpdateMillis > updateInterval) {
@@ -275,6 +280,21 @@ void loop() {
             Serial.println(racerFinishTimeMillis[i], DEC);
             digitalWrite(racer0GoLedPin+i,LOW);
           }
+        }
+      }
+    }
+    else if(isDurationRace) {
+    }
+
+    if(mockMode) {    // TODO: move mockMode logic inside.
+      for(int i=0; i<=3; i++)
+      {
+        if(racerFinishTimeMillis[i] == 0) {
+          racerFinishTimeMillis[i] = currentTimeMillis;
+          Serial.print(i);
+          Serial.print("f: ");
+          Serial.println(racerFinishTimeMillis[i], DEC);
+          digitalWrite(racer0GoLedPin+i,LOW);
         }
       }
     }
@@ -291,9 +311,9 @@ void loop() {
   }
 }
 
-// TODO: handle either duration or distance race in raceStarted block.
+// DOING: handle either duration or distance race in raceStarted block.
 // TODO: ignore line ending chars from input
 // TODO: Initialization routines:
 //       - reset race length, duration, flags, call initCharBuff
 //       - initCharBuff:
-              charBuffLen = 0;
+//            charBuffLen = 0;
