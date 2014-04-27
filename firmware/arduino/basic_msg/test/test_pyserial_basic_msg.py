@@ -36,3 +36,18 @@ class Test(unittest.TestCase):
             sio.flush()
             result = sio.read()
             self.assertEqual('basic-1\n', result)
+
+            # test setting length
+            sio.write(unicode("l" + chr(11) + chr(0) + '\r'))
+            sio.flush()
+            expect = u'OK 11\n'
+            actual = sio.read()
+            self.assertEqual(expect, actual)
+
+            # test setting length again
+            sio.write(unicode("l23\r"))
+            sio.flush()
+            # 50 + 51 * 256 = 13106
+            expect = u'OK 13106\n'
+            actual = sio.read()
+            self.assertEqual(expect, actual)
