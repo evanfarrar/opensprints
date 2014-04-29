@@ -29,15 +29,10 @@ class Test(unittest.TestCase):
             sio.write(unicode("v"))
             sio.flush()
             result = sio.read()
-            self.assertEqual('basic-1\n', result)
-
-            # Test version again
-            sio.write(unicode("v"))
-            sio.flush()
-            result = sio.read()
-            self.assertEqual('basic-1\n', result)
+            self.assertEqual('basic-1.01\n', result)
 
             # test setting length
+            # in the basic-1 way.
             sio.write(unicode("l" + chr(11) + chr(0) + '\r'))
             sio.flush()
             expect = u'OK 11\n'
@@ -45,9 +40,25 @@ class Test(unittest.TestCase):
             self.assertEqual(expect, actual)
 
             # test setting length again
+            # in the basic-1 way.
             sio.write(unicode("l23\r"))
             sio.flush()
             # 50 + 51 * 256 = 13106
             expect = u'OK 13106\n'
             actual = sio.read()
             self.assertEqual(expect, actual)
+
+            # test setting length again
+            # in the basic-1.01 way.
+            sio.write(unicode("l23"))
+            sio.flush()
+            # 50 + 51 * 256 = 13106
+            expect = u'OK 13106\n'
+            actual = sio.read()
+            self.assertEqual(expect, actual)
+
+            # Test version again
+            sio.write(unicode("v"))
+            sio.flush()
+            result = sio.read()
+            self.assertEqual('basic-1.01\n', result)
