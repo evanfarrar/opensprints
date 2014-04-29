@@ -15,6 +15,8 @@
  *
  */
 
+#define VERSION "basic-1.01"
+
 int statusLEDPin = 13;
 long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
@@ -90,12 +92,23 @@ void raceStart() {
 void checkSerial(){
   if(Serial.available()) {
     val = Serial.read();
+    if(val == '\r' || val == '\n') {
+      // Ignore end-of-line characters.
+      return;
+    }
     if(isReceivingRaceLength) {
-      if(val != '\r') {
+      if(charBuffLen < 2) {
+        //if (val < 0 || val > 9) {
+        //  // Received a non-decimal-digit character
+        //  Serial.println("ERROR receiving tick lengths");
+        //  isReceivingRaceLength = false;
+        //  charBuffLen = 0;
+        //  return;
+        //}
         charBuff[charBuffLen] = val;
         charBuffLen++;
       }
-      else if(charBuffLen==2) {
+      if(charBuffLen==2) {
         // received all the parts of the distance. time to process the value we received.
         // The maximum for 2 chars would be 65 535 ticks.
         // For a 0.25m circumference roller, that would be 16384 meters = 10.1805456 miles.
@@ -104,9 +117,6 @@ void checkSerial(){
         Serial.print("OK ");
         Serial.println(raceLengthTicks,DEC);
       }
-      else {
-        Serial.println("ERROR receiving tick lengths");
-      }
     }
     else {
       if(val == 'l') {
@@ -114,7 +124,7 @@ void checkSerial(){
           isReceivingRaceLength = true;
       }
       if(val == 'v') {
-        Serial.println("basic-1");
+        Serial.println(VERSION);
       }
       if(val == 'g') {
         for(int i=0; i<=3; i++)
