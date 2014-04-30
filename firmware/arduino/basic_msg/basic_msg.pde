@@ -16,6 +16,7 @@
  */
 
 #define VERSION "basic-1.01"
+#define FALSE_START_TICKS 4
 
 int statusLEDPin = 13;
 long statusBlinkInterval = 250;
@@ -177,14 +178,36 @@ void loop() {
 
 
   if (raceStarting) {
+    // Report false starts
+    for(int i=0; i<=3; i++) {
+      values[i] = digitalRead(sensorPins[i]);
+      if(racerTicks[i] < FALSE_START_TICKS) {
+        if(values[i] == HIGH && previoussensorValues[i] == LOW){
+          racerTicks[i]++;
+          if(racerTicks[i] == FALSE_START_TICKS) {
+            Serial.print("FS: ");
+            Serial.println(i, DEC);
+            digitalWrite(racer0GoLedPin+i,LOW);
+          }
+        }
+      }
+      previoussensorValues[i] = values[i];
+    }
+
     if((millis() - lastCountDownMillis) > 1000){
       lastCountDown -= 1;
       lastCountDownMillis = millis();
+
     }
     if(lastCountDown == 0) {
       raceStart();
       raceStarting = false;
       raceStarted = true;
+
+      for(int i=0; i<=3; i++) {
+        racerTicks[i] = 0;
+        racerFinishTimeMillis[i] = 256*0;
+      }
 
       digitalWrite(racer0GoLedPin,HIGH);
       digitalWrite(racer1GoLedPin,HIGH);
