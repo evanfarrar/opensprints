@@ -15,6 +15,9 @@
  *
  */
 
+#define VERSION "basic-1.01"
+#define FALSE_START_TICKS 4
+
 int statusLEDPin = 13;
 long statusBlinkInterval = 250;
 int lastStatusLEDValue = LOW;
@@ -90,12 +93,23 @@ void raceStart() {
 void checkSerial(){
   if(Serial.available()) {
     val = Serial.read();
+    if(val == '\r' || val == '\n') {
+      // Ignore end-of-line characters.
+      return;
+    }
     if(isReceivingRaceLength) {
-      if(val != '\r') {
+      if(charBuffLen < 2) {
+        //if (val < 0 || val > 9) {
+        //  // Received a non-decimal-digit character
+        //  Serial.println("ERROR receiving tick lengths");
+        //  isReceivingRaceLength = false;
+        //  charBuffLen = 0;
+        //  return;
+        //}
         charBuff[charBuffLen] = val;
         charBuffLen++;
       }
-      else if(charBuffLen==2) {
+      if(charBuffLen==2) {
         // received all the parts of the distance. time to process the value we received.
         // The maximum for 2 chars would be 65 535 ticks.
         // For a 0.25m circumference roller, that would be 16384 meters = 10.1805456 miles.
@@ -104,9 +118,6 @@ void checkSerial(){
         Serial.print("OK ");
         Serial.println(raceLengthTicks,DEC);
       }
-      else {
-        Serial.println("ERROR receiving tick lengths");
-      }
     }
     else {
       if(val == 'l') {
@@ -114,7 +125,7 @@ void checkSerial(){
           isReceivingRaceLength = true;
       }
       if(val == 'v') {
-        Serial.println("basic-1");
+        Serial.println(VERSION);
       }
       if(val == 'g') {
         for(int i=0; i<=3; i++)
@@ -167,14 +178,36 @@ void loop() {
 
 
   if (raceStarting) {
+    // Report false starts
+    for(int i=0; i<=3; i++) {
+      values[i] = digitalRead(sensorPins[i]);
+      if(racerTicks[i] < FALSE_START_TICKS) {
+        if(values[i] == HIGH && previoussensorValues[i] == LOW){
+          racerTicks[i]++;
+          if(racerTicks[i] == FALSE_START_TICKS) {
+            Serial.print("FS: ");
+            Serial.println(i, DEC);
+            digitalWrite(racer0GoLedPin+i,LOW);
+          }
+        }
+      }
+      previoussensorValues[i] = values[i];
+    }
+
     if((millis() - lastCountDownMillis) > 1000){
       lastCountDown -= 1;
       lastCountDownMillis = millis();
+
     }
     if(lastCountDown == 0) {
       raceStart();
       raceStarting = false;
       raceStarted = true;
+
+      for(int i=0; i<=3; i++) {
+        racerTicks[i] = 0;
+        racerFinishTimeMillis[i] = 256*0;
+      }
 
       digitalWrite(racer0GoLedPin,HIGH);
       digitalWrite(racer1GoLedPin,HIGH);
@@ -215,15 +248,6 @@ void loop() {
       }
     }
   }
-
-
-  if(racerFinishTimeMillis[0] != 0 && racerFinishTimeMillis[1] != 0 && racerFinishTimeMillis[2] != 0 && racerFinishTimeMillis[3] != 0){
-    if(raceStarted) {
-      raceStarted = false;
-      printStatusUpdate();
-    }
-  } else {
-    printStatusUpdate();
-  }
+  printStatusUpdate();
 }
 
