@@ -15,7 +15,7 @@
  *
  */
 
-#define VERSION "basic-1.01"
+#define VERSION "basic-1.02"
 #define FALSE_START_TICKS 4
 
 int statusLEDPin = 13;
@@ -124,10 +124,10 @@ void checkSerial(){
           charBuffLen = 0;
           isReceivingRaceLength = true;
       }
-      if(val == 'v') {
+      else if(val == 'v') {
         Serial.println(VERSION);
       }
-      if(val == 'g') {
+      else if(val == 'g') {
         for(int i=0; i<=3; i++)
         {
           racerTicks[i] = 0;
@@ -145,13 +145,23 @@ void checkSerial(){
         mockMode = !mockMode;
       }
 
-      if(val == 's') {
+      else if(val == 's') {
         raceStarted = false;
 
         digitalWrite(racer0GoLedPin,LOW);
         digitalWrite(racer1GoLedPin,LOW);
         digitalWrite(racer2GoLedPin,LOW);
         digitalWrite(racer3GoLedPin,LOW);
+      }
+      else {
+        Serial.print("ERROR: command invalid: ");
+        if(val > 32 && val < 127) {
+          Serial.println(char(val));
+        }
+        else {
+          Serial.print("unprintable ASCII code: ");
+          Serial.println(val);
+        }
       }
     }
   }

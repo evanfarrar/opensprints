@@ -1,0 +1,35 @@
+v1.02
+=====
+
+- Error messaging
+  of the following formats for the initial command character (Note that the
+  ASCII character will be printed if it's printable):
+
+  ERROR: command invalid: z\n
+  ERROR: command invalid: unprintable ASCII code: 32\n'
+
+
+v1.01
+=====
+
+- False start detection:
+  If a racer completes 4 ticks (i.e. 4 roller revolutions) before the countdown
+  reaches 0, the output is
+  FS:i\n
+  where i is the 0,1,2,3 corresponding to the racer number who did the false
+  start, and \n is the newline character.  Countdown and racing does not stop.
+  It's up to the race display software to react to the false starts and stop the
+  race if desired.
+
+- Time trials:
+  This is a simple change. Whereas before when all 4 racers reach the distance
+  of the race, the updates automatically stop, in this version, progress updates
+  continue indefinitely until the software sends the 's' command to stop the
+  race. The race display software can then watch for the timestamp corresponding
+  to the number of ms in the time trial and have a record of the distance
+  traveled in ticks for each racer.
+
+- cleaned up the way race distance is being set.
+  It should be backwards compatible. Whereas before a carriage return character
+  was required to follow the two characters representing the distance, now all
+  newline and carriage return characters sent through the input are ignored.

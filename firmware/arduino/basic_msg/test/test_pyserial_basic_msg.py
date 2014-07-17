@@ -62,3 +62,17 @@ class Test(unittest.TestCase):
             sio.flush()
             result = sio.read()
             self.assertEqual('basic-1.01\n', result)
+
+            # Test invalid command
+            sio.write(unicode("z"))
+            sio.flush()
+            result = sio.read()
+            self.assertEqual('ERROR: command invalid: z\n', result)
+
+            # Test invalid command, unprintable character.
+            space_chr = unicode(chr(32))
+            sio.write(space_chr)
+            sio.flush()
+            result = sio.read()
+            expect = 'ERROR: command invalid: unprintable ASCII code: 32\n'
+            self.assertEqual(expect, result)
