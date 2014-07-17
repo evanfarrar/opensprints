@@ -8,3 +8,4 @@ tmp
 firmware/arduino/arduino-0017/*
 firmware/arduino/arduino-0017
 *.pyc
+.ropeproject
