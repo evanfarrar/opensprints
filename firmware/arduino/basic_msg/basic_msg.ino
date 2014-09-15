@@ -139,10 +139,15 @@ void checkSerial(){
         lastCountDown = 4;
         lastCountDownMillis = millis();
       }
-
+      else if(val == 'getlen'){
+        Serial.println('L:');
+        Serial.println(raceLengthTicks);
+      }
       else if(val == 'm') {
         // toggle mock mode
         mockMode = !mockMode;
+        if(mockMode){ Serial.println("M:ON"); }
+        else{ Serial.println("M:OFF"); }
       }
 
       else if(val == 's') {
@@ -154,12 +159,12 @@ void checkSerial(){
         digitalWrite(racer3GoLedPin,LOW);
       }
       else {
-        Serial.print("ERROR: command invalid: ");
+        Serial.print("ERROR:Command invalid ");
         if(val > 32 && val < 127) {
           Serial.println(char(val));
         }
         else {
-          Serial.print("unprintable ASCII code: ");
+          Serial.print("ERROR:Unprintable ASCII code ");
           Serial.println(val);
         }
       }
@@ -173,10 +178,10 @@ void printStatusUpdate() {
     for(int i=0; i<=3; i++)
     {
       Serial.print(i);
-      Serial.print(": ");
+      Serial.print(":");
       Serial.println(racerTicks[i], DEC);
     }
-    Serial.print("t: ");
+    Serial.print("t:");
     Serial.println(currentTimeMillis, DEC);
   }
 }
@@ -195,7 +200,7 @@ void loop() {
         if(values[i] == HIGH && previoussensorValues[i] == LOW){
           racerTicks[i]++;
           if(racerTicks[i] == FALSE_START_TICKS) {
-            Serial.print("FS: ");
+            Serial.print("FS:");
             Serial.println(i, DEC);
             digitalWrite(racer0GoLedPin+i,LOW);
           }
@@ -207,7 +212,8 @@ void loop() {
     if((millis() - lastCountDownMillis) > 1000){
       lastCountDown -= 1;
       lastCountDownMillis = millis();
-
+      Serial.print("CD:");
+      Serial.println(lastCountDown, DEC);
     }
     if(lastCountDown == 0) {
       raceStart();
@@ -237,7 +243,7 @@ void loop() {
           if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
             racerFinishTimeMillis[i] = currentTimeMillis;
             Serial.print(i);
-            Serial.print("f: ");
+            Serial.print("f:");
             Serial.println(racerFinishTimeMillis[i], DEC);
             digitalWrite(racer0GoLedPin+i,LOW);
           }
@@ -250,7 +256,7 @@ void loop() {
           if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
             racerFinishTimeMillis[i] = currentTimeMillis;
             Serial.print(i);
-            Serial.print("f: ");
+            Serial.print("f:");
             Serial.println(racerFinishTimeMillis[i], DEC);
             digitalWrite(racer0GoLedPin+i,LOW);
           }
