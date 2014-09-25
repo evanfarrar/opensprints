@@ -29,7 +29,7 @@ boolean mockMode = false;
 unsigned long raceStartMillis;
 unsigned long currentTimeMillis;
 
-int val = 0;
+char val = 0;
 
 int racer0GoLedPin = 9;
 int racer1GoLedPin = 10;
@@ -45,7 +45,7 @@ unsigned long racerFinishTimeMillis[4];
 unsigned long lastCountDownMillis;
 int lastCountDown;
 
-unsigned int charBuff[8];
+char charBuff[8];
 unsigned int charBuffLen = 0;
 boolean isReceivingRaceLength = false;
 
@@ -89,35 +89,30 @@ void raceStart() {
   raceStartMillis = millis();
 }
 
+boolean isAlphaNum(char c) {
+  if(c >= '0' && c <= '9'){
+    return true;
+  }
+  return false;
+}
 
 void checkSerial(){
-  if(Serial.available()) {
+  if(Serial.available() > 0) {
     val = Serial.read();
     if(val == '\r' || val == '\n') {
+      if(isReceivingRaceLength){
+        isReceivingRaceLength = false;
+        raceLengthTicks = atoi(charBuff);
+        Serial.print("L:");
+        Serial.println(raceLengthTicks);  // send confirmation
+      }
+      
       // Ignore end-of-line characters.
       return;
     }
     if(isReceivingRaceLength) {
-      if(charBuffLen < 2) {
-        //if (val < 0 || val > 9) {
-        //  // Received a non-decimal-digit character
-        //  Serial.println("ERROR receiving tick lengths");
-        //  isReceivingRaceLength = false;
-        //  charBuffLen = 0;
-        //  return;
-        //}
-        charBuff[charBuffLen] = val;
-        charBuffLen++;
-      }
-      if(charBuffLen==2) {
-        // received all the parts of the distance. time to process the value we received.
-        // The maximum for 2 chars would be 65 535 ticks.
-        // For a 0.25m circumference roller, that would be 16384 meters = 10.1805456 miles.
-        raceLengthTicks = charBuff[1] * 256 + charBuff[0];
-        isReceivingRaceLength = false;
-        Serial.print("OK ");
-        Serial.println(raceLengthTicks,DEC);
-      }
+      charBuff[charBuffLen] = val;
+      charBuffLen++;
     }
     else {
       if(val == 'l') {
@@ -138,10 +133,6 @@ void checkSerial(){
         raceStarted = false;
         lastCountDown = 4;
         lastCountDownMillis = millis();
-      }
-      else if(val == 'getlen'){
-        Serial.println('L:');
-        Serial.println(raceLengthTicks);
       }
       else if(val == 'm') {
         // toggle mock mode
@@ -190,7 +181,6 @@ void loop() {
   blinkLED();
 
   checkSerial();
-
 
   if (raceStarting) {
     // Report false starts
@@ -243,7 +233,7 @@ void loop() {
           if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
             racerFinishTimeMillis[i] = currentTimeMillis;
             Serial.print(i);
-            Serial.print("f:");
+            Serial.print("F:");
             Serial.println(racerFinishTimeMillis[i], DEC);
             digitalWrite(racer0GoLedPin+i,LOW);
           }
@@ -256,7 +246,7 @@ void loop() {
           if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
             racerFinishTimeMillis[i] = currentTimeMillis;
             Serial.print(i);
-            Serial.print("f:");
+            Serial.print("F:");
             Serial.println(racerFinishTimeMillis[i], DEC);
             digitalWrite(racer0GoLedPin+i,LOW);
           }
