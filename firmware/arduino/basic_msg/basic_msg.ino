@@ -56,7 +56,7 @@ int updateInterval = 250;
 unsigned long lastUpdateMillis = 0;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   pinMode(statusLEDPin, OUTPUT);
   pinMode(racer0GoLedPin, OUTPUT);
   pinMode(racer1GoLedPin, OUTPUT);
@@ -118,6 +118,9 @@ void checkSerial(){
       if(val == 'l') {
           charBuffLen = 0;
           isReceivingRaceLength = true;
+      }
+      else if(val == 'p') {
+        Serial.println("ACK");
       }
       else if(val == 'v') {
         Serial.println(VERSION);
