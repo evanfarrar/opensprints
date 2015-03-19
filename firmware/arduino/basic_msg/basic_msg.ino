@@ -52,11 +52,11 @@ boolean isReceivingRaceLength = false;
 int raceLengthTicks = 20;
 int previousFakeTickMillis = 0;
 
-int updateInterval = 250;
+int updateInterval = 50;
 unsigned long lastUpdateMillis = 0;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   pinMode(statusLEDPin, OUTPUT);
   pinMode(racer0GoLedPin, OUTPUT);
   pinMode(racer1GoLedPin, OUTPUT);
@@ -129,7 +129,7 @@ void checkSerial(){
         for(int i=0; i<=3; i++)
         {
           racerTicks[i] = 0;
-          racerFinishTimeMillis[i] = 256*0;
+          racerFinishTimeMillis[i] = 0;
         }
 
         raceStarting = true;
@@ -146,6 +146,7 @@ void checkSerial(){
 
       else if(val == 's') {
         raceStarted = false;
+        raceStarting = false;
 
         digitalWrite(racer0GoLedPin,LOW);
         digitalWrite(racer1GoLedPin,LOW);
@@ -215,7 +216,7 @@ void loop() {
 
       for(int i=0; i<=3; i++) {
         racerTicks[i] = 0;
-        racerFinishTimeMillis[i] = 256*0;
+        racerFinishTimeMillis[i] = 0;
       }
 
       digitalWrite(racer0GoLedPin,HIGH);
@@ -243,9 +244,12 @@ void loop() {
         }
         previoussensorValues[i] = values[i];
       }
+      
+      // MOCK MODE
       else {
         if(currentTimeMillis - lastUpdateMillis > updateInterval) {
-          racerTicks[i]+=(i+1);
+          racerTicks[i] += (i+1);
+          
           if(racerFinishTimeMillis[i] == 0 && racerTicks[i] >= raceLengthTicks) {
             racerFinishTimeMillis[i] = currentTimeMillis;
             Serial.print(i);
