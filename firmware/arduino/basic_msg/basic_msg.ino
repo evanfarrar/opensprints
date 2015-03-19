@@ -170,13 +170,14 @@ void checkSerial(){
 void printStatusUpdate() {
   if(currentTimeMillis - lastUpdateMillis > updateInterval) {
     lastUpdateMillis = currentTimeMillis;
+    
+    Serial.print("R:");
+    
     for(int i=0; i<=3; i++)
     {
-      Serial.print(i);
-      Serial.print(":");
-      Serial.println(racerTicks[i], DEC);
+      Serial.print(racerTicks[i], DEC);
+      Serial.print(",");
     }
-    Serial.print("t:");
     Serial.println(currentTimeMillis, DEC);
   }
 }
